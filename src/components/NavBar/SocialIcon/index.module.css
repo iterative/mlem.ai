@@ -1,0 +1,17 @@
+.socialIcon {
+  @apply text-gray-800;
+  padding: 8px;
+  display: block;
+
+  @media (--md-scr) {
+    padding: 12px;
+  }
+
+  svg {
+    fill: currentColor;
+
+    path {
+      fill: currentColor;
+    }
+  }
+}

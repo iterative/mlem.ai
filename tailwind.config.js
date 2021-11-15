@@ -4,18 +4,16 @@ module.exports = {
   purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
   darkMode: false,
   theme: {
-    fontFamily: {
-      sans: ['Golos', 'Arial', 'Helvetica', 'sans-serif']
-    },
     colors: {
       transparent: 'transparent',
       gray: {
-        100: '#F5F7F8',
+        100: '#F9F9FA;',
         200: '#F1F1F4',
         400: '#B1B5BE',
         600: '#7A818F',
         800: '#484B50',
-        900: '#2E3137'
+        900: '#2E3137',
+        bg: '#F5F7F8'
       },
       teal: {
         400: '#26B3CB',
@@ -40,7 +38,7 @@ module.exports = {
       xxxs: '0.625rem', // 10px
       xxs: '0.6875rem', // 11px
       xs: '0.75rem', // 12px
-      sm: '	0.8125rem', // 13px
+      sm: '0.8125rem', // 13px
       tiny: '0.875rem', // 14px
       base: '1rem', // 16px
       lg: '1.125rem', // 18px
@@ -71,24 +69,11 @@ module.exports = {
       14: '3rem', // 48px
       15: '3.5rem' // 56px
     },
-    boxShadow: {
-      DEFAULT:
-        '0px 8px 16px rgba(46, 49, 55, 0.1), 0px 0px 2px rgba(46, 49, 55, 0.2)',
-      inner:
-        'inset 0px 2px 1px rgba(46, 49, 55, 0.15), inset 0px 0px 4px rgba(20, 20, 55, 0.3)',
-      download: '0px 4px 0px 0px rgba(32, 43, 70, 1)'
-    },
     borderRadius: {
-      xs: '1px',
-      sm: '2px',
-      tiny: '3px',
-      DEFAULT: '4px',
-      md: '6px',
-      lg: '8px',
-      xl: '12px',
-      '2xl': '16px',
-      '3xl': '100px',
-      full: '50%'
+      full: '50%',
+      4: '4px',
+      6: '6px',
+      8: '8px'
     },
     screens: {
       xs: '414px',
@@ -105,16 +90,15 @@ module.exports = {
         33: '0.33'
       },
       backgroundImage: {
-        'white-gray-gradient':
-          'linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%)',
         'blue-green-gradient':
-          'linear-gradient(270deg, #13adc7 0%, #945dd6 100%)',
+          'linear-gradient(93.14deg, #13ADC7 0%, #945DD6 100%);',
         'blue-green-gradient-light':
-          ' linear-gradient(270deg, #00dbd8 0%, #b133ff 100%)',
+          'linear-gradient(93.14deg, #26B3CB 0%, #A475DC 100%)',
+        'blue-green-gradient-dark':
+          'linear-gradient(93.14deg, #1198AF 0%, #8C58CA 100%)',
+        'layout-gradient': 'linear-gradient(180deg, #F5F7F8 0%, #FFFFFF 100%)',
         'orange-purple-gradient':
-          'linear-gradient(270deg, #f46737 0%, #945dd6 100%)',
-        'orange-purple-gradient-light':
-          'linear-gradient(270deg, #ffa82e 0%, #c747eb 100%)'
+          'linear-gradient(270deg, #945DD6 0%, #F46737 100%)'
       }
     }
   },

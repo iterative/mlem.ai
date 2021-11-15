@@ -1,0 +1,112 @@
+.button {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  @apply rounded-4 md:rounded-6 lg:rounded-8 text-tiny leading-4 lg:text-base;
+
+  @media (--md-scr) {
+    width: fit-content;
+    padding: 12px 16px;
+  }
+
+  @media (--lg-scr) {
+    padding: 16px 20px;
+  }
+
+  &_theme {
+    &_primary {
+      z-index: 1;
+      position: relative;
+      @apply text-white bg-blue-green-gradient;
+
+      &:hover {
+        box-shadow: 0px 3px 4px rgba(46, 49, 55, 0.1),
+          0px 0px 2px rgba(46, 49, 55, 0.15);
+      }
+
+      &:focus,
+      &:focus::before {
+        @apply bg-blue-green-gradient-dark;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+        border-radius: 100px;
+        border-radius: inherit;
+        transition: opacity 0.2s ease-out;
+        @apply bg-blue-green-gradient-light;
+      }
+
+      &:hover:not(:disabled)::before {
+        opacity: 1;
+      }
+    }
+
+    &_ghost {
+      @apply text-purple-800 bg-transparent;
+
+      &:hover {
+        box-shadow: 0px 3px 4px rgba(46, 49, 55, 0.1),
+          0px 0px 2px rgba(46, 49, 55, 0.15);
+        @apply bg-gray-100;
+      }
+
+      &:focus {
+        @apply bg-gray-200;
+      }
+    }
+
+    &_disabled {
+      background-image: none;
+      @apply bg-gray-200 text-gray-400;
+
+      &:hover,
+      &:focus {
+        cursor: default;
+      }
+    }
+  }
+
+  &_iconOnly {
+    padding: 8px;
+    height: min-content;
+    width: min-content;
+
+    @media (--md-scr) {
+      padding: 12px;
+    }
+
+    @media (--lg-scr) {
+      padding: 16px;
+    }
+
+    .button__icon {
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+    margin-right: 8px;
+
+    @media (--lg-scr) {
+      margin-right: 12px;
+    }
+
+    path {
+      fill: currentColor;
+    }
+  }
+}

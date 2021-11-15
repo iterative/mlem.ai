@@ -1,0 +1,79 @@
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+
+  @media (--md-scr) {
+    padding: 0;
+  }
+
+  @media (--md-scr) {
+    padding: 4px 0;
+  }
+
+  &__brandLogo {
+    width: 90px;
+
+    @media (--md-scr) {
+      width: 108px;
+    }
+
+    @media (--lg-scr) {
+      width: 130px;
+    }
+  }
+
+  &__brandCompany {
+    margin-right: auto;
+    padding: 8px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    background-clip: text;
+    background-color: #fff 18.77%;
+    background-size: 100%;
+    font-style: normal;
+    text-align: left;
+    width: fit-content;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    @apply bg-orange-purple-gradient text-xxs leading-6 md:text-tiny lg:text-base;
+
+    @media (--md-scr) {
+      padding: 12px;
+    }
+
+    @media (--lg-scr) {
+      padding: 16px;
+    }
+
+    span {
+      @apply font-bold;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @media (--md-scr) {
+      display: flex;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li:first-child {
+      display: none;
+      margin-left: 8px;
+
+      @media (--sm-scr) {
+        display: block;
+      }
+    }
+  }
+}

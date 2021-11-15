@@ -1,0 +1,38 @@
+@import url(../../vendor/normalize.css);
+/* import decided fonts here */
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.layout {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+  /* declare fonts here */
+  @apply text-gray-800 bg-layout-gradient;
+}
+
+.layout__container {
+  max-width: 1152px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 16px;
+
+  @media (--md-scr) {
+    padding: 0 48px;
+  }
+
+  @media (--lg-scr) {
+    padding: 0 64px;
+  }
+}
