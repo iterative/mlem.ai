@@ -1,0 +1,84 @@
+.header {
+  text-align: left;
+
+  @media (--md-scr) {
+    display: grid;
+    grid-template-areas: 'title title' 'captions slides' 'buttons slides' 'logos logos';
+  }
+
+  &__title {
+    grid-area: title;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-color: black;
+    background-size: 100%;
+    margin: 24px 0;
+    @apply bg-teal-purple-gradient text-lg leading-10 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-15;
+
+    @media (--md-scr) {
+      margin: 32px 0 36px;
+    }
+
+    @media (--lg-scr) {
+      margin: 40px 0 48px;
+    }
+
+    &Underscore {
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-color: black;
+      background-size: 100%;
+      @apply bg-orange-gradient;
+    }
+  }
+
+  &__cliSlides {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    transition: right 0.2s ease-in-out;
+    grid-area: slides;
+    width: calc((100% + 8px) * var(--length));
+    right: calc((100% + 8px) * var(--selected-i));
+
+    li {
+      width: calc(100vw - 32px);
+      margin-right: 8px;
+    }
+  }
+
+  &__cliCaptions {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    transition: right 0.2s ease-in-out;
+    grid-area: captions;
+    width: calc((100% + 16px) * var(--length));
+    right: calc((100% + 16px) * var(--selected-i));
+
+    li {
+      width: calc(100vw - 32px);
+      margin-right: 16px;
+    }
+  }
+
+  &__buttons {
+    grid-area: buttons;
+  }
+
+  &__logos {
+    grid-area: logos;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (--md-scr) {
+      flex-wrap: nowrap;
+    }
+  }
+}

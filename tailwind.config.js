@@ -31,6 +31,15 @@ module.exports = {
         600: '#8C58CA',
         800: '#7E51C2'
       },
+      red: {
+        400: '#FC8181'
+      },
+      yellow: {
+        400: '#FFE999'
+      },
+      green: {
+        400: '#68D391'
+      },
       black: '#000',
       white: '#fff'
     },
@@ -90,15 +99,16 @@ module.exports = {
         33: '0.33'
       },
       backgroundImage: {
-        'blue-green-gradient':
+        'teal-purple-gradient':
           'linear-gradient(93.14deg, #13ADC7 0%, #945DD6 100%);',
-        'blue-green-gradient-light':
+        'teal-purple-gradient-light':
           'linear-gradient(93.14deg, #26B3CB 0%, #A475DC 100%)',
-        'blue-green-gradient-dark':
+        'teal-purple-gradient-dark':
           'linear-gradient(93.14deg, #1198AF 0%, #8C58CA 100%)',
         'layout-gradient': 'linear-gradient(180deg, #F5F7F8 0%, #FFFFFF 100%)',
         'orange-purple-gradient':
-          'linear-gradient(270deg, #945DD6 0%, #F46737 100%)'
+          'linear-gradient(270deg, #945DD6 0%, #F46737 100%)',
+        'orange-gradient': 'linear-gradient(#F46737, #F46737)'
       }
     }
   },

@@ -1,0 +1,36 @@
+.terminal {
+  box-shadow: 0px 8px 16px rgba(46, 49, 55, 0.1),
+    0px 0px 2px rgba(46, 49, 55, 0.2);
+  padding: 12px;
+  @apply bg-white rounded-4;
+  width: 100%;
+  height: 234px;
+
+  @media (--md-scr) {
+    width: 320px;
+    height: 234px;
+  }
+
+  @media (--lg-scr) {
+    width: 100%;
+    height: 234px;
+  }
+
+  &__btns {
+    display: flex;
+  }
+
+  &__btn {
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px 8px 0;
+    @apply rounded-full;
+
+    @media (--lg-scr) {
+      margin-bottom: 12px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
