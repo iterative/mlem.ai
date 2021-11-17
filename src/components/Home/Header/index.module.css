@@ -229,6 +229,10 @@
         width: 100%;
         margin: 8px 0 0;
         padding-left: 12px;
+
+        &:first-child {
+          margin-top: 0;
+        }
       }
 
       @media (--lg-scr) {
