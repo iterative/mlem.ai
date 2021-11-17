@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import cn from 'classnames'
+import cn from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
 import Terminal from '../Terminal'
 import Button from '../../Button'
@@ -29,7 +29,7 @@ const cliSlideData: Array<string> = [
 $ python
 >>> from training_script import train
 >>> model = train()
-76%|████████████████████████        | 7568/10000 [00:33<00:10, 229.00it/s]
+76%|██████        | 7568/10000 [00:33<00:10, 229.00it/s]
 >>> import mlem
 >>> mlem.api.save(model, "./data/model", dvc=True)
 >>>
@@ -76,12 +76,12 @@ const Header: React.FC = () => {
   const [finalSwipeX, setFinalSwipeX] = useState(0)
   const [selectedCli, setSelectedCli] = useState(0)
 
-  const handleTouchStart = (e: TouchEvent): void => {
-    setInitialSwipeX(e.nativeEvent.touches[0].clientX)
+  const handleTouchStart = (event: React.TouchEvent): void => {
+    setInitialSwipeX(event.nativeEvent.touches[0].clientX)
   }
 
-  const handleTouchMove = (e: TouchEvent): void => {
-    setFinalSwipeX(e.nativeEvent.touches[0].clientX)
+  const handleTouchMove = (event: React.TouchEvent): void => {
+    setFinalSwipeX(event.nativeEvent.touches[0].clientX)
   }
 
   const handleTouchEnd = (): void => {
@@ -98,86 +98,221 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <h1 className={styles.header__title}>
-        <span className={styles.header__titleMain}>
-          Open-source model registry and deployment tool for Machine Learning
-        </span>
+        Open-source model registry and deployment tool for Machine Learning
         <span className={styles.header__titleUnderscore}>_</span>
       </h1>
-      <ul
-        style={{
-          '--selected-i': selectedCli,
-          '--length': cliSlideData.length
-        }}
-        className={styles.header__cliSlides}
-        onTouchMove={handleTouchMove}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        {cliSlideData.map((text, i) => (
-          <li key={i}>
-            <Terminal text={text} />
-          </li>
-        ))}
-      </ul>
-      <ul
-        className={styles.header__cliCaptions}
-        style={{
-          '--selected-i': selectedCli,
-          '--length': cliSlideData.length
-        }}
-      >
-        {cliCaptionData.map(({ bold, text }, i) => (
-          <li key={i}>
-            <p className={styles.header__text_bold}>{bold}</p>
-            <p className={styles.header__text}>{text}</p>
-          </li>
-        ))}
-      </ul>
-      <div className={styles.header__buttons}>
-        <Button>Become first user</Button>
-        <Button icon="github" theme="ghost" disabled>
-          Coming Soon
-        </Button>
+      <div className={styles.main}>
+        <div className={styles.cli__slidesWrapper}>
+          <ul
+            style={
+              {
+                '--selected-i': selectedCli,
+                '--length': cliSlideData.length
+              } as React.CSSProperties
+            }
+            className={styles.cli__slides}
+            onTouchMove={handleTouchMove}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {cliSlideData.map((text, i) => (
+              <li key={i} className={cn(i === selectedCli && styles.selected)}>
+                <Terminal text={text} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <ul className={styles.cli__dots}>
+          {cliSlideData.map((_, i) => (
+            <li key={i}>
+              <button
+                className={cn(i === selectedCli && styles.selected)}
+                onFocus={() => {
+                  setSelectedCli(i)
+                }}
+              />
+            </li>
+          ))}
+        </ul>
+        <ul
+          className={cn(styles.cli__captions, 'flex md:hidden')}
+          style={
+            {
+              '--selected-i': selectedCli,
+              '--length': cliSlideData.length
+            } as React.CSSProperties
+          }
+          onTouchMove={handleTouchMove}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {cliCaptionData.map(({ bold, text }, i) => (
+            <li key={i}>
+              <p className={styles.cli__boldText}>{bold}</p>
+              <p className={styles.cli__text}>{text}</p>
+            </li>
+          ))}
+        </ul>
+        <ul
+          className={cn(styles.cli__captions, 'hidden md:flex')}
+          style={
+            {
+              '--selected-i': selectedCli,
+              '--length': cliSlideData.length
+            } as React.CSSProperties
+          }
+        >
+          {cliCaptionData.map(({ bold, text }, i) => (
+            <li
+              key={i}
+              className={cn(i === selectedCli && styles.cli__caption_selected)}
+            >
+              <button
+                onClick={() => {
+                  setSelectedCli(i)
+                }}
+                onFocus={() => {
+                  setSelectedCli(i)
+                }}
+              >
+                <p className={styles.cli__boldText}>{bold}</p>
+                <p className={styles.cli__text}>{text}</p>
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className={styles.main__buttons}>
+          <Button>Become first user</Button>
+          <Button icon="github" theme="ghost" disabled>
+            Coming Soon
+          </Button>
+        </div>
       </div>
       <ul className={styles.header__logos}>
         <li>
           <StaticImage
             src="../../../images/logo/tensorflow.png"
             alt="Tensorflow logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            objectFit="contain"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '66px',
+                '--width-md': '88px',
+                '--width-lg': '124px'
+              } as React.CSSProperties
+            }
           />
         </li>
         <li>
           <StaticImage
             src="../../../images/logo/pytorch.png"
             alt="PyTorch logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            objectFit="contain"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '60px',
+                '--width-md': '79px',
+                '--width-lg': '112px'
+              } as React.CSSProperties
+            }
           />
         </li>
         <li>
           <StaticImage
             src="../../../images/logo/dmlc-xgboost.png"
             alt="dmlc xgboost logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            objectFit="contain"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '48px',
+                '--width-md': '64px',
+                '--width-lg': '90px'
+              } as React.CSSProperties
+            }
           />
         </li>
         <li>
           <StaticImage
-            src="../../../images/logo/skikit-learn.png"
+            src="../../../images/logo/scikit-learn.png"
             alt="scikit learn logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            objectFit="contain"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '38px',
+                '--width-md': '50px',
+                '--width-lg': '71px'
+              } as React.CSSProperties
+            }
           />
         </li>
         <li>
           <StaticImage
             src="../../../images/logo/light-gbm.png"
             alt="Light GBM logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            objectFit="contain"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '66px',
+                '--width-md': '78px',
+                '--width-lg': '110px'
+              } as React.CSSProperties
+            }
+          />
+        </li>
+        <li>
+          <StaticImage
+            src="../../../images/logo/keras.png"
+            alt="Keras logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '54px',
+                '--width-md': '64px',
+                '--width-lg': '90px'
+              } as React.CSSProperties
+            }
           />
         </li>
         <li>
           <StaticImage
             src="../../../images/logo/catboost.png"
             alt="CatBoost logo"
+            quality={100}
+            loading="eager"
+            placeholder="blurred"
+            objectFit="contain"
+            className={styles.header__logo}
+            style={
+              {
+                '--width-sm': '81px',
+                '--width-md': '96px',
+                '--width-lg': '135px'
+              } as React.CSSProperties
+            }
           />
-        </li>
-        <li>
-          <StaticImage src="../../../images/logo/keras.png" alt="Keras logo" />
         </li>
       </ul>
     </header>
