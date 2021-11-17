@@ -18,7 +18,8 @@ body,
   min-width: 320px;
   min-height: 100vh;
   overflow: hidden;
-  /* declare fonts here */
+  /* declare decided fonts here */
+  font-family: sans-serif;
   @apply text-gray-800 bg-layout-gradient;
 }
 
@@ -29,7 +30,7 @@ body,
   padding: 0 16px;
 
   @media (--md-scr) {
-    padding: 0 48px;
+    padding: 0 20px;
   }
 
   @media (--lg-scr) {
