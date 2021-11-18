@@ -2,15 +2,8 @@
   text-align: left;
 
   &__title {
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-color: black;
-    background-size: 100%;
     margin: 24px 0 0;
-    @apply bg-teal-purple-gradient text-lg leading-10 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-15;
+    @apply text-gradient bg-teal-purple-gradient text-lg leading-10 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-15;
 
     @media (--md-scr) {
       margin: 32px 0 0;
@@ -21,14 +14,7 @@
     }
 
     &Underscore {
-      -webkit-text-fill-color: transparent;
-      -moz-text-fill-color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-color: black;
-      background-size: 100%;
-      @apply bg-orange-gradient;
+      @apply text-gradient bg-orange-gradient;
     }
   }
 

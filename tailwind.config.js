@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
@@ -115,5 +116,21 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-gradient': {
+          '-webkit-text-fill-color': 'transparent',
+          '-moz-text-fill-color': 'transparent',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          '-moz-background-clip': 'text',
+          'background-color': 'black',
+          'background-size': '100%'
+        }
+      }
+
+      addUtilities(newUtilities)
+    })
+  ]
 }
