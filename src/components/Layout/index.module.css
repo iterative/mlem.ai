@@ -30,10 +30,10 @@ body,
   padding: 0 16px;
 
   @media (--md-scr) {
-    padding: 0 20px;
+    padding: 0 32px;
   }
 
   @media (--lg-scr) {
-    padding: 0 64px;
+    padding: 0 80px;
   }
 }
