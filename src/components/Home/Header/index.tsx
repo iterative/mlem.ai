@@ -195,7 +195,7 @@ const Header: React.FC = () => {
             alt="Tensorflow logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             objectFit="contain"
             className={styles.header__logo}
             style={
@@ -213,7 +213,7 @@ const Header: React.FC = () => {
             alt="PyTorch logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             objectFit="contain"
             className={styles.header__logo}
             style={
@@ -231,7 +231,7 @@ const Header: React.FC = () => {
             alt="dmlc xgboost logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             objectFit="contain"
             className={styles.header__logo}
             style={
@@ -249,7 +249,7 @@ const Header: React.FC = () => {
             alt="scikit learn logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             objectFit="contain"
             className={styles.header__logo}
             style={
@@ -267,7 +267,7 @@ const Header: React.FC = () => {
             alt="Light GBM logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             objectFit="contain"
             className={styles.header__logo}
             style={
@@ -285,7 +285,7 @@ const Header: React.FC = () => {
             alt="Keras logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             className={styles.header__logo}
             style={
               {
@@ -302,7 +302,7 @@ const Header: React.FC = () => {
             alt="CatBoost logo"
             quality={100}
             loading="eager"
-            placeholder="blurred"
+            placeholder="none"
             objectFit="contain"
             className={styles.header__logo}
             style={
