@@ -4,7 +4,8 @@
   padding: 12px;
   width: 100%;
   height: 100%;
-  @apply bg-white rounded-4;
+  overflow-y: auto;
+  @apply bg-white text-gray-800 rounded-4 text-xxxs leading-3 lg:text-xs lg:leading-4;
 
   &__btns {
     display: flex;
@@ -22,5 +23,11 @@
       width: 8px;
       height: 8px;
     }
+  }
+
+  &__container {
+    display: inline;
+    white-space: pre-wrap;
+    word-break: break-all;
   }
 }

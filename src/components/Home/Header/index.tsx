@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import cn from 'classnames'
 import { StaticImage } from 'gatsby-plugin-image'
 import Terminal from '../Terminal'
 import Button from '../../Button'
 import * as styles from './index.module.css'
+
+interface ITypedRef {
+  reset: () => void
+  destroy: () => void
+}
 
 const cliCaptionData: Array<{ bold: string; text: string }> = [
   {
@@ -23,58 +28,85 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
     text: 'Load models dynamically from any storage or model registry'
   }
 ]
+// all of this slideData and formattedSlideData should be moved to a graphql node
+// we can also apply the styling to the text on build as well
 
 const cliSlideData: Array<string> = [
   `
-$ python
->>> from training_script import train
->>> model = train()
-76%|██████        | 7568/10000 [00:33<00:10, 229.00it/s]
->>> import mlem
->>> mlem.api.save(model, "./data/model", dvc=True)
->>>
+  $ python
+  >>> from training_script import train
+  >>> model = train()
+  76%|██████        | 7568/10000 [00:33<00:10, 229.00it/s]
+  >>> import mlem
+  >>> mlem.api.save(model, "./data/model", dvc=True)
+  >>>
+
 $ tree data/model
-data/model
-├── artifacts
-│   └── data.pkl
-└── mlem.yaml
+  data/model
+  ├── artifacts
+  │   └── data.pkl
+  └── mlem.yaml
 `,
   `
-  $ mlem ls --repo https://github.com/iterative/model-registry
-Models:
- - pet-face-recognition
- - mlem-blep-classifier
- - dog-bark-translator
+    $ mlem ls --repo https://github.com/iterative/model-registry
+  Models:
+   - pet-face-recognition
+   - mlem-blep-classifier
+   - dog-bark-translator
 
-$ mlem describe dog-bark-translator --repo https://github.com/iterative/model-registry --rev main
- - 📖 Translates dog barks in emoji.
- - 📦 Pytorch 1.10.0, Torchaudio 0.10.0, Emoji 1.6.1
- - 🎯 Accuracy 87.3%
-  `,
+  $ mlem describe dog-bark-translator --repo https://github.com/iterative/model-registry --rev main
+   - 📖 Translates dog barks in emoji.
+   - 📦 Pytorch 1.10.0, Torchaudio 0.10.0, Emoji 1.6.1
+   - 🎯 Accuracy 87.3%
+    `,
   `
-  $ mlem deploy dog-bark-translator heroku --repo https://github.com/iterative/model-registry
-📩 Downloading model...
-🏗️ Building dog-bark-translator:latest docker image...
-📤 Pushing docker image to heroku, using envs/heroku.yaml specification...
-🚀 Starting application...
-💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
-  `,
+    $ mlem deploy dog-bark-translator heroku --repo https://github.com/iterative/model-registry
+  📩 Downloading model...
+  🏗️ Building dog-bark-translator:latest docker image...
+  📤 Pushing docker image to heroku, using envs/heroku.yaml specification...
+  🚀 Starting application...
+  💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
+    `,
   `
-  $ python
->>> import mlem
->>> model = mlem.api.load(
-...    "dog-bark-translator",
-...    repo="https://github.com/iterative/model-registry"
-...)
->>> model.predict("./short-dog-phrase.wav")
-🐶🚀🎉
-  `
+    $ python
+    >>> import mlem
+    >>> model = mlem.api.load(
+    ...    "dog-bark-translator",
+    ...    repo="https://github.com/iterative/model-registry"
+    ... )
+    >>> model.predict("./short-dog-phrase.wav")
+    🐶🚀🎉
+    `
 ]
+
+const formattedCodeSnippets = cliSlideData.map(string => {
+  const lines = string.split(/\r?\n/).map(line => {
+    const l: string = line.trim()
+    const commandPromptReg = /^(\$|>{3}|\.{3})/
+
+    if (commandPromptReg.test(l)) {
+      return {
+        promptString: l.match(commandPromptReg)[0],
+        text: l.replace(commandPromptReg, '')
+      }
+    } else {
+      return { text: l }
+    }
+  })
+  return lines[0].text === '' ? lines.slice(1) : lines
+})
 
 const Header: React.FC = () => {
   const [initialSwipeX, setInitialSwipeX] = useState(0)
   const [finalSwipeX, setFinalSwipeX] = useState(0)
   const [selectedCli, setSelectedCli] = useState(0)
+  const typedRefs = useRef<ITypedRef[]>([])
+
+  useEffect(() => {
+    return () => {
+      typedRefs.current.forEach(ref => ref.destroy())
+    }
+  }, [])
 
   const handleTouchStart = (event: React.TouchEvent): void => {
     setInitialSwipeX(event.nativeEvent.touches[0].clientX)
@@ -92,7 +124,12 @@ const Header: React.FC = () => {
     if (initialSwipeX < finalSwipeX) {
       ind = selectedCli - 1 >= 0 ? selectedCli - 1 : 0
     }
-    setSelectedCli(ind)
+    setCli(ind)
+  }
+
+  const setCli = (i: number): void => {
+    setSelectedCli(i)
+    typedRefs.current[i].reset()
   }
 
   return (
@@ -115,9 +152,17 @@ const Header: React.FC = () => {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {cliSlideData.map((text, i) => (
+            {cliSlideData.map((_, i) => (
               <li key={i} className={cn(i === selectedCli && styles.selected)}>
-                <Terminal text={text} />
+                <Terminal
+                  lines={formattedCodeSnippets[i]}
+                  setTypedRef={(el: {
+                    destroy: () => void
+                    reset: () => void
+                  }) => {
+                    typedRefs.current[i] = el
+                  }}
+                />
               </li>
             ))}
           </ul>
@@ -128,7 +173,7 @@ const Header: React.FC = () => {
               <button
                 className={cn(i === selectedCli && styles.selected)}
                 onFocus={() => {
-                  setSelectedCli(i)
+                  setCli(i)
                 }}
               />
             </li>
@@ -169,10 +214,10 @@ const Header: React.FC = () => {
             >
               <button
                 onClick={() => {
-                  setSelectedCli(i)
+                  setCli(i)
                 }}
                 onFocus={() => {
-                  setSelectedCli(i)
+                  setCli(i)
                 }}
               >
                 <p className={styles.cli__boldText}>{bold}</p>
