@@ -9,7 +9,7 @@ interface ITerminalProps {
 }
 
 const getCommandStr = (promptStr: string, str: string): string =>
-  `\`${promptStr}\` ${str}^200`
+  `\`${promptStr}\` ${str}^750`
 
 const getOutputStr = (str: string): string => `\`${str}\``
 
@@ -30,7 +30,7 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
     const options = {
       strings: [getTerminalString(lines)],
       smartBackspace: false,
-      typeSpeed: 60,
+      typeSpeed: 30,
       cursorChar: '_'
     }
 
