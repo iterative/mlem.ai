@@ -8,6 +8,11 @@ interface ITerminalProps {
   setTypedRef: (typed: { destroy: () => void; reset: () => void }) => void
 }
 
+const timer = `\`7%  |█             | 7568/10000\`^400
+\`40% |██████        | 7568/10000\`^150
+\`76% |██████████    | 7568/10000\`^300
+\`100%|██████████████| 10000/10000\``
+
 const getCommandStr = (promptStr: string, str: string): string =>
   `\`${promptStr}\` ${str}^750`
 
@@ -17,9 +22,14 @@ const getTerminalString = (
   lines: Array<{ promptString?: string; text: string }>
 ) =>
   [
-    ...lines.map(({ promptString, text }) =>
-      promptString ? getCommandStr(promptString, text) : getOutputStr(text)
-    ),
+    ...lines.map(({ promptString, text }) => {
+      if (text === '<loadingbar></loadingbar>') {
+        return timer
+      }
+      return promptString
+        ? getCommandStr(promptString, text)
+        : getOutputStr(text)
+    }),
     '`$`'
   ].join('\n')
 

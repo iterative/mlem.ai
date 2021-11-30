@@ -36,7 +36,7 @@ const cliSlideData: Array<string> = [
   $ python
   >>> from training_script import train
   >>> model = train()
-  76%|██████        | 7568/10000 [00:33<00:10, 229.00it/s]
+  <loadingbar></loadingbar>
   >>> import mlem
   >>> mlem.api.save(model, "./data/model", dvc=True)
   >>>
@@ -68,15 +68,15 @@ $ tree data/model
   💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
     `,
   `
-    $ python
-    >>> import mlem
-    >>> model = mlem.api.load(
-    ...    "dog-bark-translator",
-    ...    repo="https://github.com/iterative/model-registry"
-    ... )
-    >>> model.predict("./short-dog-phrase.wav")
-    🐶🚀🎉
-    `
+      $ python
+      >>> import mlem
+      >>> model = mlem.api.load(
+      ...    "dog-bark-translator",
+      ...    repo="https://github.com/iterative/model-registry"
+      ... )
+      >>> model.predict("./short-dog-phrase.wav")
+      🐶🚀🎉
+      `
 ]
 
 const formattedCodeSnippets = cliSlideData.map(string => {
