@@ -35,23 +35,36 @@ const getTerminalString = (
   ].join('\n')
 
 const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
+  const terminalEl = useRef<HTMLDivElement>(null)
   const el = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    let hasTypingStarted = false
     const options = {
       strings: [getTerminalString(lines)],
       smartBackspace: false,
       typeSpeed: 30,
-      cursorChar: '_'
+      cursorChar: '_',
+      onBegin: () => (hasTypingStarted = true),
+      onComplete: () => (hasTypingStarted = false)
     }
+    const interval = setInterval(() => {
+      if (hasTypingStarted && terminalEl.current) {
+        terminalEl.current.scrollTop = terminalEl.current.scrollHeight
+      }
+    }, 1000)
 
     if (el.current) {
       setTypedRef(new Typed(el.current, options))
     }
+
+    return () => {
+      clearInterval(interval)
+    }
   }, [])
 
   return (
-    <div className={styles.terminal}>
+    <div ref={terminalEl} className={styles.terminal}>
       <div className={styles.terminal__btns}>
         <span className={cn(styles.terminal__btn, 'bg-red-400')}></span>
         <span className={cn(styles.terminal__btn, 'bg-yellow-400')}></span>
