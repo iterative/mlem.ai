@@ -80,6 +80,10 @@
         align-items: flex-start;
       }
 
+      &:hover {
+        opacity: 0.75;
+      }
+
       svg:first-child {
         margin-bottom: 12px;
 

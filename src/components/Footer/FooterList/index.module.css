@@ -36,6 +36,10 @@
       padding: 5px 0;
     }
 
+    &:hover {
+      opacity: 0.75;
+    }
+
     &Icon {
       margin-right: 10px;
       fill: currentColor;
