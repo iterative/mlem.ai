@@ -54,7 +54,7 @@ const SEO: React.FC<ISEOProps> = ({
       <link rel="canonical" href={seo.url} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      <meta property="og:site_name" content="Iterative" />
+      <meta property="og:site_name" content="MLEM" />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {article ? (
         <meta property="og:type" content="article" />

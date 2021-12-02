@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: 'mlem.ai',
-    description: '',
+    description:
+      'MLEM is a open-source model registry and deployment tool for machine learning',
     siteUrl: 'https://mlem.ai',
     twitterUsername: '@DVCorg',
-    titleTemplate: ''
+    titleTemplate: '%s | MLEM'
   },
   plugins: [
     {
