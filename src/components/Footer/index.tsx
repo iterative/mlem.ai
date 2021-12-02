@@ -16,16 +16,19 @@ const footerListData: Array<IFooterListProps> = [
   {
     title: 'Company',
     links: [
-      { href: '', text: 'About us' },
-      { href: '', text: 'Pricing' },
-      { href: '', text: 'Github' }
+      { href: 'https://iterative.ai/about', text: 'About us' },
+      { href: 'https://iterative.ai/pricing', text: 'Pricing' },
+      { href: 'https://github.com/iterative', text: 'Github' }
     ]
   },
   {
     title: 'Legal',
     links: [
-      { href: '', text: 'Privacy Policy' },
-      { href: '', text: 'Terms of use' }
+      {
+        href: 'https://dvc.org/doc/user-guide/privacy',
+        text: 'Privacy Policy'
+      },
+      { href: 'https://dvc.org/doc/user-guide/privacy', text: 'Terms of use' }
     ]
   },
   {

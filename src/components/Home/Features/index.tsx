@@ -10,7 +10,7 @@ const featuresData: Array<string> = [
 
 const Features: React.FC = () => {
   return (
-    <section className={styles.features}>
+    <section id="features" className={styles.features}>
       <h2 className={styles.features__title}>
         Why MLEM<span>_</span>
       </h2>
