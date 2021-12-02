@@ -2,16 +2,17 @@ import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import cn from 'classnames'
 import * as styles from './index.module.css'
+import './terminal.css'
 
 interface ITerminalProps {
   lines: Array<{ promptString?: string; text: string }>
   setTypedRef: (typed: { destroy: () => void; reset: () => void }) => void
 }
 
-const timer = `\`7%  |█             | 7568/10000\`^400
-\`40% |██████        | 7568/10000\`^150
-\`76% |██████████    | 7568/10000\`^300
-\`100%|██████████████| 10000/10000\``
+const timer = `\`<span class="token number">7</span>%  <span class="token operator">|</span>█             <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^400
+\`<span class="token number">40</span>% <span class="token operator">|</span>██████        <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^150
+\`<span class="token number">76</span>% <span class="token operator">|</span>██████████    <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^300
+\`<span class="token number">100</span>%<span class="token operator">|</span>██████████████<span class="token operator">|</span> <span class="token number">10000</span>/<span class="token number">10000</span>\``
 
 const getCommandStr = (promptStr: string, str: string): string =>
   `\`${promptStr}\` ${str}^750`

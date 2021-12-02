@@ -1,0 +1,102 @@
+pre {
+  .token.line {
+    @apply text-gray-800;
+  }
+
+  .token.comment,
+  .token.block-comment {
+    font-weight: normal;
+    @apply text-gray-800;
+  }
+
+  .token.input {
+    user-select: none;
+  }
+
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    @apply text-gray-800;
+  }
+
+  .token.url,
+  .token.constant,
+  .token.operator,
+  .token.punctuation {
+    @apply text-orange-800;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.function-name,
+  .token.symbol,
+  .token.deleted {
+    @apply text-teal-800;
+  }
+
+  .token.function {
+    @apply text-purple-800;
+  }
+
+  .token.number,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    @apply text-purple-800;
+  }
+
+  .token.entity,
+  .token.variable {
+    @apply text-orange-800;
+  }
+
+  .token.class-name {
+    @apply text-teal-800;
+  }
+
+  .token.dvc {
+    @apply text-gray-800;
+    font-weight: bold;
+  }
+
+  .token.usage,
+  .token.git {
+    @apply text-orange-800;
+  }
+
+  .token.command,
+  .token.selector,
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    @apply text-teal-800;
+  }
+
+  .token.regex,
+  .token.important {
+    @apply text-orange-800;
+  }
+
+  .token.parameter {
+    @apply text-gray-800;
+  }
+
+  .token.function-variable {
+    @apply text-teal-800;
+  }
+
+  .token.important {
+    font-weight: normal;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+
+  .token.namespace {
+    opacity: 0.7;
+  }
+}
