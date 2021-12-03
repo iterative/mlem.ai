@@ -252,7 +252,7 @@
   }
 
   &__boldText {
-    @apply text-gray-900 text-tiny leading-8 lg:text-base;
+    @apply text-gray-900 text-tiny leading-8 font-semibold lg:text-base;
   }
 
   &__text {
