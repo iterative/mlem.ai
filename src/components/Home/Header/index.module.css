@@ -14,7 +14,8 @@
     }
 
     &Underscore {
-      @apply text-gradient bg-orange-gradient;
+      @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
+      animation-name: 'blink';
     }
   }
 

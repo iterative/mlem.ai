@@ -5,7 +5,8 @@
     @apply text-gradient bg-teal-purple-gradient font-bold text-tiny leading-7 md:text-4xl md:leading-13 lg:text-6xl lg:leading-14;
 
     span {
-      @apply text-gradient bg-orange-gradient;
+      @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
+      animation-name: 'blink';
     }
   }
 

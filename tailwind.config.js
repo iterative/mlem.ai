@@ -114,10 +114,24 @@ module.exports = {
         'orange-purple-gradient':
           'linear-gradient(270deg, #945DD6 0%, #F46737 100%)',
         'orange-gradient': 'linear-gradient(#F46737, #F46737)'
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': {
+            opacity: '1'
+          },
+          '50%': {
+            opacity: '0'
+          }
+        }
+      },
+      animation: {
+        blink: 'blink 1s ease-in-out infinite'
       }
     }
   },
   variants: {
+    animation: ['responsive', 'motion-safe', 'motion-reduce'],
     extend: {}
   },
   plugins: [
