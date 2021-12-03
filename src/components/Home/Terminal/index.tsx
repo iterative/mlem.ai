@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Typed from 'typed.js'
 import cn from 'classnames'
 import * as styles from './index.module.css'
@@ -35,6 +35,7 @@ const getTerminalString = (
   ].join('\n')
 
 const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
+  const [showAllText, setShowAllText] = useState(false)
   const terminalEl = useRef<HTMLDivElement>(null)
   const el = useRef<HTMLSpanElement>(null)
 
@@ -46,7 +47,11 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
       typeSpeed: 30,
       cursorChar: '_',
       onBegin: () => (hasTypingStarted = true),
-      onComplete: () => (hasTypingStarted = false)
+      onComplete: () => (hasTypingStarted = false),
+      onDestroy: () => {
+        hasTypingStarted = false
+        setShowAllText(true)
+      }
     }
     const interval = setInterval(() => {
       if (hasTypingStarted && terminalEl.current) {
@@ -72,6 +77,14 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
       </div>
       <pre>
         <span className={styles.terminal__container} ref={el}></span>
+        {showAllText && (
+          <span
+            dangerouslySetInnerHTML={{
+              __html: getTerminalString(lines).replace(/(\`|\^\d+)+/g, '')
+            }}
+            className={styles.terminal__container}
+          ></span>
+        )}
       </pre>
     </div>
   )

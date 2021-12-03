@@ -43,9 +43,18 @@ const Header: React.FC = () => {
   const [initialSwipeX, setInitialSwipeX] = useState(0)
   const [finalSwipeX, setFinalSwipeX] = useState(0)
   const [selectedCli, setSelectedCli] = useState(0)
+  const [slidesHaveBeenSelected, setSlidesHaveBeenSelected] = useState<
+    Array<boolean>
+  >([])
   const typedRefs = useRef<ITypedRef[]>([])
 
   useEffect(() => {
+    setSlidesHaveBeenSelected(
+      new Array(cliSlideData.length)
+        .fill(false)
+        .map((_, i) => (i === 0 ? true : false))
+    )
+
     return () => {
       typedRefs.current.forEach(ref => ref.destroy())
     }
@@ -71,8 +80,17 @@ const Header: React.FC = () => {
   }
 
   const setCli = (i: number): void => {
+    const newSlidesHaveBeenSelected = slidesHaveBeenSelected.map((bool, ind) =>
+      ind === i ? true : bool
+    )
+
     setSelectedCli(i)
-    typedRefs.current[i].reset()
+    if (!slidesHaveBeenSelected[i]) {
+      typedRefs.current[i].reset()
+    } else {
+      typedRefs.current[i].destroy()
+    }
+    setSlidesHaveBeenSelected(newSlidesHaveBeenSelected)
   }
 
   return (
@@ -156,9 +174,6 @@ const Header: React.FC = () => {
               className={cn(i === selectedCli && styles.cli__caption_selected)}
             >
               <button
-                onClick={() => {
-                  setCli(i)
-                }}
                 onFocus={() => {
                   setCli(i)
                 }}
