@@ -41,7 +41,7 @@ const SEO: React.FC<ISEOProps> = ({
     imageHeight: imageHeight || '1260',
     imageAlt:
       imageAlt ||
-      'The MLEM company logo next to the word, "mlem" in front of a white background.',
+      'The MLEM company logo next to the word "mlem" in front of a white background.',
     url: `${siteUrl}${pathname}`
   }
   return (
