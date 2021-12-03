@@ -57,7 +57,7 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
       if (hasTypingStarted && terminalEl.current) {
         terminalEl.current.scrollTop = terminalEl.current.scrollHeight
       }
-    }, 1000)
+    }, 100)
 
     if (el.current) {
       setTypedRef(new Typed(el.current, options))
