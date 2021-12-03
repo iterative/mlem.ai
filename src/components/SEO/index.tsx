@@ -13,7 +13,7 @@ interface ISEOProps {
   article?: string
 }
 
-const defaultSocialImage = '/gatsby-astonaut.png'
+const defaultSocialImage = '/social-image.png'
 
 const SEO: React.FC<ISEOProps> = ({
   title,
@@ -41,7 +41,7 @@ const SEO: React.FC<ISEOProps> = ({
     imageHeight: imageHeight || '1260',
     imageAlt:
       imageAlt ||
-      'The Iterative company logo next to the words, "iterative" in front of a blue background.',
+      'The MLEM company logo next to the word, "mlem" in front of a white background.',
     url: `${siteUrl}${pathname}`
   }
   return (
