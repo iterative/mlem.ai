@@ -14,10 +14,15 @@ const timer = `\`<span class="token number">7</span>%  <span class="token operat
 \`<span class="token number">76</span>% <span class="token operator">|</span>██████████    <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^300
 \`<span class="token number">100</span>%<span class="token operator">|</span>██████████████<span class="token operator">|</span> <span class="token number">10000</span>/<span class="token number">10000</span>\``
 
-const getCommandStr = (promptStr: string, str: string): string =>
-  `\`${promptStr}\` ${str}^750`
+const getRandomDelay = () => `^${Math.floor(250 + Math.random() * (500 - 250))}`
 
-const getOutputStr = (str: string): string => `\`${str}\``
+const getCommandStr = (promptStr: string, str: string): string =>
+  `\`${promptStr}\` ${str}${getRandomDelay()}`
+
+const getOutputStr = (str: string): string =>
+  `\`${str.replace(/<delay><\/delay>/g, '')}\`${
+    str.endsWith('<delay></delay>') ? getRandomDelay() : ''
+  }`
 
 const getTerminalString = (
   lines: Array<{ promptString?: string; text: string }>
@@ -80,7 +85,10 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
         {showAllText && (
           <span
             dangerouslySetInnerHTML={{
-              __html: getTerminalString(lines).replace(/(\`|\^\d+)+/g, '')
+              __html: getTerminalString(lines).replace(
+                /(\`|\^\d+|<delay><\/delay>)+/g,
+                ''
+              )
             }}
             className={styles.terminal__container}
           ></span>

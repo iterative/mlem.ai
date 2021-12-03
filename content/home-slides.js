@@ -28,10 +28,10 @@ $ tree data/model
     `,
   `
     $ mlem deploy dog-bark-translator heroku --repo https://github.com/iterative/model-registry
-  📩 Downloading model...
-  🏗️ Building dog-bark-translator:latest docker image...
-  📤 Pushing docker image to heroku, using envs/heroku.yaml specification...
-  🚀 Starting application...
+  📩 Downloading model...<delay></delay>
+  🏗️ Building dog-bark-translator:latest docker image...<delay></delay>
+  📤 Pushing docker image to heroku, using envs/heroku.yaml specification...<delay></delay>
+  🚀 Starting application...<delay></delay>
   💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
     `,
   `
@@ -43,6 +43,7 @@ $ tree data/model
       ... )
       >>> model.predict("./short-dog-phrase.wav")
       🐶🚀🎉
+      >>>
       `
 ]
 
