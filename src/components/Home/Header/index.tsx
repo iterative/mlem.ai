@@ -174,7 +174,7 @@ const Header: React.FC = () => {
               className={cn(i === selectedCli && styles.cli__caption_selected)}
             >
               <button
-                onFocus={() => {
+                onClick={() => {
                   setCli(i)
                 }}
               >

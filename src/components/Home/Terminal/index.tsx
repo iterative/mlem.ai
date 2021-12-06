@@ -9,8 +9,8 @@ interface ITerminalProps {
   setTypedRef: (typed: { destroy: () => void; reset: () => void }) => void
 }
 
-const timer = `\`<span class="token number">7</span>%  <span class="token operator">|</span>█             <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^400
-\`<span class="token number">40</span>% <span class="token operator">|</span>██████        <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^150
+const timer = `\`<span class="token number">7</span>%  <span class="token operator">|</span>█             <span class="token operator">|</span> <span class="token number">795</span>/<span class="token number">10000</span>\`^400
+\`<span class="token number">40</span>% <span class="token operator">|</span>██████        <span class="token operator">|</span> <span class="token number">4295</span>/<span class="token number">10000</span>\`^150
 \`<span class="token number">76</span>% <span class="token operator">|</span>██████████    <span class="token operator">|</span> <span class="token number">7568</span>/<span class="token number">10000</span>\`^300
 \`<span class="token number">100</span>%<span class="token operator">|</span>██████████████<span class="token operator">|</span> <span class="token number">10000</span>/<span class="token number">10000</span>\``
 

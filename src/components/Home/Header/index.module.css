@@ -211,6 +211,7 @@
     li {
       width: calc(100vw - 32px);
       margin: 12px 16px 0 0;
+      display: flex;
 
       @media (--md-scr) {
         width: 100%;
