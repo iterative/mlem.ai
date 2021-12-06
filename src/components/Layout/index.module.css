@@ -1,5 +1,5 @@
 @import url(../../vendor/normalize.css);
-/* import decided fonts here */
+@import url(../../vendor/fonts/fonts.css);
 
 html,
 body,
@@ -18,9 +18,7 @@ body,
   min-width: 320px;
   min-height: 100vh;
   overflow: hidden;
-  /* declare decided fonts here */
-  font-family: sans-serif;
-  @apply text-gray-800 bg-layout-gradient;
+  @apply text-gray-800 bg-layout-gradient font-brandon;
 }
 
 .layout__container {

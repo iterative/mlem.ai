@@ -14,8 +14,14 @@
     }
 
     &Underscore {
+      position: relative;
+      top: -2px;
       @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
       animation-name: 'blink';
+
+      @media (--lg-scr) {
+        top: -3px;
+      }
     }
   }
 

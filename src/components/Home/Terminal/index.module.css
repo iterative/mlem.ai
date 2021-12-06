@@ -28,6 +28,7 @@
   pre {
     height: calc(100% - 14px);
     overflow-y: auto;
+    @apply font-mono;
 
     @media (--lg-scr) {
       height: calc(100% - 20px);

@@ -83,6 +83,10 @@ module.exports = {
       14: '3rem', // 48px
       15: '3.5rem' // 56px
     },
+    fontFamily: {
+      brandon: '"BrandonGrotesque", "Tahoma", "Arial", sans-serif',
+      mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+    },
     borderRadius: {
       full: '50%',
       4: '4px',
