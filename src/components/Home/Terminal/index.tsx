@@ -41,7 +41,7 @@ const getTerminalString = (
 
 const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
   const [showAllText, setShowAllText] = useState(false)
-  const terminalEl = useRef<HTMLDivElement>(null)
+  const terminalPreEl = useRef<HTMLPreElement>(null)
   const el = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
@@ -59,8 +59,8 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
       }
     }
     const interval = setInterval(() => {
-      if (hasTypingStarted && terminalEl.current) {
-        terminalEl.current.scrollTop = terminalEl.current.scrollHeight
+      if (hasTypingStarted && terminalPreEl.current) {
+        terminalPreEl.current.scrollTop = terminalPreEl.current.scrollHeight
       }
     }, 100)
 
@@ -74,13 +74,13 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
   }, [])
 
   return (
-    <div ref={terminalEl} className={styles.terminal}>
+    <div className={styles.terminal}>
       <div className={styles.terminal__btns}>
         <span className={cn(styles.terminal__btn, 'bg-red-400')}></span>
         <span className={cn(styles.terminal__btn, 'bg-yellow-400')}></span>
         <span className={cn(styles.terminal__btn, 'bg-green-400')}></span>
       </div>
-      <pre>
+      <pre ref={terminalPreEl}>
         <span className={styles.terminal__container} ref={el}></span>
         {showAllText && (
           <span
