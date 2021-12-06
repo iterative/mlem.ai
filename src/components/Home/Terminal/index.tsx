@@ -85,10 +85,10 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
         {showAllText && (
           <span
             dangerouslySetInnerHTML={{
-              __html: getTerminalString(lines).replace(
+              __html: `${getTerminalString(lines).replace(
                 /(\`|\^\d+|<delay><\/delay>)+/g,
                 ''
-              )
+              )}<span class="motion-safe:animate-blink">_</span>`
             }}
             className={styles.terminal__container}
           ></span>
