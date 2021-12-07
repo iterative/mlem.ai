@@ -185,7 +185,9 @@ const Header: React.FC = () => {
           ))}
         </ul>
         <div className={styles.main__buttons}>
-          <Button>Become first user</Button>
+          <Button href="https://iterative-ai.typeform.com/to/FGyGIx45">
+            Become first user
+          </Button>
           <Button icon="github" theme="ghost" disabled>
             Coming Soon
           </Button>
