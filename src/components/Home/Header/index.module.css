@@ -97,7 +97,7 @@
       margin-top: 24px;
     }
 
-    button {
+    .button {
       margin-top: 8px;
 
       @media (--md-scr) {

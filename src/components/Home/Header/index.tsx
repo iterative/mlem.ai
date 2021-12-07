@@ -185,10 +185,18 @@ const Header: React.FC = () => {
           ))}
         </ul>
         <div className={styles.main__buttons}>
-          <Button href="https://iterative-ai.typeform.com/to/FGyGIx45">
+          <Button
+            className={styles.button}
+            href="https://iterative-ai.typeform.com/to/FGyGIx45"
+          >
             Become first user
           </Button>
-          <Button icon="github" theme="ghost" disabled>
+          <Button
+            className={styles.button}
+            icon="github"
+            theme="ghost"
+            disabled
+          >
             Coming Soon
           </Button>
         </div>
