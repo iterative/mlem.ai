@@ -1,0 +1,57 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  @media (--md-scr) {
+    width: initial;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin: 24px 0 4px;
+    @apply text-gray-700 text-xs leading-7 md:text-xs;
+
+    @media (--md-scr) {
+      margin: 0 0 5px;
+    }
+  }
+
+  &__links {
+    @media (--md-scr) {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-auto-flow: column;
+      column-gap: 32px;
+    }
+  }
+
+  &__link {
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    @apply text-gray-750 text-base leading-12 md:text-tiny md:leading-7;
+
+    @media (--md-scr) {
+      padding: 5px 0;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &Icon {
+      margin-right: 10px;
+      fill: currentColor;
+
+      path {
+        fill: currentColor;
+      }
+
+      @media (--md-scr) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.terminal {
+  box-shadow: 0px 8px 16px rgba(46, 49, 55, 0.1),
+    0px 0px 2px rgba(46, 49, 55, 0.2);
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  @apply bg-white text-gray-800 rounded-4 text-xxxs leading-3 lg:text-xs lg:leading-4;
+
+  &__btns {
+    display: flex;
+  }
+
+  &__btn {
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 0 4px 8px 0;
+    @apply rounded-full;
+
+    @media (--lg-scr) {
+      margin-bottom: 12px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  pre {
+    height: calc(100% - 14px);
+    overflow-y: auto;
+    @apply font-mono;
+
+    @media (--lg-scr) {
+      height: calc(100% - 20px);
+    }
+  }
+
+  &__container {
+    display: inline;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}

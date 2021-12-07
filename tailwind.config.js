@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
@@ -11,6 +12,8 @@ module.exports = {
         200: '#F1F1F4',
         400: '#B1B5BE',
         600: '#7A818F',
+        700: '#6F7685',
+        750: '#515661',
         800: '#484B50',
         900: '#2E3137',
         bg: '#F5F7F8'
@@ -18,18 +21,29 @@ module.exports = {
       teal: {
         400: '#26B3CB',
         DEFAULT: '#13ADC7',
-        600: '#1198AF'
+        600: '#1198AF',
+        800: '#1497B8'
       },
       orange: {
         400: '#F6855D',
         DEFAULT: '#F46737',
-        600: '#1198AF'
+        600: '#1198AF',
+        800: ' #DD5236'
       },
       purple: {
         400: '#A475DC',
         DEFAULT: '#945DD6',
         600: '#8C58CA',
         800: '#7E51C2'
+      },
+      red: {
+        400: '#FC8181'
+      },
+      yellow: {
+        400: '#FFE999'
+      },
+      green: {
+        400: '#68D391'
       },
       black: '#000',
       white: '#fff'
@@ -69,6 +83,10 @@ module.exports = {
       14: '3rem', // 48px
       15: '3.5rem' // 56px
     },
+    fontFamily: {
+      brandon: '"BrandonGrotesque", "Tahoma", "Arial", sans-serif',
+      mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+    },
     borderRadius: {
       full: '50%',
       4: '4px',
@@ -90,20 +108,51 @@ module.exports = {
         33: '0.33'
       },
       backgroundImage: {
-        'blue-green-gradient':
+        'teal-purple-gradient':
           'linear-gradient(93.14deg, #13ADC7 0%, #945DD6 100%);',
-        'blue-green-gradient-light':
+        'teal-purple-gradient-light':
           'linear-gradient(93.14deg, #26B3CB 0%, #A475DC 100%)',
-        'blue-green-gradient-dark':
+        'teal-purple-gradient-dark':
           'linear-gradient(93.14deg, #1198AF 0%, #8C58CA 100%)',
         'layout-gradient': 'linear-gradient(180deg, #F5F7F8 0%, #FFFFFF 100%)',
         'orange-purple-gradient':
-          'linear-gradient(270deg, #945DD6 0%, #F46737 100%)'
+          'linear-gradient(270deg, #945DD6 0%, #F46737 100%)',
+        'orange-gradient': 'linear-gradient(#F46737, #F46737)'
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': {
+            opacity: '1'
+          },
+          '50%': {
+            opacity: '0'
+          }
+        }
+      },
+      animation: {
+        blink: 'blink 1s ease-in-out infinite'
       }
     }
   },
   variants: {
+    animation: ['responsive', 'motion-safe', 'motion-reduce'],
     extend: {}
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-gradient': {
+          '-webkit-text-fill-color': 'transparent',
+          '-moz-text-fill-color': 'transparent',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          '-moz-background-clip': 'text',
+          'background-color': 'black',
+          'background-size': '100%'
+        }
+      }
+
+      addUtilities(newUtilities)
+    })
+  ]
 }

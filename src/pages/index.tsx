@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Home from '../components/Home'
 
 const IndexPage: React.FC = () => (
-  <Layout title="MLEM">
+  <Layout title="Home">
     <Home />
   </Layout>
 )

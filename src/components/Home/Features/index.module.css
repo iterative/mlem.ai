@@ -1,0 +1,45 @@
+.features {
+  &__title {
+    margin: 24px 0 0;
+    width: fit-content;
+    @apply text-gradient bg-teal-purple-gradient font-bold text-tiny leading-7 md:text-4xl md:leading-13 lg:text-6xl lg:leading-14;
+
+    span {
+      position: relative;
+      top: -1px;
+      @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
+      animation-name: 'blink';
+
+      @media (--md-scr) {
+        top: -2px;
+      }
+    }
+  }
+
+  &__list {
+    column-count: 2;
+    column-gap: 16px;
+    position: relative;
+    top: -4px;
+
+    @media (--md-scr) {
+      position: static;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__feature {
+    padding-top: 16px;
+    @apply text-xs leading-7 md:text-tiny md:leading-7 lg:text-base lg:leading-8;
+
+    @media (--md-scr) {
+      width: calc((100% - 16px * 3) / 4);
+    }
+
+    @media (--lg-scr) {
+      padding-top: 24px;
+      width: calc((100% - 24px * 3) / 4);
+    }
+  }
+}
