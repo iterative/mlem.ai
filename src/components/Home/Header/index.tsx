@@ -18,7 +18,7 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
   },
   {
     bold: 'Turn your Git repo into model registry',
-    text: 'Reuse existing Git and Github/Gitlab infrastructure for model management'
+    text: 'Reuse existing Git and GitHub/GitLab infrastructure for model management'
   },
   {
     bold: 'Use CLI to pack, dockerize and deploy',
