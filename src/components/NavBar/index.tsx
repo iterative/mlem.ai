@@ -36,6 +36,8 @@ const NavBar: React.FC = () => {
           alt="Go to home page"
           src={mlemLogo}
           className={styles.nav__brandLogo}
+          width={108}
+          height={24}
         />
       </SmartLink>
       <SmartLink

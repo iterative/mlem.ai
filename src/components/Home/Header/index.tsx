@@ -272,6 +272,8 @@ const Header: React.FC = () => {
               alt={alt}
               src={src}
               className={styles.header__logo}
+              width={widthMd}
+              height={35}
               style={
                 {
                   '--width-sm': `${widthSm}px`,
