@@ -1,8 +1,8 @@
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import SmartLink from '../SmartLink'
 import Button from '../Button'
 import SocialIcon, { ISocialIconProps } from './SocialIcon'
+import mlemLogo from '../../images/mlem-logo.png'
 import * as styles from './index.module.css'
 
 const socialLinks: Array<ISocialIconProps> = [
@@ -32,13 +32,10 @@ const NavBar: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <SmartLink href="/">
-        <StaticImage
-          quality={100}
-          width={130}
-          className={styles.nav__brandLogo}
-          placeholder="blurred"
+        <img
           alt="Go to home page"
-          src="../../images/mlem-logo.png"
+          src={mlemLogo}
+          className={styles.nav__brandLogo}
         />
       </SmartLink>
       <SmartLink

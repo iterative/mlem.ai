@@ -1,9 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import cn from 'classnames'
-import { StaticImage } from 'gatsby-plugin-image'
 import Terminal from '../Terminal'
 import Button from '../../Button'
+import tensorflowLogo from '../../../images/logo/tensorflow.png'
+import pytorchLogo from '../../../images/logo/pytorch.png'
+import dmlcXgboostLogo from '../../../images/logo/dmlc-xgboost.png'
+import scikitLearnLogo from '../../../images/logo/scikit-learn.png'
+import lightGbmLogo from '../../../images/logo/light-gbm.png'
+import kerasLogo from '../../../images/logo/keras.png'
+import catboostLogo from '../../../images/logo/catboost.png'
 import * as styles from './index.module.css'
 
 interface ITypedRef {
@@ -27,6 +33,64 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
   {
     bold: 'Use Python API to load and apply your models',
     text: 'Load models dynamically from any storage or model registry'
+  }
+]
+
+const logosData: Array<{
+  src: string
+  widthSm: number
+  widthMd: number
+  widthLg: number
+  alt: string
+}> = [
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: tensorflowLogo,
+    alt: 'Tensorflow logo'
+  },
+  {
+    widthSm: 60,
+    widthMd: 79,
+    widthLg: 112,
+    src: pytorchLogo,
+    alt: 'PyTorch logo'
+  },
+  {
+    widthSm: 48,
+    widthMd: 64,
+    widthLg: 90,
+    src: dmlcXgboostLogo,
+    alt: 'dmlc xgboost logo'
+  },
+  {
+    widthSm: 38,
+    widthMd: 50,
+    widthLg: 71,
+    src: scikitLearnLogo,
+    alt: 'scikit learn logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 78,
+    widthLg: 110,
+    src: lightGbmLogo,
+    alt: 'Light GBM logo'
+  },
+  {
+    widthSm: 54,
+    widthMd: 64,
+    widthLg: 90,
+    src: kerasLogo,
+    alt: 'Keras logo'
+  },
+  {
+    widthSm: 81,
+    widthMd: 96,
+    widthLg: 135,
+    src: catboostLogo,
+    alt: 'Catboost logo'
   }
 ]
 
@@ -202,131 +266,22 @@ const Header: React.FC = () => {
         </div>
       </div>
       <ul className={styles.header__logos}>
-        <li>
-          <StaticImage
-            src="../../../images/logo/tensorflow.png"
-            alt="Tensorflow logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            objectFit="contain"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '66px',
-                '--width-md': '88px',
-                '--width-lg': '124px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
-        <li>
-          <StaticImage
-            src="../../../images/logo/pytorch.png"
-            alt="PyTorch logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            objectFit="contain"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '60px',
-                '--width-md': '79px',
-                '--width-lg': '112px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
-        <li>
-          <StaticImage
-            src="../../../images/logo/dmlc-xgboost.png"
-            alt="dmlc xgboost logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            objectFit="contain"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '48px',
-                '--width-md': '64px',
-                '--width-lg': '90px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
-        <li>
-          <StaticImage
-            src="../../../images/logo/scikit-learn.png"
-            alt="scikit learn logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            objectFit="contain"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '38px',
-                '--width-md': '50px',
-                '--width-lg': '71px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
-        <li>
-          <StaticImage
-            src="../../../images/logo/light-gbm.png"
-            alt="Light GBM logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            objectFit="contain"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '66px',
-                '--width-md': '78px',
-                '--width-lg': '110px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
-        <li>
-          <StaticImage
-            src="../../../images/logo/keras.png"
-            alt="Keras logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '54px',
-                '--width-md': '64px',
-                '--width-lg': '90px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
-        <li>
-          <StaticImage
-            src="../../../images/logo/catboost.png"
-            alt="CatBoost logo"
-            quality={100}
-            loading="eager"
-            placeholder="none"
-            objectFit="contain"
-            className={styles.header__logo}
-            style={
-              {
-                '--width-sm': '81px',
-                '--width-md': '96px',
-                '--width-lg': '135px'
-              } as React.CSSProperties
-            }
-          />
-        </li>
+        {logosData.map(({ widthSm, widthMd, widthLg, src, alt }, i) => (
+          <li key={i}>
+            <img
+              alt={alt}
+              src={src}
+              className={styles.header__logo}
+              style={
+                {
+                  '--width-sm': `${widthSm}px`,
+                  '--width-md': `${widthMd}px`,
+                  '--width-lg': `${widthLg}px`
+                } as React.CSSProperties
+              }
+            />
+          </li>
+        ))}
       </ul>
     </header>
   )
