@@ -85,6 +85,11 @@ const SEO: React.FC<ISEOProps> = ({
       {seo.image && <meta name="twitter:image" content={seo.image} />}
       {seo.imageAlt && <meta name="twitter:image:alt" content={seo.imageAlt} />}
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f1624" />
+      <script
+        defer
+        data-domain="mlem.ai"
+        src="https://plausible.io/js/plausible.js"
+      ></script>
     </Helmet>
   )
 }
