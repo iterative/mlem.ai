@@ -1,0 +1,78 @@
+.popup {
+  display: grid;
+  padding: 8px;
+  opacity: 0;
+  position: absolute;
+  right: 8px;
+  top: calc(100% + 4px);
+  visibility: hidden;
+  z-index: 2;
+  background-color: #fff;
+  filter: drop-shadow(0 2px 8px rgb(0 0 0 / 15%));
+  border-radius: 12px;
+  box-sizing: border-box;
+  row-gap: 8px;
+  width: 296px;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+
+  @media (--md-scr) {
+    right: initial;
+    left: 0;
+  }
+
+  &_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.link {
+  display: grid;
+  border-radius: 8px;
+  grid-template-areas: 'icon title' 'icon description';
+  grid-template-columns: 32px 216px;
+  column-gap: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in;
+  padding: 8px;
+
+  &:hover,
+  &:focus {
+    background-color: rgb(15 22 36 / 5%);
+  }
+
+  &:hover &__title svg {
+    opacity: 1;
+  }
+
+  &__icon {
+    height: 32px;
+    width: 32px;
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    @apply text-gray-900 text-lg leading-8 font-medium;
+
+    svg {
+      opacity: 0;
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__description {
+    grid-area: description;
+    @apply text-gray-600 text-base leading-6;
+  }
+}
