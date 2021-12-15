@@ -17,7 +17,7 @@
   visibility: hidden;
   z-index: 2;
   background-color: #fff;
-  filter: drop-shadow(0 2px 8px rgb(0 0 0 / 15%));
+  box-shadow: 2px 3px 12px 0 rgba(0 0 0 / 15%);
   border-radius: 12px;
   box-sizing: border-box;
   row-gap: 8px;
