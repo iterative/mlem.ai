@@ -1,3 +1,12 @@
+.popupContainer {
+  position: relative;
+  display: none;
+
+  @media (--sm-scr) {
+    display: initial;
+  }
+}
+
 .popup {
   display: grid;
   padding: 8px;
@@ -75,4 +84,8 @@
     grid-area: description;
     @apply text-gray-600 text-base leading-6;
   }
+}
+
+.flip {
+  transform: rotate(180deg);
 }

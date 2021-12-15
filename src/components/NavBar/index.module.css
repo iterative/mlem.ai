@@ -72,19 +72,6 @@
         width: 18px;
         height: 18px;
       }
-
-      &.flip {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  &__popupContainer {
-    position: relative;
-    display: none;
-
-    @media (--sm-scr) {
-      display: initial;
     }
   }
 
