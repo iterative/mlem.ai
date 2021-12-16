@@ -54,11 +54,37 @@
     }
   }
 
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    @apply text-base leading-6 text-gray-900;
+
+    @media (--md-scr) {
+      margin-right: 24px;
+    }
+
+    svg {
+      margin-left: 5px;
+
+      @media (--lg-scr) {
+        margin-left: 7px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
   &__button {
+    margin-right: 12px;
     display: none;
 
     @media (--md-scr) {
       display: flex;
+    }
+
+    @media (--lg-scr) {
+      margin-right: 4px;
     }
   }
 
@@ -71,7 +97,7 @@
       display: none;
       margin-left: 8px;
 
-      @media (--sm-scr) {
+      @media (--lg-scr) {
         display: block;
       }
     }
