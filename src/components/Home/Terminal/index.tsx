@@ -49,7 +49,7 @@ const Terminal: React.FC<ITerminalProps> = ({ lines, setTypedRef }) => {
     const options = {
       strings: [getTerminalString(lines)],
       smartBackspace: false,
-      typeSpeed: 30,
+      typeSpeed: 20,
       cursorChar: '_',
       onBegin: () => (hasTypingStarted = true),
       onComplete: () => (hasTypingStarted = false),
