@@ -81,6 +81,9 @@
     "*.{js,json,css,md}": "prettier --write"
   },
   "engines": {
-    "node": ">=16.x"
+    "node": ">=14.x <=16.x"
+  },
+  "volta": {
+    "node": "16.13.1"
   }
 }
