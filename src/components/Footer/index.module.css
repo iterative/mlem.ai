@@ -1,31 +1,13 @@
 .footer {
-  margin: 24px 0 40px;
-  padding: 24px 0 0;
+  padding: 24px 0;
+  margin: 24px 0 0 0;
   @apply border-gray-200 border-solid border-t-2;
-
-  @media (--md-scr) {
-    margin: 32px 0 0;
-    padding: 48px 0 0;
-  }
-
-  @media (--lg-scr) {
-    margin: 40px 0 56px;
-    padding: 72px 0 0;
-  }
-
-  > * {
-    padding: 0 24px;
-
-    @media (--lg-scr) {
-      padding: 0 20px;
-    }
-  }
 
   &__links {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 434px;
+    height: 480px;
 
     @media (--md-scr) {
       flex-direction: row;
@@ -59,16 +41,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 38px;
+    padding: 24px 0;
 
     @media (--md-scr) {
-      margin-top: 19px;
       text-align: left;
       justify-content: flex-start;
-    }
-
-    @media (--lg-scr) {
-      margin-top: 27px;
     }
 
     &Brand {
