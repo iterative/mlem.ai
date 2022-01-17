@@ -3,14 +3,15 @@
 
   &__title {
     margin: 24px 0 0;
-    @apply text-gradient bg-teal-purple-gradient text-lg leading-10 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-15;
+    @apply text-gradient bg-teal-purple-gradient text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
 
     @media (--md-scr) {
       margin: 32px 0 0;
     }
 
     @media (--lg-scr) {
-      margin: 40px 74px 0 0;
+      margin: 40px 0 0 0;
+      max-width: 720px;
     }
 
     &Underscore {
@@ -31,7 +32,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 12px 0 0;
+    padding: 24px 0;
 
     @media (--md-scr) {
       flex-wrap: nowrap;
@@ -85,17 +86,17 @@
 
   &__buttons {
     grid-area: buttons;
-    margin-top: 8px;
 
     @media (--md-scr) {
       display: flex;
       align-items: flex-start;
-      margin-top: 16px;
+      padding: 12px;
     }
 
     @media (--lg-scr) {
-      margin-top: 24px;
+      padding: 16px;
     }
+
 
     .button {
       margin-top: 8px;
@@ -174,6 +175,7 @@
 
   &__dots {
     display: flex;
+    padding: 16px 0;
 
     li {
       display: flex;
@@ -215,15 +217,18 @@
     }
 
     li {
-      width: calc(100vw - 32px);
-      margin: 12px 16px 0 0;
+      width: calc(100vw - 16px);
       display: flex;
       flex-direction: column;
+      border-radius: 8px;
 
       @media (--md-scr) {
         width: 100%;
-        margin: 8px 0 0;
-        padding-left: 14px;
+        padding: 12px;
+
+        &:hover {
+          @apply bg-gray-200;
+        }
 
         &:first-child {
           margin-top: 0;
@@ -231,17 +236,17 @@
       }
 
       @media (--lg-scr) {
-        margin: 16px 0 0;
-        padding-left: 18px;
+        padding: 16px;
       }
 
       &.cli__caption_selected {
         border-image: linear-gradient(to bottom, #945dd6 0%, #13adc7 100%) 2;
-        padding-left: 12px;
+        padding: 8px 12px;
+        margin: 8px 0;
         @apply border-solid border-l-2;
 
         @media (--lg-scr) {
-          padding-left: 16px;
+          padding: 8px 16px;
         }
 
         .cli__text {
@@ -264,17 +269,17 @@
   }
 
   &__boldText {
-    @apply text-gray-900 text-tiny leading-8 font-semibold lg:text-base;
+    @apply text-gray-900 text-lg leading-7 font-medium lg:text-xl;
   }
 
   &__text {
-    margin: 4px 0 0;
-    @apply text-gray-600 text-xs leading-7 lg:text-tiny lg:leading-8;
+    @apply text-gray-600 text-base leading-7 lg:text-lg lg:leading-8;
+    margin: 4px 0 0 0;
 
     @media (--md-scr) {
+      margin: 0;
       transition: height 0.2s ease-in-out, margin 0.2s ease-in-out,
         opacity 0.2s ease-in-out;
-      margin: 0;
       height: 0;
       opacity: 0;
     }

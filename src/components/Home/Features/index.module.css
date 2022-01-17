@@ -1,8 +1,8 @@
 .features {
   &__title {
-    margin: 24px 0 0;
+    margin: 24px 0 16px 0;
     width: fit-content;
-    @apply text-gradient bg-teal-purple-gradient font-bold text-tiny leading-7 md:text-4xl md:leading-13 lg:text-6xl lg:leading-14;
+    @apply text-gradient bg-teal-purple-gradient font-bold text-2xl leading-6 md:text-4xl md:leading-8 lg:text-6xl lg:leading-10;
 
     span {
       position: relative;
@@ -31,7 +31,11 @@
 
   &__feature {
     padding-top: 16px;
-    @apply text-xs leading-7 md:text-tiny md:leading-7 lg:text-base lg:leading-8;
+    @apply text-base md:text-lg leading-7 md:leading-7 lg:leading-8;
+
+    strong {
+      @apply font-medium;
+    }
 
     @media (--md-scr) {
       width: calc((100% - 16px * 3) / 4);

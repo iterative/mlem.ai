@@ -39,7 +39,7 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    @apply bg-orange-purple-gradient text-xxs leading-6 md:text-tiny lg:text-base;
+    @apply bg-orange-purple-gradient text-tiny md:text-base leading-6;
 
     @media (--md-scr) {
       padding: 12px;
@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     margin-right: 8px;
-    @apply text-base leading-6 text-gray-900;
+    @apply text-tiny md:text-lg leading-6 text-gray-900;
 
     @media (--md-scr) {
       margin-right: 24px;

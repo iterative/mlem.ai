@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
       <nav className={styles.nav}>
         <SmartLink href="/">
           <img
-            alt="Go to home page"
+            alt="Go to home page"
             src={mlemLogo}
             className={styles.nav__brandLogo}
             width={108}
@@ -50,7 +50,7 @@ const NavBar: React.FC = () => {
         </SmartLink>
         <OtherToolsPopup navItemClassName={styles.nav__link} />
         <Button className={styles.nav__button} icon="github" disabled>
-          Coming Soon
+          Coming Soon
         </Button>
         <ul className={styles.nav__icons}>
           {socialLinks.map(({ icon, href, label }, i) => (

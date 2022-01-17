@@ -108,11 +108,11 @@ const OtherToolsPopup: React.FC<IOtherToolsPopupProps> = ({
   return (
     <div ref={popupContainerEl} className={styles.popupContainer}>
       <button onClick={togglePopup} className={navItemClassName}>
-        Other Tools{' '}
+        Other Tools{' '}
         <DownSVG
           className={cn(isVisible && styles.flip)}
-          width={14}
-          height={14}
+          width={8}
+          height={8}
         />
       </button>
       <div className={cn(styles.popup, isVisible && styles.popup_visible)}>

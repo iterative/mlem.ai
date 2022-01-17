@@ -7,7 +7,8 @@
   padding: 12px;
   text-align: center;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  @apply rounded-4 md:rounded-6 lg:rounded-8 text-tiny leading-4 lg:text-base;
+  letter-spacing: 0.5px;
+  @apply font-medium rounded-4 md:rounded-6 lg:rounded-8 text-lg leading-4 lg:text-lg;
 
   @media (--md-scr) {
     width: fit-content;

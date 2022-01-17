@@ -160,7 +160,7 @@ const Header: React.FC = () => {
   return (
     <header id="overview" className={styles.header}>
       <h1 className={styles.header__title}>
-        Open-source model registry and deployment tool for Machine Learning
+        Open-source model registry and deployment tool for Machine Learning
         <span className={styles.header__titleUnderscore}>_</span>
       </h1>
       <div className={styles.main}>
