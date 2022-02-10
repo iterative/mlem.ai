@@ -8,14 +8,14 @@ import * as styles from './index.module.css'
 
 const socialLinks: Array<ISocialIconProps> = [
   {
-    icon: 'discord',
-    href: 'https://dvc.org/chat',
-    label: 'Go to DVC Discord'
-  },
-  {
     icon: 'youtube',
     href: 'https://www.youtube.com/channel/UC37rp97Go-xIX3aNFVHhXfQ',
     label: 'Go to DVCorg Youtube'
+  },
+  {
+    icon: 'discord',
+    href: 'https://dvc.org/chat',
+    label: 'Go to DVC Discord'
   }
 ]
 
