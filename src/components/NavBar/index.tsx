@@ -8,24 +8,14 @@ import * as styles from './index.module.css'
 
 const socialLinks: Array<ISocialIconProps> = [
   {
-    icon: 'linkedin',
-    href: 'https://www.linkedin.com/company/iterative-ai',
-    label: 'Go to Iterative LinkedIn'
-  },
-  {
-    icon: 'twitter',
-    href: 'https://twitter.com/DVCorg',
-    label: 'Go to @DVCorg Twitter'
+    icon: 'discord',
+    href: 'https://dvc.org/chat',
+    label: 'Go to DVC Discord'
   },
   {
     icon: 'youtube',
     href: 'https://www.youtube.com/channel/UC37rp97Go-xIX3aNFVHhXfQ',
     label: 'Go to DVCorg Youtube'
-  },
-  {
-    icon: 'discord',
-    href: 'https://dvc.org/chat',
-    label: 'Go to DVC Discord'
   }
 ]
 
@@ -47,6 +37,12 @@ const NavBar: React.FC = () => {
           href="https://iterative.ai/"
         >
           by <span>iterative.ai</span>
+        </SmartLink>
+        <SmartLink
+          href="https://learn.iterative.ai/"
+          className={styles.nav__link}
+        >
+          Course
         </SmartLink>
         <OtherToolsPopup navItemClassName={styles.nav__link} />
         <Button className={styles.nav__button} icon="github" disabled>
