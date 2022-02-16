@@ -99,6 +99,14 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-remove-serviceworker',
+    {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn: process.env.SENTRY_DSN,
+        denyUrls: [/extensions\//i, /^chrome:\/\//i],
+        release: process.env.SOURCE_VERSION
+      }
+    }
   ]
 }

@@ -26,6 +26,9 @@ body,
   margin: 0 auto;
   position: relative;
   padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   @media (--md-scr) {
     padding: 0 32px;
