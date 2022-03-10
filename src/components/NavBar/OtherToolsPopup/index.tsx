@@ -9,6 +9,7 @@ import { ReactComponent as DownSVG } from '../../../images/icons/down.svg'
 import SmartLink from '../../SmartLink'
 import * as styles from './index.module.css'
 import usePopup from '../../../utils/hooks/usePopup'
+import onSelectKey from '../../../utils/onSelectKey'
 
 interface IOtherToolsPopupProps {
   navItemClassName: string
@@ -59,7 +60,11 @@ const OtherToolsPopup: React.FC<IOtherToolsPopupProps> = ({
       onMouseEnter={otherToolsPopup.open}
       onMouseLeave={otherToolsPopup.close}
     >
-      <button onPointerUp={otherToolsPopup.toggle} className={navItemClassName}>
+      <button
+        onPointerUp={otherToolsPopup.toggle}
+        onKeyUp={onSelectKey(otherToolsPopup.toggle)}
+        className={navItemClassName}
+      >
         Other Tools{' '}
         <DownSVG
           className={cn(otherToolsPopup.isOpen && styles.flip)}
