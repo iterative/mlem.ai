@@ -1,7 +1,10 @@
 # Extending
 
-# List Mlem Objects
 
 # Entrypoints
 
-# Extension loading
+# Extension dynamic loading
+
+# implementing MLEMAbc 
+
+# subclassing MlemConfig

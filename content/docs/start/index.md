@@ -55,16 +55,17 @@ MLEM's features can be grouped into functional components. We'll explore them on
 by one in the next few pages:
 
 - [**Saving models and datasets**](/doc/start/saving-loading) (try
-	this next) is the base layer of MLEM for datasets and machine
-	learning models.
+    this next) is the base layer of MLEM for datasets and machine
+    learning models.
 
 - [**Working with remote repos**](/doc/start/remote-repos) shows how to use
-	MLEM from outside of the project and how to import objects
-	from remote MLEM project. This can help to download a specific version of an
-	ML model to a deployment server or import a model to another project.
+    MLEM from outside of the project and how to import objects
+    from remote MLEM project. This can help to download a specific version of an
+    ML model to a deployment server or import a model to another project.
 
-- [**Packaging models**](/doc/start/packaging) describe how models can be built into python packages, docker images, etc
+- [**Versioning MLEM objects with DVC**](/doc/start/working-with-dvc) is needed 
+   if your files are too big for git or you are already use DVC.
 
-- [**Deploying models**](/doc/start/deployment) can
-	be attached to pipelines. These let you capture, navigate, and evaluate ML
-	projects without leaving Git. Think "Git for machine learning".
+- [**Packaging models**](/doc/start/packaging) describes how models can be built into python packages, docker images, etc
+
+- [**Deploying models**](/doc/start/deployment) shows how you can deploy your model with MLEM.

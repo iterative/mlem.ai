@@ -1,6 +1,13 @@
 # MLEM Basic concepts
 
-# TODO
+describe what mlem object is 
 
-## Mlem Meta types
+## Mlem object types
 
+with artifacts: model, dataset
+
+api: load_meta
+cli: create
+.dump, .update etc
+
+Location?

@@ -3,6 +3,6 @@
 ## MLEM init
 .mlem dir, config
 
-# .mlem file structure
+# .mlem file contents
 
 # external / internal objects
