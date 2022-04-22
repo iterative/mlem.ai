@@ -7,39 +7,16 @@ module.exports = {
       ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
       : 'https://mlem.ai',
     twitterUsername: '@DVCorg',
-    titleTemplate: '%s | MLEM'
+    titleTemplate: '%s | MLEM',
+    keywords: ['mlem']
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        allExtensions: true
-      }
-    },
-    'gatsby-plugin-eslint',
-    'gatsby-plugin-postcss',
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-svgr',
-      options: {
-        ref: true,
-        svgoConfig: {
-          plugins: [{ removeViewBox: false }]
-        }
-      }
-    },
-    'gatsby-plugin-image',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/images`
-      }
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-preact',
+    'gatsby-plugin-eslint',
+    {
+      resolve: '@dvcorg/gatsby-theme-iterative',
+      options: {}
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -99,13 +76,11 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-remove-serviceworker',
     {
-      resolve: '@sentry/gatsby',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        dsn: process.env.SENTRY_DSN,
-        denyUrls: [/extensions\//i, /^chrome:\/\//i],
-        release: process.env.SOURCE_VERSION
+        name: 'images',
+        path: `${__dirname}/src/images`
       }
     }
   ]
