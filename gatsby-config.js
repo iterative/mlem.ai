@@ -11,7 +11,6 @@ module.exports = {
     keywords: ['mlem']
   },
   plugins: [
-    'gatsby-plugin-preact',
     'gatsby-plugin-eslint',
     {
       resolve: '@dvcorg/gatsby-theme-iterative',
