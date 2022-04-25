@@ -1,5 +1,12 @@
+.header {
+  width: 100%;
+  background-color: white;
+}
+
 .nav {
   width: 100%;
+  max-width: 1152px;
+  margin: auto;
   display: flex;
   align-items: center;
   padding: 8px 0;
