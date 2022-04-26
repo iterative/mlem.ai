@@ -14,7 +14,11 @@ module.exports = {
     'gatsby-plugin-eslint',
     {
       resolve: '@dvcorg/gatsby-theme-iterative',
-      options: {}
+      options: {
+        customMediaConfig: {
+          importFrom: './src/styles/media.css'
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',
