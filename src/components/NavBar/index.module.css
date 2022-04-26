@@ -9,14 +9,10 @@
   max-width: 1152px;
   display: flex;
   align-items: center;
-  padding: 8px 80px;
+  padding: 8px 16px;
 
   @media (--md-scr) {
-    padding: 0;
-  }
-
-  @media (--md-scr) {
-    padding: 4px 0;
+    padding: 8px 80px;
   }
 
   &__brandLogo {
