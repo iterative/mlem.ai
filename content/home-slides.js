@@ -5,17 +5,16 @@ const terminalSlideData = [
   >>> model = train()
   <loadingbar></loadingbar>
   >>> import mlem
-  >>> mlem.api.save(model, "./data/model", dvc=True)
+  >>> mlem.api.save(model, "./data/model")
   >>>
 
-$ tree data/model
-  data/model
-  ├── artifacts
-  │   └── data.pkl
-  └── mlem.yaml
+$ tree data
+  data/
+  ├── model
+  └── model.mlem
 `,
   `
-    $ mlem ls --repo https://github.com/iterative/model-registry
+    $ mlem ls https://github.com/iterative/model-registry
   Models:
    - pet-face-recognition
    - mlem-blep-classifier
