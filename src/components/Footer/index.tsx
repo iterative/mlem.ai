@@ -67,31 +67,33 @@ const footerListData: Array<IFooterListProps> = [
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <ul className={styles.footer__links}>
-        {footerListData.map((props, i) => (
-          <FooterList key={i} {...props} />
-        ))}
-      </ul>
-      <div className={styles.footer__company}>
-        <SmartLink
-          className={styles.footer__companyBrand}
-          href="https://iterative.ai/"
-        >
-          <IterativeSvg width={40} height={40} />
-          <StaticImage
-            className={styles.footer__companyBrandName}
-            placeholder="blurred"
-            quality={90}
-            width={136}
-            alt="iterative"
-            src="../../images/iterative-text.png"
-          />
-          <span className="sr-only">Go to iterative site</span>
-        </SmartLink>
-        <p className={styles.footer__companyText}>
-          <span className="block xs:inline">Open platform</span>{' '}
-          to operationalize AI
-        </p>
+      <div className={styles.footer__container}>
+        <ul className={styles.footer__links}>
+          {footerListData.map((props, i) => (
+            <FooterList key={i} {...props} />
+          ))}
+        </ul>
+        <div className={styles.footer__company}>
+          <SmartLink
+            className={styles.footer__companyBrand}
+            href="https://iterative.ai/"
+          >
+            <IterativeSvg width={40} height={40} />
+            <StaticImage
+              className={styles.footer__companyBrandName}
+              placeholder="blurred"
+              quality={90}
+              width={136}
+              alt="iterative"
+              src="../../images/iterative-text.png"
+            />
+            <span className="sr-only">Go to iterative site</span>
+          </SmartLink>
+          <p className={styles.footer__companyText}>
+            <span className="block xs:inline">Open platform</span>{' '}
+            to operationalize AI
+          </p>
+        </div>
       </div>
     </footer>
   )

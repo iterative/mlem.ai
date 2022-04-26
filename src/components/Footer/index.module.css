@@ -3,6 +3,12 @@
   margin: 24px 0 0 0;
   @apply border-gray-200 border-solid border-t-2;
 
+  &__container {
+    margin: auto;
+    max-width: 1152px;
+    padding: 0 80px;
+  }
+
   &__links {
     display: flex;
     flex-direction: column;
