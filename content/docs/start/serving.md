@@ -1,13 +1,16 @@
 # Serving models
 
 <details>
+
 ### 🧳 Requirements
-    
+
 `pip install mlem[fastapi]`
-    
+
 </details>
 
-For online serving, you can create a server from your model. We will try out FastAPI server, for all available server implementations take a look [here](https://todo).
+For online serving, you can create a server from your model. We will try out
+FastAPI server, for all available server implementations take a look
+[here](https://todo).
 
 To start up FastAPI server simply run:
 
@@ -26,11 +29,15 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-Servers automatically create endpoints from model methods with payload schemas corresponding to serialized dataset types. 
+Servers automatically create endpoints from model methods with payload schemas
+corresponding to serialized dataset types.
 
-You can open Swagger UI (OpenAPI) at [http://localhost:8080/docs](http://localhost:8080/docs) to check out OpenAPI spec and query examples. 
+You can open Swagger UI (OpenAPI) at
+[http://localhost:8080/docs](http://localhost:8080/docs) to check out OpenAPI
+spec and query examples.
 
 <details>
+
 ### Or query the model directly with curl
 
 ```bash
@@ -53,9 +60,15 @@ $ curl -X 'POST' \
     }'
 [[0.92,0.04,0.04]]
 ```
+
 </details>
 
-Each server implementation also has its client implementation counterpart, in the case of FastAPI server it’s HTTPClient. Clients can be used to make requests to servers. Since a server also exposes the model interface description, the client will know what methods are available and handle serialization and deserialization for you. You can use them both with CLI and programmatically via Python API.
+Each server implementation also has its client implementation counterpart, in
+the case of FastAPI server it’s HTTPClient. Clients can be used to make requests
+to servers. Since a server also exposes the model interface description, the
+client will know what methods are available and handle serialization and
+deserialization for you. You can use them both with CLI and programmatically via
+Python API.
 
 ```bash
 $ mlem apply-remote http test_x.csv -c host="0.0.0.0" -c port=8080 --json

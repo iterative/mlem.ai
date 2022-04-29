@@ -1,13 +1,18 @@
 # Saving and loading models and datasets
 
 <details>
+
 ### 🧳 Requirements
+
 `pip install mlem scikit-learn pandas`
+
 </details>
 
-After initializing MLEM we have an empty repository (except for the config file), but soon we'll save something with MLEM to fill it up.
+After initializing MLEM we have an empty repository (except for the config
+file), but soon we'll save something with MLEM to fill it up.
 
-The first step is to get some data. For this tutorial, we’ll just generate it. Let's take a look at this python script:
+The first step is to get some data. For this tutorial, we’ll just generate it.
+Let's take a look at this python script:
 
 ```python
 # prepare.py
@@ -27,9 +32,11 @@ if __name__ == "__main__":
     main()
 ```
 
-Here we load the well-known iris dataset with sklearn, and then save parts of it with MLEM. For now, we just save them locally and push them to Git later. 
+Here we load the well-known iris dataset with sklearn, and then save parts of it
+with MLEM. For now, we just save them locally and push them to Git later.
 
-By default, MLEM saves your files to `.mlem/` directory, but that could be changed, see [project structure](https://todo) for reference.
+By default, MLEM saves your files to `.mlem/` directory, but that could be
+changed, see [project structure](https://todo) for reference.
 
 Let's execute this script and see what was produced:
 
@@ -45,7 +52,8 @@ $ tree .mlem/dataset/
 └── train.csv.mlem
 ```
 
-What we see here is that every DataFrame was saved along with some metadata about it. Let's see one example:
+What we see here is that every DataFrame was saved along with some metadata
+about it. Let's see one example:
 
 ```bash
 $ head -5 .mlem/dataset/train.csv
@@ -57,8 +65,9 @@ $ head -5 .mlem/dataset/train.csv
 ```
 
 <details>
+
 ### `$ cat .mlem/dataset/train.csv.mlem`
-    
+
 ```yaml
 artifacts:
   data:
@@ -69,35 +78,41 @@ object_type: dataset
 reader:
   dataset_type:
     columns:
-    - ''
-    - sepal length (cm)
-    - sepal width (cm)
-    - petal length (cm)
-    - petal width (cm)
-    - target
+      - ''
+      - sepal length (cm)
+      - sepal width (cm)
+      - petal length (cm)
+      - petal width (cm)
+      - target
     dtypes:
-    - int64
-    - float64
-    - float64
-    - float64
-    - float64
-    - int64
+      - int64
+      - float64
+      - float64
+      - float64
+      - float64
+      - int64
     index_cols:
-    - ''
+      - ''
     type: dataframe
   format: csv
   type: pandas
 requirements:
-- module: pandas
-  version: 1.4.2
+  - module: pandas
+    version: 1.4.2
 ```
+
 </details>
 
-We can see here what was saved: dataset schema and requirements on the libraries which were used to save the dataset. That doesn't mean you can't read that `train` any other way, but if you would use MLEM to load it, it would know that it needs pandas to do that for you.
+We can see here what was saved: dataset schema and requirements on the libraries
+which were used to save the dataset. That doesn't mean you can't read that
+`train` any other way, but if you would use MLEM to load it, it would know that
+it needs pandas to do that for you.
 
-⛳ [Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
+⛳
+[Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
 
-The next step is even more interesting, as we are getting closer to saving actual ML models. Let's see the next python script we have:
+The next step is even more interesting, as we are getting closer to saving
+actual ML models. Let's see the next python script we have:
 
 ```python
 # train.py
@@ -125,9 +140,16 @@ if __name__ == "__main__":
     main()
 ```
 
-Here we load the previously saved dataset with `load(input)`, where `input = "train.csv"`. The dataset is loaded as `pandas.DataFrame` it was before saving.
+Here we load the previously saved dataset with `load(input)`, where
+`input = "train.csv"`. The dataset is loaded as `pandas.DataFrame` it was before
+saving.
 
-Also, note that we didn't specify earlier whether the saved dataset was `pandas.DataFrame`, `numpy.array` or `tensorflow.Tensor`. MLEM is getting that for you. And though this is not very hard to guess, this handy magic extends to ML models. You don't specify whether the model you save is a classifier from Sklearn, a NN build in PyTorch, or even just a python function. MLEM will figure this out on its own 👋
+Also, note that we didn't specify earlier whether the saved dataset was
+`pandas.DataFrame`, `numpy.array` or `tensorflow.Tensor`. MLEM is getting that
+for you. And though this is not very hard to guess, this handy magic extends to
+ML models. You don't specify whether the model you save is a classifier from
+Sklearn, a NN build in PyTorch, or even just a python function. MLEM will figure
+this out on its own 👋
 
 Now let's run this script and see how we save the model.
 
@@ -139,11 +161,13 @@ $ tree .mlem/model/
 └── rf.mlem
 ```
 
-Again, we see familiar files: `rf` containing the model binary and `.mlem` file containing metadata. Let's take a look at it:
+Again, we see familiar files: `rf` containing the model binary and `.mlem` file
+containing metadata. Let's take a look at it:
 
 <details>
+
 ### `$ cat .mlem/model/rf.mlem`
-    
+
 ```yaml
 artifacts:
   data:
@@ -154,129 +178,134 @@ model_type:
   methods:
     predict:
       args:
-      - name: data
-        type_:
-          columns:
-          - ''
-          - sepal length (cm)
-          - sepal width (cm)
-          - petal length (cm)
-          - petal width (cm)
-          dtypes:
-          - int64
-          - float64
-          - float64
-          - float64
-          - float64
-          index_cols:
-          - ''
-          type: dataframe
+        - name: data
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
       name: predict
       returns:
         dtype: int64
         shape:
-        - null
+          - null
         type: ndarray
     predict_proba:
       args:
-      - name: data
-        type_:
-          columns:
-          - ''
-          - sepal length (cm)
-          - sepal width (cm)
-          - petal length (cm)
-          - petal width (cm)
-          dtypes:
-          - int64
-          - float64
-          - float64
-          - float64
-          - float64
-          index_cols:
-          - ''
-          type: dataframe
+        - name: data
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
       name: predict_proba
       returns:
         dtype: float64
         shape:
-        - null
-        - 3
+          - null
+          - 3
         type: ndarray
     sklearn_predict:
       args:
-      - name: X
-        type_:
-          columns:
-          - ''
-          - sepal length (cm)
-          - sepal width (cm)
-          - petal length (cm)
-          - petal width (cm)
-          dtypes:
-          - int64
-          - float64
-          - float64
-          - float64
-          - float64
-          index_cols:
-          - ''
-          type: dataframe
+        - name: X
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
       name: predict
       returns:
         dtype: int64
         shape:
-        - null
+          - null
         type: ndarray
     sklearn_predict_proba:
       args:
-      - name: X
-        type_:
-          columns:
-          - ''
-          - sepal length (cm)
-          - sepal width (cm)
-          - petal length (cm)
-          - petal width (cm)
-          dtypes:
-          - int64
-          - float64
-          - float64
-          - float64
-          - float64
-          index_cols:
-          - ''
-          type: dataframe
+        - name: X
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
       name: predict_proba
       returns:
         dtype: float64
         shape:
-        - null
-        - 3
+          - null
+          - 3
         type: ndarray
   type: sklearn
 object_type: model
 requirements:
-- module: sklearn
-  version: 1.0.2
-- module: pandas
-  version: 1.4.1
-- module: numpy
-  version: 1.22.3
+  - module: sklearn
+    version: 1.0.2
+  - module: pandas
+    version: 1.4.1
+  - module: numpy
+    version: 1.22.3
 ```
+
 </details>
 
 It's a bit long, but we can see all that we need to use the model later:
 
 1. Model methods: `predict` and `predict_proba`
 2. Input data schema that describes the DataFrame with the iris dataset
-3. Requirements: `sklearn`, `numpy`, `pandas` with particular versions we need to run this model.
+3. Requirements: `sklearn`, `numpy`, `pandas` with particular versions we need
+   to run this model.
 
-Note, that we don't need to specify these requirements: MLEM investigates the object you're saving (even if it's a complex one) and finds out all requirements needed.
+Note, that we don't need to specify these requirements: MLEM investigates the
+object you're saving (even if it's a complex one) and finds out all requirements
+needed.
 
 ⛳ [Train](https://github.com/iterative/example-mlem-get-started/tree/3-train)
 
-Finally, we can use MLEM to apply the model against a dataset and calculate some metrics:
+Finally, we can use MLEM to apply the model against a dataset and calculate some
+metrics:
 
 ```python
 # evaluate.py
@@ -298,7 +327,10 @@ if __name__ == "__main__":
     main()
 ```
 
-Here we use the `apply` function that handles loading of the model and dataset for us. You could also just load your model and call `predict_proba` manually. Also, if you don’t have your dataset saved as a MLEM object, you can [import](https://todo) it as MLEM object on-the-fly.
+Here we use the `apply` function that handles loading of the model and dataset
+for us. You could also just load your model and call `predict_proba` manually.
+Also, if you don’t have your dataset saved as a MLEM object, you can
+[import](https://todo) it as MLEM object on-the-fly.
 
 Now, let's run the script
 
@@ -310,14 +342,15 @@ $ cat metrics.json
 }
 ```
 
-⛳ [Evaluation](https://github.com/iterative/example-mlem-get-started/tree/4-eval)
+⛳
+[Evaluation](https://github.com/iterative/example-mlem-get-started/tree/4-eval)
 
 TLDR: we've just
 
-1. generated data, 
-2. saved data with MLEM, 
-3. loaded it in another Python script, 
-4. trained model, 
+1. generated data,
+2. saved data with MLEM,
+3. loaded it in another Python script,
+4. trained model,
 5. saved model with MLEM,
 6. used model to get predictions,
 7. evaluated model quality.

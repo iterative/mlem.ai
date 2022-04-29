@@ -1,43 +1,58 @@
 # Deploying models
 
 <details>
+
 ### 🧳 Requirements
 
 `pip install mlem[fastapi,docker]`
 
 You also need docker up and running on your machine.
-  </details>  
+
+</details>
 
 You can also create deployments in cloud from your models.
 
 <aside>
-💡 This functionality is experimental and is subject to change. We’ll add more target platforms in upcoming releases.
+
+💡 This functionality is experimental and is subject to change. We’ll add more
+target platforms in upcoming releases.
 
 </aside>
 
-Deployment often uses packing and serving functionalities, for example, Heroku deployment that we will try in this section actually uses docker image packing with FastAPI serving underneath.
+Deployment often uses packing and serving functionalities, for example, Heroku
+deployment that we will try in this section actually uses docker image packing
+with FastAPI serving underneath.
 
-To deploy something somewhere, we need to define this “somewhere” first, or in MLEM terms, create a `target environment` object. It will contain all the information needed to access it. In the case of Heroku, all we need is an API key.
+To deploy something somewhere, we need to define this “somewhere” first, or in
+MLEM terms, create a `target environment` object. It will contain all the
+information needed to access it. In the case of Heroku, all we need is an API
+key.
 
 <details>
+
 ### ⚙️How to obtain Heroku API key
-    1. Go to [heroku.com](http://heroku.com) 
+
+    1. Go to [heroku.com](http://heroku.com)
     2. Sign up or login with existing account
     3. Go to account settings by clicking your profile picture on the main page
     4. Find API Key section and reveal existing one or re-generate it
+
 </details>
 
-To create new target env, run 
+To create new target env, run
 
 ```bash
 $ mlem create env heroku staging -c api_key=<you api key>
 💾 Saving env to .mlem/env/staging.mlem
 ```
 
-> Note that api_key argument is actually optional and MLEM will use `HEROKU_API_KEY` env variable if you don’t provide it via target env config.
-> 
+> Note that api_key argument is actually optional and MLEM will use
+> `HEROKU_API_KEY` env variable if you don’t provide it via target env config.
 
-Now, as we defined our target env, we can deploy our model there. Deployments are also MLEM objects, which means that they need to have their definition. To create one for Heroku, we once again will use `create` command to configure our deployment.
+Now, as we defined our target env, we can deploy our model there. Deployments
+are also MLEM objects, which means that they need to have their definition. To
+create one for Heroku, we once again will use `create` command to configure our
+deployment.
 
 ```bash
 $ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -c model=model -c env=staging
@@ -49,7 +64,8 @@ $ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -
 
 </aside>
 
-⛳ [Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/7-deploy-meta)
+⛳
+[Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/7-deploy-meta)
 
 Now we can actually run the deployment process (this can take a while):
 
@@ -81,9 +97,11 @@ $ mlem deploy create myservice
 
 </aside>
 
-⛳ [Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
+⛳
+[Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
 
-You can go to and see the same OpenAPI documentation as in **Serving** section. You can also try to do some requests:
+You can go to and see the same OpenAPI documentation as in **Serving** section.
+You can also try to do some requests:
 
 ```python
 from mlem.api import load
@@ -103,7 +121,9 @@ client = service.state.get_client()
 res = client.predict(load("test_x.csv"))
 ```
 
-There is also remote counterpart of `apply` command. It will send requests to your service instead of loading model into memory. There are two possible ways to do this via cli: via using service address or deploy meta
+There is also remote counterpart of `apply` command. It will send requests to
+your service instead of loading model into memory. There are two possible ways
+to do this via cli: via using service address or deploy meta
 
 ```bash
 $ mlem apply-remote http test_x.csv -c host=http://my-mlem-service.herokuapp.com -c port=80 --json
@@ -126,7 +146,7 @@ $ mlem deploy status myservice
 running
 ```
 
-And stop your service with 
+And stop your service with
 
 ```bash
 $ mlem deploy teardown myservice
