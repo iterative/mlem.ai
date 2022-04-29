@@ -1,4 +1,4 @@
-# Saving and loading models and datasets with MLEM
+# Saving and loading models and datasets
 
 <details>
 ### 🧳 Requirements

@@ -1,12 +1,13 @@
 [
   {
     "slug": "",
-    "label": "Home",
+    "label": "MLEM Documentation",
     "source": "index.md",
     "icon": "house"
   },
   {
     "slug": "install",
+    "label": "Installation",
     "source": "install/index.md"
   },
   {
@@ -19,7 +20,7 @@
         "label": "Saving and loading models and datasets",
         "source": "start/saving-loading.md"
       },
-            {
+      {
         "slug": "remote-repos",
         "label": "Working with repositories and remote objects",
         "source": "start/remote-repos.md"
@@ -34,12 +35,12 @@
         "label": "Packaging models",
         "source": "start/packaging.md"
       },
-            {
+      {
         "slug": "serving",
         "label": "Serving models",
         "source": "start/serving.md"
       },
-            {
+      {
         "slug": "deploying",
         "label": "Deploying models",
         "source": "start/deploying.md"
@@ -48,412 +49,193 @@
   },
   {
     "slug": "use-cases",
+    "label": "Use cases",
     "source": "use-cases/index.md"
   },
   {
     "slug": "user-guide",
+    "label": "User Guide",
     "source": "user-guide/index.md",
     "children": [
       {
-        "label": "What is DVC?",
-        "slug": "what-is-dvc"
+        "slug": "what-is-mlem",
+        "label": "What is MLEM",
+        "source": "user-guide/what-is-mlem.md"
+      },
+      {
+        "slug": "basic-concepts",
+        "label": "MLEM Basic concepts",
+        "source": "user-guide/basic-concepts.md"
       },
       {
         "slug": "project-structure",
-        "source": "project-structure/index.md",
-        "children": [
-          {
-            "label": "Pipelines Files (dvc.yaml)",
-            "slug": "pipelines-files"
-          },
-          {
-            "label": ".dvc Files",
-            "slug": "dvc-files"
-          },
-          {
-            "label": ".dvcignore Files",
-            "slug": "dvcignore-files",
-            "tutorials": {
-              "katacoda": "https://katacoda.com/dvc/courses/examples/dvcignore"
-            }
-          },
-          {
-            "label": "Internal Files",
-            "slug": "internal-files"
-          }
-        ]
+        "label": "Project structure",
+        "source": "user-guide/project-structure.md"
       },
       {
-        "label": "Experiment Management",
-        "slug": "experiment-management",
-        "source": "experiment-management/index.md",
-        "children": [
-          "experiments-overview",
-          "running-experiments",
-          "comparing-experiments",
-          "sharing-experiments",
-          "persisting-experiments",
-          "cleaning-experiments",
-          "checkpoints"
-        ]
+        "slug": "configuration",
+        "label": "MLEM Configuration",
+        "source": "user-guide/configuration.md"
       },
       {
-        "slug": "how-to",
-        "source": false,
-        "children": [
-          "stop-tracking-data",
-          "update-tracked-data",
-          "add-deps-or-outs-to-a-stage",
-          "merge-conflicts",
-          "share-a-dvc-cache",
-          "share-many-experiments"
-        ]
-      },
-      "setup-google-drive-remote",
-      "large-dataset-optimization",
-      "external-dependencies",
-      {
-        "label": "Managing External Data",
-        "slug": "managing-external-data"
-      },
-
-      "running-dvc-on-windows",
-      "troubleshooting",
-      "related-technologies",
-      {
-        "label": "Anonymized Usage Analytics",
-        "slug": "analytics"
+        "slug": "importing",
+        "label": "",
+        "source": "user-guide/importing.md"
       },
       {
-        "label": "Glossary",
-        "slug": "glossary",
-        "source": "basic-concepts"
+        "slug": "linking",
+        "label": "MLEM links",
+        "source": "user-guide/linking.md"
+      },
+      {
+        "slug": "mlem-abcs",
+        "label": "MLEM Interfaces",
+        "source": "user-guide/mlem-abcs.md"
+      },
+      {
+        "slug": "extending",
+        "label": "Extending",
+        "source": "user-guide/extending.md"
+      },
+      {
+        "slug": "internals",
+        "label": "dynamic ext loading",
+        "source": "user-guide/internals.md"
       }
     ]
   },
   {
-    "slug": "command-reference",
-    "source": "command-reference/index.md",
+    "slug": "cli-reference",
+    "label": "",
+    "source": "cli-reference/index.md",
     "children": [
       {
-        "label": "add",
-        "slug": "add"
-      },
-      {
-        "label": "cache",
-        "slug": "cache",
-        "source": "cache/index.md",
-        "children": [
-          {
-            "label": "cache dir",
-            "slug": "dir"
-          }
-        ]
-      },
-      {
-        "label": "check-ignore",
-        "slug": "check-ignore"
-      },
-      {
-        "label": "checkout",
-        "slug": "checkout"
-      },
-      {
-        "label": "commit",
-        "slug": "commit"
-      },
-      {
-        "label": "config",
-        "slug": "config"
-      },
-      {
-        "label": "dag",
-        "slug": "dag"
-      },
-      {
-        "label": "destroy",
-        "slug": "destroy"
-      },
-      {
-        "label": "diff",
-        "slug": "diff"
-      },
-      {
-        "label": "doctor",
-        "slug": "doctor"
-      },
-      {
-        "label": "exp",
-        "slug": "exp",
-        "source": "exp/index.md",
-        "children": [
-          {
-            "label": "exp init",
-            "slug": "init"
-          },
-          {
-            "label": "exp run",
-            "slug": "run"
-          },
-          {
-            "label": "exp show",
-            "slug": "show"
-          },
-          {
-            "label": "exp diff",
-            "slug": "diff"
-          },
-          {
-            "label": "exp list",
-            "slug": "list"
-          },
-          {
-            "label": "exp apply",
-            "slug": "apply"
-          },
-          {
-            "label": "exp branch",
-            "slug": "branch"
-          },
-          {
-            "label": "exp remove",
-            "slug": "remove"
-          },
-          {
-            "label": "exp gc",
-            "slug": "gc"
-          },
-          {
-            "label": "exp push",
-            "slug": "push"
-          },
-          {
-            "label": "exp pull",
-            "slug": "pull"
-          }
-        ]
-      },
-      {
-        "label": "fetch",
-        "slug": "fetch",
-        "tutorials": {
-          "katacoda": "https://katacoda.com/dvc/courses/examples/fetch"
-        }
-      },
-      {
-        "label": "freeze",
-        "slug": "freeze"
-      },
-      {
-        "label": "gc",
-        "slug": "gc"
-      },
-      {
-        "label": "get-url",
-        "slug": "get-url"
-      },
-      {
-        "label": "get",
-        "slug": "get"
-      },
-      {
-        "label": "import-url",
-        "slug": "import-url"
-      },
-      {
-        "label": "import",
-        "slug": "import"
-      },
-      {
+        "slug": "init",
         "label": "init",
-        "slug": "init"
+        "source": "cli-reference/init.md"
       },
       {
-        "label": "install",
-        "slug": "install"
-      },
-      {
+        "slug": "list",
         "label": "list",
-        "slug": "list"
+        "source": "cli-reference/list.md"
       },
       {
-        "label": "metrics",
-        "slug": "metrics",
-        "source": "metrics/index.md",
-        "children": [
-          {
-            "label": "metrics show",
-            "slug": "show"
-          },
-          {
-            "label": "metrics diff",
-            "slug": "diff"
-          }
-        ]
+        "slug": "pprint",
+        "label": "pprint",
+        "source": "cli-reference/pprint.md"
       },
       {
-        "label": "move",
-        "slug": "move"
+        "slug": "create",
+        "label": "create",
+        "source": "cli-reference/create.md"
       },
       {
-        "label": "params",
-        "slug": "params",
-        "source": "params/index.md",
-        "children": [
-          {
-            "label": "params diff",
-            "slug": "diff"
-          }
-        ]
+        "slug": "serve",
+        "label": "serve",
+        "source": "cli-reference/serve.md"
       },
       {
-        "label": "plots",
-        "slug": "plots",
-        "source": "plots/index.md",
-        "children": [
-          {
-            "label": "plots show",
-            "slug": "show"
-          },
-          {
-            "label": "plots diff",
-            "slug": "diff"
-          },
-          {
-            "label": "plots modify",
-            "slug": "modify"
-          }
-        ]
+        "slug": "types",
+        "label": "types",
+        "source": "cli-reference/types.md"
       },
       {
-        "label": "pull",
-        "slug": "pull"
+        "slug": "link",
+        "label": "link",
+        "source": "cli-reference/link.md"
       },
       {
-        "label": "push",
-        "slug": "push"
+        "slug": "clone",
+        "label": "clone",
+        "source": "cli-reference/clone.md"
       },
       {
-        "label": "remote",
-        "slug": "remote",
-        "source": "remote/index.md",
-        "children": [
-          {
-            "label": "remote add",
-            "slug": "add"
-          },
-          {
-            "label": "remote modify",
-            "slug": "modify"
-          },
-          {
-            "label": "remote default",
-            "slug": "default"
-          },
-          {
-            "label": "remote list",
-            "slug": "list"
-          },
-          {
-            "label": "remote remove",
-            "slug": "remove"
-          },
-          {
-            "label": "remote rename",
-            "slug": "rename"
-          }
-        ]
+        "slug": "import",
+        "label": "import",
+        "source": "cli-reference/import.md"
       },
       {
-        "label": "remove",
-        "slug": "remove"
+        "slug": "pack",
+        "label": "pack",
+        "source": "cli-reference/pack.md"
       },
       {
-        "label": "repro",
-        "slug": "repro"
-      },
-      {
-        "label": "root",
-        "slug": "root"
-      },
-      {
-        "label": "run",
-        "slug": "run"
-      },
-      {
-        "label": "stage",
-        "slug": "stage",
-        "source": "stage/index.md",
-        "children": [
-          {
-            "label": "stage add",
-            "slug": "add"
-          },
-          {
-            "label": "stage list",
-            "slug": "list"
-          }
-        ]
-      },
-      {
-        "label": "status",
-        "slug": "status"
-      },
-      {
-        "label": "unfreeze",
-        "slug": "unfreeze"
-      },
-      {
-        "label": "unprotect",
-        "slug": "unprotect"
-      },
-      {
-        "label": "update",
-        "slug": "update"
-      },
-      {
-        "label": "version",
-        "slug": "version"
+        "slug": "apply",
+        "label": "apply",
+        "source": "cli-reference/apply.md"
       }
     ]
   },
   {
     "slug": "api-reference",
-    "label": "Python API Reference",
+    "label": "",
     "source": "api-reference/index.md",
     "children": [
       {
-        "slug": "get_url",
-        "label": "get_url()"
+        "slug": "init",
+        "label": "init",
+        "source": "api-reference/init.md"
       },
       {
-        "slug": "open",
-        "label": "open()"
+        "slug": "save",
+        "label": "save",
+        "source": "api-reference/save.md"
       },
       {
-        "slug": "read",
-        "label": "read()"
+        "slug": "load",
+        "label": "load",
+        "source": "api-reference/load.md"
       },
       {
-        "slug": "make_checkpoint",
-        "label": "make_checkpoint()"
+        "slug": "load_meta",
+        "label": "load_meta",
+        "source": "api-reference/load_meta.md"
+      },
+      {
+        "slug": "ls",
+        "label": "ls",
+        "source": "api-reference/ls.md"
+      },
+      {
+        "slug": "import_object",
+        "label": "import_object",
+        "source": "api-reference/import_object.md"
+      },
+      {
+        "slug": "link",
+        "label": "link",
+        "source": "api-reference/link.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone",
+        "source": "api-reference/clone.md"
+      },
+      {
+        "slug": "apply",
+        "label": "apply",
+        "source": "api-reference/apply.md"
+      },
+      {
+        "slug": "pack",
+        "label": "pack",
+        "source": "api-reference/pack.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve",
+        "source": "api-reference/serve.md"
+      },
+      {
+        "slug": "deploy",
+        "label": "deploy",
+        "source": "api-reference/deploy.md"
       }
     ]
   },
   {
-    "label": "Contributing",
     "slug": "contributing",
-    "source": false,
-    "children": [
-      {
-        "label": "DVC Core Project",
-        "slug": "core"
-      }
-    ]
-  },
-  {
-    "label": "Changelog",
-    "url": "https://github.com/iterative/mlem/releases",
-    "type": "external"
+    "label": "Contributing to MLEM",
+    "source": "contributing/index.md"
   }
 ]
