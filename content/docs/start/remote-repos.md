@@ -12,7 +12,9 @@ MLEM works with DVC in more details.
 
 </details>
 
-Now it becomes more interesting. Since we've saved the data and the model in the
+## Listing objects
+
+Since we've saved the data and the model in the
 repository, let's list them:
 
 ```bash
@@ -28,8 +30,8 @@ Models:
 Note that we are actually listing models and data which is saved in the
 repository we're in.
 
-What if they are stored in a remote git repository and we don't want to clone
-it? We can do the same:
+But what if they are stored in a remote git repository, and we don't want to clone
+it? MLEM can also work with remote repositories:
 
 ```bash
 $ mlem ls https://github.com/iterative/example-mlem-get-started --type model
@@ -37,23 +39,22 @@ Models:
  - rf
 ```
 
-We also can load model from the repository directly:
+We also can use URL addresses to load models from remote repositories directly:
 
 ```python
 from mlem.api import load
-# one way
-model1 = load("https://github.com/iterative/example-mlem-get-started/rf")
-# or another
-model2 = load(
+
+model = load("https://github.com/iterative/example-mlem-get-started/rf")
+# or 
+model = load(
     "rf",
     repo="https://github.com/iterative/example-mlem-get-started",
     rev="main"
 )
-print(model1, model2)
 ```
 
 If we just want to download the model to a local disk to use it later, we can
-run
+run `clone` command
 
 ```bash
 $ mlem clone https://github.com/iterative/example-mlem-get-started/rf ml_model
@@ -65,25 +66,32 @@ The other way to do it is to run
 $ mlem clone rf --repo https://github.com/iterative/example-mlem-get-started --rev main ml_model
 ```
 
-- 💡 We used our example repo
-  [https://github.com/iterative/example-mlem-get-started](https://github.com/iterative/example-mlem-get-started)
-  in the commands below. You can commit and push your models to your own repo
-  and use it if you want
-  To push your models and datasets to the repo, add them to dit and commit
+<details>
+
+### 💡 Expand to use your own repo
+
+We use [example repo](https://github.com/iterative/example-mlem-get-started) in the commands, but you can create your own repo and use it if you want.
+
+  To push your models and datasets to the repo, add them to git and commit
   ```bash
   $ git add .mlem *.py
   $ git commit -am "committing mlem objects and code"
   $ git push
   ```
 
+</details>
+
+
+## Cloud remotes
+
 If you don’t have the need to version your models, but you want to store your
 objects in some remote location, you can use MLEM with any cloud/remote
-supported by fsspec, e.g. s3.
+supported by [fsspec](https://filesystem-spec.readthedocs.io/en/latest/api.html#built-in-implementations), e.g. s3.
 
-To do that, use paths with corresponding fs protocol and path like
+To do that, use paths with corresponding file system protocol and path like
 `s3://<bucket>/`
 
-```bash
+```dvc
 $ mlem init s3://example-mlem-get-started
 $ mlem clone rf s3://example-mlem-get-started/rf
 ⏳️ Loading meta from .mlem/model/rf.mlem
@@ -95,6 +103,7 @@ Now you can load this model via API or use it in CLI commands just like if it
 was local:
 
 ```python
+from mlem.api import load
 model = load("rf", repo="s3://example-mlem-get-started")
 ```
 

@@ -11,6 +11,9 @@
 After initializing MLEM we have an empty repository (except for the config
 file), but soon we'll save something with MLEM to fill it up.
 
+
+## Getting the data
+
 The first step is to get some data. For this tutorial, we’ll just generate it.
 Let's take a look at this python script:
 
@@ -35,8 +38,7 @@ if __name__ == "__main__":
 Here we load the well-known iris dataset with sklearn, and then save parts of it
 with MLEM. For now, we just save them locally and push them to Git later.
 
-By default, MLEM saves your files to `.mlem/` directory, but that could be
-changed, see [project structure](https://todo) for reference.
+> By default, MLEM saves your files to `.mlem/` directory, but that could be changed, see [project structure](/doc/user-guide/project-structure) for reference.
 
 Let's execute this script and see what was produced:
 
@@ -111,6 +113,9 @@ it needs pandas to do that for you.
 ⛳
 [Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
 
+
+## Training the model
+
 The next step is even more interesting, as we are getting closer to saving
 actual ML models. Let's see the next python script we have:
 
@@ -144,12 +149,7 @@ Here we load the previously saved dataset with `load(input)`, where
 `input = "train.csv"`. The dataset is loaded as `pandas.DataFrame` it was before
 saving.
 
-Also, note that we didn't specify earlier whether the saved dataset was
-`pandas.DataFrame`, `numpy.array` or `tensorflow.Tensor`. MLEM is getting that
-for you. And though this is not very hard to guess, this handy magic extends to
-ML models. You don't specify whether the model you save is a classifier from
-Sklearn, a NN build in PyTorch, or even just a python function. MLEM will figure
-this out on its own 👋
+> Note that we didn't specify whether the saved dataset was `pd.DataFrame`, `no.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic extends to ML models 👋
 
 Now let's run this script and see how we save the model.
 
@@ -298,12 +298,11 @@ It's a bit long, but we can see all that we need to use the model later:
 3. Requirements: `sklearn`, `numpy`, `pandas` with particular versions we need
    to run this model.
 
-Note, that we don't need to specify these requirements: MLEM investigates the
-object you're saving (even if it's a complex one) and finds out all requirements
-needed.
+> Note that we didn't specify requirements: MLEM investigates the object you're saving (even if it's a complex one) and finds out all requirements needed.
 
 ⛳ [Train](https://github.com/iterative/example-mlem-get-started/tree/3-train)
 
+## Evaluating the model
 Finally, we can use MLEM to apply the model against a dataset and calculate some
 metrics:
 
@@ -328,9 +327,9 @@ if __name__ == "__main__":
 ```
 
 Here we use the `apply` function that handles loading of the model and dataset
-for us. You could also just load your model and call `predict_proba` manually.
-Also, if you don’t have your dataset saved as a MLEM object, you can
-[import](https://todo) it as MLEM object on-the-fly.
+for us, but you could also just load your model and call `predict_proba` manually.
+
+> If you don’t have your dataset saved as a MLEM object, you can [import](/doc/user-guide/importing) it as MLEM object on-the-fly.
 
 Now, let's run the script
 

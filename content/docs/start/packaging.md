@@ -7,11 +7,14 @@ functionalities: packaging, serving, and deploying. We’ll start with packaging
 Packaging is a way to “bake” your model into something usable in production like
 a Docker image, or export your model into another format. For this tutorial we
 will create a pip-ready package from our model. You can see the full list of
-available packagers [here](https://todo).
+available packagers [here](/doc/user-guide/mlem-abcs#Packager).
+
+
+## Creating python package
 
 To create a `build/` directory with pip package run this command:
 
-```bash
+```dvc
 $ mlem pack rf pip -c target=build/ -c package_name=example_mlem_get_started
 ⏳️ Loading model from .mlem/model/rf.mlem
 💼 Written `example_mlem_get_started` package data to `build`
@@ -27,11 +30,14 @@ package.
 ### ⚙️ About packagers and arguments
 
 There are more types of packagers and each one has it’s own set of available
-arguments. They are listed [here](https://todo), but for quick reference you can
-run `mlem types packager` for list of packagers and `mlem types packager pip`
+arguments. They are listed [here](/doc/user-guide/mlem-abcs#Packager), 
+but for quick reference you can run `mlem types packager` for list 
+of packagers and `mlem types packager pip`
 for list of available arguments
 
 </details>
+
+## Exploring python package
 
 Let’s see what we’ve got
 
@@ -48,8 +54,12 @@ build/
 ```
 
 As you can see, the packager generated all the files necessary for a python
-package. This includes sources, requirements, [setup.py](http://setup.py), and
-the model itself. Now you can distribute and install it. The package code
+package. This includes sources, requirements, [setup.py](https://docs.python.org/3/distutils/setupscript.html), and
+the model itself. 
+
+## Using python package
+
+Now you can distribute and install the package. It's code
 declares all the same methods our model had, so you can try to use it like this:
 
 ```python
@@ -58,12 +68,17 @@ import example_mlem_get_started
 example_mlem_get_started.predict(df)
 ```
 
+<details>
+
+### Pre-configured packagers
+
 Alternatively, you can pre configure your packager in the form of yaml file
 either manually or via `mlem create` command which uses the same interface with
 multiple `-c` options like this:
 
 ```bash
-$ mlem create packager pip pip_config -c target=build/ -c package_name=example_mlem_get_started
+$ mlem create packager pip pip_config \
+  -c target=build/ -c package_name=example_mlem_get_started
 💾 Saving packager to .mlem/packager/pip_config.mlem
 $ cat .mlem/packager/pip_config.mlem
 object_type: packager
@@ -80,6 +95,8 @@ $ mlem pack rf -l pip_config
 ⏳️ Loading model from .mlem/model/rf.mlem
 💼 Written `example_mlem_get_started` package data to `build`
 ```
+
+</details>
 
 ⛳
 [Add packager config](https://github.com/iterative/example-mlem-get-started/tree/6-pack)
