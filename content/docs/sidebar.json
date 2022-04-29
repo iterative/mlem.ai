@@ -4,5 +4,238 @@
     "label": "MLEM Documentation",
     "source": "index.md",
     "icon": "house"
+  },
+  {
+    "slug": "install",
+    "label": "Installation",
+    "source": "install/index.md"
+  },
+  {
+    "slug": "start",
+    "label": "Get Started",
+    "source": "start/index.md",
+    "children": [
+      {
+        "slug": "saving-loading",
+        "label": "Saving and loading models and datasets",
+        "source": "start/saving-loading.md"
+      },
+      {
+        "slug": "remote-repos",
+        "label": "Working with repositories and remote objects",
+        "source": "start/remote-repos.md"
+      },
+      {
+        "slug": "working-with-dvc",
+        "label": "Versioning MLEM objects with DVC",
+        "source": "start/working-with-dvc.md"
+      },
+      {
+        "slug": "packaging",
+        "label": "Packaging models",
+        "source": "start/packaging.md"
+      },
+      {
+        "slug": "serving",
+        "label": "Serving models",
+        "source": "start/serving.md"
+      },
+      {
+        "slug": "deploying",
+        "label": "Deploying models",
+        "source": "start/deploying.md"
+      }
+    ]
+  },
+  {
+    "slug": "use-cases",
+    "label": "Use cases",
+    "source": "use-cases/index.md"
+  },
+  {
+    "slug": "user-guide",
+    "label": "User Guide",
+    "source": "user-guide/index.md",
+    "children": [
+      {
+        "slug": "what-is-mlem",
+        "label": "What is MLEM",
+        "source": "user-guide/what-is-mlem.md"
+      },
+      {
+        "slug": "basic-concepts",
+        "label": "MLEM Basic concepts",
+        "source": "user-guide/basic-concepts.md"
+      },
+      {
+        "slug": "project-structure",
+        "label": "Project structure",
+        "source": "user-guide/project-structure.md"
+      },
+      {
+        "slug": "configuration",
+        "label": "MLEM Configuration",
+        "source": "user-guide/configuration.md"
+      },
+      {
+        "slug": "importing",
+        "label": "",
+        "source": "user-guide/importing.md"
+      },
+      {
+        "slug": "linking",
+        "label": "MLEM links",
+        "source": "user-guide/linking.md"
+      },
+      {
+        "slug": "mlem-abcs",
+        "label": "MLEM Interfaces",
+        "source": "user-guide/mlem-abcs.md"
+      },
+      {
+        "slug": "extending",
+        "label": "Extending",
+        "source": "user-guide/extending.md"
+      },
+      {
+        "slug": "internals",
+        "label": "dynamic ext loading",
+        "source": "user-guide/internals.md"
+      }
+    ]
+  },
+  {
+    "slug": "cli-reference",
+    "label": "",
+    "source": "cli-reference/index.md",
+    "children": [
+      {
+        "slug": "init",
+        "label": "init",
+        "source": "cli-reference/init.md"
+      },
+      {
+        "slug": "list",
+        "label": "list",
+        "source": "cli-reference/list.md"
+      },
+      {
+        "slug": "pprint",
+        "label": "pprint",
+        "source": "cli-reference/pprint.md"
+      },
+      {
+        "slug": "create",
+        "label": "create",
+        "source": "cli-reference/create.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve",
+        "source": "cli-reference/serve.md"
+      },
+      {
+        "slug": "types",
+        "label": "types",
+        "source": "cli-reference/types.md"
+      },
+      {
+        "slug": "link",
+        "label": "link",
+        "source": "cli-reference/link.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone",
+        "source": "cli-reference/clone.md"
+      },
+      {
+        "slug": "import",
+        "label": "import",
+        "source": "cli-reference/import.md"
+      },
+      {
+        "slug": "pack",
+        "label": "pack",
+        "source": "cli-reference/pack.md"
+      },
+      {
+        "slug": "apply",
+        "label": "apply",
+        "source": "cli-reference/apply.md"
+      }
+    ]
+  },
+  {
+    "slug": "api-reference",
+    "label": "",
+    "source": "api-reference/index.md",
+    "children": [
+      {
+        "slug": "init",
+        "label": "init",
+        "source": "api-reference/init.md"
+      },
+      {
+        "slug": "save",
+        "label": "save",
+        "source": "api-reference/save.md"
+      },
+      {
+        "slug": "load",
+        "label": "load",
+        "source": "api-reference/load.md"
+      },
+      {
+        "slug": "load_meta",
+        "label": "load_meta",
+        "source": "api-reference/load_meta.md"
+      },
+      {
+        "slug": "ls",
+        "label": "ls",
+        "source": "api-reference/ls.md"
+      },
+      {
+        "slug": "import_object",
+        "label": "import_object",
+        "source": "api-reference/import_object.md"
+      },
+      {
+        "slug": "link",
+        "label": "link",
+        "source": "api-reference/link.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone",
+        "source": "api-reference/clone.md"
+      },
+      {
+        "slug": "apply",
+        "label": "apply",
+        "source": "api-reference/apply.md"
+      },
+      {
+        "slug": "pack",
+        "label": "pack",
+        "source": "api-reference/pack.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve",
+        "source": "api-reference/serve.md"
+      },
+      {
+        "slug": "deploy",
+        "label": "deploy",
+        "source": "api-reference/deploy.md"
+      }
+    ]
+  },
+  {
+    "slug": "contributing",
+    "label": "Contributing to MLEM",
+    "source": "contributing/index.md"
   }
 ]
