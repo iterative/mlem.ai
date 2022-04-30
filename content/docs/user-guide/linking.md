@@ -1,4 +1,4 @@
-# MLEM links
+# Links
 
 describe what mlem link is and how to use/create them
 

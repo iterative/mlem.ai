@@ -64,7 +64,7 @@
       },
       {
         "slug": "basic-concepts",
-        "label": "MLEM Basic concepts",
+        "label": "Basic concepts",
         "source": "user-guide/basic-concepts.md"
       },
       {
@@ -74,33 +74,28 @@
       },
       {
         "slug": "configuration",
-        "label": "MLEM Configuration",
+        "label": "Configuration",
         "source": "user-guide/configuration.md"
       },
       {
         "slug": "importing",
-        "label": "",
+        "label": "Importing existing files",
         "source": "user-guide/importing.md"
       },
       {
         "slug": "linking",
-        "label": "MLEM links",
+        "label": "Links",
         "source": "user-guide/linking.md"
       },
       {
         "slug": "mlem-abcs",
-        "label": "MLEM Interfaces",
+        "label": "Interfaces",
         "source": "user-guide/mlem-abcs.md"
       },
       {
         "slug": "extending",
         "label": "Extending",
         "source": "user-guide/extending.md"
-      },
-      {
-        "slug": "internals",
-        "label": "dynamic ext loading",
-        "source": "user-guide/internals.md"
       }
     ]
   },
@@ -190,6 +185,11 @@
         "slug": "load_meta",
         "label": "load_meta",
         "source": "api-reference/load_meta.md"
+      },
+      {
+        "slug": "mlem-object",
+        "label": "MlemObject API",
+        "source": "api-reference/mlem-object.md"
       },
       {
         "slug": "ls",
