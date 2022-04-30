@@ -50,7 +50,29 @@
   {
     "slug": "use-cases",
     "label": "Use cases",
-    "source": "use-cases/index.md"
+    "source": "use-cases/index.md",
+    "children": [
+      {
+        "slug": "mlem-mr",
+        "label": "Pure Mlem Model Registry",
+        "source": "use-cases/mlem-mr.md"
+      },
+      {
+        "slug": "dvc-pipeline",
+        "label": "Using MLEM in DVC Pipeline",
+        "source": "use-cases/dvc-pipeline.md"
+      },
+      {
+        "slug": "cicd",
+        "label": "Using in CI/CD",
+        "source": "use-cases/cicd.md"
+      },
+      {
+        "slug": "dvc-gto-studio",
+        "label": "Ultimate Iterative Experience",
+        "source": "use-cases/dvc-gto-studio.md"
+      }
+    ]
   },
   {
     "slug": "user-guide",
@@ -89,7 +111,7 @@
       },
       {
         "slug": "mlem-abcs",
-        "label": "Interfaces",
+        "label": "MLEM ABCs",
         "source": "user-guide/mlem-abcs.md"
       },
       {

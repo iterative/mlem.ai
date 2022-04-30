@@ -8,14 +8,14 @@ Also, [`mlem config`](/doc/cli-reference/config) allows you to manipulate config
 ## Options
 
 
-- `log_level`: str = "INFO"
-- `debug`: bool = False
-- `no_analytics`: bool = False
-- `default_storage`: Dict = {}
-- `default_external`: bool = False
-- `emojis`: bool = True
-- `additional_extensions`: str
-- `autoload_exts`: bool = True
+- `log_level` - logging level to use. Default `INFO` 
+- `debug` - wheter to run MLEM in debug mode. Sets `log_level` to `DEBUG`. Default `False`
+- `no_analytics` - wheter to stop collecting usage telemetry. Default `False`
+- `default_storage` - where to store saved artifacts by default. Should be serialized `Storage` instance. Default is `LocalStorage`, which means save artifacts locally.
+- `default_external` - wheter to save objects as [external](/docs/user-guide/project-structure#External) by default. Default is `False`
+- `emojis` - whether to show 💅🦉🤩🇪🇲🅾️🇯ℹ️🇸🤩🦉💅 in CLI output. Default ✅
+- `additional_extensions` - comma-separated list of extension modules to force-load on MLEM import.
+- `autoload_exts` - turn on [dynamic extension loading](/doc/user-guide/extending#extension-dynamic-loading). Default `True`
 
 ## Extension config
 

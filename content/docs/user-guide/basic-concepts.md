@@ -21,6 +21,8 @@ See also [MLEM Object API](/doc/api-reference/mlem-object)
 
 </details>
 
+## Common fields
+
 Each MLEM Object has `object_type` field which determines the type of the object. Different types have different additional fields and methods, but all MLEM Objects have the following fields:
 
 - `description` - for storing user-provided description
