@@ -1,4 +1,5 @@
 # load
+
 Load python object saved by MLEM
 
     Args:
@@ -10,4 +11,3 @@ Load python object saved by MLEM
 
     Returns:
         Any: Python object saved by MLEM
-    

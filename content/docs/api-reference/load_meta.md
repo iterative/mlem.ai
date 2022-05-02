@@ -1,4 +1,5 @@
 # load_meta
+
 Load MlemMeta object
 
     Args:
@@ -12,4 +13,3 @@ Load MlemMeta object
         force_type: type of meta to be loaded. Defaults to MlemMeta (any mlem meta)
     Returns:
         MlemMeta: Saved MlemMeta object
-    

@@ -7,8 +7,7 @@ functionalities: packaging, serving, and deploying. We’ll start with packaging
 Packaging is a way to “bake” your model into something usable in production like
 a Docker image, or export your model into another format. For this tutorial we
 will create a pip-ready package from our model. You can see the full list of
-available packagers [here](/doc/user-guide/mlem-abcs#Packager).
-
+available packagers [here](/doc/user-guide/mlem-abcs#packager).
 
 ## Creating python package
 
@@ -30,10 +29,9 @@ package.
 ### ⚙️ About packagers and arguments
 
 There are more types of packagers and each one has it’s own set of available
-arguments. They are listed [here](/doc/user-guide/mlem-abcs#Packager), 
-but for quick reference you can run `mlem types packager` for list 
-of packagers and `mlem types packager pip`
-for list of available arguments
+arguments. They are listed [here](/doc/user-guide/mlem-abcs#packager), but for
+quick reference you can run `mlem types packager` for list of packagers and
+`mlem types packager pip` for list of available arguments
 
 </details>
 
@@ -54,13 +52,14 @@ build/
 ```
 
 As you can see, the packager generated all the files necessary for a python
-package. This includes sources, requirements, [setup.py](https://docs.python.org/3/distutils/setupscript.html), and
-the model itself. 
+package. This includes sources, requirements,
+[setup.py](https://docs.python.org/3/distutils/setupscript.html), and the model
+itself.
 
 ## Using python package
 
-Now you can distribute and install the package. It's code
-declares all the same methods our model had, so you can try to use it like this:
+Now you can distribute and install the package. It's code declares all the same
+methods our model had, so you can try to use it like this:
 
 ```python
 import example_mlem_get_started

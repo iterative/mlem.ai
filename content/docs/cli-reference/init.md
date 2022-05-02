@@ -1,5 +1,6 @@
 # init
-Usage:  [options] [path]
+
+Usage: [options] [path]
 
 Initialize MLEM repo
 
@@ -9,7 +10,7 @@ Arguments:
 
 Options:
 
-	--help  Show this message and exit.
+    --help  Show this message and exit.
 
 Examples:
 

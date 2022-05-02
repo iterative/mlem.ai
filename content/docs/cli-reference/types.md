@@ -1,8 +1,9 @@
 # types
-Usage:  [options] [subtype] [meta_type]
+
+Usage: [options] [subtype] [meta_type]
 
 List MLEM types implementations available in current env. If subtype is not
-	provided, list ABCs
+provided, list ABCs
 
 Arguments:
 
@@ -11,7 +12,7 @@ Arguments:
 
 Options:
 
-	--help  Show this message and exit.
+    --help  Show this message and exit.
 
 Examples:
 

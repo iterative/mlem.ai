@@ -1,5 +1,6 @@
 # create
-Usage:  [options] object_type [subtype] path
+
+Usage: [options] object_type [subtype] path
 
 Creates new mlem object metafile from conf args and config files
 

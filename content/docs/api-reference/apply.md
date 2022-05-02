@@ -1,4 +1,5 @@
 # apply
+
 Apply provided model against provided data
 
     Args:
@@ -15,5 +16,3 @@ Apply provided model against provided data
     Returns:
         If `output=None`, returns results for given data.
             Otherwise returns None.
-
-    

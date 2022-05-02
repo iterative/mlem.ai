@@ -14,8 +14,7 @@ MLEM works with DVC in more details.
 
 ## Listing objects
 
-Since we've saved the data and the model in the
-repository, let's list them:
+Since we've saved the data and the model in the repository, let's list them:
 
 ```bash
 $ mlem ls
@@ -30,8 +29,8 @@ Models:
 Note that we are actually listing models and data which is saved in the
 repository we're in.
 
-But what if they are stored in a remote git repository, and we don't want to clone
-it? MLEM can also work with remote repositories:
+But what if they are stored in a remote git repository, and we don't want to
+clone it? MLEM can also work with remote repositories:
 
 ```bash
 $ mlem ls https://github.com/iterative/example-mlem-get-started --type model
@@ -45,7 +44,7 @@ We also can use URL addresses to load models from remote repositories directly:
 from mlem.api import load
 
 model = load("https://github.com/iterative/example-mlem-get-started/rf")
-# or 
+# or
 model = load(
     "rf",
     repo="https://github.com/iterative/example-mlem-get-started",
@@ -70,23 +69,26 @@ $ mlem clone rf --repo https://github.com/iterative/example-mlem-get-started --r
 
 ### 💡 Expand to use your own repo
 
-We use [example repo](https://github.com/iterative/example-mlem-get-started) in the commands, but you can create your own repo and use it if you want.
+We use [example repo](https://github.com/iterative/example-mlem-get-started) in
+the commands, but you can create your own repo and use it if you want.
 
-  To push your models and datasets to the repo, add them to git and commit
-  ```bash
-  $ git add .mlem *.py
-  $ git commit -am "committing mlem objects and code"
-  $ git push
-  ```
+To push your models and datasets to the repo, add them to git and commit
+
+```bash
+$ git add .mlem *.py
+$ git commit -am "committing mlem objects and code"
+$ git push
+```
 
 </details>
-
 
 ## Cloud remotes
 
 If you don’t have the need to version your models, but you want to store your
 objects in some remote location, you can use MLEM with any cloud/remote
-supported by [fsspec](https://filesystem-spec.readthedocs.io/en/latest/api.html#built-in-implementations), e.g. s3.
+supported by
+[fsspec](https://filesystem-spec.readthedocs.io/en/latest/api.html#built-in-implementations),
+e.g. s3.
 
 To do that, use paths with corresponding file system protocol and path like
 `s3://<bucket>/`

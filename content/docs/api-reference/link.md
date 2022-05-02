@@ -1,4 +1,5 @@
 # link
+
 Creates MlemLink for an `source` object and dumps it if `target` is provided
 
     Args:
@@ -15,4 +16,3 @@ Creates MlemLink for an `source` object and dumps it if `target` is provided
 
     Returns:
         MlemLink: Link object to the `source`.
-    

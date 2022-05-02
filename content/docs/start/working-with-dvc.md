@@ -12,16 +12,14 @@ Often it’s a bad idea to store binary files in git, especially big ones. To
 solve this MLEM can utilize DVC capabilities to connect external cloud storage
 for model and dataset versioning.
 
-
 > You can learn more about DVC [here](https://dvc.org/doc).
 
-
-We will reorganize our example repo to use DVC. 
+We will reorganize our example repo to use DVC.
 
 ## Setting up repo
 
-First, let’s initialize DVC and
-add a remote (we will use azure, but you can use whatever is available to you):
+First, let’s initialize DVC and add a remote (we will use azure, but you can use
+whatever is available to you):
 
 ```dvc
 $ dvc init
@@ -45,6 +43,7 @@ $ git add .dvcignore
 ```
 
 ## Saving objects
+
 Next, let’s remove artifacts from git and re-save them, so MLEM can use new
 storage for them. You don't need to change a single line of code
 

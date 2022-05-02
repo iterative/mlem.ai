@@ -10,7 +10,7 @@
 
 For online serving, you can create a server from your model. We will try out
 FastAPI server, for all available server implementations take a look
-[here](/doc/user-guide/mlem-abcs#Server).
+[here](/doc/user-guide/mlem-abcs#server).
 
 ## Running server
 

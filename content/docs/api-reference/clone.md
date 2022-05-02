@@ -1,6 +1,7 @@
 # clone
-Clones MLEM object from `path` to `out`
-        and returns Python representation for the created object
+
+Clones MLEM object from `path` to `out` and returns Python representation for
+the created object
 
     Args:
         path (str): Path to the object. Could be local path or path inside a git repo.
@@ -18,4 +19,3 @@ Clones MLEM object from `path` to `out`
 
     Returns:
         MlemMeta: Copy of initial object saved to `out`
-    

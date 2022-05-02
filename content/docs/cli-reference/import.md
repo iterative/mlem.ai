@@ -1,26 +1,27 @@
 # import
-Usage:  [options] uri target
+
+Usage: [options] uri target
 
 Create MLEM model or dataset metadata from file/dir
 
 Arguments:
 
-	URI     File to import  [required]
-	TARGET  Path whare to save MLEM object  [required]
+    URI     File to import  [required]
+    TARGET  Path whare to save MLEM object  [required]
 
 Options:
 
-	-r, --repo TEXT           Path to MLEM repo  [default: (none)]
-	--rev TEXT                Repo revision to use  [default: (none)]
-	--target-repo, --tr TEXT  Repo to save target to  [default: (none)]
-	--copy / --no-copy        Whether to create a copy of file in target
+    -r, --repo TEXT           Path to MLEM repo  [default: (none)]
+    --rev TEXT                Repo revision to use  [default: (none)]
+    --target-repo, --tr TEXT  Repo to save target to  [default: (none)]
+    --copy / --no-copy        Whether to create a copy of file in target
                             location or just link existing file  [default:
                             copy]
-	--type TEXT               Specify how to read file  [default: (auto infer)]
-	--link / --no-link        Whether to create link for output in .mlem
+    --type TEXT               Specify how to read file  [default: (auto infer)]
+    --link / --no-link        Whether to create link for output in .mlem
                             directory
-	-e, --external            Save result not in .mlem, but directly in repo
-	--help                    Show this message and exit.
+    -e, --external            Save result not in .mlem, but directly in repo
+    --help                    Show this message and exit.
 
 Examples:
 

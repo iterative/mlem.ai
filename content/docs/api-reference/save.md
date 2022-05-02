@@ -1,4 +1,5 @@
 # save
+
 Saves given object to a given path
 
     Args:
@@ -20,4 +21,3 @@ Saves given object to a given path
 
     Returns:
         None
-    
