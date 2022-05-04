@@ -1,6 +1,11 @@
 .header {
   width: 100%;
   background-color: white;
+  position: sticky;
+  top: 0;
+  height:var(--layout-header-height);
+  z-index: 2;
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 15%);
 }
 
 .nav {
