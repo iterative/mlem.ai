@@ -4,12 +4,10 @@ import Features from './Features'
 
 const Home: React.FC = () => {
   return (
-    <>
-      <main>
-        <Header />
-        <Features />
-      </main>
-    </>
+    <main>
+      <Header />
+      <Features />
+    </main>
   )
 }
 
