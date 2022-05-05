@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'mlem.ai',
@@ -15,6 +16,14 @@ module.exports = {
     {
       resolve: '@dvcorg/gatsby-theme-iterative',
       options: {
+        cssBase: path.join(
+          'src',
+          '@dvcorg',
+          'gatsby-theme-iterative',
+          'components',
+          'Page',
+          'base.css'
+        ),
         customMediaConfig: {
           importFrom: './src/styles/media.css'
         }
