@@ -23,7 +23,7 @@ const NavBar: React.FC = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <SmartLink href="/">
+        <SmartLink href="/" className={styles.nav__logoLink}>
           <img
             alt="Go to home page"
             src={mlemLogo}
