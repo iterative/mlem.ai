@@ -118,6 +118,11 @@
         "slug": "extending",
         "label": "Extending",
         "source": "user-guide/extending.md"
+      },
+      {
+        "slug": "analytics",
+        "label": "Anonymized Usage Analytics",
+        "source": "user-guide/analytics.md"
       }
     ]
   },
