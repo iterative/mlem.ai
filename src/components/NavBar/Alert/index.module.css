@@ -1,0 +1,20 @@
+.alert {
+  height: 35px;
+  line-height: 35px;
+  font-size: 18px;
+  text-align: center;
+  width: 100vw;
+  background-color: #dee;
+  transition: 0.5s all;
+  overflow: hidden;
+
+  &.collapsed {
+    height: 0;
+    transform: translateY(-100%);
+  }
+
+  a {
+    text-decoration: underline;
+    @apply hover:opacity-75;
+  }
+}

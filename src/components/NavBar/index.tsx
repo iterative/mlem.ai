@@ -4,6 +4,7 @@ import Button from '../Button'
 import SocialIcon, { ISocialIconProps } from './SocialIcon'
 import mlemLogo from '../../images/mlem-logo.png'
 import OtherToolsPopup from './OtherToolsPopup'
+import Alert from './Alert'
 import * as styles from './index.module.css'
 
 const socialLinks: Array<ISocialIconProps> = [
@@ -21,7 +22,8 @@ const socialLinks: Array<ISocialIconProps> = [
 
 const NavBar: React.FC = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
+      <Alert collapsed={false} />
       <nav className={styles.nav}>
         <SmartLink href="/">
           <img
@@ -56,7 +58,7 @@ const NavBar: React.FC = () => {
           ))}
         </ul>
       </nav>
-    </>
+    </div>
   )
 }
 
