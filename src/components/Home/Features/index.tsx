@@ -3,17 +3,16 @@ import * as styles from './index.module.css'
 
 const featuresData: Array<JSX.Element> = [
   <>
-    <strong>Unambiguous link</strong> between data, code, model and metrics
+    Automatic <strong>ML framework</strong> detection. How about saving a Python
+    function that averages few models?
   </>,
   <>
-    <strong>Standardised model packaging</strong> with environment and input
-    data specification
+    Pinning down the exact list of <strong>Python requirements</strong>. Nothing
+    extra.
   </>,
   <>
-    Model lifecycle management using <strong>GitOps approach</strong>
-  </>,
-  <>
-    <strong>Cloud-agnostic</strong> model deployment
+    Generating <strong>schema for input and output data</strong> for you. No
+    manual work.
   </>
 ]
 

@@ -5,41 +5,40 @@ const terminalSlideData = [
   >>> model = train()
   <loadingbar></loadingbar>
   >>> import mlem
-  >>> mlem.api.save(model, "./data/model")
+  >>> mlem.api.save(model, "dog-bark-translator")
   >>>
 
-$ tree data
-  data/
-  ├── model
-  └── model.mlem
+$ tree .mlem/model
+  .mlem/model/
+  ├── dog-bark-translator
+  └── dog-bark-translator.mlem
 `,
   `
-    $ mlem ls https://github.com/iterative/model-registry
-  Models:
-   - pet-face-recognition
-   - mlem-blep-classifier
-   - dog-bark-translator
-
-  $ mlem describe dog-bark-translator --repo https://github.com/iterative/model-registry --rev main
-   - 📖 Translates dog barks in emoji.
-   - 📦 Pytorch 1.10.0, Torchaudio 0.10.0, Emoji 1.6.1
-   - 🎯 Accuracy 87.3%
+    $ cat .mlem/model/dog-bark-translator.mlem
+    type: sklearn
+    methods:
+     - predict:
+    input: path to .wav file
+    output: text sequence
+    requirements:
+    - pytorch: 1.10.0
+    - torchaudio: 0.10.0
+    - emoji: 1.6.1
     `,
   `
-    $ mlem deploy dog-bark-translator heroku --repo https://github.com/iterative/model-registry
-  📩 Downloading model...<delay></delay>
+    $ mlem deploy dog-bark-translator heroku
   🏗️ Building dog-bark-translator:latest docker image...<delay></delay>
   📤 Pushing docker image to heroku, using envs/heroku.yaml specification...<delay></delay>
   🚀 Starting application...<delay></delay>
   💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
     `,
   `
+      $ mlem apply dog-bark-translator ./short-dog-phrase.wav
+      🐶🚀🎉
+
       $ python
       >>> import mlem
-      >>> model = mlem.api.load(
-      ...    "dog-bark-translator",
-      ...    repo="https://github.com/iterative/model-registry"
-      ... )
+      >>> model = mlem.api.load("dog-bark-translator")
       >>> model.predict("./short-dog-phrase.wav")
       🐶🚀🎉
       >>>
