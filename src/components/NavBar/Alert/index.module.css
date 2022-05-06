@@ -3,14 +3,21 @@
   line-height: 35px;
   font-size: 18px;
   text-align: center;
-  width: 100vw;
   background-color: #dee;
-  transition: 0.5s all;
   overflow: hidden;
+  width: 100vw;
+  transition: 0.5s all, 0s width;
 
   &.collapsed {
     height: 0;
     transform: translateY(-100%);
+  }
+
+  p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 16px;
   }
 
   a {
