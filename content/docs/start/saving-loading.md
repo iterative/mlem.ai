@@ -146,8 +146,8 @@ if __name__ == "__main__":
 ```
 
 Here we load the previously saved dataset with `load(input)`, where
-`input = "train.csv"`. The dataset is loaded as `pandas.DataFrame` it was before
-saving.
+`input = "train.csv"`. The dataset is loaded as `pandas.DataFrame`, the same
+type it was before saving.
 
 > Note that we didn't specify whether the saved dataset was `pd.DataFrame`,
 > `no.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
@@ -163,7 +163,7 @@ $ tree .mlem/model/
 └── rf.mlem
 ```
 
-Again, we see familiar files: `rf` containing the model binary and `.mlem` file
+We see familiar files: `rf` containing the model binary and `.mlem` file
 containing metadata. Let's take a look at it:
 
 <details>
@@ -331,8 +331,7 @@ if __name__ == "__main__":
 ```
 
 Here we use the `apply` function that handles loading of the model and dataset
-for us, but you could also just load your model and call `predict_proba`
-manually.
+for us. You could also just load your model and call `predict_proba` manually.
 
 > If you don’t have your dataset saved as a MLEM object, you can
 > [import](/doc/user-guide/importing) it as MLEM object on-the-fly.

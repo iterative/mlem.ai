@@ -15,9 +15,9 @@ You can also create deployments in cloud from your models.
 > ⚠️ This functionality is experimental and is subject to change. We’ll add more
 > target platforms in upcoming releases.
 
-Deployment often uses packing and serving functionalities, for example, Heroku
-deployment that we will try in this section actually uses docker image packing
-with FastAPI serving underneath.
+Deployment often uses packaging and serving functionalities. For example, Heroku
+deployment that is showcased in this section actually uses docker image
+packaging with FastAPI serving.
 
 ## Defining target environment
 
@@ -37,7 +37,7 @@ key.
 
 </details>
 
-To create new target env, run
+To create a new target env, run
 
 ```mlem
 $ mlem create env heroku staging -c api_key=<you api key>
@@ -100,8 +100,8 @@ $ mlem deploy create myservice
 ## Making requests
 
 You can go [here](http://example-mlem-get-started.herokuapp.com) and see the
-same OpenAPI documentation as in **Serving** section. You can also try to do
-some requests:
+same OpenAPI documentation. For details on it, refer to the **Serving** section.
+You can also try to do some requests:
 
 ```python
 from mlem.api import load
@@ -111,7 +111,7 @@ client = HTTPClient(host="http://example-mlem-get-started.herokuapp.com", port=8
 res = client.predict(load("test_x.csv"))
 ```
 
-Also, you can create client using deployment meta object:
+Also, you can create a client using deployment meta object:
 
 ```python
 from mlem.api import load
@@ -121,9 +121,9 @@ client = service.state.get_client()
 res = client.predict(load("test_x.csv"))
 ```
 
-There is also remote counterpart of `apply` command. It will send requests to
-your service instead of loading model into memory. There are two possible ways
-to do this via cli: via using service address or deploy meta
+There is also the remote counterpart of `apply` command. It will send requests
+to your service instead of loading model into memory. There are two options to
+achieve this in CLI: using the service address or the deploy meta.
 
 ```bash
 $ mlem apply-remote http test_x.csv -c host=http://my-mlem-service.herokuapp.com -c port=80 --json

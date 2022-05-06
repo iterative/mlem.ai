@@ -90,7 +90,7 @@ supported by
 [fsspec](https://filesystem-spec.readthedocs.io/en/latest/api.html#built-in-implementations),
 e.g. s3.
 
-To do that, use paths with corresponding file system protocol and path like
+To do so, use paths with corresponding file system protocol and path like
 `s3://<bucket>/`
 
 ```dvc

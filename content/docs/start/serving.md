@@ -9,7 +9,7 @@
 </details>
 
 For online serving, you can create a server from your model. We will try out
-FastAPI server, for all available server implementations take a look
+FastAPI server. All available server implementations are listed
 [here](/doc/user-guide/mlem-abcs#server).
 
 ## Running server

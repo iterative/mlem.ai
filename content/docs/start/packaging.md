@@ -21,8 +21,7 @@ $ mlem pack rf pip -c target=build/ -c package_name=example_mlem_get_started
 
 In this command, we specified that we want to build `rf` model with `pip`
 packager and then provided two arguments, `target` is the directory where the
-packager will write all the files and `package_name` that is the name of our
-package.
+packager will write all the files and `package_name` is the name of our package.
 
 <details>
 
