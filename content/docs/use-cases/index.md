@@ -18,9 +18,13 @@ to serve, scale and maintain in production.
 ## Basic uses of MLEM
 
 If you train Machine Learning models and you want to
-- save machine learning models along with all metainformation that is required to run them;
-- pack your models into ready-to-use format like Python packages or Docker Images;
-- deploy your models, easily switching between different providers when you need to;
+
+- save machine learning models along with all metainformation that is required
+  to run them;
+- pack your models into ready-to-use format like Python packages or Docker
+  Images;
+- deploy your models, easily switching between different providers when you need
+  to;
 - adopt engineering tools and best practices in data science projects;
 
 MLEM is for you!
