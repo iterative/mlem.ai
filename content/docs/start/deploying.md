@@ -1,14 +1,5 @@
 # Deploying models
 
-<details>
-
-### 🧳 Requirements
-
-`pip install mlem[fastapi,docker]`
-
-You also need docker up and running on your machine.
-
-</details>
 
 You can also create deployments in cloud from your models.
 
@@ -55,15 +46,23 @@ create one for Heroku, we once again will use `create` command to configure our
 deployment.
 
 ```bash
-$ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -c model=model -c env=staging
+$ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -c model=rf -c env=staging
 💾 Saving deployment to .mlem/deployment/service_name.mlem
 ```
 
 > 💡 We use `example-mlem-get-started` for app_name, but you should change it to
 > something unique.
 
-⛳
-[Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/7-deploy-meta)
+<details>
+
+### ⛳ [Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta)
+
+```bash
+$ git add .mlem/env/staging.mlem .mlem/deployment/myservice.mlem
+$ git commit -m "Add env and deploy meta"
+$ git diff 5-deploy-meta
+```
+</details>
 
 Now we can actually run the deployment process (this can take a while):
 
@@ -94,8 +93,17 @@ $ mlem deploy create myservice
 >
 > `$ mlem deploy create service_name -m model -t staging -c app_name=example-mlem-get-started`
 
-⛳
-[Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
+<details>
+
+### ⛳ [Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
+
+```bash
+$ git add .mlem/deployment/myservice.mlem
+$ git commit -m "Deploy service"
+$ git diff 8-deploy-service
+```
+
+</details>
 
 ## Making requests
 

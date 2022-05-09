@@ -1,12 +1,5 @@
 # Saving and loading models and datasets
 
-<details>
-
-### 🧳 Requirements
-
-`pip install mlem scikit-learn pandas`
-
-</details>
 
 After initializing MLEM we have an empty repository (except for the config
 file), but soon we'll save something with MLEM to fill it up.
@@ -111,8 +104,17 @@ which were used to save the dataset. That doesn't mean you can't read that
 `train` any other way, but if you would use MLEM to load it, it would know that
 it needs pandas to do that for you.
 
-⛳
-[Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
+<details>
+
+### ⛳ [Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
+
+```bash
+$ git add .mlem
+$ git commit -m "Added data"
+$ git diff 2-prepare
+```
+
+</details>
 
 ## Training the model
 
@@ -303,7 +305,17 @@ It's a bit long, but we can see all that we need to use the model later:
 > Note that we didn't specify requirements: MLEM investigates the object you're
 > saving (even if it's a complex one) and finds out all requirements needed.
 
-⛳ [Train](https://github.com/iterative/example-mlem-get-started/tree/3-train)
+<details>
+
+### ⛳[Train](https://github.com/iterative/example-mlem-get-started/tree/3-train)
+
+```bash
+$ git add .mlem/model
+$ git commit -m "Train the model"
+$ git diff 3-train
+```
+
+</details>
 
 ## Evaluating the model
 
@@ -346,8 +358,17 @@ $ cat metrics.json
 }
 ```
 
-⛳
-[Evaluation](https://github.com/iterative/example-mlem-get-started/tree/4-eval)
+<details>
+
+### ⛳ [Evaluation](https://github.com/iterative/example-mlem-get-started/tree/4-eval)
+
+```bash
+$ git add metrics.json
+$ git commit -m "Evaluate model"
+$ git diff 4-eval
+```
+
+</details>
 
 TLDR: we've just
 

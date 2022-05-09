@@ -1,12 +1,5 @@
 # Serving models
 
-<details>
-
-### 🧳 Requirements
-
-`pip install mlem[fastapi]`
-
-</details>
 
 For online serving, you can create a server from your model. We will try out
 FastAPI server. All available server implementations are listed

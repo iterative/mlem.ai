@@ -28,9 +28,9 @@ We also recommend
 you to create a virtual environment to be your playground for this Get Started and install all the requiremnets there:
 
 ```console
-$ python3 -m venv .env
-$ source .env/bin/activate
-$ pip install -r requirements
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 </details>
@@ -39,8 +39,29 @@ $ pip install -r requirements
 $ mlem init
 ```
 
-A few [internal files](/doc/user-guide/project-structure) are created that
-should be added to Git:
+A few [internal files](/doc/user-guide/project-structure) are created:
+
+
+```bash
+$ tree .mlem
+.mlem
+└─── config.yaml
+```
+
+
+Now you’re ready to MLEM!
+
+In our
+[example repository](https://github.com/iterative/example-mlem-get-started), we
+have tags for each step we take in different sections of this tutorial. You can
+just see what is going on there or reproduce everything yourself and compare. In
+our Get Started those tags will be marked with ⛳ emoji. 
+Click on it to see git commands if you are following along.
+Just like this git tag that concludes this section:
+
+<details>
+
+# ⛳ [MLEM init](https://github.com/iterative/example-mlem-get-started/tree/1-mlem-init)
 
 ```bash
 $ git add .mlem
@@ -51,17 +72,14 @@ Changes to be committed:
 $ git commit -m "Initialize MLEM"
 ```
 
-Now you’re ready to MLEM!
+To compare your results with the tag you can also run the following 
+```bash
+$ git diff 1-mlem-init
+``` 
 
-In our
-[example repository](https://github.com/iterative/example-mlem-get-started), we
-have tags for each step we take in different sections of this tutorial. You can
-just see what is going on there or reproduce everything yourself and compare. In
-our Get Started those tags will be marked with ⛳ emoji. Just like this git tag
-that concludes this section:
+The output will be empty if you have the same files staged/commited
 
-⛳
-[MLEM init](https://github.com/iterative/example-mlem-get-started/tree/1-mlem-init)
+</details>
 
 MLEM’s features can be grouped into functional components. We’ll explore them
 one by one in the next few pages:

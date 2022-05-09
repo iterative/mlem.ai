@@ -66,9 +66,7 @@ import example_mlem_get_started
 example_mlem_get_started.predict(df)
 ```
 
-<details>
-
-### Pre-configured packagers
+## Pre-configured packagers
 
 Alternatively, you can pre configure your packager in the form of yaml file
 either manually or via `mlem create` command which uses the same interface with
@@ -94,10 +92,28 @@ $ mlem pack rf -l pip_config
 💼 Written `example_mlem_get_started` package data to `build`
 ```
 
+
+<details>
+
+### ⛳ [Add packager config](https://github.com/iterative/example-mlem-get-started/tree/5-pack)
+
+```bash
+$ git add .mlem/packager/pip_config.mlem
+$ git commit -m "Add package config"
+$ git diff 5-pack
+```
 </details>
 
-⛳
-[Add packager config](https://github.com/iterative/example-mlem-get-started/tree/6-pack)
+
+Also, you can do all of this programmatically via Python API:
+
+```python
+from mlem.api import pack, load_meta
+
+pack("pip", "rf", target="build", package_name="example_mlem_get_started")
+pack(load_meta("pip_config"), "rf")
+```
+
 
 <details>
 
@@ -108,12 +124,3 @@ Like every other MLEM object, packagers can be read from remote repos. Try
 `mlem pack rf -l https://github.com/iterative/example-mlem-get-started/pip_config`
 
 </details>
-
-Also, you can do all of this programmatically via Python API:
-
-```python
-from mlem.api import pack, load_meta
-
-pack("pip", "rf", target="build", package_name="example_mlem_get_started")
-pack(load_meta("pip_config"), "rf")
-```
