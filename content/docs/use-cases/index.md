@@ -1,4 +1,4 @@
-# Use cases
+# Use Cases
 
 We provide short articles on common data science scenarios that MLEM can help
 with or improve. You can combine different scenarios for even more awesomeness.

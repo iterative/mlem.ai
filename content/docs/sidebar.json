@@ -21,16 +21,6 @@
         "source": "start/saving-loading.md"
       },
       {
-        "slug": "remote-repos",
-        "label": "Working with repositories and remote objects",
-        "source": "start/remote-repos.md"
-      },
-      {
-        "slug": "working-with-dvc",
-        "label": "Versioning MLEM objects with DVC",
-        "source": "start/working-with-dvc.md"
-      },
-      {
         "slug": "packaging",
         "label": "Packaging models",
         "source": "start/packaging.md"
@@ -52,6 +42,11 @@
     "label": "Use Cases",
     "source": "use-cases/index.md",
     "children": [
+      {
+        "slug": "dvc",
+        "label": "Versioning MLEM objects with DVC",
+        "source": "use-cases/dvc.md"
+      },
       {
         "slug": "mlem-mr",
         "label": "Pure Mlem Model Registry",
@@ -93,6 +88,11 @@
         "slug": "project-structure",
         "label": "Project structure",
         "source": "user-guide/project-structure.md"
+      },
+      {
+        "slug": "remote-repos",
+        "label": "Working with repositories and remote objects",
+        "source": "user-guide/remote-repos.md"
       },
       {
         "slug": "configuration",
