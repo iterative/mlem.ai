@@ -11,8 +11,8 @@ const featuresData: Array<JSX.Element> = [
     Switch between providers with a few lines of code
   </>,
   <>
-    <strong>Built ready for Git-centered ML models development</strong>. Check
-    out handy integrations with Iterative.ai ecosystem
+    <strong>Ready for Git-centered ML models development</strong>. Check out
+    handy integrations with Iterative.ai ecosystem
   </>
 ]
 
