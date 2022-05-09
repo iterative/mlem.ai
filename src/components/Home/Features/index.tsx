@@ -3,16 +3,16 @@ import * as styles from './index.module.css'
 
 const featuresData: Array<JSX.Element> = [
   <>
-    Automatic <strong>ML framework</strong> detection. How about saving a Python
-    function that averages few models?
+    <strong>Ease of use</strong>. Detecting ML framework, Python requirements,
+    and input data schema automatically
   </>,
   <>
-    Pinning down the exact list of <strong>Python requirements</strong>. Nothing
-    extra.
+    <strong>Deploy any model to any platform</strong> or pack it to any format.
+    Switch between providers with a few lines of code
   </>,
   <>
-    Generating <strong>schema for input and output data</strong> for you. No
-    manual work.
+    <strong>Built ready for Git-centered ML models development</strong>. Check
+    out handy integrations with Iterative.ai ecosystem
   </>
 ]
 
