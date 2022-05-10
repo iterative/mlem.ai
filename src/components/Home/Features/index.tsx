@@ -3,16 +3,17 @@ import * as styles from './index.module.css'
 
 const featuresData: Array<JSX.Element> = [
   <>
-    <strong>Ease of use</strong>. Detecting ML framework, Python requirements,
-    and input data schema automatically
+    <strong>Automatically detecting</strong> ML framework, Python requirements,
+    and data schema
   </>,
   <>
-    <strong>Deploy any model to any platform</strong> or pack it to any format.
-    Switch between providers with a few lines of code
+    Deploy <strong>any</strong> model to <strong>any</strong> platform
   </>,
   <>
-    <strong>Ready for Git-centered ML models development</strong>. Check out
-    handy integrations with Iterative.ai ecosystem
+    Ready for <strong>Git-centered ML models development</strong>
+  </>,
+  <>
+    <strong>Seamless integration</strong> with other Iterative tools DVC, CML
   </>
 ]
 
