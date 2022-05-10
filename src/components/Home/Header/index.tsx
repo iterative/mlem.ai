@@ -19,20 +19,24 @@ interface ITypedRef {
 
 const cliCaptionData: Array<{ bold: string; text: string }> = [
   {
-    bold: 'Stick to your training workflow',
-    text: 'Just add one line to import the library and one to save the model'
+    bold: 'Save your model with a single command',
+    text: 'Stick to your training workflow'
   },
   {
-    bold: 'Simple YAML file to save model metadata',
+    bold: 'Use simple YAML file to save model metadata',
     text: 'Use the same human-readable format for any ML framework'
   },
   {
-    bold: 'Run your model anywhere you want',
-    text: 'Pack, dockerize or deploy it'
+    bold: 'Deploy your model anywhere you want',
+    text: 'Switch between deployment providers with a single command'
   },
   {
-    bold: 'Developer-first experience',
-    text: 'Use CLI when you feel like DevOps and API when you feel like a developer'
+    bold: 'Export your model to any format',
+    text: 'Package your model to be a Python package, Docker Image or anything else'
+    // },
+    // {
+    //   bold: 'Giving you developer-first experience',
+    //   text: 'Use CLI when you feel like DevOps and API when you feel like a developer'
   }
 ]
 
