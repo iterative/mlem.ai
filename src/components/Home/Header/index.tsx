@@ -31,8 +31,8 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
     text: 'Switch between deployment providers with a single command'
   },
   {
-    bold: 'Export your model to any format',
-    text: 'Package your model to be a Python package, Docker Image or anything else'
+    bold: 'Developer-first experience in API and CLI',
+    text: 'Use CLI when you feel like a DevOps and API when you feel like a developer'
     // },
     // {
     //   bold: 'Giving you developer-first experience',
