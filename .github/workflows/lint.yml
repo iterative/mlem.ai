@@ -8,5 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
       - run: yarn check-format
       - run: yarn lint-ts
