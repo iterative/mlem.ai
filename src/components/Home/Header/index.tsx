@@ -23,7 +23,7 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
     text: 'Automatically extract environment, methods, and input data specification'
   },
   {
-    bold: 'Manage Models and metadata',
+    bold: 'Manage ML models and their metadata',
     text: 'Reuse existing Git and GitHub/GitLab infrastructure for model management'
   },
   {
