@@ -10,5 +10,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
+      - run: yarn
       - run: yarn run check-format
       - run: yarn run lint-ts
