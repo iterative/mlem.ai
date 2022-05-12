@@ -1,7 +1,7 @@
 # Installation
 
-To check whether MLEM is installed or which version you have, use
-`mlem --version`.
+To check whether MLEM is installed in your environment, run `which mlem`.
+To check which version is installed, run `mlem --version`.
 
 ## Install as a Python library
 

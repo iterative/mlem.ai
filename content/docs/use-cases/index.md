@@ -4,7 +4,7 @@ We provide short articles on common data science scenarios that MLEM can help
 with or improve. You can combine different scenarios for even more awesomeness.
 
 Our use cases are not written to be run end-to-end like tutorials. For more
-general, hands-on experience with MLEM, please see [Get Started](/doc/start)
+general, hands-on experience with MLEM, please see [Get Started](/doc/get-started)
 instead.
 
 ## Why MLEM?

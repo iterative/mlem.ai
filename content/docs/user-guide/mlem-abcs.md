@@ -233,7 +233,7 @@ Clients for corresponding servers
 
 ## Packager
 
-Declaration for creating a `Package` from model. You can learn more about packaging [here](/doc/start/packaging)
+Declaration for creating a `Package` from model. You can learn more about packaging [here](/doc/get-started/packaging)
 
 **Base class**: `mlem.pack.base.Packager`
 

@@ -4,7 +4,7 @@ from pathlib import Path
 ORDER = {
     ".": [
         'install',
-        'start',
+        'get-started',
         'use-cases',
         'user-guide',
         'cli-reference',
@@ -13,7 +13,7 @@ ORDER = {
         'contributing'
     ],
     "install": [],
-    "start": [
+    "get-started": [
         'saving-loading.md',
         'packaging.md',
         'serving.md',

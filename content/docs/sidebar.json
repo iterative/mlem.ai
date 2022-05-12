@@ -11,29 +11,29 @@
     "source": "install/index.md"
   },
   {
-    "slug": "start",
+    "slug": "get-started",
     "label": "Get Started",
-    "source": "start/index.md",
+    "source": "get-started/index.md",
     "children": [
       {
         "slug": "saving-loading",
         "label": "Saving and loading models and datasets",
-        "source": "start/saving-loading.md"
+        "source": "get-started/saving-loading.md"
       },
       {
         "slug": "packaging",
         "label": "Packaging models",
-        "source": "start/packaging.md"
+        "source": "get-started/packaging.md"
       },
       {
         "slug": "serving",
         "label": "Serving models",
-        "source": "start/serving.md"
+        "source": "get-started/serving.md"
       },
       {
         "slug": "deploying",
         "label": "Deploying models",
-        "source": "start/deploying.md"
+        "source": "get-started/deploying.md"
       }
     ]
   },

@@ -1,7 +1,5 @@
 ---
-description: 'Learn how you can use MLEM to manage data science and machine
-learning projects: version data, access it anywhere, capture data pipelines, and
-manage experiments.'
+description: 'Learn how you can use MLEM to easily manage and deploy models'
 ---
 
 # Get Started
@@ -84,13 +82,13 @@ The output will be empty if you have the same files staged/commited
 MLEM’s features can be grouped into functional components. We’ll explore them
 one by one in the next few pages:
 
-- **[Saving models and datasets](/doc/start/saving-loading)** (try this next) is
+- **[Saving models and datasets](/doc/get-started/saving-loading)** (try this next) is
   the base layer of MLEM for datasets and machine learning models.
-- **[Packaging models](/doc/start/packaging)** describes how models can be built
+- **[Packaging models](/doc/get-started/packaging)** describes how models can be built
   into python packages, docker images, etc.
-- **[Serving models](/doc/start/serving)** shows how to create a service from
+- **[Serving models](/doc/get-started/serving)** shows how to create a service from
   your model
-- **[Deploying models](/doc/start/deploying)** shows how you can deploy your
+- **[Deploying models](/doc/get-started/deploying)** shows how you can deploy your
   model with MLEM.
 
 More examples on how to use MLEM in different scenatios can be found in [Use Cases](/doc/use-cases) section

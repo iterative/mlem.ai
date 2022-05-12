@@ -23,7 +23,7 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
     text: 'Automatically extract environment, methods, and input data specification'
   },
   {
-    bold: 'Turn your Git repo into model registry',
+    bold: 'Manage Models and metadata',
     text: 'Reuse existing Git and GitHub/GitLab infrastructure for model management'
   },
   {
@@ -160,7 +160,7 @@ const Header: React.FC = () => {
   return (
     <header id="overview" className={styles.header}>
       <h1 className={styles.header__title}>
-        Open-source model registry and deployment tool for Machine Learning
+        Open-source model  deployment tool for  Machine Learning
         <span className={styles.header__titleUnderscore}>_</span>
       </h1>
       <div className={styles.main}>

@@ -42,8 +42,7 @@ const otherToolsPopupData: Array<{
   {
     title: 'MLEM',
     icon: MlemSVG,
-    description:
-      'Open-source model registry and deployment tool for ML projects',
+    description: 'Open-source model deployment tool for ML projects',
     href: '/'
   }
 ]
