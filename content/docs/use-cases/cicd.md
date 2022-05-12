@@ -59,7 +59,7 @@ jobs:
           sh upload_to_pypi.sh package
 ```
 
-Learn more about packaging in Get Started [Get Started](/doc/packaging).
+Learn more about packaging in [Get Started](/doc/get-started/packaging).
 
 ### Deploy
 
