@@ -1,0 +1,11 @@
+name: Lint
+on: pull_request
+
+jobs:
+  lint:
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+      - run: yarn check-format
+      - run: yarn lint-ts
