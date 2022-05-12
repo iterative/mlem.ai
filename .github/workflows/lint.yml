@@ -6,6 +6,7 @@ jobs:
     name: Run linters
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: yarn check-format
       - run: yarn lint-ts
