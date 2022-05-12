@@ -1,13 +1,21 @@
 .footer {
   padding: 24px 0;
-  margin: 0;
+  margin-top: 24px 0 0 0;
   background-color: #fff;
   @apply border-gray-200 border-solid border-t-2;
 
   &__container {
     margin: auto;
     max-width: 1152px;
-    padding: 0 80px;
+    padding: 0 16px;
+
+    @media (--md-scr) {
+      padding: 0 32px;
+    }
+
+    @media (--lg-scr) {
+      padding: 0 80px;
+    }
   }
 
   &__links {
