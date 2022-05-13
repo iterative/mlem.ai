@@ -4,7 +4,7 @@ description: 'Learn how you can use MLEM to easily manage and deploy models'
 
 # Get Started
 
-Assuming MLEM is already [installed](/doc/install), let's initialize it by
+Assuming MLEM is already [installed](/doc/install) in your active python environment, let's initialize it by
 running `mlem init` inside a Git project:
 
 <details>
@@ -27,7 +27,7 @@ $ cd example-mlem-get-started
 We strongly recommend that you to create an isolated virtual environment for this tutorial
 and cleanly install all the requirements there.
 
-Install the virtual environment:
+Install a fresh virtual environment:
 ```console
 $ python3 -m venv .venv
 ```
@@ -37,8 +37,9 @@ Activate your virtual environment:
 $ source .venv/bin/activate
 ```
 
-Finally, install the project requirements:
+Finally, Install `mlem` and the project requirements:
 ```console
+$ pip install mlem
 $ pip install -r requirements.txt
 ```
 
