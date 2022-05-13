@@ -24,14 +24,25 @@ $ gh repo fork https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
 ```
 
-We also strongly recommend that you to create an isolated virtual environment for this tutorial
-and cleanly install all the requirements there:
+We strongly recommend that you to create an isolated virtual environment for this tutorial
+and cleanly install all the requirements there.
 
+Install the virtual environment:
 ```console
 $ python3 -m venv .venv
+```
+
+Activate your virtual environment:
+```console
 $ source .venv/bin/activate
+```
+
+Finally, install the project requirements:
+```console
 $ pip install -r requirements.txt
 ```
+
+That was pretty straightforward, right?!
 
 </details>
 
@@ -77,11 +88,11 @@ To compare your results with the tag you can also run the following
 $ git diff 1-mlem-init
 ``` 
 
-The output will be empty if you have the same files staged/commited
+The output will be empty if you have the same files staged/committed
 
 </details>
 
-MLEM’s features can be grouped into functional components. We’ll explore them
+MLEM’s features can be grouped around those common functional use cases. We’ll explore them
 one by one in the next few pages:
 
 - **[Saving models and datasets](/doc/get-started/saving-loading)** (try this next) is

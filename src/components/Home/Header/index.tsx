@@ -19,16 +19,16 @@ interface ITypedRef {
 
 const cliCaptionData: Array<{ bold: string; text: string }> = [
   {
-    bold: 'Codify your model into a standardized format',
-    text: 'Automatically extract environment, methods, and input data specification'
+    bold: 'Package, dockerize and deploy your models',
+    text: 'Easily switch between different packaging formats and cloud providers with simple CLI commands'
   },
   {
-    bold: 'Manage ML models and their metadata',
-    text: 'Reuse existing Git and GitHub/GitLab infrastructure for model management'
+    bold: 'Explore models and their metadata',
+    text: 'Simple model management using a human-friendly manifest, designed to augment your existing Git repositories and workflows'
   },
   {
-    bold: 'Use CLI to pack, dockerize and deploy',
-    text: 'Easily switch between different packaging formats and cloud providers'
+    bold: 'Codify your model',
+    text: 'Automatically extract environment, methods, and input data specification using a standardized format'
   },
   {
     bold: 'Use Python API to load and apply your models',

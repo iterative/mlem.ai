@@ -1,12 +1,7 @@
 # MLEM Documentation
 
-**MLEM** makes it easy to deploy and serve your Machine Learning models.
-It packages your models in a standardized format, and provides a unified
-deployment & serving interface which supports a variety of scenarios like real-time 
-serving and batch processing.
-
-Effortlessly turn your models into python packages, docker
-images or HTTP REST services, and deploy them locally or to cloud infrastructure.
+**MLEM** is a tool to easily package, deploy and serve Machine Learning models.
+It seamlessly supports a variety of scenarios like real-time serving and batch processing.
 
 > 💡 When combined with [GTO](https://github.com/iterative/gto), MLEM allows you to create
 > a powerful Model Registry out of your Git repository!
