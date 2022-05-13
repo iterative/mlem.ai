@@ -1,4 +1,4 @@
-import React, { Reducer, useEffect, useReducer } from 'react'
+import React, { PropsWithChildren, Reducer, useEffect, useReducer } from 'react'
 import cn from 'classnames'
 import { SkipNavContent } from '@reach/skip-nav'
 
@@ -13,7 +13,7 @@ import { useWindowSize } from 'react-use'
 
 const toggleReducer: Reducer<boolean, void> = state => !state
 
-const Layout: React.FC<{ currentPath: string }> = ({
+const Layout: React.FC<PropsWithChildren<{ currentPath: string }>> = ({
   children,
   currentPath
 }) => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { Link } from 'gatsby'
 
 type ISmartLinkProps = {
@@ -10,7 +10,7 @@ type ISmartLinkProps = {
   target?: '_blank'
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-const SmartLink: React.FC<ISmartLinkProps> = ({
+const SmartLink: React.FC<PropsWithChildren<ISmartLinkProps>> = ({
   className = '',
   href,
   disabled,
