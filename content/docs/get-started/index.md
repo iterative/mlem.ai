@@ -105,4 +105,4 @@ one by one in the next few pages:
 - **[Deploying models](/doc/get-started/deploying)** shows how you can deploy your
   model with MLEM.
 
-More examples on how to use MLEM in different scenatios can be found in [Use Cases](/doc/use-cases) section
+More examples on how to use MLEM in different scenarios can be found in [Use Cases](/doc/use-cases) section
