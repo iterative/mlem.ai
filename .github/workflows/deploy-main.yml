@@ -16,4 +16,3 @@ jobs:
           heroku_app_name: 'mlem-ai'
           heroku_email: 'juliannagal18@gmail.com'
           dontautocreate: true
-          buildpack: 'https://github.com/heroku/heroku-buildpack-static.git'
