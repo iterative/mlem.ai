@@ -14,6 +14,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
-      - run: yarn
-      - run: yarn run check-format
-      - run: yarn run lint-ts
+      - name: Install Packages
+        run: yarn
+      - name: Check Formatting with Prettier
+        run: yarn run check-format
+      - name: Lint with Tsc and Eslint
+        run: yarn run lint-ts
+
