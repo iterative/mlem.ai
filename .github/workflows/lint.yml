@@ -1,6 +1,10 @@
 name: Lint
 on: pull_request
 
+concurrency:
+  group: lint-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     name: Run linters
