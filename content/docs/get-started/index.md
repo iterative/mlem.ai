@@ -11,37 +11,24 @@ running `mlem init` inside a Git project:
 
 ### ⚙️ Expand for setup instructions
 
-If you want to follow along with this tutorial and try MLEM first-hand, you can fork our 
-[example repo](https://github.com/iterative/example-mlem-get-started) as a playground for running MLEM commands. 
+If you want to follow along with this tutorial and try MLEM, you can use our 
+[example repo](https://github.com/iterative/example-mlem-get-started).
+You'll need to [fork] it first (so you can push models). Then clone it locally:
 
-Its `main` branch contains everything we'll be using (assuming MLEM is already installed). 
- 
-To prepare your project, you'll need to fork and clone it locally.
-You can do it [manually](https://docs.github.com/en/get-started/quickstart/fork-a-repo) or using [github cli](https://cli.github.com/)
+[fork]:
+  https://docs.github.com/en/get-started/quickstart/fork-a-repo
 
-```bash
+```shell
 $ git clone <your fork>
 $ cd example-mlem-get-started
-# or
-$ gh repo fork https://github.com/iterative/example-mlem-get-started
-$ cd example-mlem-get-started
 ```
 
-We strongly recommend that you to create an isolated virtual environment for this tutorial
-and cleanly install all the requirements there.
+Next let's create an isolated virtual environment to cleanly install all
+the requirements (including MLEM) there:
 
-Install a fresh virtual environment:
-```console
+```shell
 $ python3 -m venv .venv
-```
-
-Activate your virtual environment:
-```console
 $ source .venv/bin/activate
-```
-
-Finally, Install `mlem` and the project requirements:
-```console
 $ pip install -r requirements.txt
 ```
 
@@ -49,14 +36,13 @@ That was pretty straightforward, right?!
 
 </details>
 
-```bash
+```shell
 $ mlem init
 ```
 
 A few [internal files](/doc/user-guide/project-structure) will be created:
 
-
-```bash
+```shell
 $ tree .mlem
 .mlem
 └─── config.yaml
