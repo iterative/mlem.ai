@@ -14,7 +14,8 @@ ORDER = {
     ],
     "install": [],
     "get-started": [
-        'saving-loading.md',
+        'saving.md',
+        'applying.md',
         'packaging.md',
         'serving.md',
         'deploying.md'
@@ -29,6 +30,7 @@ ORDER = {
     "user-guide": [
         'what-is-mlem.md',
         'basic-concepts.md',
+        'datasets.md',
         'project-structure.md',
         'remote-repos.md',
         'configuration.md',

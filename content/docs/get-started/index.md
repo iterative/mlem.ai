@@ -17,9 +17,12 @@ If you want to follow along with this tutorial and try MLEM first-hand, you can 
 Its `main` branch contains everything we'll be using (assuming MLEM is already installed). 
  
 To prepare your project, you'll need to fork and clone it locally.
-Here's how to do that using [github cli](https://cli.github.com/)
+You can do it [manually](https://docs.github.com/en/get-started/quickstart/fork-a-repo) or using [github cli](https://cli.github.com/)
 
 ```bash
+$ git clone <your fork>
+$ cd example-mlem-get-started
+# or
 $ gh repo fork https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
 ```
@@ -39,7 +42,6 @@ $ source .venv/bin/activate
 
 Finally, Install `mlem` and the project requirements:
 ```console
-$ pip install mlem
 $ pip install -r requirements.txt
 ```
 
@@ -73,8 +75,9 @@ Just like this git tag that concludes this section:
 
 <details>
 
-# ⛳ [MLEM init](https://github.com/iterative/example-mlem-get-started/tree/1-mlem-init)
+# ⛳ MLEM init
 
+Tag: [1-mlem-init](https://github.com/iterative/example-mlem-get-started/tree/1-mlem-init)
 ```bash
 $ git add .mlem
 $ git status
@@ -96,8 +99,9 @@ The output will be empty if you have the same files staged/committed
 MLEM’s features can be grouped around those common functional use cases. We’ll explore them
 one by one in the next few pages:
 
-- **[Saving models and datasets](/doc/get-started/saving-loading)** (try this next) is
-  the base layer of MLEM for datasets and machine learning models.
+- **[Saving models](/doc/get-started/saving)** (try this next) is
+  the base layer of MLEM for machine learning models and datasets.
+- **[Applying models](/doc/get-started/applying)** explains how to load and apply models
 - **[Packaging models](/doc/get-started/packaging)** describes how models can be built
   into python packages, docker images, etc.
 - **[Serving models](/doc/get-started/serving)** shows how to create a service from

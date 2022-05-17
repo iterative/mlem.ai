@@ -16,9 +16,14 @@
     "source": "get-started/index.md",
     "children": [
       {
-        "slug": "saving-loading",
-        "label": "Saving and loading models and datasets",
-        "source": "get-started/saving-loading.md"
+        "slug": "saving",
+        "label": "Saving models",
+        "source": "get-started/saving.md"
+      },
+      {
+        "slug": "applying",
+        "label": "Applying models",
+        "source": "get-started/applying.md"
       },
       {
         "slug": "packaging",
@@ -83,6 +88,11 @@
         "slug": "basic-concepts",
         "label": "Basic concepts",
         "source": "user-guide/basic-concepts.md"
+      },
+      {
+        "slug": "datasets",
+        "label": "WIP Woring with datasets",
+        "source": "user-guide/datasets.md"
       },
       {
         "slug": "project-structure",
@@ -200,7 +210,7 @@
       },
       {
         "slug": "save",
-        "label": "save",
+        "label": "save()",
         "source": "api-reference/save.md"
       },
       {
