@@ -5,28 +5,27 @@ To check which version is installed, run `mlem --version`.
 
 ## Install as a Python library
 
-MLEM is a Python library. You can simply install it with a package manager
-like `pip` or `conda`, and as a Python
-[project requirement](https://pip.pypa.io/en/latest/user_guide/#requirements-files)
-if needed.
+MLEM is a Python library. You can install it with a package manager
+like [pip](https://pypi.org/project/pip/) or
+[Conda](https://docs.conda.io/en/latest/), or as a Python
+[requirement](https://pip.pypa.io/en/latest/user_guide/#requirements-files).
 
-We recommend always using a virtual environment for installing python packages.
+<admon type="info">
 
-Let's create one:
-```console
-$ python3 -m venv .venv
-```
+We **strongly** recommend creating a [virtual environment]
+or using [pipx] to encapsulate your local environment.
 
-Next, activate your virtual environment:
-```console
-$ source .venv/bin/activate
-```
+[virtual environment]:
+  https://python.readthedocs.io/en/stable/library/venv.html
+[pipx]:
+  https://packaging.python.org/guides/installing-stand-alone-command-line-tools/
 
-And finally, install the `mlem` package using `pip`
-```bash
+</admon>
+
+```shell
 $ pip install mlem
 ```
 
-[comment]: <> (## Advanced options)
+<!-- TODO: ## Advanced options -->
 
-[comment]: <> (- Shell completion can be configured # TODO)
+<!-- TODO: ## Shell tab completion -->
