@@ -12,16 +12,20 @@ usage: mlem init [options] [path]
 
 The command [mlem init](/doc/cli-reference/init) (without flags) defaults to the current directory for the path argument. This creates a `.mlem` directory and an empty `config.yaml` file. Although, MLEM is best used within a Git repository, the existence of a `.mlem` directory signifies a MLEM Repo and thus can exist even without incorporating `git` in one's workflow.
 
-## Arguments:
+## Arguments
 
-    [PATH]  Where to initialize the MLEM repository
+```
+[PATH]  Where to initialize the MLEM repository
+```
 
-## Options:
+## Options
 
-- `-h, --help`:  Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
-## Examples:
+## Examples
 
-    $ mlem init
-    $ mlem init some/local/path
-    $ mlem init s3://bucket/path/in/cloud
+```mlem
+$ mlem init
+$ mlem init some/local/path
+$ mlem init s3://bucket/path/in/cloud
+```
