@@ -18,7 +18,7 @@ The command [mlem init](/doc/cli-reference/init) (without flags) defaults to the
 
 ## Options:
 
-    -h, --help  Show this message and exit.
+- `-h, --help`:  Show this message and exit.
 
 ## Examples:
 

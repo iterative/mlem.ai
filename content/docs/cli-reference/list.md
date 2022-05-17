@@ -1,23 +1,37 @@
 # list
 
-Usage: [options] [repo]
+List [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) inside a MLEM repository (should contain `.mlem` directory)
 
-List MLEM objects of in repo
+> Useful to see models, datasets, links, and other types of MLEM Objects
 
-Arguments:
+## Synopsis
 
-[REPO] Repo to list from [default: (current directory)]
+```usage
+usage: mlem list [options] [repo]
+```
 
-Options:
+## Description
 
-    -t, --type [all|link|model|dataset|env|deployment|packager]
-                                  Type of objects to list  [default: all]
-    --rev TEXT                      Repo revision to use  [default: (none)]
-    +l, --links / -l, --no-links    Include links  [default: l]
-    --json                          Output as json
-    --help                          Show this message and exit.
+Produces a view of the MLEM repository listing models, datasets, links, and other MLEM objects. The command (without flags) defaults to the current directory for the repo argument. One can of course point to remote repositories as well. The command also allows us to filter MLEM Objects by type, produce json output, selectively display links, and choose a particular revision in case of remote repositories.
 
-Examples:
+## Arguments:
 
-    $ mlem list https://github.com/iterative/example-mlem
-    $ mlem list -t models
+    [REPO] Repo to list from [default: (current directory)]
+
+## Options:
+
+- `-t, --type [all|link|model|dataset|env|deployment|packager]`
+
+    Type of objects to list  [default: all]
+- `--rev TEXT`:                       Repo revision to use  [default: (none)]
+- `+l, --links / -l, --no-links`:     Include links  [default: l]
+- `--json`:                           Output as json
+- `--help`:                           Show this message and exit.
+
+## Examples:
+
+    $ mlem list https://github.com/iterative/example-mlem-get-started
+    Models:
+    - rf
+    Datasets:
+    - iris.csv
