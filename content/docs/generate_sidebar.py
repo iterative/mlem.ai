@@ -67,6 +67,7 @@ ORDER = {
         'import.md',
         'pack.md',
         'apply.md',
+        'deploy.md',
     ],
     "contributing": [],
     "extensions": [

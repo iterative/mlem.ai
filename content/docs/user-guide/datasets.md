@@ -112,5 +112,5 @@ $ git diff 2-prepare
 
 # ---------
 > Note that we didn't specify whether the saved dataset was `pd.DataFrame`,
-> `no.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
+> `np.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
 > extends to ML models 👋
