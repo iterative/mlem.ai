@@ -1,7 +1,23 @@
-# save
+# save()
 
 Saves given object to a given path
 
+```python
+def save(
+    obj: Any,
+    path: str,
+    repo: Optional[str] = None,
+    dvc: bool = False,
+    tmp_sample_data=None,
+    fs: Union[str, AbstractFileSystem] = None,
+    link: bool = None,
+    external: Optional[bool] = None,
+    description: str = None,
+    params: Dict[str, str] = None,
+    tags: List[str] = None,
+    update: bool = False,
+): ...
+```
     Args:
         obj: Object to dump
         path: If not located on LocalFileSystem, then should be uri

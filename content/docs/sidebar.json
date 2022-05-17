@@ -49,7 +49,7 @@
     "children": [
       {
         "slug": "dvc",
-        "label": "Versioning MLEM objects with DVC",
+        "label": "WIP Versioning MLEM objects with DVC",
         "source": "use-cases/dvc.md"
       },
       {
@@ -101,7 +101,7 @@
       },
       {
         "slug": "remote-repos",
-        "label": "Working with repositories and remote objects",
+        "label": "WIP Working with repositories and remote objects",
         "source": "user-guide/remote-repos.md"
       },
       {
@@ -138,7 +138,7 @@
   },
   {
     "slug": "cli-reference",
-    "label": "",
+    "label": "WIP CLI Reference",
     "source": "cli-reference/index.md",
     "children": [
       {
@@ -200,7 +200,7 @@
   },
   {
     "slug": "api-reference",
-    "label": "",
+    "label": "WIP API Reference",
     "source": "api-reference/index.md",
     "children": [
       {
