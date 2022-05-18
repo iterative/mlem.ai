@@ -7,7 +7,7 @@ Initialize a MLEM repo in the current working directory.
 ```usage
 usage: mlem init [options] [path]
 
-arguments: [PATH]  Where to initialize the MLEM repository
+arguments: [PATH] Where to init repo
 ```
 
 ## Description

@@ -9,7 +9,7 @@ Get information about a specific [MLEM object](/doc/user-guide/basic-concepts#ml
 ```usage
 usage: mlem pprint [options] path
 
-arguments: PATH  Path to object  [required]
+arguments: PATH Path to object [required]
 ```
 
 ## Description

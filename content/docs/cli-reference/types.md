@@ -10,8 +10,8 @@ List different implementations available for a particular MLEM type. If a subtyp
 usage: mlem types [options] [abc] [sub_type]
 
 arguments:
-[SUBTYPE]    Subtype to list implementations. List subtypes if not provided
-[META_TYPE]  Type of `meta` subtype
+[ABC]       Subtype to list implementations. List subtypes if not provided
+[SUB_TYPE]  Type of `meta` subtype
 ```
 
 ## Description
