@@ -17,13 +17,13 @@ $ tree .mlem/model
     $ cat .mlem/model/dog-bark-translator.mlem
     type: sklearn
     methods:
-     - predict:
-    input: path to .wav file
-    output: text sequence
+    &nbsp;&nbsp;predict:
+    &nbsp;&nbsp;&nbsp;&nbsp;input: path to .wav file
+    &nbsp;&nbsp;&nbsp;&nbsp;output: text sequence
     requirements:
-    - pytorch: 1.10.0
-    - torchaudio: 0.10.0
-    - emoji: 1.6.1
+    &nbsp;&nbsp;pytorch: 1.10.0
+    &nbsp;&nbsp;torchaudio: 0.10.0
+    &nbsp;&nbsp;emoji: 1.6.1
     `,
   `
     $ mlem deploy dog-bark-translator heroku
