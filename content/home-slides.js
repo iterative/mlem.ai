@@ -41,6 +41,7 @@ $ tree .mlem/model
       │ mlem-blep-classifier │ v0.4.1   │ v0.4.1 │ -       │
       │ dog-bark-translator  │ v0.0.1   │ -      │ v0.0.1  │
       ╘══════════════════════╧══════════╧════════╧═════════╛
+      <delay></delay>
       $ mlem apply dog-bark-translator ./short-dog-phrase.wav
       🐶🚀🎉
       `
