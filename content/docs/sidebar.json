@@ -91,7 +91,7 @@
       },
       {
         "slug": "datasets",
-        "label": "WIP Woring with datasets",
+        "label": "WIP Working with datasets",
         "source": "user-guide/datasets.md"
       },
       {
@@ -165,6 +165,11 @@
         "slug": "serve",
         "label": "serve",
         "source": "cli-reference/serve.md"
+      },
+      {
+        "slug": "deploy",
+        "label": "deploy",
+        "source": "cli-reference/deploy.md"
       },
       {
         "slug": "types",
