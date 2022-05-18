@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'mlem.ai',
-    description: 'MLEM - Machine Learning Engineering Management',
+    title: 'MLEM - Machine Learning Engineering Management',
+    description: 'Open-source tool to simplify ML model deployment',
     siteUrl: process.env.HEROKU_APP_NAME
       ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
       : 'https://mlem.ai',
     twitterUsername: '@DVCorg',
-    titleTemplate: 'MLEM - Machine Learning Engineering Management',
+    titleTemplate: '%s | MLEM',
     keywords: ['mlem']
   },
   plugins: [
