@@ -9,7 +9,7 @@ usage: mlem serve [options] model [subtype]
 
 arguments:
 MODEL      Model to create service from  [required]
-[SUBTYPE]  Server type. Choices: ['fastapi', 'heroku']  [default: ]
+[SUBTYPE]  Server type. Choices: ['fastapi', 'heroku', 'rmq']  [default: ]
 ```
 
 ## Description

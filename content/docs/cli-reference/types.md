@@ -27,7 +27,14 @@ arguments:
 ```mlem
 List ABCs
 $ mlem types
+...
 
 List available server implementations
 $ mlem types server
+['rmq', 'heroku', 'fastapi']
+
+List configuration for a particular implementation
+$ mlem types server fastapi
+[not required] host: str = "0.0.0.0"
+[not required] port: int = 8080
 ```
