@@ -19,20 +19,22 @@ interface ITypedRef {
 
 const cliCaptionData: Array<{ bold: string; text: string }> = [
   {
-    bold: 'Codify your model into a standardized format',
-    text: 'Automatically extract environment, methods, and input data specification'
+    bold: 'Save your model with a single command',
+    text: 'Stick to your training workflow'
   },
   {
-    bold: 'Turn your Git repo into model registry',
-    text: 'Reuse existing Git and GitHub/GitLab infrastructure for model management'
+    bold: 'Use simple YAML file to save model metadata',
+    text: 'Use the same human-readable format for any ML framework'
   },
   {
-    bold: 'Use CLI to pack, dockerize and deploy',
-    text: 'Easily switch between different packaging formats and cloud providers'
+    bold: 'Deploy your model anywhere you want',
+    text: 'Switch between deployment providers with a single command'
   },
   {
-    bold: 'Use Python API to load and apply your models',
-    text: 'Load models dynamically from any storage or model registry'
+    bold: 'Make Git a Model Registry',
+    text:
+      'MLEM is a core building block for a Git-based ML model registry' +
+      ', together with other Iterative tools, like GTO and DVC'
   }
 ]
 
@@ -160,7 +162,7 @@ const Header: React.FC = () => {
   return (
     <header id="overview" className={styles.header}>
       <h1 className={styles.header__title}>
-        Open-source model registry and deployment tool for Machine Learning
+        Open-source tool to simplify ML model deployment
         <span className={styles.header__titleUnderscore}>_</span>
       </h1>
       <div className={styles.main}>
