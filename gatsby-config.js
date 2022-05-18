@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'mlem.ai',
-    description:
-      'MLEM - Machine Learning Engineering Management',
+    description: 'MLEM - Machine Learning Engineering Management',
     siteUrl: process.env.HEROKU_APP_NAME
       ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
       : 'https://mlem.ai',
