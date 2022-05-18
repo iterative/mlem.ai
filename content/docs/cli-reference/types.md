@@ -1,23 +1,36 @@
 # types
 
-Usage: [options] [subtype] [meta_type]
+List different implementations available for a particular MLEM type. If a subtype is not provided, simply list all available MLEM types.
 
-List MLEM types implementations available in current env. If subtype is not
-provided, list ABCs
+> For example, one might need to see which kind of servers are supported for hosting a model. We can get this information by using `mlem types server` which gives us the two server implementations i.e. `[fastapi, heroku]`
 
-Arguments:
+## Synopsis
 
-    [SUBTYPE]    Subtype to list implementations. List subtypes if not provided
-    [META_TYPE]  Type of `meta` subtype
+```usage
+usage: mlem types [options] [abc] [sub_type]
+```
 
-Options:
+## Description
 
-    --help  Show this message and exit.
+[MLEM ABCs](/doc/user-guide/mlem-abcs) are a list of abstract base classes that subclass the `mlem.core.base.MlemABC` class. These classes add new functionalities and capabilities to MLEM. The command `mlem types` can be used to see what all classes are available and a `subtype` can be provided as an additional argument to see the different implementations available for that `subtype`.
 
-Examples:
+## Arguments
 
-    List ABCs
-    $ mlem types
+```
+[SUBTYPE]    Subtype to list implementations. List subtypes if not provided
+[META_TYPE]  Type of `meta` subtype
+```
 
-    List available server implementations
-    $ mlem types server
+## Options
+
+- `-h, --help`: Show this message and exit.
+
+## Examples
+
+```mlem
+List ABCs
+$ mlem types
+
+List available server implementations
+$ mlem types server
+```
