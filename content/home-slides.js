@@ -33,15 +33,16 @@ $ tree .mlem/model
   💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
     `,
   `
+      $ gto show
+      ╒══════════════════════╤══════════╤════════╤═════════╕
+      │ name                 │ latest   │ #stage │ #prod   │
+      ╞══════════════════════╪══════════╪════════╪═════════╡
+      │ pet-face-recognition │ v3.1.0   │ -      │ v3.0.0  │
+      │ mlem-blep-classifier │ v0.4.1   │ v0.4.1 │ -       │
+      │ dog-bark-translator  │ v0.0.1   │ -      │ v0.0.1  │
+      ╘══════════════════════╧══════════╧════════╧═════════╛
       $ mlem apply dog-bark-translator ./short-dog-phrase.wav
       🐶🚀🎉
-
-      $ python
-      >>> import mlem
-      >>> model = mlem.api.load("dog-bark-translator")
-      >>> model.predict("./short-dog-phrase.wav")
-      🐶🚀🎉
-      >>>
       `
 ]
 

@@ -31,8 +31,10 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
     text: 'Switch between deployment providers with a single command'
   },
   {
-    bold: 'Developer-first experience with equivalent CLI and API',
-    text: 'Use CLI when you feel like DevOps, API as a developer.'
+    bold: 'Make Git a Model Registry',
+    text:
+      'MLEM is a core building block for a Git-based ML model registry' +
+      ', together with other Iterative tools, like GTO and DVC'
   }
 ]
 

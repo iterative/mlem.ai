@@ -3,17 +3,16 @@ import * as styles from './index.module.css'
 
 const featuresData: Array<JSX.Element> = [
   <>
-    <strong>Automatically detect</strong> ML framework, Python requirements,
-    and data schema.
+    <strong>Git-native</strong> ML model development. Enable GitFlow and other
+    software engineering best practices.
   </>,
   <>
-    <strong>Deploy any model</strong> to any platform.
+    <strong>Automatically detect</strong> ML framework, Python requirements, and
+    data schema.
   </>,
   <>
-    <strong>Git-native</strong> ML model development
-  </>,
-  <>
-    <strong>Seamless integration</strong> with other Iterative tools (DVC, CML, etc.)
+    <strong>Seamlessly integrating</strong> to your stack thanks to Unix
+    philosophy: one tool solves one problem very well.
   </>
 ]
 
