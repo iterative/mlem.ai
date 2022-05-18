@@ -27,7 +27,7 @@ With MLEM, one can use existing saved datasets or models and use the `mlem impor
 - `-e, --external`: Save result not in .mlem, but directly in repo
 - `-h, --help`: Show this message and exit.
 
-Examples
+## Examples
 
 ```mlem
 Create MLEM dataset from local csv
