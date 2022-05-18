@@ -1,9 +1,8 @@
 const path = require('path')
 module.exports = {
   siteMetadata: {
-    title: 'mlem.ai',
-    description:
-      'MLEM is an open-source model deployment tool for machine learning',
+    title: 'MLEM - Machine Learning Engineering Management',
+    description: 'Open-source tool to simplify ML model deployment',
     siteUrl: process.env.HEROKU_APP_NAME
       ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
       : 'https://mlem.ai',

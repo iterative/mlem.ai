@@ -88,7 +88,8 @@ const SEO: React.FC<ISEOProps> = ({
       <script
         defer
         data-domain="mlem.ai"
-        src="https://plausible.io/js/plausible.js"
+        src="https://dvc.org/pl/js/script.js"
+        data-api="https://dvc.org/pl/api/event"
       ></script>
     </Helmet>
   )

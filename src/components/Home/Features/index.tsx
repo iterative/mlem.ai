@@ -3,17 +3,16 @@ import * as styles from './index.module.css'
 
 const featuresData: Array<JSX.Element> = [
   <>
-    <strong>Unambiguous link</strong> between data, code, model and metrics
+    <strong>Git-native</strong> ML model development. Enable GitFlow and other
+    software engineering best practices.
   </>,
   <>
-    <strong>Standardised model packaging</strong> with environment and input
-    data specification
+    <strong>Automatically detect</strong> ML framework, Python requirements, and
+    data schema.
   </>,
   <>
-    Model lifecycle management using <strong>GitOps approach</strong>
-  </>,
-  <>
-    <strong>Cloud-agnostic</strong> model deployment
+    <strong>Seamlessly integrating</strong> to your stack thanks to Unix
+    philosophy: one tool solves one problem very well.
   </>
 ]
 

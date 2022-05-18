@@ -1,0 +1,23 @@
+name: Lint
+on: pull_request
+
+concurrency:
+  group: lint-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+      - name: Install Packages
+        run: yarn
+      - name: Check Formatting with Prettier
+        run: yarn run check-format
+      - name: Lint with Tsc and Eslint
+        run: yarn run lint-ts
+
