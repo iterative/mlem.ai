@@ -6,17 +6,13 @@ Initialize a MLEM repo in the current working directory.
 
 ```usage
 usage: mlem init [options] [path]
+
+arguments: [PATH]  Where to initialize the MLEM repository
 ```
 
 ## Description
 
 The command [mlem init](/doc/cli-reference/init) (without flags) defaults to the current directory for the path argument. This creates a `.mlem` directory and an empty `config.yaml` file. Although, MLEM is best used within a Git repository, the existence of a `.mlem` directory signifies a MLEM Repo and thus can exist even without incorporating `git` in one's workflow.
-
-## Arguments
-
-```
-[PATH]  Where to initialize the MLEM repository
-```
 
 ## Options
 

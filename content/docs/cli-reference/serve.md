@@ -6,18 +6,15 @@ Exposes a model's methods as endpoints and serves them with a server implementat
 
 ```usage
 usage: mlem serve [options] model [subtype]
+
+arguments:
+MODEL      Model to create service from  [required]
+[SUBTYPE]  Server type. Choices: ['fastapi', 'heroku']  [default: ]
 ```
 
 ## Description
 
 A model through MLEM can be served via a server implementation (eg: `fastapi`) and its methods can be exposed as API endpoints. This allows us to query and make requests to the served model. In case of `fastapi`, one can see the spec at `/docs` and make requests either with the corresponding in-built client or even through `curl` or `requests` library in python.
-
-## Arguments
-
-```
-MODEL      Model to create service from  [required]
-[SUBTYPE]  Server type. Choices: ['fastapi', 'heroku']  [default: ]
-```
 
 ## Options
 

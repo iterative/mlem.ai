@@ -8,17 +8,13 @@ Get information about a specific [MLEM object](/doc/user-guide/basic-concepts#ml
 
 ```usage
 usage: mlem pprint [options] path
+
+arguments: PATH  Path to object  [required]
 ```
 
 ## Description
 
 The MLEM objects (a list of which can be seen from `mlem list`) can be printed to check for their metadata information. Since only one object is printed at a particular time, a path to a specific MLEM object is always required.
-
-## Arguments
-
-```
-PATH  Path to object  [required]
-```
 
 ## Options
 

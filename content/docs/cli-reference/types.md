@@ -8,18 +8,15 @@ List different implementations available for a particular MLEM type. If a subtyp
 
 ```usage
 usage: mlem types [options] [abc] [sub_type]
+
+arguments:
+[SUBTYPE]    Subtype to list implementations. List subtypes if not provided
+[META_TYPE]  Type of `meta` subtype
 ```
 
 ## Description
 
 [MLEM ABCs](/doc/user-guide/mlem-abcs) are a list of abstract base classes that subclass the `mlem.core.base.MlemABC` class. These classes add new functionalities and capabilities to MLEM. The command `mlem types` can be used to see what all classes are available and a `subtype` can be provided as an additional argument to see the different implementations available for that `subtype`.
-
-## Arguments
-
-```
-[SUBTYPE]    Subtype to list implementations. List subtypes if not provided
-[META_TYPE]  Type of `meta` subtype
-```
 
 ## Options
 
