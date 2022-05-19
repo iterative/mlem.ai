@@ -1,39 +1,67 @@
-# save()
+# mlem.core.metadata.save()
 
 Saves given object to a given path
 
-```python
+```py
 def save(
     obj: Any,
     path: str,
     repo: Optional[str] = None,
-    dvc: bool = False,
-    tmp_sample_data=None,
+    sample_data=None,
     fs: Union[str, AbstractFileSystem] = None,
-    link: bool = None,
+    index: bool = None,
     external: Optional[bool] = None,
     description: str = None,
     params: Dict[str, str] = None,
-    tags: List[str] = None,
+    labels: List[str] = None,
     update: bool = False,
-): ...
+) -> MlemObject
 ```
-    Args:
-        obj: Object to dump
-        path: If not located on LocalFileSystem, then should be uri
-            or `fs` argument should be provided
-        repo: path to mlem repo (optional)
-        dvc: Store the object's artifacts with dvc
-        tmp_sample_data: If the object is a model or function, you can
-            provide input data sample, so MLEM will include it's schema
-            in the model's metadata
-        fs: FileSystem for the `path` argument
-        link: Whether to create a link in .mlem folder found for `path`
-        external: if obj is saved to repo, whether to put it outside of .mlem dir
-        description: description for object
-        params: arbitrary params for object
-        tags: tags for object
-        update: whether to keep old description/tags/params if new values were not provided
 
-    Returns:
-        None
+#### Usage:
+
+```py
+from mlem.api import save
+
+save(obj, path, index=False, external=True)
+```
+
+## Description
+
+Saves a given object to a given path. The path can belong to different file systems (eg: `S3`). The function returns None and saves the object as a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
+
+## Parameters
+
+- **`obj`** (required) - Object to dump
+- **`path`** (required) - If not located on LocalFileSystem, then should be uri or `fs` argument should be provided
+- `repo` (optional) - path to mlem repo
+- `sample_data` (optional) - If the object is a model or function, you can provide input data sample, so MLEM will include it's schema in the model's metadata
+- `fs` (optional) - FileSystem for the `path` argument
+- `index` (optional) - Whether to add object to mlem repo index
+- `external` (optional) - if obj is saved to repo, whether to put it outside of .mlem dir
+- `description` (optional) - description for object
+- `params` (optional) - arbitrary params for object
+- `labels` (optional) - labels for object
+- `update` (optional) - whether to keep old description/labels/params if new values were not provided
+
+## Exceptions
+
+- `MlemObjectNotFound` - Thrown if we can't find MLEM object
+
+## Example: Save a trained model with MLEM
+
+```py
+import os
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from pandas import DataFrame
+from mlem.api import save
+
+train, target = load_iris(return_X_y=True)
+train = DataFrame(train)
+train.columns = train.columns.astype(str)
+model = DecisionTreeClassifier().fit(train, target)
+path = os.path.join(os.getcwd(), "saved-model")
+
+save(model, path, sample_data=train, index=False)
+```

@@ -237,7 +237,7 @@
     "children": [
       {
         "slug": "init",
-        "label": "init",
+        "label": "init()",
         "source": "api-reference/init.md"
       },
       {
@@ -247,7 +247,7 @@
       },
       {
         "slug": "load",
-        "label": "load",
+        "label": "load()",
         "source": "api-reference/load.md"
       },
       {

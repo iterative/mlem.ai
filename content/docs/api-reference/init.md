@@ -3,13 +3,13 @@
 Creates `.mlem` directory in `path`
 
 ```py
-def init(path: str = ".")  -> None
+def init(path: str = ".") -> None
 ```
 
 #### Usage:
 
 ```py
-from mlem.api.commands import init
+from mlem.api import init
 
 init(path)
 ```
@@ -29,7 +29,7 @@ None
 ## Examples
 
 ```py
-from mlem.api.commands import init
+from mlem.api import init
 
 init()
 ```
