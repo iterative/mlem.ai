@@ -169,7 +169,29 @@
       {
         "slug": "deploy",
         "label": "deploy",
-        "source": "cli-reference/deploy.md"
+        "source": "cli-reference/deploy/index.md",
+        "children": [
+          {
+            "slug": "apply",
+            "label": "apply",
+            "source": "cli-reference/deploy/apply.md"
+          },
+          {
+            "slug": "create",
+            "label": "create",
+            "source": "cli-reference/deploy/create.md"
+          },
+          {
+            "slug": "status",
+            "label": "status",
+            "source": "cli-reference/deploy/status.md"
+          },
+          {
+            "slug": "teardown",
+            "label": "teardown",
+            "source": "cli-reference/deploy/teardown.md"
+          }
+        ]
       },
       {
         "slug": "types",
