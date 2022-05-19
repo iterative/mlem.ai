@@ -138,7 +138,7 @@
   },
   {
     "slug": "cli-reference",
-    "label": "WIP CLI Reference",
+    "label": "CLI Reference",
     "source": "cli-reference/index.md",
     "children": [
       {
@@ -222,6 +222,11 @@
         "slug": "apply",
         "label": "apply",
         "source": "cli-reference/apply.md"
+      },
+      {
+        "slug": "apply-remote",
+        "label": "apply-remote",
+        "source": "cli-reference/apply-remote.md"
       }
     ]
   },
