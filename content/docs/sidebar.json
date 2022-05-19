@@ -173,22 +173,22 @@
         "children": [
           {
             "slug": "apply",
-            "label": "apply",
+            "label": "deploy apply",
             "source": "cli-reference/deploy/apply.md"
           },
           {
             "slug": "create",
-            "label": "create",
+            "label": "deploy create",
             "source": "cli-reference/deploy/create.md"
           },
           {
             "slug": "status",
-            "label": "status",
+            "label": "deploy status",
             "source": "cli-reference/deploy/status.md"
           },
           {
             "slug": "teardown",
-            "label": "teardown",
+            "label": "deploy teardown",
             "source": "cli-reference/deploy/teardown.md"
           }
         ]
