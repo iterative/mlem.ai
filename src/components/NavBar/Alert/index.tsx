@@ -4,7 +4,7 @@ import SmartLink from '../../SmartLink'
 
 import * as styles from './index.module.css'
 
-const Alert: React.FC<{ collapsed: boolean }> | false = ({ collapsed }) => (
+const Alert: React.FC<{ collapsed: boolean }> = ({ collapsed }) => (
   <div className={cn(styles.alert, collapsed && styles.collapsed)}>
     <p>
       Learn how to build{' '}
