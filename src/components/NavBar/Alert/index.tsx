@@ -8,7 +8,7 @@ const Alert: React.FC<{ collapsed: boolean }> | false = ({ collapsed }) => (
   <div className={cn(styles.alert, collapsed && styles.collapsed)}>
     <p>
       Learn how to build{' '}
-      <SmartLink href="https://iterative.ai/not-existent-page">
+      <SmartLink href="https://iterative.ai/model-registry">
         Model Registry with MLEM
       </SmartLink>
     </p>
