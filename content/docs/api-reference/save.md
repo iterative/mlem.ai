@@ -18,7 +18,7 @@ def save(
 ) -> MlemObject
 ```
 
-#### Usage:
+### Usage:
 
 ```py
 from mlem.api import save

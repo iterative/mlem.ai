@@ -252,7 +252,7 @@
       },
       {
         "slug": "load_meta",
-        "label": "load_meta",
+        "label": "load_meta()",
         "source": "api-reference/load_meta.md"
       },
       {
@@ -262,7 +262,7 @@
       },
       {
         "slug": "ls",
-        "label": "ls",
+        "label": "ls()",
         "source": "api-reference/ls.md"
       },
       {

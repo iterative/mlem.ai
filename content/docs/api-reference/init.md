@@ -6,7 +6,7 @@ Creates `.mlem` directory in `path`
 def init(path: str = ".") -> None
 ```
 
-#### Usage:
+### Usage:
 
 ```py
 from mlem.api import init
