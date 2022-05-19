@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import cn from 'classnames'
 import Terminal from '../Terminal'
-import Button from '../../Button'
+// import Button from '../../Button'
 import tensorflowLogo from '../../../images/logo/tensorflow.png'
 import pytorchLogo from '../../../images/logo/pytorch.png'
 import dmlcXgboostLogo from '../../../images/logo/dmlc-xgboost.png'
@@ -250,7 +250,7 @@ const Header: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div className={styles.main__buttons}>
+        {/* <div className={styles.main__buttons}>
           <Button
             className={styles.button}
             href="https://iterative-ai.typeform.com/to/FGyGIx45"
@@ -265,7 +265,7 @@ const Header: React.FC = () => {
           >
             Coming Soon
           </Button>
-        </div>
+        </div> */}
       </div>
       <ul className={styles.header__logos}>
         {logosData.map(({ widthSm, widthMd, widthLg, src, alt }, i) => (

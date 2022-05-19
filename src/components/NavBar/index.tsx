@@ -8,6 +8,11 @@ import * as styles from './index.module.css'
 
 const socialLinks: Array<ISocialIconProps> = [
   {
+    icon: 'github',
+    href: 'https://github.com/iterative/mlem/',
+    label: 'Go to MLEM github repo'
+  },
+  {
     icon: 'youtube',
     href: 'https://www.youtube.com/channel/UC37rp97Go-xIX3aNFVHhXfQ',
     label: 'Go to DVCorg Youtube'
@@ -38,16 +43,15 @@ const NavBar: React.FC = () => {
         >
           by <span>iterative.ai</span>
         </SmartLink>
-        <SmartLink
-          href="https://learn.iterative.ai/"
-          className={styles.nav__link}
-        >
-          Course
-        </SmartLink>
-        <OtherToolsPopup navItemClassName={styles.nav__link} />
-        <Button className={styles.nav__button} icon="github" disabled>
-          Coming Soon
-        </Button>
+        <div className={styles.nav__links}>
+          <SmartLink
+            href="https://learn.iterative.ai/"
+            className={styles.nav__link}
+          >
+            Course
+          </SmartLink>
+          <OtherToolsPopup navItemClassName={styles.nav__link} />
+        </div>
         <ul className={styles.nav__icons}>
           {socialLinks.map(({ icon, href, label }, i) => (
             <li key={i}>
@@ -55,6 +59,9 @@ const NavBar: React.FC = () => {
             </li>
           ))}
         </ul>
+        <Button href="/docs/start" className={styles.nav__button}>
+          Get Started
+        </Button>
       </nav>
     </>
   )

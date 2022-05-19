@@ -4,14 +4,6 @@
   align-items: center;
   padding: 8px 0;
 
-  @media (--md-scr) {
-    padding: 0;
-  }
-
-  @media (--md-scr) {
-    padding: 4px 0;
-  }
-
   &__brandLogo {
     width: 90px;
 
@@ -54,18 +46,33 @@
     }
   }
 
+  &__links {
+    display: flex;
+
+    > * {
+      margin-right: 8px;
+
+      @media (--md-scr) {
+        margin-right: 24px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        @media (--md-scr) {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
   &__link {
     display: none;
     align-items: center;
-    margin-right: 8px;
     @apply text-tiny md:text-lg leading-6 text-gray-900;
 
     @media (--sm-scr) {
       display: flex;
-    }
-
-    @media (--md-scr) {
-      margin-right: 24px;
     }
 
     svg {
@@ -80,15 +87,10 @@
   }
 
   &__button {
-    margin-right: 12px;
     display: none;
 
     @media (--md-scr) {
       display: flex;
-    }
-
-    @media (--lg-scr) {
-      margin-right: 4px;
     }
   }
 
@@ -96,5 +98,9 @@
     display: flex;
     margin: 0;
     padding: 0;
+
+    @media (--md-scr) {
+      margin-right: 12px;
+    }
   }
 }
