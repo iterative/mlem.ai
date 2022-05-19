@@ -24,7 +24,7 @@ loaded = load(out_path)
 
 ## Description
 
-Loads a python object from a given path. The path can belong to different file systems (eg: `S3`). The function returns the python object saved by MLEM.
+Loads a python object from a given path. The path can belong to different file systems (eg: `S3`). The function returns the underlying python object saved by MLEM.
 
 ## Parameters
 

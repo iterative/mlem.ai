@@ -28,7 +28,7 @@ save(obj, path, index=False, external=True)
 
 ## Description
 
-Saves a given object to a given path. The path can belong to different file systems (eg: `S3`). The function returns None and saves the object as a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
+Saves a given object to a given path. The path can belong to different file systems (eg: `S3`). The function returns and saves the object as a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
 
 ## Parameters
 
