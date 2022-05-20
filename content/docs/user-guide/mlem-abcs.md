@@ -264,7 +264,8 @@ packaging [here](/doc/get-started/packaging)
 
 **Base class**: `mlem.pack.base.Packager`
 
-Related commands: [API](/doc/api-reference/pack), [CLI](/doc/command-reference/pack)
+Related commands: [API](/doc/api-reference/pack),
+[CLI](/doc/command-reference/pack)
 
 **Implementations**:
 
