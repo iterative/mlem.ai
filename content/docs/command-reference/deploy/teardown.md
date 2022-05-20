@@ -13,11 +13,12 @@ PATH  Path to deployment meta  [required]
 
 ## Description
 
-The `deploy teardown` command first destroys the deployed service setting its state to `not_deployed` and then finally deletes it.
+The `deploy teardown` command first destroys the deployed service setting its
+state to `not_deployed` and then finally deletes it.
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo  [default: (none)]
+- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
 - `-h, --help`: Show this message and exit.
 
 ## Examples

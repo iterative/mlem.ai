@@ -21,16 +21,20 @@ But no one tried it so far ;)
 
 Your subclass should implement all the abstract methods of the base class.
 
-Also, it needs to define `type: ClassVar[str]` class field, which will be used as an alias for your implementation.
+Also, it needs to define `type: ClassVar[str]` class field, which will be used
+as an alias for your implementation.
 
 <details>
 
 ### Default `type` value
 
-By default, `type` will have `<module>.<class name>` value, but that's not very handy to type in cli, e.g. you'll need to run `mlem serve model my_awesome_package.submodule_of_my_awsome_package.abstract.bean.factory.MyAwesomeServerImplementation` instead of `mlem serve model ъуъ` if you don't set `type: ClassVar = "ъуъ"` for your class
+By default, `type` will have `<module>.<class name>` value, but that's not very
+handy to type in cli, e.g. you'll need to run
+`mlem serve model my_awesome_package.submodule_of_my_awsome_package.abstract.bean.factory.MyAwesomeServerImplementation`
+instead of `mlem serve model ъуъ` if you don't set `type: ClassVar = "ъуъ"` for
+your class
 
 </details>
-
 
 ## Entrypoints
 

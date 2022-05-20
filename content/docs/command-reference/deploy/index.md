@@ -17,7 +17,9 @@ COMMAND
 
 ## Description
 
-The `deploy` command is used to manage the lifecycle of deployments along with giving access to methods of the deployed model. Currently, only `heroku` is supported as a target platform.
+The `deploy` command is used to manage the lifecycle of deployments along with
+giving access to methods of the deployed model. Currently, only `heroku` is
+supported as a target platform.
 
 ## Options
 

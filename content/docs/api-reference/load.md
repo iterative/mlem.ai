@@ -24,14 +24,18 @@ loaded = load(out_path)
 
 ## Description
 
-Loads a python object from a given path. The path can belong to different file systems (eg: `S3`). The function returns the underlying python object saved by MLEM.
+Loads a python object from a given path. The path can belong to different file
+systems (eg: `S3`). The function returns the underlying python object saved by
+MLEM.
 
 ## Parameters
 
-- **`path`** (required) - Path to the object. Could be local path or path inside a git repo.
+- **`path`** (required) - Path to the object. Could be local path or path inside
+  a git repo.
 - `repo` (optional) - URL to repo if object is located there.
 - `rev` (optional) - revision, could be git commit SHA, branch name or tag.
-- `follow_links` (optional) - If object we read is a MLEM link, whether to load the actual object link points to. Defaults to True.
+- `follow_links` (optional) - If object we read is a MLEM link, whether to load
+  the actual object link points to. Defaults to True.
 
 ## Exceptions
 

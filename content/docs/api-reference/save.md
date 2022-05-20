@@ -28,21 +28,28 @@ save(obj, path, index=False, external=True)
 
 ## Description
 
-Saves a given object to a given path. The path can belong to different file systems (eg: `S3`). The function returns and saves the object as a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
+Saves a given object to a given path. The path can belong to different file
+systems (eg: `S3`). The function returns and saves the object as a
+[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
 
 ## Parameters
 
 - **`obj`** (required) - Object to dump
-- **`path`** (required) - If not located on LocalFileSystem, then should be uri or `fs` argument should be provided
+- **`path`** (required) - If not located on LocalFileSystem, then should be uri
+  or `fs` argument should be provided
 - `repo` (optional) - path to mlem repo
-- `sample_data` (optional) - If the object is a model or function, you can provide input data sample, so MLEM will include it's schema in the model's metadata
+- `sample_data` (optional) - If the object is a model or function, you can
+  provide input data sample, so MLEM will include it's schema in the model's
+  metadata
 - `fs` (optional) - FileSystem for the `path` argument
 - `index` (optional) - Whether to add object to mlem repo index
-- `external` (optional) - if obj is saved to repo, whether to put it outside of .mlem dir
+- `external` (optional) - if obj is saved to repo, whether to put it outside of
+  .mlem dir
 - `description` (optional) - description for object
 - `params` (optional) - arbitrary params for object
 - `labels` (optional) - labels for object
-- `update` (optional) - whether to keep old description/labels/params if new values were not provided
+- `update` (optional) - whether to keep old description/labels/params if new
+  values were not provided
 
 ## Exceptions
 

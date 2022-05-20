@@ -24,15 +24,21 @@ objects = ls(".", rev=None, type_filter=None, include_links=True)
 
 ## Description
 
-Populates a dictionary where keys are different `types` of [MlemObjects](/doc/user-guide/basic-concepts#mlem-objects) and values are a collection of MlemObjects of that type. This API is internally used by the CLI command [list](/doc/cli-reference/list).
+Populates a dictionary where keys are different `types` of
+[MlemObjects](/doc/user-guide/basic-concepts#mlem-objects) and values are a
+collection of MlemObjects of that type. This API is internally used by the CLI
+command [list](/doc/cli-reference/list).
 
 ## Parameters
 
 - **`repo`** (required) - Path or URL to repo
 - `rev` (optional) - revision, could be git commit SHA, branch name or tag.
-- `fs` (optional) - filesystem to load from. If not provided, will be inferred from repo
-- `type_filter` (optional) - type of objects to be listed (eg: models / dataset / etc.)
-- `include_links` (optional) - whether to include links while fetching the list of MlemObjects. Defaults to True
+- `fs` (optional) - filesystem to load from. If not provided, will be inferred
+  from repo
+- `type_filter` (optional) - type of objects to be listed (eg: models / dataset
+  / etc.)
+- `include_links` (optional) - whether to include links while fetching the list
+  of MlemObjects. Defaults to True
 
 ## Exceptions
 

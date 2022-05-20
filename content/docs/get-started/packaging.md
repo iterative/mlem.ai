@@ -92,7 +92,6 @@ $ mlem pack rf -l pip_config
 💼 Written `example_mlem_get_started` package data to `build`
 ```
 
-
 <details>
 
 ### ⛳ [Add packager config](https://github.com/iterative/example-mlem-get-started/tree/5-pack)
@@ -102,8 +101,8 @@ $ git add .mlem/packager/pip_config.mlem
 $ git commit -m "Add package config"
 $ git diff 5-pack
 ```
-</details>
 
+</details>
 
 Also, you can do all of this programmatically via Python API:
 
@@ -113,7 +112,6 @@ from mlem.api import pack, load_meta
 pack("pip", "rf", target="build", package_name="example_mlem_get_started")
 pack(load_meta("pip_config"), "rf")
 ```
-
 
 <details>
 

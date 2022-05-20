@@ -1,6 +1,5 @@
 # Deploying models
 
-
 You can also create deployments in cloud from your models.
 
 > ⚠️ This functionality is experimental and is subject to change. We’ll add more
@@ -62,6 +61,7 @@ $ git add .mlem/env/staging.mlem .mlem/deployment/myservice.mlem
 $ git commit -m "Add env and deploy meta"
 $ git diff 5-deploy-meta
 ```
+
 </details>
 
 Now we can actually run the deployment process (this can take a while):

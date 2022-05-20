@@ -14,15 +14,22 @@ TARGET  Path whare to save MLEM object  [required]
 
 ## Description
 
-With MLEM, one can use existing saved datasets or models and use the `mlem import` command to create the necessary `metadata` files (ending with `.mlem`) for them. This is useful to quickly make the existing datasets and models compatible with MLEM, which can then be used in further operations such as `mlem apply`. This workflow is faster than writing a python script to load models and datasets and then subsequently use them.
+With MLEM, one can use existing saved datasets or models and use the
+`mlem import` command to create the necessary `metadata` files (ending with
+`.mlem`) for them. This is useful to quickly make the existing datasets and
+models compatible with MLEM, which can then be used in further operations such
+as `mlem apply`. This workflow is faster than writing a python script to load
+models and datasets and then subsequently use them.
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
-- `--target-repo, --tr TEXT`: Repo to save target to  [default: (none)]
-- `--copy / --no-copy`: Whether to create a copy of file in target location or just link existing file  [default: copy]
-- `--type TEXT`: Specify how to read file Available types: ['pandas', 'pickle']  [default: (auto infer)]
+- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
+- `--target-repo, --tr TEXT`: Repo to save target to [default: (none)]
+- `--copy / --no-copy`: Whether to create a copy of file in target location or
+  just link existing file [default: copy]
+- `--type TEXT`: Specify how to read file Available types: ['pandas', 'pickle']
+  [default: (auto infer)]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-e, --external`: Save result not in .mlem, but directly in repo
 - `-h, --help`: Show this message and exit.

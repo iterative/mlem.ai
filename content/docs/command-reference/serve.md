@@ -1,6 +1,7 @@
 # serve
 
-Exposes a model's methods as endpoints and serves them with a server implementation.
+Exposes a model's methods as endpoints and serves them with a server
+implementation.
 
 ## Synopsis
 
@@ -14,16 +15,20 @@ MODEL      Model to create service from  [required]
 
 ## Description
 
-A model through MLEM can be served via a server implementation (eg: `fastapi`) and its methods can be exposed as API endpoints. This allows us to query and make requests to the served model. In case of `fastapi`, one can see the spec at `/docs` and make requests either with the corresponding in-built client or even through `curl` or `requests` library in python.
+A model through MLEM can be served via a server implementation (eg: `fastapi`)
+and its methods can be exposed as API endpoints. This allows us to query and
+make requests to the served model. In case of `fastapi`, one can see the spec at
+`/docs` and make requests either with the corresponding in-built client or even
+through `curl` or `requests` library in python.
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
+- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
 - `-l, --load TEXT`: File to load server config from
 - `-c, --conf TEXT`: Options for server in format `field.name=value`
 - `-f, --file_conf TEXT`: File with options for server in format
-                        `field.name=path_to_config`
+  `field.name=path_to_config`
 - `--help`: Show this message and exit.
 
 ## Examples

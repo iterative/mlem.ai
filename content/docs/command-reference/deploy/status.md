@@ -13,7 +13,8 @@ PATH  Path to deployment meta  [required]
 
 ## Description
 
-The `deploy status` command lets us check the status of the deployed service. The current possible list of statuses with the `heroku` implementation are:
+The `deploy status` command lets us check the status of the deployed service.
+The current possible list of statuses with the `heroku` implementation are:
 
 - unknown
 - not_deployed
@@ -24,7 +25,7 @@ The `deploy status` command lets us check the status of the deployed service. Th
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo  [default: (none)]
+- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
 - `-h, --help`: Show this message and exit.
 
 ## Examples

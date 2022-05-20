@@ -1,8 +1,12 @@
 # pprint
 
-Get information about a specific [MLEM object](/doc/user-guide/basic-concepts#mlem-objects) from a MLEM repository (should contain `.mlem` directory)
+Get information about a specific
+[MLEM object](/doc/user-guide/basic-concepts#mlem-objects) from a MLEM
+repository (should contain `.mlem` directory)
 
-> Useful to see generic metadata information such as requirements, type of object, hash, size, etc. as well as object specific information such as `methods` for a `model` or perhaps `reader` for a `dataset`.
+> Useful to see generic metadata information such as requirements, type of
+> object, hash, size, etc. as well as object specific information such as
+> `methods` for a `model` or perhaps `reader` for a `dataset`.
 
 ## Synopsis
 
@@ -14,12 +18,14 @@ arguments: PATH Path to object [required]
 
 ## Description
 
-The MLEM objects (a list of which can be seen from `mlem list`) can be printed to check for their metadata information. Since only one object is printed at a particular time, a path to a specific MLEM object is always required.
+The MLEM objects (a list of which can be seen from `mlem list`) can be printed
+to check for their metadata information. Since only one object is printed at a
+particular time, a path to a specific MLEM object is always required.
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
+- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
 - `-f, --follow-links`: If specified, follow the link to the actual object.
 - `--json`: Output as json
 - `--help`: Show this message and exit.
@@ -51,4 +57,6 @@ $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
 'requirements': [{'module': 'pandas', 'version': '1.4.2'}]}
 ```
 
-> The `iris.csv` dataset used in the above example was present in the list of MLEM objects obtained from this repository [here](/doc/cli-reference/list#examples)
+> The `iris.csv` dataset used in the above example was present in the list of
+> MLEM objects obtained from this repository
+> [here](/doc/cli-reference/list#examples)

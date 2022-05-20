@@ -26,8 +26,6 @@ if __name__ == "__main__":
 Here we load the well-known iris dataset with sklearn, and then save parts of it
 with MLEM. For now, we just save them locally and push them to Git later.
 
-
-
 Let's execute this script and see what was produced:
 
 ```bash
@@ -111,6 +109,7 @@ $ git diff 2-prepare
 </details>
 
 # ---------
+
 > Note that we didn't specify whether the saved dataset was `pd.DataFrame`,
 > `np.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
 > extends to ML models 👋

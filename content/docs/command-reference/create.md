@@ -15,12 +15,20 @@ PATH         Where to save object  [required]
 
 ## Description
 
-Metadata files (ending with `.mlem`) can be created for [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) using the `mlem create` command. This is particularly useful in filling up configuration values for environments and deployments using command line. Each MLEM object, along with its subtype (particular implementation) will accept different configuration arguments, the list of which can be fetched by using `mlem types OBJECT_TYPE SUBTYPE` (See the last example [here](/doc/cli-reference/types#examples))
+Metadata files (ending with `.mlem`) can be created for
+[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) using the
+`mlem create` command. This is particularly useful in filling up configuration
+values for environments and deployments using command line. Each MLEM object,
+along with its subtype (particular implementation) will accept different
+configuration arguments, the list of which can be fetched by using
+`mlem types OBJECT_TYPE SUBTYPE` (See the last example
+[here](/doc/cli-reference/types#examples))
 
 ## Options
 
-- `-c, --conf TEXT`: Values for object fields in format `field.nested.name=value`
-- `-r, --repo TEXT`: Path to MLEM repo  [default: (none)]
+- `-c, --conf TEXT`: Values for object fields in format
+  `field.nested.name=value`
+- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
 - `-e, --external`: Save result not in .mlem, but directly in repo
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-h, --help`: Show this message and exit.
