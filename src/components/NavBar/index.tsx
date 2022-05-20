@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import SmartLink from '../SmartLink'
 import Button from '../Button'
 import SocialIcon, { ISocialIconProps } from './SocialIcon'
@@ -6,6 +7,7 @@ import mlemLogo from '../../images/mlem-logo.png'
 import OtherToolsPopup from './OtherToolsPopup'
 import Alert from './Alert'
 import * as styles from './index.module.css'
+import { useHeaderIsScrolled } from '@dvcorg/gatsby-theme-iterative/src/utils/front/scroll'
 
 const socialLinks: Array<ISocialIconProps> = [
   {
@@ -21,9 +23,11 @@ const socialLinks: Array<ISocialIconProps> = [
 ]
 
 const NavBar: React.FC = () => {
+  const scrolled = useHeaderIsScrolled()
+
   return (
-    <header className={styles.header}>
-      <Alert collapsed={false} />
+    <header className={cn(styles.header, scrolled || styles.hasAlert)}>
+      <Alert collapsed={scrolled} />
       <nav className={styles.nav}>
         <SmartLink href="/" className={styles.nav__logoLink}>
           <img

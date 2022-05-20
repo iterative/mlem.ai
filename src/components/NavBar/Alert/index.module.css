@@ -1,6 +1,6 @@
 .alert {
-  height: 35px;
-  line-height: 35px;
+  height: var(--layout-alert-height);
+  line-height: var(--layout-alert-height);
   font-size: 18px;
   text-align: center;
   background-color: #dee;

@@ -3,12 +3,16 @@
   background-color: white;
   position: sticky;
   top: 0;
-  height: calc(var(--layout-header-height)+var(--layout-alert-height));
+  height: var(--layout-header-height);
   z-index: 2;
   box-shadow: 0 2px 3px 0 rgb(0 0 0 / 15%);
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
+  transition: 0.5s all, 0s width;
+  &.hasAlert {
+    height: calc(var(--layout-header-height)+var(--layout-alert-height));
+  }
 }
 
 .nav {
