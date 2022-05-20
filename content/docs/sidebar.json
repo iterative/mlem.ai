@@ -68,9 +68,9 @@
         "source": "use-cases/cicd.md"
       },
       {
-        "slug": "dvc-gto-studio",
-        "label": "Ultimate Iterative Experience",
-        "source": "use-cases/dvc-gto-studio.md"
+        "slug": "model-registry",
+        "label": "Model Registry",
+        "source": "use-cases/model-registry.md"
       }
     ]
   },

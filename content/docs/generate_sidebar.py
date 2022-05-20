@@ -25,7 +25,7 @@ ORDER = {
         'mlem-mr.md',
         'dvc-pipeline.md',
         'cicd.md',
-        'dvc-gto-studio.md'
+        'model-registry.md'
     ],
     "user-guide": [
         'what-is-mlem.md',
