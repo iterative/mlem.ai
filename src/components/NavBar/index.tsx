@@ -22,10 +22,10 @@ const socialLinks: Array<ISocialIconProps> = [
 
 const NavBar: React.FC = () => {
   return (
-    <div className={styles.wrapper}>
+    <header className={styles.header}>
       <Alert collapsed={false} />
       <nav className={styles.nav}>
-        <SmartLink href="/">
+        <SmartLink href="/" className={styles.nav__logoLink}>
           <img
             alt="Go to home page"
             src={mlemLogo}
@@ -39,6 +39,9 @@ const NavBar: React.FC = () => {
           href="https://iterative.ai/"
         >
           by <span>iterative.ai</span>
+        </SmartLink>
+        <SmartLink href="/doc" className={styles.nav__link}>
+          Docs
         </SmartLink>
         <SmartLink
           href="https://learn.iterative.ai/"
@@ -58,7 +61,7 @@ const NavBar: React.FC = () => {
           ))}
         </ul>
       </nav>
-    </div>
+    </header>
   )
 }
 

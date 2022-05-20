@@ -1,19 +1,13 @@
 import React from 'react'
-import NavBar from '../NavBar'
 import Header from './Header'
 import Features from './Features'
-import Footer from '../Footer'
 
 const Home: React.FC = () => {
   return (
-    <>
-      <NavBar />
+    <main>
       <Header />
-      <main>
-        <Features />
-      </main>
-      <Footer />
-    </>
+      <Features />
+    </main>
   )
 }
 
