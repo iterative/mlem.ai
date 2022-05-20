@@ -59,7 +59,7 @@ const NavBar: React.FC = () => {
             </li>
           ))}
         </ul>
-        <Button href="/docs/start" className={styles.nav__button}>
+        <Button href="/doc/start" className={styles.nav__button}>
           Get Started
         </Button>
       </nav>
