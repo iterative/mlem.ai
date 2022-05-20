@@ -3,7 +3,7 @@
   background-color: white;
   position: sticky;
   top: 0;
-  height: var(--layout-header-height);
+  height: calc(var(--layout-header-height)+var(--layout-alert-height));
   z-index: 2;
   box-shadow: 0 2px 3px 0 rgb(0 0 0 / 15%);
   display: flex;
