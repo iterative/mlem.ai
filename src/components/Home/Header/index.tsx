@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import cn from 'classnames'
 import Terminal from '../Terminal'
-// import Button from '../../Button'
+import Button from '../../Button'
 import tensorflowLogo from '../../../images/logo/tensorflow.png'
 import pytorchLogo from '../../../images/logo/pytorch.png'
 import dmlcXgboostLogo from '../../../images/logo/dmlc-xgboost.png'
@@ -250,22 +250,17 @@ const Header: React.FC = () => {
             </li>
           ))}
         </ul>
-        {/* <div className={styles.main__buttons}>
+        <div className={styles.main__buttons}>
           <Button
             className={styles.button}
             href="https://iterative-ai.typeform.com/to/FGyGIx45"
           >
-            Become first user
+            Get Started
           </Button>
-          <Button
-            className={styles.button}
-            icon="github"
-            theme="ghost"
-            disabled
-          >
-            Coming Soon
+          <Button href="/doc/install" className={styles.button} theme="ghost">
+            Install
           </Button>
-        </div> */}
+        </div>
       </div>
       <ul className={styles.header__logos}>
         {logosData.map(({ widthSm, widthMd, widthLg, src, alt }, i) => (

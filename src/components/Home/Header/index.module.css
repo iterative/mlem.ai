@@ -107,6 +107,10 @@
       @media (--lg-scr) {
         margin: 0 16px 0 0;
       }
+
+      &:last-child {
+        @apply border border-solid border-purple-800;
+      }
     }
   }
 }
