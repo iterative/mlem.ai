@@ -1,4 +1,4 @@
-# mlem.core.metadata.save()
+# mlem.api.save()
 
 Saves given object to a given path
 

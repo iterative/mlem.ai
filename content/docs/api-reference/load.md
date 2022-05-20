@@ -1,4 +1,4 @@
-# mlem.core.metadata.load()
+# mlem.api.load()
 
 Load python object saved by MLEM
 

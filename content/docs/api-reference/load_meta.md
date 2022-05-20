@@ -1,4 +1,4 @@
-# mlem.core.metadata.load_meta()
+# mlem.api.load_meta()
 
 Loads MlemObject from a given path
 

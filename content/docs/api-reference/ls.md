@@ -1,4 +1,4 @@
-# mlem.api.commands.ls()
+# mlem.api.ls()
 
 Get a view of the MLEM repository by listing all of its MLEM Objects
 

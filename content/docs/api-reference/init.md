@@ -1,4 +1,4 @@
-# mlem.api.commands.init()
+# mlem.api.init()
 
 Creates `.mlem` directory in `path`
 

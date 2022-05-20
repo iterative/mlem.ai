@@ -137,102 +137,102 @@
     ]
   },
   {
-    "slug": "cli-reference",
-    "label": "CLI Reference",
-    "source": "cli-reference/index.md",
+    "slug": "command-reference",
+    "label": "Command Reference",
+    "source": "command-reference/index.md",
     "children": [
       {
         "slug": "init",
         "label": "init",
-        "source": "cli-reference/init.md"
+        "source": "command-reference/init.md"
       },
       {
         "slug": "list",
         "label": "list",
-        "source": "cli-reference/list.md"
+        "source": "command-reference/list.md"
       },
       {
         "slug": "pprint",
         "label": "pprint",
-        "source": "cli-reference/pprint.md"
+        "source": "command-reference/pprint.md"
       },
       {
         "slug": "create",
         "label": "create",
-        "source": "cli-reference/create.md"
+        "source": "command-reference/create.md"
       },
       {
         "slug": "serve",
         "label": "serve",
-        "source": "cli-reference/serve.md"
+        "source": "command-reference/serve.md"
       },
       {
         "slug": "deploy",
         "label": "deploy",
-        "source": "cli-reference/deploy/index.md",
+        "source": "command-reference/deploy/index.md",
         "children": [
           {
             "slug": "apply",
             "label": "deploy apply",
-            "source": "cli-reference/deploy/apply.md"
+            "source": "command-reference/deploy/apply.md"
           },
           {
             "slug": "create",
             "label": "deploy create",
-            "source": "cli-reference/deploy/create.md"
+            "source": "command-reference/deploy/create.md"
           },
           {
             "slug": "status",
             "label": "deploy status",
-            "source": "cli-reference/deploy/status.md"
+            "source": "command-reference/deploy/status.md"
           },
           {
             "slug": "teardown",
             "label": "deploy teardown",
-            "source": "cli-reference/deploy/teardown.md"
+            "source": "command-reference/deploy/teardown.md"
           }
         ]
       },
       {
         "slug": "types",
         "label": "types",
-        "source": "cli-reference/types.md"
+        "source": "command-reference/types.md"
       },
       {
         "slug": "link",
         "label": "link",
-        "source": "cli-reference/link.md"
+        "source": "command-reference/link.md"
       },
       {
         "slug": "clone",
         "label": "clone",
-        "source": "cli-reference/clone.md"
+        "source": "command-reference/clone.md"
       },
       {
         "slug": "import",
         "label": "import",
-        "source": "cli-reference/import.md"
+        "source": "command-reference/import.md"
       },
       {
         "slug": "pack",
         "label": "pack",
-        "source": "cli-reference/pack.md"
+        "source": "command-reference/pack.md"
       },
       {
         "slug": "apply",
         "label": "apply",
-        "source": "cli-reference/apply.md"
+        "source": "command-reference/apply.md"
       },
       {
         "slug": "apply-remote",
         "label": "apply-remote",
-        "source": "cli-reference/apply-remote.md"
+        "source": "command-reference/apply-remote.md"
       }
     ]
   },
   {
     "slug": "api-reference",
-    "label": "WIP API Reference",
+    "label": "[WIP] Python API Reference",
     "source": "api-reference/index.md",
     "children": [
       {
