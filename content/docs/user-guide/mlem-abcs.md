@@ -264,7 +264,7 @@ packaging [here](/doc/get-started/packaging)
 
 **Base class**: `mlem.pack.base.Packager`
 
-Related commands: [API](/doc/api-reference/pack), [CLI](/doc/cli-reference/pack)
+Related commands: [API](/doc/api-reference/pack), [CLI](/doc/command-reference/pack)
 
 **Implementations**:
 
@@ -297,7 +297,7 @@ Declaration and state of deployed model.
 **Base class**: `mlem.core.objects.DeployMeta`
 
 Related commands: [API](/doc/api-reference/deploy),
-[CLI](/doc/cli-reference/deploy)
+[CLI](/doc/command-reference/deploy)
 
 **Fields**:
 

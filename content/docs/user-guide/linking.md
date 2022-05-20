@@ -22,7 +22,7 @@ The contens of the link is very lightweight and consist of the following fields:
 
 ## Using links
 
-Links can be created via [`mlem link`](/doc/cli-reference/link) or
+Links can be created via [`mlem link`](/doc/command-reference/link) or
 [`mlem.api.link`](/doc/api-reference/link) commands, as well as
 `MlemMeta.make_link` method.
 

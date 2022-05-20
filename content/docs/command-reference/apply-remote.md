@@ -19,7 +19,7 @@ DATA       Path to dataset object  [required]
 Models which are deployed somewhere remotely or are being
 [served](/doc/get-started/serving) can have their methods called using the
 `apply-remote` command. This command is similar to
-[apply](/doc/cli-reference/apply), the only difference being that the model is
+[apply](/doc/command-reference/apply), the only difference being that the model is
 deployed somewhere or is being served. To access the methods of this `served`
 model, a `client` is needed. The currently available clients are `http` and
 `rmq` corresponding to the `fastapi` and `rmq` server types. These clients are
@@ -49,5 +49,5 @@ $ mlem apply-remote http mydataset -c host="0.0.0.0" -c port=3000 --output mypre
 ```
 
 > The hosted model above can be the example discussed
-> [here](/doc/cli-reference/serve#examples) for instance or can be any other
+> [here](/doc/command-reference/serve#examples) for instance or can be any other
 > model.

@@ -22,7 +22,7 @@ values for environments and deployments using command line. Each MLEM object,
 along with its subtype (particular implementation) will accept different
 configuration arguments, the list of which can be fetched by using
 `mlem types OBJECT_TYPE SUBTYPE` (See the last example
-[here](/doc/cli-reference/types#examples))
+[here](/doc/command-reference/types#examples))
 
 ## Options
 

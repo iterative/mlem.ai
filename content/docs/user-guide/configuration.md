@@ -5,7 +5,7 @@
 MLEM uses `.mlem/config.yaml` file to load configuration from, but it can be
 overrided (or set) via corresponding env variable with `MLEM_` prefix.
 
-Also, [`mlem config`](/doc/cli-reference/config) allows you to manipulate
+Also, [`mlem config`](/doc/command-reference/config) allows you to manipulate
 config.
 
 ## Options

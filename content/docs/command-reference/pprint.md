@@ -59,4 +59,4 @@ $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
 
 > The `iris.csv` dataset used in the above example was present in the list of
 > MLEM objects obtained from this repository
-> [here](/doc/cli-reference/list#examples)
+> [here](/doc/command-reference/list#examples)

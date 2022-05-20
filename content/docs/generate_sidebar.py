@@ -7,7 +7,7 @@ ORDER = {
         'get-started',
         'use-cases',
         'user-guide',
-        'cli-reference',
+        'command-reference',
         'api-reference',
         # 'extensions',
         'contributing'
@@ -55,7 +55,7 @@ ORDER = {
         'serve.md',
         'deploy.md', ],
 
-    "cli-reference": [
+    "command-reference": [
         'init.md',
         'list.md',
         'pprint.md',

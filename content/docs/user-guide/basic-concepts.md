@@ -10,7 +10,7 @@ datasets and other types you can read about below.
 > supported Python object.
 
 > Also, MLEM Objects can be created with
-> [`mlem create`](/doc/cli-reference/create) CLI command
+> [`mlem create`](/doc/command-reference/create) CLI command
 
 MLEM Objects are saved as `.mlem` files in `yaml` format. Sometimes they can
 have other files attached to them, in that case we call `.mlem` file as a

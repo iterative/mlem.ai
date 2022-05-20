@@ -27,7 +27,7 @@ objects = ls(".", rev=None, type_filter=None, include_links=True)
 Populates a dictionary where keys are different `types` of
 [MlemObjects](/doc/user-guide/basic-concepts#mlem-objects) and values are a
 collection of MlemObjects of that type. This API is internally used by the CLI
-command [list](/doc/cli-reference/list).
+command [list](/doc/command-reference/list).
 
 ## Parameters
 

@@ -18,7 +18,7 @@ require it like `mlem ls` and `mlem config`.
 
 ## mlem init
 
-To create **MLEM Repo**, simply run [`mlem init`](/doc/cli-reference/init) or
+To create **MLEM Repo**, simply run [`mlem init`](/doc/command-reference/init) or
 [`mlem.api.init`](/doc/api-reference/init). It accepts path as an argument,
 which defaults to current directory.
 
