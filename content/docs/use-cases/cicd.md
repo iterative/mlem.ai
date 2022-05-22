@@ -26,7 +26,7 @@ To trigger the publishing or deploying of a new version, you usually create a
 git tag that kicks off CI process. To make packaging and deployment process
 consistent you can create and commit MLEM declaration:
 
-```shell
+```mlem
 $ mlem create packager pip -c package_name=mypackagename -c target=package pack-to-pip
 💾 Saving packager to pack-to-pip.mlem
 ```
@@ -66,7 +66,7 @@ Learn more about packaging in [Get Started](/doc/get-started/packaging).
 Example with deployment is quite similar. First you need to create environment
 and deployment declaration and commit them to git:
 
-```shell
+```mlem
 $ mlem create env heroku staging
 💾 Saving env to staging.mlem
 

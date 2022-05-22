@@ -1,8 +1,8 @@
 # apply-remote
 
-Apply a model (deployed somewhere remotely) to a dataset. Resulting dataset will
-be saved as MLEM object to `output` if it is provided, otherwise will be
-printed.
+Apply a deployed-model (possibly remotely) to a dataset. The resulting
+dataset will be saved as a MLEM object to `output` if provided. Otherwise,
+it will be printed to `stdout`.
 
 ## Synopsis
 
@@ -17,14 +17,13 @@ DATA       Path to dataset object  [required]
 ## Description
 
 Models which are deployed somewhere remotely or are being
-[served](/doc/get-started/serving) can have their methods called using the
+[served](/doc/get-started/serving) locally, can have their methods called using the
 `apply-remote` command. This command is similar to
-[apply](/doc/command-reference/apply), the only difference being that the model
-is deployed somewhere or is being served. To access the methods of this `served`
-model, a `client` is needed. The currently available clients are `http` and
-`rmq` corresponding to the `fastapi` and `rmq` server types. These clients are
-used to make requests to servers. The outputs and results (again as a MLEM
-Object) are stored or printed as usual.
+[apply](/doc/command-reference/apply), with the only difference being
+the model is deployed remotely using a deployment, or served locally.
+To access the methods of the `served` model, a `client` is needed.
+Currently, the available clients are `http` and `rmq` - which are used
+to launch requests against the `fastapi` and `rmq` server types, correspondingly.
 
 ## Options
 
@@ -41,13 +40,14 @@ Object) are stored or printed as usual.
   `field.name=path_to_config`
 - `-h, --help`: Show this message and exit.
 
-## Examples
+## Example: Apply a locally hosted model to a local dataset
 
+Given a hosted model server (see [serve example](/doc/command-reference/serve#examples) 
+as a way to easily do this) and a local MLEM dataset `mydataset`, run the following command
+to infer the entire dataset with the model and save the output dataset to `myprediction`
 ```mlem
-Apply hosted mlem model to local mlem dataset
-$ mlem apply-remote http mydataset -c host="0.0.0.0" -c port=3000 --output myprediction
+$ mlem apply-remote http mydataset --conf host="127.0.0.1" --conf port=3000 --output myprediction
+...
 ```
 
-> The hosted model above can be the example discussed
-> [here](/doc/command-reference/serve#examples) for instance or can be any other
-> model.
+> 

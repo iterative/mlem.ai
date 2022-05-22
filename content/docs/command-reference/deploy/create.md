@@ -1,6 +1,6 @@
 # deploy create
 
-Deploy a model to target environment. Can use existing deployment declaration or
+Deploy a model to a target environment. You can use an existing deployment declaration or
 create a new one on-the-fly.
 
 ## Synopsis
@@ -16,8 +16,8 @@ PATH  Path to deployment meta (will be created if it does not exist) [required]
 
 The `deploy create` command creates a new deployment for a target environment.
 One can either use an existing deployment declaration (created with
-`mlem create deployment`) OR perhaps create a new one too directly with various
-options available (see below).
+`mlem create deployment`) or create a new one on-the-fly with various
+available options (see below).
 
 ## Options
 
@@ -29,14 +29,30 @@ options available (see below).
 - `-c, --conf TEXT`: Configuration for new deployment meta if it does not exist
 - `-h, --help`: Show this message and exit.
 
-## Examples
+## Example: Create a new deployment from scratch
+Here, we define an environment and then create a deployment on it, providing
+the deployment configuration on-the-fly
+```mlem
+$ mlem create env heroku staging --conf api_key=...
+...
+
+$ mlem deploy create service_name --model model --env staging --conf name=my_service
+...
+```
+
+## Example: Create a deployment from a pre-configured deployment
+Here, we define an environment, configure a deployment declaration on it
+using [`mlem create deployment`](/doc/command-reference/create), and then
+create our deployment with a simple concise command which uses the existing
+pre-configured deployment declaration
 
 ```mlem
-$ mlem create env heroku staging -c api_key=...
-$ mlem deploy create service_name -m model -t staging -c name=my_service
+$ mlem create env heroku staging --conf api_key=...
+...
 
-Deploy existing meta
-$ mlem create env heroku staging -c api_key=...
-$ mlem create deployment heroku service_name -c app_name=my_service -c model=model -c env=staging
+$ mlem create deployment heroku service_name --conf app_name=my_service --conf model=model --conf env=staging
+...
+
 $ mlem deploy create service_name
+...
 ```

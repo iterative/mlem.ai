@@ -1,22 +1,25 @@
 # init
 
-Initialize a MLEM repo in the current working directory.
+Initialize a MLEM working directory.
+
+> An Initialized working directory is required for running other MLEM commands. 
 
 ## Synopsis
 
 ```usage
 usage: mlem init [options] [path]
 
-arguments: [PATH] Where to init repo
+arguments: [PATH] Target path to workspace
 ```
 
 ## Description
 
-The `mlem init` command (without flags) defaults to the current directory for
+The `init` command (without given `path`) defaults to the current directory for
 the path argument. This creates a `.mlem` directory and an empty `config.yaml`
-file. Although MLEM is best used within a Git repository to track changes, the
-existence of a `.mlem` directory signifies a MLEM Repo and thus can exist even
-without incorporating `git` in one's workflow.
+file inside it. Although we recommend using MLEM within a Git repository to track
+changes using the standard git workflows, this is not required for MLEM. The existence of a `.mlem` 
+subdirectory in any path (including remote) constitutes a MLEM workspace, and MLEM will be
+fully functional even without incorporating `git` in one's workflow.
 
 ## Options
 
@@ -24,8 +27,17 @@ without incorporating `git` in one's workflow.
 
 ## Examples
 
+Default Initialization (current working directory)
 ```mlem
 $ mlem init
+```
+
+Initialization to a specified local path
+```mlem
 $ mlem init some/local/path
+```
+
+Initialization in a remote S3 bucket
+```mlem
 $ mlem init s3://bucket/path/in/cloud
 ```

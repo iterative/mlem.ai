@@ -17,35 +17,22 @@ COMMAND
 
 ## Description
 
-The `deploy` command is used to manage the lifecycle of deployments along with
-giving access to methods of the deployed model. Currently, only `heroku` is
-supported as a target platform.
+The `deploy` commands are used to manage the lifecycle of deployments along with
+giving access to methods of the deployed model. 
+
+A "deployment" is an application/service instance consisting of a server, serving a 
+specific model, using a specific environment definition, and running on a target 
+platform.
+
+MLEM deployments allow `applying` methods and even whole datasets on models.
+Each model lists its supported methods in its metafile, and those are automatically
+used by MLEM to wire and expose endpoints on the application server upon deployment.
+Applying datasets on the deployment is a very handy shortcut of bulk inferring data
+on the served model.
+
+> Currently, only `heroku` is supported as a target platform 
+> for deployments but more platforms will be added soon!
 
 ## Options
 
 - `-h, --help`: Show this message and exit.
-
-## Example: Create a new deployment
-
-```mlem
-$ mlem create env heroku staging -c api_key=<...>
-$ mlem deploy create service_name -m model -t staging -c name=my_service
-```
-
-## Example: Apply method of deployed service
-
-```mlem
-$ mlem deploy apply service_name mydatset --method predict
-```
-
-## Example: Print status of deployed service
-
-```mlem
-$ mlem deploy status service_name
-```
-
-## Example: Stop and destroy deployed instance
-
-```mlem
-$ mlem deploy teardown service_name
-```

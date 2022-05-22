@@ -1,7 +1,9 @@
 # list
 
+> Alias: `mlem ls`.
+
 List [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) inside a MLEM
-repository (should contain `.mlem` directory)
+workspace (location should be [initialized](/doc/command-reference/init)).
 
 > Useful to see models, datasets, links, and other types of MLEM Objects
 
@@ -15,24 +17,27 @@ arguments: [REPO] Repo to list from [default: (current directory)]
 
 ## Description
 
-Produces a view of the MLEM repository listing models, datasets, links, and
-other MLEM objects. The command (without flags) defaults to the current
-directory for the repo argument. One can of course point to remote repositories
-as well. The command also allows us to filter MLEM Objects by type, produce json
-output, selectively display links, and choose a particular revision in case of
-remote repositories.
+Produces a view of the MLEM repository listing [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects)
+like models, datasets, and links. Running the command
+without an explicit `repo` argument defaults to the current working directory.
+The `repo` argument can take a local path, or point to a remote repository (e.g. GitHub).
+
+The command also supports additional options, allowing filtering of MLEM Objects by type,
+producing JSON output, selectively displaying [links](/doc/user-guide/linking) and choosing
+a particular revision in case of remote repositories.
 
 ## Options
 
 - `-t, --type [all|link|model|dataset|env|deployment|packager]`: Type of objects
   to list [default: all]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `+l, --links / -l, --no-links`: Include links [default: l]
+- `+l, --links / -l, --no-links`: Whether to include links [default: +l]
 - `--json`: Output as json
 - `--help`: Show this message and exit.
 
 ## Examples
 
+List MLEM objects on a remote GitHub repository
 ```mlem
 $ mlem list https://github.com/iterative/example-mlem-get-started
 Models:

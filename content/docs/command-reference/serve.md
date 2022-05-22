@@ -1,7 +1,6 @@
 # serve
 
-Exposes a model's methods as endpoints and serves them with a server
-implementation.
+Locally deploy the model using a server implementation and expose its methods as endpoints.
 
 ## Synopsis
 
@@ -15,11 +14,16 @@ MODEL      Model to create service from  [required]
 
 ## Description
 
-A model through MLEM can be served via a server implementation (eg: `fastapi`)
-and its methods can be exposed as API endpoints. This allows us to query and
-make requests to the served model. In case of `fastapi`, one can see the spec at
-`/docs` and make requests either with the corresponding in-built client or even
-through `curl` or `requests` library in python.
+An [MLEM Model](/doc/user-guide/basic-concepts#model) can be served via a server
+implementation (e.g. `fastapi`) and its methods exposed as API endpoints.
+This allows us to easily make requests (inference and others) against the served model.
+
+For the common `fastapi` server implementation, the OpenAPI spec is available on
+the `/docs` endpoint.
+
+HTTP Requests to the model-server can be made either with the corresponding built-in client,
+or common HTTP clients, such as [`curl`](https://curl.se/) and [`httpie`](https://httpie.io/)
+CLIs, or the [`requests` python library](https://docs.python-requests.org/).
 
 ## Options
 
@@ -31,10 +35,11 @@ through `curl` or `requests` library in python.
   `field.name=path_to_config`
 - `--help`: Show this message and exit.
 
-## Examples
+## Example: FastAPI HTTP server
 
+Easily serve a model from a remote GitHub repository on a local FastAPI HTTP server
 ```mlem
-$ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi -c port=3000
+$ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi --conf port=3000
 Starting fastapi server...
 💅 Adding route for /predict
 💅 Adding route for /predict_proba

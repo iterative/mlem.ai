@@ -35,7 +35,7 @@ That was pretty straightforward, right?!
 
 </details>
 
-```shell
+```mlem
 $ mlem init
 ```
 

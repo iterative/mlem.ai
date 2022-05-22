@@ -1,9 +1,9 @@
 # Using MLEM Commands
 
 MLEM is a command line tool. Here, we provide the specifications, complete
-descriptions, and comprehensive usage examples for `mlem` commands.
+descriptions, and comprehensive usage examples for different `mlem` commands.
 
-For a list of commands, type `mlem -h`
+For a list of all commands, type `mlem -h`
 
 ## Typical MLEM workflow
 
