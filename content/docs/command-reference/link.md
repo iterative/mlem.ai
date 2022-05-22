@@ -3,7 +3,7 @@
 Create a link / alias for an existing
 [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
 
-> A common use-case is to create links for MLEM Objects present in remote 
+> A common use-case is to create links for MLEM Objects present in remote
 > repositories to incorporate them in the local MLEM workspace
 
 ## Synopsis
@@ -19,9 +19,8 @@ TARGET  Path to save link object  [required]
 ## Description
 
 The `link` command is used to create links to existing
-[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects),
-which, in turn, allows us to refer to an object using the target path
-in all future operations.
+[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects), which, in turn,
+allows us to refer to an object using the target path in all future operations.
 
 ## Options
 
@@ -36,16 +35,19 @@ in all future operations.
 - `-h, --help`: Show this message and exit.
 
 ## Examples
+
 Add a remote object to your local workspace (aka repo) without copying it
+
 ```mlem
 $ mlem link rf --source-repo https://github.com/iterative/example-mlem-get-started remote_model
 ...
 ```
-> The remote model can now be served with the link created above, using the command
-> `mlem serve remote_model fastapi`
 
+> The remote model can now be served with the link created above, using the
+> command `mlem serve remote_model fastapi`
 
 Alias a local object with a different name
+
 ```mlem
 $ mlem link my_model latest
 ...

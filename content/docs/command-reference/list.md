@@ -17,14 +17,16 @@ arguments: [REPO] Repo to list from [default: (current directory)]
 
 ## Description
 
-Produces a view of the MLEM repository listing [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects)
-like models, datasets, and links. Running the command
-without an explicit `repo` argument defaults to the current working directory.
-The `repo` argument can take a local path, or point to a remote repository (e.g. GitHub).
+Produces a view of the MLEM repository listing
+[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) like models,
+datasets, and links. Running the command without an explicit `repo` argument
+defaults to the current working directory. The `repo` argument can take a local
+path, or point to a remote repository (e.g. GitHub).
 
-The command also supports additional options, allowing filtering of MLEM Objects by type,
-producing JSON output, selectively displaying [links](/doc/user-guide/linking) and choosing
-a particular revision in case of remote repositories.
+The command also supports additional options, allowing filtering of MLEM Objects
+by type, producing JSON output, selectively displaying
+[links](/doc/user-guide/linking) and choosing a particular revision in case of
+remote repositories.
 
 ## Options
 
@@ -38,6 +40,7 @@ a particular revision in case of remote repositories.
 ## Examples
 
 List MLEM objects on a remote GitHub repository
+
 ```mlem
 $ mlem list https://github.com/iterative/example-mlem-get-started
 Models:

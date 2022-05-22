@@ -13,8 +13,8 @@ PATH  Path to deployment meta  [required]
 
 ## Description
 
-The `deploy teardown` destroys the deployment by first setting its state
-to `not_deployed` before proceeding to actually destroying the deployed service,
+The `deploy teardown` destroys the deployment by first setting its state to
+`not_deployed` before proceeding to actually destroying the deployed service,
 deleting its associated runtime resources.
 
 ## Options

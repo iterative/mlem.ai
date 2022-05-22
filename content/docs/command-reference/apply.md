@@ -1,8 +1,7 @@
 # apply
 
-Apply a model to a dataset. The resulting dataset will
-be saved as a MLEM object to `output` if provided. Otherwise,
-it will be printed to `stdout`.
+Apply a model to a dataset. The resulting dataset will be saved as a MLEM object
+to `output` if provided. Otherwise, it will be printed to `stdout`.
 
 ## Synopsis
 
@@ -17,14 +16,15 @@ DATA   Path to dataset object  [required]
 ## Description
 
 Models and Datasets, which represent
-[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects), can be used directly
-through command line together to easily run inferences on entire datasets.
-Applying a model to a dataset means calling a model's method (e.g. `predict`) 
-with all the data points in the dataset, and returning the output as a MLEM Object.
+[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects), can be used
+directly through command line together to easily run inferences on entire
+datasets. Applying a model to a dataset means calling a model's method (e.g.
+`predict`) with all the data points in the dataset, and returning the output as
+a MLEM Object.
 
-> This command addresses a very common workflow, and replaces the need to write a python 
-> script to load models & datasets, apply the datasets on the models, and save the
-> resulting dataset.
+> This command addresses a very common workflow, and replaces the need to write
+> a python script to load models & datasets, apply the datasets on the models,
+> and save the resulting dataset.
 
 ## Options
 
@@ -46,17 +46,20 @@ with all the data points in the dataset, and returning the output as a MLEM Obje
 ## Examples
 
 Apply a local MLEM model to a local MLEM dataset
+
 ```mlem
 $ mlem apply mymodel mydatset --method predict --output myprediction
 ```
 
 Apply a local MLEM model to a dataset imported from a local data file
+
 ```mlem
 $ mlem apply mymodel data.csv --method predict --import --import-type pandas[csv] --output myprediction
 ```
 
-Apply a version of a remote model (from HEAD of `main` branch) to a
-version of a remote dataset (again, HEAD of `main` branch)
+Apply a version of a remote model (from HEAD of `main` branch) to a version of a
+remote dataset (again, HEAD of `main` branch)
+
 ```mlem
 $ mlem apply rf --repo https://github.com/iterative/example-mlem-get-started --rev main
                 iris.csv --data-repo https://github.com/iterative/example-mlem-get-started --data-rev main

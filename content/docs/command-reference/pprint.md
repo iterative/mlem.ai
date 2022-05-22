@@ -5,8 +5,8 @@ Display information about a specific
 workspace (location should be [initialized](/doc/command-reference/init)).
 
 > Useful to view object details. This includes generic metadata information such
-> as requirements, type of object, hash, size, as well as object specific information
-> such as `methods` for a `model` or `reader` for a `dataset`.
+> as requirements, type of object, hash, size, as well as object specific
+> information such as `methods` for a `model` or `reader` for a `dataset`.
 
 ## Synopsis
 
@@ -18,11 +18,12 @@ arguments: PATH Path to object [required]
 
 ## Description
 
-All MLEM objects can be printed to view their metadata information.
-Since only one specific object is printed, a path to the specific MLEM
-object is always required.
+All MLEM objects can be printed to view their metadata information. Since only
+one specific object is printed, a path to the specific MLEM object is always
+required.
 
-> You can use [`mlem list`](/doc/command-reference/list) to list for MLEM objects
+> You can use [`mlem list`](/doc/command-reference/list) to list for MLEM
+> objects
 
 ## Options
 
@@ -33,6 +34,7 @@ object is always required.
 - `--help`: Show this message and exit.
 
 ## Example: Showing local object (model)
+
 ```mlem
 $ mlem pprint rf                                                                                                                        ✔  gto  
 ⏳️ Loading meta from .mlem/model/rf.mlem
@@ -47,10 +49,12 @@ $ mlem pprint rf                                                                
                                                                         '(cm)',
 ...
 ```
+
 > Note: The above output was snipped for brevity. Models metadata is extensive
 > and the output can be quite verbose!
 
 ## Example: Showing remote object (dataset)
+
 ```mlem
 $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
 ⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/dataset/iris.csv.mlem
@@ -74,5 +78,5 @@ $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
  'requirements': [{'module': 'pandas', 'version': '1.4.2'}]}
 ```
 
-> Both the `rf` model and the `iris.csv` dataset used in the examples above can be found in
-> [this example repository](/doc/command-reference/list#examples)
+> Both the `rf` model and the `iris.csv` dataset used in the examples above can
+> be found in [this example repository](/doc/command-reference/list#examples)

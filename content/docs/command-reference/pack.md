@@ -1,7 +1,7 @@
 # pack
 
-Package models to create re-usable, ship-able, entities such as a docker image or pip-ready
-python packages.
+Package models to create re-usable, ship-able, entities such as a docker image
+or pip-ready python packages.
 
 > Use packaged models as distribution-ready release assets
 
@@ -33,12 +33,15 @@ from your models like python packages or docker images.
 ## Examples
 
 Build a docker image from a model
+
 ```mlem
 $ mlem pack mymodel docker --conf server.type=fastapi --conf image.name=myimage
 ...
 ```
 
-Create a `docker_dir` packager config called `pack_dock`, and use it to package a model
+Create a `docker_dir` packager config called `pack_dock`, and use it to package
+a model
+
 ```mlem
 $ mlem create packager docker_dir --conf server=fastapi --conf target=build pack_dock
 ...
@@ -46,4 +49,6 @@ $ mlem create packager docker_dir --conf server=fastapi --conf target=build pack
 $ mlem pack mymodel --load pack_dock
 ...
 ```
-For a detailed example using python-package, see the get-started guide [packaging example](/doc/get-started/packaging).
+
+For a detailed example using python-package, see the get-started guide
+[packaging example](/doc/get-started/packaging).

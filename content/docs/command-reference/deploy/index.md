@@ -18,20 +18,20 @@ COMMAND
 ## Description
 
 The `deploy` commands are used to manage the lifecycle of deployments along with
-giving access to methods of the deployed model. 
+giving access to methods of the deployed model.
 
-A "deployment" is an application/service instance consisting of a server, serving a 
-specific model, using a specific environment definition, and running on a target 
-platform.
+A "deployment" is an application/service instance consisting of a server,
+serving a specific model, using a specific environment definition, and running
+on a target platform.
 
 MLEM deployments allow `applying` methods and even whole datasets on models.
-Each model lists its supported methods in its metafile, and those are automatically
-used by MLEM to wire and expose endpoints on the application server upon deployment.
-Applying datasets on the deployment is a very handy shortcut of bulk inferring data
-on the served model.
+Each model lists its supported methods in its metafile, and those are
+automatically used by MLEM to wire and expose endpoints on the application
+server upon deployment. Applying datasets on the deployment is a very handy
+shortcut of bulk inferring data on the served model.
 
-> Currently, only `heroku` is supported as a target platform 
-> for deployments but more platforms will be added soon!
+> Currently, only `heroku` is supported as a target platform for deployments but
+> more platforms will be added soon!
 
 ## Options
 

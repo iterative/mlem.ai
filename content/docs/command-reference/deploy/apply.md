@@ -14,9 +14,10 @@ DATA  Path to dataset object  [required]
 
 ## Description
 
-The `deploy apply` command lets us apply MLEM deployments (deployed models)
-to a dataset (MLEM object). This means the server's method endpoints (such as `predict` by default) will
-be called with the given dataset and the outputs gathered and returned, also as a MLEM Object.
+The `deploy apply` command lets us apply MLEM deployments (deployed models) to a
+dataset (MLEM object). This means the server's method endpoints (such as
+`predict` by default) will be called with the given dataset and the outputs
+gathered and returned, also as a MLEM Object.
 
 ## Options
 
@@ -32,6 +33,7 @@ be called with the given dataset and the outputs gathered and returned, also as 
 - `-h, --help`: Show this message and exit.
 
 ## Example: Apply a dataset on a deployed model
+
 ```mlem
 $ mlem deploy apply service_name mydatset --method predict
 ...
