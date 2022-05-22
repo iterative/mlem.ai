@@ -304,7 +304,19 @@
   },
   {
     "slug": "contributing",
-    "label": "Contributing to MLEM",
-    "source": "contributing/index.md"
+    "label": "Contributing",
+    "source": "contributing/index.md",
+    "children": [
+      {
+        "slug": "index",
+        "label": "MLEM Core Project",
+        "source": "contributing/index.md"
+      },
+      {
+        "slug": "docs",
+        "label": "Docs and Website",
+        "source": "contributing/docs.md"
+      }
+    ]
   }
 ]
