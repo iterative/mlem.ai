@@ -49,18 +49,13 @@
     "children": [
       {
         "slug": "dvc",
-        "label": "WIP Versioning MLEM objects with DVC",
+        "label": "Versioning MLEM objects with DVC",
         "source": "use-cases/dvc.md"
       },
       {
         "slug": "mlem-mr",
         "label": "Pure Mlem Model Registry",
         "source": "use-cases/mlem-mr.md"
-      },
-      {
-        "slug": "dvc-pipeline",
-        "label": "Using MLEM in DVC Pipeline",
-        "source": "use-cases/dvc-pipeline.md"
       },
       {
         "slug": "cicd",
@@ -79,11 +74,6 @@
     "label": "User Guide",
     "source": "user-guide/index.md",
     "children": [
-      {
-        "slug": "what-is-mlem",
-        "label": "What is MLEM",
-        "source": "user-guide/what-is-mlem.md"
-      },
       {
         "slug": "basic-concepts",
         "label": "Basic concepts",

@@ -31,8 +31,6 @@ $ source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-That was pretty straightforward, right?!
-
 </details>
 
 ```mlem

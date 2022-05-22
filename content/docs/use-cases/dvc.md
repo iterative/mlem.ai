@@ -1,4 +1,4 @@
-# WIP Versioning MLEM objects with DVC
+# Versioning MLEM objects with DVC
 
 <details>
 
@@ -69,3 +69,60 @@ binaries stored in git. MLEM will know to use DVC to load them.
 
 ⛳
 [Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/5-switch-to-dvc)
+
+# Using MLEM in DVC Pipeline
+
+DVC pipelines are the useful DVC mechanism to build data pipelines, in which you
+can process your data and train your model. You may be already training your ML
+models in them and what to start using MLEM to save those models.
+
+MLEM could be easily plug in into existing DVC pipelines. If you already added
+`.mlem` files to `.dvcignore`, you are good to go for most of the cases. Since
+DVC will ignore `.mlem` files, you don't need to add them as outputs and mark
+them with `cache: false`.
+
+It becomes a bit more complicated when you need to add them as outputs, because
+you want to use them as inputs to next stages. The case may be when model binary
+doesn't change for you, but model metadata does. That may happen if you change
+things like model description or labels.
+
+To work with that, you'll need to remove `.mlem` files from `.dvcignore` and
+mark your outputs in DVC Pipeline with `cache: false`.
+
+## Example
+
+You may have a simple pipeline in which you train your model, like this:
+
+```yaml
+# dvc.yaml
+stages:
+  train:
+    cmd: python train.py models/rf
+    deps:
+      - train.py
+    outs:
+      - models/rf
+```
+
+Next step would be to start saving your models with MLEM. Since MLEM saves both
+**binary** and **metadata** you need to have both of them in DVC pipeline:
+
+```yaml
+# dvc.yaml
+stages:
+  train:
+    cmd: python train.py models/rf
+    deps:
+      - train.py
+    outs:
+      - models/rf
+      - models/rf.mlem:
+          cache: false
+```
+
+Since binary was already captured before, we don't need to add anything for it.
+For metadata, we've added two rows to capture it and specify `cache: false`
+since we want the metadata to be committed to Git, and not be pushed to DVC
+remote.
+
+Now MLEM is ready to be used in your DVC pipeline!
