@@ -48,8 +48,8 @@ using `brew` to install Python. For Windows, we recommend an official
 
 > ℹ️ Note that `pip` version 20.3+ is required.
 
-Install MLEM in editable mode with `pip install -e ".[tests]"`. But before we
-do that, we **strongly** recommend creating a
+Install MLEM in editable mode with `pip install -e ".[tests]"`. But before we do
+that, we **strongly** recommend creating a
 [virtual environment](https://python.readthedocs.io/en/stable/library/venv.html):
 
 ```dvc
