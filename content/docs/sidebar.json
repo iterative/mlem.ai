@@ -257,7 +257,7 @@
       },
       {
         "slug": "import_object",
-        "label": "import_object",
+        "label": "import_object()",
         "source": "api-reference/import_object.md"
       },
       {
