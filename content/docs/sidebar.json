@@ -267,7 +267,7 @@
       },
       {
         "slug": "clone",
-        "label": "clone",
+        "label": "clone()",
         "source": "api-reference/clone.md"
       },
       {
