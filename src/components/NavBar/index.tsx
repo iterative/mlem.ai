@@ -15,7 +15,7 @@ const socialLinks: Array<ISocialIconProps> = [
   },
   {
     icon: 'discord',
-    href: 'https://dvc.org/chat',
+    href: 'https://mlem.ai/chat',
     label: 'Go to DVC Discord'
   }
 ]
