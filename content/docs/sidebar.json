@@ -262,7 +262,7 @@
       },
       {
         "slug": "link",
-        "label": "link",
+        "label": "link()",
         "source": "api-reference/link.md"
       },
       {
