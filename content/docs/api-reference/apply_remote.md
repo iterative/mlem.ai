@@ -24,7 +24,7 @@ res = apply_remote(client_obj, data, method="predict")
 
 ## Description
 
-
+This API is the underlying mechanism for the [mlem apply-remote](/doc/command-reference/apply-remote) command and facilitates running inferences on entire datasets for models which are deployed remotely or are being served locally. The API requires an explicit client object, which knows how to make requests to the deployed model.
 
 ## Parameters
 
