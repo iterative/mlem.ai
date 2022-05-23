@@ -276,6 +276,11 @@
         "source": "api-reference/apply.md"
       },
       {
+        "slug": "apply_remote",
+        "label": "apply_remote()",
+        "source": "api-reference/apply_remote.md"
+      },
+      {
         "slug": "pack",
         "label": "pack()",
         "source": "api-reference/pack.md"
