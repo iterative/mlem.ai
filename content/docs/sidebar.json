@@ -272,7 +272,7 @@
       },
       {
         "slug": "apply",
-        "label": "apply",
+        "label": "apply()",
         "source": "api-reference/apply.md"
       },
       {
