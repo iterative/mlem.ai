@@ -18,8 +18,8 @@
   --color-orange-bright: #f46837;
   --layout-width: 1005px;
   --layout-width-wide: 1200px;
-  --layout-header-height: 52px;
   --layout-alert-height: 35px;
+  --layout-header-height: 52px;
 
   @media (--md-scr) {
     --layout-header-height: 60px;
