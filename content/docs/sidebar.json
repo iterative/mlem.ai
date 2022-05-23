@@ -282,7 +282,7 @@
       },
       {
         "slug": "serve",
-        "label": "serve",
+        "label": "serve()",
         "source": "api-reference/serve.md"
       },
       {
