@@ -292,7 +292,7 @@
       },
       {
         "slug": "deploy",
-        "label": "deploy",
+        "label": "deploy()",
         "source": "api-reference/deploy.md"
       }
     ]
