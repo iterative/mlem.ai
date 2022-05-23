@@ -25,14 +25,20 @@ y_pred = apply("rf", "data", method="predict_proba")
 
 ## Description
 
-This API is the underlying mechanism for the [mlem apply](/doc/command-reference/apply) command and facilitates running inferences on entire datasets. The API applies i.e. calls a model's method (eg: `predict`) and returns the output (as a MLEM object) while also saving it if required. 
+This API is the underlying mechanism for the
+[mlem apply](/doc/command-reference/apply) command and facilitates running
+inferences on entire datasets. The API applies i.e. calls a model's method (eg:
+`predict`) and returns the output (as a MLEM object) while also saving it if
+required.
 
 ## Parameters
 
-- **`model`** (required) -  MLEM model (a MlemModel object).
+- **`model`** (required) - MLEM model (a MlemModel object).
 - **`data`** (required) - Input to the model.
-- `method` (optional) - Which model method to use. If None, use the only method model has. If more than one is available, will fail.
-- `output` (optional) - If value is provided, assume its path and save output there.
+- `method` (optional) - Which model method to use. If None, use the only method
+  model has. If more than one is available, will fail.
+- `output` (optional) - If value is provided, assume its path and save output
+  there.
 - `target_repo` (optional) - The path to repo to save the results to.
 - `index` (optional) - Whether to index saved output in MLEM root folder.
 - `external` (optional) - Whether to save result outside mlem dir.
@@ -41,7 +47,8 @@ This API is the underlying mechanism for the [mlem apply](/doc/command-reference
 ## Exceptions
 
 - `WrongMethodError` - Thrown if wrong method name for model is provided
-- `NotImplementedError` - Saving several input data objects is not implemented yet
+- `NotImplementedError` - Saving several input data objects is not implemented
+  yet
 
 ## Examples
 

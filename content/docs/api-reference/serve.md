@@ -20,13 +20,18 @@ serve(model, server_obj)
 
 ## Description
 
-This API is the underlying mechanism for the [mlem serve](/doc/command-reference/serve) command and allows us to locally serve a model by exposing its methods as endpoints. This makes it possible to easily make requests (for inference or otherwise) against the served model.
+This API is the underlying mechanism for the
+[mlem serve](/doc/command-reference/serve) command and allows us to locally
+serve a model by exposing its methods as endpoints. This makes it possible to
+easily make requests (for inference or otherwise) against the served model.
 
 ## Parameters
 
 - **`model`** (required) - The model (a MlemModel object) to serve.
-- **`server`** (required) - Which server implementation to use. Out-of-the-box supported ones are ['fastapi', 'rmq', 'heroku']
-- `server_kwargs` (optional) - Keyword arguments for the underlying server implementation being used.
+- **`server`** (required) - Which server implementation to use. Out-of-the-box
+  supported ones are ['fastapi', 'rmq', 'heroku']
+- `server_kwargs` (optional) - Keyword arguments for the underlying server
+  implementation being used.
 
 ## Exceptions
 

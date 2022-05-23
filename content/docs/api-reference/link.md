@@ -33,7 +33,11 @@ link_obj = link(
 
 ## Description
 
-This API is the underlying mechanism for the [mlem link](/doc/command-reference/link) command and explicitly creates a `MlemLink` object from a `source`. This `MlemLink` object is dumped to a `target` (if provided). This allows us to refer objects (even remote ones) using their aliases for all future purposes.
+This API is the underlying mechanism for the
+[mlem link](/doc/command-reference/link) command and explicitly creates a
+`MlemLink` object from a `source`. This `MlemLink` object is dumped to a
+`target` (if provided). This allows us to refer objects (even remote ones) using
+their aliases for all future purposes.
 
 ## Parameters
 
@@ -41,14 +45,18 @@ This API is the underlying mechanism for the [mlem link](/doc/command-reference/
 - `source_repo` (optional) - Path to mlem repo where to load obj from.
 - `rev` (optional) - Revision if object is stored in git repo.
 - `target` (optional) - Where to store the link object.
-- `target_repo` (optional) - If provided, treat `target` as link name and dump link in MLEM DIR.
+- `target_repo` (optional) - If provided, treat `target` as link name and dump
+  link in MLEM DIR.
 - `external` (optional) - Whether to save link outside mlem dir.
-- `follow_links` (optional) - Whether to make link to the underlying object if `source` is itself a link. Defaults to True.
-- `absolute` (optional) - Whether to make link absolute or relative to mlem repo. Defaults to False.
+- `follow_links` (optional) - Whether to make link to the underlying object if
+  `source` is itself a link. Defaults to True.
+- `absolute` (optional) - Whether to make link absolute or relative to mlem
+  repo. Defaults to False.
 
 ## Exceptions
 
-- `MlemObjectNotSavedError` - Thrown if we can't do something before we save MLEM object.
+- `MlemObjectNotSavedError` - Thrown if we can't do something before we save
+  MLEM object.
 
 ## Examples
 

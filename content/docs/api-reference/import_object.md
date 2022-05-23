@@ -1,6 +1,7 @@
 # mlem.api.import_object()
 
-Try to load an object as MLEM model (or dataset) and return it, optionally saving to the specified target location.
+Try to load an object as MLEM model (or dataset) and return it, optionally
+saving to the specified target location.
 
 ```py
 def import_object(
@@ -37,7 +38,12 @@ assert isinstance(dt, DataFrameType)
 
 ## Description
 
-Existing datasets and model files are imported as [MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects). Specifically, they are tried to be loaded as `MlemModel` or `MlemDataset`. The function also supports saving these objects for future use within the MLEM context. This API is the underlying mechanism for the [mlem import](/doc/command-reference/import) command.
+Existing datasets and model files are imported as
+[MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects). Specifically, they
+are tried to be loaded as `MlemModel` or `MlemDataset`. The function also
+supports saving these objects for future use within the MLEM context. This API
+is the underlying mechanism for the [mlem import](/doc/command-reference/import)
+command.
 
 ## Parameters
 
@@ -48,8 +54,10 @@ Existing datasets and model files are imported as [MLEM Objects](/doc/user-guide
 - `target` (optional) - Path to save MLEM object into.
 - `target_repo` (optional) - Path to MLEM repo for `target`.
 - `target_fs` (optional) - FileSystem for the `target` argument
-- `type_` (optional) - Specify how to read file. Available types: ['pickle', 'pandas']. Defaults to auto-infer.
-- `copy_data` (optional) - Whether to create a copy of file in target location or just link existing file. Defaults to True.
+- `type_` (optional) - Specify how to read file. Available types: ['pickle',
+  'pandas']. Defaults to auto-infer.
+- `copy_data` (optional) - Whether to create a copy of file in target location
+  or just link existing file. Defaults to True.
 - `external` (optional) - Save result not in `.mlem`, but directly in repo
 - `index` (optional) - Whether to index output in `.mlem` directory
 

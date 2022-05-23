@@ -1,6 +1,8 @@
 # mlem.api.pack()
 
-Package a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format, a built package using whl, docker-build-ready folder or directly build a docker image.
+Package a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format,
+a built package using whl, docker-build-ready folder or directly build a docker
+image.
 
 ```py
 def pack(
@@ -18,7 +20,9 @@ from mlem.api import pack
 pack("pip", "rf", target="build", package_name="example_mlem_get_started")
 ```
 
-> The extra kwargs supplied above can be seen from the output of `mlem types packager pip` which gives us
+> The extra kwargs supplied above can be seen from the output of
+> `mlem types packager pip` which gives us
+>
 > ```py
 > [required] package_name: str
 > [required] target: str
@@ -34,13 +38,18 @@ pack("pip", "rf", target="build", package_name="example_mlem_get_started")
 
 ## Description
 
-This API is the underlying mechanism for the [mlem pack](/doc/command-reference/pack) command and allows us to programtically create ship-able assets from MlemModels such as pip-ready packages, docker images, etc.
+This API is the underlying mechanism for the
+[mlem pack](/doc/command-reference/pack) command and allows us to programtically
+create ship-able assets from MlemModels such as pip-ready packages, docker
+images, etc.
 
 ## Parameters
 
-- **`packager`** (required) - Packager to use. Out-of-the-box supported string values are ['whl', 'pip', 'docker_dir', 'docker'].
+- **`packager`** (required) - Packager to use. Out-of-the-box supported string
+  values are ['whl', 'pip', 'docker_dir', 'docker'].
 - **`model`** (required) - The model to pack.
-- `packager_kwargs` (optional) - Keyword arguments for the underlying packager being used.
+- `packager_kwargs` (optional) - Keyword arguments for the underlying packager
+  being used.
 
 ## Exceptions
 

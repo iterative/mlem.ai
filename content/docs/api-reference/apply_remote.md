@@ -24,23 +24,32 @@ res = apply_remote(client_obj, data, method="predict")
 
 ## Description
 
-This API is the underlying mechanism for the [mlem apply-remote](/doc/command-reference/apply-remote) command and facilitates running inferences on entire datasets for models which are deployed remotely or are being served locally. The API requires an explicit client object, which knows how to make requests to the deployed model.
+This API is the underlying mechanism for the
+[mlem apply-remote](/doc/command-reference/apply-remote) command and facilitates
+running inferences on entire datasets for models which are deployed remotely or
+are being served locally. The API requires an explicit client object, which
+knows how to make requests to the deployed model.
 
 ## Parameters
 
 - **`client`** (required) - The client to access methods of deployed model.
 - **`data`** (required) - Input to the model.
-- `method` (optional) - Which model method to use. If None, use the only method model has. If more than one is available, will fail.
-- `output` (optional) - If value is provided, assume it's path and save output there.
+- `method` (optional) - Which model method to use. If None, use the only method
+  model has. If more than one is available, will fail.
+- `output` (optional) - If value is provided, assume it's path and save output
+  there.
 - `target_repo` (optional) - The path to repo to save the results to.
 - `index` (optional) - Whether to index saved output in MLEM root folder.
-- `client_kwargs` (optional) - Keyword arguments for the underlying client implementation being used.
+- `client_kwargs` (optional) - Keyword arguments for the underlying client
+  implementation being used.
 
 ## Exceptions
 
 - `WrongMethodError` - Thrown if wrong method name for model is provided
-- `InvalidArgumentError` - Thrown if arguments are invalid, when method cannot be None
-- `NotImplementedError` - Saving several input data objects is not implemented yet
+- `InvalidArgumentError` - Thrown if arguments are invalid, when method cannot
+  be None
+- `NotImplementedError` - Saving several input data objects is not implemented
+  yet
 
 ## Examples
 
