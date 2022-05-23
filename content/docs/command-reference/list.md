@@ -41,7 +41,7 @@ remote repositories.
 
 List MLEM objects on a remote GitHub repository
 
-```mlem
+```cli
 $ mlem list https://github.com/iterative/example-mlem-get-started
 Models:
 - rf

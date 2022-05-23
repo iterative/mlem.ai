@@ -36,7 +36,7 @@ capabilities.
 
 List MLEM abstract base classes
 
-```mlem
+```cli
 # List ABCs
 $ mlem types
 ...
@@ -44,14 +44,14 @@ $ mlem types
 
 List available server implementations
 
-```mlem
+```cli
 $ mlem types server
 ['rmq', 'heroku', 'fastapi']
 ```
 
 List configuration for a particular implementation
 
-```mlem
+```cli
 $ mlem types server fastapi
 [not required] host: str = "0.0.0.0"
 [not required] port: int = 8080

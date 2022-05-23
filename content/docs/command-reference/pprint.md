@@ -35,7 +35,7 @@ required.
 
 ## Example: Showing local object (model)
 
-```mlem
+```cli
 $ mlem pprint rf                                                                                                                        ✔  gto  
 ⏳️ Loading meta from .mlem/model/rf.mlem
 {'artifacts': {'data': {'hash': 'a61a1fa54893dcebe6fa448df81a1418',
@@ -55,7 +55,7 @@ $ mlem pprint rf                                                                
 
 ## Example: Showing remote object (dataset)
 
-```mlem
+```cli
 $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
 ⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/dataset/iris.csv.mlem
 {'artifacts': {'data': {'hash': '45109f850511f9474665f2c26f4c79f3',

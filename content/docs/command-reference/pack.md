@@ -34,7 +34,7 @@ from your models like python packages or docker images.
 
 Build a docker image from a model
 
-```mlem
+```cli
 $ mlem pack mymodel docker --conf server.type=fastapi --conf image.name=myimage
 ...
 ```
@@ -42,7 +42,7 @@ $ mlem pack mymodel docker --conf server.type=fastapi --conf image.name=myimage
 Create a `docker_dir` packager config called `pack_dock`, and use it to package
 a model
 
-```mlem
+```cli
 $ mlem create packager docker_dir --conf server=fastapi --conf target=build pack_dock
 ...
 

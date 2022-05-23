@@ -8,7 +8,7 @@ FastAPI server. All available server implementations are listed
 
 To start up FastAPI server simply run:
 
-```mlem
+```cli
 $ mlem serve rf fastapi
 ⏳️ Loading model from .mlem/model/rf.mlem
 Starting fastapi server...

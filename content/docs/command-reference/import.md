@@ -39,21 +39,21 @@ models/datasets into object for subsequent usage in MLEM context.
 
 Create a MLEM dataset from a local `.csv` file
 
-```mlem
+```cli
 $ mlem import data/data.csv data/imported_data --type pandas[csv]
 ...
 ```
 
 Create a MLEM model from local `.pkl` (pickle) file
 
-```mlem
+```cli
 $ mlem import data/model.pkl data/imported_model
 ...
 ```
 
 Create a MLEM model from remote `.pkl` (pickle) file
 
-```mlem
+```cli
 $ mlem import .mlem/model/rf --repo https://github.com/iterative/example-mlem-get-started --rev simple data/imported_model --type pickle
 💾 Saving model to .mlem/model/data/imported_model.mlem
 ```

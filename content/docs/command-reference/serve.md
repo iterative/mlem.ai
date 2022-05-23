@@ -43,7 +43,7 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 Easily serve a model from a remote GitHub repository on a local FastAPI HTTP
 server
 
-```mlem
+```cli
 $ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi --conf port=3000
 Starting fastapi server...
 💅 Adding route for /predict

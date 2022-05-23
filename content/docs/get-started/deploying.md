@@ -29,7 +29,7 @@ key.
 
 To create a new target env, run
 
-```mlem
+```cli
 $ mlem create env heroku staging -c api_key=<you api key>
 💾 Saving env to .mlem/env/staging.mlem
 ```

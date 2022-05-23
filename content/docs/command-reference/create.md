@@ -40,7 +40,7 @@ output, check out the last example [here](/doc/command-reference/types#examples)
 
 Create an environment metafile with a config key
 
-```mlem
+```cli
 # Fetch all config arguments which can be passed for a heroku env
 $ mlem types env heroku
 [not required] api_key: str = None

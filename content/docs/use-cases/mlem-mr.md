@@ -28,7 +28,7 @@ Let's build an example using
 
 That repo already have some models in it:
 
-```mlem
+```cli
 $ mlem ls https://github.com/iterative/example-mlem-get-started
 Datasets:
  - test_x.csv
@@ -67,7 +67,7 @@ $ mlem link --sr https://github.com/iterative/example-mlem-get-started --rev 7-d
 
 We've just linked two models from the other repo. You can see both if you run:
 
-```mlem
+```cli
 $ mlem ls
 Models:
  - first-model -> .mlem/model/rf

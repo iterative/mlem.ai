@@ -33,7 +33,7 @@ $ pip install -r requirements.txt
 
 </details>
 
-```mlem
+```cli
 $ mlem init
 ```
 

@@ -34,7 +34,7 @@ gathered and returned, also as a MLEM Object.
 
 ## Example: Apply a dataset on a deployed model
 
-```mlem
+```cli
 $ mlem deploy apply service_name mydatset --method predict
 ...
 ```

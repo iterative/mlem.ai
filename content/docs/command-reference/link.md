@@ -38,7 +38,7 @@ allows us to refer to an object using the target path in all future operations.
 
 Add a remote object to your local workspace (aka repo) without copying it
 
-```mlem
+```cli
 $ mlem link rf --source-repo https://github.com/iterative/example-mlem-get-started remote_model
 ...
 ```
@@ -48,7 +48,7 @@ $ mlem link rf --source-repo https://github.com/iterative/example-mlem-get-start
 
 Alias a local object with a different name
 
-```mlem
+```cli
 $ mlem link my_model latest
 ...
 ```

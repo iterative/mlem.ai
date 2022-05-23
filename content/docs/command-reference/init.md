@@ -30,18 +30,18 @@ incorporating `git` in one's workflow.
 
 Default Initialization (current working directory)
 
-```mlem
+```cli
 $ mlem init
 ```
 
 Initialization to a specified local path
 
-```mlem
+```cli
 $ mlem init some/local/path
 ```
 
 Initialization in a remote S3 bucket
 
-```mlem
+```cli
 $ mlem init s3://bucket/path/in/cloud
 ```

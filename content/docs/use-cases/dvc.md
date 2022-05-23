@@ -21,7 +21,7 @@ We will reorganize our example repo to use DVC.
 First, let’s initialize DVC and add a remote (we will use azure, but you can use
 whatever is available to you):
 
-```dvc
+```cli
 $ dvc init
 $ dvc remote add myremote -d azure://example-mlem
 $ git add .dvc/config
@@ -29,7 +29,7 @@ $ git add .dvc/config
 
 Now, we also need to setup MLEM so it knows to use DVC.
 
-```mlem
+```cli
 $ mlem config set default_storage.type dvc
 ✅  Set `default_storage.type` to `dvc` in repo .
 ```

@@ -47,20 +47,20 @@ a MLEM Object.
 
 Apply a local MLEM model to a local MLEM dataset
 
-```mlem
+```cli
 $ mlem apply mymodel mydatset --method predict --output myprediction
 ```
 
 Apply a local MLEM model to a dataset imported from a local data file
 
-```mlem
+```cli
 $ mlem apply mymodel data.csv --method predict --import --import-type pandas[csv] --output myprediction
 ```
 
 Apply a version of a remote model (from HEAD of `main` branch) to a version of a
 remote dataset (again, HEAD of `main` branch)
 
-```mlem
+```cli
 $ mlem apply rf --repo https://github.com/iterative/example-mlem-get-started --rev main
                 iris.csv --data-repo https://github.com/iterative/example-mlem-get-started --data-rev main
                 --method predict --output myprediction

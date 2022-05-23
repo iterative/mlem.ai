@@ -13,7 +13,7 @@ available packagers [here](/doc/user-guide/mlem-abcs#packager).
 
 To create a `build/` directory with pip package run this command:
 
-```dvc
+```cli
 $ mlem pack rf pip -c target=build/ -c package_name=example_mlem_get_started
 ⏳️ Loading model from .mlem/model/rf.mlem
 💼 Written `example_mlem_get_started` package data to `build`

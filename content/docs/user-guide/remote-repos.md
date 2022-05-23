@@ -93,7 +93,7 @@ e.g. s3.
 To do so, use paths with corresponding file system protocol and path like
 `s3://<bucket>/`
 
-```dvc
+```cli
 $ mlem init s3://example-mlem-get-started
 $ mlem clone rf s3://example-mlem-get-started/rf
 ⏳️ Loading meta from .mlem/model/rf.mlem
