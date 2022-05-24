@@ -295,9 +295,9 @@
     "source": false,
     "children": [
       {
-        "slug": "mlem",
+        "slug": "core",
         "label": "MLEM Core Project",
-        "source": "contributing/mlem.md"
+        "source": "contributing/core.md"
       },
       {
         "slug": "docs",
