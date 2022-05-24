@@ -26,45 +26,54 @@ const NavBar: React.FC = () => {
   const scrolled = useHeaderIsScrolled()
 
   return (
-    <header className={cn(styles.header, scrolled || styles.hasAlert)}>
-      <Alert collapsed={scrolled} />
-      <nav className={styles.nav}>
-        <SmartLink href="/" className={styles.nav__logoLink}>
-          <img
-            alt="Go to home page"
-            src={mlemLogo}
-            className={styles.nav__brandLogo}
-            width={108}
-            height={24}
-          />
-        </SmartLink>
-        <SmartLink
-          className={styles.nav__brandCompany}
-          href="https://iterative.ai/"
-        >
-          by <span>iterative.ai</span>
-        </SmartLink>
-        <SmartLink href="/doc" className={styles.nav__link}>
-          Docs
-        </SmartLink>
-        <SmartLink
-          href="https://learn.iterative.ai/"
-          className={styles.nav__link}
-        >
-          Course
-        </SmartLink>
-        <OtherToolsPopup navItemClassName={styles.nav__link} />
-        <Button className={styles.nav__button} icon="github" disabled>
-          Coming Soon
-        </Button>
-        <ul className={styles.nav__icons}>
-          {socialLinks.map(({ icon, href, label }, i) => (
-            <li key={i}>
-              <SocialIcon icon={icon} href={href} label={label} />
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <header>
+      <div
+        className={cn(
+          styles.placeholder,
+          scrolled && styles.collapsed,
+          styles.withAlert
+        )}
+      />
+      <div className={cn(styles.header, scrolled || styles.hasAlert)}>
+        <Alert collapsed={scrolled} />
+        <nav className={styles.nav}>
+          <SmartLink href="/" className={styles.nav__logoLink}>
+            <img
+              alt="Go to home page"
+              src={mlemLogo}
+              className={styles.nav__brandLogo}
+              width={108}
+              height={24}
+            />
+          </SmartLink>
+          <SmartLink
+            className={styles.nav__brandCompany}
+            href="https://iterative.ai/"
+          >
+            by <span>iterative.ai</span>
+          </SmartLink>
+          <SmartLink href="/doc" className={styles.nav__link}>
+            Docs
+          </SmartLink>
+          <SmartLink
+            href="https://learn.iterative.ai/"
+            className={styles.nav__link}
+          >
+            Course
+          </SmartLink>
+          <OtherToolsPopup navItemClassName={styles.nav__link} />
+          <Button className={styles.nav__button} icon="github" disabled>
+            Coming Soon
+          </Button>
+          <ul className={styles.nav__icons}>
+            {socialLinks.map(({ icon, href, label }, i) => (
+              <li key={i}>
+                <SocialIcon icon={icon} href={href} label={label} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }

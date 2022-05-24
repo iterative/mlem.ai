@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   background-color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
   height: var(--layout-header-height);
   z-index: 2;
@@ -12,6 +12,19 @@
   transition: 0.5s all, 0s width;
   &.hasAlert {
     height: calc(var(--layout-header-height)+var(--layout-alert-height));
+  }
+}
+
+.placeholder {
+  transition: height 0.2s linear;
+  height: var(--layout-header-height);
+
+  &.withAlert {
+    height: calc(var(--layout-header-height) + var(--layout-alert-height));
+  }
+
+  &.collapsed {
+    height: var(--layout-header-height);
   }
 }
 
