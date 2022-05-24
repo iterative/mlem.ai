@@ -75,19 +75,9 @@
         "source": "user-guide/basic-concepts.md"
       },
       {
-        "slug": "datasets",
-        "label": "WIP Working with datasets",
-        "source": "user-guide/datasets.md"
-      },
-      {
         "slug": "project-structure",
         "label": "Project structure",
         "source": "user-guide/project-structure.md"
-      },
-      {
-        "slug": "remote-repos",
-        "label": "WIP Working with repositories and remote objects",
-        "source": "user-guide/remote-repos.md"
       },
       {
         "slug": "configuration",
@@ -215,7 +205,7 @@
   },
   {
     "slug": "api-reference",
-    "label": "[WIP] Python API Reference",
+    "label": "Python API Reference",
     "children": [
       {
         "slug": "init",
@@ -236,11 +226,6 @@
         "slug": "load_meta",
         "label": "load_meta()",
         "source": "api-reference/load_meta.md"
-      },
-      {
-        "slug": "mlem-object",
-        "label": "MlemObject API",
-        "source": "api-reference/mlem-object.md"
       },
       {
         "slug": "ls",
