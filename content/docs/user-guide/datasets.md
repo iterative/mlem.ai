@@ -1,4 +1,4 @@
-# WIP Woring with datasets
+# WIP Working with datasets
 
 ## Getting the data
 
@@ -96,6 +96,10 @@ which were used to save the dataset. That doesn't mean you can't read that
 `train` any other way, but if you would use MLEM to load it, it would know that
 it needs pandas to do that for you.
 
+Note that we didn't specify whether the saved dataset was `pd.DataFrame`,
+`np.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
+extends to ML models 👋
+
 <details>
 
 ### ⛳ [Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
@@ -107,9 +111,3 @@ $ git diff 2-prepare
 ```
 
 </details>
-
-# ---------
-
-> Note that we didn't specify whether the saved dataset was `pd.DataFrame`,
-> `np.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
-> extends to ML models 👋

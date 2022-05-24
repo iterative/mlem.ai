@@ -42,16 +42,14 @@ See also [MLEM Object API](/doc/api-reference/mlem-object)
 
 ## Common fields
 
-Each MLEM Object has `object_type` field which determines the type of the
-object. Different types have different additional fields and methods, but all
-MLEM Objects have the following fields:
+Each MLEM Object has an `object_type` field which determines the type of the
+object. Specific types may additional properties, but all MLEM Objects have the
+following fields:
 
 - `description` - for storing user-provided description
 - `params` - arbitrary object with additional parameters
 - `tags` - list of string tags
-
-> Also, when you load MLEM Object via API, it will have `location` field that
-> holds information from where you loaded this object
+- `location` - if the object is loaded, information about where it came from
 
 You can check out what methods MLEM Objects have in
 [API Reference](/doc/api-reference/mlem-object)

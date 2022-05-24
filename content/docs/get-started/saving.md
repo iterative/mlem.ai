@@ -193,8 +193,8 @@ It's a bit long, but we can see all that we need to use the model later:
 3. Requirements: `sklearn`, `numpy`, `pandas` with particular versions we need
    to run this model.
 
-> Note that we didn't specify requirements: MLEM investigates the object you're
-> saving (even if it's a complex one) and finds out all requirements needed.
+Note that we didn't specify requirements: MLEM investigates the object you're
+saving (even if it's a complex one) and finds out all requirements needed!
 
 <details>
 
