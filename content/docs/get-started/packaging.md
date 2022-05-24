@@ -60,7 +60,7 @@ itself.
 Now you can distribute and install the package. It's code declares all the same
 methods our model had, so you can try to use it like this:
 
-```python
+```py
 import example_mlem_get_started
 
 example_mlem_get_started.predict(df)
@@ -106,7 +106,7 @@ $ git diff 5-pack
 
 Also, you can do all of this programmatically via Python API:
 
-```python
+```py
 from mlem.api import pack, load_meta
 
 pack("pip", "rf", target="build", package_name="example_mlem_get_started")

@@ -5,7 +5,7 @@
 Now, we can use MLEM to apply the model against a dataset and calculate some
 metrics:
 
-```python
+```py
 # evaluate.py
 import json
 
@@ -77,7 +77,7 @@ $ mlem apply rf new_data.csv -i --it pandas[csv] -o prediction
 
 Or, if you save your dataset like this:
 
-```python
+```py
 from sklearn.datasets import load_iris
 from mlem.api import save
 

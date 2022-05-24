@@ -9,7 +9,7 @@ To save models with MLEM you just need to use
 [`mlem.api.save`](/doc/api-reference/save) method instead of some other way you
 saved your model before. Let's take a look at the following python script:
 
-```python
+```py
 # train.py
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier

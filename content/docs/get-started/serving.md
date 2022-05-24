@@ -45,7 +45,7 @@ $ mlem apply-remote http test_x.csv -c host="0.0.0.0" -c port=8080 --json
 
 or via Python API:
 
-```python
+```py
 from mlem.api import load
 from mlem.runtime.client.base import HTTPClient
 

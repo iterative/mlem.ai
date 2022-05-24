@@ -40,7 +40,7 @@ Models:
 
 We also can use URL addresses to load models from remote repositories directly:
 
-```python
+```py
 from mlem.api import load
 
 model = load("https://github.com/iterative/example-mlem-get-started/rf")
@@ -104,7 +104,7 @@ $ mlem clone rf s3://example-mlem-get-started/rf
 Now you can load this model via API or use it in CLI commands just like if it
 was local:
 
-```python
+```py
 from mlem.api import load
 model = load("rf", repo="s3://example-mlem-get-started")
 ```

@@ -5,7 +5,7 @@
 The first step is to get some data. For this tutorial, we’ll just generate it.
 Let's take a look at this python script:
 
-```python
+```py
 # prepare.py
 from mlem.api import save
 from sklearn.datasets import load_iris

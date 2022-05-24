@@ -111,7 +111,7 @@ You can go [here](http://example-mlem-get-started.herokuapp.com) and see the
 same OpenAPI documentation. For details on it, refer to the **Serving** section.
 You can also try to do some requests:
 
-```python
+```py
 from mlem.api import load
 from mlem.runtime.client.base import HTTPClient
 
@@ -121,7 +121,7 @@ res = client.predict(load("test_x.csv"))
 
 Also, you can create a client using deployment meta object:
 
-```python
+```py
 from mlem.api import load
 
 service = load("myservice")
