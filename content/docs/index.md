@@ -4,11 +4,15 @@
 It seamlessly supports a variety of scenarios like real-time serving and batch
 processing.
 
-> 💡 When combined with [GTO](https://github.com/iterative/gto), MLEM allows you
-> to create a powerful Model Registry out of your Git repository! Such a
-> registry serves as a centralized place to store and operationalize your models
-> along with their metadata; manage model life-cycle, versions & releases, and
-> easily automate tests and deployments using GitOps.
+<amon type="tip">
+
+💡 When combined with [GTO](https://github.com/iterative/gto), MLEM allows you
+to create a powerful Model Registry out of your Git repository! Such a registry
+serves as a centralized place to store and operationalize your models along with
+their metadata; manage model life-cycle, versions & releases, and easily
+automate tests and deployments using GitOps.
+
+</admon>
 
 <cards>
 

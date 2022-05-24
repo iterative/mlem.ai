@@ -20,28 +20,32 @@ from mlem.api import pack
 pack("pip", "rf", target="build", package_name="example_mlem_get_started")
 ```
 
-> The extra kwargs supplied above can be seen from the output of
-> `mlem types packager pip` which gives us
->
-> ```py
-> [required] package_name: str
-> [required] target: str
-> [not required] templates_dir: str = []
-> [not required] python_version: str = None
-> [not required] short_description: str = ""
-> [not required] url: str = ""
-> [not required] email: str = ""
-> [not required] author: str = ""
-> [not required] version: str = "0.0.0"
-> [not required] additional_setup_kwargs: typing.Any = {}
-> ```
-
 ## Description
 
 This API is the underlying mechanism for the
 [mlem pack](/doc/command-reference/pack) command and allows us to
 programmatically create ship-able assets from MlemModels such as pip-ready
 packages, docker images, etc.
+
+<amon type="tip">
+
+The arguments supplied to this method can be found with `mlem types`:
+
+```cli
+$ mlem types packager pip
+[required] package_name: str
+[required] target: str
+[not required] templates_dir: str = []
+[not required] python_version: str = None
+[not required] short_description: str = ""
+[not required] url: str = ""
+[not required] email: str = ""
+[not required] author: str = ""
+[not required] version: str = "0.0.0"
+[not required] additional_setup_kwargs: typing.Any = {}
+```
+
+</admon>
 
 ## Parameters
 
