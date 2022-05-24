@@ -75,14 +75,14 @@
         "source": "user-guide/basic-concepts.md"
       },
       {
-        "slug": "datasets",
-        "label": "Working with datasets",
-        "source": "user-guide/datasets.md"
-      },
-      {
         "slug": "project-structure",
         "label": "Project structure",
         "source": "user-guide/project-structure.md"
+      },
+      {
+        "slug": "datasets",
+        "label": "Working with datasets",
+        "source": "user-guide/datasets.md"
       },
       {
         "slug": "remote-repos",
