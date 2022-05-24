@@ -11,7 +11,7 @@ repositories.
 This way your deployment system doesn't need to know of every developer
 repository.
 
-Also, you can use different branches in MR repo to employ gitflow-like process.
+Also, you can use different branches in MR repo to employ Git flow processes.
 
 And via configuring permissions for this repo you can approve new model versions
 for production.

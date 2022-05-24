@@ -17,10 +17,10 @@ arguments: [PATH] Target path to workspace
 The `init` command (without given `path`) defaults to the current directory for
 the path argument. This creates a `.mlem` directory and an empty `config.yaml`
 file inside it. Although we recommend using MLEM within a Git repository to
-track changes using the standard git workflows, this is not required for MLEM.
+track changes using the standard Git workflows, this is not required for MLEM.
 The existence of a `.mlem` subdirectory in any path (including remote)
 constitutes a MLEM workspace, and MLEM will be fully functional even without
-incorporating `git` in one's workflow.
+incorporating Git in one's workflow.
 
 ## Options
 

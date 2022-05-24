@@ -37,10 +37,10 @@ target.
 ## Parameters
 
 - **`path`** (required) - Path to the object. Could be local path or path inside
-  a git repo.
+  a Git repo.
 - **`target`** (required) - Path to save the copy of initial object to.
 - `repo` (optional) - URL to repo if object is located there.
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `fs` (optional) - filesystem to load object from
 - `target_repo` (optional) - path to repo to save cloned object to
 - `target_fs` (optional) - target filesystem
@@ -49,7 +49,7 @@ target.
 - `load_value` (optional) - Load actual python object incorporated in MlemMeta
   object. Defaults to False.
 - `index` (optional) - Whether to index output in .mlem directory
-- `external` (optional) - wheter to put object inside mlem dir in target repo
+- `external` (optional) - whether to put object inside mlem dir in target repo
 
 ## Exceptions
 

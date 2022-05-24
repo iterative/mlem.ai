@@ -53,7 +53,7 @@ you'll find tags for each step we take in the different sections of this
 tutorial. You can just see what is going on there or reproduce everything
 yourself and compare. In the different `Get Started` sections, those tags will
 be marked with ⛳ emoji. Click on it to expand the section and see the `git`
-commands to run if you are following along. Just like this git tag that
+commands to run if you are following along. Just like this Git tag that
 concludes this section:
 
 <details>

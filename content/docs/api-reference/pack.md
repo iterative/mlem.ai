@@ -39,9 +39,9 @@ pack("pip", "rf", target="build", package_name="example_mlem_get_started")
 ## Description
 
 This API is the underlying mechanism for the
-[mlem pack](/doc/command-reference/pack) command and allows us to programtically
-create ship-able assets from MlemModels such as pip-ready packages, docker
-images, etc.
+[mlem pack](/doc/command-reference/pack) command and allows us to
+programmatically create ship-able assets from MlemModels such as pip-ready
+packages, docker images, etc.
 
 ## Parameters
 

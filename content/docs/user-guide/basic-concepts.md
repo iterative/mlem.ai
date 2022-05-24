@@ -63,9 +63,9 @@ Here are all the builtin MLEM Object types
 Model and Datasets are special types that can have artifacts, so they have two
 additional fields:
 
-- `artifacts` - a string-to-artifacts mapping, where aretifact is an instance of
+- `artifacts` - a string-to-artifacts mapping, where artifact is an instance of
   [`Artifact`](/doc/user-guide/mlem-abcs#artifact) which represents a file
-  stored somwhere (local/cloud/dvc cache etc)
+  stored somewhere (local/cloud/dvc cache etc)
 - `requirements` - a list of
   [`Requirement`](/doc/user-guide/mlem-abcs#requirement) which are needed to use
   that object in runtime

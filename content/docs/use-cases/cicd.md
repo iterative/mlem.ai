@@ -11,7 +11,7 @@ learning models in CI/CD pipelines.
   your machine learning model into some specific format and publish it in some
   registry. Examples include turning your ML model into a Python package and
   publishing it on PyPi, or building a docker image and pushing it to DockerHub,
-  or just exporting your model to onnx and publishing it as a artifact to
+  or just exporting your model to ONNX and publishing it as a artifact to
   Artifactory.
 
 - **Deploying models**: Another common scenario is when you want to deploy your
@@ -23,7 +23,7 @@ learning models in CI/CD pipelines.
 ### Package and publish
 
 To trigger the publishing or deploying of a new version, you usually create a
-git tag that kicks off CI process. To make packaging and deployment process
+Git tag that kicks off CI process. To make packaging and deployment process
 consistent you can create and commit MLEM declaration:
 
 ```cli
@@ -64,7 +64,7 @@ Learn more about packaging in [Get Started](/doc/get-started/packaging).
 ### Deploy
 
 Example with deployment is quite similar. First you need to create environment
-and deployment declaration and commit them to git:
+and deployment declaration and commit them to Git:
 
 ```cli
 $ mlem create env heroku staging

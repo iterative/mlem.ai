@@ -43,7 +43,7 @@ their aliases for all future purposes.
 
 - **`source`** (required) - The object to create link from.
 - `source_repo` (optional) - Path to mlem repo where to load obj from.
-- `rev` (optional) - Revision if object is stored in git repo.
+- `rev` (optional) - Revision if object is stored in Git repo.
 - `target` (optional) - Where to store the link object.
 - `target_repo` (optional) - If provided, treat `target` as link name and dump
   link in MLEM DIR.

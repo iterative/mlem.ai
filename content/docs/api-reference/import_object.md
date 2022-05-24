@@ -49,7 +49,7 @@ command.
 
 - **`path`** (required) - Path of file to import.
 - `repo` (optional) - Path to MLEM repo.
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `fs` (optional) - FileSystem for the `path` argument
 - `target` (optional) - Path to save MLEM object into.
 - `target_repo` (optional) - Path to MLEM repo for `target`.

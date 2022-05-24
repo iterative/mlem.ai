@@ -36,9 +36,9 @@ python object.
 ## Parameters
 
 - **`path`** (required) - Path to the object. Could be local path or path inside
-  a git repo.
+  a Git repo.
 - `repo` (optional) - URL to repo if object is located there.
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `follow_links` (optional) - If object we read is a MLEM link, whether to load
   the actual object link points to. Defaults to True.
 - `load_value` (optional) - Load actual python object incorporated in

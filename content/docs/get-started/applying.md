@@ -61,7 +61,7 @@ $ git diff 4-eval
 You can also apply your models directly from CLI. For that to work, your data
 should be in a file that is supported by
 [MLEM import](/doc/user-guide/importing) or you should have your
-[dataset saaved with MLEM ](/doc/user-guide/datasets).
+[dataset saved with MLEM ](/doc/user-guide/datasets).
 
 Let's create an example file and run `mlem apply`
 

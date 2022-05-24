@@ -12,7 +12,7 @@ usage: mlem import [options] uri target
 
 arguments:
 URI     File to import  [required]
-TARGET  Path whare to save MLEM object  [required]
+TARGET  Path to save MLEM object  [required]
 ```
 
 ## Description

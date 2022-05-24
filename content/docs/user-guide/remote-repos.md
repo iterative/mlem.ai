@@ -29,7 +29,7 @@ Models:
 Note that we are actually listing models and data which is saved in the
 repository we're in.
 
-But what if they are stored in a remote git repository, and we don't want to
+But what if they are stored in a remote Git repository, and we don't want to
 clone it? MLEM can also work with remote repositories:
 
 ```bash
@@ -72,7 +72,7 @@ $ mlem clone rf --repo https://github.com/iterative/example-mlem-get-started --r
 We use [example repo](https://github.com/iterative/example-mlem-get-started) in
 the commands, but you can create your own repo and use it if you want.
 
-To push your models and datasets to the repo, add them to git and commit
+To push your models and datasets to the repo, add them to Git and commit
 
 ```bash
 $ git add .mlem *.py
@@ -114,7 +114,7 @@ $ mlem apply rf --repo s3://example-mlem-get-started test_x.csv --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 
-TLDR: we've just
+TL;DR: we've just
 
 1. Listed all MLEM models in the Git repo,
 2. Loaded model from Git repo directly,

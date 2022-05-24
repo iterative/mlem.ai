@@ -8,7 +8,7 @@
 
 </details>
 
-Often it’s a bad idea to store binary files in git, especially big ones. To
+Often it’s a bad idea to store binary files in Git, especially big ones. To
 solve this MLEM can utilize DVC capabilities to connect external cloud storage
 for model and dataset versioning.
 
@@ -44,7 +44,7 @@ $ git add .dvcignore
 
 ## Saving objects
 
-Next, let’s remove artifacts from git and re-save them, so MLEM can use new
+Next, let’s remove artifacts from Git and re-save them, so MLEM can use new
 storage for them. You don't need to change a single line of code
 
 ```bash
@@ -53,7 +53,7 @@ $ python prepare.py
 $ python train.py
 ```
 
-Finally, let’s add new metafiles to git and artifacts to DVC respectively,
+Finally, let’s add new metafiles to Git and artifacts to DVC respectively,
 commit and push them
 
 ```bash
@@ -65,7 +65,7 @@ $ git push
 ```
 
 Now, you can load MLEM objects from your repo even though there are no actual
-binaries stored in git. MLEM will know to use DVC to load them.
+binaries stored in Git. MLEM will know to use DVC to load them.
 
 ⛳
 [Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/5-switch-to-dvc)
