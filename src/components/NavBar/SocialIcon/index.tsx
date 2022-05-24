@@ -13,6 +13,7 @@ export interface ISocialIconProps {
   href: string
   label: string
   className?: string
+  target?: '_blank'
 }
 
 const icons = {
@@ -27,10 +28,15 @@ const SocialIcon: React.FC<ISocialIconProps> = ({
   className,
   icon,
   href,
-  label
+  label,
+  target
 }) => {
   return (
-    <SmartLink className={cn(className, styles.socialIcon)} href={href}>
+    <SmartLink
+      target={target}
+      className={cn(className, styles.socialIcon)}
+      href={href}
+    >
       {icons[icon]}
       <span className="sr-only">{label}</span>
     </SmartLink>
