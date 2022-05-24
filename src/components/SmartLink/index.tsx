@@ -24,7 +24,7 @@ const SmartLink: React.FC<PropsWithChildren<ISmartLinkProps>> = ({
     return <span className={className}>{children}</span>
   }
 
-  if (isExternal) {
+  if (isExternal || target === '_blank') {
     return (
       <a
         className={className}
