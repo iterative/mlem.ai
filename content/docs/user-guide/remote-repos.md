@@ -1,4 +1,4 @@
-# WIP Working with repositories and remote objects
+# Working with repositories and remote objects
 
 <details>
 

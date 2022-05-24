@@ -2,10 +2,29 @@
 
 <details>
 
-### 🧳 Requirements
+### ⚙️ Expand for setup instructions
 
+<<<<<<< HEAD
 ```cli
 $ pip install mlem dvc[azure]
+=======
+If you want to follow along with this tutorial and try MLEM, you can use our
+[example repo](https://github.com/iterative/example-mlem-get-started).
+
+```shell
+$ git clone https://github.com/iterative/example-mlem-get-started
+$ cd example-mlem-get-started
+$ git checkout 1-dvc-mlem-init
+```
+
+Next let's create an isolated virtual environment to cleanly install all the
+requirements (including MLEM) there:
+
+```shell
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip install -r requirements.txt
+>>>>>>> main
 ```
 
 </details>
@@ -49,7 +68,6 @@ storage for them. You don't need to change a single line of code
 
 ```cli
 $ git rm -r --cached .mlem/
-$ python prepare.py
 $ python train.py
 ```
 
@@ -68,7 +86,7 @@ Now, you can load MLEM objects from your repo even though there are no actual
 binaries stored in Git. MLEM will know to use DVC to load them.
 
 ⛳
-[Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/5-switch-to-dvc)
+[Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/4-dvc-save-models)
 
 # Using MLEM in DVC Pipeline
 
