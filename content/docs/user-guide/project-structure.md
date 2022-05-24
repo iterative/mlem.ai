@@ -8,7 +8,8 @@ To create one, use [`mlem init`](/doc/command-reference/init) or
 `config.yaml` (see [Configuration](/doc/user-guide/configuration)).
 
 > Some API and CLI commands like `mlem ls` and `mlem config` require this
-> execution context. But in general, MLEM can work with `.mlem` files anywhere.
+> execution context. But in general, MLEM can work with `.mlem` metafiles
+> anywhere.
 
 A common place to initialize MLEM is a data science Git repository. _MLEM
 repositories_ help you better structure and easily address existing data

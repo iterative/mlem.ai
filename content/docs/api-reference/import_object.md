@@ -58,8 +58,8 @@ command.
   'pandas']. Defaults to auto-infer.
 - `copy_data` (optional) - Whether to create a copy of file in target location
   or just link existing file. Defaults to True.
-- `external` (optional) - Save result not in `.mlem`, but directly in repo
-- `index` (optional) - Whether to index output in `.mlem` directory
+- `external` (optional) - Save result directly in repo (not in `.mlem/`) 
+- `index` (optional) - Whether to index output in `.mlem/` directory
 
 ## Exceptions
 

@@ -12,13 +12,13 @@ datasets and other types you can read about below.
 > Also, MLEM Objects can be created with
 > [`mlem create`](/doc/command-reference/create) CLI command
 
-MLEM Objects are saved as `.mlem` files in `yaml` format. Sometimes they can
+MLEM Objects are saved as `.mlem` files in YAML format. Sometimes they can
 have other files attached to them, in that case we call `.mlem` file as a
 "metadata file" or "metafile" and all the other files we call "artifacts".
 
-Typically, if **MLEM Object** have only one artifact, it will have the same name
-without `.mlem` extension, for example `model.mlem` + `model`, or `data.csv` +
-`data.csv.mlem`.
+Typically, if **MLEM Object** have only one artifact, it will have the same file
+name without `.mlem` extension, for example `model.mlem` and `model`, or
+`data.csv` and `data.csv.mlem`.
 
 If **MLEM Object** have multiple artifacts, they will be stored in a directory
 with the same name, for example `model.mlem` + `model/data.pkl` +

@@ -49,7 +49,7 @@ $ mlem config set default_storage.type dvc
 ```
 
 Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
-DVC
+DVC.
 
 ```cli
 $ echo "/**/?*.mlem" > .dvcignore
@@ -90,9 +90,8 @@ can process your data and train your model. You may be already training your ML
 models in them and what to start using MLEM to save those models.
 
 MLEM could be easily plug in into existing DVC pipelines. If you already added
-`.mlem` files to `.dvcignore`, you are good to go for most of the cases. Since
-DVC will ignore `.mlem` files, you don't need to add them as outputs and mark
-them with `cache: false`.
+`.mlem` files to `.dvcignore`, you are good to go for most of the cases (no need
+to make them into `cache: false` outputs).
 
 It becomes a bit more complicated when you need to add them as outputs, because
 you want to use them as inputs to next stages. The case may be when model binary

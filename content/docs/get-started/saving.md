@@ -56,8 +56,8 @@ $ tree .mlem/model/
 > reference.
 
 What we see here is that model was saved along with some metadata about it: `rf`
-containing the model binary and `.mlem` file containing metadata. Let's take a
-look at it:
+containing the model binary and a `.mlem` file containing its metadata. Let's
+take a look at it:
 
 <details>
 

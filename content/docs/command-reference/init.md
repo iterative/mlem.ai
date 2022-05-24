@@ -13,7 +13,7 @@ arguments: [PATH] Target path to workspace
 ## Description
 
 The `init` command (without given `path`) defaults to the current directory for
-the path argument. This creates a `.mlem` directory and an empty `config.yaml`
+the path argument. This creates a `.mlem/` directory and an empty `config.yaml`
 file inside it.
 
 Although we recommend using MLEM within a Git repository to track changes using

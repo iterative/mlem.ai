@@ -1,6 +1,6 @@
 # mlem.api.init()
 
-Creates `.mlem/` directory in `path`
+Creates and populates the `.mlem/` directory in `path`.
 
 ```py
 def init(path: str = ".") -> None
