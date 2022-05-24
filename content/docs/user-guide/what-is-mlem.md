@@ -12,7 +12,3 @@ modular, flexible design. This allows supporting a wide variety of model types
 and deployment targets, enabling you to easily serve models locally or on any
 cloud infrastructure.
 
-[comment]: <> (TODO)
-
-[comment]: <> (yoink from here
-https://www.notion.so/iterative/Tutorial-9089de99f9da4d1f8926f900c797208e)

@@ -25,6 +25,6 @@ encapsulate your local environment.
 $ pip install mlem
 ```
 
-<!-- TODO: ## Advanced options -->
+<!-- TODO: ## Advanced options? -->
 
 <!-- TODO: ## Shell tab completion -->

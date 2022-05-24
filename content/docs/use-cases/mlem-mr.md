@@ -16,10 +16,10 @@ Also, you can use different branches in MR repo to employ gitflow-like process.
 And via configuring permissions for this repo you can approve new model versions
 for production.
 
-[comment]: <> (TODO: setup 2 "research" repos and MR repo and show the process
-of deploying new model (Mike). TBH, we need to give some example repo with links
-here and instead move everything below to User Guide for Links. And just give
-here a link to that User Guide (Alex))
+<!-- TODO:
+Setup 2 "research" repos and MR repo and show the process of deploying new model.
+We need to give some example repo with links here and instead move everything below to User Guide for Links. And just give here a link to that User Guide
+-->
 
 ## Example
 

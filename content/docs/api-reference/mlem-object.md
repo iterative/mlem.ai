@@ -1,7 +1,5 @@
 # MlemObject API
 
-[comment]: <> (list notable functions of `MlemMeta` subclasses )
-
 - MlemMeta.read
 - MLemMeta.load_value
 - MlemMeta.get_value
