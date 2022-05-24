@@ -1,12 +1,8 @@
 # pprint
 
-Display information about a specific
+Display all details about a specific
 [MLEM object](/doc/user-guide/basic-concepts#mlem-objects) from an existing MLEM
-workspace (location should be [initialized](/doc/command-reference/init)).
-
-> Useful to view object details. This includes generic metadata information such
-> as requirements, type of object, hash, size, as well as object specific
-> information such as `methods` for a `model` or `reader` for a `dataset`.
+project.
 
 ## Synopsis
 
@@ -18,12 +14,15 @@ arguments: PATH Path to object [required]
 
 ## Description
 
-All MLEM objects can be printed to view their metadata information. Since only
-one specific object is printed, a path to the specific MLEM object is always
-required.
+All MLEM objects can be printed to view their metadata. This includes generic
+metadata information such as requirements, type of object, hash, size, as well
+as object specific information such as `methods` for a `model` or `reader` for a
+`dataset`.
 
-> You can use [`mlem list`](/doc/command-reference/list) to list for MLEM
-> objects
+Since only one specific object is printed, a `PATH` to the specific MLEM object
+is always required.
+
+> You can use [`mlem list`](/doc/command-reference/list) to list MLEM objects.
 
 ## Options
 
@@ -33,10 +32,10 @@ required.
 - `--json`: Output as json
 - `--help`: Show this message and exit.
 
-## Example: Showing local object (model)
+## Example: Showing local model
 
 ```cli
-$ mlem pprint rf                                                                                                                        ✔  gto  
+$ mlem pprint rf
 ⏳️ Loading meta from .mlem/model/rf.mlem
 {'artifacts': {'data': {'hash': 'a61a1fa54893dcebe6fa448df81a1418',
                         'size': 163651,
@@ -50,10 +49,7 @@ $ mlem pprint rf                                                                
 ...
 ```
 
-> Note: The above output was snipped for brevity. Models metadata is extensive
-> and the output can be quite verbose!
-
-## Example: Showing remote object (dataset)
+## Example: Showing remote dataset
 
 ```cli
 $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
@@ -77,6 +73,3 @@ $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
             'type': 'pandas'},
  'requirements': [{'module': 'pandas', 'version': '1.4.2'}]}
 ```
-
-> Both the `rf` model and the `iris.csv` dataset used in the examples above can
-> be found in [this example repository](/doc/command-reference/list#examples)

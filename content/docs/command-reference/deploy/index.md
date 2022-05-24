@@ -30,8 +30,8 @@ automatically used by MLEM to wire and expose endpoints on the application
 server upon deployment. Applying datasets on the deployment is a very handy
 shortcut of bulk inferring data on the served model.
 
-> Currently, only `heroku` is supported as a target platform for deployments but
-> more platforms will be added soon!
+> Currently, only `heroku` is supported as a target but more platforms will be
+> added soon!
 
 ## Options
 

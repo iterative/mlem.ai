@@ -2,9 +2,6 @@
 
 Create a MLEM model or dataset metadata from a file/directory.
 
-> This is useful to quickly make existing datasets and model files compatible
-> with MLEM, which can then be used in future operations such as `mlem apply`.
-
 ## Synopsis
 
 ```usage
@@ -18,9 +15,12 @@ TARGET  Path to save MLEM object  [required]
 ## Description
 
 Use `import` on an existing datasets or model files (or directories) to
-auto-generate the necessary MLEM metadata (`.mlem`) files for them. This command
-provides a quick and easy alternative to writing python code to load those
-models/datasets into object for subsequent usage in MLEM context.
+auto-generate the necessary MLEM metadata (`.mlem`) files for them. This is
+useful to quickly make existing datasets and model files compatible with MLEM,
+which can then be used in future operations such as `mlem apply`.
+
+This command provides a quick and easy alternative to writing python code to
+load those models/datasets into object for subsequent usage in MLEM context.
 
 ## Options
 
