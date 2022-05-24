@@ -2,18 +2,15 @@
   {
     "slug": "",
     "label": "MLEM Documentation",
-    "source": "index.md",
     "icon": "house"
   },
   {
     "slug": "install",
-    "label": "Installation",
-    "source": "install/index.md"
+    "label": "Installation"
   },
   {
     "slug": "get-started",
     "label": "Get Started",
-    "source": "get-started/index.md",
     "children": [
       {
         "slug": "saving",
@@ -45,7 +42,6 @@
   {
     "slug": "use-cases",
     "label": "Use Cases",
-    "source": "use-cases/index.md",
     "children": [
       {
         "slug": "dvc",
@@ -72,7 +68,6 @@
   {
     "slug": "user-guide",
     "label": "User Guide",
-    "source": "user-guide/index.md",
     "children": [
       {
         "slug": "basic-concepts",
@@ -129,7 +124,6 @@
   {
     "slug": "command-reference",
     "label": "Command Reference",
-    "source": "command-reference/index.md",
     "children": [
       {
         "slug": "init",
@@ -159,7 +153,6 @@
       {
         "slug": "deploy",
         "label": "deploy",
-        "source": "command-reference/deploy/index.md",
         "children": [
           {
             "slug": "apply",
@@ -223,7 +216,6 @@
   {
     "slug": "api-reference",
     "label": "[WIP] Python API Reference",
-    "source": "api-reference/index.md",
     "children": [
       {
         "slug": "init",
@@ -300,12 +292,12 @@
   {
     "slug": "contributing",
     "label": "Contributing",
-    "source": "contributing/index.md",
+    "source": false,
     "children": [
       {
-        "slug": "index",
+        "slug": "mlem",
         "label": "MLEM Core Project",
-        "source": "contributing/index.md"
+        "source": "contributing/mlem.md"
       },
       {
         "slug": "docs",
