@@ -15,8 +15,8 @@ arguments: PATH Path to object [required]
 ## Description
 
 All MLEM objects can be printed to view their metadata. This includes generic
-metadata information such as requirements, type of object, hash, size, as well
-as object specific information such as `methods` for a `model` or `reader` for a
+information such as requirements, type of object, hash, size, as well as object
+specific information such as `methods` for a `model` or `reader` for a
 `dataset`.
 
 Since only one specific object is printed, a `PATH` to the specific MLEM object

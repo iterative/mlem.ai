@@ -123,7 +123,7 @@ will be pickled, and NN will be saved using `torch_io`
 
 ## DatasetType
 
-Hold metadata about dataset, like type, dimensions, column names etc.
+Holds metadata about dataset, like type, dimensions, column names etc.
 
 **Base class**: `mlem.core.dataset_type.DatasetType`
 

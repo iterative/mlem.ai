@@ -1,7 +1,7 @@
 # create
 
 Creates a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
-metafile from conf args and config files.
+metafile from config args and config files.
 
 ## Synopsis
 
@@ -16,10 +16,9 @@ PATH         Where to save object  [required]
 
 ## Description
 
-Metadata files (with `.mlem` file extension) can be created for
+`.mlem` metafiles can be created for
 [MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects) using this command.
-This is particularly useful in filling up configuration values for environments
-and deployments.
+This is particularly useful for configuring environments and deployments.
 
 Each MLEM Object, along with its subtype (which represents a particular
 implementation), will accept different configuration arguments. The list of
@@ -38,10 +37,10 @@ check out the last example [here](/doc/command-reference/types#examples)
 
 ## Examples
 
-Create an environment metafile with a config key
+Create an environment object metafile with a config key:
 
 ```cli
-# Fetch all config arguments which can be passed for a heroku env
+# Fetch all available config args for a heroku env
 $ mlem types env heroku
 [not required] api_key: str = None
 
@@ -49,7 +48,7 @@ $ mlem types env heroku
 $ mlem create env heroku production --conf api_key="mlem_heroku_staging"
 💾 Saving env to .mlem/env/staging.mlem
 
-# print the contents of the saved metafile for the heroku env
+# Print the contents of the new heroku env metafile
 $ cat .mlem/env/staging.mlem
 api_key: mlem_heroku_staging
 object_type: env

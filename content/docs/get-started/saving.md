@@ -55,9 +55,9 @@ $ tree .mlem/model/
 > changed, see [project structure](/doc/user-guide/project-structure) for
 > reference.
 
-What we see here is that model was saved along with some metadata about it: `rf`
-containing the model binary and a `.mlem` file containing its metadata. Let's
-take a look at it:
+The model was saved along with some metadata about it: `rf` containing the model
+binary and a `.mlem` metafile containing information about it. Let's take a look
+at it:
 
 <details>
 

@@ -25,7 +25,7 @@ serving a specific model, using a specific environment definition, and running
 on a target platform.
 
 MLEM deployments allow `applying` methods and even whole datasets on models.
-Each model lists its supported methods in its metafile, and those are
+Each model lists its supported methods in its `.mlem` metafile, and those are
 automatically used by MLEM to wire and expose endpoints on the application
 server upon deployment. Applying datasets on the deployment is a very handy
 shortcut of bulk inferring data on the served model.

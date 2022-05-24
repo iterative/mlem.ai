@@ -40,7 +40,7 @@ systems (eg: `S3`). The function returns and saves the object as a
 - `repo` (optional) - path to mlem repo
 - `sample_data` (optional) - If the object is a model or function, you can
   provide input data sample, so MLEM will include it's schema in the model's
-  metadata
+  metafile
 - `fs` (optional) - FileSystem for the `path` argument
 - `index` (optional) - Whether to add object to mlem repo index
 - `external` (optional) - if obj is saved to repo, whether to put it outside of
