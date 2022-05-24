@@ -7,11 +7,11 @@
   height: calc(100vh - 78px);
   padding-top: 57px;
   font-size: 16px;
-  display: flex;
+  display: none;
   flex-direction: column;
 
-  @media only screen and (max-width: 1200px) {
-    display: none;
+  @media (--xl-scr) {
+    display: flex;
   }
 }
 

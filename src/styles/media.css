@@ -2,3 +2,4 @@
 @custom-media --sm-scr (min-width: 572px);
 @custom-media --md-scr (min-width: 768px);
 @custom-media --lg-scr (min-width: 1024px);
+@custom-media --xl-scr (min-width: 1200px);
