@@ -46,7 +46,7 @@ Make sure that you have Python 3.7 or higher installed. On macOS, we recommend
 using `brew` to install Python. For Windows, we recommend an official
 [python.org release](https://www.python.org/downloads/windows/).
 
-<amon type="info">
+<admon type="info">
 
 `pip` version 20.3+ is required.
 

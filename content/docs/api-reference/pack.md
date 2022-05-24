@@ -27,7 +27,7 @@ This API is the underlying mechanism for the
 programmatically create ship-able assets from MlemModels such as pip-ready
 packages, docker images, etc.
 
-<amon type="tip">
+<admon type="tip">
 
 The arguments supplied to this method can be found with `mlem types`:
 

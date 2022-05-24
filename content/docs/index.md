@@ -4,7 +4,7 @@
 It seamlessly supports a variety of scenarios like real-time serving and batch
 processing.
 
-<amon type="tip">
+<admon type="tip">
 
 💡 When combined with [GTO](https://github.com/iterative/gto), MLEM allows you
 to create a powerful Model Registry out of your Git repository! Such a registry
