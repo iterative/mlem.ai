@@ -4,10 +4,6 @@
 
 ### ⚙️ Expand for setup instructions
 
-<<<<<<< HEAD
-```cli
-$ pip install mlem dvc[azure]
-=======
 If you want to follow along with this tutorial and try MLEM, you can use our
 [example repo](https://github.com/iterative/example-mlem-get-started).
 
@@ -24,7 +20,6 @@ requirements (including MLEM) there:
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
->>>>>>> main
 ```
 
 </details>
