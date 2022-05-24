@@ -11,15 +11,15 @@ repositories.
 This way your deployment system doesn't need to know of every developer
 repository.
 
-Also, you can use different branches in MR repo to employ gitflow-like process.
+Also, you can use different branches in MR repo to employ Git flow processes.
 
 And via configuring permissions for this repo you can approve new model versions
 for production.
 
-[comment]: <> (TODO: setup 2 "research" repos and MR repo and show the process
-of deploying new model (Mike). TBH, we need to give some example repo with links
-here and instead move everything below to User Guide for Links. And just give
-here a link to that User Guide (Alex))
+<!-- TODO:
+Setup 2 "research" repos and MR repo and show the process of deploying new model.
+We need to give some example repo with links here and instead move everything below to User Guide for Links. And just give here a link to that User Guide
+-->
 
 ## Example
 
@@ -28,25 +28,28 @@ Let's build an example using
 
 That repo already have some models in it:
 
-```mlem
+```cli
 $ mlem ls https://github.com/iterative/example-mlem-get-started
+```
+
+```yaml
 Datasets:
- - test_x.csv
- - test_y.csv
- - train.csv
+  - test_x.csv
+  - test_y.csv
+  - train.csv
 Models:
- - rf
+  - rf
 Deployments:
- - myservice
+  - myservice
 Packagers:
- - pip_config
+  - pip_config
 Envs:
- - staging
+  - staging
 ```
 
 Let's create new repo first:
 
-```shell
+```cli
 $ mkdir links-mr
 $ cd links-mr
 $ git init
@@ -55,7 +58,7 @@ $ mlem init
 
 Let's create some links to them:
 
-```
+```cli
 $ mlem link --sr https://github.com/iterative/example-mlem-get-started --rev main rf first-model
 ⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
 💾 Saving link to .mlem/link/first-model.mlem
@@ -67,16 +70,19 @@ $ mlem link --sr https://github.com/iterative/example-mlem-get-started --rev 7-d
 
 We've just linked two models from the other repo. You can see both if you run:
 
-```mlem
+```cli
 $ mlem ls
+```
+
+```yaml
 Models:
- - first-model -> .mlem/model/rf
- - second-model -> .mlem/model/rf
+  - first-model -> .mlem/model/rf
+  - second-model -> .mlem/model/rf
 ```
 
 Let's check out each link:
 
-```shell
+```cli
 $ cat .mlem/link/first-model.mlem
 link_type: model
 object_type: link
@@ -94,7 +100,7 @@ rev: 7-deploy-meta
 
 Now you can commit those links, push the repo and use it as a model registry:
 
-```shell
+```cli
 $ git add .mlem/link/first-model.mlem .mlem/link/second-model.mlem
 $ git commit -m "Add links to models"
 ```

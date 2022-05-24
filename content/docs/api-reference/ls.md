@@ -32,7 +32,7 @@ command [list](/doc/command-reference/list).
 ## Parameters
 
 - **`repo`** (required) - Path or URL to repo
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `fs` (optional) - filesystem to load from. If not provided, will be inferred
   from repo
 - `type_filter` (optional) - type of objects to be listed (eg: models / dataset

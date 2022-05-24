@@ -81,7 +81,7 @@ this is what you implement!
 
 **Base class**: `mlem.core.model.ModelType`
 
-> This class is polymorpic, which means it can have more fields depending on
+> This class is polymorphic, which means it can have more fields depending on
 > implementation.
 
 **Fields**:
@@ -96,7 +96,7 @@ There are implementations of this class for all supported libraries: `xgboost`,
 
 The one notable implementation is `callable`: it treats any python callable
 object as a model with a single method `__call__`. That means you can turn
-funciton and classmethods into MLEM Models as well!
+functions and class methods into MLEM Models as well!
 
 ## ModelIO
 
@@ -121,7 +121,7 @@ will be pickled, and NN will be saved using `torch_io`
 
 ## DatasetType
 
-Hold metadata about dataset, like type, dimesions, column names etc.
+Hold metadata about dataset, like type, dimensions, column names etc.
 
 **Base class**: `mlem.core.dataset_type.DatasetType`
 
@@ -154,7 +154,7 @@ ML Libraries:
 
 - `xgboost_dmatrix` - `xgboost.DMatrix`. Holds info about feature names and
   their types
-- `lightgbm` - `lightgbm.Dataset`. Holds infomation about inner data object
+- `lightgbm` - `lightgbm.Dataset`. Holds information about inner data object
   (dataframe or ndarray)
 - `torch` - `torch.Tensor`. Holds information about type and dimensions
 
@@ -306,7 +306,7 @@ Related commands: [API](/doc/api-reference/deploy),
 - `env` (_transient_) - loaded targeted environment
 - `model_link` - link to deployed model object
 - `model` (_transient_) - loaded model object
-- `state` - dployment state
+- `state` - deployment state
 
 **Implementations**:
 

@@ -34,7 +34,7 @@ options (see below).
 Here, we define an environment and then create a deployment on it, providing the
 deployment configuration on-the-fly
 
-```mlem
+```cli
 $ mlem create env heroku staging --conf api_key=...
 ...
 
@@ -49,7 +49,7 @@ Here, we define an environment, configure a deployment declaration on it using
 deployment with a simple concise command which uses the existing pre-configured
 deployment declaration
 
-```mlem
+```cli
 $ mlem create env heroku staging --conf api_key=...
 ...
 

@@ -17,7 +17,7 @@ need to [fork] it first (so you can push models). Then clone it locally:
 
 [fork]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 
-```shell
+```cli
 $ git clone <your fork>
 $ cd example-mlem-get-started
 ```
@@ -25,7 +25,7 @@ $ cd example-mlem-get-started
 Next let's create an isolated virtual environment to cleanly install all the
 requirements (including MLEM) there:
 
-```shell
+```cli
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
@@ -33,13 +33,13 @@ $ pip install -r requirements.txt
 
 </details>
 
-```mlem
+```cli
 $ mlem init
 ```
 
 A few [internal files](/doc/user-guide/project-structure) will be created:
 
-```shell
+```cli
 $ tree .mlem
 .mlem
 └─── config.yaml
@@ -53,7 +53,7 @@ you'll find tags for each step we take in the different sections of this
 tutorial. You can just see what is going on there or reproduce everything
 yourself and compare. In the different `Get Started` sections, those tags will
 be marked with ⛳ emoji. Click on it to expand the section and see the `git`
-commands to run if you are following along. Just like this git tag that
+commands to run if you are following along. Just like this Git tag that
 concludes this section:
 
 <details>
@@ -63,7 +63,7 @@ concludes this section:
 Tag:
 [1-mlem-init](https://github.com/iterative/example-mlem-get-started/tree/1-mlem-init)
 
-```bash
+```cli
 $ git add .mlem
 $ git status
 Changes to be committed:
@@ -74,7 +74,7 @@ $ git commit -m "Initialize MLEM"
 
 To compare your results with the tag you can also run the following
 
-```bash
+```cli
 $ git diff 1-mlem-init
 ```
 

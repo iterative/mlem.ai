@@ -3,7 +3,7 @@
 MLEM can be extended to support more model types, datasets, servers, packagers
 and basically everything listed [here](/doc/user-guide/mlem-abcs). Most of the
 builtin implementations are also extensions located in `mlem.contrib` package.
-It allows MLEM to not load their code if it is not used, which is espesially
+It allows MLEM to not load their code if it is not used, which is especially
 cool because it means their requirements are optional.
 
 ## Implementing MlemABC
@@ -30,21 +30,21 @@ as an alias for your implementation.
 
 By default, `type` will have `<module>.<class name>` value, but that's not very
 handy to type in cli, e.g. you'll need to run
-`mlem serve model my_awesome_package.submodule_of_my_awsome_package.abstract.bean.factory.MyAwesomeServerImplementation`
+`mlem serve model my_awesome_package.submodule_of_my_awesome_package.abstract.bean.factory.MyAwesomeServerImplementation`
 instead of `mlem serve model ъуъ` if you don't set `type: ClassVar = "ъуъ"` for
 your class
 
 </details>
 
-## Entrypoints
+## Entry points
 
 For MLEM to know about your implementations, you need to register them via
-[entrypoints](https://packaging.python.org/en/latest/specifications/entry-points/)
+[entry points](https://packaging.python.org/en/latest/specifications/entry-points/)
 in your `setup.py`.
 
 You should list all of them in the form
-`{abs_name}.{type} = {module_path}:{class_name}` under `mlem.contrib` entrypoint
-key, where
+`{abs_name}.{type} = {module_path}:{class_name}` under `mlem.contrib` entry
+point key, where
 
 - `abs_name` is `MlemABC.abs_name` of the interface you are implementing
 - `type` is a value of `type` field name of your class

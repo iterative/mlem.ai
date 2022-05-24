@@ -2,16 +2,16 @@
 
 ## MLEM Repo
 
-MLEM can work with any `.mlem` files anywhere, but if you are using git it is
+MLEM can work with any `.mlem` files anywhere, but if you are using Git it is
 worth to turn your repo into a **MLEM Repo**.
 
 Having a **MLEM Repo** will allow you to save config options and index your
 objects. Also it will bring some structure to your project and help you address
 objects more easily.
 
-> Of course, you can create MLEM Repo even without git, because actually any
+> Of course, you can create MLEM Repo even without Git, because actually any
 > path with a `.mlem` directory is considered **MLEM Repo** whether it is local,
-> on github or on some cloud file storage.
+> on GitHub or on some cloud file storage.
 
 Once you have **MLEM Repo**, you will be able to use API and CLI commands that
 require it like `mlem ls` and `mlem config`.
@@ -30,7 +30,7 @@ learn more about configuration [here](/doc/user-guide/configuration).
 By default, any objects that you save into repo will be **internal**, which
 means they will be saved under `.mlem/{object type}/<path you specified>`.
 
-If you don't want this behaviour, you can specify `external` flag when saving or
+If you don't want this behavior, you can specify `external` flag when saving or
 set `default_external` to `True` via configuration. After that saved objects
 will be **external** and they will be saved under the path you specify.
 
@@ -64,7 +64,7 @@ Here is the example of how the same object can be referenced
 - `path = .mlem/model/rf, repo = https://github.com/iterative/example-mlem-get-started, rev=main` -
   can also provide full path
 - `path = https://github.com/iterative/example-mlem-get-started/tree/main/rf` -
-  everything could be provided via path (depends on imlpementation)
+  everything could be provided via path (depends on implementation)
 - `path = https://github.com/iterative/example-mlem-get-started/.mlem/model/rf` -
   also can omit `tree/main` since `main` is default.
 - `path = rf, fs = GithubFileSystem(org="iterative", repo="example-mlem-get-started", sha="main")` -

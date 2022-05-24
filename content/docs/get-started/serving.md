@@ -8,7 +8,7 @@ FastAPI server. All available server implementations are listed
 
 To start up FastAPI server simply run:
 
-```mlem
+```cli
 $ mlem serve rf fastapi
 ⏳️ Loading model from .mlem/model/rf.mlem
 Starting fastapi server...
@@ -38,14 +38,14 @@ to servers. Since a server also exposes the model interface description, the
 client will know what methods are available and handle serialization and
 deserialization for you. You can use them via CLI:
 
-```bash
+```cli
 $ mlem apply-remote http test_x.csv -c host="0.0.0.0" -c port=8080 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 
 or via Python API:
 
-```python
+```py
 from mlem.api import load
 from mlem.runtime.client.base import HTTPClient
 
@@ -57,7 +57,7 @@ res = client.predict(load("test_x.csv"))
 
 ### 💡 Or query the model directly with curl
 
-```bash
+```cli
 $ curl -X 'POST' \
       'http://localhost:8080/predict_proba' \
       -H 'accept: application/json' \

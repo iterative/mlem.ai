@@ -38,7 +38,7 @@ contributing!
 
 Get the latest development version. Fork and clone the repo:
 
-```dvc
+```cli
 $ git clone git@github.com:<your-username>/mlem.git
 ```
 
@@ -52,7 +52,7 @@ Install MLEM in editable mode with `pip install -e ".[tests]"`. But before we do
 that, we **strongly** recommend creating a
 [virtual environment](https://python.readthedocs.io/en/stable/library/venv.html):
 
-```dvc
+```cli
 $ cd mlem
 $ python3 -m venv .env
 $ source .env/bin/activate
@@ -61,7 +61,7 @@ $ pip install -e ".[tests]"
 
 Install coding style pre-commit hooks with:
 
-```dvc
+```cli
 $ pip install pre-commit
 $ pre-commit install
 ```
@@ -86,7 +86,7 @@ for some usage examples.
 
 The simplest way to run tests:
 
-```dvc
+```cli
 $ cd mlem
 $ python -m tests
 ```
@@ -94,7 +94,7 @@ $ python -m tests
 This uses `pytest` to run the full test suite and report the result. At the very
 end you should see something like this:
 
-```dvc
+```cli
 $ python -m tests
 
 ...
@@ -105,7 +105,7 @@ $ python -m tests
 Otherwise, for each failed test you should see the following output, to help you
 identify the problem:
 
-```
+```cli
 ...
 [gw2] [ 84%] FAILED tests/unit/test_progress.py::TestProgressAware::test
 tests/unit/test_prompt.py::TestConfirm::test_eof
@@ -122,19 +122,19 @@ default `pytest`'s scope:
 
 To run a single test case:
 
-```dvc
+```cli
 $ python -m tests tests/func/test_metrics.py::TestCachedMetrics
 ```
 
 To run a single test function:
 
-```dvc
+```cli
 $ python -m tests tests/unit/utils/test_fs.py::test_get_inode
 ```
 
 To pass additional arguments:
 
-```dvc
+```cli
 $ python -m tests --pdb
 ```
 

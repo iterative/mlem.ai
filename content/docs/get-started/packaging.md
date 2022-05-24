@@ -13,7 +13,7 @@ available packagers [here](/doc/user-guide/mlem-abcs#packager).
 
 To create a `build/` directory with pip package run this command:
 
-```dvc
+```cli
 $ mlem pack rf pip -c target=build/ -c package_name=example_mlem_get_started
 ⏳️ Loading model from .mlem/model/rf.mlem
 💼 Written `example_mlem_get_started` package data to `build`
@@ -38,7 +38,7 @@ quick reference you can run `mlem types packager` for list of packagers and
 
 Let’s see what we’ve got
 
-```bash
+```cli
 $ tree build/
 build/
 ├── MANIFEST.in
@@ -60,7 +60,7 @@ itself.
 Now you can distribute and install the package. It's code declares all the same
 methods our model had, so you can try to use it like this:
 
-```python
+```py
 import example_mlem_get_started
 
 example_mlem_get_started.predict(df)
@@ -72,7 +72,7 @@ Alternatively, you can pre configure your packager in the form of yaml file
 either manually or via `mlem create` command which uses the same interface with
 multiple `-c` options like this:
 
-```bash
+```cli
 $ mlem create packager pip pip_config \
   -c target=build/ -c package_name=example_mlem_get_started
 💾 Saving packager to .mlem/packager/pip_config.mlem
@@ -85,7 +85,7 @@ type: pip
 
 Now you can use this config as a value for `--load` option in `mlem pack`
 
-```bash
+```cli
 $ mlem pack rf -l pip_config
 ⏳️ Loading packager from .mlem/packager/pip_config.mlem
 ⏳️ Loading model from .mlem/model/rf.mlem
@@ -96,7 +96,7 @@ $ mlem pack rf -l pip_config
 
 ### ⛳ [Add packager config](https://github.com/iterative/example-mlem-get-started/tree/5-pack)
 
-```bash
+```cli
 $ git add .mlem/packager/pip_config.mlem
 $ git commit -m "Add package config"
 $ git diff 5-pack
@@ -106,7 +106,7 @@ $ git diff 5-pack
 
 Also, you can do all of this programmatically via Python API:
 
-```python
+```py
 from mlem.api import pack, load_meta
 
 pack("pip", "rf", target="build", package_name="example_mlem_get_started")

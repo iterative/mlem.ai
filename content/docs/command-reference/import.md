@@ -2,9 +2,6 @@
 
 Create a MLEM model or dataset metadata from a file/directory.
 
-> This is useful to quickly make existing datasets and model files compatible
-> with MLEM, which can then be used in future operations such as `mlem apply`.
-
 ## Synopsis
 
 ```usage
@@ -12,15 +9,18 @@ usage: mlem import [options] uri target
 
 arguments:
 URI     File to import  [required]
-TARGET  Path whare to save MLEM object  [required]
+TARGET  Path to save MLEM object  [required]
 ```
 
 ## Description
 
 Use `import` on an existing datasets or model files (or directories) to
-auto-generate the necessary MLEM metadata (`.mlem`) files for them. This command
-provides a quick and easy alternative to writing python code to load those
-models/datasets into object for subsequent usage in MLEM context.
+auto-generate the necessary MLEM metadata (`.mlem`) files for them. This is
+useful to quickly make existing datasets and model files compatible with MLEM,
+which can then be used in future operations such as `mlem apply`.
+
+This command provides a quick and easy alternative to writing python code to
+load those models/datasets into object for subsequent usage in MLEM context.
 
 ## Options
 
@@ -39,21 +39,21 @@ models/datasets into object for subsequent usage in MLEM context.
 
 Create a MLEM dataset from a local `.csv` file
 
-```mlem
+```cli
 $ mlem import data/data.csv data/imported_data --type pandas[csv]
 ...
 ```
 
 Create a MLEM model from local `.pkl` (pickle) file
 
-```mlem
+```cli
 $ mlem import data/model.pkl data/imported_model
 ...
 ```
 
 Create a MLEM model from remote `.pkl` (pickle) file
 
-```mlem
+```cli
 $ mlem import .mlem/model/rf --repo https://github.com/iterative/example-mlem-get-started --rev simple data/imported_model --type pickle
 💾 Saving model to .mlem/model/data/imported_model.mlem
 ```

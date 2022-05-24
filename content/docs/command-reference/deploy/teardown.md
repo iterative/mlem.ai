@@ -24,7 +24,6 @@ deleting its associated runtime resources.
 
 ## Example: Stop and destroy a deployment
 
-```mlem
+```cli
 $ mlem deploy teardown service_name
-...
 ```

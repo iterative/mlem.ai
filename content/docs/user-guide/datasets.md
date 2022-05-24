@@ -5,7 +5,7 @@
 The first step is to get some data. For this tutorial, we’ll just generate it.
 Let's take a look at this python script:
 
-```python
+```py
 # prepare.py
 from mlem.api import save
 from sklearn.datasets import load_iris
@@ -28,7 +28,7 @@ with MLEM. For now, we just save them locally and push them to Git later.
 
 Let's execute this script and see what was produced:
 
-```bash
+```cli
 $ python prepare.py
 $ tree .mlem/dataset/
 .mlem/dataset/
@@ -43,7 +43,7 @@ $ tree .mlem/dataset/
 What we see here is that every DataFrame was saved along with some metadata
 about it. Let's see one example:
 
-```bash
+```cli
 $ head -5 .mlem/dataset/train.csv
 ,sepal length (cm),sepal width (cm),petal length (cm),petal width (cm),target
 4,5.0,3.6,1.4,0.2,0
@@ -100,7 +100,7 @@ it needs pandas to do that for you.
 
 ### ⛳ [Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
 
-```bash
+```cli
 $ git add .mlem
 $ git commit -m "Added data"
 $ git diff 2-prepare

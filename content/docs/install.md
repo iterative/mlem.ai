@@ -21,10 +21,10 @@ encapsulate your local environment.
 
 </admon>
 
-```shell
+```cli
 $ pip install mlem
 ```
 
-<!-- TODO: ## Advanced options -->
+<!-- TODO: ## Advanced options? -->
 
 <!-- TODO: ## Shell tab completion -->
