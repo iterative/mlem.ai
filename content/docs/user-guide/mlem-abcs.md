@@ -17,9 +17,13 @@ via `-c` notation in CLI.
 
 </details>
 
-> Fields marked as **transient** are used to hold some operational object and
-> are not saved when you dump the objects. After loading objects with such
-> fields they will be empty until you somehow "load" the object.
+<admon type="info">
+
+**Transient** fields are used to hold some operational object and are not saved
+when an object is dumped. After opening objects with transient fields they will
+be empty until you load the object.
+
+</admon>
 
 <!-- TODO:
 Fields marked as **lazy** are used to hold implementation-related objects and
@@ -83,8 +87,12 @@ this is what you implement!
 
 **Base class**: `mlem.core.model.ModelType`
 
-> This class is polymorphic, which means that it can have more fields depending
-> on implementation.
+<admon type="info">
+
+This class is polymorphic, which means that it can have more fields depending on
+implementation.
+
+</admon>
 
 **Fields**:
 

@@ -7,8 +7,12 @@ To create one, use [`mlem init`](/doc/command-reference/init) or
 [`mlem.api.init`](/doc/api-reference/init). This will also create an empty
 `config.yaml` (see [Configuration](/doc/user-guide/configuration)).
 
-> Some API and CLI commands like `mlem ls` and `mlem config` require this
-> execution context. But in general, MLEM can work with `.mlem` files anywhere.
+<admon type="info">
+
+Some API and CLI commands like `mlem ls` and `mlem config` require this
+execution context. But in general, MLEM can work with `.mlem` files anywhere.
+
+</admon>
 
 A common place to initialize MLEM is a data science Git repository. _MLEM
 repositories_ help you better structure and easily address existing data
@@ -24,8 +28,13 @@ To save objects anywhere, use the `external` flag when saving them or set
 `default_external=True` via configuration. **External** objects will be indexed
 via links under `.mlem/link/<path you specified>`.
 
-> You can also turn this off via `link=False` flag, but in that case your object
-> will not appear in `mlem ls` output for example.
+<admon type="tip">
+
+You can also turn this off (via the `link=False` flag), but in that case your
+object will not be known to the MLEM project, for example it will not be shown
+by `mlem ls`.
+
+</admon>
 
 ## Referencing MLEM Objects
 

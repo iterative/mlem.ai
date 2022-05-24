@@ -5,10 +5,14 @@ represent MLEM Objects in other locations. You can
 [reference](/doc/user-guide/project-structure#referencing-mlem-objects) links
 anywhere you need to specify MLEM Object bot in API and CLI.
 
-> Since MLEM Links are also a type of MLEM Objects, they share the same logic,
-> for example they are saved under `.mlem/link` directory. To load and instance
-> of `MlemLink` (and not the object it references) provide `follow_links=False`
-> to `load_meta` method.
+<admon type="tip">
+
+Since links are also a type of MLEM Object, they share the same internal logic.
+For example, they are saved under the `.mlem/link` directory. To load and
+instance of `MlemLink` (and not the object it references) provide
+`follow_links=False` to `load_meta` method.
+
+</admon>
 
 ## Link structure
 
@@ -27,8 +31,12 @@ Links can be created via [`mlem link`](/doc/command-reference/link) or
 [`mlem.api.link`](/doc/api-reference/link) commands, as well as the
 `MlemMeta.make_link()` method.
 
-> You can create relative links inside the same repository, which will basically
-> create an alias for that object.
+<admon type="tip">
+
+You can create relative links inside the same repository, which will basically
+create an alias for that object.
+
+</admon>
 
 Also, since links can target specific commits, tags or branches in a versioned
 repository, they can be used in a variety of different scenarios, for example to

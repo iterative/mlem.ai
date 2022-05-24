@@ -6,11 +6,12 @@ The most important concept in MLEM is **MLEM Object**. Basically, MLEM is a
 library to create, manage and use different **MLEM Objects**, such as models,
 datasets and other types you can read about below.
 
-> So, when you use `save` API method, you create MLEM Object from an arbitrary
-> supported Python object.
+<admon type="info">
 
-> Also, MLEM Objects can be created with
-> [`mlem create`](/doc/command-reference/create) CLI command
+For example, when you use `mlem.api.save()`, you create a MLEM Object from a
+supported Python structure. MLEM Objects can also be created with `mlem create`.
+
+</admon>
 
 MLEM Objects are saved as `.mlem` files in `yaml` format. Sometimes they can
 have other files attached to them, in that case we call `.mlem` file as a

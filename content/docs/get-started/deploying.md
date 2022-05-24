@@ -4,12 +4,11 @@ You can create deployments in the cloud from your models. This uses packaging
 and serving functions under the hood. For example, Heroku deployment combines
 Docker image packaging with FastAPI serving.
 
-> ⚠️ This functionality is experimental and is subject to change. We’ll add more
-> target platforms in upcoming releases.
+<admon type="warn">
 
-Deployment often uses packaging and serving functionalities. For example, Heroku
-deployment that is showcased in this section actually uses docker image
-packaging with FastAPI serving.
+This functionality is experimental and is subject to change.
+
+</admon>
 
 ## Defining target environment
 
@@ -36,8 +35,12 @@ $ mlem create env heroku staging -c api_key=<you api key>
 💾 Saving env to .mlem/env/staging.mlem
 ```
 
-> Note that api_key argument is optional and MLEM will use `HEROKU_API_KEY` env
-> variable if you don’t provide it via config.
+<admon type="tip">
+
+MLEM will attempt to use the `HEROKU_API_KEY` environment variable if no
+`api_key` argument is provided.
+
+</admon>
 
 ## Defining deployment
 
@@ -92,10 +95,18 @@ $ mlem deploy create myservice
 ✅  Service example-mlem-get-started is up. You can check it out at https://my-mlem-service.herokuapp.com/
 ```
 
-> 💡 You can also create and configure deployment on-the-fly using `-c` options
-> for `mlem deploy create` command:
->
-> `$ mlem deploy create service_name -m model -t staging -c app_name=example-mlem-get-started`
+<admon type="tip">
+
+You can also define and run the deployment on-the-fly using `-c` options for
+`mlem deploy create`, e.g.:
+
+```cli
+$ mlem deploy create myservice \
+                     -m model -t staging \
+                     -c app_name=example-mlem-get-started
+```
+
+</admon>
 
 <details>
 
@@ -145,9 +156,17 @@ $ mlem deploy apply myservice test_x.csv --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 
-> 💡 As always, you don’t need to have deployment meta locally:
->
-> `$ mlem deploy apply https://github.com/iterative/example-mlem-get-started/myservice https://github.com/iterative/example-mlem-get-started/test_x.csv --json`
+<admon type="tip">
+
+You don’t even need to have the deployment metadata locally:
+
+```cli
+$ mlem deploy apply --json \
+  https://github.com/iterative/example-mlem-get-started/myservice \
+  https://github.com/iterative/example-mlem-get-started/test_x.csv
+```
+
+</admon>
 
 ## Managing deployment
 
