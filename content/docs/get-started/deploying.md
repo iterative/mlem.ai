@@ -44,7 +44,7 @@ are also MLEM objects, which means that they need to have their definition. To
 create one for Heroku, we once again will use `create` command to configure our
 deployment.
 
-```bash
+```cli
 $ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -c model=rf -c env=staging
 💾 Saving deployment to .mlem/deployment/service_name.mlem
 ```
@@ -56,7 +56,7 @@ $ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -
 
 ### ⛳ [Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta)
 
-```bash
+```cli
 $ git add .mlem/env/staging.mlem .mlem/deployment/myservice.mlem
 $ git commit -m "Add env and deploy meta"
 $ git diff 5-deploy-meta
@@ -66,7 +66,7 @@ $ git diff 5-deploy-meta
 
 Now we can actually run the deployment process (this can take a while):
 
-```bash
+```cli
 $ mlem deploy create myservice
 ⏳️ Loading deployment from .mlem/deployment/myservice.mlem
 🔗 Loading link to .mlem/env/staging.mlem
@@ -97,7 +97,7 @@ $ mlem deploy create myservice
 
 ### ⛳ [Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
 
-```bash
+```cli
 $ git add .mlem/deployment/myservice.mlem
 $ git commit -m "Deploy service"
 $ git diff 8-deploy-service
@@ -133,7 +133,7 @@ There is also the remote counterpart of `apply` command. It will send requests
 to your service instead of loading model into memory. There are two options to
 achieve this in CLI: using the service address or the deploy meta.
 
-```bash
+```cli
 $ mlem apply-remote http test_x.csv -c host=http://my-mlem-service.herokuapp.com -c port=80 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 
@@ -149,14 +149,14 @@ $ mlem deploy apply myservice test_x.csv --json
 
 Finally, you can check the status of your service with:
 
-```bash
+```cli
 $ mlem deploy status myservice
 running
 ```
 
 And stop your service with
 
-```bash
+```cli
 $ mlem deploy teardown myservice
 ⏳️ Loading deployment from .mlem/deployment/myservice.mlem
 🔗 Loading link to .mlem/env/staging.mlem

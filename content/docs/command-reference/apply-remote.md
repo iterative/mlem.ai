@@ -49,7 +49,4 @@ the entire dataset with the model and save the output dataset to `myprediction`
 
 ```cli
 $ mlem apply-remote http mydataset --conf host="127.0.0.1" --conf port=3000 --output myprediction
-...
 ```
-
->

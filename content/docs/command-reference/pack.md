@@ -36,7 +36,6 @@ Build a docker image from a model
 
 ```cli
 $ mlem pack mymodel docker --conf server.type=fastapi --conf image.name=myimage
-...
 ```
 
 Create a `docker_dir` packager config called `pack_dock`, and use it to package

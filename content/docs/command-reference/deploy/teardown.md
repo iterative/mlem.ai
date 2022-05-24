@@ -26,5 +26,4 @@ deleting its associated runtime resources.
 
 ```cli
 $ mlem deploy teardown service_name
-...
 ```

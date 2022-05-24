@@ -105,7 +105,7 @@ $ python -m tests
 Otherwise, for each failed test you should see the following output, to help you
 identify the problem:
 
-```
+```cli
 ...
 [gw2] [ 84%] FAILED tests/unit/test_progress.py::TestProgressAware::test
 tests/unit/test_prompt.py::TestConfirm::test_eof

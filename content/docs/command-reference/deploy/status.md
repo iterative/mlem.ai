@@ -36,5 +36,4 @@ The possible statuses for deployments using the `heroku` target platform is:
 
 ```cli
 $ mlem deploy status service_name
-...
 ```

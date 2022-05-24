@@ -21,7 +21,7 @@ encapsulate your local environment.
 
 </admon>
 
-```shell
+```cli
 $ pip install mlem
 ```
 

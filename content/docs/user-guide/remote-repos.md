@@ -16,8 +16,11 @@ MLEM works with DVC in more details.
 
 Since we've saved the data and the model in the repository, let's list them:
 
-```bash
+```cli
 $ mlem ls
+```
+
+```yaml
 Datasets:
  - test_x.csv
  - test_y.csv
@@ -32,8 +35,11 @@ repository we're in.
 But what if they are stored in a remote Git repository, and we don't want to
 clone it? MLEM can also work with remote repositories:
 
-```bash
+```cli
 $ mlem ls https://github.com/iterative/example-mlem-get-started --type model
+```
+
+```yaml
 Models:
  - rf
 ```
@@ -55,13 +61,13 @@ model = load(
 If we just want to download the model to a local disk to use it later, we can
 run `clone` command
 
-```bash
+```cli
 $ mlem clone https://github.com/iterative/example-mlem-get-started/rf ml_model
 ```
 
 The other way to do it is to run
 
-```bash
+```cli
 $ mlem clone rf --repo https://github.com/iterative/example-mlem-get-started --rev main ml_model
 ```
 
@@ -74,7 +80,7 @@ the commands, but you can create your own repo and use it if you want.
 
 To push your models and datasets to the repo, add them to Git and commit
 
-```bash
+```cli
 $ git add .mlem *.py
 $ git commit -am "committing mlem objects and code"
 $ git push
@@ -109,7 +115,7 @@ from mlem.api import load
 model = load("rf", repo="s3://example-mlem-get-started")
 ```
 
-```bash
+```cli
 $ mlem apply rf --repo s3://example-mlem-get-started test_x.csv --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```

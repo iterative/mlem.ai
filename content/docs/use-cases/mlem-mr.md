@@ -30,6 +30,9 @@ That repo already have some models in it:
 
 ```cli
 $ mlem ls https://github.com/iterative/example-mlem-get-started
+```
+
+```yaml
 Datasets:
  - test_x.csv
  - test_y.csv
@@ -46,7 +49,7 @@ Envs:
 
 Let's create new repo first:
 
-```shell
+```cli
 $ mkdir links-mr
 $ cd links-mr
 $ git init
@@ -55,7 +58,7 @@ $ mlem init
 
 Let's create some links to them:
 
-```
+```cli
 $ mlem link --sr https://github.com/iterative/example-mlem-get-started --rev main rf first-model
 ⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
 💾 Saving link to .mlem/link/first-model.mlem
@@ -69,6 +72,9 @@ We've just linked two models from the other repo. You can see both if you run:
 
 ```cli
 $ mlem ls
+```
+
+```yaml
 Models:
  - first-model -> .mlem/model/rf
  - second-model -> .mlem/model/rf
@@ -76,7 +82,7 @@ Models:
 
 Let's check out each link:
 
-```shell
+```cli
 $ cat .mlem/link/first-model.mlem
 link_type: model
 object_type: link
@@ -94,7 +100,7 @@ rev: 7-deploy-meta
 
 Now you can commit those links, push the repo and use it as a model registry:
 
-```shell
+```cli
 $ git add .mlem/link/first-model.mlem .mlem/link/second-model.mlem
 $ git commit -m "Add links to models"
 ```

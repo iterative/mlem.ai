@@ -37,7 +37,7 @@ $ mlem config set default_storage.type dvc
 Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
 DVC
 
-```bash
+```cli
 $ echo "/**/?*.mlem" > .dvcignore
 $ git add .dvcignore
 ```
@@ -47,7 +47,7 @@ $ git add .dvcignore
 Next, let’s remove artifacts from Git and re-save them, so MLEM can use new
 storage for them. You don't need to change a single line of code
 
-```bash
+```cli
 $ git rm -r --cached .mlem/
 $ python prepare.py
 $ python train.py
@@ -56,7 +56,7 @@ $ python train.py
 Finally, let’s add new metafiles to Git and artifacts to DVC respectively,
 commit and push them
 
-```bash
+```cli
 $ dvc add .mlem/model/rf .mlem/dataset/*.csv
 $ git add .mlem
 $ git commit -m "Switch to dvc storage"

@@ -38,7 +38,7 @@ quick reference you can run `mlem types packager` for list of packagers and
 
 Let’s see what we’ve got
 
-```bash
+```cli
 $ tree build/
 build/
 ├── MANIFEST.in
@@ -72,7 +72,7 @@ Alternatively, you can pre configure your packager in the form of yaml file
 either manually or via `mlem create` command which uses the same interface with
 multiple `-c` options like this:
 
-```bash
+```cli
 $ mlem create packager pip pip_config \
   -c target=build/ -c package_name=example_mlem_get_started
 💾 Saving packager to .mlem/packager/pip_config.mlem
@@ -85,7 +85,7 @@ type: pip
 
 Now you can use this config as a value for `--load` option in `mlem pack`
 
-```bash
+```cli
 $ mlem pack rf -l pip_config
 ⏳️ Loading packager from .mlem/packager/pip_config.mlem
 ⏳️ Loading model from .mlem/model/rf.mlem
@@ -96,7 +96,7 @@ $ mlem pack rf -l pip_config
 
 ### ⛳ [Add packager config](https://github.com/iterative/example-mlem-get-started/tree/5-pack)
 
-```bash
+```cli
 $ git add .mlem/packager/pip_config.mlem
 $ git commit -m "Add package config"
 $ git diff 5-pack

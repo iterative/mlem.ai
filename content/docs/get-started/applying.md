@@ -36,7 +36,7 @@ and call any method manually.
 
 Now, let's run the script
 
-```bash
+```cli
 $ python evaluate.py
 $ cat metrics.json
 {
@@ -48,7 +48,7 @@ $ cat metrics.json
 
 ### ⛳ [Evaluation](https://github.com/iterative/example-mlem-get-started/tree/4-eval)
 
-```bash
+```cli
 $ git add metrics.json
 $ git commit -m "Evaluate model"
 $ git diff 4-eval
@@ -65,7 +65,7 @@ should be in a file that is supported by
 
 Let's create an example file and run `mlem apply`
 
-```bash
+```cli
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
 $ mlem apply rf new_data.csv -i --it pandas[csv] -o prediction
@@ -93,11 +93,10 @@ if __name__ == '__main__':
 
 You can just reference it by name:
 
-```bash
+```cli
 $ mlem apply rf iris.csv -o prediction
 ⏳️ Loading dataset from .mlem/dataset/iris.csv.mlem
 ⏳️ Loading model from .mlem/model/rf.mlem
 🍏 Applying `predict` method...
 💾 Saving dataset to .mlem/dataset/prediction.mlem
-
 ```

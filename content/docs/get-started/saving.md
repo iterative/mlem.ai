@@ -43,7 +43,7 @@ But instead of pickling the model we saved it with MLEM.
 
 Now let's run this script and see how we save the model.
 
-```bash
+```cli
 $ python train.py
 $ tree .mlem/model/
 .mlem/model
@@ -203,7 +203,7 @@ It's a bit long, but we can see all that we need to use the model later:
 Tag:
 [2-train](https://github.com/iterative/example-mlem-get-started/tree/2-train)
 
-```bash
+```cli
 $ git add .mlem/model
 $ git commit -m "Train the model"
 $ git diff 2-train
