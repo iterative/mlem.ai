@@ -238,11 +238,6 @@
         "source": "api-reference/load_meta.md"
       },
       {
-        "slug": "mlem-object",
-        "label": "MlemObject API",
-        "source": "api-reference/mlem-object.md"
-      },
-      {
         "slug": "ls",
         "label": "ls()",
         "source": "api-reference/ls.md"
