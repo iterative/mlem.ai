@@ -34,17 +34,17 @@ $ mlem ls https://github.com/iterative/example-mlem-get-started
 
 ```yaml
 Datasets:
- - test_x.csv
- - test_y.csv
- - train.csv
+  - test_x.csv
+  - test_y.csv
+  - train.csv
 Models:
- - rf
+  - rf
 Deployments:
- - myservice
+  - myservice
 Packagers:
- - pip_config
+  - pip_config
 Envs:
- - staging
+  - staging
 ```
 
 Let's create new repo first:
@@ -76,8 +76,8 @@ $ mlem ls
 
 ```yaml
 Models:
- - first-model -> .mlem/model/rf
- - second-model -> .mlem/model/rf
+  - first-model -> .mlem/model/rf
+  - second-model -> .mlem/model/rf
 ```
 
 Let's check out each link:

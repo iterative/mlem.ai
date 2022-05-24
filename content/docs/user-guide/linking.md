@@ -12,7 +12,8 @@ links everywhere you need to specify MLEM Object.
 
 ## Link structure
 
-The contents of the link is very lightweight and consist of the following fields:
+The contents of the link is very lightweight and consist of the following
+fields:
 
 - `link_type` - type of referenced object
 - location fields (except `fs`) as in
@@ -30,5 +31,5 @@ Links can be created via [`mlem link`](/doc/command-reference/link) or
 > create an alias for that object.
 
 Also, since links can target specific commits, tags or branches in a versioned
-repository, they can be used in a variety of different scenarios, for example
-to create a [centralized Model Registry](/doc/use-cases/mlem-mr).
+repository, they can be used in a variety of different scenarios, for example to
+create a [centralized Model Registry](/doc/use-cases/mlem-mr).

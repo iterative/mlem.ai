@@ -22,11 +22,11 @@ $ mlem ls
 
 ```yaml
 Datasets:
- - test_x.csv
- - test_y.csv
- - train.csv
+  - test_x.csv
+  - test_y.csv
+  - train.csv
 Models:
- - rf
+  - rf
 ```
 
 Note that we are actually listing models and data which is saved in the
@@ -41,7 +41,7 @@ $ mlem ls https://github.com/iterative/example-mlem-get-started --type model
 
 ```yaml
 Models:
- - rf
+  - rf
 ```
 
 We also can use URL addresses to load models from remote repositories directly:

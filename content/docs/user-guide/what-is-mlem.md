@@ -11,4 +11,3 @@ docker images.
 modular, flexible design. This allows supporting a wide variety of model types
 and deployment targets, enabling you to easily serve models locally or on any
 cloud infrastructure.
-

@@ -43,8 +43,8 @@ For MLEM to know about your implementations, you need to register them via
 in your `setup.py`.
 
 You should list all of them in the form
-`{abs_name}.{type} = {module_path}:{class_name}` under `mlem.contrib` entry point
-key, where
+`{abs_name}.{type} = {module_path}:{class_name}` under `mlem.contrib` entry
+point key, where
 
 - `abs_name` is `MlemABC.abs_name` of the interface you are implementing
 - `type` is a value of `type` field name of your class
