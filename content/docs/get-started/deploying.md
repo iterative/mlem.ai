@@ -1,6 +1,8 @@
 # Deploying models
 
-You can also create deployments in cloud from your models.
+You can create deployments in the cloud from your models. This uses packaging
+and serving functions under the hood. For example, Heroku deployment combines
+Docker image packaging with FastAPI serving.
 
 > ⚠️ This functionality is experimental and is subject to change. We’ll add more
 > target platforms in upcoming releases.
@@ -40,17 +42,19 @@ $ mlem create env heroku staging -c api_key=<you api key>
 ## Defining deployment
 
 Now, as we defined our target env, we can deploy our model there. Deployments
-are also MLEM objects, which means that they need to have their definition. To
-create one for Heroku, we once again will use `create` command to configure our
-deployment.
+are also MLEM objects, which means that they need to have their definition.
+
+To create one for Heroku, we once again will use `create` command to configure
+our deployment. We use `example-mlem-get-started` for the app name, but you can
+change it to something unique:
 
 ```cli
-$ mlem create deployment heroku myservice -c app_name=example-mlem-get-started -c model=rf -c env=staging
+$ mlem create deployment heroku myservice \
+                         -c app_name=example-mlem-get-started \
+                         -c model=rf \
+                         -c env=staging
 💾 Saving deployment to .mlem/deployment/service_name.mlem
 ```
-
-> 💡 We use `example-mlem-get-started` for app_name, but you should change it to
-> something unique.
 
 <details>
 

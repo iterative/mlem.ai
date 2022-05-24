@@ -5,7 +5,7 @@ MLEM has a number of abstract base classes that anyone can implement to
 
 <details>
 
-### Internal details
+## Internal details
 
 Each abstract base class in this list is a subclass of `mlem.core.base.MlemABC`
 class, which is a subclass of pydantic `BaseModel` with additional polymorphic
@@ -21,12 +21,14 @@ via `-c` notation in CLI.
 > are not saved when you dump the objects. After loading objects with such
 > fields they will be empty until you somehow "load" the object.
 
-> Fields marked as **lazy** are used to hold implementation-related objects and
-> are not deserialized right away when you load parent object. This helps avoid
-> `ImportError` if you do not have dependencies required for undelying
-> implementation, or just to avoid unneccessary imports. The field value will be
-> loaded when you try to access it. If you don't want to load it, you can access
-> unserialized data in `<field_name>_raw` field.
+<!-- TODO:
+Fields marked as **lazy** are used to hold implementation-related objects and
+are not deserialized right away when you load parent object. This helps avoid
+`ImportError` if you do not have dependencies required for undelying
+implementation, or just to avoid unneccessary imports. The field value will be
+loaded when you try to access it. If you don't want to load it, you can access
+unserialized data in `<field_name>_raw` field.
+-->
 
 Here is the list of all MLEM ABCs.
 
@@ -81,8 +83,8 @@ this is what you implement!
 
 **Base class**: `mlem.core.model.ModelType`
 
-> This class is polymorphic, which means it can have more fields depending on
-> implementation.
+> This class is polymorphic, which means that it can have more fields depending
+> on implementation.
 
 **Fields**:
 
