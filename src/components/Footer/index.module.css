@@ -1,6 +1,5 @@
 .footer {
   padding: 24px 0;
-  margin-top: 24px;
   background-color: #fff;
   @apply border-gray-200 border-solid border-t-2;
 
