@@ -56,9 +56,10 @@ const footerListData: Array<IFooterListProps> = [
       },
       { href: 'https://github.com/iterative', text: 'Github', icon: 'github' },
       {
-        href: 'http://mlem.ai/chat',
+        href: '/chat',
         text: 'Discord',
-        icon: 'discord'
+        icon: 'discord',
+        target: '_blank'
       }
     ]
   }

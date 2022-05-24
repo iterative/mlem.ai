@@ -15,6 +15,7 @@ export interface IFooterListProps {
     text: string
     icon?: 'github' | 'discord' | 'twitter' | 'linkedin' | 'youtube'
     href: string
+    target?: '_blank'
   }>
 }
 
@@ -50,8 +51,13 @@ const FooterList: React.FC<IFooterListProps> = ({
         {title}
       </h2>
       <div className={styles.list__links}>
-        {links.map(({ text, href, icon }, i) => (
-          <SmartLink className={styles.list__link} key={i} href={href}>
+        {links.map(({ text, href, icon, target }, i) => (
+          <SmartLink
+            target={target}
+            className={styles.list__link}
+            key={i}
+            href={href}
+          >
             {icon && icons[icon]}
             {text}
           </SmartLink>
