@@ -1,4 +1,4 @@
-# WIP Working with datasets
+# Working with datasets
 
 ## Getting the data
 
