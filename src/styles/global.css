@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  svg { 
+@layer base {
+  svg {
     display: unset;
     vertical-align: unset;
   }
