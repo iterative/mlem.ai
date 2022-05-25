@@ -93,7 +93,7 @@ can process your data and train your model. You may be already training your ML
 models in them and what to start using MLEM to save those models.
 
 MLEM can be easily plugged into existing DVC pipelines. If you already added
-`.mlem` files to `.dvcignore`, you are good to go for most of the cases.
+`.mlem` files to `.dvcignore`, you are good to go in most cases.
 
 It becomes a bit more complicated when you need to add them as inputs to
 pipeline stages. For example, when a model binary doesn't change, but its
