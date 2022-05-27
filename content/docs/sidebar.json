@@ -80,11 +80,6 @@
         "source": "user-guide/project-structure.md"
       },
       {
-        "slug": "remote-repos",
-        "label": "Working with repositories and remote objects",
-        "source": "user-guide/remote-repos.md"
-      },
-      {
         "slug": "configuration",
         "label": "Configuration",
         "source": "user-guide/configuration.md"
