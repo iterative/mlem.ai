@@ -25,10 +25,8 @@ $ pip install -r requirements.txt
 </details>
 
 Often it’s a bad idea to store binary files in Git, especially big ones. To
-solve this MLEM can utilize DVC capabilities to connect external cloud storage
-for model and dataset versioning.
-
-> You can learn more about DVC [here](https://dvc.org/doc).
+solve this MLEM can utilize [DVC](https://dvc.org/doc) capabilities to connect
+external cloud storage for model and dataset versioning.
 
 We will reorganize our example repo to use DVC.
 

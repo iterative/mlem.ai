@@ -30,7 +30,7 @@ If you train Machine Learning models and you want to
 MLEM is for you!
 
 > We keep reviewing our docs and will include interesting scenarios that surface
-> in the community. Please, contact us if you need help or have suggestions!
+> in the community. Please contact us if you need help or have suggestions!
 
 Please choose from the navigation sidebar to the left, or click the Next button
 below ↘
