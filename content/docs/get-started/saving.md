@@ -45,15 +45,21 @@ Now let's run this script and see how we save the model.
 
 ```cli
 $ python train.py
+...
+
 $ tree .mlem/model/
 .mlem/model
 ├── rf
 └── rf.mlem
 ```
 
-> By default, MLEM saves your files to `.mlem/` directory, but that could be
-> changed, see [project structure](/doc/user-guide/project-structure) for
-> reference.
+<admon type="tip">
+
+By default, MLEM saves your files to `.mlem/` directory, but that can be
+changed. See [Project Structure](/doc/user-guide/project-structure) for more
+details.
+
+</admon>
 
 What we see here is that model was saved along with some metadata about it: `rf`
 containing the model binary and `.mlem` file containing metadata. Let's take a
@@ -193,8 +199,8 @@ It's a bit long, but we can see all that we need to use the model later:
 3. Requirements: `sklearn`, `numpy`, `pandas` with particular versions we need
    to run this model.
 
-> Note that we didn't specify requirements: MLEM investigates the object you're
-> saving (even if it's a complex one) and finds out all requirements needed.
+Note that we didn't specify requirements: MLEM investigates the object you're
+saving (even if it's a complex one) and finds out all requirements needed!
 
 <details>
 

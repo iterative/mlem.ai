@@ -6,8 +6,12 @@ Objects, you can use [`mlem import`](/doc/command-reference/import) or
 
 They will try to load the path you provided and analyze the object saved there.
 
-> Obviously, importing is more limited than `save` API, since MLEM do not have
-> live python object to analyze and tries to recreate it, which may fail.
+<admon type="warn">
+
+Importing is more limited than `mlem.api.save()`. This is because MLEM does not
+have a live Python object to analyze and tries to recreate it, which may fail.
+
+</admon>
 
 You can see list of available import implementations
 [here](/doc/user-guide/mlem-abcs#importhook).

@@ -1,44 +1,40 @@
 # Project structure
 
-## MLEM Repo
+## MLEM Project
 
-MLEM can work with any `.mlem` files anywhere, but if you are using Git it is
-worth to turn your repo into a **MLEM Repo**.
+Any directory with a valid `.mlem/` directory is considered a **MLEM Project**.
+To create one, use [`mlem init`](/doc/command-reference/init) or
+[`mlem.api.init`](/doc/api-reference/init). This will also create an empty
+`config.yaml` (see [Configuration](/doc/user-guide/configuration)).
 
-Having a **MLEM Repo** will allow you to save config options and index your
-objects. Also it will bring some structure to your project and help you address
-objects more easily.
+<admon type="info">
 
-> Of course, you can create MLEM Repo even without Git, because actually any
-> path with a `.mlem` directory is considered **MLEM Repo** whether it is local,
-> on GitHub or on some cloud file storage.
+Some API and CLI commands like `mlem ls` and `mlem config` require this
+execution context. But in general, MLEM can work with `.mlem` files anywhere.
 
-Once you have **MLEM Repo**, you will be able to use API and CLI commands that
-require it like `mlem ls` and `mlem config`.
+</admon>
 
-## mlem init
+A common place to initialize MLEM is a data science Git repository. _MLEM
+repositories_ help you better structure and easily address existing data
+artifacts (especially ML models). And Git allows you to version MLEM objects and
+configuration options along with code.
 
-To create **MLEM Repo**, simply run [`mlem init`](/doc/command-reference/init)
-or [`mlem.api.init`](/doc/api-reference/init). It accepts path as an argument,
-which defaults to current directory.
+## Internal vs. External objects
 
-It will create `.mlem` directory and an empty `config.yaml` file inside. You can
-learn more about configuration [here](/doc/user-guide/configuration).
-
-## External objects
-
-By default, any objects that you save into repo will be **internal**, which
+By default, any MLEM objects that you save into repo will be **internal**, which
 means they will be saved under `.mlem/{object type}/<path you specified>`.
 
-If you don't want this behavior, you can specify `external` flag when saving or
-set `default_external` to `True` via configuration. After that saved objects
-will be **external** and they will be saved under the path you specify.
+To save objects anywhere, use the `external` flag when saving them or set
+`default_external=True` via configuration. **External** objects will be indexed
+via links under `.mlem/link/<path you specified>`.
 
-Also, they will be indexed via links under `.mlem/link/<path you specified>`.
-That is needed for MLEM to keep track of all MLEM Objects in the repo.
+<admon type="tip">
 
-> You can also turn this off via `link=False` flag, but in that case your object
-> will not appear in `mlem ls` output for example.
+You can also turn this off (via the `link=False` flag), but in that case your
+object will not be known to the MLEM project, for example it will not be shown
+by `mlem ls`.
+
+</admon>
 
 ## Referencing MLEM Objects
 
