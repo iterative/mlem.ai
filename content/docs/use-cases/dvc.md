@@ -11,7 +11,6 @@ If you want to follow along with this tutorial and try MLEM, you can use our
 $ git clone https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
 $ git checkout 1-dvc-mlem-init
-$ git checkout -b add-dvc
 ```
 
 Next let's create an isolated virtual environment to cleanly install all the
