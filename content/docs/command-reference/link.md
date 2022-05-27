@@ -44,8 +44,12 @@ Add a remote object to your local workspace (aka repo) without copying it
 $ mlem link rf --source-repo https://github.com/iterative/example-mlem-get-started remote_model
 ```
 
-> The remote model can now be served with the link created above, using the
-> command `mlem serve remote_model fastapi`.
+<admon type="tip">
+
+The remote model can now be served with the link created above, using the
+command `mlem serve remote_model fastapi`.
+
+</admon>
 
 Alias a local object with a different name
 

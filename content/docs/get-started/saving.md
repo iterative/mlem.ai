@@ -45,15 +45,21 @@ Now let's run this script and see how we save the model.
 
 ```cli
 $ python train.py
+...
+
 $ tree .mlem/model/
 .mlem/model
 ├── rf
 └── rf.mlem
 ```
 
-> By default, MLEM saves your files to `.mlem/` directory, but that could be
-> changed, see [project structure](/doc/user-guide/project-structure) for
-> reference.
+<admon type="tip">
+
+By default, MLEM saves your files to `.mlem/` directory, but that can be
+changed. See [Project Structure](/doc/user-guide/project-structure) for more
+details.
+
+</admon>
 
 The model was saved along with some metadata about it: `rf` containing the model
 binary and a `.mlem` metafile containing information about it. Let's take a look

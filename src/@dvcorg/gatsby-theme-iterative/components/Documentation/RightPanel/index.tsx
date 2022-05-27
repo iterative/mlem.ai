@@ -13,7 +13,7 @@ import {
 import { allImagesLoadedInContainer } from '@dvcorg/gatsby-theme-iterative/src/utils/front/images'
 
 import * as sharedStyles from '@dvcorg/gatsby-theme-iterative/src/components/Documentation/styles.module.css'
-import * as styles from '@dvcorg/gatsby-theme-iterative/src/components/Documentation/RightPanel/styles.module.css'
+import * as styles from './styles.module.css'
 
 interface IRightPanelProps {
   headings: Array<IHeading>
