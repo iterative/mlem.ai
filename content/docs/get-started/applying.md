@@ -31,8 +31,8 @@ if __name__ == "__main__":
 ```
 
 Here we use the `apply` function that handles loading of the model for us. But
-you can always load your model with [`mlem.api.load`](/doc/api-reference/load)
-and call any method manually.
+you can always load your model with `mlem.api.load()` and call any method
+manually.
 
 Now, let's run the script
 

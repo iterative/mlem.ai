@@ -23,8 +23,7 @@ fields:
 
 ## Using links
 
-Links can be created via [`mlem link`](/doc/command-reference/link) or
-[`mlem.api.link`](/doc/api-reference/link) commands, as well as
+Links can be created via `mlem link` or `mlem.api.link()` commands, as well as
 `MlemMeta.make_link` method.
 
 > You can create relative links inside the same repository, which will basically

@@ -5,9 +5,9 @@ file), but soon we'll save something with MLEM to fill it up.
 
 ## Training the model
 
-To save models with MLEM you just need to use
-[`mlem.api.save`](/doc/api-reference/save) method instead of some other way you
-saved your model before. Let's take a look at the following python script:
+To save models with MLEM you just need to use `mlem.api.save()` method instead
+of some other way you saved your model before. Let's take a look at the
+following python script:
 
 ```py
 # train.py
