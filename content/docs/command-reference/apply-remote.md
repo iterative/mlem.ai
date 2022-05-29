@@ -1,6 +1,6 @@
 # apply-remote
 
-Apply a deployed-model (possibly remotely) to a dataset. The resulting dataset
+Apply a deployed-model (possibly remotely) to data. The results
 will be saved as a MLEM object to `output` if provided. Otherwise, it will be
 printed to `stdout`.
 
@@ -27,10 +27,10 @@ clients are `http` and `rmq` - which are used to launch requests against the
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `-o, --output TEXT`: Where to store the outputs.
-- `--target-repo, --tr TEXT`: Repo to save target to [default: (none)]
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
 - `-m, --method TEXT`: Which model method is to be applied [default: predict]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--json`: Output as json
@@ -45,7 +45,7 @@ clients are `http` and `rmq` - which are used to launch requests against the
 Given a hosted model server (see
 [serve example](/doc/command-reference/serve#examples) as a way to easily do
 this) and a local MLEM dataset `mydataset`, run the following command to infer
-the entire dataset with the model and save the output dataset to `myprediction`
+the entire dataset with the model and save the output result to `myprediction`
 
 ```cli
 $ mlem apply-remote http mydataset --conf host="127.0.0.1" --conf port=3000 --output myprediction

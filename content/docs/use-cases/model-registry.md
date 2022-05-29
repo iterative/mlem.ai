@@ -2,7 +2,7 @@
 
 A **model registry** is a tool to catalog ML models and their versions. Models
 from your data science projects can be discovered, tested, shared, deployed, and
-audited from there. [DVC](/doc), [GTO], and [MLEM] enable these capabilities on
+audited from there. [DVC](https://github.com/iterative/dvc), [GTO], and [MLEM] enable these capabilities on
 top of Git, so you can stick to en existing software engineering stack. No more
 divide between ML engineering and operations!
 
@@ -46,7 +46,7 @@ artifacts in the repo using versioned annotations. This creates abstractions for
 your models, which lets you **manage their lifecycle** freely and directly from
 Git.
 
-And to **productionize** the models, you can save and package them with the
+And to **productionize** the models, you can save and build them with the
 [MLEM] Python API or CLI, which automagically captures all the context needed to
 distribute them. It can store model files on the cloud (by itself or with DVC),
 list and transfer them within locations, wrap them as a local REST server, or

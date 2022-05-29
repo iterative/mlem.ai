@@ -6,7 +6,7 @@ Saves given object to a given path
 def save(
     obj: Any,
     path: str,
-    repo: Optional[str] = None,
+    project: Optional[str] = None,
     sample_data=None,
     fs: Union[str, AbstractFileSystem] = None,
     index: bool = None,
@@ -37,13 +37,13 @@ systems (eg: `S3`). The function returns and saves the object as a
 - **`obj`** (required) - Object to dump
 - **`path`** (required) - If not located on LocalFileSystem, then should be uri
   or `fs` argument should be provided
-- `repo` (optional) - path to mlem repo
+- `project` (optional) - path to mlem project
 - `sample_data` (optional) - If the object is a model or function, you can
   provide input data sample, so MLEM will include it's schema in the model's
   metafile
 - `fs` (optional) - FileSystem for the `path` argument
-- `index` (optional) - Whether to add object to mlem repo index
-- `external` (optional) - if obj is saved to repo, whether to put it outside of
+- `index` (optional) - Whether to add object to mlem project index
+- `external` (optional) - if obj is saved to project, whether to put it outside of
   .mlem dir
 - `description` (optional) - description for object
 - `params` (optional) - arbitrary params for object

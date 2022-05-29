@@ -6,11 +6,11 @@ saving to the specified target location.
 ```py
 def import_object(
     path: str,
-    repo: Optional[str] = None,
+    project: Optional[str] = None,
     rev: Optional[str] = None,
     fs: Optional[AbstractFileSystem] = None,
     target: Optional[str] = None,
-    target_repo: Optional[str] = None,
+    target_project: Optional[str] = None,
     target_fs: Optional[AbstractFileSystem] = None,
     type_: Optional[str] = None,
     copy_data: bool = True,
@@ -24,14 +24,14 @@ def import_object(
 ```py
 import os
 from mlem.api import import_object
-from mlem.core.objects import MlemDataset
+from mlem.core.objects import MlemData
 from mlem.contrib.pandas import DataFrameType
 
 path = os.path.join(os.getcwd(), "data.csv")
 target_path = os.path.join(os.getcwd(), "imported_data")
 meta = import_object(path, target=target_path, type_="pandas[csv]", copy_data=True)
 
-assert isinstance(meta, MlemDataset)
+assert isinstance(meta, MlemData)
 dt = meta.dataset
 assert isinstance(dt, DataFrameType)
 ```
@@ -40,7 +40,7 @@ assert isinstance(dt, DataFrameType)
 
 Existing datasets and model files are imported as
 [MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects). Specifically, they
-are tried to be loaded as `MlemModel` or `MlemDataset`. The function also
+are tried to be loaded as `MlemModel` or `MlemData`. The function also
 supports saving these objects for future use within the MLEM context. This API
 is the underlying mechanism for the [mlem import](/doc/command-reference/import)
 command.
@@ -48,17 +48,17 @@ command.
 ## Parameters
 
 - **`path`** (required) - Path of file to import.
-- `repo` (optional) - Path to MLEM repo.
+- `project` (optional) - Path to MLEM project.
 - `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `fs` (optional) - FileSystem for the `path` argument
 - `target` (optional) - Path to save MLEM object into.
-- `target_repo` (optional) - Path to MLEM repo for `target`.
+- `target_project` (optional) - Path to MLEM project for `target`.
 - `target_fs` (optional) - FileSystem for the `target` argument
 - `type_` (optional) - Specify how to read file. Available types: ['pickle',
   'pandas']. Defaults to auto-infer.
 - `copy_data` (optional) - Whether to create a copy of file in target location
   or just link existing file. Defaults to True.
-- `external` (optional) - Save result directly in repo (not in `.mlem/`)
+- `external` (optional) - Save result directly in project (not in `.mlem/`)
 - `index` (optional) - Whether to index output in `.mlem/` directory
 
 ## Exceptions

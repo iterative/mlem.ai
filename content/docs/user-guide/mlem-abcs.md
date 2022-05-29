@@ -38,11 +38,11 @@ Here is the list of all MLEM ABCs.
 
 # General
 
-## MlemMeta
+## MlemObject
 
 Represents a **[MLEM Object](/doc/user-guide/basic-concepts)**
 
-**Base class**: `mlem.core.objects.MlemMeta`
+**Base class**: `mlem.core.objects.MlemObject`
 
 For more info and list of subtypes look
 [here](/doc/user-guide/basic-concepts#mlem-object-types)
@@ -55,10 +55,10 @@ Represents different types of requirements for MLEM Object.
 
 Implementations:
 
-- `installable` - a python requirement typcally installed through `pip`. Can
-  have specific version and alternative package name. Default type
-- `custom` - a python requirement in a form of a local `.py` file or a python
-  package. Contains name and source code for the module/package
+- `installable` - a python requirement typically installed through `pip`. Can
+  have specific version and alternative package name.
+- `custom` - a python requirement in the form of a local `.py` file or a python
+  package. Contains name and source code for the module/package.
 - `unix` - unix package typically installed through `apt` or `yum`
 
 ## ImportHook
@@ -71,7 +71,7 @@ Represents some file format that MLEM can try to
 Implementations:
 
 - `pickle` - simply unpickle the contens of file and use default MLEM object
-  analyzer. Works with pickle files
+  analyzer. Works with pickled files.
 - `pandas` - try to read a file into `pandas.DataFrame`. Works with files saved
   with pandas in formats like
   `csv, json, excel, parquet, feather, stata, html, parquet`. Some formats
@@ -125,19 +125,19 @@ Also, universal `simple_pickle` is available, which simply pickles the model
 There is also separate `pickle` implementation, which can detect other model
 types inside your object and use their IO's for them. This is very handy when
 you for example wrap your torch NN with a python function: the function part
-will be pickled, and NN will be saved using `torch_io`
+will be pickled, and NN will be saved using `torch_io`.
 
-# Datasets
+# Data
 
-## DatasetType
+## DataType
 
-Holds metadata about dataset, like type, dimensions, column names etc.
+Holds metadata about data, like type, dimensions, column names etc.
 
-**Base class**: `mlem.core.dataset_type.DatasetType`
+**Base class**: `mlem.core.data_type.DataType`
 
 **Fields**:
 
-- `data` (transient) - underlying dataset object, if it was read
+- `data` (transient) - underlying data object, if it was read
 
 **Implementations**:
 
@@ -172,27 +172,27 @@ Special:
 
 - `unspecified` - Special dataset type when no dataset info was provided
 
-## DatasetReader
+## DataReader
 
 Holds all the information needed to read dataset.
 
-**Base class**: `mlem.core.dataset_type.DatasetReader`
+**Base class**: `mlem.core.data_type.DataReader`
 
 **Fields**:
 
-- `dataset_type` - resulting dataset_type
+- `data_type` - resulting data_type
 
 **Implementations**:
 
 - `pandas`
 - `numpy`
 
-## DatasetWriter
+## DataWriter
 
-Writes datasets to files, producing a list of `Artifact` and corresponding
-[`DatasetReader`](#datasetreader)
+Writes data to files, producing a list of `Artifact` and corresponding
+[`DataReader`](#datareader)
 
-**Base class**: `mlem.core.dataset_type.DatasetWriter`
+**Base class**: `mlem.core.data_type.DataWriter`
 
 **Implementations**:
 
@@ -234,7 +234,7 @@ instances.
 Represents an interface for service runtime. Provides a mapping method name to
 its signature. Also provides executor functions for those methods.
 
-**Base class**: `mlem.runtime.interface.base.Interface`
+**Base class**: `mlem.runtime.interface.Interface`
 
 **Implementations**:
 
@@ -246,7 +246,7 @@ its signature. Also provides executor functions for those methods.
 
 Runs configured interface, exposing its methods as endpoints.
 
-**Base class**: `mlem.runtime.server.base.Server`
+**Base class**: `mlem.runtime.server.Server`
 
 **Implementations**:
 
@@ -258,24 +258,24 @@ Runs configured interface, exposing its methods as endpoints.
 
 Clients for corresponding servers
 
-**Base class**: `mlem.runtime.client.base.BaseClient`
+**Base class**: `mlem.runtime.client.Client`
 
 **Implementations**:
 
 - `http` - makes request for http servers like `fastapi`
 - `rmq` - client for `rmq` server
 
-# Packing
+# Building
 
-## Packager
+## Builder
 
-Declaration for creating a `Package` from model. You can learn more about
-packaging [here](/doc/get-started/packaging)
+Declaration for creating a `build` from model. You can learn more about
+building [here](/doc/get-started/building)
 
-**Base class**: `mlem.pack.base.Packager`
+**Base class**: `mlem.core.objects.MlemBuilder`
 
-Related commands: [API](/doc/api-reference/pack),
-[CLI](/doc/command-reference/pack)
+Related commands: [API](/doc/api-reference/build),
+[CLI](/doc/command-reference/build)
 
 **Implementations**:
 
@@ -291,24 +291,24 @@ Docker:
 
 # Deployment
 
-## TargetEnvMeta
+## MlemEnv
 
 Declaration of target environment for deploying models.
 
-**Base class**: `mlem.core.objects.TargetEnvMeta`
+**Base class**: `mlem.core.objects.MlemEnv`
 
 **Implementations**:
 
 - `heroku` - an account on heroku platform
 
-## DeployMeta
+## MlemDeployment
 
 Declaration and state of deployed model.
 
-**Base class**: `mlem.core.objects.DeployMeta`
+**Base class**: `mlem.core.objects.MlemDeployment`
 
 Related commands: [API](/doc/api-reference/deploy),
-[CLI](/doc/command-reference/deploy)
+[CLI](/doc/command-reference/deployment)
 
 **Fields**:
 

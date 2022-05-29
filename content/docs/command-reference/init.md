@@ -1,13 +1,13 @@
 # init
 
-Initialize a MLEM working directory.
+Initialize a MLEM project.
 
 ## Synopsis
 
 ```usage
 usage: mlem init [options] [path]
 
-arguments: [PATH] Target path to workspace
+arguments: [PATH] Where to init project
 ```
 
 ## Description

@@ -43,7 +43,7 @@ None
 from sklearn.datasets import load_iris
 from sklearn.tree import DecisionTreeClassifier
 from mlem.core.objects import MlemModel
-from mlem.runtime.interface.base import ModelInterface
+from mlem.runtime.interface import ModelInterface
 from mlem.contrib.fastapi import FastAPIServer
 
 from mlem.api import serve

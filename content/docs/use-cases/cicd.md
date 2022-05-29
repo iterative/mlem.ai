@@ -11,7 +11,7 @@ learning models in CI/CD pipelines.
   your machine learning model into some specific format and publish it in some
   registry. Examples include turning your ML model into a Python package and
   publishing it on PyPi, or building a docker image and pushing it to DockerHub,
-  or just exporting your model to ONNX and publishing it as a artifact to
+  or just exporting your model to ONNX and publishing it as an artifact to
   Artifactory.
 
 - **Deploying models**: Another common scenario is when you want to deploy your
@@ -20,15 +20,15 @@ learning models in CI/CD pipelines.
 
 ## Examples
 
-### Package and publish
+### Build and publish
 
 To trigger the publishing or deploying of a new version, you usually create a
-Git tag that kicks off CI process. To make packaging and deployment process
+Git tag that kicks off CI process. To make building and deployment process
 consistent you can create and commit MLEM declaration:
 
 ```cli
-$ mlem create packager pip -c package_name=mypackagename -c target=package pack-to-pip
-💾 Saving packager to pack-to-pip.mlem
+$ mlem declare builder pip -c package_name=mypackagename -c target=package build-to-pip
+💾 Saving builder to build-to-pip.mlem
 ```
 
 And then use that declaration in CI:
@@ -49,17 +49,17 @@ jobs:
 
       - uses: actions/setup-python@v2
 
-      - name: pack
+      - name: build
         run: |
           pip3 install -r requirements.txt
-          mlem pack my-model --load pack-to-pip.mlem
+          mlem build my-model --load build-to-pip.mlem
 
       - name: publish
         run: |
           sh upload_to_pypi.sh package
 ```
 
-Learn more about packaging in [Get Started](/doc/get-started/packaging).
+Learn more about building in [Get Started](/doc/get-started/building).
 
 ### Deploy
 
@@ -67,10 +67,10 @@ Example with deployment is quite similar. First you need to create environment
 and deployment declaration and commit them to Git:
 
 ```cli
-$ mlem create env heroku staging
+$ mlem declare env heroku staging
 💾 Saving env to staging.mlem
 
-$ mlem create deployment heroku myservice -c app_name=mlem-deployed-in-ci -c model=my-model -c env=staging
+$ mlem declare deployment heroku myservice -c app_name=mlem-deployed-in-ci -c model=my-model -c env=staging
 💾 Saving deployment to myservice.mlem
 ```
 
@@ -95,7 +95,7 @@ jobs:
       - name: pack
         run: |
           pip3 install -r requirements.txt
-          mlem deploy my-model --load myservice.mlem
+          mlem deployment my-model --load myservice.mlem
 ```
 
-Learn more about deploying in Get Started [Get Started](/doc/deploying).
+Learn more about deploying in Get Started [Get Started](/doc/get-started/deploying).

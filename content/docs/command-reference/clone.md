@@ -22,10 +22,10 @@ repository.
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `--target-repo, --tr TEXT`: Repo to save target to [default: (none)]
-- `-e, --external`: Save result not in .mlem, but directly in repo
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
+- `-e, --external`: Save result not in .mlem, but directly in project
 - `--link / --no-link`: Whether to create link for output in .mlem directory
 - `--help`: Show this message and exit.
 
@@ -34,13 +34,13 @@ repository.
 Copy a remote model (in GitHub) to a local directory
 
 ```cli
-$ mlem clone rf --repo https://github.com/iterative/example-mlem-get-started --rev main mymodel
+$ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main mymodel
 ...
 ```
 
 Copy a remote model from a GitHub repo, to a different, remote, S3 MLEM repo
 
 ```cli
-$ mlem clone rf --repo https://github.com/iterative/example-mlem-get-started --rev main mymodel --tr s3://mybucket/mymodel
+$ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main mymodel --tp s3://mybucket/mymodel
 ...
 ```
