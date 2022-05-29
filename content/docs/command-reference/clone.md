@@ -38,7 +38,7 @@ $ mlem clone rf --project https://github.com/iterative/example-mlem-get-started 
 ...
 ```
 
-Copy a remote model from a GitHub repo, to a different, remote, S3 MLEM repo
+Copy a remote model from a GitHub repo, to a different, remote, S3 MLEM project
 
 ```cli
 $ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main mymodel --tp s3://mybucket/mymodel
