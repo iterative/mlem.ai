@@ -62,8 +62,8 @@ details.
 </admon>
 
 The model was saved along with some metadata about it: `rf` containing the model
-binary and a `.mlem` metafile containing information about it. Let's take a look
-at it:
+binary and a `rf.mlem` metafile containing information about it. Let's take a
+look at it:
 
 <details>
 
