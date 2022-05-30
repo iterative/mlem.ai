@@ -21,6 +21,7 @@
     column-gap: 16px;
     position: relative;
     top: -4px;
+    list-style: none;
 
     @media (--md-scr) {
       position: static;

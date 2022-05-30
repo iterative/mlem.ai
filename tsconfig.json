@@ -1,24 +1,8 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "resolveJsonModule": true,
-    "lib": ["dom", "es2015", "es2017"],
-    "jsx": "react",
-    "sourceMap": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitThis": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    // "allowJs": true,
-    "alwaysStrict": true
-  },
-  "include": ["./src/**/*", "./*.js"]
+  "extends": "@dvcorg/gatsby-theme-iterative/tsconfig.json",
+  "include": [
+    "node_modules/@dvcorg/gatsby-theme-iterative",
+    "./src/**/*",
+    "./*.js"
+  ]
 }

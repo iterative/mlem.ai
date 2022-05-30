@@ -4,6 +4,7 @@ import Button from '../Button'
 import SocialIcon, { ISocialIconProps } from './SocialIcon'
 import mlemLogo from '../../images/mlem-logo.png'
 import OtherToolsPopup from './OtherToolsPopup'
+import Alert from './Alert'
 import * as styles from './index.module.css'
 
 const socialLinks: Array<ISocialIconProps> = [
@@ -19,16 +20,18 @@ const socialLinks: Array<ISocialIconProps> = [
   },
   {
     icon: 'discord',
-    href: 'https://dvc.org/chat',
-    label: 'Go to DVC Discord'
+    href: '/chat',
+    label: 'Go to DVC Discord',
+    target: '_blank'
   }
 ]
 
 const NavBar: React.FC = () => {
   return (
-    <>
+    <header className={styles.header}>
+      <Alert collapsed={false} />
       <nav className={styles.nav}>
-        <SmartLink href="/">
+        <SmartLink href="/" className={styles.nav__logoLink}>
           <img
             alt="Go to home page"
             src={mlemLogo}
@@ -44,6 +47,9 @@ const NavBar: React.FC = () => {
           by <span>iterative.ai</span>
         </SmartLink>
         <div className={styles.nav__links}>
+          <SmartLink href="/doc" className={styles.nav__link}>
+            Docs
+          </SmartLink>
           <SmartLink
             href="https://learn.iterative.ai/"
             className={styles.nav__link}
@@ -53,9 +59,14 @@ const NavBar: React.FC = () => {
           <OtherToolsPopup navItemClassName={styles.nav__link} />
         </div>
         <ul className={styles.nav__icons}>
-          {socialLinks.map(({ icon, href, label }, i) => (
+          {socialLinks.map(({ icon, href, label, target }, i) => (
             <li key={i}>
-              <SocialIcon icon={icon} href={href} label={label} />
+              <SocialIcon
+                target={target}
+                icon={icon}
+                href={href}
+                label={label}
+              />
             </li>
           ))}
         </ul>
@@ -63,7 +74,7 @@ const NavBar: React.FC = () => {
           Get Started
         </Button>
       </nav>
-    </>
+    </header>
   )
 }
 

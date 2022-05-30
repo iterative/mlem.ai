@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import cn from 'classnames'
 import SmartLink from '../SmartLink'
 import { ReactComponent as DiscordIconSvg } from '../../images/icons/discord.svg'
@@ -35,7 +35,7 @@ const icons = {
   )
 }
 
-const Button: React.FC<IButtonProps> = ({
+const Button: React.FC<PropsWithChildren<IButtonProps>> = ({
   icon,
   href,
   theme = 'primary',

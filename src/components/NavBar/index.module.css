@@ -1,8 +1,31 @@
+.header {
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  height: var(--layout-header-height);
+  z-index: 2;
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 15%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .nav {
   width: 100%;
+  margin: auto;
+  max-width: 1152px;
   display: flex;
   align-items: center;
-  padding: 8px 0;
+  padding: 8px 16px;
+
+  @media (--md-scr) {
+    padding: 8px 32px;
+  }
+
+  @media (--lg-scr) {
+    padding: 8px 80px;
+  }
 
   &__brandLogo {
     width: 90px;
@@ -14,6 +37,10 @@
     @media (--lg-scr) {
       width: 115px;
     }
+  }
+
+  &__logoLink {
+    flex: 0 0 auto;
   }
 
   &__brandCompany {
@@ -98,6 +125,7 @@
     display: flex;
     margin: 0;
     padding: 0;
+    list-style: none;
 
     @media (--md-scr) {
       margin-right: 12px;

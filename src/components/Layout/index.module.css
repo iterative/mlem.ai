@@ -6,6 +6,7 @@ body,
 #___gatsby,
 #gatsby-focus-wrapper {
   height: 100%;
+  min-height: 100vh;
 }
 
 *,
@@ -16,7 +17,6 @@ body,
 
 .layout {
   min-width: 320px;
-  min-height: 100vh;
   overflow: hidden;
   @apply text-gray-800 bg-layout-gradient font-brandon;
 }
@@ -28,7 +28,6 @@ body,
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 
   @media (--md-scr) {
     padding: 0 32px;

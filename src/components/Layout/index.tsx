@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import SEO from '../SEO'
 import * as styles from './index.module.css'
 
@@ -6,7 +6,10 @@ interface ILayoutProps {
   title: string
 }
 
-const Layout: React.FC<ILayoutProps> = ({ children, title }) => {
+const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({
+  children,
+  title
+}) => {
   return (
     <div className={styles.layout}>
       <SEO title={title} />
