@@ -25,10 +25,8 @@ $ pip install -r requirements.txt
 </details>
 
 Often it’s a bad idea to store binary files in Git, especially big ones. To
-solve this MLEM can utilize DVC capabilities to connect external cloud storage
-for model and dataset versioning.
-
-> You can learn more about DVC [here](https://dvc.org/doc).
+solve this MLEM can utilize [DVC](https://dvc.org/doc) capabilities to connect
+external cloud storage for model and dataset versioning.
 
 We will reorganize our example repo to use DVC.
 
@@ -51,7 +49,7 @@ $ mlem config set core.storage.type dvc
 ```
 
 Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
-DVC
+DVC.
 
 ```cli
 $ echo "/**/?*.mlem" > .dvcignore
@@ -68,15 +66,18 @@ $ git rm -r --cached .mlem/
 $ python train.py
 ```
 
-Finally, let’s add new metafiles to Git and artifacts to DVC respectively,
-commit and push them
+Finally, let’s add and commit new metafiles to Git and artifacts to DVC,
+respectively:
 
 ```cli
 $ dvc add .mlem/model/rf
 $ git add .mlem
 $ git commit -m "Switch to dvc storage"
+...
+
 $ dvc push -r myremote
 $ git push
+...
 ```
 
 Now, you can load MLEM objects from your repo even though there are no actual
@@ -91,8 +92,9 @@ DVC pipelines are the useful DVC mechanism to build data pipelines, in which you
 can process your data and train your model. You may be already training your ML
 models in them and what to start using MLEM to save those models.
 
-MLEM could be easily plug in into existing DVC pipelines. You'll need to add
-`.mlem` files as your outputs and mark them with `cache: false`.
+MLEM could be easily plug in into existing DVC pipelines. You'll need to mark
+`.mlem` files as `cache: false` [outputs] of a pipelines stage. [outputs]:
+https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields
 
 ## Example
 
@@ -114,14 +116,13 @@ stages:
       - train.py
     outs:
       - .mlem/model/rf
-      - .mlem/model/rf.mlem: # adding this line
-          cache: false # and this
+      - .mlem/model/rf.mlem:
+          cache: false
 ```
 
-Since binary was already captured before, we don't need to add anything for it.
-For metadata, we've added two rows to capture it and specify `cache: false`
-since we want the metadata to be committed to Git, and not be pushed to DVC
-remote.
+The binary was already in, so there's no need to add it again. For the metafile,
+we've added two rows and specify `cache: false` to track it with DVC while
+storing it in Git.
 
 You can verify everything is working by running the pipeline:
 

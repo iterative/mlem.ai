@@ -26,10 +26,10 @@ to incorporate them in the local workspace.
 
 ## Options
 
-- `--source-repo, --sr TEXT`: Repo for source object
+- `--source-project, --sp TEXT`: Project for source object
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `--target-repo, --tr TEXT`: Repo to save target to [default: (none)]
-- `-e, --external`: Save result not in .mlem, but directly in repo
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
+- `-e, --external`: Save result not in .mlem, but directly in project
 - `--follow-links, --f / --no-follow-links, --nf`: If True, first follow links
   while reading {source} before creating this link. [default: follow-links]
 - `--absolute, --abs / --relative, --rel`: Which path to linked object to
@@ -38,14 +38,18 @@ to incorporate them in the local workspace.
 
 ## Examples
 
-Add a remote object to your local workspace (aka repo) without copying it
+Add a remote object to your local workspace (aka project) without copying it
 
 ```cli
-$ mlem link rf --source-repo https://github.com/iterative/example-mlem-get-started remote_model
+$ mlem link rf --source-project https://github.com/iterative/example-mlem-get-started remote_model
 ```
 
-> The remote model can now be served with the link created above, using the
-> command `mlem serve remote_model fastapi`.
+<admon type="tip">
+
+The remote model can now be served with the link created above, using the
+command `mlem serve remote_model fastapi`.
+
+</admon>
 
 Alias a local object with a different name
 

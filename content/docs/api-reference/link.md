@@ -5,10 +5,10 @@ Creates MlemLink for an `source` object and dumps it if `target` is provided.
 ```py
 def link(
     source: Union[str, MlemObject],
-    source_repo: Optional[str] = None,
+    source_project: Optional[str] = None,
     rev: Optional[str] = None,
     target: Optional[str] = None,
-    target_repo: Optional[str] = None,
+    target_project: Optional[str] = None,
     external: Optional[bool] = None,
     follow_links: bool = True,
     absolute: bool = False,
@@ -26,7 +26,7 @@ link_name = os.path.join(os.getcwd(), "latest")
 link_obj = link(
     model_path,
     target=link_name,
-    target_repo=os.getcwd(),
+    target_project=os.getcwd(),
     external=False,
 )
 ```
@@ -42,16 +42,16 @@ their aliases for all future purposes.
 ## Parameters
 
 - **`source`** (required) - The object to create link from.
-- `source_repo` (optional) - Path to mlem repo where to load obj from.
+- `source_project` (optional) - Path to mlem project where to load obj from.
 - `rev` (optional) - Revision if object is stored in Git repo.
 - `target` (optional) - Where to store the link object.
-- `target_repo` (optional) - If provided, treat `target` as link name and dump
-  link in MLEM DIR.
+- `target_project` (optional) - If provided, treat `target` as link name and
+  dump link in MLEM DIR.
 - `external` (optional) - Whether to save link outside mlem dir.
 - `follow_links` (optional) - Whether to make link to the underlying object if
   `source` is itself a link. Defaults to True.
 - `absolute` (optional) - Whether to make link absolute or relative to mlem
-  repo. Defaults to False.
+  project. Defaults to False.
 
 ## Exceptions
 
