@@ -1,29 +1,29 @@
-# mlem.api.pack()
+# mlem.api.build()
 
-Package a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format,
-a built package using whl, docker-build-ready folder or directly build a docker
+Build a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format, a
+built package using whl, docker-build-ready folder or directly build a docker
 image.
 
 ```py
-def pack(
-    packager: Union[str, Packager],
+def build(
+    builder: Union[str, MlemBuilder],
     model: Union[str, MlemModel],
-    **packager_kwargs,
+    **builder_kwargs,
 )
 ```
 
 ### Usage:
 
 ```py
-from mlem.api import pack
+from mlem.api import build
 
-pack("pip", "rf", target="build", package_name="example_mlem_get_started")
+build("pip", "rf", target="build", package_name="example_mlem_get_started")
 ```
 
 ## Description
 
 This API is the underlying mechanism for the
-[mlem pack](/doc/command-reference/pack) command and allows us to
+[mlem build](/doc/command-reference/build) command and allows us to
 programmatically create ship-able assets from MlemModels such as pip-ready
 packages, docker images, etc.
 
@@ -32,7 +32,7 @@ packages, docker images, etc.
 The arguments supplied to this method can be found with `mlem types`:
 
 ```cli
-$ mlem types packager pip
+$ mlem types builder pip
 [required] package_name: str
 [required] target: str
 [not required] templates_dir: str = []
@@ -49,10 +49,10 @@ $ mlem types packager pip
 
 ## Parameters
 
-- **`packager`** (required) - Packager to use. Out-of-the-box supported string
+- **`builder`** (required) - Builder to use. Out-of-the-box supported string
   values are ['whl', 'pip', 'docker_dir', 'docker'].
-- **`model`** (required) - The model to pack.
-- `packager_kwargs` (optional) - Keyword arguments for the underlying packager
+- **`model`** (required) - The model to build.
+- `builder_kwargs` (optional) - Keyword arguments for the underlying builder
   being used.
 
 ## Exceptions
@@ -65,18 +65,18 @@ None
 from sklearn.datasets import load_iris
 from sklearn.tree import DecisionTreeClassifier
 
-from mlem.contrib.docker import DockerImagePackager
+from mlem.contrib.docker import DockerImageBuilder
 from mlem.contrib.docker.base import DockerImage
 from mlem.contrib.fastapi import FastAPIServer
 
-from mlem.api import pack
+from mlem.api import build
 
 train, target = load_iris(return_X_y=True)
 model = DecisionTreeClassifier().fit(train, target)
 model_meta = MlemModel.from_obj(model)
 
-packed = pack(
-    DockerImagePackager(
+built = build(
+    DockerImageBuilder(
         server=FastAPIServer(),
         image=DockerImage(name="pack_docker_test_image"),
         force_overwrite=True,

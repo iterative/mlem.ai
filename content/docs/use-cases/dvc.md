@@ -49,7 +49,7 @@ $ mlem config set default_storage.type dvc
 ```
 
 Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
-DVC
+DVC.
 
 ```cli
 $ echo "/**/?*.mlem" > .dvcignore
@@ -66,15 +66,18 @@ $ git rm -r --cached .mlem/
 $ python train.py
 ```
 
-Finally, let’s add new metafiles to Git and artifacts to DVC respectively,
-commit and push them
+Finally, let’s add and commit new metafiles to Git and artifacts to DVC,
+respectively:
 
 ```cli
 $ dvc add .mlem/model/rf .mlem/dataset/*.csv
 $ git add .mlem
 $ git commit -m "Switch to dvc storage"
+...
+
 $ dvc push -r myremote
 $ git push
+...
 ```
 
 Now, you can load MLEM objects from your repo even though there are no actual
@@ -87,20 +90,12 @@ binaries stored in Git. MLEM will know to use DVC to load them.
 
 DVC pipelines are the useful DVC mechanism to build data pipelines, in which you
 can process your data and train your model. You may be already training your ML
-models in them and what to start using MLEM to save those models.
+models in them and want to start using MLEM to save those models.
 
-MLEM could be easily plug in into existing DVC pipelines. If you already added
-`.mlem` files to `.dvcignore`, you are good to go for most of the cases. Since
-DVC will ignore `.mlem` files, you don't need to add them as outputs and mark
-them with `cache: false`.
-
-It becomes a bit more complicated when you need to add them as outputs, because
-you want to use them as inputs to next stages. The case may be when model binary
-doesn't change for you, but model metadata does. That may happen if you change
-things like model description or labels.
-
-To work with that, you'll need to remove `.mlem` files from `.dvcignore` and
-mark your outputs in DVC Pipeline with `cache: false`.
+MLEM can be easily plugged into existing DVC pipelines. If you already added
+`.mlem` files to `.dvcignore`, you are good to go. Otherwise you'll need to mark
+`.mlem` files as `cache: false` [outputs] of a pipelines stage. [outputs]:
+https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields
 
 ## Example
 
@@ -118,7 +113,8 @@ stages:
 ```
 
 Next step would be to start saving your models with MLEM. Since MLEM saves both
-**binary** and **metadata** you need to have both of them in DVC pipeline:
+the binary and corresponding `.mlem` metafile, you need to have both of them in
+the DVC pipeline:
 
 ```yaml
 # dvc.yaml
@@ -133,9 +129,8 @@ stages:
           cache: false
 ```
 
-Since binary was already captured before, we don't need to add anything for it.
-For metadata, we've added two rows to capture it and specify `cache: false`
-since we want the metadata to be committed to Git, and not be pushed to DVC
-remote.
+The binary was already in, so there's no need to add it again. For the metafile,
+we've added two rows and specify `cache: false` to track it with DVC while
+storing it in Git.
 
 Now MLEM is ready to be used in your DVC pipeline!

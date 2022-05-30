@@ -1,19 +1,19 @@
 # init
 
-Initialize a MLEM working directory.
+Initialize a MLEM project.
 
 ## Synopsis
 
 ```usage
 usage: mlem init [options] [path]
 
-arguments: [PATH] Target path to workspace
+arguments: [PATH] Where to init project
 ```
 
 ## Description
 
 The `init` command (without given `path`) defaults to the current directory for
-the path argument. This creates a `.mlem` directory and an empty `config.yaml`
+the path argument. This creates a `.mlem/` directory and an empty `config.yaml`
 file inside it.
 
 Although we recommend using MLEM within a Git repository to track changes using

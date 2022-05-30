@@ -1,8 +1,8 @@
 # Deploying models
 
-You can create deployments in the cloud from your models. This uses packaging
-and serving functions under the hood. For example, Heroku deployment combines
-Docker image packaging with FastAPI serving.
+You can create deployments in the cloud from your models. This uses building and
+serving functions under the hood. For example, Heroku deployment combines Docker
+image building with FastAPI serving.
 
 <admon type="warn">
 
@@ -13,7 +13,7 @@ This functionality is experimental and is subject to change.
 ## Defining target environment
 
 To deploy something somewhere, we need to define this “somewhere” first, or in
-MLEM terms, create a `target environment` object. It will contain all the
+MLEM terms, declare a `target environment` object. It will contain all the
 information needed to access it. In the case of Heroku, all we need is an API
 key.
 
@@ -28,10 +28,10 @@ key.
 
 </details>
 
-To create a new target env, run
+To declare a new target env, run
 
 ```cli
-$ mlem create env heroku staging -c api_key=<you api key>
+$ mlem declare env heroku staging -c api_key=<you api key>
 💾 Saving env to .mlem/env/staging.mlem
 ```
 
@@ -47,12 +47,12 @@ MLEM will attempt to use the `HEROKU_API_KEY` environment variable if no
 Now, as we defined our target env, we can deploy our model there. Deployments
 are also MLEM objects, which means that they need to have their definition.
 
-To create one for Heroku, we once again will use `create` command to configure
+To create one for Heroku, we once again will use `declare` command to configure
 our deployment. We use `example-mlem-get-started` for the app name, but you can
 change it to something unique:
 
 ```cli
-$ mlem create deployment heroku myservice \
+$ mlem declare deployment heroku myservice \
                          -c app_name=example-mlem-get-started \
                          -c model=rf \
                          -c env=staging
@@ -74,7 +74,7 @@ $ git diff 5-deploy-meta
 Now we can actually run the deployment process (this can take a while):
 
 ```cli
-$ mlem deploy create myservice
+$ mlem deployment run myservice
 ⏳️ Loading deployment from .mlem/deployment/myservice.mlem
 🔗 Loading link to .mlem/env/staging.mlem
 🔗 Loading link to .mlem/model/rf.mlem
@@ -98,10 +98,10 @@ $ mlem deploy create myservice
 <admon type="tip">
 
 You can also define and run the deployment on-the-fly using `-c` options for
-`mlem deploy create`, e.g.:
+`mlem deployment run`, e.g.:
 
 ```cli
-$ mlem deploy create myservice \
+$ mlem deployment run myservice \
                      -m model -t staging \
                      -c app_name=example-mlem-get-started
 ```
@@ -152,7 +152,7 @@ achieve this in CLI: using the service address or the deploy meta.
 $ mlem apply-remote http test_x.csv -c host=http://my-mlem-service.herokuapp.com -c port=80 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 
-$ mlem deploy apply myservice test_x.csv --json
+$ mlem deployment apply myservice test_x.csv --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 
@@ -161,7 +161,7 @@ $ mlem deploy apply myservice test_x.csv --json
 You don’t even need to have the deployment metadata locally:
 
 ```cli
-$ mlem deploy apply --json \
+$ mlem deployment apply --json \
   https://github.com/iterative/example-mlem-get-started/myservice \
   https://github.com/iterative/example-mlem-get-started/test_x.csv
 ```
@@ -173,14 +173,14 @@ $ mlem deploy apply --json \
 Finally, you can check the status of your service with:
 
 ```cli
-$ mlem deploy status myservice
+$ mlem deployment status myservice
 running
 ```
 
 And stop your service with
 
 ```cli
-$ mlem deploy teardown myservice
+$ mlem deployment remove myservice
 ⏳️ Loading deployment from .mlem/deployment/myservice.mlem
 🔗 Loading link to .mlem/env/staging.mlem
 🔻 Deleting my-mlem-service heroku app

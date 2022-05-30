@@ -8,7 +8,7 @@ anywhere you need to specify MLEM Object bot in API and CLI.
 <admon type="tip">
 
 Since links are also a type of MLEM Object, they share the same internal logic.
-For example, they are saved under the `.mlem/link` directory. To load and
+For example, they are saved under the `.mlem/link` directory. To load an
 instance of `MlemLink` (and not the object it references) provide
 `follow_links=False` to `load_meta` method.
 
@@ -16,7 +16,7 @@ instance of `MlemLink` (and not the object it references) provide
 
 ## Link structure
 
-The contents of the link is very lightweight and consist of the following
+The content of the link is very lightweight and consists of the following
 fields:
 
 - `link_type` - type of referenced object
@@ -27,9 +27,9 @@ fields:
 
 ## Using links
 
-Links can be created via [`mlem link`](/doc/command-reference/link) or
-[`mlem.api.link`](/doc/api-reference/link) commands, as well as the
-`MlemMeta.make_link()` method.
+Links can be created via [`mlem link`](/doc/command-reference/link) command or
+[`mlem.api.link`](/doc/api-reference/link) API, as well as the
+`MlemObject.make_link()` method.
 
 <admon type="tip">
 

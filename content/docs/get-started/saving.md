@@ -1,7 +1,7 @@
 # Saving models
 
-After initializing MLEM we have an empty repository (except for the config
-file), but soon we'll save something with MLEM to fill it up.
+After initializing MLEM we have an empty project (except for the config file),
+but soon we'll save something with MLEM to fill it up.
 
 ## Training the model
 
@@ -61,9 +61,9 @@ details.
 
 </admon>
 
-What we see here is that model was saved along with some metadata about it: `rf`
-containing the model binary and `.mlem` file containing metadata. Let's take a
-look at it:
+The model was saved along with some metadata about it: `rf` containing the model
+binary and a `.mlem` metafile containing information about it. Let's take a look
+at it:
 
 <details>
 

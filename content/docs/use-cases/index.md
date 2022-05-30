@@ -21,7 +21,7 @@ If you train Machine Learning models and you want to
 
 - save machine learning models along with all meta-information that is required
   to run them;
-- pack your models into ready-to-use format like Python packages or Docker
+- build your models into ready-to-use format like Python packages or Docker
   Images;
 - deploy your models, easily switching between different providers when you need
   to;

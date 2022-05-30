@@ -1,11 +1,11 @@
-# deploy teardown
+# deployment remove
 
-Stop and destroy a deployment.
+Stop and destroy deployed instance.
 
 ## Synopsis
 
 ```usage
-usage: mlem deploy teardown [options] path
+usage: mlem deployment remove [options] path
 
 arguments:
 PATH  Path to deployment meta  [required]
@@ -13,17 +13,17 @@ PATH  Path to deployment meta  [required]
 
 ## Description
 
-The `deploy teardown` destroys the deployment by first setting its state to
+The `deployment remove` destroys the deployment by first setting its state to
 `not_deployed` before proceeding to actually destroying the deployed service,
 deleting its associated runtime resources.
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `-h, --help`: Show this message and exit.
 
 ## Example: Stop and destroy a deployment
 
 ```cli
-$ mlem deploy teardown service_name
+$ mlem deployment remove service_name
 ```
