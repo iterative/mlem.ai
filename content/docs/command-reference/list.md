@@ -19,9 +19,9 @@ Produces a view of the MLEM project listing
 [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) like models,
 datasets, and links.
 
-Running the command without an explicit `project` argument defaults to the current
-working directory. The `project` argument can take a local path, or point to a
-remote repository (e.g. GitHub).
+Running the command without an explicit `project` argument defaults to the
+current working directory. The `project` argument can take a local path, or
+point to a remote repository (e.g. GitHub).
 
 This command also supports additional options, allowing filtering of MLEM
 Objects by type, producing JSON output, selectively displaying

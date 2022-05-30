@@ -13,8 +13,8 @@ PATH  Path to deployment meta  [required]
 
 ## Description
 
-The `deployment status` command lets us check the status of the deployment, which is
-the deployed app/service serving the model.
+The `deployment status` command lets us check the status of the deployment,
+which is the deployed app/service serving the model.
 
 ### Heroku
 

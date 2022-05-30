@@ -1,8 +1,8 @@
 # Deploying models
 
-You can create deployments in the cloud from your models. This uses building
-and serving functions under the hood. For example, Heroku deployment combines
-Docker image building with FastAPI serving.
+You can create deployments in the cloud from your models. This uses building and
+serving functions under the hood. For example, Heroku deployment combines Docker
+image building with FastAPI serving.
 
 <admon type="warn">
 

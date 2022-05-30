@@ -45,8 +45,8 @@ their aliases for all future purposes.
 - `source_project` (optional) - Path to mlem project where to load obj from.
 - `rev` (optional) - Revision if object is stored in Git repo.
 - `target` (optional) - Where to store the link object.
-- `target_project` (optional) - If provided, treat `target` as link name and dump
-  link in MLEM DIR.
+- `target_project` (optional) - If provided, treat `target` as link name and
+  dump link in MLEM DIR.
 - `external` (optional) - Whether to save link outside mlem dir.
 - `follow_links` (optional) - Whether to make link to the underlying object if
   `source` is itself a link. Defaults to True.

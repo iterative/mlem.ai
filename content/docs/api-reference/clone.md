@@ -49,7 +49,8 @@ target.
 - `load_value` (optional) - Load actual python object incorporated in MlemMeta
   object. Defaults to False.
 - `index` (optional) - Whether to index output in .mlem directory
-- `external` (optional) - whether to put object inside mlem dir in target project
+- `external` (optional) - whether to put object inside mlem dir in target
+  project
 
 ## Exceptions
 

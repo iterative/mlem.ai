@@ -15,14 +15,14 @@ execution context. But in general, MLEM can work with `.mlem` files anywhere.
 </admon>
 
 A common place to initialize MLEM is a data science Git repository. _MLEM
-projects_ help you better structure and easily address existing data
-artifacts (especially ML models). And Git allows you to version MLEM objects and
+projects_ help you better structure and easily address existing data artifacts
+(especially ML models). And Git allows you to version MLEM objects and
 configuration options along with code.
 
 ## Internal vs. External objects
 
-By default, any MLEM objects that you save into project will be **internal**, which
-means they will be saved under `.mlem/{object type}/<path you specified>`.
+By default, any MLEM objects that you save into project will be **internal**,
+which means they will be saved under `.mlem/{object type}/<path you specified>`.
 
 To save objects anywhere, use the `external` flag when saving them or set
 `default_external=True` via configuration. **External** objects will be indexed

@@ -1,7 +1,7 @@
 # Saving models
 
-After initializing MLEM we have an empty project (except for the config
-file), but soon we'll save something with MLEM to fill it up.
+After initializing MLEM we have an empty project (except for the config file),
+but soon we'll save something with MLEM to fill it up.
 
 ## Training the model
 

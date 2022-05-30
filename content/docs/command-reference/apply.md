@@ -1,7 +1,7 @@
 # apply
 
-Apply a model to data. The result will be saved as a MLEM object
-to `output` if provided. Otherwise, it will be printed to `stdout`.
+Apply a model to data. The result will be saved as a MLEM object to `output` if
+provided. Otherwise, it will be printed to `stdout`.
 
 ## Synopsis
 
@@ -15,9 +15,8 @@ DATA   Path to dataset object  [required]
 
 ## Description
 
-Applying a model to data means calling a model's method (e.g. `predict`)
-with all the data points in the dataset, and returning the output as a MLEM
-Object.
+Applying a model to data means calling a model's method (e.g. `predict`) with
+all the data points in the dataset, and returning the output as a MLEM Object.
 
 This command addresses a very common workflow, replacing the need to write a
 python script to load models & datasets, apply the datasets on the models, and

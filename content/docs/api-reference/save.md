@@ -43,8 +43,8 @@ systems (eg: `S3`). The function returns and saves the object as a
   metafile
 - `fs` (optional) - FileSystem for the `path` argument
 - `index` (optional) - Whether to add object to mlem project index
-- `external` (optional) - if obj is saved to project, whether to put it outside of
-  .mlem dir
+- `external` (optional) - if obj is saved to project, whether to put it outside
+  of .mlem dir
 - `description` (optional) - description for object
 - `params` (optional) - arbitrary params for object
 - `labels` (optional) - labels for object

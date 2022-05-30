@@ -9,7 +9,8 @@ data and other types you can read about below.
 <admon type="info">
 
 For example, when you use `mlem.api.save()`, you create a MLEM Object from a
-supported Python structure. MLEM Objects can also be created with `mlem declare`.
+supported Python structure. MLEM Objects can also be created with
+`mlem declare`.
 
 </admon>
 
@@ -44,8 +45,8 @@ See also [MLEM Object API](/doc/api-reference/mlem-object)
 ## Common fields
 
 Each MLEM Object has an `object_type` field which determines the type of the
-object. Specific types may have additional properties, but all MLEM Objects have the
-following fields:
+object. Specific types may have additional properties, but all MLEM Objects have
+the following fields:
 
 - `description` - for storing user-provided description
 - `params` - arbitrary object with additional parameters
@@ -91,11 +92,10 @@ Represent data, which can be used as an input to one of Model's methods.
 
 **Fields** (in addition to inherited):
 
-- `reader` (_lazy_) - [DataReader](/doc/user-guide/mlem-abcs#datareader) -
-  how to read saved files and resulting dataset metadata
-- `data_type` (_transient_) -
-  [`DataType`](/doc/user-guide/mlem-abcs#datatype) with dataset value and
-  metadata (available once data is read)
+- `reader` (_lazy_) - [DataReader](/doc/user-guide/mlem-abcs#datareader) - how
+  to read saved files and resulting dataset metadata
+- `data_type` (_transient_) - [`DataType`](/doc/user-guide/mlem-abcs#datatype)
+  with dataset value and metadata (available once data is read)
 
 ### Link
 

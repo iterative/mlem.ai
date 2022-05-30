@@ -27,8 +27,8 @@ from mlem.api import deploy
 ## Description
 
 This API is the underlying mechanism for the
-[mlem deployment run](/doc/command-reference/deployment/run) command and provides
-a programmatic way to create deployments for a target environment.
+[mlem deployment run](/doc/command-reference/deployment/run) command and
+provides a programmatic way to create deployments for a target environment.
 
 ## Parameters
 

@@ -1,7 +1,7 @@
 # mlem.api.build()
 
-Build a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format,
-a built package using whl, docker-build-ready folder or directly build a docker
+Build a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format, a
+built package using whl, docker-build-ready folder or directly build a docker
 image.
 
 ```py

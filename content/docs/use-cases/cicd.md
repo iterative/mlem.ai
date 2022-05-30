@@ -98,4 +98,5 @@ jobs:
           mlem deployment my-model --load myservice.mlem
 ```
 
-Learn more about deploying in Get Started [Get Started](/doc/get-started/deploying).
+Learn more about deploying in Get Started
+[Get Started](/doc/get-started/deploying).

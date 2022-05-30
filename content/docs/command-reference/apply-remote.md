@@ -1,8 +1,8 @@
 # apply-remote
 
-Apply a deployed-model (possibly remotely) to data. The results
-will be saved as a MLEM object to `output` if provided. Otherwise, it will be
-printed to `stdout`.
+Apply a deployed-model (possibly remotely) to data. The results will be saved as
+a MLEM object to `output` if provided. Otherwise, it will be printed to
+`stdout`.
 
 ## Synopsis
 

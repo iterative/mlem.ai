@@ -40,9 +40,9 @@ assert isinstance(dt, DataFrameType)
 
 Existing datasets and model files are imported as
 [MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects). Specifically, they
-are tried to be loaded as `MlemModel` or `MlemData`. The function also
-supports saving these objects for future use within the MLEM context. This API
-is the underlying mechanism for the [mlem import](/doc/command-reference/import)
+are tried to be loaded as `MlemModel` or `MlemData`. The function also supports
+saving these objects for future use within the MLEM context. This API is the
+underlying mechanism for the [mlem import](/doc/command-reference/import)
 command.
 
 ## Parameters

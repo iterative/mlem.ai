@@ -14,8 +14,8 @@ DATA  Path to data object  [required]
 
 ## Description
 
-The `deployment apply` command lets us apply MLEM deployments (deployed models) to
-data (MLEM object). This means the server's method endpoints (such as
+The `deployment apply` command lets us apply MLEM deployments (deployed models)
+to data (MLEM object). This means the server's method endpoints (such as
 `predict` by default) will be called with the given data and the outputs
 gathered and returned, also as a MLEM Object.
 
