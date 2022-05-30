@@ -27,7 +27,7 @@
       },
       {
         "slug": "building",
-        "label": "Building models",
+        "label": "Exporting models (building)",
         "source": "building.md"
       },
       {
