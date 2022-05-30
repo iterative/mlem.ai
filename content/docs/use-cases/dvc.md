@@ -37,7 +37,7 @@ testing, but you can use whatever is available to you):
 
 ```cli
 $ dvc init
-$ dvc remote add myremote -d ./myremote/
+$ dvc remote add myremote -d /tmp/dvcstore/
 $ git add .dvc/config
 ```
 
@@ -133,4 +133,6 @@ Running stage 'train':
 Use `dvc push` to send your updates to remote storage.
 ```
 
-Now MLEM is ready to be used in your DVC pipeline!
+Now DVC will take care of storing binaries, so you'll need to commit model
+metafile (`.mlem/model/rf.mlem`) and `dvc.lock` only. Learn more about
+[DVC](https://dvc.org/doc) and how it can be useful for training your ML models.
