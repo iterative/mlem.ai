@@ -89,8 +89,8 @@ explore them one by one in the next few pages:
   of MLEM for machine learning models and datasets.
 - **[Applying models](/doc/get-started/applying)** explains how to load and
   apply models
-- **[Packaging models](/doc/get-started/packaging)** describes how models can be
-  built into python packages, docker images, etc.
+- **[Exporting models (building)](/doc/get-started/building)** describes how
+  models can be built into python packages, docker images, etc.
 - **[Serving models](/doc/get-started/serving)** shows how to create a service
   from your model
 - **[Deploying models](/doc/get-started/deploying)** shows how you can deploy

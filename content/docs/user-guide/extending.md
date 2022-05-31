@@ -1,6 +1,6 @@
 # Extending
 
-MLEM can be extended to support more model types, datasets, servers, packagers
+MLEM can be extended to support more model types, data types, servers, builders
 and basically everything listed [here](/doc/user-guide/mlem-abcs). Most of the
 builtin implementations are also extensions located in `mlem.contrib` package.
 It allows MLEM to not load their code if it is not used, which is especially
@@ -66,8 +66,12 @@ dynamically, depending on what is imported in user's environment. For example,
 2. After importing mlem, user imported `sklearn`
 3. User loaded any object that uses any of `sklearn` extension implementation.
 
-> Note that some of the fields in MlemObjects are lazy, which mean they will be
-> loaded only if users accesses them.
+<admon type="info">
+
+Some of the fields in MLEM Objects are lazy, which means that they will be
+loaded only if users accesses them.
+
+</admon>
 
 ## Subclassing MlemConfig
 

@@ -2,9 +2,10 @@
 
 A **model registry** is a tool to catalog ML models and their versions. Models
 from your data science projects can be discovered, tested, shared, deployed, and
-audited from there. [DVC](/doc), [GTO], and [MLEM] enable these capabilities on
-top of Git, so you can stick to en existing software engineering stack. No more
-divide between ML engineering and operations!
+audited from there. [DVC](https://github.com/iterative/dvc), [GTO], and [MLEM]
+enable these capabilities on top of Git, so you can stick to en existing
+software engineering stack. No more divide between ML engineering and
+operations!
 
 <!-- ![](/img/ml_model_registry.jpg) _MLOps from modeling to production_ -->
 
@@ -23,9 +24,9 @@ ML model registries give your team key capabilities:
   without touching the applications that consume them.
 - For security, control who can manage models, and audit their usage trails.
 
-[versions]: /doc/use-cases/versioning-data-and-model-files
-[mp]: /doc/start/metrics-parameters-plots
-[experiments]: /doc/user-guide/experiment-management
+[versions]: https://dvc.org/doc/use-cases/versioning-data-and-model-files
+[mp]: https://dvc.org/doc/start/metrics-parameters-plots
+[experiments]: https://dvc.org/doc/user-guide/experiment-management
 
 Many of these benefits are built into DVC: Your [modeling process] and
 [performance data][mp] become **codified** in Git-based <abbr>DVC
@@ -36,7 +37,7 @@ access point for [sharing].
 
 <admon type="info">
 
-See also [Data Registry](/doc/use-cases/data-registry).
+See also [Data Registry](https://dvc.org/doc/use-cases/data-registry).
 
 </admon>
 
@@ -46,8 +47,8 @@ artifacts in the repo using versioned annotations. This creates abstractions for
 your models, which lets you **manage their lifecycle** freely and directly from
 Git.
 
-And to **productionize** the models, you can save and package them with the
-[MLEM] Python API or CLI, which automagically captures all the context needed to
+And to **productionize** the models, you can save and build them with the [MLEM]
+Python API or CLI, which automagically captures all the context needed to
 distribute them. It can store model files on the cloud (by itself or with DVC),
 list and transfer them within locations, wrap them as a local REST server, or
 even containerize and deploy them to cloud providers!
@@ -57,8 +58,8 @@ process into [GitOps]. This means you can manage and deliver ML models with
 software engineering methods such as continuous integration (CI/CD), which can
 sync with the state of the artifacts in your registry.
 
-[modeling process]: /doc/start/data-pipelines
-[remote storage]: /doc/command-reference/remote
-[sharing]: /doc/start/data-and-model-access
+[modeling process]: https://dvc.org/doc/start/data-pipelines
+[remote storage]: https://dvc.org/doc/command-reference/remote
+[sharing]: https://dvc.org/doc/start/data-and-model-access
 [via cml]: https://cml.dev/doc/cml-with-dvc
 [gitops]: https://www.gitops.tech/

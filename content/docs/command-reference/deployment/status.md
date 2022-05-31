@@ -1,11 +1,11 @@
-# deploy status
+# deployment status
 
-Show the status of a deployment.
+Print status of deployed service.
 
 ## Synopsis
 
 ```usage
-usage: mlem deploy status [options] path
+usage: mlem deployment status [options] path
 
 arguments:
 PATH  Path to deployment meta  [required]
@@ -13,8 +13,8 @@ PATH  Path to deployment meta  [required]
 
 ## Description
 
-The `deploy status` command lets us check the status of the deployment, which is
-the deployed app/service serving the model.
+The `deployment status` command lets us check the status of the deployment,
+which is the deployed app/service serving the model.
 
 ### Heroku
 
@@ -29,11 +29,11 @@ The possible statuses for deployments using the `heroku` target platform is:
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `-h, --help`: Show this message and exit.
 
 ## Example: Get the status of a deployment
 
 ```cli
-$ mlem deploy status service_name
+$ mlem deployment status service_name
 ```

@@ -5,7 +5,7 @@ Load python object saved by MLEM
 ```py
 def load(
     path: str,
-    repo: Optional[str] = None,
+    project: Optional[str] = None,
     rev: Optional[str] = None,
     batch_size: Optional[int] = None,
     follow_links: bool = True,
@@ -32,7 +32,7 @@ MLEM.
 
 - **`path`** (required) - Path to the object. Could be local path or path inside
   a Git repo.
-- `repo` (optional) - URL to repo if object is located there.
+- `project` (optional) - URL to project if object is located there.
 - `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `follow_links` (optional) - If object we read is a MLEM link, whether to load
   the actual object link points to. Defaults to True.

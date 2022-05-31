@@ -9,11 +9,11 @@ For a list of all commands, type `mlem -h`
 
 - Initialize a MLEM project in a Git Repo with
   [mlem init](/doc/command-reference/init).
-- Save Models and Datasets with MLEM.
+- Save Models and Data with MLEM.
 - Load and Apply models with [mlem apply](/doc/command-reference/apply).
-- Package models into python packages or docker images with
-  [mlem pack](/doc/command-reference/pack).
+- Build models into python packages or docker images with
+  [mlem build](/doc/command-reference/build).
 - Serve your models by exposing their methods as endpoints using
   [mlem serve](/doc/command-reference/serve).
 - Deploy your models to various target platforms in the cloud with
-  [mlem deploy](/doc/command-reference/deploy).
+  [mlem deployment](/doc/command-reference/deployment).

@@ -15,18 +15,21 @@ arguments: PATH Path to object [required]
 ## Description
 
 All MLEM objects can be printed to view their metadata. This includes generic
-metadata information such as requirements, type of object, hash, size, as well
-as object specific information such as `methods` for a `model` or `reader` for a
-`dataset`.
+information such as requirements, type of object, hash, size, as well as object
+specific information such as `methods` for a `model` or `reader` for `data`.
 
 Since only one specific object is printed, a `PATH` to the specific MLEM object
 is always required.
 
-> You can use [`mlem list`](/doc/command-reference/list) to list MLEM objects.
+<admon type="tip">
+
+You can use [`mlem list`](/doc/command-reference/list) to list MLEM objects.
+
+</admon>
 
 ## Options
 
-- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `-f, --follow-links`: If specified, follow the link to the actual object.
 - `--json`: Output as json
@@ -49,7 +52,7 @@ $ mlem pprint rf
 ...
 ```
 
-## Example: Showing remote dataset
+## Example: Showing remote data
 
 ```cli
 $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv

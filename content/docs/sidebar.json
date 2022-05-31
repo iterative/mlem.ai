@@ -26,9 +26,9 @@
         "source": "applying.md"
       },
       {
-        "slug": "packaging",
-        "label": "Packaging models",
-        "source": "packaging.md"
+        "slug": "building",
+        "label": "Exporting models (building)",
+        "source": "building.md"
       },
       {
         "slug": "serving",
@@ -137,9 +137,9 @@
         "source": "pprint.md"
       },
       {
-        "slug": "create",
-        "label": "create",
-        "source": "create.md"
+        "slug": "declare",
+        "label": "declare",
+        "source": "declare.md"
       },
       {
         "slug": "serve",
@@ -147,29 +147,29 @@
         "source": "serve.md"
       },
       {
-        "slug": "deploy",
-        "label": "deploy",
-        "source": "deploy/index.md",
+        "slug": "deployment",
+        "label": "deployment",
+        "source": "deployment/index.md",
         "children": [
           {
             "slug": "apply",
-            "label": "deploy apply",
+            "label": "deployment apply",
             "source": "apply.md"
           },
           {
-            "slug": "create",
-            "label": "deploy create",
-            "source": "create.md"
+            "slug": "run",
+            "label": "deployment run",
+            "source": "run.md"
           },
           {
             "slug": "status",
-            "label": "deploy status",
+            "label": "deployment status",
             "source": "status.md"
           },
           {
-            "slug": "teardown",
-            "label": "deploy teardown",
-            "source": "teardown.md"
+            "slug": "remove",
+            "label": "deployment remove",
+            "source": "remove.md"
           }
         ]
       },
@@ -194,9 +194,9 @@
         "source": "import.md"
       },
       {
-        "slug": "pack",
-        "label": "pack",
-        "source": "pack.md"
+        "slug": "build",
+        "label": "build",
+        "source": "build.md"
       },
       {
         "slug": "apply",
@@ -266,9 +266,9 @@
         "source": "apply_remote.md"
       },
       {
-        "slug": "pack",
-        "label": "pack()",
-        "source": "pack.md"
+        "slug": "build",
+        "label": "build()",
+        "source": "build.md"
       },
       {
         "slug": "serve",
