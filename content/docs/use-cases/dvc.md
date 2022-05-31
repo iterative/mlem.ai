@@ -25,33 +25,31 @@ $ pip install -r requirements.txt
 </details>
 
 Often it’s a bad idea to store binary files in Git, especially big ones. To
-solve this MLEM can utilize DVC capabilities to connect external cloud storage
-for model and dataset versioning.
-
-> You can learn more about DVC [here](https://dvc.org/doc).
+solve this MLEM can utilize [DVC](https://dvc.org/doc) capabilities to connect
+external cloud storage for model and dataset versioning.
 
 We will reorganize our example repo to use DVC.
 
 ## Setting up repo
 
-First, let’s initialize DVC and add a remote (we will use azure, but you can use
-whatever is available to you):
+First, let’s initialize DVC and add a remote (we will use a local one for easier
+testing, but you can use whatever is available to you):
 
 ```cli
 $ dvc init
-$ dvc remote add myremote -d azure://example-mlem
+$ dvc remote add myremote -d /tmp/dvcstore/
 $ git add .dvc/config
 ```
 
 Now, we also need to setup MLEM so it knows to use DVC.
 
 ```cli
-$ mlem config set default_storage.type dvc
-✅  Set `default_storage.type` to `dvc` in repo .
+$ mlem config set core.storage.type dvc
+✅  Set `storage.type` to `dvc` in repo .
 ```
 
 Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
-DVC
+DVC.
 
 ```cli
 $ echo "/**/?*.mlem" > .dvcignore
@@ -68,15 +66,18 @@ $ git rm -r --cached .mlem/
 $ python train.py
 ```
 
-Finally, let’s add new metafiles to Git and artifacts to DVC respectively,
-commit and push them
+Finally, let’s add and commit new metafiles to Git and artifacts to DVC,
+respectively:
 
 ```cli
-$ dvc add .mlem/model/rf .mlem/dataset/*.csv
+$ dvc add .mlem/model/rf
 $ git add .mlem
 $ git commit -m "Switch to dvc storage"
+...
+
 $ dvc push -r myremote
 $ git push
+...
 ```
 
 Now, you can load MLEM objects from your repo even though there are no actual
@@ -91,53 +92,47 @@ DVC pipelines are the useful DVC mechanism to build data pipelines, in which you
 can process your data and train your model. You may be already training your ML
 models in them and what to start using MLEM to save those models.
 
-MLEM could be easily plug in into existing DVC pipelines. If you already added
-`.mlem` files to `.dvcignore`, you are good to go for most of the cases. Since
-DVC will ignore `.mlem` files, you don't need to add them as outputs and mark
-them with `cache: false`.
-
-It becomes a bit more complicated when you need to add them as outputs, because
-you want to use them as inputs to next stages. The case may be when model binary
-doesn't change for you, but model metadata does. That may happen if you change
-things like model description or labels.
-
-To work with that, you'll need to remove `.mlem` files from `.dvcignore` and
-mark your outputs in DVC Pipeline with `cache: false`.
+MLEM could be easily plug in into existing DVC pipelines. You'll need to mark
+`.mlem` files as `cache: false` [outputs] of a pipelines stage. [outputs]:
+https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields
 
 ## Example
 
-You may have a simple pipeline in which you train your model, like this:
+Let's continue using the example from above. First, let's stop tracking the
+artifact `.mlem/model/rf` in DVC.
 
-```yaml
-# dvc.yaml
-stages:
-  train:
-    cmd: python train.py models/rf
-    deps:
-      - train.py
-    outs:
-      - models/rf
+```dvc
+$ dvc remove .mlem/model/rf.dvc
 ```
 
-Next step would be to start saving your models with MLEM. Since MLEM saves both
-**binary** and **metadata** you need to have both of them in DVC pipeline:
+Now let's create a simple pipeline to train your model:
 
 ```yaml
 # dvc.yaml
 stages:
   train:
-    cmd: python train.py models/rf
+    cmd: python train.py
     deps:
       - train.py
     outs:
-      - models/rf
-      - models/rf.mlem:
+      - .mlem/model/rf
+      - .mlem/model/rf.mlem:
           cache: false
 ```
 
-Since binary was already captured before, we don't need to add anything for it.
-For metadata, we've added two rows to capture it and specify `cache: false`
-since we want the metadata to be committed to Git, and not be pushed to DVC
-remote.
+The binary was already in, so there's no need to add it again. For the metafile,
+we've added two rows and specify `cache: false` to track it with DVC while
+storing it in Git.
 
-Now MLEM is ready to be used in your DVC pipeline!
+You can verify everything is working by running the pipeline:
+
+```dvc
+$ dvc repro
+Running stage 'train':
+> python train.py
+Use `dvc push` to send your updates to remote storage.
+```
+
+Now DVC will take care of storing binaries, so you'll need to commit model
+metafile (`.mlem/model/rf.mlem`) and `dvc.lock` only. Learn more about
+[DVC](https://dvc.org/doc) and how it can be useful for training your ML models.

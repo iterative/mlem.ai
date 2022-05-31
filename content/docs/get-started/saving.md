@@ -1,13 +1,13 @@
 # Saving models
 
-After initializing MLEM we have an empty repository (except for the config
-file), but soon we'll save something with MLEM to fill it up.
+After initializing MLEM we have an empty project (except for the config file),
+but soon we'll save something with MLEM to fill it up.
 
 ## Training the model
 
-To save models with MLEM you just need to use
-[`mlem.api.save`](/doc/api-reference/save) method instead of some other way you
-saved your model before. Let's take a look at the following python script:
+To save models with MLEM you just need to use `mlem.api.save()` method instead
+of some other way you saved your model before. Let's take a look at the
+following python script:
 
 ```py
 # train.py
@@ -45,18 +45,24 @@ Now let's run this script and see how we save the model.
 
 ```cli
 $ python train.py
+...
+
 $ tree .mlem/model/
 .mlem/model
 ├── rf
 └── rf.mlem
 ```
 
-> By default, MLEM saves your files to `.mlem/` directory, but that could be
-> changed, see [project structure](/doc/user-guide/project-structure) for
-> reference.
+<admon type="tip">
 
-What we see here is that model was saved along with some metadata about it: `rf`
-containing the model binary and `.mlem` file containing metadata. Let's take a
+By default, MLEM saves your files to `.mlem/` directory, but that can be
+changed. See [Project Structure](/doc/user-guide/project-structure) for more
+details.
+
+</admon>
+
+The model was saved along with some metadata about it: `rf` containing the model
+binary and a `rf.mlem` metafile containing information about it. Let's take a
 look at it:
 
 <details>
@@ -193,8 +199,8 @@ It's a bit long, but we can see all that we need to use the model later:
 3. Requirements: `sklearn`, `numpy`, `pandas` with particular versions we need
    to run this model.
 
-> Note that we didn't specify requirements: MLEM investigates the object you're
-> saving (even if it's a complex one) and finds out all requirements needed.
+Note that we didn't specify requirements: MLEM investigates the object you're
+saving (even if it's a complex one) and finds out all requirements needed!
 
 <details>
 

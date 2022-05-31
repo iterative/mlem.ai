@@ -4,11 +4,11 @@ Apply deployed model (possibly remote) against provided data.
 
 ```py
 def apply_remote(
-    client: Union[str, BaseClient],
-    *data: Union[str, MlemDataset, Any],
+    client: Union[str, Client],
+    *data: Union[str, MlemData, Any],
     method: str = None,
     output: str = None,
-    target_repo: str = None,
+    target_project: str = None,
     index: bool = False,
     **client_kwargs,
 ) -> Optional[Any]
@@ -38,7 +38,7 @@ knows how to make requests to the deployed model.
   model has. If more than one is available, will fail.
 - `output` (optional) - If value is provided, assume it's path and save output
   there.
-- `target_repo` (optional) - The path to repo to save the results to.
+- `target_project` (optional) - The path to project to save the results to.
 - `index` (optional) - Whether to index saved output in MLEM root folder.
 - `client_kwargs` (optional) - Keyword arguments for the underlying client
   implementation being used.
@@ -57,7 +57,7 @@ knows how to make requests to the deployed model.
 from numpy import ndarray
 from sklearn.datasets import load_iris
 from mlem.api import apply_remote
-from mlem.runtime.client.base import HTTPClient
+from mlem.runtime.client import HTTPClient
 
 train, _ = load_iris(return_X_y=True)
 client = HTTPClient(host="0.0.0.0", port=8080)

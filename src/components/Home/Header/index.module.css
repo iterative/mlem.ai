@@ -2,15 +2,15 @@
   text-align: left;
 
   &__title {
-    margin: 24px 0 0;
+    margin: 0;
     @apply text-gradient bg-teal-purple-gradient text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
 
     @media (--md-scr) {
-      margin: 32px 0 0;
+      margin-top: 8px;
     }
 
     @media (--lg-scr) {
-      margin: 40px 0 0 0;
+      margin-top: 16px;
       max-width: 720px;
     }
 

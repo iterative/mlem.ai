@@ -1,23 +1,20 @@
 .alert {
-  height: 35px;
-  line-height: 35px;
+  height: var(--layout-alert-height);
+  line-height: var(--layout-alert-height);
   font-size: 18px;
   text-align: center;
   background-color: #dee;
-  overflow: hidden;
-  width: 100vw;
+  width: 100%;
   transition: 0.5s all, 0s width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 16px;
+  flex: 0 0 var(--layout-alert-height);
 
   &.collapsed {
     height: 0;
-    transform: translateY(-100%);
-  }
-
-  p {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    padding: 0 16px;
+    flex-basis: 0;
   }
 
   a {

@@ -251,10 +251,7 @@ const Header: React.FC = () => {
           ))}
         </ul>
         <div className={styles.main__buttons}>
-          <Button
-            className={styles.button}
-            href="/doc/get-started"
-          >
+          <Button className={styles.button} href="/doc/get-started">
             Get Started
           </Button>
           <Button href="/doc/install" className={styles.button} theme="ghost">

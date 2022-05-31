@@ -1,276 +1,284 @@
 [
   {
     "slug": "",
+    "source": "index.md",
     "label": "MLEM Documentation",
     "icon": "house"
   },
   {
     "slug": "install",
+    "source": "install.md",
     "label": "Installation"
   },
   {
     "slug": "get-started",
     "label": "Get Started",
+    "source": "get-started/index.md",
     "children": [
       {
         "slug": "saving",
         "label": "Saving models",
-        "source": "get-started/saving.md"
+        "source": "saving.md"
       },
       {
         "slug": "applying",
         "label": "Applying models",
-        "source": "get-started/applying.md"
+        "source": "applying.md"
       },
       {
-        "slug": "packaging",
-        "label": "Packaging models",
-        "source": "get-started/packaging.md"
+        "slug": "building",
+        "label": "Exporting models (building)",
+        "source": "building.md"
       },
       {
         "slug": "serving",
         "label": "Serving models",
-        "source": "get-started/serving.md"
+        "source": "serving.md"
       },
       {
         "slug": "deploying",
         "label": "Deploying models",
-        "source": "get-started/deploying.md"
+        "source": "deploying.md"
       }
     ]
   },
   {
     "slug": "use-cases",
     "label": "Use Cases",
+    "source": "use-cases/index.md",
     "children": [
       {
         "slug": "dvc",
         "label": "Versioning MLEM objects with DVC",
-        "source": "use-cases/dvc.md"
+        "source": "dvc.md"
       },
       {
         "slug": "mlem-mr",
         "label": "Pure Mlem Model Registry",
-        "source": "use-cases/mlem-mr.md"
+        "source": "mlem-mr.md"
       },
       {
         "slug": "cicd",
         "label": "Using in CI/CD",
-        "source": "use-cases/cicd.md"
+        "source": "cicd.md"
       },
       {
         "slug": "model-registry",
         "label": "Model Registry",
-        "source": "use-cases/model-registry.md"
+        "source": "model-registry.md"
       }
     ]
   },
   {
     "slug": "user-guide",
     "label": "User Guide",
+    "source": "user-guide/index.md",
     "children": [
       {
         "slug": "basic-concepts",
         "label": "Basic concepts",
-        "source": "user-guide/basic-concepts.md"
+        "source": "basic-concepts.md"
       },
       {
         "slug": "project-structure",
         "label": "Project structure",
-        "source": "user-guide/project-structure.md"
+        "source": "project-structure.md"
       },
       {
         "slug": "configuration",
         "label": "Configuration",
-        "source": "user-guide/configuration.md"
+        "source": "configuration.md"
       },
       {
         "slug": "importing",
         "label": "Importing existing files",
-        "source": "user-guide/importing.md"
+        "source": "importing.md"
       },
       {
         "slug": "linking",
         "label": "Links",
-        "source": "user-guide/linking.md"
+        "source": "linking.md"
       },
       {
         "slug": "mlem-abcs",
         "label": "MLEM ABCs",
-        "source": "user-guide/mlem-abcs.md"
+        "source": "mlem-abcs.md"
       },
       {
         "slug": "extending",
         "label": "Extending",
-        "source": "user-guide/extending.md"
+        "source": "extending.md"
       },
       {
         "slug": "analytics",
         "label": "Anonymized Usage Analytics",
-        "source": "user-guide/analytics.md"
+        "source": "analytics.md"
       }
     ]
   },
   {
     "slug": "command-reference",
     "label": "Command Reference",
+    "source": "command-reference/index.md",
     "children": [
       {
         "slug": "init",
         "label": "init",
-        "source": "command-reference/init.md"
+        "source": "init.md"
       },
       {
         "slug": "list",
         "label": "list",
-        "source": "command-reference/list.md"
+        "source": "list.md"
       },
       {
         "slug": "pprint",
         "label": "pprint",
-        "source": "command-reference/pprint.md"
+        "source": "pprint.md"
       },
       {
-        "slug": "create",
-        "label": "create",
-        "source": "command-reference/create.md"
+        "slug": "declare",
+        "label": "declare",
+        "source": "declare.md"
       },
       {
         "slug": "serve",
         "label": "serve",
-        "source": "command-reference/serve.md"
+        "source": "serve.md"
       },
       {
-        "slug": "deploy",
-        "label": "deploy",
+        "slug": "deployment",
+        "label": "deployment",
+        "source": "deployment/index.md",
         "children": [
           {
             "slug": "apply",
-            "label": "deploy apply",
-            "source": "command-reference/deploy/apply.md"
+            "label": "deployment apply",
+            "source": "apply.md"
           },
           {
-            "slug": "create",
-            "label": "deploy create",
-            "source": "command-reference/deploy/create.md"
+            "slug": "run",
+            "label": "deployment run",
+            "source": "run.md"
           },
           {
             "slug": "status",
-            "label": "deploy status",
-            "source": "command-reference/deploy/status.md"
+            "label": "deployment status",
+            "source": "status.md"
           },
           {
-            "slug": "teardown",
-            "label": "deploy teardown",
-            "source": "command-reference/deploy/teardown.md"
+            "slug": "remove",
+            "label": "deployment remove",
+            "source": "remove.md"
           }
         ]
       },
       {
         "slug": "types",
         "label": "types",
-        "source": "command-reference/types.md"
+        "source": "types.md"
       },
       {
         "slug": "link",
         "label": "link",
-        "source": "command-reference/link.md"
+        "source": "link.md"
       },
       {
         "slug": "clone",
         "label": "clone",
-        "source": "command-reference/clone.md"
+        "source": "clone.md"
       },
       {
         "slug": "import",
         "label": "import",
-        "source": "command-reference/import.md"
+        "source": "import.md"
       },
       {
-        "slug": "pack",
-        "label": "pack",
-        "source": "command-reference/pack.md"
+        "slug": "build",
+        "label": "build",
+        "source": "build.md"
       },
       {
         "slug": "apply",
         "label": "apply",
-        "source": "command-reference/apply.md"
+        "source": "apply.md"
       },
       {
         "slug": "apply-remote",
         "label": "apply-remote",
-        "source": "command-reference/apply-remote.md"
+        "source": "apply-remote.md"
       }
     ]
   },
   {
     "slug": "api-reference",
     "label": "Python API Reference",
+    "source": "api-reference/index.md",
     "children": [
       {
         "slug": "init",
         "label": "init()",
-        "source": "api-reference/init.md"
+        "source": "init.md"
       },
       {
         "slug": "save",
         "label": "save()",
-        "source": "api-reference/save.md"
+        "source": "save.md"
       },
       {
         "slug": "load",
         "label": "load()",
-        "source": "api-reference/load.md"
+        "source": "load.md"
       },
       {
         "slug": "load_meta",
         "label": "load_meta()",
-        "source": "api-reference/load_meta.md"
+        "source": "load_meta.md"
       },
       {
         "slug": "ls",
         "label": "ls()",
-        "source": "api-reference/ls.md"
+        "source": "ls.md"
       },
       {
         "slug": "import_object",
         "label": "import_object()",
-        "source": "api-reference/import_object.md"
+        "source": "import_object.md"
       },
       {
         "slug": "link",
         "label": "link()",
-        "source": "api-reference/link.md"
+        "source": "link.md"
       },
       {
         "slug": "clone",
         "label": "clone()",
-        "source": "api-reference/clone.md"
+        "source": "clone.md"
       },
       {
         "slug": "apply",
         "label": "apply()",
-        "source": "api-reference/apply.md"
+        "source": "apply.md"
       },
       {
         "slug": "apply_remote",
         "label": "apply_remote()",
-        "source": "api-reference/apply_remote.md"
+        "source": "apply_remote.md"
       },
       {
-        "slug": "pack",
-        "label": "pack()",
-        "source": "api-reference/pack.md"
+        "slug": "build",
+        "label": "build()",
+        "source": "build.md"
       },
       {
         "slug": "serve",
         "label": "serve()",
-        "source": "api-reference/serve.md"
+        "source": "serve.md"
       },
       {
         "slug": "deploy",
         "label": "deploy()",
-        "source": "api-reference/deploy.md"
+        "source": "deploy.md"
       }
     ]
   },
@@ -282,12 +290,12 @@
       {
         "slug": "core",
         "label": "MLEM Core Project",
-        "source": "contributing/core.md"
+        "source": "core.md"
       },
       {
         "slug": "docs",
         "label": "Docs and Website",
-        "source": "contributing/docs.md"
+        "source": "docs.md"
       }
     ]
   }

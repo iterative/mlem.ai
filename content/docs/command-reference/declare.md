@@ -1,25 +1,24 @@
-# create
+# declare
 
-Creates a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
-metafile from conf args and config files.
+Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
+metafile from config args and config files.
 
 ## Synopsis
 
 ```usage
-usage: mlem create [options] object_type [subtype] path
+usage: mlem declare [options] object_type [subtype] path
 
 arguments:
-OBJECT_TYPE  Type of metafile to create  [required]
+OBJECT_TYPE  Type of metafile to declare  [required]
 [SUBTYPE]    Subtype of MLEM object  [default: ]
 PATH         Where to save object  [required]
 ```
 
 ## Description
 
-Metadata files (with `.mlem` file extension) can be created for
+`.mlem` metafiles can be created for
 [MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects) using this command.
-This is particularly useful in filling up configuration values for environments
-and deployments.
+This is particularly useful for configuring environments and deployments.
 
 Each MLEM Object, along with its subtype (which represents a particular
 implementation), will accept different configuration arguments. The list of
@@ -31,25 +30,25 @@ check out the last example [here](/doc/command-reference/types#examples)
 
 - `-c, --conf TEXT`: Values for object fields in format
   `field.nested.name=value`
-- `-r, --repo TEXT`: Path to MLEM repo [default: (none)]
-- `-e, --external`: Save result not in .mlem, but directly in repo
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `-e, --external`: Save result not in .mlem, but directly in project
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-h, --help`: Show this message and exit.
 
 ## Examples
 
-Create an environment metafile with a config key
+Declare an environment object metafile with a config key:
 
 ```cli
-# Fetch all config arguments which can be passed for a heroku env
+# Fetch all available config args for a heroku env
 $ mlem types env heroku
 [not required] api_key: str = None
 
-# Create the heroku env
-$ mlem create env heroku production --conf api_key="mlem_heroku_staging"
+# Declare the heroku env
+$ mlem declare env heroku production --conf api_key="mlem_heroku_staging"
 💾 Saving env to .mlem/env/staging.mlem
 
-# print the contents of the saved metafile for the heroku env
+# Print the contents of the new heroku env metafile
 $ cat .mlem/env/staging.mlem
 api_key: mlem_heroku_staging
 object_type: env

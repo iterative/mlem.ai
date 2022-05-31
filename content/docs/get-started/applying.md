@@ -2,7 +2,7 @@
 
 ## Evaluating the model
 
-Now, we can use MLEM to apply the model against a dataset and calculate some
+Now, we can use MLEM to apply the model against some data and calculate some
 metrics:
 
 ```py
@@ -31,8 +31,8 @@ if __name__ == "__main__":
 ```
 
 Here we use the `apply` function that handles loading of the model for us. But
-you can always load your model with [`mlem.api.load`](/doc/api-reference/load)
-and call any method manually.
+you can always load your model with `mlem.api.load()` and call any method
+manually.
 
 Now, let's run the script
 
@@ -60,8 +60,8 @@ $ git diff 4-eval
 
 You can also apply your models directly from CLI. For that to work, your data
 should be in a file that is supported by
-[MLEM import](/doc/user-guide/importing) or you should have your
-[dataset saved with MLEM ](/doc/user-guide/datasets).
+[MLEM import](/doc/user-guide/importing) or you should have the
+[data saved with MLEM ](/doc/user-guide/datasets).
 
 Let's create an example file and run `mlem apply`
 
@@ -75,7 +75,7 @@ $ mlem apply rf new_data.csv -i --it pandas[csv] -o prediction
 💾 Saving dataset to .mlem/dataset/prediction.mlem
 ```
 
-Or, if you save your dataset like this:
+Or, if you save your data like this:
 
 ```py
 from sklearn.datasets import load_iris
