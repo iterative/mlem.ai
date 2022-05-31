@@ -253,7 +253,7 @@ const Header: React.FC = () => {
         <div className={styles.main__buttons}>
           <Button
             className={styles.button}
-            href="https://iterative-ai.typeform.com/to/FGyGIx45"
+            href="/doc/get-started"
           >
             Get Started
           </Button>
