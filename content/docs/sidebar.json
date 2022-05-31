@@ -90,9 +90,9 @@
         "source": "user-guide/data.md"
       },
       {
-        "slug": "remote-repos",
-        "label": "Working with repositories and remote objects",
-        "source": "user-guide/remote-repos.md"
+        "slug": "remote-projects",
+        "label": "Working with projects and remote objects",
+        "source": "user-guide/remote-projects.md"
       },
       {
         "slug": "configuration",

@@ -1,4 +1,4 @@
-# Working with repositories and remote objects
+# Working with projects and remote objects
 
 <details>
 
@@ -14,14 +14,15 @@ MLEM works with DVC in more details.
 
 ## Listing objects
 
-Since we've saved the data and the model in the repository, let's list them:
+Models and Data stored inside MLEM projects can be listed with
+[mlem list](/doc/command-reference/list).
 
 ```cli
 $ mlem list
 ```
 
 ```yaml
-Datasets:
+Data:
   - test_x.csv
   - test_y.csv
   - train.csv
@@ -29,14 +30,13 @@ Models:
   - rf
 ```
 
-Note that we are actually listing models and data which is saved in the
-repository we're in.
+Here, the project being considered is the one we're currently in.
 
-But what if they are stored in a remote Git repository, and we don't want to
-clone it? MLEM can also work with remote repositories:
+But one can list objects inside a remote Git repository as well, without
+the need of cloning it.
 
 ```cli
-$ mlem list https://github.com/iterative/example-mlem-get-started --type model
+$ mlem list https://github.com/iterative/example-mlem-get-started --type model --rev simple
 ```
 
 ```yaml
@@ -44,28 +44,30 @@ Models:
   - rf
 ```
 
-We also can use URL addresses to load models from remote repositories directly:
+## Loading objects
+
+One can use URL addresses to load objects (models, data, etc.) from remote repositories directly:
 
 ```py
 from mlem.api import load
 
-model = load("https://github.com/iterative/example-mlem-get-started/rf")
-# or
 model = load(
     "rf",
     project="https://github.com/iterative/example-mlem-get-started",
-    rev="main"
+    rev="simple"
 )
 ```
 
-If we just want to download the model to a local disk to use it later, we can
-run `clone` command
+## Cloning objects
+
+One can also download the object to local disk so as to use it later
+using the `clone` command.
 
 ```cli
 $ mlem clone https://github.com/iterative/example-mlem-get-started/rf ml_model
 ```
 
-The other way to do it is to run
+The other way to do this is to run
 
 ```cli
 $ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main ml_model
@@ -90,13 +92,12 @@ $ git push
 
 ## Cloud remotes
 
-If you don’t have the need to version your models, but you want to store your
-objects in some remote location, you can use MLEM with any cloud/remote
-supported by
+MLEM can also be used with any cloud/remote supported by
 [fsspec](https://filesystem-spec.readthedocs.io/en/latest/api.html#built-in-implementations),
-e.g. s3.
+e.g. s3. This is useful in scenarios where one may want to store objects in some remote location
+without the need to version them.
 
-To do so, use paths with corresponding file system protocol and path like
+To do so, one can use paths with the corresponding file system protocol & path such as
 `s3://<bucket>/`
 
 ```cli
@@ -107,8 +108,8 @@ $ mlem clone rf s3://example-mlem-get-started/rf
 💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
 ```
 
-Now you can load this model via API or use it in CLI commands just like if it
-was local:
+This model can now be loaded via API or can be used in CLI commands just like if it
+existed locally:
 
 ```py
 from mlem.api import load
@@ -120,9 +121,11 @@ $ mlem apply rf --project s3://example-mlem-get-started test_x.csv --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 
-TL;DR: we've just
+## Summary
 
-1. Listed all MLEM models in the Git repo,
-2. Loaded model from Git repo directly,
-3. Initialized MLEM in remote bucket and worked with just like with a regular
-   folder.
+Working with projects and remote objects have several different use-cases, some of which we covered above are:
+
+1. List different MLEM objects (models, data) in the local projects as well as Git repositories.
+2. Load objects (models, data) from local projects and Git repositories directly.
+3. Clone objects (models, data) from/to Git repositories.
+4. Initialize MLEM in a remote bucket and work with it as if it was being used locally.
