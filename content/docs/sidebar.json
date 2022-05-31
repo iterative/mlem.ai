@@ -85,6 +85,16 @@
         "source": "project-structure.md"
       },
       {
+        "slug": "data",
+        "label": "Working with data",
+        "source": "user-guide/data.md"
+      },
+      {
+        "slug": "remote-repos",
+        "label": "Working with repositories and remote objects",
+        "source": "user-guide/remote-repos.md"
+      },
+      {
         "slug": "configuration",
         "label": "Configuration",
         "source": "configuration.md"
