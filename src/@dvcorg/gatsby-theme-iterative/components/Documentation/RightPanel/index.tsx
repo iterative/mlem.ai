@@ -13,7 +13,7 @@ import {
 import { allImagesLoadedInContainer } from '@dvcorg/gatsby-theme-iterative/src/utils/front/images'
 
 import * as sharedStyles from '@dvcorg/gatsby-theme-iterative/src/components/Documentation/styles.module.css'
-import * as styles from '@dvcorg/gatsby-theme-iterative/src/components/Documentation/RightPanel/styles.module.css'
+import * as styles from './styles.module.css'
 
 interface IRightPanelProps {
   headings: Array<IHeading>
@@ -209,7 +209,7 @@ const RightPanel: React.FC<IRightPanelProps> = ({
 
           <Link
             className={cn(sharedStyles.button, styles.button)}
-            href="https://dvc.org/chat"
+            href="/chat"
             target="_blank"
           >
             <i className={cn(sharedStyles.buttonIcon, styles.discordIcon)} />

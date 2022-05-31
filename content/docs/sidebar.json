@@ -1,8 +1,302 @@
 [
   {
     "slug": "",
-    "label": "MLEM Documentation",
     "source": "index.md",
+    "label": "MLEM Documentation",
     "icon": "house"
+  },
+  {
+    "slug": "install",
+    "source": "install.md",
+    "label": "Installation"
+  },
+  {
+    "slug": "get-started",
+    "label": "Get Started",
+    "source": "get-started/index.md",
+    "children": [
+      {
+        "slug": "saving",
+        "label": "Saving models",
+        "source": "saving.md"
+      },
+      {
+        "slug": "applying",
+        "label": "Applying models",
+        "source": "applying.md"
+      },
+      {
+        "slug": "building",
+        "label": "Exporting models (building)",
+        "source": "building.md"
+      },
+      {
+        "slug": "serving",
+        "label": "Serving models",
+        "source": "serving.md"
+      },
+      {
+        "slug": "deploying",
+        "label": "Deploying models",
+        "source": "deploying.md"
+      }
+    ]
+  },
+  {
+    "slug": "use-cases",
+    "label": "Use Cases",
+    "source": "use-cases/index.md",
+    "children": [
+      {
+        "slug": "dvc",
+        "label": "Versioning MLEM objects with DVC",
+        "source": "dvc.md"
+      },
+      {
+        "slug": "mlem-mr",
+        "label": "Pure Mlem Model Registry",
+        "source": "mlem-mr.md"
+      },
+      {
+        "slug": "cicd",
+        "label": "Using in CI/CD",
+        "source": "cicd.md"
+      },
+      {
+        "slug": "model-registry",
+        "label": "Model Registry",
+        "source": "model-registry.md"
+      }
+    ]
+  },
+  {
+    "slug": "user-guide",
+    "label": "User Guide",
+    "source": "user-guide/index.md",
+    "children": [
+      {
+        "slug": "basic-concepts",
+        "label": "Basic concepts",
+        "source": "basic-concepts.md"
+      },
+      {
+        "slug": "project-structure",
+        "label": "Project structure",
+        "source": "project-structure.md"
+      },
+      {
+        "slug": "configuration",
+        "label": "Configuration",
+        "source": "configuration.md"
+      },
+      {
+        "slug": "importing",
+        "label": "Importing existing files",
+        "source": "importing.md"
+      },
+      {
+        "slug": "linking",
+        "label": "Links",
+        "source": "linking.md"
+      },
+      {
+        "slug": "mlem-abcs",
+        "label": "MLEM ABCs",
+        "source": "mlem-abcs.md"
+      },
+      {
+        "slug": "extending",
+        "label": "Extending",
+        "source": "extending.md"
+      },
+      {
+        "slug": "analytics",
+        "label": "Anonymized Usage Analytics",
+        "source": "analytics.md"
+      }
+    ]
+  },
+  {
+    "slug": "command-reference",
+    "label": "Command Reference",
+    "source": "command-reference/index.md",
+    "children": [
+      {
+        "slug": "init",
+        "label": "init",
+        "source": "init.md"
+      },
+      {
+        "slug": "list",
+        "label": "list",
+        "source": "list.md"
+      },
+      {
+        "slug": "pprint",
+        "label": "pprint",
+        "source": "pprint.md"
+      },
+      {
+        "slug": "declare",
+        "label": "declare",
+        "source": "declare.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve",
+        "source": "serve.md"
+      },
+      {
+        "slug": "deployment",
+        "label": "deployment",
+        "source": "deployment/index.md",
+        "children": [
+          {
+            "slug": "apply",
+            "label": "deployment apply",
+            "source": "apply.md"
+          },
+          {
+            "slug": "run",
+            "label": "deployment run",
+            "source": "run.md"
+          },
+          {
+            "slug": "status",
+            "label": "deployment status",
+            "source": "status.md"
+          },
+          {
+            "slug": "remove",
+            "label": "deployment remove",
+            "source": "remove.md"
+          }
+        ]
+      },
+      {
+        "slug": "types",
+        "label": "types",
+        "source": "types.md"
+      },
+      {
+        "slug": "link",
+        "label": "link",
+        "source": "link.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone",
+        "source": "clone.md"
+      },
+      {
+        "slug": "import",
+        "label": "import",
+        "source": "import.md"
+      },
+      {
+        "slug": "build",
+        "label": "build",
+        "source": "build.md"
+      },
+      {
+        "slug": "apply",
+        "label": "apply",
+        "source": "apply.md"
+      },
+      {
+        "slug": "apply-remote",
+        "label": "apply-remote",
+        "source": "apply-remote.md"
+      }
+    ]
+  },
+  {
+    "slug": "api-reference",
+    "label": "Python API Reference",
+    "source": "api-reference/index.md",
+    "children": [
+      {
+        "slug": "init",
+        "label": "init()",
+        "source": "init.md"
+      },
+      {
+        "slug": "save",
+        "label": "save()",
+        "source": "save.md"
+      },
+      {
+        "slug": "load",
+        "label": "load()",
+        "source": "load.md"
+      },
+      {
+        "slug": "load_meta",
+        "label": "load_meta()",
+        "source": "load_meta.md"
+      },
+      {
+        "slug": "ls",
+        "label": "ls()",
+        "source": "ls.md"
+      },
+      {
+        "slug": "import_object",
+        "label": "import_object()",
+        "source": "import_object.md"
+      },
+      {
+        "slug": "link",
+        "label": "link()",
+        "source": "link.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone()",
+        "source": "clone.md"
+      },
+      {
+        "slug": "apply",
+        "label": "apply()",
+        "source": "apply.md"
+      },
+      {
+        "slug": "apply_remote",
+        "label": "apply_remote()",
+        "source": "apply_remote.md"
+      },
+      {
+        "slug": "build",
+        "label": "build()",
+        "source": "build.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve()",
+        "source": "serve.md"
+      },
+      {
+        "slug": "deploy",
+        "label": "deploy()",
+        "source": "deploy.md"
+      }
+    ]
+  },
+  {
+    "slug": "contributing",
+    "label": "Contributing",
+    "source": false,
+    "children": [
+      {
+        "slug": "core",
+        "label": "MLEM Core Project",
+        "source": "core.md"
+      },
+      {
+        "slug": "docs",
+        "label": "Docs and Website",
+        "source": "docs.md"
+      }
+    ]
   }
 ]

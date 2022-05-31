@@ -17,8 +17,9 @@ const socialLinks: Array<ISocialIconProps> = [
   },
   {
     icon: 'discord',
-    href: 'https://dvc.org/chat',
-    label: 'Go to DVC Discord'
+    href: '/chat',
+    label: 'Go to DVC Discord',
+    target: '_blank'
   }
 ]
 
@@ -66,9 +67,14 @@ const NavBar: React.FC = () => {
             Coming Soon
           </Button>
           <ul className={styles.nav__icons}>
-            {socialLinks.map(({ icon, href, label }, i) => (
+            {socialLinks.map(({ icon, href, label, target }, i) => (
               <li key={i}>
-                <SocialIcon icon={icon} href={href} label={label} />
+                <SocialIcon
+                  target={target}
+                  icon={icon}
+                  href={href}
+                  label={label}
+                />
               </li>
             ))}
           </ul>
