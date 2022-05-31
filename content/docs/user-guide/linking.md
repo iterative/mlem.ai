@@ -27,9 +27,8 @@ fields:
 
 ## Using links
 
-Links can be created via [`mlem link`](/doc/command-reference/link) command or
-[`mlem.api.link`](/doc/api-reference/link) API, as well as the
-`MlemObject.make_link()` method.
+Links can be created via `mlem link` command or `mlem.api.link()` API, as well
+as the `MlemObject.make_link()` method.
 
 <admon type="tip">
 

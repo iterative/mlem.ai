@@ -3,9 +3,8 @@
 ## MLEM Project
 
 Any directory with a valid `.mlem/` directory is considered a **MLEM Project**.
-To create one, use [`mlem init`](/doc/command-reference/init) or
-[`mlem.api.init`](/doc/api-reference/init). This will also create an empty
-`config.yaml` (see [Configuration](/doc/user-guide/configuration)).
+To create one, use `mlem init` or `mlem.api.init()`. This will also create an
+empty `config.yaml` (see [Configuration](/doc/user-guide/configuration)).
 
 <admon type="info">
 
