@@ -1,9 +1,41 @@
 # Working with data
 
-## Getting the data
+<details>
 
-The first step is to get some data. For this tutorial, we’ll just generate it.
-Let's take a look at this python script:
+### ⚙️ Expand for setup instructions
+
+If you want to follow along with this tutorial and try MLEM, you can use our
+[example repo](https://github.com/iterative/example-mlem-get-started). You'll
+need to [fork] it first. Then clone it locally:
+
+[fork]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+
+```cli
+$ git clone <your fork>
+$ cd example-mlem-get-started
+```
+
+Next let's create an isolated virtual environment to cleanly install all the
+requirements (including MLEM) there:
+
+```cli
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip install -r requirements.txt
+```
+
+</details>
+
+To use data within the MLEM context, so that it is compatible with other operations
+such as [mlem apply](/doc/command-reference/apply), one needs to save it as a
+[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
+
+## Saving data with MLEM
+
+One can use MLEM to save existing data using the [mlem.api.save()](/doc/api-reference/save) API.
+
+As an example, we load the well-known IRIS dataset with `sklearn`, and then save parts of it
+with MLEM locally.
 
 ```py
 # prepare.py
@@ -23,10 +55,7 @@ if __name__ == "__main__":
     main()
 ```
 
-Here we load the well-known iris dataset with sklearn, and then save parts of it
-with MLEM. For now, we just save them locally and push them to Git later.
-
-Let's execute this script and see what was produced:
+One can see what files were produced by executing the above script:
 
 ```cli
 $ python prepare.py
@@ -40,8 +69,8 @@ $ tree .mlem/dataset/
 └── train.csv.mlem
 ```
 
-What we see here is that every DataFrame was saved along with some metadata
-about it. Let's see one example:
+Clearly, every DataFrame was saved along with some metadata
+about it. One can of course check the contents of these files.
 
 ```cli
 $ head -5 .mlem/dataset/train.csv
@@ -91,23 +120,9 @@ requirements:
 
 </details>
 
-We can see here what was saved: data schema and requirements for the libraries
-which were used to save the data. That doesn't mean you can't read that
-`train` any other way, but if you would use MLEM to load it, it would know that
-it needs pandas to do that for you.
+The metadata file has data schema and library requirements for the data that was saved.
+Through this, MLEM knows that it needs pandas to load the data. One can of course load
+the data in other ways outside the MLEM context as well.
 
-Note that we didn't specify whether the saved dataset was `pd.DataFrame`,
-`np.array` or `tf.Tensor`. MLEM is getting that for you, and this handy magic
-extends to ML models 👋
-
-<details>
-
-### ⛳ [Data prepared](https://github.com/iterative/example-mlem-get-started/tree/2-prepare)
-
-```cli
-$ git add .mlem
-$ git commit -m "Added data"
-$ git diff 2-prepare
-```
-
-</details>
+But this approach allows us to NOT explicitly specify if the saved data was `pd.DataFrame`,
+`np.array` or `tf.Tensor`. MLEM figures this out and this handy magic also extends to ML models 👋
