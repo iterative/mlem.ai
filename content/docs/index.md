@@ -34,9 +34,9 @@ automate tests and deployments using GitOps.
 
 </cards>
 
-✅ Please join our [community](/community) or use the [support](/support)
-channels if you have any questions or need specific help. We are very responsive
-⚡.
+✅ Please join our [community](https://dvc.org/community) or use the
+[support](https://dvc.org/support) channels if you have any questions or need
+specific help. We are very responsive ⚡.
 
 ✅ Check out our [GitHub repository](https://github.com/iterative/mlem) and give
 us a ⭐ if you like the project!
