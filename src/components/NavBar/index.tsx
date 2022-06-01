@@ -11,6 +11,11 @@ import { useHeaderIsScrolled } from '@dvcorg/gatsby-theme-iterative/src/utils/fr
 
 const socialLinks: Array<ISocialIconProps> = [
   {
+    icon: 'github',
+    href: 'https://github.com/iterative/mlem/',
+    label: 'Go to MLEM github repo'
+  },
+  {
     icon: 'youtube',
     href: 'https://www.youtube.com/channel/UC37rp97Go-xIX3aNFVHhXfQ',
     label: 'Go to DVCorg Youtube'
@@ -53,19 +58,18 @@ const NavBar: React.FC = () => {
           >
             by <span>iterative.ai</span>
           </SmartLink>
-          <SmartLink href="/doc" className={styles.nav__link}>
-            Docs
-          </SmartLink>
-          <SmartLink
-            href="https://learn.iterative.ai/"
-            className={styles.nav__link}
-          >
-            Course
-          </SmartLink>
-          <OtherToolsPopup navItemClassName={styles.nav__link} />
-          <Button className={styles.nav__button} icon="github" disabled>
-            Coming Soon
-          </Button>
+          <div className={styles.nav__links}>
+            <SmartLink href="/doc" className={styles.nav__link}>
+              Docs
+            </SmartLink>
+            <SmartLink
+              href="https://learn.iterative.ai/"
+              className={styles.nav__link}
+            >
+              Course
+            </SmartLink>
+            <OtherToolsPopup navItemClassName={styles.nav__link} />
+          </div>
           <ul className={styles.nav__icons}>
             {socialLinks.map(({ icon, href, label, target }, i) => (
               <li key={i}>
@@ -78,6 +82,9 @@ const NavBar: React.FC = () => {
               </li>
             ))}
           </ul>
+          <Button href="/doc/get-started" className={styles.nav__button}>
+            Get Started
+          </Button>
         </nav>
       </div>
     </header>
