@@ -55,23 +55,29 @@ $ mlem pprint rf
 ## Example: Showing remote data
 
 ```cli
-$ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/dataset/iris.csv.mlem
+$ mlem pprint https://raw.githubusercontent.com/iterative/example-mlem-get-started/4-pack/.mlem/data/iris.csv
+⏳️ Loading meta from https://raw.githubusercontent.com/iterative/example-mlem-get-started/4-pack/.mlem/data/iris.csv.mlem
 {'artifacts': {'data': {'hash': '45109f850511f9474665f2c26f4c79f3',
                         'size': 2470,
-                        'type': 'dvc',
                         'uri': 'iris.csv'}},
- 'object_type': 'dataset',
- 'reader': {'dataset_type': {'columns': ['sepal length (cm)',
-                                         'sepal width (cm)',
-                                         'petal length (cm)',
-                                         'petal width (cm)'],
-                             'dtypes': ['float64',
-                                        'float64',
-                                        'float64',
-                                        'float64'],
-                             'index_cols': [],
-                             'type': 'dataframe'},
+ 'data_type': {'columns': ['sepal length (cm)',
+                           'sepal width (cm)',
+                           'petal length (cm)',
+                           'petal width (cm)'],
+               'dtypes': ['float64', 'float64', 'float64', 'float64'],
+               'index_cols': [],
+               'type': 'dataframe'},
+ 'object_type': 'data',
+ 'reader': {'data_type': {'columns': ['sepal length (cm)',
+                                      'sepal width (cm)',
+                                      'petal length (cm)',
+                                      'petal width (cm)'],
+                          'dtypes': ['float64',
+                                     'float64',
+                                     'float64',
+                                     'float64'],
+                          'index_cols': [],
+                          'type': 'dataframe'},
             'format': 'csv',
             'type': 'pandas'},
  'requirements': [{'module': 'pandas', 'version': '1.4.2'}]}
