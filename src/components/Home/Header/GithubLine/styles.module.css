@@ -3,7 +3,10 @@
   align-items: center;
   font-weight: 500;
   line-height: 20px;
-  padding: 16px;
+  padding: 16px 4px;
+  @media (min-width: 768px) {
+    padding: 16px;
+  }
 }
 
 .githubLogo {
@@ -18,16 +21,15 @@
 
   &:focus,
   &:visited {
-   @apply text-gray-600;
+    @apply text-gray-600;
   }
 
-  &:hover{
+  &:hover {
     @apply text-gray-800;
   }
-  
 }
 
-.stars{
+.stars {
   display: flex;
   align-items: center;
 }
