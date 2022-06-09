@@ -1,4 +1,4 @@
-rootURL: https://dvc.org
+rootURL: https://iterative.ai
 fileIncludePatterns: '{.github,content,src}/**/*!(.test).{css,js,jsx,md,tsx,ts,json}'
 fileExcludePatternFile: config/link-check/excluded-files.yml
 linkExcludePatternFile: config/link-check/excluded-links.yml
