@@ -16,13 +16,13 @@ def deploy(
 ) -> MlemDeploy
 ```
 
-### Usage:
-
-```py
-from mlem.api import deploy
-
-#TODO
-```
+[//]: # '### Usage:'
+[//]: #
+[//]: # '```py'
+[//]: # 'from mlem.api import deploy'
+[//]: #
+[//]: # '#TODO'
+[//]: # '```'
 
 ## Description
 
@@ -49,10 +49,10 @@ provides a programmatic way to create deployments for a target environment.
 - `MlemObjectNotFound` - Thrown if we can't find MLEM object
 - `ValueError` - Please provide model and env args for new deployment
 
-## Examples
-
-```py
-from mlem.api import deploy
-
-#TODO
-```
+[//]: # (## Examples)
+[//]: # ()
+[//]: # (```py)
+[//]: # (from mlem.api import deploy)
+[//]: # ()
+[//]: # (#TODO)
+[//]: # (```)
