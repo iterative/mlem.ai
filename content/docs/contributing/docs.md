@@ -9,10 +9,6 @@ In case of a minor change, you can use the **Edit on GitHub** button to open the
 source code page. Use the Edit button (pencil icon) to edit the file in-place,
 and then **Commit changes** from the bottom of the page.
 
-[good link](https://www.google.com) [bad link](https://www.google.com/asdffff)
-[other bad link](www.google.com/asdffff) [nonsense link](asdffffss)
-[other good link](www.google.com)
-
 > Please see our
 > [Writing a Blog Post guide](https://dvc.org/doc/user-guide/contributing/blog)
 > for more details on how to write and submit a new blog post.
