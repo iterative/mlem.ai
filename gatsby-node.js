@@ -52,12 +52,3 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     createNode(node)
   })
 }
-
-exports.createPages = ({ actions }) => {
-  const { createRedirect } = actions
-  createRedirect({
-    fromPath: '/chat',
-    toPath: 'https://discord.gg/vupEEYd7zh',
-    isPermanent: true
-  })
-}

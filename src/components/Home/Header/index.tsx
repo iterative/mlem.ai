@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import cn from 'classnames'
+
+import GithubLine from './GithubLine'
 import Terminal from '../Terminal'
 import Button from '../../Button'
 import tensorflowLogo from '../../../images/logo/tensorflow.png'
@@ -257,6 +259,9 @@ const Header: React.FC = () => {
           <Button href="/doc/install" className={styles.button} theme="ghost">
             Install
           </Button>
+        </div>
+        <div>
+          <GithubLine />
         </div>
       </div>
       <ul className={styles.header__logos}>

@@ -1,0 +1,44 @@
+.githubLine {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 16px 4px;
+  @media (min-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.githubLogo {
+  margin-right: 9px;
+  font-weight: 500;
+}
+
+.link {
+  margin-left: 0.3em;
+  font-weight: 500;
+  @apply text-gray-600 underline;
+
+  &:focus,
+  &:visited {
+    @apply text-gray-600;
+  }
+
+  &:hover {
+    @apply text-gray-800;
+  }
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+.star {
+  margin-top: -1px;
+  margin-left: 7px;
+}
+
+.count {
+  margin-left: 7px;
+  font-weight: 500;
+}
