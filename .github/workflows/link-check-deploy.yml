@@ -1,0 +1,22 @@
+name: Check new links against deployment
+# This workflow "triggers" and skips on deployment because GitHub Actions /
+# Checks refuses to show the check on deployment_status
+on:
+  - deployment_status
+jobs:
+  run:
+    name: Link Check
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Check Links
+        id: check
+        run:
+          'npx repo-link-check -c config/link-check/config.yml -d main -f -r
+          "${{ github.event.deployment.payload.web_url }}"'

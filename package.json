@@ -12,7 +12,11 @@
     "format": "prettier --write \"**/*.{js,json,css,md}\"",
     "lint-ts": "tsc && eslint --ext .js,.tsx,.ts,.json",
     "check-format": "prettier -c \"**/*.{js,json,css,md}\"",
-    "check-format-and-lint": "npm-run-all format lint-ts"
+    "check-format-and-lint": "npm-run-all format lint-ts",
+    "link-check": "repo-link-check -c config/link-check/config.yml",
+    "link-check-diff": "repo-link-check -c config/link-check/config.yml -d",
+    "link-check-dev-server": "repo-link-check -c config/link-check/config.yml -r http://localhost:3000",
+    "link-check-exclude": "repo-link-check -c config/link-check/config.yml --unusedPatternsOnly"
   },
   "dependencies": {
     "@dvcorg/gatsby-theme-iterative": "^0.1.5",
@@ -46,6 +50,7 @@
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "serve-handler": "^6.1.3",
+    "repo-link-check": "^0.11.0",
     "tailwindcss": "3.0.23",
     "typed.js": "^2.0.12"
   },
