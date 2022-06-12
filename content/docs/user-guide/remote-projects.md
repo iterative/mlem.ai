@@ -32,7 +32,7 @@ Models:
 
 Here, the project being considered is the one we're currently in.
 
-But one can list objects inside a remote Git repository as well, without
+But it's also easy to list objects inside a remote Git repository, without
 the need of cloning it.
 
 ```cli
@@ -60,14 +60,16 @@ model = load(
 
 ## Cloning objects
 
-One can also download the object to local disk so as to use it later
+You can easily download the object to your local machine so as to use it later
 using the `clone` command.
 
 ```cli
 $ mlem clone https://github.com/iterative/example-mlem-get-started/rf ml_model
 ```
 
-The other way to do this is to run
+Here's another alternative for the `clone` command, explicitly stating the git
+branch (`rev`) and separating the repository url of the remote project,
+from the model name inside it:
 
 ```cli
 $ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main ml_model
@@ -94,8 +96,8 @@ $ git push
 
 MLEM can also be used with any cloud/remote supported by
 [fsspec](https://filesystem-spec.readthedocs.io/en/latest/api.html#built-in-implementations),
-e.g. s3. This is useful in scenarios where one may want to store objects in some remote location
-without the need to version them.
+e.g. s3. This is useful in scenarios where objects are stored in a remote location
+without the need to version them (otherwise we strongly recommend to use [DVC](https://dvc.org/doc/use-cases/versioning-data-and-model-files))
 
 To do so, one can use paths with the corresponding file system protocol & path such as
 `s3://<bucket>/`
@@ -108,7 +110,7 @@ $ mlem clone rf s3://example-mlem-get-started/rf
 💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
 ```
 
-This model can now be loaded via API or can be used in CLI commands just like if it
+This model can now be loaded via API or can be used in CLI commands as though it
 existed locally:
 
 ```py
