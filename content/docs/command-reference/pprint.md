@@ -55,8 +55,8 @@ $ mlem pprint rf
 ## Example: Showing remote data
 
 ```cli
-$ mlem pprint https://raw.githubusercontent.com/iterative/example-mlem-get-started/4-pack/.mlem/data/iris.csv
-⏳️ Loading meta from https://raw.githubusercontent.com/iterative/example-mlem-get-started/4-pack/.mlem/data/iris.csv.mlem
+$ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv --rev 4-pack
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/4-pack/.mlem/data/iris.csv.mlem
 {'artifacts': {'data': {'hash': '45109f850511f9474665f2c26f4c79f3',
                         'size': 2470,
                         'uri': 'iris.csv'}},
