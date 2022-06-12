@@ -63,8 +63,8 @@ Execute the above script, and inspect the produced files:
 
 ```cli
 $ python prepare.py
-$ tree .mlem/dataset/
-.mlem/dataset/
+$ tree .mlem/data
+.mlem/data
 ├── test_x.csv
 ├── test_x.csv.mlem
 ├── test_y.csv
@@ -78,7 +78,7 @@ about it. You can, of course, easily inspect the contents of these files,
 starting with the CSV representing the DataFrame's contents:
 
 ```cli
-$ head -5 .mlem/dataset/train.csv
+$ head -5 .mlem/data/train.csv
 ,sepal length (cm),sepal width (cm),petal length (cm),petal width (cm),target
 4,5.0,3.6,1.4,0.2,0
 32,5.2,4.1,1.5,0.1,0
@@ -86,7 +86,7 @@ $ head -5 .mlem/dataset/train.csv
 85,6.0,3.4,4.5,1.6,1
 ```
 
-> `$ cat .mlem/dataset/train.csv.mlem`
+> `$ cat .mlem/data/train.csv.mlem`
 
 ```yaml
 artifacts:
@@ -94,31 +94,49 @@ artifacts:
     hash: add43029d2b464d0884a7d3105ef0652
     size: 2459
     uri: train.csv
-object_type: dataset
+data_type:
+  columns:
+  - ''
+  - sepal length (cm)
+  - sepal width (cm)
+  - petal length (cm)
+  - petal width (cm)
+  - target
+  dtypes:
+  - int64
+  - float64
+  - float64
+  - float64
+  - float64
+  - int64
+  index_cols:
+  - ''
+  type: dataframe
+object_type: data
 reader:
-  dataset_type:
+  data_type:
     columns:
-      - ''
-      - sepal length (cm)
-      - sepal width (cm)
-      - petal length (cm)
-      - petal width (cm)
-      - target
+    - ''
+    - sepal length (cm)
+    - sepal width (cm)
+    - petal length (cm)
+    - petal width (cm)
+    - target
     dtypes:
-      - int64
-      - float64
-      - float64
-      - float64
-      - float64
-      - int64
+    - int64
+    - float64
+    - float64
+    - float64
+    - float64
+    - int64
     index_cols:
-      - ''
+    - ''
     type: dataframe
   format: csv
   type: pandas
 requirements:
-  - module: pandas
-    version: 1.4.2
+- module: pandas
+  version: 1.4.2
 ```
 
 The metadata file has data schema and library requirements for the data that was saved.
