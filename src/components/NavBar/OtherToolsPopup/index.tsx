@@ -40,7 +40,7 @@ const otherToolsPopupData: Array<{
     titleImg: VsCodeSVG,
     icon: () => <div></div>,
     description: 'Local ML model development and experiment tracking',
-    href: 'https://dvc.org/'
+    href: 'https://marketplace.visualstudio.com/items?itemName=Iterative.dvc'
   },
   {
     title: 'CML',
