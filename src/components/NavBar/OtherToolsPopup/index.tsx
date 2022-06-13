@@ -39,7 +39,7 @@ const otherToolsPopupData: Array<{
     title: 'VS Code Extension',
     titleImg: VsCodeSVG,
     icon: () => <div></div>,
-    description: 'Open-source version control system for ML projects',
+    description: 'Local ML model development and experiment tracking',
     href: 'https://dvc.org/'
   },
   {
