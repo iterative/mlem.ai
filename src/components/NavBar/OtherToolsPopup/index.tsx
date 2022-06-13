@@ -6,6 +6,7 @@ import { ReactComponent as CmlSVG } from '../../../images/icons/cml.svg'
 import { ReactComponent as MlemSVG } from '../../../images/icons/mlem.svg'
 import { ReactComponent as ExternalLinkSVG } from '../../../images/icons/external-link.svg'
 import { ReactComponent as DownSVG } from '../../../images/icons/down.svg'
+import { ReactComponent as VsCodeSVG } from '../../../images/icons/vscode.svg'
 import SmartLink from '../../SmartLink'
 import * as styles from './index.module.css'
 import usePopup from '../../../utils/hooks/usePopup'
@@ -17,7 +18,8 @@ interface IOtherToolsPopupProps {
 
 const otherToolsPopupData: Array<{
   title: string
-  icon: React.FC<React.SVGProps<SVGSVGElement>>
+  titleImg?: React.FC<React.SVGProps<SVGSVGElement>>
+  icon: React.FC<React.SVGProps<SVGSVGElement>> | React.FC
   description: string
   href: string
 }> = [
@@ -30,6 +32,13 @@ const otherToolsPopupData: Array<{
   {
     title: 'DVC',
     icon: DvcSVG,
+    description: 'Open-source version control system for ML projects',
+    href: 'https://dvc.org/'
+  },
+  {
+    title: 'VS Code Extension',
+    titleImg: VsCodeSVG,
+    icon: () => <div></div>,
     description: 'Open-source version control system for ML projects',
     href: 'https://dvc.org/'
   },
@@ -78,17 +87,20 @@ const OtherToolsPopup: React.FC<IOtherToolsPopupProps> = ({
         )}
       >
         {otherToolsPopupData.map(
-          ({ title, icon: Icon, description, href }, i) => (
+          ({ title, icon: Icon, description, href, titleImg: TitleImg }, i) => (
             <SmartLink
               key={i}
               href={href}
               className={styles.link}
               onClick={otherToolsPopup.close}
             >
-              <Icon width={16} height={16} className={styles.link__icon} />
+              {<Icon width={16} height={16} className={styles.link__icon} />}
               <h2 className={styles.link__title}>
                 {title}
-                {/^https?:\/\//.test(href) && <ExternalLinkSVG />}
+                {TitleImg && <TitleImg />}
+                {/^https?:\/\//.test(href) && (
+                  <ExternalLinkSVG className={styles.link__titleLinkIcon} />
+                )}
               </h2>
               <p className={styles.link__description}>{description}</p>
             </SmartLink>
