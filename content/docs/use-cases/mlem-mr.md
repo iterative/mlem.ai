@@ -29,7 +29,7 @@ Let's build an example using
 That repo already have some models in it:
 
 ```cli
-$ mlem ls https://github.com/iterative/example-mlem-get-started/tree/simple
+$ mlem ls https://github.com/iterative/example-mlem-get-started --rev simple
 ```
 
 ```yaml
@@ -58,11 +58,11 @@ Let's create some links to them:
 
 ```cli
 $ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev simple rf first-model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/simple/.mlem/model/rf.mlem
 💾 Saving link to .mlem/link/first-model.mlem
 
-$ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev 7-deploy-meta rf second-model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/7-deploy-meta/.mlem/model/rf.mlem
+$ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev 5-deploy-meta rf second-model
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta/.mlem/model/rf.mlem
 💾 Saving link to .mlem/link/second-model.mlem
 ```
 
