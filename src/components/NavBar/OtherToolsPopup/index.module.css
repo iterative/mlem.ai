@@ -64,10 +64,18 @@
     @apply text-gray-900 text-lg leading-8 font-medium;
 
     svg {
+      margin-left: 4px;
+      margin-bottom: 2px;
+      width: 14px;
+      height: 14px;
+    }
+
+    &LinkIcon {
       opacity: 0;
       width: 16px;
       height: 16px;
       margin-left: 8px;
+      margin-bottom: 0;
 
       path {
         fill: currentColor;

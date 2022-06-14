@@ -12,6 +12,26 @@
   padding: 0 16px;
   flex: 0 0 var(--layout-alert-height);
 
+  .text {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .textSvg {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+
   &.collapsed {
     height: 0;
     flex-basis: 0;
