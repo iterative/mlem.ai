@@ -29,22 +29,20 @@ Let's build an example using
 That repo already have some models in it:
 
 ```cli
-$ mlem ls https://github.com/iterative/example-mlem-get-started
+$ mlem ls https://github.com/iterative/example-mlem-get-started --rev simple
 ```
 
 ```yaml
-Datasets:
-  - test_x.csv
-  - test_y.csv
-  - train.csv
-Models:
-  - rf
+Builders:
+  - pip_config
 Deployments:
   - myservice
-Packagers:
-  - pip_config
 Envs:
   - staging
+Models:
+  - rf
+Data:
+  - iris.csv
 ```
 
 Let's create new repo first:
@@ -59,12 +57,12 @@ $ mlem init
 Let's create some links to them:
 
 ```cli
-$ mlem link --sr https://github.com/iterative/example-mlem-get-started --rev main rf first-model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
+$ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev simple rf first-model
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/simple/.mlem/model/rf.mlem
 💾 Saving link to .mlem/link/first-model.mlem
 
-$ mlem link --sr https://github.com/iterative/example-mlem-get-started --rev 7-deploy-meta rf second-model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/7-deploy-meta/.mlem/model/rf.mlem
+$ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev 5-deploy-meta rf second-model
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta/.mlem/model/rf.mlem
 💾 Saving link to .mlem/link/second-model.mlem
 ```
 
