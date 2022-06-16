@@ -4,45 +4,33 @@
 
 ### ⚙️ Expand for setup instructions
 
-If you want to follow along with this tutorial and try MLEM, you can use our
-[example repo](https://github.com/iterative/example-mlem-get-started). You'll
-need to [fork] it first. Then clone it locally:
-
-[fork]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
-
-```cli
-$ git clone <your fork>
-$ cd example-mlem-get-started
-```
-
-Next let's create an isolated virtual environment to cleanly install all the
-requirements (including MLEM) there:
+You may need to create an isolated virtual environment to cleanly install all
+the requirements (including MLEM) there:
 
 ```cli
 $ python3 -m venv .venv
 $ source .venv/bin/activate
-$ pip install -r requirements.txt
+$ pip install mlem sklearn pandas
 ```
 
 </details>
 
-To use data within the MLEM context, so that it is compatible with other operations
-such as [mlem apply](/doc/command-reference/apply), one needs to save it as a
-[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
+To use data within the MLEM context, so that it is compatible with other
+operations such as [mlem apply](/doc/command-reference/apply), one needs to save
+it as a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
 
 ## Saving data with MLEM
 
-MLEM can save existing data objects using the [mlem.api.save()](/doc/api-reference/save) API.
+MLEM can save existing data objects using the
+[mlem.api.save()](/doc/api-reference/save) API.
 
-As an example, we load the well-known IRIS dataset with `sklearn`, and then save parts of it
-locally using MLEM.
+As an example, we load the well-known IRIS dataset with `sklearn`, and then save
+parts of it locally using MLEM.
 
-> Consider this `prepare.py` file:
+Consider this `prepare.py` file:
 
 ```py
 #!/usr/bin/env python
-
-
 from mlem.api import save
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -62,6 +50,7 @@ if __name__ == "__main__":
 Execute the above script, and inspect the produced files:
 
 ```cli
+$ mlem init
 $ python prepare.py
 $ tree .mlem/data
 .mlem/data
@@ -73,9 +62,9 @@ $ tree .mlem/data
 └── train.csv.mlem
 ```
 
-Clearly, every DataFrame was saved along with some metadata
-about it. You can, of course, easily inspect the contents of these files,
-starting with the CSV representing the DataFrame's contents:
+Clearly, every DataFrame was saved along with some metadata about it. You can,
+of course, easily inspect the contents of these files, starting with the CSV
+representing the DataFrame's contents:
 
 ```cli
 $ head -5 .mlem/data/train.csv
@@ -86,9 +75,8 @@ $ head -5 .mlem/data/train.csv
 85,6.0,3.4,4.5,1.6,1
 ```
 
-> `$ cat .mlem/data/train.csv.mlem`
-
 ```yaml
+$ cat .mlem/data/train.csv.mlem
 artifacts:
   data:
     hash: add43029d2b464d0884a7d3105ef0652
@@ -139,9 +127,12 @@ requirements:
   version: 1.4.2
 ```
 
-The metadata file has data schema and library requirements for the data that was saved.
-Through this, MLEM knows that it needs pandas to load the data. One can of course load
-the data in other ways outside the MLEM context as well.
+The metadata file has data schema and library requirements for the data that was
+saved. Through this, MLEM knows that it needs pandas to load the data. One can
+of course load the data in other ways outside the MLEM context as well.
 
-But this approach allows us to NOT explicitly specify if the saved data was `pd.DataFrame`,
-`np.array` or `tf.Tensor`. MLEM figures this out and this handy magic also extends to ML models 👋
+This approach allows us to NOT explicitly specify if the saved data was
+`pd.DataFrame`, `np.array` or `tf.Tensor`. MLEM figures this out and this handy
+magic also extends to ML models: when you run
+`mlem.api.save(mymodel, "mymodel", sample_data=X)`, MLEM will investigate `X` to
+find out the data schema input for the model 👋
