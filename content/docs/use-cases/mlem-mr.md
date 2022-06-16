@@ -34,15 +34,15 @@ $ mlem ls https://github.com/iterative/example-mlem-get-started --rev simple
 
 ```yaml
 Builders:
- - pip_config
+  - pip_config
 Deployments:
- - myservice
+  - myservice
 Envs:
- - staging
+  - staging
 Models:
- - rf
+  - rf
 Data:
- - iris.csv
+  - iris.csv
 ```
 
 Let's create new repo first:
