@@ -1,0 +1,27 @@
+.searchArea {
+  padding-top: 20px;
+  height: 60px;
+  z-index: 10;
+  position: sticky;
+  top: var(--layout-header-height);
+
+  @media (--xs-scr) {
+    position: relative;
+    padding: 10px 20px 0;
+    top: 0;
+  }
+
+  button {
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-left: 0px;
+
+    @media (min-width: 751px) {
+      width: 240px;
+      border: solid 1px var(--color-lighter-blue);
+      background-color: #fff;
+    }
+  }
+}
