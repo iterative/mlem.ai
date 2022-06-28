@@ -100,19 +100,6 @@ const plugins = [
   'gatsby-plugin-meta-redirect'
 ]
 
-process.env.GITHUB_TOKEN &&
-  plugins.push({
-    resolve: 'gatsby-source-graphql',
-    options: {
-      typeName: 'GitHub',
-      fieldName: 'github',
-      url: 'https://api.github.com/graphql',
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`
-      }
-    }
-  })
-
 module.exports = {
   plugins,
   siteMetadata
