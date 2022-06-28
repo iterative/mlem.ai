@@ -80,7 +80,7 @@ exports.createResolvers = async ({ createResolvers }) => {
             const query = await graphql(
               `
                 {
-                  repository(owner: "iterative", name: "dvc") {
+                  repository(owner: "iterative", name: "mlem") {
                     stargazers {
                       totalCount
                     }
