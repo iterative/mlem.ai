@@ -52,3 +52,49 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     createNode(node)
   })
 }
+
+exports.createSchemaCustomization = async ({
+  actions: { createTypes },
+  schema
+}) => {
+  createTypes(
+    schema.buildObjectType({
+      name: 'StaticGithubData',
+      fields: {
+        stars: 'String!'
+      }
+    })
+  )
+}
+
+exports.createResolvers = async ({ createResolvers }) => {
+  createResolvers({
+    Query: {
+      staticGithubData: {
+        type: 'StaticGithubData',
+        async resolve() {
+          console.log('Resolving GitHub Data')
+          const { GITHUB_TOKEN } = process.env
+          if (GITHUB_TOKEN) {
+            const query = await graphql(
+              `
+                {
+                  repository(owner: "iterative", name: "dvc") {
+                    stargazers {
+                      totalCount
+                    }
+                  }
+                }
+              `,
+              { headers: { authorization: `token ${GITHUB_TOKEN}` } }
+            )
+
+            const stars = query.repository.stargazers.totalCount
+            return { stars }
+          }
+          return { stars: 8888 }
+        }
+      }
+    }
+  })
+}
