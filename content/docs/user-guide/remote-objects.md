@@ -16,7 +16,7 @@ operations apply to any [object type] and location.
 ## Listing objects
 
 You can list MLEM objects inside a remote MLEM projects (Git repo) with
-`mlem list`. There's no need to clone it.
+`mlem list`. There's no need to clone the repo.
 
 ```cli
 $ mlem list \
@@ -55,7 +55,7 @@ model = load(
 This fetches the `rf` model [form branch `simple`] of the
 `example-mlem-get-started` repo and loads it to memory.
 
-[form the `simple` branch]:
+[form branch `simple`]:
   https://github.com/iterative/example-mlem-get-started/tree/simple/.mlem/model
 
 ## Downloading objects

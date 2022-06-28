@@ -63,47 +63,47 @@ artifacts:
     uri: train.csv
 data_type:
   columns:
-  - ''
-  - sepal length (cm)
-  - sepal width (cm)
-  - petal length (cm)
-  - petal width (cm)
-  - target
-  dtypes:
-  - int64
-  - float64
-  - float64
-  - float64
-  - float64
-  - int64
-  index_cols:
-  - ''
-  type: dataframe
-object_type: data
-reader:
-  data_type:
-    columns:
     - ''
     - sepal length (cm)
     - sepal width (cm)
     - petal length (cm)
     - petal width (cm)
     - target
-    dtypes:
+  dtypes:
     - int64
     - float64
     - float64
     - float64
     - float64
     - int64
-    index_cols:
+  index_cols:
     - ''
+  type: dataframe
+object_type: data
+reader:
+  data_type:
+    columns:
+      - ''
+      - sepal length (cm)
+      - sepal width (cm)
+      - petal length (cm)
+      - petal width (cm)
+      - target
+    dtypes:
+      - int64
+      - float64
+      - float64
+      - float64
+      - float64
+      - int64
+    index_cols:
+      - ''
     type: dataframe
   format: csv
   type: pandas
 requirements:
-- module: pandas
-  version: 1.4.2
+  - module: pandas
+    version: 1.4.2
 ```
 
 MLEM now "knows" that it needs `pandas` to load the data -- You don't have to
