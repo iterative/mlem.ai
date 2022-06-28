@@ -1,5 +1,6 @@
 const Prism = require('prismjs')
 const loadLanguages = require('prismjs/components/')
+const { graphql } = require('@octokit/graphql')
 
 const terminalSlides = require('./content/home-slides')
 
