@@ -34,7 +34,7 @@ Envs:
 A MLEM project is required as target for `mlem list`. The other operations
 (below) work with loose MLEM objects as well.
 
-<admon>
+</admon>
 
 ## Loading objects (API)
 
