@@ -1,42 +1,34 @@
-# Working with remote projects and objects
+# Working with Remote Objects and Projects
 
-MLEM objects could be saved in different locations, such as Git repositories,
-cloud object buckets, local directories, etc. In this section, we will discuss
-how to work with remote Git repositories and cloud buckets, but the same logic
-extends to other locations.
+[MLEM objects] can live in different locations, such as Git repositories, cloud
+object storage, local directories, etc. In this page we will discuss how to work
+with remote objects (Git, cloud), but the same logic extends to other locations.
 
-In our examples MLEM projects will exist in those locations, although it's
-required for `mlem list` only. Other commands such as `mlem clone`,
-`mlem apply`, and `mlem.api.load()` will work as they should whether there is a
-MLEM project or not.
+[mlem objects]: /doc/user-guide/basic-concepts#mlem-objects
 
 ## Listing objects
 
-Models and Data stored inside MLEM projects can be listed with
-[mlem list](/doc/command-reference/list).
-
-Let's list objects inside a remote Git example repository, without the need of
-cloning it.
+You can list MLEM objects inside a remote MLEM projects (Git repo) with
+`mlem list`. There's no need to clone it.
 
 ```cli
-$ mlem list https://github.com/iterative/example-mlem-get-started \
-  --rev simple
-```
-
-Which gives us:
-
-```
-Builders:
- - pip_config
-Data:
- - iris.csv
-Models:
- - rf
+$ mlem list \
+       https://github.com/iterative/example-mlem-get-started \
+       --rev simple
 Deployments:
  - myservice
+Models:
+ - rf
 Envs:
  - staging
 ```
+
+<admon type="note">
+
+A MLEM project is required as target for `mlem list`. The other operations
+(below) work with loose MLEM objects as well.
+
+<admon>
 
 ## Loading objects
 
