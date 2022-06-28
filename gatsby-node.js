@@ -74,7 +74,6 @@ exports.createResolvers = async ({ createResolvers }) => {
       staticGithubData: {
         type: 'StaticGithubData',
         async resolve() {
-          console.log('Resolving GitHub Data')
           const { GITHUB_TOKEN } = process.env
           if (GITHUB_TOKEN) {
             const query = await graphql(
