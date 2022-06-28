@@ -83,7 +83,7 @@ It's also possible to (down)load loose MLEM objects stored in any cloud platform
 [supported by `fsspec`], e.g. Amazon S3. To do so, provide the file system
 protocol & path as target/URL, e.g. `s3://<bucket>/`
 
-<admon type"=tip">
+<admon type="tip">
 
 Loose objects are typically stored this way because they do not require
 [versioning].
