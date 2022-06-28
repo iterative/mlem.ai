@@ -92,7 +92,7 @@
       {
         "slug": "remote-projects",
         "label": "Working with Remote Objects",
-        "source": "user-guide/remote-projects.md"
+        "source": "user-guide/remote-objects.md"
       },
       {
         "slug": "configuration",
