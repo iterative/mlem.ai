@@ -1,8 +1,14 @@
 # Working with Remote Objects and Projects
 
-[MLEM objects] can live in different locations, such as Git repositories, cloud
-object storage, local directories, etc. In this page we will discuss how to work
-with remote objects (Git, cloud), but the same logic extends to other locations.
+[MLEM objects] (models, data, etc.) can live in different locations such as Git
+repositories, cloud object storage, local directories, etc.
+
+<admon type="note">
+
+In this page we will work with objects in Git repos, but the same operations
+apply to any location.
+
+</admon>
 
 [mlem objects]: /doc/user-guide/basic-concepts#mlem-objects
 
@@ -30,10 +36,10 @@ A MLEM project is required as target for `mlem list`. The other operations
 
 <admon>
 
-## Loading objects
+## Loading objects (API)
 
-One can use URL addresses to load objects (models, data, etc.) from remote
-repositories directly:
+You can load objects from remote locations inside Python code with
+`mlem.api.load()` by using an object name and its URL.
 
 ```py
 from mlem.api import load
@@ -44,6 +50,11 @@ model = load(
     rev="simple"
 )
 ```
+
+This loads the `rf` model to memory. Note that no knowledge of the data type is
+needed because this is already [codified in the MLEM object]'s metadata!
+
+[codified in the MLEM object]: /doc/user-guide/data#saving-data-with-mlem
 
 ## Cloning objects
 
@@ -93,14 +104,3 @@ $ mlem apply rf \
   test_x.csv --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
-
-## Summary
-
-Working with remote projects and objects have several different use-cases, some
-of which we covered above:
-
-1. List different MLEM objects (models, data) in remote MLEM projects.
-2. Load objects (models, data) from remote Git repositories directly into Python
-   runtime.
-3. Clone objects (models, data) from remote Git repositories.
-4. Initialize MLEM project in a remote bucket and use it.
