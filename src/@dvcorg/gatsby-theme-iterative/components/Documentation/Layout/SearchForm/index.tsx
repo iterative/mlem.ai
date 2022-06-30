@@ -27,8 +27,8 @@ const SearchForm: React.FC = props => {
           if (window.docsearch) {
             window.docsearch({
               appId: 'MY83GIY4K1',
-              apiKey: '3167487c02cc2d86a6ef55e1aaf1839a',
-              indexName: 'mlemai',
+              apiKey: '4c0d424a60409151bc9d711068cfedfe',
+              indexName: 'mlemai_doc',
               inputSelector: '#doc-search',
               debug: false // Set to `true` if you want to inspect the dropdown
             })
@@ -38,8 +38,8 @@ const SearchForm: React.FC = props => {
       } else {
         window.docsearch({
           appId: 'MY83GIY4K1',
-          apiKey: '3167487c02cc2d86a6ef55e1aaf1839a',
-          indexName: 'mlemai',
+          apiKey: '4c0d424a60409151bc9d711068cfedfe',
+          indexName: 'mlemai_doc',
           inputSelector: '#doc-search',
           debug: false // Set to `true` if you want to inspect the dropdown
         })
