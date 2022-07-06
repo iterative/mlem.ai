@@ -6,7 +6,7 @@ FastAPI server. All available server implementations are listed
 
 ## Running server
 
-To start up FastAPI server simply run:
+To start up FastAPI server run:
 
 ```cli
 $ mlem serve rf fastapi
