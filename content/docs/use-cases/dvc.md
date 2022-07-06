@@ -93,8 +93,9 @@ can process your data and train your model. You may be already training your ML
 models in them and what to start using MLEM to save those models.
 
 MLEM could be easily plug in into existing DVC pipelines. You'll need to mark
-`.mlem` files as `cache: false` [outputs] of a pipelines stage. [outputs]:
-https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields
+`.mlem` files as `cache: false`
+[outputs](https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields)
+of a pipelines stage.
 
 ## Example
 
