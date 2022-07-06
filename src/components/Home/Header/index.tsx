@@ -30,7 +30,7 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
   },
   {
     bold: 'Deploy models anywhere you want.',
-    text: 'Switch between deployment platform with a single command.'
+    text: 'Switch between deployment platforms with a single command.'
   },
   {
     bold: 'Make Git a Model Registry',
