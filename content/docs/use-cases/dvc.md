@@ -99,10 +99,12 @@ https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfield
 ## Example
 
 Let's continue using the example from above. First, let's stop tracking the
-artifact `.mlem/model/rf` in DVC.
+artifact `.mlem/model/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
 
 ```dvc
 $ dvc remove .mlem/model/rf.dvc
+# we can just delete the file since there are no other records beside one we added above:
+$ git rm .dvcignore
 ```
 
 Now let's create a simple pipeline to train your model:
