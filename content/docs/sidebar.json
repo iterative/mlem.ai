@@ -87,12 +87,12 @@
       {
         "slug": "data",
         "label": "Working with data",
-        "source": "user-guide/data.md"
+        "source": "data.md"
       },
       {
         "slug": "remote-projects",
         "label": "Working with remote projects and objects",
-        "source": "user-guide/remote-projects.md"
+        "source": "remote-projects.md"
       },
       {
         "slug": "configuration",
