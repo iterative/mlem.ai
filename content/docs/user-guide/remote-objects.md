@@ -15,7 +15,7 @@ operations apply to any [object type] and location.
 
 ## Listing objects
 
-You can list MLEM objects inside a remote MLEM projects (Git repo) with
+You can list MLEM objects inside a remote MLEM project in a Git repo with
 `mlem list`. There's no need to clone the repo.
 
 ```cli
@@ -33,7 +33,7 @@ Envs:
 <admon type="note">
 
 A MLEM project is required as target for `mlem list`. The other operations
-(below) work with loose MLEM objects as well.
+(below) work with loose MLEM objects (not in a MLEM project) as well.
 
 </admon>
 
@@ -91,7 +91,6 @@ Loose objects are typically stored this way because they do not require
 </admon>
 
 ```cli
-$ mlem init s3://example-mlem-get-started  # Requires S3 auth.
 $ mlem clone rf s3://example-mlem-get-started/rf
 ⏳️ Loading meta from .mlem/model/rf.mlem
 🐏 Cloning .mlem/model/rf.mlem
