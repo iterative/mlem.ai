@@ -3,33 +3,30 @@ import { useStaticQuery, graphql } from 'gatsby'
 import fetch from 'isomorphic-fetch'
 
 export default function useStars(): number | null {
-  const staticStars =
-    useStaticQuery(graphql`
-      query GithubStarsQuery {
-        github {
-          repository(name: "mlem", owner: "iterative") {
-            stargazerCount
-          }
-        }
+  const staticStars = useStaticQuery(graphql`
+    query GithubStarsQuery {
+      staticGithubData {
+        stars
       }
-    `).github.repository.stargazerCount || 888
+    }
+  `).staticGithubData.stars
 
   // Maintain an updatable state so we can update stars on delivery
   const [stars, setStars] = useState(staticStars)
 
-  // Run an IIFE to update from the server on the client side.
+  // Update on the client side
   useEffect(() => {
-    ;(async (): Promise<void> => {
-      const res = await fetch(`/api/github/stars`)
+    fetch(`/api/github/stars`).then(res => {
       if (res.status === 200) {
-        const json = await res.json()
-        setStars(json.stars)
+        res.json().then(json => {
+          setStars(json.stars)
+        })
       } else {
         console.warn(
           `Stars update response status was ${res.status}! Using static value.`
         )
       }
-    })()
+    })
   }, [])
 
   return stars

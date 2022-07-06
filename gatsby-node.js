@@ -1,5 +1,6 @@
 const Prism = require('prismjs')
 const loadLanguages = require('prismjs/components/')
+const { graphql } = require('@octokit/graphql')
 
 const terminalSlides = require('./content/home-slides')
 
@@ -50,5 +51,50 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 
     const node = Object.assign({}, formattedTerminalSlide, nodeMeta)
     createNode(node)
+  })
+}
+
+exports.createSchemaCustomization = async ({
+  actions: { createTypes },
+  schema
+}) => {
+  createTypes(
+    schema.buildObjectType({
+      name: 'StaticGithubData',
+      fields: {
+        stars: 'String!'
+      }
+    })
+  )
+}
+
+exports.createResolvers = async ({ createResolvers }) => {
+  createResolvers({
+    Query: {
+      staticGithubData: {
+        type: 'StaticGithubData',
+        async resolve() {
+          const { GITHUB_TOKEN } = process.env
+          if (GITHUB_TOKEN) {
+            const query = await graphql(
+              `
+                {
+                  repository(owner: "iterative", name: "mlem") {
+                    stargazers {
+                      totalCount
+                    }
+                  }
+                }
+              `,
+              { headers: { authorization: `token ${GITHUB_TOKEN}` } }
+            )
+
+            const stars = query.repository.stargazers.totalCount
+            return { stars }
+          }
+          return { stars: 8888 }
+        }
+      }
+    }
   })
 }
