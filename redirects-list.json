@@ -1,6 +1,8 @@
 [
-  "^https://www\\.mlem\\.ai(.*)?                                           https://mlem.ai$1",
-  "^/chat(/.*)?$                                                           https://discord.gg/vupEEYd7zh",
-  "^/(?:docs|documentation)(/.*)?$                                         /doc$1",
-  "^/(.+)/$                                                                /$1"
+  "^https://www\\.mlem\\.ai(.*)?              https://mlem.ai$1",
+  "^/chat(/.*)?$                              https://discord.gg/vupEEYd7zh",
+  "^/(?:docs|documentation)(/.*)?$            /doc$1",
+  "^/(.+)/$                                   /$1",
+
+  "^/doc/user-guide/remote-projects$          /doc/user-guide/remote-objects 302"
 ]
