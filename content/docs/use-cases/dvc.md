@@ -88,21 +88,26 @@ binaries stored in Git. MLEM will know to use DVC to load them.
 
 # Using MLEM in DVC Pipeline
 
-DVC pipelines are the useful DVC mechanism to build data pipelines, in which you
-can process your data and train your model. You may be already training your ML
-models in them and what to start using MLEM to save those models.
+[DVC pipelines](https://dvc.org/doc/start/data-management/pipelines) are the
+useful DVC mechanism to build data pipelines, in which you can process your data
+and train your model. You may be already training your ML models in them and
+what to start using MLEM to save those models.
 
 MLEM could be easily plug in into existing DVC pipelines. You'll need to mark
-`.mlem` files as `cache: false` [outputs] of a pipelines stage. [outputs]:
-https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields
+`.mlem` files as `cache: false`
+[outputs](https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields)
+of a pipelines stage.
 
 ## Example
 
 Let's continue using the example from above. First, let's stop tracking the
-artifact `.mlem/model/rf` in DVC.
+artifact `.mlem/model/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
 
 ```dvc
 $ dvc remove .mlem/model/rf.dvc
+# we can delete the file since there are no other records
+# beside one we added above:
+$ git rm .dvcignore
 ```
 
 Now let's create a simple pipeline to train your model:
