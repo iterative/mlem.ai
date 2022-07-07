@@ -21,22 +21,22 @@ interface ITypedRef {
 
 const cliCaptionData: Array<{ bold: string; text: string }> = [
   {
-    bold: 'Save your model with a single command',
-    text: 'Stick to your training workflow'
+    bold: 'Save your ML model with a Python call.',
+    text: 'Stick to your training workflow.'
   },
   {
-    bold: 'Use simple YAML file to save model metadata',
-    text: 'Use the same human-readable format for any ML framework'
+    bold: 'Model metadata is captured automatically.',
+    text: 'Use a human-readable YAML format for any ML framework.'
   },
   {
-    bold: 'Deploy your model anywhere you want',
-    text: 'Switch between deployment providers with a single command'
+    bold: 'Deploy models anywhere you want.',
+    text: 'Switch between deployment platforms with a single command.'
   },
   {
     bold: 'Make Git a Model Registry',
     text:
-      'MLEM is a core building block for a Git-based ML model registry' +
-      ', together with other Iterative tools, like GTO and DVC'
+      'MLEM is a core building block for Git-native ML model registries, ' +
+      'combined with other Iterative.ai tools like GTO or DVC.'
   }
 ]
 
