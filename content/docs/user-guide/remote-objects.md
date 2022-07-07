@@ -15,8 +15,8 @@ operations apply to any [object type] and location.
 
 ## Listing objects
 
-You can list MLEM objects inside a remote MLEM project in a Git repo with
-`mlem list`. There's no need to clone the repo.
+You can list MLEM objects inside a remote MLEM project (e.g. in a Git
+repo) with `mlem list`. There's no need to download/clone the project.
 
 ```cli
 $ mlem list \
