@@ -32,8 +32,10 @@ Envs:
 
 <admon type="note">
 
-A MLEM project is required as target for `mlem list`. The other operations
+A [MLEM project] is required as target for `mlem list`. The other operations
 (below) work with loose MLEM objects (not in a MLEM project) as well.
+
+[mlem project]: /doc/command-reference/init
 
 </admon>
 
