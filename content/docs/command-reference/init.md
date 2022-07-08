@@ -17,7 +17,10 @@ This creates a `.mlem/` directory and an empty `config.yaml` file in the desired
 project `path`, which defaults to the current working directory (`.`).
 
 The existence of a valid `.mlem/` directory in any location (including [remote])
-allows MLEM to be fully functional.
+allows MLEM to store a references to MLEM objects stored in the project,
+enabling `$ mlem list` command, and configure MLEM
+[to work with DVC](http://localhost:8000/doc/use-cases/dvc) by setting this in
+`.mlem/config.yaml`.
 
 <admon type="tip">
 
