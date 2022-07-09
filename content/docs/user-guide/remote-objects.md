@@ -16,13 +16,11 @@ operations apply to any [object type] and location.
 ## Remote MLEM projects
 
 Although you can store MLEM objects in any location such as a Git repo, Cloud
-storage, or external drives, creating a MLEM project lets you
-organize and [discover] MLEM objects consistently.
+storage, or external drives, creating a MLEM project lets you organize and
+[discover](#listing-objects) MLEM objects consistently.
 
 To create a MLEM project in a remote location, you can provide its URL or path
 to `mlem init`.
-
-[discover]: /doc/command-reference/list
 
 ## Listing objects
 
