@@ -50,7 +50,7 @@ A [MLEM project] is required as target for `mlem list`. The other operations
 
 ## Loading objects (Python)
 
-You can load objects from remote locations inside Python code with
+You can load [MLEM objects] from remote locations inside Python code with
 `mlem.api.load()` by using an object name and its URL.
 
 ```py
@@ -71,7 +71,7 @@ This fetches the `rf` model [form branch `simple`] of the
 
 ## Downloading objects
 
-You can download MLEM object files to the local environment in with `mlem clone`
+You can download MLEM objects to the local environment in with `mlem clone`
 (CLI).
 
 ```cli
@@ -90,9 +90,9 @@ This places the `rf` model [form branch `simple`] of the
 
 ## Cloud storage
 
-It's also possible to (down)load loose MLEM objects stored in any cloud platform
-[supported by `fsspec`], e.g. Amazon S3. To do so, provide the file system
-protocol & path as target/URL, e.g. `s3://<bucket>/`
+It's also possible to (down)load loose [MLEM objects] stored in any cloud
+platform [supported by `fsspec`], e.g. Amazon S3. To do so, provide the file
+system protocol & path as target/URL, e.g. `s3://<bucket>/`
 
 <admon type="tip">
 
