@@ -13,16 +13,16 @@ operations apply to any [object type] and location.
 [mlem objects]: /doc/user-guide/basic-concepts#mlem-objects
 [object type]: /doc/user-guide/basic-concepts#mlem-object-types
 
-## Initializing MLEM Project
+## Remote MLEM projects
 
-Although you can store MLEM objects in a Git repo or in a Cloud bucket without
-creating a MLEM project with `$ mlem init`, doing so enables you to organize and
-access your MLEM objects easier.
+Although you can store MLEM objects in any location such as a Git repo, Cloud
+storage, or external drives, creating a MLEM project lets you
+organize and [discover] MLEM objects consistently.
 
-This creates a `.mlem/` directory in the desired path. By default MLEM will save
-models to `.mlem/model/` and data to `.mlem/data`. If you save MLEM models
-outside of `.mlem/` folder, MLEM will store the reference to it inside `.mlem/`
-folder. This approach allows MLEM to list your MLEM objects in a project.
+To create a MLEM project in a remote location, you can provide its URL or path
+to `mlem init`.
+
+[discover]: /doc/command-reference/list
 
 ## Listing objects
 
