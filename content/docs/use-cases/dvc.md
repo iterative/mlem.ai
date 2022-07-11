@@ -22,6 +22,9 @@ $ source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
+This will install DVC with `pip`. Learn about other ways to install DVC
+[here](https://dvc.org/doc/install).
+
 </details>
 
 Often it’s a bad idea to store binary files in Git, especially big ones. To
