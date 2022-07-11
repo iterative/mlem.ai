@@ -48,15 +48,15 @@ Now, as we defined our target env, we can deploy our model there. Deployments
 are also MLEM objects, which means that they need to have their definition.
 
 To create one for Heroku, we once again will use `declare` command to configure
-our deployment. We use `example-mlem-get-started` for the app name, but you can
-change it to something unique:
+our deployment. We use `example-mlem-get-started-app` for the app name, but you
+can change it to something unique:
 
 ```cli
 $ mlem declare deployment heroku myservice \
-                         -c app_name=example-mlem-get-started \
+                         -c app_name=example-mlem-get-started-app \
                          -c model=rf \
                          -c env=staging
-💾 Saving deployment to .mlem/deployment/service_name.mlem
+💾 Saving deployment to .mlem/deployment/myservice.mlem
 ```
 
 <details>
@@ -79,20 +79,20 @@ $ mlem deployment run myservice
 🔗 Loading link to .mlem/env/staging.mlem
 🔗 Loading link to .mlem/model/rf.mlem
 💾 Updating deployment at .mlem/deployment/myservice.mlem
-🏛 Creating Heroku App example-mlem-get-started
+🏛 Creating Heroku App example-mlem-get-started-app
 💾 Updating deployment at .mlem/deployment/myservice.mlem
 🛠 Creating docker image for heroku
   💼 Adding model files...
   🛠 Generating dockerfile...
   💼 Adding sources...
   💼 Generating requirements file...
-  🛠 Building docker image registry.heroku.com/example-mlem-get-started/web...
-  ✅  Built docker image registry.heroku.com/example-mlem-get-started/web
-  🔼 Pushed image registry.heroku.com/example-mlem-get-started/web to remote registry at host registry.heroku.com
+  🛠 Building docker image registry.heroku.com/example-mlem-get-started-app/web...
+  ✅  Built docker image registry.heroku.com/example-mlem-get-started-app/web
+  🔼 Pushed image registry.heroku.com/example-mlem-get-started-app/web to remote registry at host registry.heroku.com
 💾 Updating deployment at .mlem/deployment/myservice.mlem
 🛠 Releasing app my-mlem-service formation
 💾 Updating deployment at .mlem/deployment/myservice.mlem
-✅  Service example-mlem-get-started is up. You can check it out at https://my-mlem-service.herokuapp.com/
+✅  Service example-mlem-get-started-app is up. You can check it out at https://example-mlem-get-started-app.herokuapp.com/
 ```
 
 <admon type="tip">
@@ -103,7 +103,7 @@ You can also define and run the deployment on-the-fly using `-c` options for
 ```cli
 $ mlem deployment run myservice \
                      -m model -t staging \
-                     -c app_name=example-mlem-get-started
+                     -c app_name=example-mlem-get-started-app
 ```
 
 </admon>
@@ -122,7 +122,7 @@ $ git diff 8-deploy-service
 
 ## Making requests
 
-You can go [here](http://example-mlem-get-started.herokuapp.com) and see the
+You can go [here](http://example-mlem-get-started-app.herokuapp.com) and see the
 same OpenAPI documentation. For details on it, refer to the **Serving** section.
 You can also try to do some requests:
 
@@ -130,7 +130,7 @@ You can also try to do some requests:
 from mlem.api import load
 from mlem.runtime.client.base import HTTPClient
 
-client = HTTPClient(host="http://example-mlem-get-started.herokuapp.com", port=80)
+client = HTTPClient(host="http://example-mlem-get-started-app.herokuapp.com", port=80)
 res = client.predict(load("test_x.csv"))
 ```
 
@@ -149,7 +149,7 @@ to your service instead of loading model into memory. There are two options to
 achieve this in CLI: using the service address or the deploy meta.
 
 ```cli
-$ mlem apply-remote http test_x.csv -c host=http://my-mlem-service.herokuapp.com -c port=80 --json
+$ mlem apply-remote http test_x.csv -c host=http://example-mlem-get-started-app.herokuapp.com -c port=80 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 
 $ mlem deployment apply myservice test_x.csv --json
