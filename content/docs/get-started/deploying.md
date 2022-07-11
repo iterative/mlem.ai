@@ -122,8 +122,9 @@ $ git diff 8-deploy-service
 
 ## Making requests
 
-You can go [here](http://example-mlem-get-started-app.herokuapp.com) and see the
-same OpenAPI documentation. For details on it, refer to the **Serving** section.
+The application is now live on Heroku. You can go
+[here](http://example-mlem-get-started-app.herokuapp.com) and see the same 
+OpenAPI documentation. For details on it, refer to the **Serving** section.
 You can also try to do some requests:
 
 ```py
