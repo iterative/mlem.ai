@@ -14,16 +14,16 @@ $ git checkout 1-dvc-mlem-init
 ```
 
 Next let's create an isolated virtual environment to cleanly install all the
-requirements (including MLEM) there:
+requirements (including MLEM) there.
+
+This will also install DVC with `pip`. Learn about other ways to install DVC
+[here](https://dvc.org/doc/install).
 
 ```shell
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
-
-This will install DVC with `pip`. Learn about other ways to install DVC
-[here](https://dvc.org/doc/install).
 
 </details>
 
