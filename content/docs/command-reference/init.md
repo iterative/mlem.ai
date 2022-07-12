@@ -23,8 +23,8 @@ to MLEM objects found in the project (required by `mlem list`) as well as to
 
 <admon type="tip">
 
-We recommend initializing MLEM projects inside Git repositories to track changes
-using standard Git workflows.
+We recommend initializing MLEM projects inside Git repositories to track changes and
+manage them using standard Git workflows.
 
 </admon>
 
