@@ -7,19 +7,28 @@ Initialize a MLEM project.
 ```usage
 usage: mlem init [options] [path]
 
-arguments: [PATH] Where to init project
+arguments:
+[path]      Location (file path or URL) to initialize a MLEM project
 ```
 
 ## Description
 
-The `init` command (without given `path`) defaults to the current directory for
-the path argument. This creates a `.mlem/` directory and an empty `config.yaml`
-file inside it.
+This creates a `.mlem/` directory and an empty `config.yaml` file in the desired
+project `path`, which defaults to the current working directory (`.`).
 
-Although we recommend using MLEM within a Git repository to track changes using
-the standard Git workflows, this is not required. The existence of a `.mlem/`
-directory in any path (including remote) constitutes a MLEM project, and MLEM
-will be fully functional even without incorporating Git in one's workflow.
+The existence of a valid `.mlem/` directory in any location (including [remote])
+enables all of MLEM's functions. Specifically, it allows for storing references
+to MLEM objects found in the project (required by `mlem list`) as well as to
+[integrate with DVC](/doc/use-cases/dvc).
+
+<admon type="tip">
+
+We recommend initializing MLEM projects inside Git repositories to track changes
+and manage them using standard Git workflows.
+
+</admon>
+
+[remote]: /doc/user-guide/remote-objects
 
 ## Options
 

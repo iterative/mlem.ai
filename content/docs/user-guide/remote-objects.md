@@ -13,6 +13,15 @@ operations apply to any [object type] and location.
 [mlem objects]: /doc/user-guide/basic-concepts#mlem-objects
 [object type]: /doc/user-guide/basic-concepts#mlem-object-types
 
+## Remote MLEM projects
+
+Although you can store MLEM objects in any location such as a Git repo, Cloud
+storage, or external drives, creating a MLEM project lets you organize and
+[discover](#listing-objects) MLEM objects consistently.
+
+To create a MLEM project in a remote location, you can provide its URL or path
+to `mlem init`.
+
 ## Listing objects
 
 You can list MLEM objects inside a remote MLEM project (e.g. in a Git repo) with
@@ -32,14 +41,16 @@ Envs:
 
 <admon type="note">
 
-A MLEM project is required as target for `mlem list`. The other operations
+A [MLEM project] is required as target for `mlem list`. The other operations
 (below) work with loose MLEM objects (not in a MLEM project) as well.
+
+[mlem project]: /doc/command-reference/init
 
 </admon>
 
 ## Loading objects (Python)
 
-You can load objects from remote locations inside Python code with
+You can load [MLEM objects] from remote locations inside Python code with
 `mlem.api.load()` by using an object name and its URL.
 
 ```py
@@ -60,7 +71,7 @@ This fetches the `rf` model [form branch `simple`] of the
 
 ## Downloading objects
 
-You can download MLEM object files to the local environment in with `mlem clone`
+You can download MLEM objects to the local environment in with `mlem clone`
 (CLI).
 
 ```cli
@@ -79,9 +90,9 @@ This places the `rf` model [form branch `simple`] of the
 
 ## Cloud storage
 
-It's also possible to (down)load loose MLEM objects stored in any cloud platform
-[supported by `fsspec`], e.g. Amazon S3. To do so, provide the file system
-protocol & path as target/URL, e.g. `s3://<bucket>/`
+It's also possible to (down)load loose [MLEM objects] stored in any cloud
+platform [supported by `fsspec`], e.g. Amazon S3. To do so, provide the file
+system protocol & path as target/URL, e.g. `s3://<bucket>/`
 
 <admon type="tip">
 
