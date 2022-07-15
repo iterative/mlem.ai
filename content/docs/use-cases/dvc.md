@@ -59,6 +59,7 @@ $ git add .dvcignore
 ```
 
 Now we need to stop Git from keeping already indexed binaries:
+
 ```cli
 git rm -r --cached .mlem
 ```
