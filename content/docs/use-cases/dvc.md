@@ -41,6 +41,7 @@ $ dvc remote add myremote -d /tmp/dvcstore/
 $ git add .dvc/config
 ```
 
+⛳
 [DVC Initialized](https://github.com/iterative/example-mlem-get-started/tree/7-dvc-dvc-init)
 
 Now, we also need to setup MLEM so it knows to use DVC.
@@ -58,12 +59,13 @@ $ echo "/**/?*.mlem" > .dvcignore
 $ git add .dvcignore
 ```
 
-Now we need to stop Git from keeping already indexed binaries:
+Finally, we need to stop Git from keeping already indexed binaries.
 
 ```cli
-git rm -r --cached .mlem
+$ git rm -r --cached .mlem
 ```
 
+⛳
 [Configured MLEM to work with DVC](https://github.com/iterative/example-mlem-get-started/tree/8-dvc-mlem-config)
 
 ## Saving objects
