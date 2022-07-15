@@ -4,13 +4,13 @@
 
 ### ⚙️ Expand for setup instructions
 
-If you want to follow along with this tutorial and try MLEM, you can use our
+If you want to follow along with this tutorial, you can use our
 [example repo](https://github.com/iterative/example-mlem-get-started).
 
 ```shell
 $ git clone https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
-$ git checkout 1-dvc-mlem-init
+$ git checkout 5-deploy-meta
 ```
 
 Next let's create a Python virtual environment to cleanly install all the
@@ -41,6 +41,8 @@ $ dvc remote add myremote -d /tmp/dvcstore/
 $ git add .dvc/config
 ```
 
+[DVC Initialized](https://github.com/iterative/example-mlem-get-started/tree/7-dvc-dvc-init)
+
 Now, we also need to setup MLEM so it knows to use DVC.
 
 ```cli
@@ -55,6 +57,13 @@ DVC.
 $ echo "/**/?*.mlem" > .dvcignore
 $ git add .dvcignore
 ```
+
+Now we need to stop Git from keeping already indexed binaries:
+```cli
+git rm -r --cached .mlem
+```
+
+[Configured MLEM to work with DVC](https://github.com/iterative/example-mlem-get-started/tree/8-dvc-mlem-config)
 
 ## Saving objects
 
@@ -84,7 +93,7 @@ Now, you can load MLEM objects from your repo even though there are no actual
 binaries stored in Git. MLEM will know to use DVC to load them.
 
 ⛳
-[Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/4-dvc-save-models)
+[Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/9-dvc-save-models)
 
 # Using MLEM in DVC Pipeline
 
