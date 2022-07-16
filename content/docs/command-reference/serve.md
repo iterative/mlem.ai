@@ -46,10 +46,10 @@ server
 ```cli
 $ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi --conf port=3000
 Starting fastapi server...
-💅 Adding route for /predict
-💅 Adding route for /predict_proba
-💅 Adding route for /sklearn_predict
-💅 Adding route for /sklearn_predict_proba
+🖇️ Adding route for /predict
+🖇️ Adding route for /predict_proba
+🖇️ Adding route for /sklearn_predict
+🖇️ Adding route for /sklearn_predict_proba
 Checkout openapi docs at <http://0.0.0.0:3000/docs>
 INFO:     Started server process [6083]
 INFO:     Waiting for application startup.

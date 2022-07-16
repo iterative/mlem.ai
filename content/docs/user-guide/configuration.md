@@ -20,7 +20,7 @@ config.
 - `default_external` - whether to save objects as
   [external](/docs/user-guide/project-structure#External) by default. Default is
   `False`
-- `emojis` - whether to show 💅🦉🤩🇪🇲🅾️🇯ℹ️🇸🤩🦉💅 in CLI output. Default ✅
+- `emojis` - whether to show 🖇️🦉🤩🇪🇲🅾️🇯ℹ️🇸🤩🦉🖇️ in CLI output. Default ✅
 - `additional_extensions` - comma-separated list of extension modules to
   force-load on MLEM import.
 - `autoload_exts` - turn on
