@@ -3,26 +3,25 @@
 Applying DevOps methodologies to machine learning (MLOps) and data management
 (DataOps) is increasingly common. This means resource orchestration
 (provisioning servers for model training), model testing (validating model
-inference), and model deployment, as well as monitoring and
-feedback. MLEM provides a simple way to publish or deploy your machine
-learning models with CI/CD pipelines.
+inference), and model deployment, as well as monitoring and feedback. MLEM
+provides a simple way to publish or deploy your machine learning models with
+CI/CD pipelines.
 
 - **Packaging and publishing models**: A common need is when you need to wrap
-  your ML model in a specific format and publish it in some
-  registry. Examples include turning your ML model into a Python package and
-  publishing it on PyPi, building a docker image and pushing it to DockerHub,
-  or just exporting your model to ONNX and publishing it as an artifact to
-  Artifactory.
+  your ML model in a specific format and publish it in some registry. Examples
+  include turning your ML model into a Python package and publishing it on PyPi,
+  building a docker image and pushing it to DockerHub, or just exporting your
+  model to ONNX and publishing it as an artifact to Artifactory.
 
 - **Deploying models**: Another common scenario is when you want to deploy a
-  model within a CI/CD pipeline. For this, MLEM includes a
-  number of ready-to-use integrations with popular deployment platforms.
+  model within a CI/CD pipeline. For this, MLEM includes a number of
+  ready-to-use integrations with popular deployment platforms.
 
 ## Package and publish an ML model
 
 To trigger the publishing or deploying of a new version, you usually create a
-Git tag that kicks off the CI process. To make this build process
-consistent with future deployment, you can create and commit an MLEM declaration:
+Git tag that kicks off the CI process. To make this build process consistent
+with future deployment, you can create and commit an MLEM declaration:
 
 ```cli
 $ mlem declare builder pip -c package_name=mypackagename -c target=package build-to-pip
@@ -57,12 +56,13 @@ jobs:
           sh upload_to_pypi.sh package
 ```
 
-Learn more about building (packaging) ML models [here](/doc/get-started/building).
+Learn more about building (packaging) ML models
+[here](/doc/get-started/building).
 
 ## Deploy an ML model
 
-The deployment scenario is similar. First you need to create environment
-and deployment declarations, and commit them to Git:
+The deployment scenario is similar. First you need to create environment and
+deployment declarations, and commit them to Git:
 
 ```cli
 $ mlem declare env heroku staging
