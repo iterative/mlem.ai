@@ -16,7 +16,8 @@
     "link-check": "repo-link-check -c config/link-check/config.yml",
     "link-check-diff": "repo-link-check -c config/link-check/config.yml -d",
     "link-check-dev-server": "repo-link-check -c config/link-check/config.yml -r http://localhost:3000",
-    "link-check-exclude": "repo-link-check -c config/link-check/config.yml --unusedPatternsOnly"
+    "link-check-exclude": "repo-link-check -c config/link-check/config.yml --unusedPatternsOnly",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@dvcorg/gatsby-theme-iterative": "^0.1.11",
