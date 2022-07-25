@@ -47,5 +47,6 @@ jobs:
           issue-number: ${{ steps.findPr.outputs.pr }}
           body: |
             <h1 id="link-check">Link Check Report</h1>
+
             ${{ steps.check.outputs.report }}
           edit-mode: replace
