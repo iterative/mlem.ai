@@ -29,6 +29,7 @@ jobs:
           exit 0
 
       - name: Find Current Pull Request
+        id: findPr
         uses: jwalton/gh-find-current-pr@v1.3.0
 
       - name: Find Existing Link Check Report Comment
