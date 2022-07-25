@@ -5,7 +5,6 @@ jobs:
   run:
     name: Run
     runs-on: ubuntu-latest
-    continue-on-error: true
     if:
       github.event.deployment.ref != 'main' &&
       github.event.deployment_status.state == 'success'
@@ -34,7 +33,8 @@ jobs:
 
       - name: Find Existing Link Check Report Comment
         uses: peter-evans/find-comment@v2
-        id: fc
+        id: findComment
+        continue-on-error: true
         with:
           issue-number: ${{ steps.pr-number.outputs.result }}
           comment-author: 'github-actions[bot]'
@@ -43,7 +43,7 @@ jobs:
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
+          comment-id: ${{ steps.findComment.outputs.comment-id }}
           issue-number: ${{ steps.findPr.outputs.pr }}
           body: |
             <h1 id="link-check">Link Check Report</h1>
