@@ -5,5 +5,4 @@ on:
     - cron: '0 0 * * *'
 jobs:
   run:
-    name: Check Links
     uses: iterative/link-check/.github/workflows/link-check-all.yml@master
