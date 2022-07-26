@@ -6,4 +6,4 @@ on:
 jobs:
   run:
     name: Check Links
-    uses: iterative/link-check/.github/workflows/link-check-all.yml@v0.13.0-alpha
+    uses: iterative/link-check/.github/workflows/link-check-all.yml@master
