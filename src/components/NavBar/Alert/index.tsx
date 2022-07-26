@@ -1,20 +1,21 @@
 import cn from 'classnames'
 import React from 'react'
 import SmartLink from '../../SmartLink'
-import vscodeSvg from '../../../images/icons/vscode.svg'
 
 import * as styles from './index.module.css'
 
 const Alert: React.FC<{ collapsed: boolean }> = ({ collapsed }) => (
   <div className={cn(styles.alert, collapsed && styles.collapsed)}>
     <div className={styles.text}>
-      <img className={styles.textSvg} src={vscodeSvg} alt="VS Code Logo" />
+      <span className={styles.icon} role="img" aria-label="rocket">
+        🚀
+      </span>{' '}
       <p>
-        Check out our{' '}
-        <SmartLink href="https://marketplace.visualstudio.com/items?itemName=Iterative.dvc">
-          new VS Code extension
+        New Release!{' '}
+        <SmartLink href="https://dvc.org/blog/iterative-studio-model-registry">
+          Git-backed Machine Learning Model Registry
         </SmartLink>{' '}
-        for experiment tracking and model development
+        for all your model management needs.
       </p>
     </div>
   </div>
