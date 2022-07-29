@@ -90,9 +90,9 @@
         "source": "data.md"
       },
       {
-        "slug": "remote-projects",
+        "slug": "remote-objects",
         "label": "Working with remote projects and objects",
-        "source": "remote-projects.md"
+        "source": "remote-objects.md"
       },
       {
         "slug": "configuration",

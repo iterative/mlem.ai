@@ -101,6 +101,9 @@ const plugins = [
 ]
 
 module.exports = {
+  flags: {
+    DEV_SSR: process.env.DEV_SSR
+  },
   plugins,
   siteMetadata
 }
