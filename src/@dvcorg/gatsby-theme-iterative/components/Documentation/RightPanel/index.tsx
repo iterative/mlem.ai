@@ -14,7 +14,6 @@ import { allImagesLoadedInContainer } from '@dvcorg/gatsby-theme-iterative/src/u
 
 import * as sharedStyles from '@dvcorg/gatsby-theme-iterative/src/components/Documentation/styles.module.css'
 import * as styles from './styles.module.css'
-import SmartLink from '../../../../../components/SmartLink'
 
 interface IRightPanelProps {
   headings: Array<IHeading>
@@ -208,14 +207,15 @@ const RightPanel: React.FC<IRightPanelProps> = ({
             Have a question? Join our chat, we will help you:
           </p>
 
-          <SmartLink
+          <Link
             className={cn(sharedStyles.button, styles.button)}
             href="/chat"
             target="_blank"
+            optOutPreRedirect
           >
             <i className={cn(sharedStyles.buttonIcon, styles.discordIcon)} />
             Discord Chat
-          </SmartLink>
+          </Link>
         </div>
       </div>
     </div>
