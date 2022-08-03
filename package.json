@@ -6,7 +6,6 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "dev": "gatsby develop",
-    "ssrdev": "export DEV_SSR=true && gatsby develop",
     "start": "node ./src/server/index.js",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
