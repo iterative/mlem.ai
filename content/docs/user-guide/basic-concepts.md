@@ -48,9 +48,7 @@ Each MLEM Object has an `object_type` field which determines the type of the
 object. Specific types may have additional properties, but all MLEM Objects have
 the following fields:
 
-- `description` - for storing user-provided description
 - `params` - arbitrary object with additional parameters
-- `labels` - list of string labels
 - `location` - if the object is loaded, information about where it came from
 
 You can check out what methods MLEM Objects have in

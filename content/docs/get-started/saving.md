@@ -29,7 +29,6 @@ def main():
         rf,
         "rf",
         sample_data=data,
-        description="Random Forest Classifier",
     )
 
 
