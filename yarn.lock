@@ -1091,10 +1091,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dvcorg/gatsby-theme-iterative@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@dvcorg/gatsby-theme-iterative/-/gatsby-theme-iterative-0.1.12.tgz#6768896bdae613fcfb32eeffc133440106480343"
-  integrity sha512-rp/DTJg6ATP3pX3vTg4sY0OU00BKhBnLaZIShsY5p0Fx0NCuwGxeq35zccCJE0WYGd18BuFAGmKL2cdvdPhOcQ==
+"@dvcorg/gatsby-theme-iterative@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@dvcorg/gatsby-theme-iterative/-/gatsby-theme-iterative-0.1.13.tgz#6b2da8daf56ca1599721b932bd168416e3b12621"
+  integrity sha512-WRb0ZS9tH61OQN2ou56a1LIk5/RxaBfpWcGdJxsgdCvjKqafhXAFiVEY2VibAyaXtd3JPQFSFJgN1UCpOn1V1w==
   dependencies:
     "@reach/portal" "^0.17.0"
     "@reach/router" "^1.3.4"

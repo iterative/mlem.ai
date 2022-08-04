@@ -211,6 +211,7 @@ const RightPanel: React.FC<IRightPanelProps> = ({
             className={cn(sharedStyles.button, styles.button)}
             href="/chat"
             target="_blank"
+            optOutPreRedirect
           >
             <i className={cn(sharedStyles.buttonIcon, styles.discordIcon)} />
             Discord Chat

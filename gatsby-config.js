@@ -101,6 +101,11 @@ const plugins = [
 ]
 
 module.exports = {
+  flags: {
+    DEV_SSR: ['false', 'False', false, 'FALSE'].includes(process.env.DEV_SSR)
+      ? false
+      : true
+  },
   plugins,
   siteMetadata
 }
