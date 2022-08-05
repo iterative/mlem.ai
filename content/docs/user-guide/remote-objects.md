@@ -102,7 +102,7 @@ Loose objects are typically stored this way because they do not require
 </admon>
 
 ```cli
-$ mlem clone rf s3://example-mlem-get-started/rf
+$ mlem clone s3://example-mlem-get-started/rf rf
 ⏳️ Loading meta from .mlem/model/rf.mlem
 🐏 Cloning .mlem/model/rf.mlem
 💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
