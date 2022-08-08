@@ -12,7 +12,6 @@ def save(
     index: bool = None,
     external: Optional[bool] = None,
     params: Dict[str, str] = None,
-    update: bool = False,
 ) -> MlemObject
 ```
 
@@ -43,7 +42,6 @@ systems (eg: `S3`). The function returns and saves the object as a
 - `index` (optional) - Whether to add object to mlem project index
 - `external` (optional) - Save result directly to `path` (not inside `.mlem/`)
 - `params` (optional) - arbitrary params for object
-- `update` (optional) - whether to keep old params if new values were not provided
 
 ## Exceptions
 
