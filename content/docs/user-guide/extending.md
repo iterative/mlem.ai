@@ -48,7 +48,7 @@ point key, where
 
 - `abs_name` is `MlemABC.abs_name` of the interface you are implementing
 - `type` is a value of `type` field name of your class
-- `module path` is full path to python module
+- `module path` is full path to Python module
 - `class name` is the name of your class
 
 You can see examples in MLEM's

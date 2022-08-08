@@ -1,6 +1,6 @@
 # mlem.api.load()
 
-Load python object saved by MLEM
+Load Python object saved by MLEM
 
 ```py
 def load(
@@ -24,8 +24,8 @@ loaded = load(out_path)
 
 ## Description
 
-Loads a python object from a given path. The path can belong to different file
-systems (eg: `S3`). The function returns the underlying python object saved by
+Loads a Python object from a given path. The path can belong to different file
+systems (eg: `S3`). The function returns the underlying Python object saved by
 MLEM.
 
 ## Parameters

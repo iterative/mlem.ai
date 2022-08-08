@@ -11,7 +11,7 @@ For a list of all commands, type `mlem -h`
   [mlem init](/doc/command-reference/init).
 - Save Models and Data with MLEM.
 - Load and Apply models with [mlem apply](/doc/command-reference/apply).
-- Build models into python packages or docker images with
+- Build models into Python packages or Docker images with
   [mlem build](/doc/command-reference/build).
 - Serve your models by exposing their methods as endpoints using
   [mlem serve](/doc/command-reference/serve).

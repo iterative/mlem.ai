@@ -9,7 +9,7 @@ a Docker image, or export your model into another format. For this tutorial we
 will create a pip-ready package from our model. You can see the full list of
 available builders [here](/doc/user-guide/mlem-abcs#builder).
 
-## Creating python package
+## Creating Python package
 
 To create a `build/` directory with pip package run this command:
 
@@ -34,7 +34,7 @@ quick reference you can run `mlem types builder` for list of builders and
 
 </details>
 
-## Exploring python package
+## Exploring Python package
 
 Let’s see what we’ve got
 
@@ -55,7 +55,7 @@ package. This includes sources, requirements,
 [setup.py](https://docs.python.org/3/distutils/setupscript.html), and the model
 itself.
 
-## Using python package
+## Using Python package
 
 Now you can distribute and install the package. Its code declares all the same
 methods our model had, so you can try to use it like this:

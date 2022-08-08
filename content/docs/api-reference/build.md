@@ -25,7 +25,7 @@ build("pip", "rf", target="build", package_name="example_mlem_get_started")
 This API is the underlying mechanism for the
 [mlem build](/doc/command-reference/build) command and allows us to
 programmatically create ship-able assets from MlemModels such as pip-ready
-packages, docker images, etc.
+packages, Docker images, etc.
 
 <admon type="tip">
 

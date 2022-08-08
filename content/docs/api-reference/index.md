@@ -1,6 +1,6 @@
 # Python API
 
-MLEM can be used as a python library, simply [install](/doc/install) with `pip`
+MLEM can be used as a Python library, simply [install](/doc/install) with `pip`
 or `conda`. This reference provides the details about the functions in the API
 module `mlem.api`, which can be imported in any regular way, for example:
 

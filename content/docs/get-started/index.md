@@ -90,7 +90,7 @@ explore them one by one in the next few pages:
 - **[Applying models](/doc/get-started/applying)** explains how to load and
   apply models
 - **[Exporting models (building)](/doc/get-started/building)** describes how
-  models can be built into python packages, docker images, etc.
+  models can be built into Python packages, Docker images, etc.
 - **[Serving models](/doc/get-started/serving)** shows how to create a service
   from your model
 - **[Deploying models](/doc/get-started/deploying)** shows how you can deploy

@@ -19,7 +19,7 @@ necessary `.mlem` metafiles for them. This is useful to quickly make existing
 data and model files compatible with MLEM, which then can be used in future
 operations such as `mlem apply`.
 
-This command provides a quick and easy alternative to writing python code to
+This command provides a quick and easy alternative to writing Python code to
 load those models/datasets into object for subsequent usage in MLEM context.
 
 ## Options
