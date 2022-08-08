@@ -46,7 +46,7 @@ target.
 - `target_fs` (optional) - target filesystem
 - `follow_links` (optional) - If object we read is a MLEM link, whether to load
   the actual object link points to. Defaults to True.
-- `load_value` (optional) - Load actual python object incorporated in MlemMeta
+- `load_value` (optional) - Load actual Python object incorporated in MlemMeta
   object. Defaults to False.
 - `index` (optional) - Whether to index output in .mlem directory
 - `external` (optional) - whether to put object inside mlem dir in target

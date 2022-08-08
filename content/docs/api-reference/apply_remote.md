@@ -36,7 +36,7 @@ knows how to make requests to the deployed model.
 - **`data`** (required) - Input to the model.
 - `method` (optional) - Which model method to use. If None, use the only method
   model has. If more than one is available, will fail.
-- `output` (optional) - If value is provided, assume it's path and save output
+- `output` (optional) - If value is provided, assume its path and save output
   there.
 - `target_project` (optional) - The path to project to save the results to.
 - `index` (optional) - Whether to index saved output in MLEM root folder.

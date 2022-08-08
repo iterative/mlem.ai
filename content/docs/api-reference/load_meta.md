@@ -29,9 +29,9 @@ loaded = load_meta(out_path)
 
 Loads a [MlemObject](/doc/user-guide/basic-concepts#mlem-objects) from a given
 path. This differs from [load](/doc/api-reference/load) since the latter loads
-the actual python object incorporated within MlemObject. In fact, `load` uses
+the actual Python object incorporated within MlemObject. In fact, `load` uses
 `load_meta` beneath and uses its `get_value()` method to get the underlying
-python object.
+Python object.
 
 ## Parameters
 
@@ -41,7 +41,7 @@ python object.
 - `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
 - `follow_links` (optional) - If object we read is a MLEM link, whether to load
   the actual object link points to. Defaults to True.
-- `load_value` (optional) - Load actual python object incorporated in
+- `load_value` (optional) - Load actual Python object incorporated in
   MlemObject. Defaults to False.
 - `fs` (optional) - filesystem to load from. If not provided, will be inferred
   from path

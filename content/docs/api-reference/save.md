@@ -36,7 +36,7 @@ systems (eg: `S3`). The function returns and saves the object as a
   or `fs` argument should be provided
 - `project` (optional) - path to mlem project
 - `sample_data` (optional) - If the object is a model or function, you can
-  provide input data sample, so MLEM will include it's schema in the model's
+  provide input data sample, so MLEM will include its schema in the model's
   metafile
 - `fs` (optional) - FileSystem for the `path` argument
 - `index` (optional) - Whether to add object to mlem project index

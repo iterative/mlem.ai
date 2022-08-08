@@ -31,7 +31,7 @@ images.
 
 ## Examples
 
-Build a docker image from a model
+Build a Docker image from a model
 
 ```cli
 $ mlem build mymodel docker --conf server.type=fastapi --conf image.name=myimage

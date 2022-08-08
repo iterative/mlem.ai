@@ -7,7 +7,7 @@ but soon we'll save something with MLEM to fill it up.
 
 To save models with MLEM you just need to use `mlem.api.save()` method instead
 of some other way you saved your model before. Let's take a look at the
-following python script:
+following Python script:
 
 ```py
 # train.py

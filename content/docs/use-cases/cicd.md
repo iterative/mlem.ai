@@ -10,7 +10,7 @@ CI/CD pipelines.
 - **Packaging and publishing models**: A common need is when you need to wrap
   your ML model in a specific format and publish it in some registry. Examples
   include turning your ML model into a Python package and publishing it on PyPi,
-  building a docker image and pushing it to DockerHub, or just exporting your
+  building a Docker image and pushing it to Docker Hub, or just exporting your
   model to ONNX and publishing it as an artifact to Artifactory.
 
 - **Deploying models**: Another common scenario is when you want to deploy a

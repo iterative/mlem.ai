@@ -55,9 +55,9 @@ Represents different types of requirements for MLEM Object.
 
 Implementations:
 
-- `installable` - a python requirement typically installed through `pip`. Can
+- `installable` - a Python requirement typically installed through `pip`. Can
   have specific version and alternative package name.
-- `custom` - a python requirement in the form of a local `.py` file or a python
+- `custom` - a Python requirement in the form of a local `.py` file or a python
   package. Contains name and source code for the module/package.
 - `unix` - unix package typically installed through `apt` or `yum`
 
@@ -73,7 +73,7 @@ Implementations:
 - `pickle` - simply unpickle the contens of file and use default MLEM object
   analyzer. Works with pickled files.
 - `pandas` - try to read a file into `pandas.DataFrame`. Works with files saved
-  with pandas in formats like
+  with Pandas in formats like
   `csv, json, excel, parquet, feather, stata, html, parquet`. Some formats
   require additional dependencies.
 
@@ -104,14 +104,14 @@ implementation.
 There are implementations of this class for all supported libraries: `xgboost`,
 `catboost`, `lightgbm`, `torch`, `sklearn`.
 
-The one notable implementation is `callable`: it treats any python callable
+The one notable implementation is `callable`: it treats any Python callable
 object as a model with a single method `__call__`. That means you can turn
 functions and class methods into MLEM Models as well!
 
 ## ModelIO
 
 Represents a way that model can be saved and loaded. A required field of
-`ModelType` class. If a ML library has it's own way to save and load models, it
+`ModelType` class. If a ML library has its own way to save and load models, it
 goes here.
 
 **Base class**: `mlem.core.model.ModelIO`
@@ -120,12 +120,12 @@ There are implementations for all supported libraries: `torch_io`, `xgboost_io`,
 `lightgbm_io`, `catboost_io`
 
 Also, universal `simple_pickle` is available, which simply pickles the model
-(used by sklearn, for example).
+(used by `sklearn`, for example).
 
 There is also separate `pickle` implementation, which can detect other model
 types inside your object and use their IO's for them. This is very handy when
-you for example wrap your torch NN with a python function: the function part
-will be pickled, and NN will be saved using `torch_io`.
+you for example wrap your `torch` NN with a Python function: the function part
+will be pickled, and the NN will be saved using `torch_io`.
 
 # Data
 
@@ -143,7 +143,7 @@ Holds metadata about data, like type, dimensions, column names etc.
 
 Python:
 
-- `primitive` - any of the python primitives
+- `primitive` - any of the Python primitives
 - `tuple` - a tuple of objects, each can have different type
 - `list` - a list of objects, but they should be the same type
 - `tuple_like_list` - a list of objects, each can have different type
@@ -155,7 +155,7 @@ Pandas:
   indexes
 - `series` - `pd.Series`. Holds info about columns, their types and indexes
 
-Numpy:
+NumPy:
 
 - `ndarray` - `np.ndarray`. Holds info about type and dimensions
 - `number` - `np.number`. Holds info about type
@@ -180,7 +180,7 @@ Holds all the information needed to read dataset.
 
 **Fields**:
 
-- `data_type` - resulting data_type
+- `data_type` - resulting data type
 
 **Implementations**:
 
@@ -203,7 +203,7 @@ Writes data to files, producing a list of `Artifact` and corresponding
 
 ## Artifact
 
-Represents a file save in some storage.
+Represents a file saved in some storage.
 
 **Base class**: `mlem.core.artifacts.Artifact`
 
@@ -281,13 +281,13 @@ Related commands: [API](/doc/api-reference/build),
 
 Python packages:
 
-- `pip` - create a directory with python package from model
-- `whl` - create a `.whl` file with python package
+- `pip` - create a directory with Python package from model
+- `whl` - create a `.whl` file with Python package
 
 Docker:
 
-- `docker_dir` - create a directory with context for docker image building
-- `docker` - build a docker image from model
+- `docker_dir` - create a directory with context for Docker image building
+- `docker` - build a Docker image from model
 
 # Deployment
 
