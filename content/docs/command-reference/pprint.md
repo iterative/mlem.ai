@@ -44,7 +44,6 @@ $ mlem pprint rf
                         'size': 163651,
                         'type': 'dvc',
                         'uri': 'rf'}},
- 'description': 'Random Forest Classifier',
  'model_type': {'methods': {'predict': {'args': [{'name': 'data',
                                                   'type_': {'columns': ['sepal '
                                                                         'length '

@@ -11,10 +11,7 @@ def save(
     fs: Union[str, AbstractFileSystem] = None,
     index: bool = None,
     external: Optional[bool] = None,
-    description: str = None,
     params: Dict[str, str] = None,
-    labels: List[str] = None,
-    update: bool = False,
 ) -> MlemObject
 ```
 
@@ -44,11 +41,7 @@ systems (eg: `S3`). The function returns and saves the object as a
 - `fs` (optional) - FileSystem for the `path` argument
 - `index` (optional) - Whether to add object to mlem project index
 - `external` (optional) - Save result directly to `path` (not inside `.mlem/`)
-- `description` (optional) - description for object
 - `params` (optional) - arbitrary params for object
-- `labels` (optional) - labels for object
-- `update` (optional) - whether to keep old description/labels/params if new
-  values were not provided
 
 ## Exceptions
 
