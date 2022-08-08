@@ -105,7 +105,7 @@ $ mlem clone rf s3://example-mlem-get-started/rf
 💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
 ```
 
-The `rf` model from S3 bucket `example-mlem-get-started` can now be
+The `rf` model from S3 bucket `example-mlem-get-started` can also be
 [loaded via API](#loading-objects-api) or used in the CLI as though it existed
 locally:
 
