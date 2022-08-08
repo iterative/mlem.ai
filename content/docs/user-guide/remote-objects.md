@@ -28,9 +28,7 @@ You can list MLEM objects inside a remote MLEM project (e.g. in a Git repo) with
 `mlem list`. There's no need to download/clone the project.
 
 ```cli
-$ mlem list \
-       https://github.com/iterative/example-mlem-get-started \
-       --rev simple
+$ mlem list https://github.com/iterative/example-mlem-get-started
 Deployments:
  - myservice
 Models:
@@ -59,15 +57,15 @@ from mlem.api import load
 model = load(
     "rf",
     project="https://github.com/iterative/example-mlem-get-started",
-    rev="simple"
+    rev="main"
 )
 ```
 
-This fetches the `rf` model [form branch `simple`] of the
+This fetches the `rf` model [from branch `main`] of the
 `example-mlem-get-started` repo and loads it to memory.
 
-[form branch `simple`]:
-  https://github.com/iterative/example-mlem-get-started/tree/simple/.mlem/model
+[from branch `main`]:
+  https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model
 
 ## Downloading objects
 
@@ -77,14 +75,13 @@ You can download MLEM objects to the local environment in with `mlem clone`
 ```cli
 $ mlem clone rf \
   --project https://github.com/iterative/example-mlem-get-started \
-  --rev simple \
   ml_model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/simple/.mlem/model/rf.mlem
-🐏 Cloning https://github.com/iterative/example-mlem-get-started/tree/simple/.mlem/model/rf.mlem
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
+🐏 Cloning https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
 💾 Saving model to .mlem/model/ml_model.mlem
 ```
 
-This places the `rf` model [form branch `simple`] of the
+This places the `rf` model [from branch `main`] of the
 `example-mlem-get-started` repo, renames it to `ml_model`, and places it in the
 `.mlem/model` directory.
 
@@ -108,7 +105,7 @@ $ mlem clone rf s3://example-mlem-get-started/rf
 💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
 ```
 
-The `rf` model from S3 bucket `example-mlem-get-started` can now be
+The `rf` model from S3 bucket `example-mlem-get-started` can also be
 [loaded via API](#loading-objects-api) or used in the CLI as though it existed
 locally:
 
