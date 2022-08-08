@@ -54,6 +54,6 @@ $ mlem import data/model.pkl data/imported_model
 Create a MLEM model from remote `.pkl` (pickle) file
 
 ```cli
-$ mlem import .mlem/model/rf --project https://github.com/iterative/example-mlem-get-started --rev simple data/imported_model --type pickle
+$ mlem import .mlem/model/rf --project https://github.com/iterative/example-mlem-get-started --rev main data/imported_model --type pickle
 💾 Saving model to .mlem/model/data/imported_model.mlem
 ```
