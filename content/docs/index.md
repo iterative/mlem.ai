@@ -4,10 +4,6 @@
 It seamlessly supports a variety of scenarios like real-time serving and batch
 processing.
 
-[test good link](https://www.google.com)
-[test bad link](https://www.google.com/notarealpage)
-[test invalid link](https://www.aadvfnnbdfs.net)
-
 <admon type="tip">
 
 When combined with [GTO](https://github.com/iterative/gto), MLEM allows you to
