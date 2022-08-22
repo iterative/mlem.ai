@@ -6,6 +6,10 @@ processing.
 
 <admon type="tip">
 
+[good link](https://www.google.com)
+[bad page](https://www.google.com/not-a-real-page)
+[dead link](http://www.assdbbbbffdf.xyz)
+
 When combined with [GTO](https://github.com/iterative/gto), MLEM allows you to
 create a powerful Model Registry out of your Git repository! Such a registry
 serves as a centralized place to store and operationalize your models along with
