@@ -69,6 +69,12 @@ const NavBar: React.FC = () => {
               Docs
             </SmartLink>
             <SmartLink
+              href="https://iterative.ai/blog"
+              className={styles.nav__link}
+            >
+              Blog
+            </SmartLink>
+            <SmartLink
               href="https://learn.iterative.ai/"
               className={styles.nav__link}
             >
