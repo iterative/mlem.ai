@@ -23,7 +23,7 @@
   "dependencies": {
     "@dvcorg/gatsby-theme-iterative": "0.1.14",
     "@octokit/graphql": "5.0.1",
-    "@sentry/gatsby": "7.12.0",
+    "@sentry/gatsby": "7.12.1",
     "@svgr/webpack": "6.3.1",
     "autoprefixer": "10.4.8",
     "classnames": "2.3.1",
