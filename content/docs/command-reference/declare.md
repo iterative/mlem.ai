@@ -1,17 +1,19 @@
 # declare
 
-Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
-metafile from config args and config files.
+Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) metafile from config args and config files.
 
 ## Synopsis
 
 ```usage
-usage: mlem declare [options] object_type [subtype] path
+Usage: mlem declare [options] subtype
 
-arguments:
-OBJECT_TYPE  Type of metafile to declare  [required]
-[SUBTYPE]    Subtype of MLEM object  [default: ]
-PATH         Where to save object  [required]
+Builtin subtypes:
+- env
+- deployment
+- builder
+- server
+- client
+- docker_registry
 ```
 
 ## Description
@@ -28,12 +30,7 @@ check out the last example [here](/doc/command-reference/types#examples)
 
 ## Options
 
-- `-c, --conf TEXT`: Values for object fields in format
-  `field.nested.name=value`
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `-h, --help`: Show this message and exit.
+- `--help`: Show this message and exit.
 
 ## Examples
 

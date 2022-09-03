@@ -1,0 +1,719 @@
+{
+  "apply": {
+    "args": {
+      "args": [
+        {
+          "decl": "model",
+          "help": "Path to model object  [required]"
+        },
+        {
+          "decl": "data",
+          "help": "Path to data object  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "-o, --output TEXT",
+        "help": "Where to store the outputs."
+      },
+      {
+        "decl": "-m, --method TEXT",
+        "help": "Which model method is to be applied  [default: predict]"
+      },
+      {
+        "decl": "--data-project, --dr TEXT",
+        "help": "Project with data"
+      },
+      {
+        "decl": "--data-rev TEXT",
+        "help": "Revision of data"
+      },
+      {
+        "decl": "-i, --import",
+        "help": "Try to import data on-the-fly"
+      },
+      {
+        "decl": "--import-type, --it TEXT",
+        "help": "Specify how to read data file for import. Available types: ['pickle', 'pandas']"
+      },
+      {
+        "decl": "-b, --batch_size INTEGER",
+        "help": "Batch size for reading data in batches."
+      },
+      {
+        "decl": "--index / --no-index",
+        "help": "Whether to index output in .mlem directory"
+      },
+      {
+        "decl": "-e, --external",
+        "help": "Save result not in .mlem, but directly in project"
+      },
+      {
+        "decl": "--json",
+        "help": "Output as json"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem apply [options] model data",
+    "doc": "Apply a model to data. The result will be saved as a MLEM object to `output` if\nprovided. Otherwise, it will be printed to `stdout`."
+  },
+  "checkenv": {
+    "args": {
+      "args": [
+        {
+          "decl": "PATH",
+          "help": "Path to object  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem checkenv [options] path",
+    "doc": "Check that current environment satisfies object requrements"
+  },
+  "clone": {
+    "args": {
+      "args": [
+        {
+          "decl": "URI",
+          "help": "URI to object you want to clone  [required]"
+        },
+        {
+          "decl": "TARGET",
+          "help": "Path to store the downloaded object.  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "--target-project, --tp TEXT",
+        "help": "Project to save target to  [default: (none)]"
+      },
+      {
+        "decl": "-e, --external",
+        "help": "Save result not in .mlem, but directly in project"
+      },
+      {
+        "decl": "--index / --no-index",
+        "help": "Whether to index output in .mlem directory"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem clone [options] uri target",
+    "doc": "Copy a MLEM Object from `uri` and\nsaves a copy of it to `target` path."
+  },
+  "import": {
+    "args": {
+      "args": [
+        {
+          "decl": "URI",
+          "help": "File to import  [required]"
+        },
+        {
+          "decl": "TARGET",
+          "help": "Path to save MLEM object  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "--target-project, --tp TEXT",
+        "help": "Project to save target to  [default: (none)]"
+      },
+      {
+        "decl": "--copy / --no-copy",
+        "help": "Whether to create a copy of file in target location or just link existing file  [default: copy]"
+      },
+      {
+        "decl": "--type TEXT",
+        "help": "Specify how to read file Available types: ['pickle', 'pandas']  [default: (auto infer)]"
+      },
+      {
+        "decl": "--index / --no-index",
+        "help": "Whether to index output in .mlem directory"
+      },
+      {
+        "decl": "-e, --external",
+        "help": "Save result not in .mlem, but directly in project"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem import [options] uri target",
+    "doc": "Create a `.mlem` metafile for a model or data in any file or directory."
+  },
+  "list": {
+    "args": {
+      "args": [
+        {
+          "decl": "[PROJECT]",
+          "help": "Project to list from  [default: (current directory)]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-t, --type [all|link|model|data|builder|env|deployment]",
+        "help": "Type of objects to list  [default: all]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "+l, --links / -l, --no-links",
+        "help": "Whether to include links  [default: l]"
+      },
+      {
+        "decl": "--json",
+        "help": "Output as json"
+      },
+      {
+        "decl": "-i, --ignore-errors",
+        "help": "Ignore corrupted objects"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem list [options] [project]",
+    "doc": "List MLEM objects inside a MLEM project (location should be [initialized](/doc/command-reference/init))."
+  },
+  "pprint": {
+    "args": {
+      "args": [
+        {
+          "decl": "PATH",
+          "help": "Path to object  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "-f, --follow-links",
+        "help": "If specified, follow the link to the actual object."
+      },
+      {
+        "decl": "--json",
+        "help": "Output as json"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem pprint [options] path",
+    "doc": "Display all details about a specific MLEM Object from an existing MLEM\nproject."
+  },
+  "init": {
+    "args": {
+      "args": [
+        {
+          "decl": "[PATH]",
+          "help": "Where to init project"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem init [options] [path]",
+    "doc": "Initialize a MLEM project."
+  },
+  "link": {
+    "args": {
+      "args": [
+        {
+          "decl": "SOURCE",
+          "help": "URI of the object you are creating a link to  [required]"
+        },
+        {
+          "decl": "TARGET",
+          "help": "Path to save link object  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "--source-project, --sp TEXT",
+        "help": "Project for source object"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "--target-project, --tp TEXT",
+        "help": "Project to save target to  [default: (none)]"
+      },
+      {
+        "decl": "-e, --external",
+        "help": "Save result not in .mlem, but directly in project"
+      },
+      {
+        "decl": "--follow-links, --f / --no-follow-links, --nf",
+        "help": "If True, first follow links while reading {source} before creating this link.  [default: follow-links]"
+      },
+      {
+        "decl": "--absolute, --abs / --relative, --rel",
+        "help": "Which path to linked object to specify: absolute or relative.  [default: relative]"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem link [options] source target",
+    "doc": "Create a link (read alias) for an existing MLEM Object, including from\nremote MLEM projects."
+  },
+  "types": {
+    "args": {
+      "args": [
+        {
+          "decl": "[ABC]",
+          "help": "Subtype to list implementations. List subtypes if not provided"
+        },
+        {
+          "decl": "[SUB_TYPE]",
+          "help": "Type of `meta` subtype"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem types [options] [abc] [sub_type]",
+    "doc": "List different implementations available for a particular MLEM type. If a\nsubtype is not provided, list all available MLEM types."
+  },
+  "apply-remote": {
+    "args": {
+      "args": [],
+      "impls": [
+        "rmq",
+        "http"
+      ],
+      "impl_metavar": "client",
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "-o, --output TEXT",
+        "help": "Where to store the outputs."
+      },
+      {
+        "decl": "--target-project, --tp TEXT",
+        "help": "Project to save target to  [default: (none)]"
+      },
+      {
+        "decl": "-m, --method TEXT",
+        "help": "Which model method is to be applied  [default: predict]"
+      },
+      {
+        "decl": "--index / --no-index",
+        "help": "Whether to index output in .mlem directory"
+      },
+      {
+        "decl": "--json",
+        "help": "Output as json"
+      },
+      {
+        "decl": "-l, --load TEXT",
+        "help": "File to load client config from"
+      },
+      {
+        "decl": "-f, --file_conf TEXT",
+        "help": "File with options for client in format `field.name=path_to_config`"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem apply-remote [options] client",
+    "doc": "Apply a deployed-model (possibly remotely) to data. The results will be saved as\na MLEM object to `output` if provided. Otherwise, it will be printed to\n`stdout`."
+  },
+  "build": {
+    "args": {
+      "args": [],
+      "impls": [
+        "docker_dir",
+        "whl",
+        "pip",
+        "docker"
+      ],
+      "impl_metavar": "builder",
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "-l, --load TEXT",
+        "help": "File to load builder config from"
+      },
+      {
+        "decl": "-f, --file_conf TEXT",
+        "help": "File with options for builder in format `field.name=path_to_config`"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem build [options] builder",
+    "doc": "Build models to create re-usable, ship-able entities such as a Docker image or\nPython package."
+  },
+  "config": {
+    "args": {
+      "args": [],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem config [options] command [args]...",
+    "doc": "Manipulate MLEM configuration"
+  },
+  "declare": {
+    "args": {
+      "args": [],
+      "impls": [
+        "env",
+        "deployment",
+        "builder",
+        "server",
+        "client",
+        "docker_registry"
+      ],
+      "impl_metavar": "subtype",
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem declare [options] subtype",
+    "doc": "Declares a new MLEM Object metafile from config args and config files."
+  },
+  "deployment/index": {
+    "args": {
+      "args": [],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": {
+        "run": "Deploy a model to a target environment.",
+        "remove": "Stop and destroy deployed instance.",
+        "status": "Print status of deployed service.",
+        "apply": "Apply a deployed model to data."
+      }
+    },
+    "options": [
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem deployment [options] command [args]...",
+    "doc": "A set of commands to set up and manage deployments."
+  },
+  "deployment/run": {
+    "args": {
+      "args": [
+        {
+          "decl": "PATH",
+          "help": "Path to deployment meta (will be created if it does not exist)  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-m, --model TEXT",
+        "help": "Path to model"
+      },
+      {
+        "decl": "-t, --env TEXT",
+        "help": "Path to target environment"
+      },
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "-e, --external",
+        "help": "Save result not in .mlem, but directly in project"
+      },
+      {
+        "decl": "--index / --no-index",
+        "help": "Whether to index output in .mlem directory"
+      },
+      {
+        "decl": "-c, --conf TEXT",
+        "help": "Options in format `field.name=value`"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem deployment run [options] path",
+    "doc": "Deploy a model to a target environment. Can use an existing deployment\ndeclaration or create a new one on-the-fly."
+  },
+  "deployment/remove": {
+    "args": {
+      "args": [
+        {
+          "decl": "PATH",
+          "help": "Path to deployment meta  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem deployment remove [options] path",
+    "doc": "Stop and destroy deployed instance."
+  },
+  "deployment/status": {
+    "args": {
+      "args": [
+        {
+          "decl": "PATH",
+          "help": "Path to deployment meta  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem deployment status [options] path",
+    "doc": "Print status of deployed service."
+  },
+  "deployment/apply": {
+    "args": {
+      "args": [
+        {
+          "decl": "PATH",
+          "help": "Path to deployment meta  [required]"
+        },
+        {
+          "decl": "DATA",
+          "help": "Path to data object  [required]"
+        }
+      ],
+      "impls": null,
+      "impl_metavar": null,
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "--data-project, --dr TEXT",
+        "help": "Project with data"
+      },
+      {
+        "decl": "--data-rev TEXT",
+        "help": "Revision of data"
+      },
+      {
+        "decl": "-o, --output TEXT",
+        "help": "Where to store the outputs."
+      },
+      {
+        "decl": "--target-project, --tp TEXT",
+        "help": "Project to save target to  [default: (none)]"
+      },
+      {
+        "decl": "-m, --method TEXT",
+        "help": "Which model method is to be applied  [default: predict]"
+      },
+      {
+        "decl": "--index / --no-index",
+        "help": "Whether to index output in .mlem directory"
+      },
+      {
+        "decl": "--json",
+        "help": "Output as json"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem deployment apply [options] path data",
+    "doc": "Apply a deployed model to data."
+  },
+  "serve": {
+    "args": {
+      "args": [],
+      "impls": [
+        "heroku",
+        "rmq",
+        "fastapi"
+      ],
+      "impl_metavar": "server",
+      "subcommands": null
+    },
+    "options": [
+      {
+        "decl": "-p, --project TEXT",
+        "help": "Path to MLEM project  [default: (none)]"
+      },
+      {
+        "decl": "--rev TEXT",
+        "help": "Repo revision to use  [default: (none)]"
+      },
+      {
+        "decl": "-l, --load TEXT",
+        "help": "File to load server config from"
+      },
+      {
+        "decl": "-f, --file_conf TEXT",
+        "help": "File with options for server in format `field.name=path_to_config`"
+      },
+      {
+        "decl": "--help",
+        "help": "Show this message and exit."
+      }
+    ],
+    "usage": "Usage: mlem serve [options] server",
+    "doc": "Deploy the model locally using a server implementation and expose its methods as\nendpoints."
+  }
+}

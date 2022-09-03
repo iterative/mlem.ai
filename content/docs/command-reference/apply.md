@@ -6,11 +6,11 @@ provided. Otherwise, it will be printed to `stdout`.
 ## Synopsis
 
 ```usage
-usage: mlem apply [options] model data
+Usage: mlem apply [options] model data
 
-arguments:
-MODEL  Path to model object  [required]
-DATA   Path to dataset object  [required]
+Arguments:
+- `model`: Path to model object  [required]
+- `data`: Path to data object  [required]
 ```
 
 ## Description
@@ -29,20 +29,19 @@ datasets.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
+- `--rev TEXT`: Repo revision to use  [default: (none)]
 - `-o, --output TEXT`: Where to store the outputs.
-- `-m, --method TEXT`: Which model method is to be applied [default: predict]
+- `-m, --method TEXT`: Which model method is to be applied  [default: predict]
 - `--data-project, --dr TEXT`: Project with data
 - `--data-rev TEXT`: Revision of data
 - `-i, --import`: Try to import data on-the-fly
-- `--import-type, --it TEXT`: Specify how to read data file for import.
-  Available types: ['pandas', 'pickle']
+- `--import-type, --it TEXT`: Specify how to read data file for import. Available types: ['pickle', 'pandas']
 - `-b, --batch_size INTEGER`: Batch size for reading data in batches.
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--json`: Output as json
-- `-h, --help`: Show this message and exit.
+- `--help`: Show this message and exit.
 
 ## Examples
 

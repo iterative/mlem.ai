@@ -6,11 +6,11 @@ subtype is not provided, list all available MLEM types.
 ## Synopsis
 
 ```usage
-usage: mlem types [options] [abc] [sub_type]
+Usage: mlem types [options] [abc] [sub_type]
 
-arguments:
-[ABC]       Subtype to list implementations. List subtypes if not provided
-[SUB_TYPE]  Type of `meta` subtype
+Arguments:
+- `[ABC]`: Subtype to list implementations. List subtypes if not provided
+- `[SUB_TYPE]`: Type of `meta` subtype
 ```
 
 ## Description
@@ -28,7 +28,7 @@ capabilities.
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `--help`: Show this message and exit.
 
 ## Examples
 

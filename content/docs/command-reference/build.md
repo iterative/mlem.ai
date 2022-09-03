@@ -6,11 +6,13 @@ Python package.
 ## Synopsis
 
 ```usage
-usage: mlem build [options] model [subtype]
+Usage: mlem build [options] builder
 
-arguments:
-MODEL      Path to model  [required]
-[SUBTYPE]  Type of build. Choices: ['whl', 'pip', 'docker_dir', 'docker']
+Builtin builders:
+- docker_dir
+- whl
+- pip
+- docker
 ```
 
 ## Description
@@ -21,13 +23,11 @@ images.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
+- `--rev TEXT`: Repo revision to use  [default: (none)]
 - `-l, --load TEXT`: File to load builder config from
-- `-c, --conf TEXT`: Options for builder in format `field.name=value`
-- `-f, --file_conf TEXT`: File with options for builder in format
-  `field.name=path_to_config`
-- `-h, --help`: Show this message and exit.
+- `-f, --file_conf TEXT`: File with options for builder in format `field.name=path_to_config`
+- `--help`: Show this message and exit.
 
 ## Examples
 

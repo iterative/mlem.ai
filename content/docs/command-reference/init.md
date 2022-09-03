@@ -5,10 +5,10 @@ Initialize a MLEM project.
 ## Synopsis
 
 ```usage
-usage: mlem init [options] [path]
+Usage: mlem init [options] [path]
 
-arguments:
-[path]      Location (file path or URL) to initialize a MLEM project
+Arguments:
+- `[PATH]`: Where to init project
 ```
 
 ## Description
@@ -32,7 +32,7 @@ and manage them using standard Git workflows.
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `--help`: Show this message and exit.
 
 ## Examples
 
