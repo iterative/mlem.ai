@@ -22,9 +22,9 @@ repository.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
-- `--target-project, --tp TEXT`: Project to save target to  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--help`: Show this message and exit.

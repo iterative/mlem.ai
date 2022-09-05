@@ -29,8 +29,8 @@ You can use [`mlem list`](/doc/command-reference/list) to list MLEM objects.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
 - `-f, --follow-links`: If specified, follow the link to the actual object.
 - `--json`: Output as json
 - `--help`: Show this message and exit.

@@ -24,11 +24,11 @@ load those models/datasets into object for subsequent usage in MLEM context.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
-- `--target-project, --tp TEXT`: Project to save target to  [default: (none)]
-- `--copy / --no-copy`: Whether to create a copy of file in target location or just link existing file  [default: copy]
-- `--type TEXT`: Specify how to read file Available types: ['pickle', 'pandas']  [default: (auto infer)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
+- `--copy / --no-copy`: Whether to create a copy of file in target location or just link existing file [default: copy]
+- `--type TEXT`: Specify how to read file Available types: ['pandas', 'pickle'] [default: (auto infer)]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--help`: Show this message and exit.

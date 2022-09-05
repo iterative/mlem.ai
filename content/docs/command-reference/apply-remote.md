@@ -27,11 +27,11 @@ clients are `http` and `rmq` - which are used to launch requests against the
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
 - `-o, --output TEXT`: Where to store the outputs.
-- `--target-project, --tp TEXT`: Project to save target to  [default: (none)]
-- `-m, --method TEXT`: Which model method is to be applied  [default: predict]
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
+- `-m, --method TEXT`: Which model method is to be applied [default: predict]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--json`: Output as json
 - `-l, --load TEXT`: File to load client config from

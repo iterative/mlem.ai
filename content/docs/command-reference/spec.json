@@ -18,11 +18,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "-o, --output TEXT",
@@ -30,7 +30,7 @@
       },
       {
         "decl": "-m, --method TEXT",
-        "help": "Which model method is to be applied  [default: predict]"
+        "help": "Which model method is to be applied [default: predict]"
       },
       {
         "decl": "--data-project, --dr TEXT",
@@ -46,7 +46,7 @@
       },
       {
         "decl": "--import-type, --it TEXT",
-        "help": "Specify how to read data file for import. Available types: ['pickle', 'pandas']"
+        "help": "Specify how to read data file for import. Available types: ['pandas', 'pickle']"
       },
       {
         "decl": "-b, --batch_size INTEGER",
@@ -87,11 +87,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "--help",
@@ -120,15 +120,15 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to  [default: (none)]"
+        "help": "Project to save target to [default: (none)]"
       },
       {
         "decl": "-e, --external",
@@ -165,23 +165,23 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to  [default: (none)]"
+        "help": "Project to save target to [default: (none)]"
       },
       {
         "decl": "--copy / --no-copy",
-        "help": "Whether to create a copy of file in target location or just link existing file  [default: copy]"
+        "help": "Whether to create a copy of file in target location or just link existing file [default: copy]"
       },
       {
         "decl": "--type TEXT",
-        "help": "Specify how to read file Available types: ['pickle', 'pandas']  [default: (auto infer)]"
+        "help": "Specify how to read file Available types: ['pandas', 'pickle'] [default: (auto infer)]"
       },
       {
         "decl": "--index / --no-index",
@@ -214,15 +214,15 @@
     "options": [
       {
         "decl": "-t, --type [all|link|model|data|builder|env|deployment]",
-        "help": "Type of objects to list  [default: all]"
+        "help": "Type of objects to list [default: all]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "+l, --links / -l, --no-links",
-        "help": "Whether to include links  [default: l]"
+        "help": "Whether to include links [default: l]"
       },
       {
         "decl": "--json",
@@ -255,11 +255,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "-f, --follow-links",
@@ -321,11 +321,11 @@
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to  [default: (none)]"
+        "help": "Project to save target to [default: (none)]"
       },
       {
         "decl": "-e, --external",
@@ -333,11 +333,11 @@
       },
       {
         "decl": "--follow-links, --f / --no-follow-links, --nf",
-        "help": "If True, first follow links while reading {source} before creating this link.  [default: follow-links]"
+        "help": "If True, first follow links while reading {source} before creating this link. [default: follow-links]"
       },
       {
         "decl": "--absolute, --abs / --relative, --rel",
-        "help": "Which path to linked object to specify: absolute or relative.  [default: relative]"
+        "help": "Which path to linked object to specify: absolute or relative. [default: relative]"
       },
       {
         "decl": "--help",
@@ -385,11 +385,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "-o, --output TEXT",
@@ -397,11 +397,11 @@
       },
       {
         "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to  [default: (none)]"
+        "help": "Project to save target to [default: (none)]"
       },
       {
         "decl": "-m, --method TEXT",
-        "help": "Which model method is to be applied  [default: predict]"
+        "help": "Which model method is to be applied [default: predict]"
       },
       {
         "decl": "--index / --no-index",
@@ -442,11 +442,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "-l, --load TEXT",
@@ -547,7 +547,7 @@
       },
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "-e, --external",
@@ -584,7 +584,7 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--help",
@@ -609,7 +609,7 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--help",
@@ -638,11 +638,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "--data-project, --dr TEXT",
@@ -658,11 +658,11 @@
       },
       {
         "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to  [default: (none)]"
+        "help": "Project to save target to [default: (none)]"
       },
       {
         "decl": "-m, --method TEXT",
-        "help": "Which model method is to be applied  [default: predict]"
+        "help": "Which model method is to be applied [default: predict]"
       },
       {
         "decl": "--index / --no-index",
@@ -694,11 +694,11 @@
     "options": [
       {
         "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project  [default: (none)]"
+        "help": "Path to MLEM project [default: (none)]"
       },
       {
         "decl": "--rev TEXT",
-        "help": "Repo revision to use  [default: (none)]"
+        "help": "Repo revision to use [default: (none)]"
       },
       {
         "decl": "-l, --load TEXT",

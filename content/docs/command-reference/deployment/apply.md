@@ -21,13 +21,13 @@ gathered and returned, also as a MLEM Object.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
 - `--data-project, --dr TEXT`: Project with data
 - `--data-rev TEXT`: Revision of data
 - `-o, --output TEXT`: Where to store the outputs.
-- `--target-project, --tp TEXT`: Project to save target to  [default: (none)]
-- `-m, --method TEXT`: Which model method is to be applied  [default: predict]
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
+- `-m, --method TEXT`: Which model method is to be applied [default: predict]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--json`: Output as json
 - `--help`: Show this message and exit.

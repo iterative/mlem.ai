@@ -59,8 +59,7 @@ def generate_options(command: Command, ctx):
     for option in get_options(command, ctx):
         if not isinstance(option, Option):
             continue
-        decl, help = option.get_help_record(ctx)
-        res.append(Opt(decl=decl, help=help))
+        res.append(repr_option(option, ctx))
     return res
 
 

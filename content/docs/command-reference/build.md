@@ -23,8 +23,8 @@ images.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
-- `--rev TEXT`: Repo revision to use  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
 - `-l, --load TEXT`: File to load builder config from
 - `-f, --file_conf TEXT`: File with options for builder in format `field.name=path_to_config`
 - `--help`: Show this message and exit.

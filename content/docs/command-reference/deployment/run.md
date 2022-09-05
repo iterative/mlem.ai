@@ -23,7 +23,7 @@ options (see below).
 
 - `-m, --model TEXT`: Path to model
 - `-t, --env TEXT`: Path to target environment
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-c, --conf TEXT`: Options in format `field.name=value`

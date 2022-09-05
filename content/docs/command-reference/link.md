@@ -26,11 +26,11 @@ to incorporate them in the local workspace.
 ## Options
 
 - `--source-project, --sp TEXT`: Project for source object
-- `--rev TEXT`: Repo revision to use  [default: (none)]
-- `--target-project, --tp TEXT`: Project to save target to  [default: (none)]
+- `--rev TEXT`: Repo revision to use [default: (none)]
+- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
 - `-e, --external`: Save result not in .mlem, but directly in project
-- `--follow-links, --f / --no-follow-links, --nf`: If True, first follow links while reading {source} before creating this link.  [default: follow-links]
-- `--absolute, --abs / --relative, --rel`: Which path to linked object to specify: absolute or relative.  [default: relative]
+- `--follow-links, --f / --no-follow-links, --nf`: If True, first follow links while reading {source} before creating this link. [default: follow-links]
+- `--absolute, --abs / --relative, --rel`: Which path to linked object to specify: absolute or relative. [default: relative]
 - `--help`: Show this message and exit.
 
 ## Examples

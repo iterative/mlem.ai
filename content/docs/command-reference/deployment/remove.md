@@ -19,7 +19,7 @@ deleting its associated runtime resources.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `--help`: Show this message and exit.
 
 ## Example: Stop and destroy a deployment

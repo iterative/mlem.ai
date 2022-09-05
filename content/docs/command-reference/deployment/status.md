@@ -29,7 +29,7 @@ The possible statuses for deployments using the `heroku` target platform is:
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project  [default: (none)]
+- `-p, --project TEXT`: Path to MLEM project [default: (none)]
 - `--help`: Show this message and exit.
 
 ## Example: Get the status of a deployment
