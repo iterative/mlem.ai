@@ -50,6 +50,7 @@ def get_options(command: Command, ctx):
 
 def repr_option(option, ctx):
     decl, help = option.get_help_record(ctx)
+    help = help.replace("  ", " ")  # TODO: maybe fix in typer code?
     return Opt(decl=decl, help=help)
 
 
@@ -73,7 +74,7 @@ def generate_args(command, ctx):
     metavar = None
     subcommands = None
     if command.name in abc_group:
-        impls = list(command.commands)
+        impls = list(sorted(command.commands))
         metavar = command.subcommand_metavar
     if command.name in use_group:
         subcommands = {c.name: c.get_short_help_str() for c in

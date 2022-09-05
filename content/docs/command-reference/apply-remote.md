@@ -10,8 +10,8 @@ a MLEM object to `output` if provided. Otherwise, it will be printed to
 Usage: mlem apply-remote [options] client
 
 Builtin clients:
-- rmq
 - http
+- rmq
 ```
 
 ## Description

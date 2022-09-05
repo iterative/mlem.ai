@@ -9,9 +9,9 @@ endpoints.
 Usage: mlem serve [options] server
 
 Builtin servers:
+- fastapi
 - heroku
 - rmq
-- fastapi
 ```
 
 ## Description

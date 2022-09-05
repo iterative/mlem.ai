@@ -9,8 +9,8 @@ remote MLEM projects.
 Usage: mlem link [options] source target
 
 Arguments:
-- `SOURCE`: URI of the object you are creating a link to  [required]
-- `TARGET`: Path to save link object  [required]
+- `SOURCE`: URI of the object you are creating a link to [required]
+- `TARGET`: Path to save link object [required]
 ```
 
 ## Description

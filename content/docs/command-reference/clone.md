@@ -9,8 +9,8 @@ saves a copy of it to `target` path.
 Usage: mlem clone [options] uri target
 
 Arguments:
-- `URI`: URI to object you want to clone  [required]
-- `TARGET`: Path to store the downloaded object.  [required]
+- `URI`: URI to object you want to clone [required]
+- `TARGET`: Path to store the downloaded object. [required]
 ```
 
 ## Description

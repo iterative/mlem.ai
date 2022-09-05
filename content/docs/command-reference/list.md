@@ -8,7 +8,7 @@ List MLEM objects inside a MLEM project (location should be [initialized](/doc/c
 Usage: mlem list [options] [project]
 
 Arguments:
-- `[PROJECT]`: Project to list from  [default: (current directory)]
+- `[PROJECT]`: Project to list from [default: (current directory)]
 ```
 
 ## Description

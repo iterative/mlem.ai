@@ -8,12 +8,12 @@ Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) metafi
 Usage: mlem declare [options] subtype
 
 Builtin subtypes:
-- env
-- deployment
 - builder
-- server
 - client
+- deployment
 - docker_registry
+- env
+- server
 ```
 
 ## Description

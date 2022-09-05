@@ -8,8 +8,8 @@ Apply a deployed model to data.
 Usage: mlem deployment apply [options] path data
 
 Arguments:
-- `PATH`: Path to deployment meta  [required]
-- `DATA`: Path to data object  [required]
+- `PATH`: Path to deployment meta [required]
+- `DATA`: Path to data object [required]
 ```
 
 ## Description

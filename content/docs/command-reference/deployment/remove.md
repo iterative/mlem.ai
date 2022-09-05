@@ -8,7 +8,7 @@ Stop and destroy deployed instance.
 Usage: mlem deployment remove [options] path
 
 Arguments:
-- `PATH`: Path to deployment meta  [required]
+- `PATH`: Path to deployment meta [required]
 ```
 
 ## Description

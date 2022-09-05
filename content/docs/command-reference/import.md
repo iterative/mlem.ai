@@ -8,8 +8,8 @@ Create a `.mlem` metafile for a model or data in any file or directory.
 Usage: mlem import [options] uri target
 
 Arguments:
-- `URI`: File to import  [required]
-- `TARGET`: Path to save MLEM object  [required]
+- `URI`: File to import [required]
+- `TARGET`: Path to save MLEM object [required]
 ```
 
 ## Description

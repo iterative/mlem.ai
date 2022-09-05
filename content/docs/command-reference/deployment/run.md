@@ -9,7 +9,7 @@ declaration or create a new one on-the-fly.
 Usage: mlem deployment run [options] path
 
 Arguments:
-- `PATH`: Path to deployment meta (will be created if it does not exist)  [required]
+- `PATH`: Path to deployment meta (will be created if it does not exist) [required]
 ```
 
 ## Description

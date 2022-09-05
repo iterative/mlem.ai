@@ -9,10 +9,10 @@ Python package.
 Usage: mlem build [options] builder
 
 Builtin builders:
-- docker_dir
-- whl
-- pip
 - docker
+- docker_dir
+- pip
+- whl
 ```
 
 ## Description

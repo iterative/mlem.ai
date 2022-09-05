@@ -9,8 +9,8 @@ provided. Otherwise, it will be printed to `stdout`.
 Usage: mlem apply [options] model data
 
 Arguments:
-- `model`: Path to model object  [required]
-- `data`: Path to data object  [required]
+- `model`: Path to model object [required]
+- `data`: Path to data object [required]
 ```
 
 ## Description

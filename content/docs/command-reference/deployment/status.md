@@ -8,7 +8,7 @@ Print status of deployed service.
 Usage: mlem deployment status [options] path
 
 Arguments:
-- `PATH`: Path to deployment meta  [required]
+- `PATH`: Path to deployment meta [required]
 ```
 
 ## Description

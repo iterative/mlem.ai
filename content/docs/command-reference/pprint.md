@@ -9,7 +9,7 @@ project.
 Usage: mlem pprint [options] path
 
 Arguments:
-- `PATH`: Path to object  [required]
+- `PATH`: Path to object [required]
 ```
 
 ## Description
