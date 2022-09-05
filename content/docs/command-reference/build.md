@@ -6,13 +6,16 @@ Python package.
 ## Synopsis
 
 ```usage
-Usage: mlem build [options] builder
+Usage: mlem build builder [options] model
 
 Builtin builders:
 - docker
 - docker_dir
 - pip
 - whl
+
+Arguments:
+- `MODEL`: Path to model [required]
 ```
 
 ## Description

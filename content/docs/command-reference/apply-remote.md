@@ -7,11 +7,14 @@ a MLEM object to `output` if provided. Otherwise, it will be printed to
 ## Synopsis
 
 ```usage
-Usage: mlem apply-remote [options] client
+Usage: mlem apply-remote client [options] data
 
 Builtin clients:
 - http
 - rmq
+
+Arguments:
+- `DATA`: Path to data object [required]
 ```
 
 ## Description

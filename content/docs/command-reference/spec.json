@@ -374,7 +374,12 @@
   },
   "apply-remote": {
     "args": {
-      "args": [],
+      "args": [
+        {
+          "decl": "DATA",
+          "help": "Path to data object [required]"
+        }
+      ],
       "impls": [
         "http",
         "rmq"
@@ -424,12 +429,17 @@
         "help": "Show this message and exit."
       }
     ],
-    "usage": "Usage: mlem apply-remote [options] client",
+    "usage": "Usage: mlem apply-remote client [options] data",
     "doc": "Apply a deployed-model (possibly remotely) to data. The results will be saved as\na MLEM object to `output` if provided. Otherwise, it will be printed to\n`stdout`."
   },
   "build": {
     "args": {
-      "args": [],
+      "args": [
+        {
+          "decl": "MODEL",
+          "help": "Path to model [required]"
+        }
+      ],
       "impls": [
         "docker",
         "docker_dir",
@@ -461,7 +471,7 @@
         "help": "Show this message and exit."
       }
     ],
-    "usage": "Usage: mlem build [options] builder",
+    "usage": "Usage: mlem build builder [options] model",
     "doc": "Build models to create re-usable, ship-able entities such as a Docker image or\nPython package."
   },
   "config": {
@@ -500,7 +510,7 @@
         "help": "Show this message and exit."
       }
     ],
-    "usage": "Usage: mlem declare [options] subtype",
+    "usage": "Usage: mlem declare subtype [options] command [args]...",
     "doc": "Declares a new MLEM Object metafile from config args and config files."
   },
   "deployment/index": {
@@ -682,7 +692,12 @@
   },
   "serve": {
     "args": {
-      "args": [],
+      "args": [
+        {
+          "decl": "MODEL",
+          "help": "Model to create service from [required]"
+        }
+      ],
       "impls": [
         "fastapi",
         "heroku",
@@ -713,7 +728,7 @@
         "help": "Show this message and exit."
       }
     ],
-    "usage": "Usage: mlem serve [options] server",
+    "usage": "Usage: mlem serve server [options] model",
     "doc": "Deploy the model locally using a server implementation and expose its methods as\nendpoints."
   }
 }

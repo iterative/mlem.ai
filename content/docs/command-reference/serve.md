@@ -6,12 +6,15 @@ endpoints.
 ## Synopsis
 
 ```usage
-Usage: mlem serve [options] server
+Usage: mlem serve server [options] model
 
 Builtin servers:
 - fastapi
 - heroku
 - rmq
+
+Arguments:
+- `MODEL`: Model to create service from [required]
 ```
 
 ## Description

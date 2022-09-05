@@ -46,7 +46,7 @@ def generate_usage(usage, argspec: Args):
         subcommands = f"\n\nSubcommands:\n{subcommands}"
     else:
         subcommands = ""
-    return f"\n{usage}{args}{subcommands}{impls}\n"
+    return f"\n{usage}{subcommands}{impls}{args}\n"
 
 
 def generate_doc(doc):

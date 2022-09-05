@@ -75,17 +75,25 @@ def generate_args(command, ctx):
     if command.name in abc_group:
         impls = list(sorted(command.commands))
         metavar = command.subcommand_metavar
+        args.extend(generate_args(list(command.commands.values())[0], ctx).args)
     if command.name in use_group:
         subcommands = {c.name: c.get_short_help_str() for c in
                        command.commands.values()}
     return Args(args=args, impls=impls, impl_metavar=metavar,
                 subcommands=subcommands)
 
+def generate_usage(command: Command, ctx):
+    if command.name not in abc_group:
+        return command.get_usage(ctx)
+    subcommand = list(command.commands.values())[0]
+    subctx = Context(subcommand, parent=ctx, info_name=subcommand.name)
+    sub_usage = generate_usage(subcommand, subctx)
+    return sub_usage.replace(subcommand.name, command.subcommand_metavar)
 
 def generate_cli_command(command: Command, ctx):
     return Spec(args=generate_args(command, ctx),
                 options=generate_options(command, ctx),
-                usage=command.get_usage(ctx),
+                usage=generate_usage(command, ctx),
                 doc=command.help.strip())
 
 

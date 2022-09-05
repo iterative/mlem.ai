@@ -5,7 +5,7 @@ Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) metafi
 ## Synopsis
 
 ```usage
-Usage: mlem declare [options] subtype
+Usage: mlem declare subtype [options] command [args]...
 
 Builtin subtypes:
 - builder
