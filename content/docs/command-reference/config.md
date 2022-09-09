@@ -4,7 +4,6 @@ Manipulate MLEM configuration
 
 ## Synopsys
 
-
 ```usage
 usage: mlem config [options] command [args]...
 ```

@@ -25,7 +25,7 @@ repository.
 - `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `--tp <path>, --target-project <path>`: Project to save target to [default:
-(none)]
+  (none)]
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-h, --help`: Show this message and exit.

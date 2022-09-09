@@ -32,13 +32,13 @@ clients are `http` and `rmq` - which are used to launch requests against the
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `-o <path>, --output <path>`: Where to save inference results
 - `--tp <path>, --target-project <path>`: Project to save target to [default:
-(none)]
+  (none)]
 - `-m TEXT, --method TEXT`: Which model method is to be applied [default:
-predict]
+  predict]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--json`: Output as json
 - `-f TEXT, --file_conf TEXT`: File with options for client in format
-`field.name=path_to_config`
+  `field.name=path_to_config`
 - `-h, --help`: Show this message and exit.
 
 ## Example: Apply a locally hosted model to a local dataset

@@ -27,9 +27,9 @@ gathered and returned, also as a MLEM Object.
 - `--data-rev TEXT`: Revision of data
 - `-o TEXT, --output TEXT`: Where to store the outputs.
 - `--tp <path>, --target-project <path>`: Project to save target to [default:
-(none)]
+  (none)]
 - `-m TEXT, --method TEXT`: Which model method is to be applied [default:
-predict]
+  predict]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--json`: Output as json
 - `-h, --help`: Show this message and exit.

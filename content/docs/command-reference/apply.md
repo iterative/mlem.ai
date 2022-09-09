@@ -33,12 +33,12 @@ datasets.
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `-o TEXT, --output TEXT`: Where to store the outputs.
 - `-m TEXT, --method TEXT`: Which model method is to be applied [default:
-predict]
+  predict]
 - `--dr <path>, --data-project <path>`: Project with data
 - `--data-rev TEXT`: Revision of data
 - `-i, --import`: Try to import data on-the-fly
 - `--it TEXT, --import-type TEXT`: Specify how to read data file for import.
-Available types: ['pandas', 'pickle', 'torch']
+  Available types: ['pandas', 'pickle', 'torch']
 - `-b INTEGER, --batch_size INTEGER`: Batch size for reading data in batches.
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-e, --external`: Save result not in .mlem, but directly in project

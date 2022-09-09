@@ -27,7 +27,7 @@ def repr_option(option: Opt):
         decls = ", ".join(option.decls)
         if option.secondary:
             decls += " / " + ", ".join(option.secondary)
-    return textwrap.fill(f"- `{decls}`: {option.help}", width=LINE_WIDTH)
+    return textwrap.fill(f"- `{decls}`: {option.help}", width=LINE_WIDTH, subsequent_indent="  ")
 
 def repr_arg(option: Opt):
     return textwrap.fill(f"- `{option.metavar.lower()}`: {option.help}", width=LINE_WIDTH)

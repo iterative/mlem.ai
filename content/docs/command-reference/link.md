@@ -29,12 +29,12 @@ to incorporate them in the local workspace.
 - `--sp <path>, --source-project <path>`: Project for source object
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `--tp <path>, --target-project <path>`: Project to save target to [default:
-(none)]
+  (none)]
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--follow-links, --f / --no-follow-links, --nf`: If True, first follow links
-while reading {source} before creating this link. [default: follow-links]
+  while reading {source} before creating this link. [default: follow-links]
 - `--absolute, --abs / --relative, --rel`: Which path to linked object to
-specify: absolute or relative. [default: relative]
+  specify: absolute or relative. [default: relative]
 - `-h, --help`: Show this message and exit.
 
 ## Examples

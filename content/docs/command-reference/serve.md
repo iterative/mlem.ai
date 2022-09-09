@@ -33,7 +33,7 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 - `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `-f TEXT, --file_conf TEXT`: File with options for server in format
-`field.name=path_to_config`
+  `field.name=path_to_config`
 - `-h, --help`: Show this message and exit.
 
 ## Example: FastAPI HTTP server
