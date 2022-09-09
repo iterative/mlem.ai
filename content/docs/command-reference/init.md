@@ -1,14 +1,14 @@
 # init
 
-Initialize a MLEM project.
+Initialize a [MLEM project](/doc/user-guide/project-structure).
 
 ## Synopsis
 
 ```usage
-Usage: mlem init [options] [path]
+usage: mlem init [options] [path]
 
-Arguments:
-- `[PATH]`: Where to init project
+arguments:
+- `[path]`: Where to init project
 ```
 
 ## Description
@@ -32,7 +32,7 @@ and manage them using standard Git workflows.
 
 ## Options
 
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Examples
 

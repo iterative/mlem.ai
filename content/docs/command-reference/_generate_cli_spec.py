@@ -14,8 +14,11 @@ abc_group = ["apply-remote", "build", "declare", "serve"]
 
 
 class Opt(BaseModel):
-    decl: str
+    decls: List[str]
+    secondary: List[str]
+    metavar: str
     help: str
+    is_flag: bool
 
 
 class Args(BaseModel):
@@ -48,10 +51,14 @@ def get_options(command: Command, ctx):
     yield from options
 
 
-def repr_option(option, ctx):
-    decl, help = option.get_help_record(ctx)
+def repr_option(option, ctx) -> Opt:
+    _, help = option.get_help_record(ctx)
     help = help.replace("  ", " ")  # TODO: maybe fix in typer code?
-    return Opt(decl=decl, help=help)
+    return Opt(decls=sorted(option.opts, reverse=True),
+               secondary=sorted(option.secondary_opts, reverse=True),
+               metavar=option.make_metavar(),
+               help=help,
+               is_flag=option.is_flag if isinstance(option, Option) else False)
 
 
 def generate_options(command: Command, ctx):
@@ -73,7 +80,7 @@ def generate_args(command, ctx):
     metavar = None
     subcommands = None
     if command.name in abc_group:
-        impls = list(sorted(command.commands))
+        impls = list(sorted([c for c in command.commands if not c.startswith("_")]))
         metavar = command.subcommand_metavar
         args.extend(generate_args(list(command.commands.values())[0], ctx).args)
     if command.name in use_group:
@@ -82,6 +89,7 @@ def generate_args(command, ctx):
     return Args(args=args, impls=impls, impl_metavar=metavar,
                 subcommands=subcommands)
 
+
 def generate_usage(command: Command, ctx):
     if command.name not in abc_group:
         return command.get_usage(ctx)
@@ -89,6 +97,7 @@ def generate_usage(command: Command, ctx):
     subctx = Context(subcommand, parent=ctx, info_name=subcommand.name)
     sub_usage = generate_usage(subcommand, subctx)
     return sub_usage.replace(subcommand.name, command.subcommand_metavar)
+
 
 def generate_cli_command(command: Command, ctx):
     return Spec(args=generate_args(command, ctx),
@@ -99,7 +108,7 @@ def generate_cli_command(command: Command, ctx):
 
 def main():
     group = get_group(cli.app)
-    ctx = Context(group, info_name="mlem")
+    ctx = Context(group, info_name="mlem", help_option_names=["-h", "--help"])
     spec = {}
     for name, command in group.commands.items():
         if name in skip:

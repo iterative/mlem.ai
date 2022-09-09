@@ -6,11 +6,11 @@ Manipulate MLEM configuration
 
 
 ```usage
-Usage: mlem config [options] command [args]...
+usage: mlem config [options] command [args]...
 ```
 
 ## Options
 
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Examples

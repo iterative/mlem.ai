@@ -1,21 +1,18 @@
 # build
 
-Build models to create re-usable, ship-able entities such as a Docker image or
-Python package.
+Build models into re-usable assets you can distribute and use in production,
+such as a Docker image or Python package.
 
 ## Synopsis
 
 ```usage
-Usage: mlem build builder [options] model
+usage: mlem build builder [options]
 
 Builtin builders:
 - docker
 - docker_dir
 - pip
 - whl
-
-Arguments:
-- `MODEL`: Path to model [required]
 ```
 
 ## Description
@@ -26,11 +23,12 @@ images.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `-m <path>, --model <path>`: Path to MLEM model object [required]
+- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `-l, --load TEXT`: File to load builder config from
-- `-f, --file_conf TEXT`: File with options for builder in format `field.name=path_to_config`
-- `--help`: Show this message and exit.
+- `-f TEXT, --file_conf TEXT`: File with options for builder in format
+`field.name=path_to_config`
+- `-h, --help`: Show this message and exit.
 
 ## Examples
 

@@ -1,5 +1,6 @@
 import json
 import re
+import textwrap
 from typing import Dict, List
 
 from pydantic import BaseModel, parse_obj_as
@@ -7,8 +8,10 @@ from pydantic import BaseModel, parse_obj_as
 from _generate_cli_spec import Args, Opt, Spec
 
 DOC_AUTO_REPLACE = {
-    "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)"
+    "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)",
+    "MLEM project": "[MLEM project](/doc/user-guide/project-structure)"
 }
+LINE_WIDTH = 80
 
 
 def replace_section(data: str, section_name: str, new_value: str,
@@ -19,8 +22,15 @@ def replace_section(data: str, section_name: str, new_value: str,
 
 
 def repr_option(option: Opt):
-    return f"- `{option.decl}`: {option.help}"
+    decls = ", ".join(f"{d} {option.metavar}" for d in option.decls)
+    if option.is_flag:
+        decls = ", ".join(option.decls)
+        if option.secondary:
+            decls += " / " + ", ".join(option.secondary)
+    return textwrap.fill(f"- `{decls}`: {option.help}", width=LINE_WIDTH)
 
+def repr_arg(option: Opt):
+    return textwrap.fill(f"- `{option.metavar.lower()}`: {option.help}", width=LINE_WIDTH)
 
 def generate_options(options: List[Opt]):
     res = ["", ""]
@@ -31,8 +41,8 @@ def generate_options(options: List[Opt]):
 
 def generate_usage(usage, argspec: Args):
     if argspec.args:
-        args = '\n'.join(repr_option(a) for a in argspec.args)
-        args = f"\n\nArguments:\n{args}"
+        args = '\n'.join(repr_arg(a) for a in argspec.args)
+        args = f"\n\narguments:\n{args}"
     else:
         args = ""
     if argspec.impls:
@@ -43,16 +53,17 @@ def generate_usage(usage, argspec: Args):
     if argspec.subcommands:
         subcommands = "\n".join(
             f"- {k}: {v}" for k, v in argspec.subcommands.items())
-        subcommands = f"\n\nSubcommands:\n{subcommands}"
+        subcommands = f"\n\nsubcommands:\n{subcommands}"
     else:
         subcommands = ""
+    usage = usage[0].lower() + usage[1:]
     return f"\n{usage}{subcommands}{impls}{args}\n"
 
 
 def generate_doc(doc):
     for k, v in DOC_AUTO_REPLACE.items():
         doc = doc.replace(k, v)
-    return f"\n\n{doc}\n\n"
+    return f"\n\n{textwrap.fill(doc, width=LINE_WIDTH)}\n\n"
 
 
 def generate_cli_command(name: str, spec: Spec):
@@ -80,6 +91,7 @@ def main():
     with open("spec.json", "r", encoding="utf8") as f:
         spec = parse_obj_as(AllSpec, json.load(f))
 
+    # spec.__root__ = {"apply": spec.__root__["apply"]}
     for k, s in spec.__root__.items():
         generate_cli_command(k, s)
 

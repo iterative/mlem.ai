@@ -5,11 +5,11 @@ Apply a deployed model to data.
 ## Synopsis
 
 ```usage
-Usage: mlem deployment apply [options] path data
+usage: mlem deployment apply [options] path data
 
-Arguments:
-- `PATH`: Path to deployment meta [required]
-- `DATA`: Path to data object [required]
+arguments:
+- `path`: Path to deployment meta [required]
+- `data`: Path to data object [required]
 ```
 
 ## Description
@@ -21,16 +21,18 @@ gathered and returned, also as a MLEM Object.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `--data-project, --dr TEXT`: Project with data
+- `--dr <path>, --data-project <path>`: Project with data
 - `--data-rev TEXT`: Revision of data
-- `-o, --output TEXT`: Where to store the outputs.
-- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
-- `-m, --method TEXT`: Which model method is to be applied [default: predict]
+- `-o TEXT, --output TEXT`: Where to store the outputs.
+- `--tp <path>, --target-project <path>`: Project to save target to [default:
+(none)]
+- `-m TEXT, --method TEXT`: Which model method is to be applied [default:
+predict]
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `--json`: Output as json
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Example: Apply a dataset on a deployed model
 

@@ -1,11 +1,12 @@
 # declare
 
-Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) metafile from config args and config files.
+Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
+metafile from config args and config files.
 
 ## Synopsis
 
 ```usage
-Usage: mlem declare subtype [options] command [args]...
+usage: mlem declare subtype [options] command [args]...
 
 Builtin subtypes:
 - builder
@@ -30,7 +31,7 @@ check out the last example [here](/doc/command-reference/types#examples)
 
 ## Options
 
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Examples
 

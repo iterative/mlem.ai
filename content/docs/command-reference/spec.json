@@ -3,12 +3,22 @@
     "args": {
       "args": [
         {
-          "decl": "model",
-          "help": "Path to model object [required]"
+          "decls": [
+            "model"
+          ],
+          "secondary": [],
+          "metavar": "model",
+          "help": "Path to model object [required]",
+          "is_flag": false
         },
         {
-          "decl": "data",
-          "help": "Path to data object [required]"
+          "decls": [
+            "data_path"
+          ],
+          "secondary": [],
+          "metavar": "data",
+          "help": "Path to data object [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -17,56 +27,132 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-o, --output TEXT",
-        "help": "Where to store the outputs."
+        "decls": [
+          "-o",
+          "--output"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Where to store the outputs.",
+        "is_flag": false
       },
       {
-        "decl": "-m, --method TEXT",
-        "help": "Which model method is to be applied [default: predict]"
+        "decls": [
+          "-m",
+          "--method"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Which model method is to be applied [default: predict]",
+        "is_flag": false
       },
       {
-        "decl": "--data-project, --dr TEXT",
-        "help": "Project with data"
+        "decls": [
+          "--dr",
+          "--data-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project with data",
+        "is_flag": false
       },
       {
-        "decl": "--data-rev TEXT",
-        "help": "Revision of data"
+        "decls": [
+          "--data-rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Revision of data",
+        "is_flag": false
       },
       {
-        "decl": "-i, --import",
-        "help": "Try to import data on-the-fly"
+        "decls": [
+          "-i",
+          "--import"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Try to import data on-the-fly",
+        "is_flag": true
       },
       {
-        "decl": "--import-type, --it TEXT",
-        "help": "Specify how to read data file for import. Available types: ['pandas', 'pickle']"
+        "decls": [
+          "--it",
+          "--import-type"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Specify how to read data file for import. Available types: ['pandas', 'pickle', 'torch']",
+        "is_flag": false
       },
       {
-        "decl": "-b, --batch_size INTEGER",
-        "help": "Batch size for reading data in batches."
+        "decls": [
+          "-b",
+          "--batch_size"
+        ],
+        "secondary": [],
+        "metavar": "INTEGER",
+        "help": "Batch size for reading data in batches.",
+        "is_flag": false
       },
       {
-        "decl": "--index / --no-index",
-        "help": "Whether to index output in .mlem directory"
+        "decls": [
+          "--index"
+        ],
+        "secondary": [
+          "--no-index"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to index output in .mlem directory",
+        "is_flag": true
       },
       {
-        "decl": "-e, --external",
-        "help": "Save result not in .mlem, but directly in project"
+        "decls": [
+          "-e",
+          "--external"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Save result not in .mlem, but directly in project",
+        "is_flag": true
       },
       {
-        "decl": "--json",
-        "help": "Output as json"
+        "decls": [
+          "--json"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Output as json",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem apply [options] model data",
@@ -76,8 +162,13 @@
     "args": {
       "args": [
         {
-          "decl": "PATH",
-          "help": "Path to object [required]"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "<path>",
+          "help": "Path to object [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -86,31 +177,58 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
-    "usage": "Usage: mlem checkenv [options] path",
+    "usage": "Usage: mlem checkenv [options] <path>",
     "doc": "Check that current environment satisfies object requrements"
   },
   "clone": {
     "args": {
       "args": [
         {
-          "decl": "URI",
-          "help": "URI to object you want to clone [required]"
+          "decls": [
+            "uri"
+          ],
+          "secondary": [],
+          "metavar": "URI",
+          "help": "URI to object you want to clone [required]",
+          "is_flag": false
         },
         {
-          "decl": "TARGET",
-          "help": "Path to store the downloaded object. [required]"
+          "decls": [
+            "target"
+          ],
+          "secondary": [],
+          "metavar": "TARGET",
+          "help": "Path to store the downloaded object. [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -119,28 +237,64 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to [default: (none)]"
+        "decls": [
+          "--tp",
+          "--target-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project to save target to [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-e, --external",
-        "help": "Save result not in .mlem, but directly in project"
+        "decls": [
+          "-e",
+          "--external"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Save result not in .mlem, but directly in project",
+        "is_flag": true
       },
       {
-        "decl": "--index / --no-index",
-        "help": "Whether to index output in .mlem directory"
+        "decls": [
+          "--index"
+        ],
+        "secondary": [
+          "--no-index"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to index output in .mlem directory",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem clone [options] uri target",
@@ -150,12 +304,22 @@
     "args": {
       "args": [
         {
-          "decl": "URI",
-          "help": "File to import [required]"
+          "decls": [
+            "uri"
+          ],
+          "secondary": [],
+          "metavar": "URI",
+          "help": "File to import [required]",
+          "is_flag": false
         },
         {
-          "decl": "TARGET",
-          "help": "Path to save MLEM object [required]"
+          "decls": [
+            "target"
+          ],
+          "secondary": [],
+          "metavar": "TARGET",
+          "help": "Path to save MLEM object [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -164,36 +328,84 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to [default: (none)]"
+        "decls": [
+          "--tp",
+          "--target-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project to save target to [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--copy / --no-copy",
-        "help": "Whether to create a copy of file in target location or just link existing file [default: copy]"
+        "decls": [
+          "--copy"
+        ],
+        "secondary": [
+          "--no-copy"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to create a copy of file in target location or just link existing file [default: copy]",
+        "is_flag": true
       },
       {
-        "decl": "--type TEXT",
-        "help": "Specify how to read file Available types: ['pandas', 'pickle'] [default: (auto infer)]"
+        "decls": [
+          "--type"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Specify how to read file Available types: ['pandas', 'pickle', 'torch'] [default: (auto infer)]",
+        "is_flag": false
       },
       {
-        "decl": "--index / --no-index",
-        "help": "Whether to index output in .mlem directory"
+        "decls": [
+          "--index"
+        ],
+        "secondary": [
+          "--no-index"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to index output in .mlem directory",
+        "is_flag": true
       },
       {
-        "decl": "-e, --external",
-        "help": "Save result not in .mlem, but directly in project"
+        "decls": [
+          "-e",
+          "--external"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Save result not in .mlem, but directly in project",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem import [options] uri target",
@@ -203,8 +415,13 @@
     "args": {
       "args": [
         {
-          "decl": "[PROJECT]",
-          "help": "Project to list from [default: (current directory)]"
+          "decls": [
+            "project"
+          ],
+          "secondary": [],
+          "metavar": "[PROJECT]",
+          "help": "Project to list from [default: (current directory)]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -213,39 +430,81 @@
     },
     "options": [
       {
-        "decl": "-t, --type [all|link|model|data|builder|env|deployment]",
-        "help": "Type of objects to list [default: all]"
+        "decls": [
+          "-t",
+          "--type"
+        ],
+        "secondary": [],
+        "metavar": "[all|link|model|data|builder|env|deployment]",
+        "help": "Type of objects to list [default: all]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "+l, --links / -l, --no-links",
-        "help": "Whether to include links [default: l]"
+        "decls": [
+          "--links",
+          "+l"
+        ],
+        "secondary": [
+          "-l",
+          "--no-links"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to include links [default: l]",
+        "is_flag": true
       },
       {
-        "decl": "--json",
-        "help": "Output as json"
+        "decls": [
+          "--json"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Output as json",
+        "is_flag": true
       },
       {
-        "decl": "-i, --ignore-errors",
-        "help": "Ignore corrupted objects"
+        "decls": [
+          "-i",
+          "--ignore-errors"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Ignore corrupted objects",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem list [options] [project]",
-    "doc": "List MLEM objects inside a MLEM project (location should be [initialized](/doc/command-reference/init))."
+    "doc": "List MLEM objects inside a MLEM project."
   },
   "pprint": {
     "args": {
       "args": [
         {
-          "decl": "PATH",
-          "help": "Path to object [required]"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "PATH",
+          "help": "Path to object [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -254,24 +513,52 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-f, --follow-links",
-        "help": "If specified, follow the link to the actual object."
+        "decls": [
+          "-f",
+          "--follow-links"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "If specified, follow the link to the actual object.",
+        "is_flag": true
       },
       {
-        "decl": "--json",
-        "help": "Output as json"
+        "decls": [
+          "--json"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Output as json",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem pprint [options] path",
@@ -281,8 +568,13 @@
     "args": {
       "args": [
         {
-          "decl": "[PATH]",
-          "help": "Where to init project"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "[PATH]",
+          "help": "Where to init project",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -291,8 +583,14 @@
     },
     "options": [
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem init [options] [path]",
@@ -302,12 +600,22 @@
     "args": {
       "args": [
         {
-          "decl": "SOURCE",
-          "help": "URI of the object you are creating a link to [required]"
+          "decls": [
+            "source"
+          ],
+          "secondary": [],
+          "metavar": "SOURCE",
+          "help": "URI of the MLEM object you are creating a link to [required]",
+          "is_flag": false
         },
         {
-          "decl": "TARGET",
-          "help": "Path to save link object [required]"
+          "decls": [
+            "target"
+          ],
+          "secondary": [],
+          "metavar": "TARGET",
+          "help": "Path to save link object [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -316,32 +624,79 @@
     },
     "options": [
       {
-        "decl": "--source-project, --sp TEXT",
-        "help": "Project for source object"
+        "decls": [
+          "--sp",
+          "--source-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project for source object",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to [default: (none)]"
+        "decls": [
+          "--tp",
+          "--target-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project to save target to [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-e, --external",
-        "help": "Save result not in .mlem, but directly in project"
+        "decls": [
+          "-e",
+          "--external"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Save result not in .mlem, but directly in project",
+        "is_flag": true
       },
       {
-        "decl": "--follow-links, --f / --no-follow-links, --nf",
-        "help": "If True, first follow links while reading {source} before creating this link. [default: follow-links]"
+        "decls": [
+          "--follow-links",
+          "--f"
+        ],
+        "secondary": [
+          "--no-follow-links",
+          "--nf"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "If True, first follow links while reading {source} before creating this link. [default: follow-links]",
+        "is_flag": true
       },
       {
-        "decl": "--absolute, --abs / --relative, --rel",
-        "help": "Which path to linked object to specify: absolute or relative. [default: relative]"
+        "decls": [
+          "--absolute",
+          "--abs"
+        ],
+        "secondary": [
+          "--relative",
+          "--rel"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Which path to linked object to specify: absolute or relative. [default: relative]",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem link [options] source target",
@@ -351,12 +706,22 @@
     "args": {
       "args": [
         {
-          "decl": "[ABC]",
-          "help": "Subtype to list implementations. List subtypes if not provided"
+          "decls": [
+            "abc"
+          ],
+          "secondary": [],
+          "metavar": "[ABC]",
+          "help": "Subtype to list implementations. List subtypes if not provided",
+          "is_flag": false
         },
         {
-          "decl": "[SUB_TYPE]",
-          "help": "Type of `meta` subtype"
+          "decls": [
+            "sub_type"
+          ],
+          "secondary": [],
+          "metavar": "[SUB_TYPE]",
+          "help": "Type of `meta` subtype",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -365,8 +730,14 @@
     },
     "options": [
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem types [options] [abc] [sub_type]",
@@ -374,12 +745,7 @@
   },
   "apply-remote": {
     "args": {
-      "args": [
-        {
-          "decl": "DATA",
-          "help": "Path to data object [required]"
-        }
-      ],
+      "args": [],
       "impls": [
         "http",
         "rmq"
@@ -389,57 +755,111 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-d",
+          "--data"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM data object [required]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-o, --output TEXT",
-        "help": "Where to store the outputs."
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to [default: (none)]"
+        "decls": [
+          "-o",
+          "--output"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Where to save inference results",
+        "is_flag": false
       },
       {
-        "decl": "-m, --method TEXT",
-        "help": "Which model method is to be applied [default: predict]"
+        "decls": [
+          "--tp",
+          "--target-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project to save target to [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--index / --no-index",
-        "help": "Whether to index output in .mlem directory"
+        "decls": [
+          "-m",
+          "--method"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Which model method is to be applied [default: predict]",
+        "is_flag": false
       },
       {
-        "decl": "--json",
-        "help": "Output as json"
+        "decls": [
+          "--index"
+        ],
+        "secondary": [
+          "--no-index"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to index output in .mlem directory",
+        "is_flag": true
       },
       {
-        "decl": "-l, --load TEXT",
-        "help": "File to load client config from"
+        "decls": [
+          "--json"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Output as json",
+        "is_flag": true
       },
       {
-        "decl": "-f, --file_conf TEXT",
-        "help": "File with options for client in format `field.name=path_to_config`"
+        "decls": [
+          "-f",
+          "--file_conf"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "File with options for client in format `field.name=path_to_config`",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
-    "usage": "Usage: mlem apply-remote client [options] data",
+    "usage": "Usage: mlem apply-remote client [options]",
     "doc": "Apply a deployed-model (possibly remotely) to data. The results will be saved as\na MLEM object to `output` if provided. Otherwise, it will be printed to\n`stdout`."
   },
   "build": {
     "args": {
-      "args": [
-        {
-          "decl": "MODEL",
-          "help": "Path to model [required]"
-        }
-      ],
+      "args": [],
       "impls": [
         "docker",
         "docker_dir",
@@ -451,28 +871,57 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-m",
+          "--model"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM model object [required]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-l, --load TEXT",
-        "help": "File to load builder config from"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-f, --file_conf TEXT",
-        "help": "File with options for builder in format `field.name=path_to_config`"
+        "decls": [
+          "-f",
+          "--file_conf"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "File with options for builder in format `field.name=path_to_config`",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
-    "usage": "Usage: mlem build builder [options] model",
-    "doc": "Build models to create re-usable, ship-able entities such as a Docker image or\nPython package."
+    "usage": "Usage: mlem build builder [options]",
+    "doc": "Build models into re-usable assets you can distribute and use in production,\nsuch as a Docker image or Python package."
   },
   "config": {
     "args": {
@@ -483,8 +932,14 @@
     },
     "options": [
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem config [options] command [args]...",
@@ -506,8 +961,14 @@
     },
     "options": [
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem declare subtype [options] command [args]...",
@@ -527,19 +988,30 @@
     },
     "options": [
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem deployment [options] command [args]...",
-    "doc": "A set of commands to set up and manage deployments."
+    "doc": "A set of commands to set up and manage deployments"
   },
   "deployment/run": {
     "args": {
       "args": [
         {
-          "decl": "PATH",
-          "help": "Path to deployment meta (will be created if it does not exist) [required]"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "PATH",
+          "help": "Path to deployment meta (will be created if it does not exist) [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -548,32 +1020,75 @@
     },
     "options": [
       {
-        "decl": "-m, --model TEXT",
-        "help": "Path to model"
+        "decls": [
+          "-m",
+          "--model"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Path to model",
+        "is_flag": false
       },
       {
-        "decl": "-t, --env TEXT",
-        "help": "Path to target environment"
+        "decls": [
+          "-t",
+          "--env"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Path to target environment",
+        "is_flag": false
       },
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-e, --external",
-        "help": "Save result not in .mlem, but directly in project"
+        "decls": [
+          "-e",
+          "--external"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Save result not in .mlem, but directly in project",
+        "is_flag": true
       },
       {
-        "decl": "--index / --no-index",
-        "help": "Whether to index output in .mlem directory"
+        "decls": [
+          "--index"
+        ],
+        "secondary": [
+          "--no-index"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to index output in .mlem directory",
+        "is_flag": true
       },
       {
-        "decl": "-c, --conf TEXT",
-        "help": "Options in format `field.name=value`"
+        "decls": [
+          "-c",
+          "--conf"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Options in format `field.name=value`",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem deployment run [options] path",
@@ -583,8 +1098,13 @@
     "args": {
       "args": [
         {
-          "decl": "PATH",
-          "help": "Path to deployment meta [required]"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "PATH",
+          "help": "Path to deployment meta [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -593,12 +1113,24 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem deployment remove [options] path",
@@ -608,8 +1140,13 @@
     "args": {
       "args": [
         {
-          "decl": "PATH",
-          "help": "Path to deployment meta [required]"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "PATH",
+          "help": "Path to deployment meta [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -618,12 +1155,24 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem deployment status [options] path",
@@ -633,12 +1182,22 @@
     "args": {
       "args": [
         {
-          "decl": "PATH",
-          "help": "Path to deployment meta [required]"
+          "decls": [
+            "path"
+          ],
+          "secondary": [],
+          "metavar": "PATH",
+          "help": "Path to deployment meta [required]",
+          "is_flag": false
         },
         {
-          "decl": "DATA",
-          "help": "Path to data object [required]"
+          "decls": [
+            "data"
+          ],
+          "secondary": [],
+          "metavar": "DATA",
+          "help": "Path to data object [required]",
+          "is_flag": false
         }
       ],
       "impls": null,
@@ -647,44 +1206,102 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "--data-project, --dr TEXT",
-        "help": "Project with data"
+        "decls": [
+          "--dr",
+          "--data-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project with data",
+        "is_flag": false
       },
       {
-        "decl": "--data-rev TEXT",
-        "help": "Revision of data"
+        "decls": [
+          "--data-rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Revision of data",
+        "is_flag": false
       },
       {
-        "decl": "-o, --output TEXT",
-        "help": "Where to store the outputs."
+        "decls": [
+          "-o",
+          "--output"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Where to store the outputs.",
+        "is_flag": false
       },
       {
-        "decl": "--target-project, --tp TEXT",
-        "help": "Project to save target to [default: (none)]"
+        "decls": [
+          "--tp",
+          "--target-project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Project to save target to [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-m, --method TEXT",
-        "help": "Which model method is to be applied [default: predict]"
+        "decls": [
+          "-m",
+          "--method"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Which model method is to be applied [default: predict]",
+        "is_flag": false
       },
       {
-        "decl": "--index / --no-index",
-        "help": "Whether to index output in .mlem directory"
+        "decls": [
+          "--index"
+        ],
+        "secondary": [
+          "--no-index"
+        ],
+        "metavar": "BOOLEAN",
+        "help": "Whether to index output in .mlem directory",
+        "is_flag": true
       },
       {
-        "decl": "--json",
-        "help": "Output as json"
+        "decls": [
+          "--json"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Output as json",
+        "is_flag": true
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
     "usage": "Usage: mlem deployment apply [options] path data",
@@ -692,15 +1309,9 @@
   },
   "serve": {
     "args": {
-      "args": [
-        {
-          "decl": "MODEL",
-          "help": "Model to create service from [required]"
-        }
-      ],
+      "args": [],
       "impls": [
         "fastapi",
-        "heroku",
         "rmq"
       ],
       "impl_metavar": "server",
@@ -708,27 +1319,56 @@
     },
     "options": [
       {
-        "decl": "-p, --project TEXT",
-        "help": "Path to MLEM project [default: (none)]"
+        "decls": [
+          "-m",
+          "--model"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM model object [required]",
+        "is_flag": false
       },
       {
-        "decl": "--rev TEXT",
-        "help": "Repo revision to use [default: (none)]"
+        "decls": [
+          "-p",
+          "--project"
+        ],
+        "secondary": [],
+        "metavar": "<path>",
+        "help": "Path to MLEM project [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-l, --load TEXT",
-        "help": "File to load server config from"
+        "decls": [
+          "--rev"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "Repo revision to use [default: (none)]",
+        "is_flag": false
       },
       {
-        "decl": "-f, --file_conf TEXT",
-        "help": "File with options for server in format `field.name=path_to_config`"
+        "decls": [
+          "-f",
+          "--file_conf"
+        ],
+        "secondary": [],
+        "metavar": "TEXT",
+        "help": "File with options for server in format `field.name=path_to_config`",
+        "is_flag": false
       },
       {
-        "decl": "--help",
-        "help": "Show this message and exit."
+        "decls": [
+          "-h",
+          "--help"
+        ],
+        "secondary": [],
+        "metavar": "BOOLEAN",
+        "help": "Show this message and exit.",
+        "is_flag": true
       }
     ],
-    "usage": "Usage: mlem serve server [options] model",
-    "doc": "Deploy the model locally using a server implementation and expose its methods as\nendpoints."
+    "usage": "Usage: mlem serve server [options]",
+    "doc": "Create an API from model methods using a server implementation."
   }
 }

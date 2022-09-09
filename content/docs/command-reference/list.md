@@ -1,14 +1,14 @@
 # list
 
-List MLEM objects inside a MLEM project (location should be [initialized](/doc/command-reference/init)).
+List MLEM objects inside a [MLEM project](/doc/user-guide/project-structure).
 
 ## Synopsis
 
 ```usage
-Usage: mlem list [options] [project]
+usage: mlem list [options] [project]
 
-Arguments:
-- `[PROJECT]`: Project to list from [default: (current directory)]
+arguments:
+- `[project]`: Project to list from [default: (current directory)]
 ```
 
 ## Description
@@ -28,12 +28,14 @@ remote repositories.
 
 ## Options
 
-- `-t, --type [all|link|model|data|builder|env|deployment]`: Type of objects to list [default: all]
+- `-t [all|link|model|data|builder|env|deployment], --type
+[all|link|model|data|builder|env|deployment]`: Type of objects to list [default:
+all]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `+l, --links / -l, --no-links`: Whether to include links [default: l]
+- `--links, +l / -l, --no-links`: Whether to include links [default: l]
 - `--json`: Output as json
 - `-i, --ignore-errors`: Ignore corrupted objects
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Examples
 

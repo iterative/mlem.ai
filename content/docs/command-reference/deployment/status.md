@@ -5,10 +5,10 @@ Print status of deployed service.
 ## Synopsis
 
 ```usage
-Usage: mlem deployment status [options] path
+usage: mlem deployment status [options] path
 
-Arguments:
-- `PATH`: Path to deployment meta [required]
+arguments:
+- `path`: Path to deployment meta [required]
 ```
 
 ## Description
@@ -29,8 +29,8 @@ The possible statuses for deployments using the `heroku` target platform is:
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--help`: Show this message and exit.
+- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
+- `-h, --help`: Show this message and exit.
 
 ## Example: Get the status of a deployment
 

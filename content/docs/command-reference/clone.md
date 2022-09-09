@@ -6,11 +6,11 @@ saves a copy of it to `target` path.
 ## Synopsis
 
 ```usage
-Usage: mlem clone [options] uri target
+usage: mlem clone [options] uri target
 
-Arguments:
-- `URI`: URI to object you want to clone [required]
-- `TARGET`: Path to store the downloaded object. [required]
+arguments:
+- `uri`: URI to object you want to clone [required]
+- `target`: Path to store the downloaded object. [required]
 ```
 
 ## Description
@@ -22,12 +22,13 @@ repository.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
+- `--tp <path>, --target-project <path>`: Project to save target to [default:
+(none)]
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--index / --no-index`: Whether to index output in .mlem directory
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Examples
 

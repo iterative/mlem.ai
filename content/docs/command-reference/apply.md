@@ -6,9 +6,9 @@ provided. Otherwise, it will be printed to `stdout`.
 ## Synopsis
 
 ```usage
-Usage: mlem apply [options] model data
+usage: mlem apply [options] model data
 
-Arguments:
+arguments:
 - `model`: Path to model object [required]
 - `data`: Path to data object [required]
 ```
@@ -29,19 +29,21 @@ datasets.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
+- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
 - `--rev TEXT`: Repo revision to use [default: (none)]
-- `-o, --output TEXT`: Where to store the outputs.
-- `-m, --method TEXT`: Which model method is to be applied [default: predict]
-- `--data-project, --dr TEXT`: Project with data
+- `-o TEXT, --output TEXT`: Where to store the outputs.
+- `-m TEXT, --method TEXT`: Which model method is to be applied [default:
+predict]
+- `--dr <path>, --data-project <path>`: Project with data
 - `--data-rev TEXT`: Revision of data
 - `-i, --import`: Try to import data on-the-fly
-- `--import-type, --it TEXT`: Specify how to read data file for import. Available types: ['pandas', 'pickle']
-- `-b, --batch_size INTEGER`: Batch size for reading data in batches.
+- `--it TEXT, --import-type TEXT`: Specify how to read data file for import.
+Available types: ['pandas', 'pickle', 'torch']
+- `-b INTEGER, --batch_size INTEGER`: Batch size for reading data in batches.
 - `--index / --no-index`: Whether to index output in .mlem directory
 - `-e, --external`: Save result not in .mlem, but directly in project
 - `--json`: Output as json
-- `--help`: Show this message and exit.
+- `-h, --help`: Show this message and exit.
 
 ## Examples
 
