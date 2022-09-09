@@ -28,9 +28,8 @@ remote repositories.
 
 ## Options
 
-- `-t [all|link|model|data|builder|env|deployment], --type
-  [all|link|model|data|builder|env|deployment]`: Type of objects to list
-  [default: all]
+- `-t [all|link|model|data|builder|env|deployment], --type [all|link|model|data|builder|env|deployment]`:
+  Type of objects to list [default: all]
 - `--rev TEXT`: Repo revision to use [default: (none)]
 - `--links, +l / -l, --no-links`: Whether to include links [default: l]
 - `--json`: Output as json
