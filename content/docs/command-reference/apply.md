@@ -35,7 +35,7 @@ datasets.
 
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
 - `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-o <path>`, `--output <path>` - Where to store the outputs.
+- `-o <path>`, `--output <path>` - Where to save model outputs
 - `-m <text>`, `--method <text>` - Which model method is to be applied [default:
   predict]
 - `--dr <path>`, `--data-project <path>` - Project with data
@@ -44,7 +44,7 @@ datasets.
 - `--it <text>`, `--import-type <text>` - Specify how to read data file for
   import. Available types: ['pandas', 'pickle', 'torch']
 - `-b <integer>`, `--batch_size <integer>` - Batch size for reading data in
-  batches.
+  batches
 - `--index` / `--no-index` - Whether to index output in .mlem directory
 - `-e`, `--external` - Save result not in .mlem, but directly in project
 - `--json` - Output as json

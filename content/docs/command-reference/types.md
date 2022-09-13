@@ -11,7 +11,7 @@ usage: mlem types [-h]
 
 arguments:
   [abc]            Subtype to list implementations. List subtypes if not
-                   provided
+                   provided.
   [sub_type]       Type of `meta` subtype
 ```
 
