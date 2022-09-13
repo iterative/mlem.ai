@@ -6,7 +6,7 @@ concepts#mlem-objects) from an existing MLEM project.
 ## Synopsis
 
 ```usage
-usage: mlem pprint [-p <path>] [--rev <commitish>] [-f] 
+usage: mlem pprint [-p <path>] [--rev <commitish>] [-f]
                    [--json] [-h] 
                    path
 

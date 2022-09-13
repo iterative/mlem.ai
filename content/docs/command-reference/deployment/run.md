@@ -6,7 +6,7 @@ declaration or create a new one on-the-fly.
 ## Synopsis
 
 ```usage
-usage: mlem deployment run [-m <text>] [-t <text>] [-p <path>] [-e] 
+usage: mlem deployment run [-m <text>] [-t <text>] [-p <path>] [-e]
                            [--index] [-c <text>] [-h] 
                            path
 

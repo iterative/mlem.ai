@@ -7,7 +7,7 @@ guide/project-structure)s.
 ## Synopsis
 
 ```usage
-usage: mlem link [--sp <path>] [--rev <commitish>] 
+usage: mlem link [--sp <path>] [--rev <commitish>]
                  [--tp <path>] [-e] [--f] [--abs] [-h] 
                  source target
 

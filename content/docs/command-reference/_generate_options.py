@@ -65,6 +65,7 @@ def _gen_usage_string(spec: Spec):
     for o in options:
         line = f"{option_lines[-1]}{o} "
         if len(line) > max_opts_len:
+            option_lines[-1] = option_lines[-1].strip()
             option_lines.append(o + " ")
         else:
             option_lines[-1] = line

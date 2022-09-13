@@ -7,8 +7,8 @@ a MLEM object to `output` if provided. Otherwise, it will be printed to
 ## Synopsis
 
 ```usage
-usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>] 
-                         [-o <path>] [--tp <path>] [-m <text>] 
+usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>]
+                         [-o <path>] [--tp <path>] [-m <text>]
                          [--index] [--json] [-f <text>] [-h] 
                          [<client> [client options] | --load <declaration>]
 

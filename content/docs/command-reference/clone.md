@@ -6,7 +6,7 @@ saves a copy of it to `target` path.
 ## Synopsis
 
 ```usage
-usage: mlem clone [-p <path>] [--rev <commitish>] 
+usage: mlem clone [-p <path>] [--rev <commitish>]
                   [--tp <path>] [-e] [--index] [-h] 
                   uri target
 

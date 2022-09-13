@@ -5,7 +5,7 @@ Create an API from model methods using a server implementation.
 ## Synopsis
 
 ```usage
-usage: mlem serve [-m <path>] [-p <path>] [--rev <commitish>] 
+usage: mlem serve [-m <path>] [-p <path>] [--rev <commitish>]
                   [-f <text>] [-h] 
                   [<server> [server options] | --load <declaration>]
 

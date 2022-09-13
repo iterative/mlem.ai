@@ -5,9 +5,9 @@ Apply a deployed model to data.
 ## Synopsis
 
 ```usage
-usage: mlem deployment apply [-p <path>] [--rev <commitish>] 
-                             [--dr <path>] [--data-rev <commitish>] 
-                             [-o <text>] [--tp <path>] [-m <text>] 
+usage: mlem deployment apply [-p <path>] [--rev <commitish>]
+                             [--dr <path>] [--data-rev <commitish>]
+                             [-o <text>] [--tp <path>] [-m <text>]
                              [--index] [--json] [-h] 
                              path data
 

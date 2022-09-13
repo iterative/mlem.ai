@@ -6,7 +6,7 @@ such as a Docker image or Python package.
 ## Synopsis
 
 ```usage
-usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>] 
+usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>]
                   [-f <text>] [-h] 
                   [<builder> [builder options] | --load <declaration>]
 

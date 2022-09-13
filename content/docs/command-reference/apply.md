@@ -6,9 +6,9 @@ provided. Otherwise, it will be printed to `stdout`.
 ## Synopsis
 
 ```usage
-usage: mlem apply [-p <path>] [--rev <commitish>] [-o <path>] 
-                  [-m <text>] [--dr <path>] 
-                  [--data-rev <commitish>] [-i] [--it <text>] 
+usage: mlem apply [-p <path>] [--rev <commitish>] [-o <path>]
+                  [-m <text>] [--dr <path>]
+                  [--data-rev <commitish>] [-i] [--it <text>]
                   [-b <integer>] [--index] [-e] [--json] [-h] 
                   model data
 
