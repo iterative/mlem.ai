@@ -8,7 +8,7 @@ guide/project-structure)s.
 
 ```usage
 usage: mlem link [--sp <path>] [--rev <commitish>]
-                 [--tp <path>] [-e] [--f] [--abs] [-h] 
+                 [--tp <path>] [-e] [--f] [--abs] [-h]
                  source target
 
 arguments:

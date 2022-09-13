@@ -7,7 +7,7 @@ such as a Docker image or Python package.
 
 ```usage
 usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>]
-                  [-f <text>] [-h] 
+                  [-f <text>] [-h]
                   [<builder> [builder options] | --load <declaration>]
 
 Builtin builders:

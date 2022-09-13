@@ -7,7 +7,7 @@ declaration or create a new one on-the-fly.
 
 ```usage
 usage: mlem deployment run [-m <text>] [-t <text>] [-p <path>] [-e]
-                           [--index] [-c <text>] [-h] 
+                           [--index] [-c <text>] [-h]
                            path
 
 arguments:

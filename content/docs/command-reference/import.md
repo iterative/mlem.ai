@@ -7,7 +7,7 @@ Create a `.mlem` metafile for a model or data in any file or directory.
 ```usage
 usage: mlem import [-p <path>] [--rev <commitish>]
                    [--tp <path>] [--copy] [--type <text>]
-                   [--index] [-e] [-h] 
+                   [--index] [-e] [-h]
                    uri target
 
 arguments:

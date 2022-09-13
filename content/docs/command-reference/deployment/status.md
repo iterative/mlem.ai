@@ -5,7 +5,7 @@ Print status of deployed service.
 ## Synopsis
 
 ```usage
-usage: mlem deployment status [-p <path>] [-h] 
+usage: mlem deployment status [-p <path>] [-h]
                               path
 
 arguments:

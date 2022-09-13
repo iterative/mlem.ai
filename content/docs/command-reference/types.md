@@ -6,7 +6,7 @@ subtype is not provided, list all available MLEM types.
 ## Synopsis
 
 ```usage
-usage: mlem types [-h] 
+usage: mlem types [-h]
                   [abc] [sub_type]
 
 arguments:

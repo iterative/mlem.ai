@@ -5,7 +5,7 @@ Initialize a [MLEM project](/doc/user-guide/project-structure).
 ## Synopsis
 
 ```usage
-usage: mlem init [-h] 
+usage: mlem init [-h]
                  path
 
 arguments:

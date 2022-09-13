@@ -7,7 +7,7 @@ saves a copy of it to `target` path.
 
 ```usage
 usage: mlem clone [-p <path>] [--rev <commitish>]
-                  [--tp <path>] [-e] [--index] [-h] 
+                  [--tp <path>] [-e] [--index] [-h]
                   uri target
 
 arguments:

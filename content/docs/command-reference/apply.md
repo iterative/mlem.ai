@@ -9,7 +9,7 @@ provided. Otherwise, it will be printed to `stdout`.
 usage: mlem apply [-p <path>] [--rev <commitish>] [-o <path>]
                   [-m <text>] [--dr <path>]
                   [--data-rev <commitish>] [-i] [--it <text>]
-                  [-b <integer>] [--index] [-e] [--json] [-h] 
+                  [-b <integer>] [--index] [-e] [--json] [-h]
                   model data
 
 arguments:

@@ -5,7 +5,7 @@ Stop and destroy deployed instance.
 ## Synopsis
 
 ```usage
-usage: mlem deployment remove [-p <path>] [-h] 
+usage: mlem deployment remove [-p <path>] [-h]
                               path
 
 arguments:

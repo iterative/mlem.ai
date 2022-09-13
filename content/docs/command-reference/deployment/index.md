@@ -5,7 +5,7 @@ A set of commands to set up and manage deployments
 ## Synopsis
 
 ```usage
-usage: mlem deployment [-h] 
+usage: mlem deployment [-h]
                        command 
 
 subcommands:

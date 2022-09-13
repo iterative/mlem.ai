@@ -7,7 +7,7 @@ List MLEM objects inside a [MLEM project](/doc/user-guide/project-structure).
 ```usage
 usage: mlem list 
                  [-t <[all|link|model|data|builder|env|deployment]>]
-                 [--rev <commitish>] [+l] [--json] [-i] [-h] 
+                 [--rev <commitish>] [+l] [--json] [-i] [-h]
                  project
 
 arguments:

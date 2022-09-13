@@ -5,7 +5,7 @@ Check that current environment satisfies object requrements
 ## Synopsis
 
 ```usage
-usage: mlem checkenv [-p <path>] [--rev <commitish>] [-h] 
+usage: mlem checkenv [-p <path>] [--rev <commitish>] [-h]
                      path
 
 arguments:

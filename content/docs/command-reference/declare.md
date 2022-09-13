@@ -6,7 +6,7 @@ metafile from config args and config files.
 ## Synopsis
 
 ```usage
-usage: mlem declare [-h] 
+usage: mlem declare [-h]
                     [<subtype> [subtype options] | --load <declaration>]
 
 Builtin subtypes:

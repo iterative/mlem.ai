@@ -69,6 +69,7 @@ def _gen_usage_string(spec: Spec):
             option_lines.append(o + " ")
         else:
             option_lines[-1] = line
+    option_lines[-1] = option_lines[-1].strip()
     options = ("\n" + " " * indent).join(option_lines)
     impl = ""
     if spec.args.impl_metavar:

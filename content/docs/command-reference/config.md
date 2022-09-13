@@ -5,7 +5,7 @@ Manipulate MLEM configuration
 ## Synopsys
 
 ```usage
-usage: mlem config [-h] 
+usage: mlem config [-h]
 ```
 
 ## Options

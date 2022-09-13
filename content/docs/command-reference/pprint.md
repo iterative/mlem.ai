@@ -7,7 +7,7 @@ concepts#mlem-objects) from an existing MLEM project.
 
 ```usage
 usage: mlem pprint [-p <path>] [--rev <commitish>] [-f]
-                   [--json] [-h] 
+                   [--json] [-h]
                    path
 
 arguments:
