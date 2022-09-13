@@ -6,7 +6,8 @@ metafile from config args and config files.
 ## Synopsis
 
 ```usage
-usage: mlem declare subtype [options] command [args]...
+usage: mlem declare [-h] 
+                    [<subtype> [subtype options] | --load <declaration>]
 
 Builtin subtypes:
 - builder
@@ -31,7 +32,7 @@ check out the last example [here](/doc/command-reference/types#examples)
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 
@@ -43,7 +44,7 @@ $ mlem types env heroku
 [not required] api_key: str = None
 
 # Declare the heroku env
-$ mlem declare env heroku production --conf api_key="mlem_heroku_staging"
+$ mlem declare env heroku production --api_key mlem_heroku_staging
 💾 Saving env to .mlem/env/staging.mlem
 
 # Print the contents of the new heroku env metafile

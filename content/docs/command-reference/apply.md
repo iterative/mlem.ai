@@ -6,11 +6,15 @@ provided. Otherwise, it will be printed to `stdout`.
 ## Synopsis
 
 ```usage
-usage: mlem apply [options] model data
+usage: mlem apply [-p <path>] [--rev <commitish>] [-o <path>] 
+                  [-m <text>] [--dr <path>] 
+                  [--data-rev <commitish>] [-i] [--it <text>] 
+                  [-b <integer>] [--index] [-e] [--json] [-h] 
+                  model data
 
 arguments:
-- `model`: Path to model object [required]
-- `data`: Path to data object [required]
+  model            Path to model object
+  data             Path to data object
 ```
 
 ## Description
@@ -29,21 +33,22 @@ datasets.
 
 ## Options
 
-- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `-o TEXT, --output TEXT`: Where to store the outputs.
-- `-m TEXT, --method TEXT`: Which model method is to be applied [default:
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-o <path>`, `--output <path>` - Where to store the outputs.
+- `-m <text>`, `--method <text>` - Which model method is to be applied [default:
   predict]
-- `--dr <path>, --data-project <path>`: Project with data
-- `--data-rev TEXT`: Revision of data
-- `-i, --import`: Try to import data on-the-fly
-- `--it TEXT, --import-type TEXT`: Specify how to read data file for import.
-  Available types: ['pandas', 'pickle', 'torch']
-- `-b INTEGER, --batch_size INTEGER`: Batch size for reading data in batches.
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `--json`: Output as json
-- `-h, --help`: Show this message and exit.
+- `--dr <path>`, `--data-project <path>` - Project with data
+- `--data-rev <commitish>` - Revision of data
+- `-i`, `--import` - Try to import data on-the-fly
+- `--it <text>`, `--import-type <text>` - Specify how to read data file for
+  import. Available types: ['pandas', 'pickle', 'torch']
+- `-b <integer>`, `--batch_size <integer>` - Batch size for reading data in
+  batches.
+- `--index` / `--no-index` - Whether to index output in .mlem directory
+- `-e`, `--external` - Save result not in .mlem, but directly in project
+- `--json` - Output as json
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

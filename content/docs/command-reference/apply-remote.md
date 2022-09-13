@@ -7,7 +7,10 @@ a MLEM object to `output` if provided. Otherwise, it will be printed to
 ## Synopsis
 
 ```usage
-usage: mlem apply-remote client [options]
+usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>] 
+                         [-o <path>] [--tp <path>] [-m <text>] 
+                         [--index] [--json] [-f <text>] [-h] 
+                         [<client> [client options] | --load <declaration>]
 
 Builtin clients:
 - http
@@ -27,19 +30,19 @@ clients are `http` and `rmq` - which are used to launch requests against the
 
 ## Options
 
-- `-d <path>, --data <path>`: Path to MLEM data object [required]
-- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `-o <path>, --output <path>`: Where to save inference results
-- `--tp <path>, --target-project <path>`: Project to save target to [default:
+- `-d <path>`, `--data <path>` - Path to MLEM data object [required]
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-o <path>`, `--output <path>` - Where to save inference results
+- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
   (none)]
-- `-m TEXT, --method TEXT`: Which model method is to be applied [default:
+- `-m <text>`, `--method <text>` - Which model method is to be applied [default:
   predict]
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `--json`: Output as json
-- `-f TEXT, --file_conf TEXT`: File with options for client in format
+- `--index` / `--no-index` - Whether to index output in .mlem directory
+- `--json` - Output as json
+- `-f <text>`, `--file_conf <text>` - File with options for client in format
   `field.name=path_to_config`
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Example: Apply a locally hosted model to a local dataset
 

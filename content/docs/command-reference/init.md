@@ -5,10 +5,11 @@ Initialize a [MLEM project](/doc/user-guide/project-structure).
 ## Synopsis
 
 ```usage
-usage: mlem init [options] [path]
+usage: mlem init [-h] 
+                 path
 
 arguments:
-- `[path]`: Where to init project
+  path             Where to init project
 ```
 
 ## Description
@@ -32,7 +33,7 @@ and manage them using standard Git workflows.
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

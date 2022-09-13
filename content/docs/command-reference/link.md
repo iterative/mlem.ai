@@ -7,11 +7,13 @@ guide/project-structure)s.
 ## Synopsis
 
 ```usage
-usage: mlem link [options] source target
+usage: mlem link [--sp <path>] [--rev <commitish>] 
+                 [--tp <path>] [-e] [--f] [--abs] [-h] 
+                 source target
 
 arguments:
-- `source`: URI of the MLEM object you are creating a link to [required]
-- `target`: Path to save link object [required]
+  source           URI of the MLEM object you are creating a link to
+  target           Path to save link object
 ```
 
 ## Description
@@ -26,16 +28,17 @@ to incorporate them in the local workspace.
 
 ## Options
 
-- `--sp <path>, --source-project <path>`: Project for source object
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `--tp <path>, --target-project <path>`: Project to save target to [default:
+- `--sp <path>`, `--source-project <path>` - Project for source object
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
   (none)]
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `--follow-links, --f / --no-follow-links, --nf`: If True, first follow links
-  while reading {source} before creating this link. [default: follow-links]
-- `--absolute, --abs / --relative, --rel`: Which path to linked object to
+- `-e`, `--external` - Save result not in .mlem, but directly in project
+- `--follow-links`, `--f` / `--no-follow-links`, `--nf` - If True, first follow
+  links while reading {source} before creating this link. [default: follow-
+  links]
+- `--absolute`, `--abs` / `--relative`, `--rel` - Which path to linked object to
   specify: absolute or relative. [default: relative]
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

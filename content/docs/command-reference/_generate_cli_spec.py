@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from typer.main import get_group
 
 from mlem import cli
+from mlem.cli.main import get_cmd_name
 
 use_group = ["deployment"]
 skip = ["dev"]
@@ -31,8 +32,8 @@ class Args(BaseModel):
 class Spec(BaseModel):
     args: Args
     options: List[Opt]
-    usage: str
     doc: str
+    name: str
 
 
 def get_options(command: Command, ctx):
@@ -52,12 +53,12 @@ def get_options(command: Command, ctx):
 
 
 def repr_option(option, ctx) -> Opt:
-    _, help = option.get_help_record(ctx)
-    help = help.replace("  ", " ")  # TODO: maybe fix in typer code?
+    _, help_ = option.get_help_record(ctx)
+    help_ = help_.replace("  ", " ")  # TODO: maybe fix in typer code?
     return Opt(decls=sorted(option.opts, reverse=True),
                secondary=sorted(option.secondary_opts, reverse=True),
                metavar=option.make_metavar(),
-               help=help,
+               help=help_,
                is_flag=option.is_flag if isinstance(option, Option) else False)
 
 
@@ -80,7 +81,8 @@ def generate_args(command, ctx):
     metavar = None
     subcommands = None
     if command.name in abc_group:
-        impls = list(sorted([c for c in command.commands if not c.startswith("_")]))
+        impls = list(
+            sorted([c for c in command.commands if not c.startswith("_")]))
         metavar = command.subcommand_metavar
         args.extend(generate_args(list(command.commands.values())[0], ctx).args)
     if command.name in use_group:
@@ -102,8 +104,8 @@ def generate_usage(command: Command, ctx):
 def generate_cli_command(command: Command, ctx):
     return Spec(args=generate_args(command, ctx),
                 options=generate_options(command, ctx),
-                usage=generate_usage(command, ctx),
-                doc=command.help.strip())
+                doc=command.help.strip(),
+                name=get_cmd_name(ctx))
 
 
 def main():

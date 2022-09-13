@@ -5,7 +5,9 @@ Create an API from model methods using a server implementation.
 ## Synopsis
 
 ```usage
-usage: mlem serve server [options]
+usage: mlem serve [-m <path>] [-p <path>] [--rev <commitish>] 
+                  [-f <text>] [-h] 
+                  [<server> [server options] | --load <declaration>]
 
 Builtin servers:
 - fastapi
@@ -29,12 +31,12 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 
 ## Options
 
-- `-m <path>, --model <path>`: Path to MLEM model object [required]
-- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `-f TEXT, --file_conf TEXT`: File with options for server in format
+- `-m <path>`, `--model <path>` - Path to MLEM model object [required]
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-f <text>`, `--file_conf <text>` - File with options for server in format
   `field.name=path_to_config`
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Example: FastAPI HTTP server
 

@@ -5,10 +5,11 @@ Stop and destroy deployed instance.
 ## Synopsis
 
 ```usage
-usage: mlem deployment remove [options] path
+usage: mlem deployment remove [-p <path>] [-h] 
+                              path
 
 arguments:
-- `path`: Path to deployment meta [required]
+  path             Path to deployment meta
 ```
 
 ## Description
@@ -19,8 +20,8 @@ deleting its associated runtime resources.
 
 ## Options
 
-- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
-- `-h, --help`: Show this message and exit.
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `-h`, `--help` - Show this message and exit.
 
 ## Example: Stop and destroy a deployment
 

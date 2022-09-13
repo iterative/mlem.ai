@@ -5,11 +5,14 @@ Create a `.mlem` metafile for a model or data in any file or directory.
 ## Synopsis
 
 ```usage
-usage: mlem import [options] uri target
+usage: mlem import [-p <path>] [--rev <commitish>] 
+                   [--tp <path>] [--copy] [--type <text>] 
+                   [--index] [-e] [-h] 
+                   uri target
 
 arguments:
-- `uri`: File to import [required]
-- `target`: Path to save MLEM object [required]
+  uri              File to import
+  target           Path to save MLEM object
 ```
 
 ## Description
@@ -24,17 +27,17 @@ load those models/datasets into object for subsequent usage in MLEM context.
 
 ## Options
 
-- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `--tp <path>, --target-project <path>`: Project to save target to [default:
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
   (none)]
-- `--copy / --no-copy`: Whether to create a copy of file in target location or
-  just link existing file [default: copy]
-- `--type TEXT`: Specify how to read file Available types: ['pandas', 'pickle',
-  'torch'] [default: (auto infer)]
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `-h, --help`: Show this message and exit.
+- `--copy` / `--no-copy` - Whether to create a copy of file in target location
+  or just link existing file [default: copy]
+- `--type <text>` - Specify how to read file Available types: ['pandas',
+  'pickle', 'torch'] [default: (auto infer)]
+- `--index` / `--no-index` - Whether to index output in .mlem directory
+- `-e`, `--external` - Save result not in .mlem, but directly in project
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

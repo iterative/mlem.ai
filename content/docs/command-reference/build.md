@@ -6,7 +6,9 @@ such as a Docker image or Python package.
 ## Synopsis
 
 ```usage
-usage: mlem build builder [options]
+usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>] 
+                  [-f <text>] [-h] 
+                  [<builder> [builder options] | --load <declaration>]
 
 Builtin builders:
 - docker
@@ -23,12 +25,12 @@ images.
 
 ## Options
 
-- `-m <path>, --model <path>`: Path to MLEM model object [required]
-- `-p <path>, --project <path>`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `-f TEXT, --file_conf TEXT`: File with options for builder in format
+- `-m <path>`, `--model <path>` - Path to MLEM model object [required]
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-f <text>`, `--file_conf <text>` - File with options for builder in format
   `field.name=path_to_config`
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 
