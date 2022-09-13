@@ -64,7 +64,7 @@ def _gen_usage_string(spec: Spec):
     option_lines = [""]
     for o in options:
         line = f"{option_lines[-1]}{o} "
-        if len(line) > max_opts_len:
+        if len(line) > max_opts_len and option_lines[-1] != "":
             option_lines[-1] = option_lines[-1].strip()
             option_lines.append(o + " ")
         else:
@@ -76,7 +76,7 @@ def _gen_usage_string(spec: Spec):
         impl = f"[<{spec.args.impl_metavar}> [{spec.args.impl_metavar} options] | --load <declaration>]"
     args = impl + " ".join(a.metavar for a in spec.args.args).lower()
     if spec.args.subcommands:
-        args += "command "
+        args += "command"
     res = f"{usage}{options}"
     if args:
         res += "\n" + " " * indent + f"{args}"

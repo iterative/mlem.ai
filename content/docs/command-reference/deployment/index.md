@@ -6,7 +6,7 @@ A set of commands to set up and manage deployments
 
 ```usage
 usage: mlem deployment [-h]
-                       command 
+                       command
 
 subcommands:
   run              Deploy a model to a target environment.
