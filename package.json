@@ -21,11 +21,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@dvcorg/gatsby-theme-iterative": "0.1.14",
+    "@dvcorg/gatsby-theme-iterative": "0.1.15",
     "@octokit/graphql": "5.0.1",
     "@sentry/gatsby": "7.12.1",
     "@svgr/webpack": "6.3.1",
-    "autoprefixer": "10.4.10",
+    "autoprefixer": "10.4.11",
     "classnames": "2.3.2",
     "express": "4.18.1",
     "gatsby": "4.23.0",
