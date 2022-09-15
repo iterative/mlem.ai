@@ -1,6 +1,9 @@
 require('dotenv').config()
 const path = require('path')
 
+const apiMiddleware = require('@dvcorg/websites-server/src/middleware/api')
+const redirectsMiddleware = require('@dvcorg/websites-server/src/middleware/redirects')
+
 const siteMetadata = {
   title: 'MLEM - Machine Learning Engineering Management',
   description: 'Open-source tool to simplify ML model deployment',
@@ -107,5 +110,9 @@ module.exports = {
       : true
   },
   plugins,
-  siteMetadata
+  siteMetadata,
+  developMiddleware: app => {
+    app.use(redirectsMiddleware)
+    app.use('/api', apiMiddleware)
+  }
 }

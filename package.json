@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "dev": "gatsby develop",
-    "start": "node ./src/server/index.js",
+    "start": "node ./src/server.js",
     "heroku-postbuild": "./scripts/heroku-deploy.sh",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
