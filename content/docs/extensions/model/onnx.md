@@ -4,6 +4,10 @@
 [ModelIO](/doc/user-guide/mlem-abcs#modelio) implementations for
 `onnx.ModelProto`
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

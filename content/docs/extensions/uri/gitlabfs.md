@@ -2,6 +2,10 @@
 
 Implementation of `GitlabFileSystem` and `GitlabResolver`
 
+## Description
+
+**TODO**
+
 ## Examples
 
 ```python

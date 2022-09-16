@@ -3,6 +3,10 @@
 [ModelType](/doc/user-guide/mlem-abcs#modeltype) implementations for any
 sklearn-compatible classes as well as `Pipeline`
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

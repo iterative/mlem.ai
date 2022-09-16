@@ -3,6 +3,10 @@
 DataType, Reader and Writer implementations for `pd.DataFrame` and `pd.Series`
 ImportHook implementation for files saved with pandas
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

@@ -5,6 +5,10 @@
 `torch.nn.Module` ImportHook for importing files saved with `torch.save`
 DataType, Reader and Writer implementations for `torch.Tensor`
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

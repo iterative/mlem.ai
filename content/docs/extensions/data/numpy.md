@@ -3,6 +3,10 @@
 DataType, Reader and Writer implementations for `np.ndarray` and `np.number`
 primitives
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

@@ -2,6 +2,10 @@
 
 Implementation of `BitbucketFileSystem` and `BitbucketResolver`
 
+## Description
+
+**TODO**
+
 ## Examples
 
 ```python

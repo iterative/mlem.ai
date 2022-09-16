@@ -2,6 +2,10 @@
 
 RabbitMQServer implementation
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

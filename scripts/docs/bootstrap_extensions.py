@@ -2,23 +2,22 @@ import importlib
 import inspect
 import json
 import os.path
+import re
 import string
 import textwrap
 from dataclasses import dataclass
 from typing import Any, Iterator, List, Tuple, Type
-import re
 
 from pydantic import BaseModel, ValidationError
 from pydantic.fields import ModelField
 from pydantic.typing import display_as_type, get_args, is_union
 from typing_extensions import get_origin
 
-from mlem import ExtensionLoader
 from mlem.cli.utils import get_field_help
-from mlem.core.base import MlemABC, smart_split
-from mlem.core.objects import MlemObject
-from mlem.ext import Extension, get_ext_type
+from mlem.core.base import MlemABC
+from mlem.ext import Extension, ExtensionLoader, get_ext_type
 from mlem.utils.entrypoints import load_entrypoints
+from scripts.docs.utils import get_sections, replace_sections
 
 SIDEBAR_PATH = "../../content/docs/sidebar.json"
 EXTENSIONS_SLUG = "extensions"
@@ -30,6 +29,7 @@ DOC_REPLACEMENTS = {
 }
 
 LINE_WIDTH = 80
+
 
 def add_extension_to_sidebar(type_, slug, label, source):
     with open(SIDEBAR_PATH, "r") as f:
@@ -53,7 +53,8 @@ def get_extension_doc(module_doc: str):
     doc = "\n\n".join(module_doc.split("\n\n")[1:])
     for key, value in DOC_REPLACEMENTS.items():
         doc = doc.replace(key, value)
-    return textwrap.fill(doc.replace("\n\n", "\n"), width=LINE_WIDTH, break_on_hyphens=False)
+    return textwrap.fill(doc.replace("\n\n", "\n"), width=LINE_WIDTH,
+                         break_on_hyphens=False)
 
 
 def get_extension_reqs(ext: Extension):
@@ -124,16 +125,19 @@ def repr_field_type(type_: Type) -> str:
 
     raise ValueError(f"Unknown type: {type_}")
 
+
 def default_value(fd):
     try:
         return fd.__class__()
     except ValidationError:
         return ...
 
+
 def repr_field_default(field: Field) -> Tuple[str, Type]:
     fd = field.default
     default = f" = {fd}" if fd is not None and fd != "" else ""
-    if default == " = " or issubclass(fd.__class__, BaseModel) and fd == default_value(fd):
+    if default == " = " or issubclass(fd.__class__,
+                                      BaseModel) and fd == default_value(fd):
         default = f" = {fd.__class__.__name__}()"
     if isinstance(fd, str):
         default = f" = \"{fd}\""
@@ -141,6 +145,7 @@ def repr_field_default(field: Field) -> Tuple[str, Type]:
     if isinstance(fd, BaseModel) and not issubclass(fd.__class__, MlemABC):
         add_type = fd.__class__
     return default, add_type
+
 
 def with_prev_and_next(iterable):
     prev = None
@@ -151,6 +156,7 @@ def with_prev_and_next(iterable):
         prev = current
         current = o
     yield current, o, ""
+
 
 def smart_wrap(value: str, width: int, subsequent_indent: str = ""):
     SPECIAL = "\0"
@@ -173,19 +179,26 @@ def smart_wrap(value: str, width: int, subsequent_indent: str = ""):
             quotes_open[c] = True
         chars.append(c)
 
-    return textwrap.fill("".join(chars), width=width, subsequent_indent=subsequent_indent, break_on_hyphens=False, break_long_words=False).replace(SPECIAL, " ")
+    return textwrap.fill("".join(chars), width=width,
+                         subsequent_indent=subsequent_indent,
+                         break_on_hyphens=False,
+                         break_long_words=False).replace(SPECIAL, " ")
+
 
 def repr_field(field: Field) -> Tuple[str, Type]:
     req = " _(required)_" if field.required else ""
     default, add_type = repr_field_default(field)
     help_ = re.subn(r"\s+", " ", field.help_)[0]
-    return smart_wrap(f"- `{field.name}: {field.type_}{default}`{req} - {help_}", width=LINE_WIDTH, subsequent_indent="  "), add_type
+    return smart_wrap(
+        f"- `{field.name}: {field.type_}{default}`{req} - {help_}",
+        width=LINE_WIDTH, subsequent_indent="  "), add_type
 
 
 def get_impl_docstring(type_):
     doc = inspect.cleandoc(type_.__doc__ or "Class docstring missing").strip()
     return "\n".join(
-        f"{textwrap.fill('    ' + line, subsequent_indent='    ', width=LINE_WIDTH - 5)}" for line in
+        f"{textwrap.fill('    ' + line, subsequent_indent='    ', width=LINE_WIDTH - 5)}"
+        for line in
         doc.splitlines())
 
 
@@ -261,6 +274,10 @@ def get_extension_md(ext: Extension) -> str:
     return f"""# {title}
 
 {doc}
+
+## Description
+
+**TODO**
 {reqs}
 ## Examples
 
@@ -277,13 +294,19 @@ def create_extension_page(type_: str, name: str, ext: Extension,
                           overwrite: bool = False):
     filename = f"{type_}/{name.lower()}.md"
     path = os.path.join(EXTENSIONS_DIR, filename)
+    handcrafted = {}
     if os.path.exists(path):
         if not overwrite:
             return
+        handcrafted = get_sections(path, "Description", "Examples")
         os.unlink(path)
     os.makedirs(os.path.dirname(path), exist_ok=True)
+
     with open(path, "w") as f:
-        f.write(get_extension_md(ext))
+        md = get_extension_md(ext)
+        if handcrafted:
+            md = replace_sections(md, handcrafted)
+        f.write(md)
     add_extension_to_sidebar(type_, name.lower(), name.capitalize(), filename)
 
 

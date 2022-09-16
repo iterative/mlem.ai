@@ -5,6 +5,10 @@
 `lightgbm.Booster` as well as LightGBMDataType with Reader and Writer for
 `lightgbm.Dataset`
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash

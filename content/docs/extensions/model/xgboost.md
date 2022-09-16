@@ -5,6 +5,10 @@
 `xgboost.Booster` as well as DataType, Reader and Writer implementations for
 `xgboost.DMatrix`
 
+## Description
+
+**TODO**
+
 ## Requirements
 
 ```bash
