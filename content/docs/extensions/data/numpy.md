@@ -13,8 +13,19 @@ pip install numpy
 
 ## Examples
 
-```python
+### Saving and loading numpy array
 
+```python
+import numpy as np
+
+from mlem.api import save, load
+
+
+data = np.zeros((100,))
+
+save(data, "array")
+
+data = load("array")
 ```
 
 ## Implementation reference

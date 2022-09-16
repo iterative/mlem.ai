@@ -230,14 +230,14 @@
         "source": "deployment/index.md",
         "children": [
           {
-            "slug": "sagemaker",
-            "label": "Sagemaker",
-            "source": "deployment/sagemaker.md"
-          },
-          {
             "slug": "heroku",
             "label": "Heroku",
             "source": "deployment/heroku.md"
+          },
+          {
+            "slug": "sagemaker",
+            "label": "Sagemaker",
+            "source": "deployment/sagemaker.md"
           },
           {
             "slug": "docker",

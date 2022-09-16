@@ -2,6 +2,17 @@
 
 Support for storing artifacts with DVC
 
+## Description
+
+To enable DVC support for artifacts loading you need to configure DVCStorage as
+your default storage like this:
+
+```cli
+$ mlem config set core.storage.type dvc
+```
+
+You need to do this before you save anything with mlem
+
 ## Requirements
 
 ```bash
