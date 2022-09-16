@@ -1,5 +1,8 @@
 # Python Package Builds Support
 
+Contains two Builder implementations: - `pip` - create a directory with Python
+Package from model - `whl` - create a wheel file with Python Package
+
 ## Examples
 
 ```python

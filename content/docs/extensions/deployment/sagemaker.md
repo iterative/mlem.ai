@@ -1,5 +1,7 @@
 # Sagemaker Deployments Support
 
+Implements MlemEnv, MlemDeployment and DeployState to work with AWS SageMaker
+
 ## Requirements
 
 ```bash

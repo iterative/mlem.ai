@@ -201,11 +201,6 @@
         "source": "build/index.md",
         "children": [
           {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "build/docker.md"
-          },
-          {
             "slug": "pip",
             "label": "Pip",
             "source": "build/pip.md"
@@ -243,6 +238,11 @@
             "slug": "heroku",
             "label": "Heroku",
             "source": "deployment/heroku.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "deployment/docker.md"
           }
         ]
       },

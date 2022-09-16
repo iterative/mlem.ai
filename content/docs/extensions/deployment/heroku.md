@@ -1,5 +1,7 @@
 # Heroku Deployments Support
 
+Implements MlemEnv, MlemDeployment and DeployState to work with heroku.com
+
 ## Requirements
 
 ```bash

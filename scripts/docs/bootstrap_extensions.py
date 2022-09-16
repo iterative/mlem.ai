@@ -2,9 +2,11 @@ import importlib
 import inspect
 import json
 import os.path
+import string
 import textwrap
 from dataclasses import dataclass
 from typing import Any, Iterator, List, Tuple, Type
+import re
 
 from pydantic import BaseModel, ValidationError
 from pydantic.fields import ModelField
@@ -13,7 +15,7 @@ from typing_extensions import get_origin
 
 from mlem import ExtensionLoader
 from mlem.cli.utils import get_field_help
-from mlem.core.base import MlemABC
+from mlem.core.base import MlemABC, smart_split
 from mlem.core.objects import MlemObject
 from mlem.ext import Extension, get_ext_type
 from mlem.utils.entrypoints import load_entrypoints
@@ -27,6 +29,7 @@ DOC_REPLACEMENTS = {
     "ModelIO": "[ModelIO](/doc/user-guide/mlem-abcs#modelio)"
 }
 
+LINE_WIDTH = 80
 
 def add_extension_to_sidebar(type_, slug, label, source):
     with open(SIDEBAR_PATH, "r") as f:
@@ -50,7 +53,7 @@ def get_extension_doc(module_doc: str):
     doc = "\n\n".join(module_doc.split("\n\n")[1:])
     for key, value in DOC_REPLACEMENTS.items():
         doc = doc.replace(key, value)
-    return doc
+    return textwrap.fill(doc, width=LINE_WIDTH, break_on_hyphens=False)
 
 
 def get_extension_reqs(ext: Extension):
@@ -139,17 +142,46 @@ def repr_field_default(field: Field) -> Tuple[str, Type]:
         add_type = fd.__class__
     return default, add_type
 
+def with_prev(iterable):
+    prev = None
+    for o in iterable:
+        yield prev, o
+        prev = o
+
+def smart_wrap(value: str, width: int, subsequent_indent: str = ""):
+    SPECIAL = "\0"
+    QUOTES = "'\"`"
+    quotes_open = {q: False for q in QUOTES}
+    chars = []
+    new_word = None
+    for prev, c in with_prev(value):
+        if quotes_open.get(c):
+            quotes_open[c] = False
+            chars.append(c)
+            new_word = False
+            continue
+        if any(quotes_open.values()) or new_word is False:
+            chars.append(SPECIAL if c == " " else c)
+            continue
+        if c in QUOTES and prev == " ":
+            quotes_open[c] = True
+        chars.append(c)
+        if c in string.ascii_letters:
+            new_word = True
+
+    return textwrap.fill("".join(chars), width=width, subsequent_indent=subsequent_indent, break_on_hyphens=False, break_long_words=False).replace(SPECIAL, " ")
 
 def repr_field(field: Field) -> Tuple[str, Type]:
-    req = " *(required)*" if field.required else ""
+    req = " _(required)_" if field.required else ""
     default, add_type = repr_field_default(field)
-    return f" - `{field.name}: {field.type_}{default}`{req} - {field.help_}", add_type
+    help_ = re.subn(r"\s+", " ", field.help_)[0]
+    return smart_wrap(f"- `{field.name}: {field.type_}{default}`{req} - {help_}", width=LINE_WIDTH, subsequent_indent="  "), add_type
 
 
 def get_impl_docstring(type_):
     doc = inspect.cleandoc(type_.__doc__ or "Class docstring missing").strip()
     return "\n".join(
-        f"    {textwrap.fill(line, subsequent_indent='    ')}" for line in
+        f"{textwrap.fill('    ' + line, subsequent_indent='    ', width=LINE_WIDTH - 5)}" for line in
         doc.splitlines())
 
 
@@ -168,7 +200,7 @@ def get_impl_description(type_: Type[MlemABC]) -> Tuple[str, List[Type]]:
         fields_doc += "\n\n".join(fds)
     doc = get_impl_docstring(type_)
     return f"""### `class {type_.__name__}`
-    
+
 **MlemABC parent type**: `{type_.abs_name}`
 
 **MlemABC type**: `{type_.__get_alias__()}`
@@ -207,7 +239,7 @@ def get_extension_impls(ext: Extension):
         add_types.update(add)
     for add in add_types:
         descr.append(get_model_description(add))
-    return "\n___\n".join(descr)
+    return "\n---\n\n".join(descr)
 
 
 def get_extension_md(ext: Extension) -> str:
@@ -220,23 +252,21 @@ def get_extension_md(ext: Extension) -> str:
 ## Requirements
 
 {reqs}
-
 """
     implementations = get_extension_impls(ext)
     return f"""# {title}
-    
+
 {doc}
 {reqs}
-
 ## Examples
 
 ```python
+
 ```
 
 ## Implementation reference
 
-{implementations}
-"""
+{implementations}"""
 
 
 def create_extension_page(type_: str, name: str, ext: Extension,
