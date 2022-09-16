@@ -243,6 +243,11 @@
             "slug": "docker",
             "label": "Docker",
             "source": "deployment/docker.md"
+          },
+          {
+            "slug": "kubernetes",
+            "label": "Kubernetes",
+            "source": "deployment/kubernetes.md"
           }
         ]
       },
