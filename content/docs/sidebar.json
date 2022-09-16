@@ -127,6 +127,162 @@
     ]
   },
   {
+    "slug": "extensions",
+    "label": "Extensions",
+    "source": "extensions/index.md",
+    "children": [
+      {
+        "slug": "model",
+        "label": "Models",
+        "source": "models/index.md",
+        "children": [
+          {
+            "slug": "sklearn",
+            "label": "Sklearn",
+            "source": "model/sklearn.md"
+          },
+          {
+            "slug": "onnx",
+            "label": "Onnx",
+            "source": "model/onnx.md"
+          },
+          {
+            "slug": "tensorflow",
+            "label": "Tensorflow",
+            "source": "model/tensorflow.md"
+          },
+          {
+            "slug": "torch",
+            "label": "Torch",
+            "source": "model/torch.md"
+          },
+          {
+            "slug": "catboost",
+            "label": "Catboost",
+            "source": "model/catboost.md"
+          },
+          {
+            "slug": "lightgbm",
+            "label": "Lightgbm",
+            "source": "model/lightgbm.md"
+          },
+          {
+            "slug": "xgboost",
+            "label": "Xgboost",
+            "source": "model/xgboost.md"
+          },
+          {
+            "slug": "callable",
+            "label": "Callable",
+            "source": "model/callable.md"
+          }
+        ]
+      },
+      {
+        "slug": "data",
+        "label": "Data",
+        "source": "data/index.md",
+        "children": [
+          {
+            "slug": "numpy",
+            "label": "Numpy",
+            "source": "data/numpy.md"
+          },
+          {
+            "slug": "pandas",
+            "label": "Pandas",
+            "source": "data/pandas.md"
+          }
+        ]
+      },
+      {
+        "slug": "build",
+        "label": "Builders",
+        "source": "build/index.md",
+        "children": [
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "build/docker.md"
+          },
+          {
+            "slug": "pip",
+            "label": "Pip",
+            "source": "build/pip.md"
+          }
+        ]
+      },
+      {
+        "slug": "serving",
+        "label": "Serving",
+        "source": "serving/index.md",
+        "children": [
+          {
+            "slug": "fastapi",
+            "label": "Fastapi",
+            "source": "serving/fastapi.md"
+          },
+          {
+            "slug": "rabbitmq",
+            "label": "Rabbitmq",
+            "source": "serving/rabbitmq.md"
+          }
+        ]
+      },
+      {
+        "slug": "deployment",
+        "label": "Deployments",
+        "source": "deployment/index.md",
+        "children": [
+          {
+            "slug": "sagemaker",
+            "label": "Sagemaker",
+            "source": "deployment/sagemaker.md"
+          },
+          {
+            "slug": "heroku",
+            "label": "Heroku",
+            "source": "deployment/heroku.md"
+          }
+        ]
+      },
+      {
+        "slug": "uri",
+        "label": "URI Resolving",
+        "source": "uri/index.md",
+        "children": [
+          {
+            "slug": "github",
+            "label": "Github",
+            "source": "uri/github.md"
+          },
+          {
+            "slug": "gitlabfs",
+            "label": "Gitlabfs",
+            "source": "uri/gitlabfs.md"
+          },
+          {
+            "slug": "bitbucketfs",
+            "label": "Bitbucketfs",
+            "source": "uri/bitbucketfs.md"
+          }
+        ]
+      },
+      {
+        "slug": "storage",
+        "label": "Artifact Storage",
+        "source": "storage/index.md",
+        "children": [
+          {
+            "slug": "dvc",
+            "label": "Dvc",
+            "source": "storage/dvc.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "command-reference",
     "label": "Command Reference",
     "source": "command-reference/index.md",
