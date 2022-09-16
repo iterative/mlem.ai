@@ -53,7 +53,7 @@ def get_extension_doc(module_doc: str):
     doc = "\n\n".join(module_doc.split("\n\n")[1:])
     for key, value in DOC_REPLACEMENTS.items():
         doc = doc.replace(key, value)
-    return textwrap.fill(doc, width=LINE_WIDTH, break_on_hyphens=False)
+    return textwrap.fill(doc.replace("\n\n", "\n"), width=LINE_WIDTH, break_on_hyphens=False)
 
 
 def get_extension_reqs(ext: Extension):
@@ -142,19 +142,25 @@ def repr_field_default(field: Field) -> Tuple[str, Type]:
         add_type = fd.__class__
     return default, add_type
 
-def with_prev(iterable):
+def with_prev_and_next(iterable):
     prev = None
+    current = None
     for o in iterable:
-        yield prev, o
-        prev = o
+        if current is not None:
+            yield prev, current, o
+        prev = current
+        current = o
+    yield current, o, ""
 
 def smart_wrap(value: str, width: int, subsequent_indent: str = ""):
     SPECIAL = "\0"
     QUOTES = "'\"`"
     quotes_open = {q: False for q in QUOTES}
     chars = []
-    new_word = None
-    for prev, c in with_prev(value):
+    new_word = False
+    for prev, c, nxt in with_prev_and_next(value):
+        if nxt in string.ascii_letters:
+            new_word = True
         if quotes_open.get(c):
             quotes_open[c] = False
             chars.append(c)
@@ -166,8 +172,6 @@ def smart_wrap(value: str, width: int, subsequent_indent: str = ""):
         if c in QUOTES and prev == " ":
             quotes_open[c] = True
         chars.append(c)
-        if c in string.ascii_letters:
-            new_word = True
 
     return textwrap.fill("".join(chars), width=width, subsequent_indent=subsequent_indent, break_on_hyphens=False, break_long_words=False).replace(SPECIAL, " ")
 
