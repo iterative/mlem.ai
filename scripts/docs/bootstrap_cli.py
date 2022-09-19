@@ -6,8 +6,9 @@ from typing import Dict, List
 
 from pydantic import BaseModel, parse_obj_as
 
-from _generate_cli_spec import Opt, Spec
+from scripts.docs.cli_generate_spec import Opt, Spec
 
+CLI_DOCS_PATH = "../../content/docs/command-reference"
 DOC_AUTO_REPLACE = {
     "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)",
     "MLEM project": "[MLEM project](/doc/user-guide/project-structure)"
@@ -114,7 +115,8 @@ def generate_doc(doc):
 
 
 def generate_cli_command(name: str, spec: Spec):
-    with open(f"{name}.md", "r", encoding="utf8") as f:
+    path = os.path.join(CLI_DOCS_PATH, f"{name}.md")
+    with open(path, "r", encoding="utf8") as f:
         data = f.read()
 
     data = replace_section(data, "usage", generate_usage(spec),
@@ -126,7 +128,7 @@ def generate_cli_command(name: str, spec: Spec):
         cmd_name = cmd_name[:-len(" index")]
     data = replace_section(data, " " + cmd_name, generate_doc(spec.doc),
                            section_prefix="#")
-    with open(f"{name}.md", "w", encoding="utf8") as f:
+    with open(path, "w", encoding="utf8") as f:
         f.write(data)
 
 
@@ -146,7 +148,7 @@ def main():
 
 
 if __name__ == '__main__':
-    from _generate_cli_spec import main as spec_main
+    from scripts.docs.cli_generate_spec import main as spec_main
 
     spec_main()
     main()

@@ -15,6 +15,7 @@ usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>]
 Builtin clients:
 - http
 - rmq
+- sagemaker
 ```
 
 ## Description

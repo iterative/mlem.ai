@@ -12,6 +12,7 @@ subcommands:
   run              Deploy a model to a target environment.
   remove           Stop and destroy deployed instance.
   status           Print status of deployed service.
+  wait             Wait for status of deployed service
   apply            Apply a deployed model to data.
 ```
 

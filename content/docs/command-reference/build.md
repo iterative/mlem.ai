@@ -13,6 +13,7 @@ usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>]
 Builtin builders:
 - docker
 - docker_dir
+- kubernetes
 - pip
 - whl
 ```
