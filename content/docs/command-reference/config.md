@@ -1,6 +1,6 @@
 # config
 
-Manipulate MLEM configuration
+Manipulate MLEM configuration.
 
 ## Synopsys
 

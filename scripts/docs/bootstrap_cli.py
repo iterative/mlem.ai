@@ -12,6 +12,7 @@ from scripts.docs.cli_generate_spec import Opt, Spec
 CLI_DOCS_PATH = "../../content/docs/command-reference"
 DOC_AUTO_REPLACE = {
     "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)",
+    "MLEM objects": "[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects)",
     "MLEM project": "[MLEM project](/doc/user-guide/project-structure)"
 }
 LINE_WIDTH = 80

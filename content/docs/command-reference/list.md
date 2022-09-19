@@ -1,6 +1,7 @@
 # list
 
-List MLEM objects inside a [MLEM project](/doc/user-guide/project-structure).
+List [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) inside a
+[MLEM project](/doc/user-guide/project-structure).
 
 ## Synopsis
 
