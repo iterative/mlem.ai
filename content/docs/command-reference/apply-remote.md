@@ -31,7 +31,7 @@ clients are `http` and `rmq` - which are used to launch requests against the
 
 ## Options
 
-- `-d <path>`, `--data <path>` - Path to MLEM data object [required]
+- `-d <path>`, `--data <path>` - Path to MLEM dataset [required]
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
 - `--rev <commitish>` - Repo revision to use [default: (none)]
 - `-o <path>`, `--output <path>` - Where to save model outputs

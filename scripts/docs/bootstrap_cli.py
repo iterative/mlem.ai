@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import subprocess
 import textwrap
 from typing import Dict, List
 
@@ -147,8 +148,14 @@ def main():
     os.unlink("spec.json")
 
 
+def run_lint():
+    print("Running liniter")
+    subprocess.check_output("yarn run format", shell=True, cwd="../../")
+
+
 if __name__ == '__main__':
     from scripts.docs.cli_generate_spec import main as spec_main
 
     spec_main()
     main()
+    run_lint()

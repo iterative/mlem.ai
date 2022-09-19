@@ -31,7 +31,7 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 
 ## Options
 
-- `-m <path>`, `--model <path>` - Path to MLEM model object [required]
+- `-m <path>`, `--model <path>` - Path to MLEM model [required]
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
 - `--rev <commitish>` - Repo revision to use [default: (none)]
 - `-f <text>`, `--file_conf <text>` - File with options for server in format
