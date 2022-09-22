@@ -104,7 +104,8 @@ const plugins = [
       ]
     }
   },
-  'gatsby-plugin-meta-redirect'
+  'gatsby-plugin-meta-redirect',
+  '@sentry/gatsby'
 ]
 
 module.exports = {
