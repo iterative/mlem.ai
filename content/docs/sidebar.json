@@ -110,16 +110,6 @@
         "source": "linking.md"
       },
       {
-        "slug": "mlem-abcs",
-        "label": "MLEM ABCs",
-        "source": "mlem-abcs.md"
-      },
-      {
-        "slug": "extending",
-        "label": "Extending",
-        "source": "extending.md"
-      },
-      {
         "slug": "analytics",
         "label": "Anonymized Usage Analytics",
         "source": "analytics.md"
@@ -467,6 +457,18 @@
         "slug": "docs",
         "label": "Docs and Website",
         "source": "docs.md"
+      }
+    ]
+  },
+  {
+    "slug": "index",
+    "label": "Extending",
+    "source": "extending/index.md",
+    "children": [
+      {
+        "slug": "mlem-abcs",
+        "label": "MLEM ABCs",
+        "source": "mlem-abcs.md"
       }
     ]
   }
