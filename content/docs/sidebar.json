@@ -134,47 +134,47 @@
       {
         "slug": "model",
         "label": "Models",
-        "source": "models/index.md",
+        "source": "model/index.md",
         "children": [
           {
             "slug": "sklearn",
             "label": "Sklearn",
-            "source": "model/sklearn.md"
+            "source": "sklearn.md"
           },
           {
             "slug": "onnx",
             "label": "Onnx",
-            "source": "model/onnx.md"
+            "source": "onnx.md"
           },
           {
             "slug": "tensorflow",
             "label": "Tensorflow",
-            "source": "model/tensorflow.md"
+            "source": "tensorflow.md"
           },
           {
             "slug": "torch",
             "label": "Torch",
-            "source": "model/torch.md"
+            "source": "torch.md"
           },
           {
             "slug": "catboost",
             "label": "Catboost",
-            "source": "model/catboost.md"
+            "source": "catboost.md"
           },
           {
             "slug": "lightgbm",
             "label": "Lightgbm",
-            "source": "model/lightgbm.md"
+            "source": "lightgbm.md"
           },
           {
             "slug": "xgboost",
             "label": "Xgboost",
-            "source": "model/xgboost.md"
+            "source": "xgboost.md"
           },
           {
             "slug": "callable",
             "label": "Callable",
-            "source": "model/callable.md"
+            "source": "callable.md"
           }
         ]
       },
@@ -186,12 +186,12 @@
           {
             "slug": "numpy",
             "label": "Numpy",
-            "source": "data/numpy.md"
+            "source": "numpy.md"
           },
           {
             "slug": "pandas",
             "label": "Pandas",
-            "source": "data/pandas.md"
+            "source": "pandas.md"
           }
         ]
       },
@@ -203,7 +203,7 @@
           {
             "slug": "pip",
             "label": "Pip",
-            "source": "build/pip.md"
+            "source": "pip.md"
           }
         ]
       },
@@ -215,12 +215,12 @@
           {
             "slug": "fastapi",
             "label": "Fastapi",
-            "source": "serving/fastapi.md"
+            "source": "fastapi.md"
           },
           {
             "slug": "rabbitmq",
             "label": "Rabbitmq",
-            "source": "serving/rabbitmq.md"
+            "source": "rabbitmq.md"
           }
         ]
       },
@@ -232,22 +232,22 @@
           {
             "slug": "heroku",
             "label": "Heroku",
-            "source": "deployment/heroku.md"
+            "source": "heroku.md"
           },
           {
             "slug": "sagemaker",
             "label": "Sagemaker",
-            "source": "deployment/sagemaker.md"
+            "source": "sagemaker.md"
           },
           {
             "slug": "docker",
             "label": "Docker",
-            "source": "deployment/docker.md"
+            "source": "docker.md"
           },
           {
             "slug": "kubernetes",
             "label": "Kubernetes",
-            "source": "deployment/kubernetes.md"
+            "source": "kubernetes.md"
           }
         ]
       },
@@ -259,17 +259,17 @@
           {
             "slug": "github",
             "label": "Github",
-            "source": "uri/github.md"
+            "source": "github.md"
           },
           {
             "slug": "gitlabfs",
             "label": "Gitlabfs",
-            "source": "uri/gitlabfs.md"
+            "source": "gitlabfs.md"
           },
           {
             "slug": "bitbucketfs",
             "label": "Bitbucketfs",
-            "source": "uri/bitbucketfs.md"
+            "source": "bitbucketfs.md"
           }
         ]
       },
@@ -281,7 +281,7 @@
           {
             "slug": "dvc",
             "label": "Dvc",
-            "source": "storage/dvc.md"
+            "source": "dvc.md"
           }
         ]
       }
