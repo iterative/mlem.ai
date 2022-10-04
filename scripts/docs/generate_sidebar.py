@@ -55,9 +55,10 @@ def adjust_sidebar(sidebar, to_add: List[str], to_remove: List[str],
         if add_root + "/" == parent or (parent == add_root == ""):
             path = Path(DOCS_PATH) / add_root / add_file
             print("adding", parent, add_root, add_file)
+            slug = os.path.dirname(add_file) or add_file[:-len(".md")]
             res.append(
                 {
-                    "slug": os.path.basename(add_file)[:-len(".md")],
+                    "slug": slug,
                     "label": get_label(path),
                     "source": str(add_file),
                     "children": []

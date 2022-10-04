@@ -20,8 +20,8 @@ from mlem.utils.entrypoints import load_entrypoints
 from scripts.docs.utils import get_sections, replace_sections
 
 SIDEBAR_PATH = "../../content/docs/sidebar.json"
-EXTENSIONS_SLUG = "extensions"
-EXTENSIONS_DIR = "../../content/docs/extensions"
+REF_SLUG = "object-reference"
+REF_DIR = "../../content/docs/object-reference"
 
 DOC_REPLACEMENTS = {
     "ModelType": "[ModelType](/doc/user-guide/mlem-abcs#modeltype)",
@@ -35,7 +35,7 @@ def add_extension_to_sidebar(type_, slug, label, source):
     with open(SIDEBAR_PATH, "r") as f:
         data = json.load(f)
 
-    extensions = [o for o in data if o["slug"] == EXTENSIONS_SLUG][0]
+    extensions = [o for o in data if o["slug"] == REF_SLUG][0]
     types = extensions["children"]
     children = [o for o in types if o["slug"] == type_][0]["children"]
     if any(c["slug"] == slug for c in children):
@@ -293,7 +293,7 @@ def get_extension_md(ext: Extension) -> str:
 def create_extension_page(type_: str, name: str, ext: Extension,
                           overwrite: bool = False):
     filename = f"{type_}/{name.lower()}.md"
-    path = os.path.join(EXTENSIONS_DIR, filename)
+    path = os.path.join(REF_DIR, filename)
     handcrafted = {}
     if os.path.exists(path):
         if not overwrite:
