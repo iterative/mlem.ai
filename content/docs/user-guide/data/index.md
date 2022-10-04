@@ -3,10 +3,12 @@
 You need to save data as [MLEM Objects] so that it is compatible with operations
 such as [mlem apply](/doc/command-reference/apply).
 
+MLEM supports python collections and primitives, as well as `pandas` and `numpy`
+data types and some framework-specific data types like `lightgbm.Dataset` or
+`tf.Tensor`.
 
-MLEM supports python collections and primitives, as well as `pandas` and `numpy` data types and some framework-specific data types like `lightgbm.Dataset` or `tf.Tensor`.
-
-Yor can find full list and additional documentation [here](/doc/object-reference/data)
+Yor can find full list and additional documentation
+[here](/doc/object-reference/data)
 
 [mlem objects]: /doc/user-guide/basic-concepts#mlem-objects
 

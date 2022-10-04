@@ -512,6 +512,12 @@
             "slug": "callable",
             "label": "Callable",
             "source": "callable.md"
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
           }
         ]
       },
@@ -529,6 +535,36 @@
             "slug": "pandas",
             "label": "Pandas",
             "source": "pandas.md"
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
+          },
+          {
+            "slug": "lightgbm",
+            "label": "lightgbm",
+            "source": "lightgbm.md",
+            "children": []
+          },
+          {
+            "slug": "torch",
+            "label": "torch",
+            "source": "torch.md",
+            "children": []
+          },
+          {
+            "slug": "tensorflow",
+            "label": "tensorflow",
+            "source": "tensorflow.md",
+            "children": []
+          },
+          {
+            "slug": "xgboost",
+            "label": "xgboost",
+            "source": "xgboost.md",
+            "children": []
           }
         ]
       },
@@ -541,6 +577,18 @@
             "slug": "pip",
             "label": "Pip",
             "source": "pip.md"
+          },
+          {
+            "slug": "docker",
+            "label": "docker",
+            "source": "docker.md",
+            "children": []
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
           }
         ]
       },
@@ -558,6 +606,12 @@
             "slug": "rabbitmq",
             "label": "Rabbitmq",
             "source": "rabbitmq.md"
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
           }
         ]
       },
@@ -585,6 +639,12 @@
             "slug": "kubernetes",
             "label": "Kubernetes",
             "source": "kubernetes.md"
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
           }
         ]
       },
@@ -607,6 +667,12 @@
             "slug": "bitbucketfs",
             "label": "Bitbucketfs",
             "source": "bitbucketfs.md"
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
           }
         ]
       },
@@ -619,6 +685,12 @@
             "slug": "dvc",
             "label": "Dvc",
             "source": "dvc.md"
+          },
+          {
+            "slug": "builtin",
+            "label": "builtin",
+            "source": "builtin.md",
+            "children": []
           }
         ]
       },

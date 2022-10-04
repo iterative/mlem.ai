@@ -44,4 +44,3 @@ $ mlem build --load whl_conf \
   --model https://github.com/iterative/example-mlem-get-started/rf
 $ pip install ./build/my_model_package-1.0.0-py3-none-any.whl
 ```
-

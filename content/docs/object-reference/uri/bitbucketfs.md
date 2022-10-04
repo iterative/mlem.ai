@@ -1,20 +1,6 @@
-# Bitbucket Uri Support
+# bitbucketfs
 
-Implementation of `BitbucketFileSystem` and `BitbucketResolver`
-
-## Description
-
-**TODO**
-
-## Examples
-
-```python
-
-```
-
-## Implementation reference
-
-### `class BitBucketResolver`
+## `class BitBucketResolver`
 
 **MlemABC parent type**: `resolver`
 

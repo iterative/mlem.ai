@@ -1,40 +1,30 @@
-# Numpy Data Types Support
+# numpy
 
-DataType, Reader and Writer implementations for `np.ndarray` and `np.number`
-primitives
+## `class NumpyArrayWriter`
 
-## Description
+**MlemABC parent type**: `data_writer`
 
-**TODO**
+**MlemABC type**: `numpy`
 
-## Requirements
+    DataWriter implementation for numpy ndarray
 
-```bash
-pip install mlem[numpy]
-# or
-pip install numpy
-```
+**No fields**
 
-## Examples
+---
 
-### Saving and loading numpy array
+## `class NumpyNumberWriter`
 
-```python
-import numpy as np
+**MlemABC parent type**: `data_writer`
 
-from mlem.api import save, load
+**MlemABC type**: `numpy_number`
 
+    Write np.number objects
 
-data = np.zeros((100,))
+**No fields**
 
-save(data, "array")
+---
 
-data = load("array")
-```
-
-## Implementation reference
-
-### `class NumpyArrayReader`
+## `class NumpyArrayReader`
 
 **MlemABC parent type**: `data_reader`
 
@@ -48,7 +38,7 @@ data = load("array")
 
 ---
 
-### `class NumpyNumberReader`
+## `class NumpyNumberReader`
 
 **MlemABC parent type**: `data_reader`
 
@@ -62,7 +52,7 @@ data = load("array")
 
 ---
 
-### `class NumpyNdarrayType`
+## `class NumpyNdarrayType`
 
 **MlemABC parent type**: `data_type`
 
@@ -76,7 +66,7 @@ data = load("array")
 
 ---
 
-### `class NumpyNumberType`
+## `class NumpyNumberType`
 
 **MlemABC parent type**: `data_type`
 
@@ -87,27 +77,3 @@ data = load("array")
 **Fields**:
 
 - `dtype: str` _(required)_ - `numpy.number` type name as string
-
----
-
-### `class NumpyArrayWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `numpy`
-
-    DataWriter implementation for numpy ndarray
-
-**No fields**
-
----
-
-### `class NumpyNumberWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `numpy_number`
-
-    Write np.number objects
-
-**No fields**

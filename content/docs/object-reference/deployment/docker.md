@@ -1,72 +1,6 @@
-# Docker Builds Support
+# docker
 
-Building docker images from the model or packing all necessary things to do that
-in a folder
-
-## Description
-
-**TODO**
-
-## Requirements
-
-```bash
-pip install mlem[docker]
-# or
-pip install docker
-```
-
-## Examples
-
-```python
-
-```
-
-## Implementation reference
-
-### `class DockerImageBuilder`
-
-**MlemABC parent type**: `builder`
-
-**MlemABC type**: `docker`
-
-    Build docker image from model
-
-**Fields**:
-
-- `image: DockerImage` _(required)_ - Image parameters
-
-- `server: Server` - Server to use
-
-- `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
-
-- `env: DockerEnv = DockerEnv()` - Where to build and push image. Defaults to
-  local docker daemon
-
-- `force_overwrite: bool = False` - Ignore existing image with same name
-
-- `push: bool = True` - Push image to registry after it is built
-
----
-
-### `class DockerDirBuilder`
-
-**MlemABC parent type**: `builder`
-
-**MlemABC type**: `docker_dir`
-
-    Create a directory with docker context to build docker image
-
-**Fields**:
-
-- `target: str` _(required)_ - Path to save result
-
-- `server: Server` - Server to use
-
-- `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
-
----
-
-### `class DockerContainerState`
+## `class DockerContainerState`
 
 **MlemABC parent type**: `deploy_state`
 
@@ -86,7 +20,7 @@ pip install docker
 
 ---
 
-### `class DockerContainer`
+## `class DockerContainer`
 
 **MlemABC parent type**: `deployment`
 
@@ -110,47 +44,7 @@ pip install docker
 
 ---
 
-### `class DockerIORegistry`
-
-**MlemABC parent type**: `docker_registry`
-
-**MlemABC type**: `docker_io`
-
-    The class represents docker.io registry.
-
-**No fields**
-
----
-
-### `class DockerRegistry`
-
-**MlemABC parent type**: `docker_registry`
-
-**MlemABC type**: `local`
-
-    Registry for docker images. This is the default implementation that
-    represents registry of the docker daemon
-
-**No fields**
-
----
-
-### `class RemoteRegistry`
-
-**MlemABC parent type**: `docker_registry`
-
-**MlemABC type**: `remote`
-
-    DockerRegistry implementation for official Docker Registry (as in
-    https://docs.docker.com/registry/)
-
-**Fields**:
-
-- `host: str` - Address of the registry
-
----
-
-### `class DockerEnv`
+## `class DockerEnv`
 
 **MlemABC parent type**: `env`
 
@@ -167,7 +61,7 @@ pip install docker
 
 ---
 
-### `class DockerBuildArgs`
+## `class DockerBuildArgs`
 
     Container for DockerBuild arguments
 

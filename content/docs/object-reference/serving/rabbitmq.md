@@ -1,28 +1,6 @@
-# Rabbitmq Serving
+# rabbitmq
 
-RabbitMQServer implementation
-
-## Description
-
-**TODO**
-
-## Requirements
-
-```bash
-pip install mlem[rmq]
-# or
-pip install pika
-```
-
-## Examples
-
-```python
-
-```
-
-## Implementation reference
-
-### `class RabbitMQClient`
+## `class RabbitMQClient`
 
 **MlemABC parent type**: `client`
 
@@ -44,7 +22,7 @@ pip install pika
 
 ---
 
-### `class RabbitMQServer`
+## `class RabbitMQServer`
 
 **MlemABC parent type**: `server`
 

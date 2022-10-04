@@ -1,44 +1,6 @@
-# Catboost Models Support
+# catboost
 
-Implementations of [ModelType](/doc/user-guide/mlem-abcs#modeltype) and
-[ModelIO](/doc/user-guide/mlem-abcs#modelio) for `CatBoostClassifier` and
-`CatBoostRegressor`
-
-## Description
-
-**TODO**
-
-## Requirements
-
-```bash
-pip install mlem[catboost]
-# or
-pip install catboost
-```
-
-## Examples
-
-```python
-
-```
-
-## Implementation reference
-
-### `class CatBoostModelIO`
-
-**MlemABC parent type**: `model_io`
-
-**MlemABC type**: `catboost_io`
-
-    :class:`mlem.core.model.ModelIO` for CatBoost models.
-
-**Fields**:
-
-- `model_type: CBType = "reg"` - Type of catboost model
-
----
-
-### `class CatBoostModel`
+## `class CatBoostModel`
 
 **MlemABC parent type**: `model_type`
 
@@ -51,3 +13,17 @@ pip install catboost
 **Fields**:
 
 - `io: ModelIO = CatBoostModelIO()` - Model IO
+
+---
+
+## `class CatBoostModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `catboost_io`
+
+    :class:`mlem.core.model.ModelIO` for CatBoost models.
+
+**Fields**:
+
+- `model_type: CBType = "reg"` - Type of catboost model

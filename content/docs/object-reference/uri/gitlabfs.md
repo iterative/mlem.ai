@@ -1,20 +1,6 @@
-# Gitlab Uri Support
+# gitlabfs
 
-Implementation of `GitlabFileSystem` and `GitlabResolver`
-
-## Description
-
-**TODO**
-
-## Examples
-
-```python
-
-```
-
-## Implementation reference
-
-### `class GitlabResolver`
+## `class GitlabResolver`
 
 **MlemABC parent type**: `resolver`
 

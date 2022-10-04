@@ -1,12 +1,13 @@
-import importlib
+import inspect
 import inspect
 import json
 import os.path
 import re
 import string
 import textwrap
+from collections import defaultdict
 from dataclasses import dataclass
-from typing import Any, Iterator, List, Tuple, Type
+from typing import Any, Dict, Iterator, List, Tuple, Type
 
 from pydantic import BaseModel, ValidationError
 from pydantic.fields import ModelField
@@ -14,10 +15,11 @@ from pydantic.typing import display_as_type, get_args, is_union
 from typing_extensions import get_origin
 
 from mlem.cli.utils import get_field_help
-from mlem.core.base import MlemABC
-from mlem.ext import Extension, ExtensionLoader, get_ext_type
-from mlem.utils.entrypoints import load_entrypoints
-from scripts.docs.utils import get_sections, replace_sections
+from mlem.core.base import MlemABC, load_impl_ext
+from mlem.ext import Extension, ExtensionLoader
+from mlem.utils.entrypoints import list_abstractions, list_implementations, \
+    load_entrypoints
+from scripts.docs.utils import replace_sections
 
 SIDEBAR_PATH = "../../content/docs/sidebar.json"
 REF_SLUG = "object-reference"
@@ -29,24 +31,6 @@ DOC_REPLACEMENTS = {
 }
 
 LINE_WIDTH = 80
-
-
-def add_extension_to_sidebar(type_, slug, label, source):
-    with open(SIDEBAR_PATH, "r") as f:
-        data = json.load(f)
-
-    extensions = [o for o in data if o["slug"] == REF_SLUG][0]
-    types = extensions["children"]
-    children = [o for o in types if o["slug"] == type_][0]["children"]
-    if any(c["slug"] == slug for c in children):
-        return
-    children.append({
-        "slug": slug,
-        "label": label,
-        "source": source
-    })
-    with open(SIDEBAR_PATH, "w") as f:
-        json.dump(data, f, indent=2)
 
 
 def get_extension_doc(module_doc: str):
@@ -216,7 +200,7 @@ def get_impl_description(type_: Type[MlemABC]) -> Tuple[str, List[Type]]:
                 add_types.append(add_type)
         fields_doc += "\n\n".join(fds)
     doc = get_impl_docstring(type_)
-    return f"""### `class {type_.__name__}`
+    return f"""## `class {type_.__name__}`
 
 **MlemABC parent type**: `{type_.abs_name}`
 
@@ -235,7 +219,7 @@ def get_model_description(type_: Type[BaseModel]) -> str:
         fields_doc = "**Fields**:\n\n"
         fields_doc += "\n\n".join(repr_field(f)[0] for f in fields)
     doc = get_impl_docstring(type_)
-    return f"""### `class {type_.__name__}`
+    return f"""## `class {type_.__name__}`
 
 {doc}
 
@@ -243,15 +227,11 @@ def get_model_description(type_: Type[BaseModel]) -> str:
 """
 
 
-def get_extension_impls(ext: Extension):
-    eps = load_entrypoints()
-    ext_eps = {
-        k: v for k, v in eps.items() if v.ep.module_name.startswith(ext.module)
-    }
+def get_extension_impls_md(impls: List[Type[MlemABC]]):
     add_types = set()
     descr = []
-    for e in ext_eps.values():
-        d, add = get_impl_description(e.ep.load())
+    for e in impls:
+        d, add = get_impl_description(e)
         descr.append(d)
         add_types.update(add)
     for add in add_types:
@@ -259,63 +239,76 @@ def get_extension_impls(ext: Extension):
     return "\n---\n\n".join(descr)
 
 
-def get_extension_md(ext: Extension) -> str:
-    module_doc = importlib.import_module(ext.module).__doc__
-    title = module_doc.splitlines()[0].title()
-    doc = get_extension_doc(module_doc)
-    reqs = get_extension_reqs(ext)
-    if reqs:
-        reqs = f"""
-## Requirements
-
-{reqs}
-"""
-    implementations = get_extension_impls(ext)
-    return f"""# {title}
-
-{doc}
-
-## Description
-
-**TODO**
-{reqs}
-## Examples
-
-```python
-
-```
-
-## Implementation reference
+def get_extension_md(extension: str, impls: List[Type[MlemABC]]) -> str:
+    implementations = get_extension_impls_md(impls)
+    return f"""# {extension}
 
 {implementations}"""
 
 
-def create_extension_page(type_: str, name: str, ext: Extension,
-                          overwrite: bool = False):
-    filename = f"{type_}/{name.lower()}.md"
+def create_ext_impls_page(section: str, extension: str,
+                          impls: List[Type[MlemABC]], overwrite: bool = False):
+    filename = f"{section}/{extension.lower()}.md"
     path = os.path.join(REF_DIR, filename)
     handcrafted = {}
     if os.path.exists(path):
         if not overwrite:
             return
-        handcrafted = get_sections(path, "Description", "Examples")
+        # handcrafted = get_sections(path, "Description", "Examples")
         os.unlink(path)
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
     with open(path, "w") as f:
-        md = get_extension_md(ext)
+        md = get_extension_md(extension, impls)
         if handcrafted:
             md = replace_sections(md, handcrafted)
         f.write(md)
-    add_extension_to_sidebar(type_, name.lower(), name.capitalize(), filename)
+    # add_extension_to_sidebar(section, extension.lower(), extension.capitalize(), filename)
+
+
+ABC_GROUPS = {
+    "data": ["data_type", "data_reader", "data_writer"],
+    "model": ["model_type", "model_io"],
+    "deployment": ["deployment", "env", "deploy_state"],
+    "other": ["state", "docker_registry"],
+    "build": ["builder"],
+    "serving": ["server", "client", "interface"],
+    "storage": ["storage", "artifact"],
+    "hide": ["requirement", "meta"],
+    "uri": ["resolver"]
+}
+ABC_GROUPS_MAP = {v: k for k, values in ABC_GROUPS.items() for v in values}
+
+
+def get_impl_extension_name(cls: Type[MlemABC]):
+    ep_name = f"{cls.abs_name}.{cls.__get_alias__()}"
+    ep = load_entrypoints().get(ep_name)
+    if not ep:
+        return "builtin"
+    module_name = ep.ep.module_name
+    for mod in ExtensionLoader.builtin_extensions:
+        if module_name.startswith(mod):
+            return mod.split(".")[-1]
+    raise Exception(f"No ext for {module_name}")
 
 
 def main():
-    for mod, ext in ExtensionLoader.builtin_extensions.items():
-        ext_name = mod.split(".")[-1]
-        ext_type = get_ext_type(mod)
-        print(ext_name, ext_type)
-        create_extension_page(ext_type, ext_name, ext, overwrite=True)
+    section_to_ext: Dict[str, Dict[str, List]] = defaultdict(
+        lambda: defaultdict(list))
+    for abc in list_abstractions(include_hidden=False):
+        section = ABC_GROUPS_MAP.get(abc)
+        if section == "hide" or section == "other" or not section:
+            print("skipping", abc)
+            continue
+        # root_cls = MlemABC.abs_types[abc]
+        for impl in list_implementations(abc, include_hidden=False):
+            cls = load_impl_ext(abc, impl)
+            ext_name = get_impl_extension_name(cls)
+            section_to_ext[section][ext_name].append(cls)
+
+    for section, ext_to_impls in section_to_ext.items():
+        for ext, impls in ext_to_impls.items():
+            create_ext_impls_page(section, ext, impls, overwrite=True)
 
 
 if __name__ == '__main__':

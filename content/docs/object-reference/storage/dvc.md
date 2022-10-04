@@ -1,35 +1,21 @@
-# Dvc Support
+# dvc
 
-Support for storing artifacts with DVC
+## `class DVCStorage`
 
-## Description
+**MlemABC parent type**: `storage`
 
-To enable DVC support for artifacts loading you need to configure DVCStorage as
-your default storage like this:
+**MlemABC type**: `dvc`
 
-```cli
-$ mlem config set core.storage.type dvc
-```
+    User-managed dvc storage, which means user should
+    track corresponding files with dvc manually.
 
-You need to do this before you save anything with mlem
+**Fields**:
 
-## Requirements
+- `uri: str = ""` - Base storage path
 
-```bash
-pip install mlem[dvc]
-# or
-pip install dvc
-```
+---
 
-## Examples
-
-```python
-
-```
-
-## Implementation reference
-
-### `class DVCArtifact`
+## `class DVCArtifact`
 
 **MlemABC parent type**: `artifact`
 
@@ -44,18 +30,3 @@ pip install dvc
 - `size: int` _(required)_ - size in bytes
 
 - `hash: str` _(required)_ - md5 hash
-
----
-
-### `class DVCStorage`
-
-**MlemABC parent type**: `storage`
-
-**MlemABC type**: `dvc`
-
-    User-managed dvc storage, which means user should
-    track corresponding files with dvc manually.
-
-**Fields**:
-
-- `uri: str = ""` - Base storage path

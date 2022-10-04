@@ -1,21 +1,20 @@
-# Mlem Models From Arbitraty Callables
+# callable
 
-[ModelType](/doc/user-guide/mlem-abcs#modeltype) implementation to turn any
-python callable into MLEM Model
+## `class CallableModelType`
 
-## Description
+**MlemABC parent type**: `model_type`
 
-**TODO**
+**MlemABC type**: `callable`
 
-## Examples
+    ModelType implementation for arbitrary callables
 
-```python
+**Fields**:
 
-```
+- `io: ModelIO` _(required)_ - Model IO
 
-## Implementation reference
+---
 
-### `class PickleModelIO`
+## `class PickleModelIO`
 
 **MlemABC parent type**: `model_io`
 
@@ -29,17 +28,3 @@ python callable into MLEM Model
     tensorflow code and not pickled
 
 **No fields**
-
----
-
-### `class CallableModelType`
-
-**MlemABC parent type**: `model_type`
-
-**MlemABC type**: `callable`
-
-    ModelType implementation for arbitrary callables
-
-**Fields**:
-
-- `io: ModelIO` _(required)_ - Model IO

@@ -25,4 +25,3 @@ name without `.mlem` extension, for example `model.mlem` and `model`, or
 If **MLEM Object** have multiple artifacts, they will be stored in a directory
 with the same name, for example `model.mlem` + `model/data.pkl` +
 `model/data2.pkl`.
-
