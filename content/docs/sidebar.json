@@ -16,11 +16,6 @@
     "source": "get-started/index.md",
     "children": [
       {
-        "slug": "saving",
-        "label": "Saving models",
-        "source": "saving.md"
-      },
-      {
         "slug": "applying",
         "label": "Applying models",
         "source": "applying.md"

@@ -4,89 +4,215 @@ description: 'Learn how you can use MLEM to easily manage and deploy models'
 
 # Get Started
 
-Assuming MLEM is already [installed](/doc/install) in your active python
-environment, let's initialize it by running `mlem init` inside a Git project:
+We assume MLEM is already [installed](/doc/install) in your active Python
+environment, as well as `pandas` and `sklearn`. If not, you can follow the instructions below:
 
 <details>
 
 ### ⚙️ Expand for setup instructions
 
-If you want to follow along with this tutorial and try MLEM, you can use our
-[example repo](https://github.com/iterative/example-mlem-get-started). You'll
-need to [fork] it first (so you can push models). Then clone it locally:
-
-[fork]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+Let's create a separate folder and an isolated virtual environment to cleanly
+install all the requirements (including MLEM) there:
 
 ```cli
-$ git clone <your fork>
-$ cd example-mlem-get-started
-```
-
-Next let's create an isolated virtual environment to cleanly install all the
-requirements (including MLEM) there:
-
-```cli
+$ mkdir mlem-get-started
+$ cd mlem-get-started
 $ python3 -m venv .venv
 $ source .venv/bin/activate
-$ pip install -r requirements.txt
+$ pip install mlem pandas sklearn
 ```
 
 </details>
 
-```cli
-$ mlem init
+## Saving your ML model
+
+To enable all kinds of productionization scenarios MLEM supports, we first need
+to save a ML model with MLEM.
+
+Let's take a look at the following Python script:
+
+```py
+# train.py
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
+
+from mlem.api import save
+
+
+data, y = load_iris(return_X_y=True, as_frame=True)
+rf = RandomForestClassifier(
+    n_jobs=2,
+    random_state=42,
+)
+rf.fit(data, y)
+save(
+    rf,
+    "models/rf",
+    sample_data=data,
+)
 ```
 
-A few [internal files](/doc/user-guide/project-structure) will be created:
+Here we load well-known iris dataset with sklearn and train a simple classifier.
+But instead of pickling the model we saved it with MLEM.
+
+Now let's run this script and see how we save the model.
 
 ```cli
-$ tree .mlem
-.mlem
-└─── config.yaml
+$ python train.py
+...
+
+$ tree models/
+models
+├── rf
+└── rf.mlem
 ```
 
-Now you’re ready to MLEM!
-
-In our
-[example repository](https://github.com/iterative/example-mlem-get-started),
-you'll find tags for each step we take in the different sections of this
-tutorial. You can just see what is going on there or reproduce everything
-yourself and compare. In the different `Get Started` sections, those tags will
-be marked with ⛳ emoji. Click on it to expand the section and see the `git`
-commands to run if you are following along. Just like this Git tag that
-concludes this section:
+The model was saved along with some metadata about it: `rf` containing the model
+binary and `rf.mlem` metafile containing information about it. Let's take a look
+at it:
 
 <details>
 
-# ⛳ MLEM init
+### `$ cat .mlem/model/rf.mlem`
 
-Tag:
-[1-mlem-init](https://github.com/iterative/example-mlem-get-started/tree/1-mlem-init)
-
-```cli
-$ git add .mlem
-$ git status
-Changes to be committed:
-        new file:   .mlem/config.yaml
-        ...
-$ git commit -m "Initialize MLEM"
+```yaml
+artifacts:
+  data:
+    hash: 59440b4398b8d45d8ad64d8d407cfdf9
+    size: 993
+    uri: logreg
+model_type:
+  methods:
+    predict:
+      args:
+        - name: data
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
+      name: predict
+      returns:
+        dtype: int64
+        shape:
+          - null
+        type: ndarray
+    predict_proba:
+      args:
+        - name: data
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
+      name: predict_proba
+      returns:
+        dtype: float64
+        shape:
+          - null
+          - 3
+        type: ndarray
+    sklearn_predict:
+      args:
+        - name: X
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
+      name: predict
+      returns:
+        dtype: int64
+        shape:
+          - null
+        type: ndarray
+    sklearn_predict_proba:
+      args:
+        - name: X
+          type_:
+            columns:
+              - ''
+              - sepal length (cm)
+              - sepal width (cm)
+              - petal length (cm)
+              - petal width (cm)
+            dtypes:
+              - int64
+              - float64
+              - float64
+              - float64
+              - float64
+            index_cols:
+              - ''
+            type: dataframe
+      name: predict_proba
+      returns:
+        dtype: float64
+        shape:
+          - null
+          - 3
+        type: ndarray
+  type: sklearn
+object_type: model
+requirements:
+  - module: sklearn
+    version: 1.0.2
+  - module: pandas
+    version: 1.4.1
+  - module: numpy
+    version: 1.22.3
 ```
-
-To compare your results with the tag you can also run the following
-
-```cli
-$ git diff 1-mlem-init
-```
-
-The output will be empty if you have the same files staged/committed
 
 </details>
+
+It's a bit long, but we can see all that we need to use the model later:
+
+1. Model methods: `predict` and `predict_proba`
+2. Input data schema that describes the DataFrame with the iris dataset
+3. Requirements: `sklearn`, `pandas` with particular versions we need to run
+   this model.
+
+Note that we didn't specify requirements: MLEM investigates the object you're
+saving (even if it's a complex one) and finds out all requirements needed!
+
+## Productionization
 
 MLEM’s features can be grouped around those common functional use cases. We’ll
 explore them one by one in the next few pages:
 
-- **[Saving models](/doc/get-started/saving)** (try this next) is the base layer
-  of MLEM for machine learning models and datasets.
 - **[Applying models](/doc/get-started/applying)** explains how to load and
   apply models
 - **[Exporting models (building)](/doc/get-started/building)** describes how
