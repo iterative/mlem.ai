@@ -10,6 +10,8 @@ DOCS_PATH = os.path.dirname(SIDEBAR_PATH)
 IGNORE = [
     "user-guide/what-is-mlem.md",
     "api-reference/mlem-object.md"
+    "user-guide/models",
+    "user-guide/data"
 ]
 
 

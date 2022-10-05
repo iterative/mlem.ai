@@ -86,6 +86,17 @@
         "children": []
       },
       {
+        "slug": "data",
+        "label": "Working with data",
+        "source": "data/index.md",
+        "children": []
+      },
+      {
+        "slug": "project-structure",
+        "label": "Project structure",
+        "source": "project-structure.md"
+      },
+      {
         "slug": "remote-objects",
         "label": "Remote objects and projects",
         "source": "remote-objects/index.md",
@@ -121,17 +132,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "slug": "data",
-        "label": "Working with data",
-        "source": "data/index.md",
-        "children": []
-      },
-      {
-        "slug": "project-structure",
-        "label": "Project structure",
-        "source": "project-structure.md"
       },
       {
         "slug": "configuration",
@@ -498,11 +498,6 @@
         "source": "build/index.md",
         "children": [
           {
-            "slug": "builtin",
-            "label": "Builtin",
-            "source": "builtin.md"
-          },
-          {
             "slug": "pip",
             "label": "Python package",
             "source": "pip.md"
@@ -541,11 +536,6 @@
         "label": "Deployments",
         "source": "deployment/index.md",
         "children": [
-          {
-            "slug": "builtin",
-            "label": "Builtin",
-            "source": "builtin.md"
-          },
           {
             "slug": "heroku",
             "label": "Heroku",
