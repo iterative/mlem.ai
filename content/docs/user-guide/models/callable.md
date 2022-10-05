@@ -1,6 +1,6 @@
 # Python callables
 
-[ModelType](/doc/user-guide/mlem-abcs#modeltype) implementation to turn any
+[ModelType](/doc/object-reference/mlem-abcs#modeltype) implementation to turn any
 python callable into MLEM Model
 
 ## Description

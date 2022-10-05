@@ -26,8 +26,8 @@ REF_SLUG = "object-reference"
 REF_DIR = "../../content/docs/object-reference"
 
 DOC_REPLACEMENTS = {
-    "ModelType": "[ModelType](/doc/user-guide/mlem-abcs#modeltype)",
-    "ModelIO": "[ModelIO](/doc/user-guide/mlem-abcs#modelio)"
+    "ModelType": "[ModelType](/doc/object-reference/mlem-abcs#modeltype)",
+    "ModelIO": "[ModelIO](/doc/object-reference/mlem-abcs#modelio)"
 }
 
 LINE_WIDTH = 80

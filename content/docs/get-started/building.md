@@ -7,7 +7,7 @@ functionalities: building, serving, and deploying. We’ll start with building.
 Building is a way to “bake” your model into something usable in production like
 a Docker image, or export your model into another format. For this tutorial we
 will create a pip-ready package from our model. You can see the full list of
-available builders [here](/doc/user-guide/mlem-abcs#builder).
+available builders [here](/doc/object-reference/mlem-abcs#builder).
 
 ## Creating Python package
 
@@ -28,7 +28,7 @@ builder will write all the files and `package_name` is the name of our package.
 ### ⚙️ About builders and arguments
 
 There are more types of builders and each one has it’s own set of available
-arguments. They are listed [here](/doc/user-guide/mlem-abcs#builder), but for
+arguments. They are listed [here](/doc/object-reference/mlem-abcs#builder), but for
 quick reference you can run `mlem types builder` for list of builders and
 `mlem types builder pip` for list of available arguments
 

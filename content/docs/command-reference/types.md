@@ -21,7 +21,7 @@ different implementations available for a specific `SUB_TYPE` (argument).
 This can be useful, for example, to see which types of servers are supported for
 hosting and serving a model (see [Examples](#examples)).
 
-Check out [MLEM ABCs](/doc/user-guide/mlem-abcs) for a list of abstract base
+Check out [MLEM ABCs](/doc/object-reference/mlem-abcs) for a list of abstract base
 classes that subclass `mlem.core.base.MlemABC`. These constitute the building
 blocks of MLEM, and can be subclassed to add new functionalities and
 capabilities.
