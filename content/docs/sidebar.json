@@ -78,72 +78,40 @@
         "slug": "models",
         "label": "Working with models",
         "source": "models/index.md",
-        "children": [
-          {
-            "slug": "catboost",
-            "label": "Catboost",
-            "source": "catboost.md",
-            "children": []
-          },
-          {
-            "slug": "lightgbm",
-            "label": "LightGBM",
-            "source": "lightgbm.md",
-            "children": []
-          },
-          {
-            "slug": "torch",
-            "label": "Torch",
-            "source": "torch.md",
-            "children": []
-          },
-          {
-            "slug": "sklearn",
-            "label": "Scikit-Learn",
-            "source": "sklearn.md",
-            "children": []
-          },
-          {
-            "slug": "xgboost",
-            "label": "Xgboost",
-            "source": "xgboost.md",
-            "children": []
-          },
-          {
-            "slug": "onnx",
-            "label": "Onnx",
-            "source": "onnx.md",
-            "children": []
-          },
-          {
-            "slug": "callable",
-            "label": "Python callables",
-            "source": "callable.md",
-            "children": []
-          },
-          {
-            "slug": "tensorflow",
-            "label": "Tensorflow",
-            "source": "tensorflow.md",
-            "children": []
-          }
-        ]
+        "children": []
+      },
+      {
+        "slug": "data",
+        "label": "Working with data",
+        "source": "data/index.md",
+        "children": []
+      },
+      {
+        "slug": "project-structure",
+        "label": "Project structure",
+        "source": "project-structure.md"
       },
       {
         "slug": "remote-objects",
-        "label": "Working with Remote Objects and Projects",
+        "label": "Remote objects and projects",
         "source": "remote-objects/index.md",
         "children": [
           {
-            "slug": "github",
-            "label": "GitHub",
-            "source": "github.md",
+            "slug": "dvc",
+            "label": "DVC",
+            "source": "dvc.md",
             "children": []
           },
           {
             "slug": "clouds",
             "label": "Clouds (S3, GCS, AZDB etc)",
             "source": "clouds.md",
+            "children": []
+          },
+          {
+            "slug": "github",
+            "label": "GitHub",
+            "source": "github.md",
             "children": []
           },
           {
@@ -157,38 +125,8 @@
             "label": "BitBucket",
             "source": "bitbucket.md",
             "children": []
-          },
-          {
-            "slug": "dvc",
-            "label": "DVC",
-            "source": "dvc.md",
-            "children": []
           }
         ]
-      },
-      {
-        "slug": "data",
-        "label": "Working with Data",
-        "source": "data/index.md",
-        "children": [
-          {
-            "slug": "pandas",
-            "label": "Pandas",
-            "source": "pandas.md",
-            "children": []
-          },
-          {
-            "slug": "numpy",
-            "label": "Numpy",
-            "source": "numpy.md",
-            "children": []
-          }
-        ]
-      },
-      {
-        "slug": "project-structure",
-        "label": "Project structure",
-        "source": "project-structure.md"
       },
       {
         "slug": "configuration",
@@ -214,14 +152,12 @@
           {
             "slug": "pip",
             "label": "Python Packages",
-            "source": "pip.md",
-            "children": []
+            "source": "pip.md"
           },
           {
             "slug": "docker",
             "label": "Docker",
-            "source": "docker.md",
-            "children": []
+            "source": "docker.md"
           }
         ]
       },
@@ -232,15 +168,13 @@
         "children": [
           {
             "slug": "fastapi",
-            "label": "fastapi",
-            "source": "fastapi.md",
-            "children": []
+            "label": "FastAPI",
+            "source": "fastapi.md"
           },
           {
             "slug": "rabbitmq",
             "label": "RabbitMQ",
-            "source": "rabbitmq.md",
-            "children": []
+            "source": "rabbitmq.md"
           }
         ]
       },
@@ -252,26 +186,22 @@
           {
             "slug": "heroku",
             "label": "Heroku",
-            "source": "heroku.md",
-            "children": []
+            "source": "heroku.md"
           },
           {
             "slug": "docker",
             "label": "Docker",
-            "source": "docker.md",
-            "children": []
+            "source": "docker.md"
           },
           {
             "slug": "kubernetes",
             "label": "Kubernetes",
-            "source": "kubernetes.md",
-            "children": []
+            "source": "kubernetes.md"
           },
           {
             "slug": "sagemaker",
             "label": "SageMaker",
-            "source": "sagemaker.md",
-            "children": []
+            "source": "sagemaker.md"
           }
         ]
       },
@@ -460,7 +390,7 @@
       },
       {
         "slug": "mlem-objects",
-        "label": "Object Reference",
+        "label": "MLEM Objects",
         "source": "mlem-objects.md"
       },
       {
@@ -469,8 +399,18 @@
         "source": "model/index.md",
         "children": [
           {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
+            "slug": "callable",
+            "label": "Python callables",
+            "source": "callable.md"
+          },
+          {
             "slug": "sklearn",
-            "label": "Sklearn",
+            "label": "Scikit-Learn",
             "source": "sklearn.md"
           },
           {
@@ -480,7 +420,7 @@
           },
           {
             "slug": "tensorflow",
-            "label": "Tensorflow",
+            "label": "TensorFlow",
             "source": "tensorflow.md"
           },
           {
@@ -490,29 +430,18 @@
           },
           {
             "slug": "catboost",
-            "label": "Catboost",
+            "label": "CatBoost",
             "source": "catboost.md"
           },
           {
             "slug": "lightgbm",
-            "label": "Lightgbm",
+            "label": "LightGBM",
             "source": "lightgbm.md"
           },
           {
             "slug": "xgboost",
-            "label": "Xgboost",
+            "label": "XGBoost",
             "source": "xgboost.md"
-          },
-          {
-            "slug": "callable",
-            "label": "Callable",
-            "source": "callable.md"
-          },
-          {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
           }
         ]
       },
@@ -522,8 +451,13 @@
         "source": "data/index.md",
         "children": [
           {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
             "slug": "numpy",
-            "label": "Numpy",
+            "label": "NumPy",
             "source": "numpy.md"
           },
           {
@@ -532,34 +466,24 @@
             "source": "pandas.md"
           },
           {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
-          },
-          {
             "slug": "lightgbm",
-            "label": "lightgbm",
-            "source": "lightgbm.md",
-            "children": []
+            "label": "LightGBM",
+            "source": "lightgbm.md"
           },
           {
             "slug": "torch",
-            "label": "torch",
-            "source": "torch.md",
-            "children": []
+            "label": "Torch",
+            "source": "torch.md"
           },
           {
             "slug": "tensorflow",
-            "label": "tensorflow",
-            "source": "tensorflow.md",
-            "children": []
+            "label": "TensorFlow",
+            "source": "tensorflow.md"
           },
           {
             "slug": "xgboost",
-            "label": "xgboost",
-            "source": "xgboost.md",
-            "children": []
+            "label": "XGBoost",
+            "source": "xgboost.md"
           }
         ]
       },
@@ -570,20 +494,13 @@
         "children": [
           {
             "slug": "pip",
-            "label": "Pip",
+            "label": "Python package",
             "source": "pip.md"
           },
           {
             "slug": "docker",
-            "label": "docker",
-            "source": "docker.md",
-            "children": []
-          },
-          {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
+            "label": "Docker",
+            "source": "docker.md"
           }
         ]
       },
@@ -593,20 +510,19 @@
         "source": "serving/index.md",
         "children": [
           {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
             "slug": "fastapi",
-            "label": "Fastapi",
+            "label": "FastAPI",
             "source": "fastapi.md"
           },
           {
             "slug": "rabbitmq",
-            "label": "Rabbitmq",
+            "label": "RabbitMQ",
             "source": "rabbitmq.md"
-          },
-          {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
           }
         ]
       },
@@ -622,7 +538,7 @@
           },
           {
             "slug": "sagemaker",
-            "label": "Sagemaker",
+            "label": "SageMaker",
             "source": "sagemaker.md"
           },
           {
@@ -634,12 +550,6 @@
             "slug": "kubernetes",
             "label": "Kubernetes",
             "source": "kubernetes.md"
-          },
-          {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
           }
         ]
       },
@@ -649,25 +559,24 @@
         "source": "uri/index.md",
         "children": [
           {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
             "slug": "github",
-            "label": "Github",
+            "label": "GitHub",
             "source": "github.md"
           },
           {
             "slug": "gitlabfs",
-            "label": "Gitlabfs",
+            "label": "GitLab",
             "source": "gitlabfs.md"
           },
           {
             "slug": "bitbucketfs",
-            "label": "Bitbucketfs",
+            "label": "BitBucket",
             "source": "bitbucketfs.md"
-          },
-          {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
           }
         ]
       },
@@ -677,15 +586,14 @@
         "source": "storage/index.md",
         "children": [
           {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
             "slug": "dvc",
             "label": "Dvc",
             "source": "dvc.md"
-          },
-          {
-            "slug": "builtin",
-            "label": "builtin",
-            "source": "builtin.md",
-            "children": []
           }
         ]
       },

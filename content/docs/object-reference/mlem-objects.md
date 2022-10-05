@@ -36,25 +36,25 @@ Model and Data are special types that can have artifacts, so they have two
 additional fields:
 
 - `artifacts` - a string-to-artifacts mapping, where artifact is an instance of
-  [`Artifact`](/doc/user-guide/mlem-abcs#artifact) which represents a file
+  [`Artifact`](/doc/object-reference/mlem-abcs#artifact) which represents a file
   stored somewhere (local/cloud/dvc cache etc)
 - `requirements` - a list of
-  [`Requirement`](/doc/user-guide/mlem-abcs#requirement) which are needed to use
-  that object in runtime
+  [`Requirement`](/doc/object-reference/mlem-abcs#requirement) which are needed
+  to use that object in runtime
 
 ### Model
 
 Represents an ML model, but can be generalized to any model or even any
 "function" or any "transformation", thanks to `callable`
-[ModelType](/doc/user-guide/mlem-abcs#modeltype).
+[ModelType](/doc/object-reference/mlem-abcs#modeltype).
 
 **Base class**: `mlem.core.objects.MlemModel`
 
 **Fields** (in addition to inherited):
 
-- `model_type` (_lazy_) - [ModelType](/doc/user-guide/mlem-abcs#modeltype),
-  which is polymorphic and holds metadata about model's framework, methods and
-  io.
+- `model_type` (_lazy_) -
+  [ModelType](/doc/object-reference/mlem-abcs#modeltype), which is polymorphic
+  and holds metadata about model's framework, methods and io.
 
 ### Data
 
@@ -64,10 +64,11 @@ Represent data, which can be used as an input to one of Model's methods.
 
 **Fields** (in addition to inherited):
 
-- `reader` (_lazy_) - [DataReader](/doc/user-guide/mlem-abcs#datareader) - how
-  to read saved files and resulting dataset metadata
-- `data_type` (_transient_) - [`DataType`](/doc/user-guide/mlem-abcs#datatype)
-  with dataset value and metadata (available once data is read)
+- `reader` (_lazy_) - [DataReader](/doc/object-reference/mlem-abcs#datareader) -
+  how to read saved files and resulting dataset metadata
+- `data_type` (_transient_) -
+  [`DataType`](/doc/object-reference/mlem-abcs#datatype) with dataset value and
+  metadata (available once data is read)
 
 ### Link
 
@@ -87,6 +88,6 @@ Represents a link (pointer) to another MLEM Object. More on that
 
 Some of the `MLEM ABCs` are also MLEM Objects.
 
-- [Builder](/doc/user-guide/mlem-abcs#builder)
-- [Target Environment](/doc/user-guide/mlem-abcs#mlemenv)
-- [Deployment](/doc/user-guide/mlem-abcs#mlemdeployment)
+- [Builder](/doc/object-reference/mlem-abcs#builder)
+- [Target Environment](/doc/object-reference/mlem-abcs#mlemenv)
+- [Deployment](/doc/object-reference/mlem-abcs#mlemdeployment)

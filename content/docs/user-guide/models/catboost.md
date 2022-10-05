@@ -1,7 +1,7 @@
 # Catboost
 
-Implementations of [ModelType](/doc/user-guide/mlem-abcs#modeltype) and
-[ModelIO](/doc/user-guide/mlem-abcs#modelio) for `CatBoostClassifier` and
+Implementations of [ModelType](/doc/object-reference/mlem-abcs#modeltype) and
+[ModelIO](/doc/object-reference/mlem-abcs#modelio) for `CatBoostClassifier` and
 `CatBoostRegressor`
 
 ## Description

@@ -1,5 +1,17 @@
 # onnx
 
+## `class ModelProtoIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `model_proto`
+
+    IO for ONNX model object
+
+**No fields**
+
+---
+
 ## `class ONNXModel`
 
 **MlemABC parent type**: `model_type`
@@ -11,15 +23,3 @@
 **Fields**:
 
 - `io: ModelIO = ModelProtoIO()` - Model IO
-
----
-
-## `class ModelProtoIO`
-
-**MlemABC parent type**: `model_io`
-
-**MlemABC type**: `model_proto`
-
-    IO for ONNX model object
-
-**No fields**

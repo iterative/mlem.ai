@@ -1,10 +1,10 @@
 # Extending
 
 MLEM can be extended to support more model types, data types, servers, builders
-and basically everything listed [here](/doc/user-guide/mlem-abcs). Most of the
-builtin implementations are also extensions located in `mlem.contrib` package.
-It allows MLEM to not load their code if it is not used, which is especially
-cool because it means their requirements are optional.
+and basically everything listed [here](/doc/object-reference/mlem-abcs). Most of
+the builtin implementations are also extensions located in `mlem.contrib`
+package. It allows MLEM to not load their code if it is not used, which is
+especially cool because it means their requirements are optional.
 
 ## Implementing MlemABC
 

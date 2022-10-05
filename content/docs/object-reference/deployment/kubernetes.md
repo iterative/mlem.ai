@@ -1,23 +1,5 @@
 # kubernetes
 
-## `class K8sDeploymentState`
-
-**MlemABC parent type**: `deploy_state`
-
-**MlemABC type**: `kubernetes`
-
-    DeployState implementation for Kubernetes deployments
-
-**Fields**:
-
-- `model_hash: str` - hash of deployed model meta
-
-- `image: DockerImage` - Docker Image being used for Deployment
-
-- `deployment_name: str` - Name of Deployment
-
----
-
 ## `class K8sDeployment`
 
 **MlemABC parent type**: `deployment`
@@ -53,6 +35,24 @@
 - `daemon: DockerDaemon = host=''` - Docker daemon
 
 - `kube_config_file_path: str` - Path for kube config file of the cluster
+
+---
+
+## `class K8sDeploymentState`
+
+**MlemABC parent type**: `deploy_state`
+
+**MlemABC type**: `kubernetes`
+
+    DeployState implementation for Kubernetes deployments
+
+**Fields**:
+
+- `model_hash: str` - Hash of deployed model meta
+
+- `image: DockerImage` - Docker Image being used for Deployment
+
+- `deployment_name: str` - Name of Deployment
 
 ---
 

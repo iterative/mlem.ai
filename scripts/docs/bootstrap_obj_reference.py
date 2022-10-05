@@ -1,6 +1,4 @@
 import inspect
-import inspect
-import json
 import os.path
 import re
 import string
@@ -26,8 +24,8 @@ REF_SLUG = "object-reference"
 REF_DIR = "../../content/docs/object-reference"
 
 DOC_REPLACEMENTS = {
-    "ModelType": "[ModelType](/doc/user-guide/mlem-abcs#modeltype)",
-    "ModelIO": "[ModelIO](/doc/user-guide/mlem-abcs#modelio)"
+    "ModelType": "[ModelType](/doc/object-reference/mlem-abcs#modeltype)",
+    "ModelIO": "[ModelIO](/doc/object-reference/mlem-abcs#modelio)"
 }
 
 LINE_WIDTH = 80
@@ -252,6 +250,8 @@ def create_ext_impls_page(section: str, extension: str,
     path = os.path.join(REF_DIR, filename)
     handcrafted = {}
     if os.path.exists(path):
+        if not impls:
+            os.unlink(path)
         if not overwrite:
             return
         # handcrafted = get_sections(path, "Description", "Examples")
@@ -303,9 +303,16 @@ def main():
         # root_cls = MlemABC.abs_types[abc]
         for impl in list_implementations(abc, include_hidden=False):
             cls = load_impl_ext(abc, impl)
+            if cls.__is_root__:
+                continue
             ext_name = get_impl_extension_name(cls)
             section_to_ext[section][ext_name].append(cls)
 
+    section_to_ext = {
+        section: {ext: list(sorted(impls, key=lambda i: i.__name__)) for
+            ext, impls in ext_to_impls.items()
+        } for section, ext_to_impls in section_to_ext.items()
+    }
     for section, ext_to_impls in section_to_ext.items():
         for ext, impls in ext_to_impls.items():
             create_ext_impls_page(section, ext, impls, overwrite=True)

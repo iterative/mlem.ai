@@ -1,17 +1,5 @@
 # lightgbm
 
-## `class LightGBMDataWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `lightgbm`
-
-    Wrapper writer for lightgbm.Dataset objects
-
-**No fields**
-
----
-
 ## `class LightGBMDataReader`
 
 **MlemABC parent type**: `data_reader`
@@ -41,3 +29,15 @@
 **Fields**:
 
 - `inner: DataType` _(required)_ - Inner DataType
+
+---
+
+## `class LightGBMDataWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `lightgbm`
+
+    Wrapper writer for lightgbm.Dataset objects
+
+**No fields**

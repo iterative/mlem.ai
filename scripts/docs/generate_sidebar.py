@@ -9,7 +9,9 @@ DOCS_PATH = os.path.dirname(SIDEBAR_PATH)
 
 IGNORE = [
     "user-guide/what-is-mlem.md",
-    "api-reference/mlem-object.md"
+    "api-reference/mlem-object.md",
+    "user-guide/models",
+    "user-guide/data"
 ]
 
 
@@ -78,7 +80,7 @@ def main():
     sidebar_paths = list(get_sidebar_paths(sidebar))
 
     new_files = list(set(md_files).difference(sidebar_paths))
-    new_files = [f for f in new_files if f not in IGNORE]
+    new_files = [f for f in new_files if not any(f.startswith(ignored) for ignored in IGNORE)]
     removed_files = list(set(sidebar_paths).difference(md_files))
 
     sidebar = adjust_sidebar(sidebar, new_files, removed_files)

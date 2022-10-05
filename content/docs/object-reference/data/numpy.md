@@ -1,29 +1,5 @@
 # numpy
 
-## `class NumpyArrayWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `numpy`
-
-    DataWriter implementation for numpy ndarray
-
-**No fields**
-
----
-
-## `class NumpyNumberWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `numpy_number`
-
-    Write np.number objects
-
-**No fields**
-
----
-
 ## `class NumpyArrayReader`
 
 **MlemABC parent type**: `data_reader`
@@ -38,17 +14,15 @@
 
 ---
 
-## `class NumpyNumberReader`
+## `class NumpyArrayWriter`
 
-**MlemABC parent type**: `data_reader`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `numpy_number`
+**MlemABC type**: `numpy`
 
-    Read np.number objects
+    DataWriter implementation for numpy ndarray
 
-**Fields**:
-
-- `data_type: NumpyNumberType` _(required)_ - Resulting data type
+**No fields**
 
 ---
 
@@ -66,6 +40,20 @@
 
 ---
 
+## `class NumpyNumberReader`
+
+**MlemABC parent type**: `data_reader`
+
+**MlemABC type**: `numpy_number`
+
+    Read np.number objects
+
+**Fields**:
+
+- `data_type: NumpyNumberType` _(required)_ - Resulting data type
+
+---
+
 ## `class NumpyNumberType`
 
 **MlemABC parent type**: `data_type`
@@ -77,3 +65,15 @@
 **Fields**:
 
 - `dtype: str` _(required)_ - `numpy.number` type name as string
+
+---
+
+## `class NumpyNumberWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `numpy_number`
+
+    Write np.number objects
+
+**No fields**
