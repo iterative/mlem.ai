@@ -1,18 +1,19 @@
 # deployment
 
-A set of commands to set up and manage deployments.
+A set of commands to set up and manage deployments
 
 ## Synopsis
 
 ```usage
-usage: mlem deployment [options] COMMAND [ARGS]...
+usage: mlem deployment [-h]
+                       command
 
-arguments:
-COMMAND
-    apply     Apply method of deployed service
-    run       Deploy a model to target environment
-    status    Print status of deployed service
-    remove    Stop and destroy deployed instance
+subcommands:
+  run              Deploy a model to a target environment.
+  remove           Stop and destroy deployed instance.
+  status           Print status of deployed service.
+  wait             Wait for status of deployed service
+  apply            Apply a deployed model to data.
 ```
 
 ## Description
