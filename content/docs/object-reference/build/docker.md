@@ -1,5 +1,23 @@
 # docker
 
+## `class DockerDirBuilder`
+
+**MlemABC parent type**: `builder`
+
+**MlemABC type**: `docker_dir`
+
+    Create a directory with docker context to build docker image
+
+**Fields**:
+
+- `target: str` _(required)_ - Path to save result
+
+- `server: Server` - Server to use
+
+- `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
+
+---
+
 ## `class DockerImageBuilder`
 
 **MlemABC parent type**: `builder`
@@ -22,24 +40,6 @@
 - `force_overwrite: bool = False` - Ignore existing image with same name
 
 - `push: bool = True` - Push image to registry after it is built
-
----
-
-## `class DockerDirBuilder`
-
-**MlemABC parent type**: `builder`
-
-**MlemABC type**: `docker_dir`
-
-    Create a directory with docker context to build docker image
-
-**Fields**:
-
-- `target: str` _(required)_ - Path to save result
-
-- `server: Server` - Server to use
-
-- `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
 
 ---
 

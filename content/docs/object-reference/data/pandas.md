@@ -1,30 +1,14 @@
 # pandas
 
-## `class PandasWriter`
+## `class DataFrameType`
 
-**MlemABC parent type**: `data_writer`
+**MlemABC parent type**: `data_type`
 
-**MlemABC type**: `pandas`
+**MlemABC type**: `dataframe`
 
-    DataWriter for pandas dataframes
+    :class:`.DataType` implementation for `pandas.DataFrame`
 
-**Fields**:
-
-- `format: str` _(required)_ - name of pandas-supported format
-
----
-
-## `class PandasSeriesWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `pandas_series`
-
-    DataWriter for pandas series
-
-**Fields**:
-
-- `format: str` _(required)_ - name of pandas-supported format
+**No fields**
 
 ---
 
@@ -60,15 +44,31 @@
 
 ---
 
-## `class DataFrameType`
+## `class PandasSeriesWriter`
 
-**MlemABC parent type**: `data_type`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `dataframe`
+**MlemABC type**: `pandas_series`
 
-    :class:`.DataType` implementation for `pandas.DataFrame`
+    DataWriter for pandas series
 
-**No fields**
+**Fields**:
+
+- `format: str` _(required)_ - name of pandas-supported format
+
+---
+
+## `class PandasWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `pandas`
+
+    DataWriter for pandas dataframes
+
+**Fields**:
+
+- `format: str` _(required)_ - name of pandas-supported format
 
 ---
 

@@ -1,23 +1,5 @@
 # heroku
 
-## `class HerokuState`
-
-**MlemABC parent type**: `deploy_state`
-
-**MlemABC type**: `heroku`
-
-    State of heroku deployment
-
-**Fields**:
-
-- `model_hash: str` - hash of deployed model meta
-
-- `app: HerokuAppMeta` - Created heroku app
-
-- `image: DockerImage` - Built docker image
-
----
-
 ## `class HerokuDeployment`
 
 **MlemABC parent type**: `deployment`
@@ -52,3 +34,21 @@
 
 - `api_key: str` - HEROKU_API_KEY - advised to set via env variable or
   `heroku login`
+
+---
+
+## `class HerokuState`
+
+**MlemABC parent type**: `deploy_state`
+
+**MlemABC type**: `heroku`
+
+    State of heroku deployment
+
+**Fields**:
+
+- `model_hash: str` - Hash of deployed model meta
+
+- `app: HerokuAppMeta` - Created heroku app
+
+- `image: DockerImage` - Built docker image

@@ -1,5 +1,21 @@
 # builtin
 
+## `class HTTPClient`
+
+**MlemABC parent type**: `client`
+
+**MlemABC type**: `http`
+
+    Access models served with http-based servers
+
+**Fields**:
+
+- `host: str = "0.0.0.0"` - Server host
+
+- `port: int = 8080` - Server port
+
+---
+
 ## `class ModelInterface`
 
 **MlemABC parent type**: `interface`
@@ -25,22 +41,6 @@
 
 - `methods: InterfaceDescriptor = InterfaceDescriptor()` - Interface version and
   methods
-
----
-
-## `class HTTPClient`
-
-**MlemABC parent type**: `client`
-
-**MlemABC type**: `http`
-
-    Access models served with http-based servers
-
-**Fields**:
-
-- `host: str = "0.0.0.0"` - Server host
-
-- `port: int = 8080` - Server port
 
 ---
 

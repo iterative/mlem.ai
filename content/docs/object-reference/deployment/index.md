@@ -8,5 +8,6 @@ Typicaly they will implement [MlemEnv](/doc/object-reference/mlem-abcs#mlemenv),
 [MlemDeployment](/doc/object-reference/mlem-abcs#mlemdeployment) and
 [DeployState](/doc/object-reference/mlem-abcs#deploystate) interfaces.
 
-Some also implement specific [Server](/doc/object-reference/mlem-abcs#server) or  
+Some also implement specific [Server](/doc/object-reference/mlem-abcs#server)
+or  
 [Builder](/doc/object-reference/mlem-abcs#builder) interfaces

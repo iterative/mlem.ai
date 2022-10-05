@@ -1,14 +1,16 @@
 # tensorflow
 
-## `class TFTensorWriter`
+## `class TFTensorDataType`
 
-**MlemABC parent type**: `data_writer`
+**MlemABC parent type**: `data_type`
 
 **MlemABC type**: `tf_tensor`
 
-    Write tensorflow tensors to np format
+    DataType implementation for `tensorflow.Tensor`
 
-**No fields**
+**Fields**:
+
+- `dtype: str` _(required)_ - Data type of `tensorflow.Tensor` objects in data
 
 ---
 
@@ -26,14 +28,12 @@
 
 ---
 
-## `class TFTensorDataType`
+## `class TFTensorWriter`
 
-**MlemABC parent type**: `data_type`
+**MlemABC parent type**: `data_writer`
 
 **MlemABC type**: `tf_tensor`
 
-    DataType implementation for `tensorflow.Tensor`
+    Write tensorflow tensors to np format
 
-**Fields**:
-
-- `dtype: str` _(required)_ - Data type of `tensorflow.Tensor` objects in data
+**No fields**

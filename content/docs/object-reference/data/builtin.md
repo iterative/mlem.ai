@@ -1,65 +1,5 @@
 # builtin
 
-## `class ArrayWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `array`
-
-    Writer for lists with single element type
-
-**No fields**
-
----
-
-## `class DynamicDictWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `d_dict`
-
-    Write dicts without fixed set of keys
-
-**No fields**
-
----
-
-## `class DictWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `dict`
-
-    Writer for dicts
-
-**No fields**
-
----
-
-## `class PrimitiveWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `primitive`
-
-    Writer for primitive types
-
-**No fields**
-
----
-
-## `class _TupleLikeWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `tuple_like`
-
-    Writer for tuple-like data
-
-**No fields**
-
----
-
 ## `class ArrayReader`
 
 **MlemABC parent type**: `data_reader`
@@ -71,62 +11,6 @@
 **Fields**:
 
 - `data_type: ArrayType` _(required)_ - Resulting data type
-
----
-
-## `class DynamicDictReader`
-
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `d_dict`
-
-    Read dicts without fixed set of keys
-
-**Fields**:
-
-- `data_type: DynamicDictType` _(required)_ - Resulting data type
-
----
-
-## `class DictReader`
-
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `dict`
-
-    Reader for dicts
-
-**Fields**:
-
-- `data_type: DictType` _(required)_ - Resulting data type
-
----
-
-## `class PrimitiveReader`
-
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `primitive`
-
-    Reader for primitive types
-
-**Fields**:
-
-- `data_type: PrimitiveType` _(required)_ - Resulting data type
-
----
-
-## `class _TupleLikeReader`
-
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `tuple_like`
-
-    Reader for tuple-like data
-
-**Fields**:
-
-- `data_type: _TupleLikeType` _(required)_ - Resulting data type
 
 ---
 
@@ -147,6 +31,70 @@
 
 ---
 
+## `class ArrayWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `array`
+
+    Writer for lists with single element type
+
+**No fields**
+
+---
+
+## `class DictReader`
+
+**MlemABC parent type**: `data_reader`
+
+**MlemABC type**: `dict`
+
+    Reader for dicts
+
+**Fields**:
+
+- `data_type: DictType` _(required)_ - Resulting data type
+
+---
+
+## `class DictType`
+
+**MlemABC parent type**: `data_type`
+
+**MlemABC type**: `dict`
+
+    DataType for dict with fixed set of keys
+
+**No fields**
+
+---
+
+## `class DictWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `dict`
+
+    Writer for dicts
+
+**No fields**
+
+---
+
+## `class DynamicDictReader`
+
+**MlemABC parent type**: `data_reader`
+
+**MlemABC type**: `d_dict`
+
+    Read dicts without fixed set of keys
+
+**Fields**:
+
+- `data_type: DynamicDictType` _(required)_ - Resulting data type
+
+---
+
 ## `class DynamicDictType`
 
 **MlemABC parent type**: `data_type`
@@ -163,13 +111,13 @@
 
 ---
 
-## `class DictType`
+## `class DynamicDictWriter`
 
-**MlemABC parent type**: `data_type`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `dict`
+**MlemABC type**: `d_dict`
 
-    DataType for dict with fixed set of keys
+    Write dicts without fixed set of keys
 
 **No fields**
 
@@ -188,6 +136,20 @@
 
 ---
 
+## `class PrimitiveReader`
+
+**MlemABC parent type**: `data_reader`
+
+**MlemABC type**: `primitive`
+
+    Reader for primitive types
+
+**Fields**:
+
+- `data_type: PrimitiveType` _(required)_ - Resulting data type
+
+---
+
 ## `class PrimitiveType`
 
 **MlemABC parent type**: `data_type`
@@ -199,6 +161,18 @@
 **Fields**:
 
 - `ptype: str` _(required)_ - Name of builtin type
+
+---
+
+## `class PrimitiveWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `primitive`
+
+    Writer for primitive types
+
+**No fields**
 
 ---
 
@@ -221,5 +195,31 @@
 **MlemABC type**: `unspecified`
 
     Special data type for cases when it's not provided
+
+**No fields**
+
+---
+
+## `class _TupleLikeReader`
+
+**MlemABC parent type**: `data_reader`
+
+**MlemABC type**: `tuple_like`
+
+    Reader for tuple-like data
+
+**Fields**:
+
+- `data_type: _TupleLikeType` _(required)_ - Resulting data type
+
+---
+
+## `class _TupleLikeWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `tuple_like`
+
+    Writer for tuple-like data
 
 **No fields**

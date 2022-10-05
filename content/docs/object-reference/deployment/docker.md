@@ -1,25 +1,5 @@
 # docker
 
-## `class DockerContainerState`
-
-**MlemABC parent type**: `deploy_state`
-
-**MlemABC type**: `docker_container`
-
-    State of docker container deployment
-
-**Fields**:
-
-- `model_hash: str` - hash of deployed model meta
-
-- `image: DockerImage` - Built image
-
-- `container_name: str` - Name of container
-
-- `container_id: str` - Started container id
-
----
-
 ## `class DockerContainer`
 
 **MlemABC parent type**: `deployment`
@@ -41,6 +21,26 @@
 - `image_name: str` - Name to use for image
 
 - `rm: bool = True` - Remove container on stop
+
+---
+
+## `class DockerContainerState`
+
+**MlemABC parent type**: `deploy_state`
+
+**MlemABC type**: `docker_container`
+
+    State of docker container deployment
+
+**Fields**:
+
+- `model_hash: str` - Hash of deployed model meta
+
+- `image: DockerImage` - Built image
+
+- `container_name: str` - Name of container
+
+- `container_id: str` - Started container id
 
 ---
 

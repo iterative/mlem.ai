@@ -1,14 +1,16 @@
 # torch
 
-## `class TorchTensorWriter`
+## `class TorchTensorDataType`
 
-**MlemABC parent type**: `data_writer`
+**MlemABC parent type**: `data_type`
 
 **MlemABC type**: `torch`
 
-    Write torch tensors
+    DataType implementation for `torch.Tensor`
 
-**No fields**
+**Fields**:
+
+- `dtype: str` _(required)_ - Type name of `torch.Tensor` elements
 
 ---
 
@@ -26,14 +28,12 @@
 
 ---
 
-## `class TorchTensorDataType`
+## `class TorchTensorWriter`
 
-**MlemABC parent type**: `data_type`
+**MlemABC parent type**: `data_writer`
 
 **MlemABC type**: `torch`
 
-    DataType implementation for `torch.Tensor`
+    Write torch tensors
 
-**Fields**:
-
-- `dtype: str` _(required)_ - Type name of `torch.Tensor` elements
+**No fields**
