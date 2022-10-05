@@ -1,16 +1,17 @@
 # serve
 
-Locally deploy the model using a server implementation and expose its methods as
-endpoints.
+Create an API from model methods using a server implementation.
 
 ## Synopsis
 
 ```usage
-usage: mlem serve [options] model [subtype]
+usage: mlem serve [-m <path>] [-p <path>] [--rev <commitish>]
+                  [-f <text>] [-h]
+                  [<server> [server options] | --load <declaration>]
 
-arguments:
-MODEL      Model to create service from  [required]
-[SUBTYPE]  Server type. Choices: ['fastapi', 'heroku', 'rmq']  [default: ]
+Builtin servers:
+- fastapi
+- rmq
 ```
 
 ## Description
@@ -30,13 +31,12 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `-l, --load TEXT`: File to load server config from
-- `-c, --conf TEXT`: Options for server in format `field.name=value`
-- `-f, --file_conf TEXT`: File with options for server in format
+- `-m <path>`, `--model <path>` - Path to MLEM model [required]
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-f <text>`, `--file_conf <text>` - File with options for server in format
   `field.name=path_to_config`
-- `--help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Example: FastAPI HTTP server
 

@@ -1,16 +1,17 @@
 # list
 
-List [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) inside a MLEM
-project (location should be [initialized](/doc/command-reference/init)).
-
-> Aliased to `mlem ls`
+List [MLEM objects](/doc/user-guide/basic-concepts#mlem-objects) inside a
+[MLEM project](/doc/user-guide/project-structure).
 
 ## Synopsis
 
 ```usage
-usage: mlem list [options] [project]
+usage: mlem list [-t <[all|link|model|data|builder|env|deployment]>]
+                 [--rev <commitish>] [+l] [--json] [-i] [-h]
+                 project
 
-arguments: [PROJECT] Project to list from [default: (current directory)]
+arguments:
+  project          Project to list from [default: (current directory)]
 ```
 
 ## Description
@@ -30,12 +31,14 @@ remote repositories.
 
 ## Options
 
-- `-t, --type [all|link|model|dataset|env|deployment|packager]`: Type of objects
-  to list [default: all]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `+l, --links / -l, --no-links`: Whether to include links [default: +l]
-- `--json`: Output as json
-- `--help`: Show this message and exit.
+- `-t <[all|link|model|data|builder|env|deployment]>`,
+  `--type <[all|link|model|data|builder|env|deployment]>` - Type of objects to
+  list [default: all]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--links`, `+l` / `-l`, `--no-links` - Whether to include links [default: l]
+- `--json` - Output as json
+- `-i`, `--ignore-errors` - Ignore corrupted objects
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

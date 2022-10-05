@@ -6,10 +6,13 @@ declaration or create a new one on-the-fly.
 ## Synopsis
 
 ```usage
-usage: mlem deployment run [options] path
+usage: mlem deployment run [-m <text>] [-t <text>] [-p <path>] [-e]
+                           [--index] [-c <text>] [-h]
+                           path
 
 arguments:
-PATH  Path to deployment meta (will be created if it does not exist) [required]
+  path             Path to deployment meta (will be created if it does not
+                   exist)
 ```
 
 ## Description
@@ -21,13 +24,13 @@ options (see below).
 
 ## Options
 
-- `-m, --model TEXT`: Path to model
-- `-t, --env TEXT`: Path to target environment
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `-c, --conf TEXT`: Configuration for new deployment meta if it does not exist
-- `-h, --help`: Show this message and exit.
+- `-m <text>`, `--model <text>` - Path to model
+- `-t <text>`, `--env <text>` - Path to target environment
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `-e`, `--external` - Save result not in .mlem, but directly in project
+- `--index` / `--no-index` - Whether to index output in .mlem directory
+- `-c <text>`, `--conf <text>` - Options in format `field.name=value`
+- `-h`, `--help` - Show this message and exit.
 
 ## Example: Create a new deployment from scratch
 
