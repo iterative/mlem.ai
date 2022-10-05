@@ -173,7 +173,7 @@
         "children": [
           {
             "slug": "fastapi",
-            "label": "fastapi",
+            "label": "FastAPI",
             "source": "fastapi.md"
           },
           {
