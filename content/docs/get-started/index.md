@@ -74,7 +74,7 @@ at it:
 
 <details>
 
-### `$ cat .mlem/model/rf.mlem`
+### `$ cat models/rf.mlem`
 
 ```yaml
 artifacts:

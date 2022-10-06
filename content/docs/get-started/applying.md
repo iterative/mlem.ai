@@ -39,9 +39,9 @@ Let's create an example file and run `mlem apply`
 ```cli
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
-$ mlem apply rf new_data.csv -i --it pandas[csv]
+$ mlem apply models/rf new_data.csv -i --it pandas[csv]
 ⏳️ Importing object from new_data.csv
-⏳️ Loading model from .mlem/model/rf.mlem
+⏳️ Loading model from models/rf.mlem
 🍏 Applying `predict` method...
 [[0.3, 0.3, 0.4]]
 ```
