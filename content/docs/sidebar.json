@@ -81,6 +81,67 @@
         "children": []
       },
       {
+        "slug": "serving",
+        "label": "Serving models",
+        "source": "serving/index.md",
+        "children": [
+          {
+            "slug": "fastapi",
+            "label": "FastAPI",
+            "source": "fastapi.md"
+          },
+          {
+            "slug": "rabbitmq",
+            "label": "RabbitMQ",
+            "source": "rabbitmq.md"
+          }
+        ]
+      },
+      {
+        "slug": "building",
+        "label": "Exporting models (building)",
+        "source": "building/index.md",
+        "children": [
+          {
+            "slug": "pip",
+            "label": "Python Packages",
+            "source": "pip.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          }
+        ]
+      },
+      {
+        "slug": "deploying",
+        "label": "Deploying models",
+        "source": "deploying/index.md",
+        "children": [
+          {
+            "slug": "heroku",
+            "label": "Heroku",
+            "source": "heroku.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
+            "slug": "kubernetes",
+            "label": "Kubernetes",
+            "source": "kubernetes.md"
+          },
+          {
+            "slug": "sagemaker",
+            "label": "SageMaker",
+            "source": "sagemaker.md"
+          }
+        ]
+      },
+      {
         "slug": "data",
         "label": "Working with data",
         "source": "data/index.md",
@@ -143,67 +204,6 @@
         "label": "Importing existing files",
         "source": "importing/index.md",
         "children": []
-      },
-      {
-        "slug": "building",
-        "label": "Exporting models (building)",
-        "source": "building/index.md",
-        "children": [
-          {
-            "slug": "pip",
-            "label": "Python Packages",
-            "source": "pip.md"
-          },
-          {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "docker.md"
-          }
-        ]
-      },
-      {
-        "slug": "serving",
-        "label": "Serving models",
-        "source": "serving/index.md",
-        "children": [
-          {
-            "slug": "fastapi",
-            "label": "FastAPI",
-            "source": "fastapi.md"
-          },
-          {
-            "slug": "rabbitmq",
-            "label": "RabbitMQ",
-            "source": "rabbitmq.md"
-          }
-        ]
-      },
-      {
-        "slug": "deploying",
-        "label": "Deploying models",
-        "source": "deploying/index.md",
-        "children": [
-          {
-            "slug": "heroku",
-            "label": "Heroku",
-            "source": "heroku.md"
-          },
-          {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "docker.md"
-          },
-          {
-            "slug": "kubernetes",
-            "label": "Kubernetes",
-            "source": "kubernetes.md"
-          },
-          {
-            "slug": "sagemaker",
-            "label": "SageMaker",
-            "source": "sagemaker.md"
-          }
-        ]
       },
       {
         "slug": "analytics",
