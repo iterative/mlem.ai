@@ -9,15 +9,15 @@ FastAPI server. All available server implementations are listed
 To start up FastAPI server run:
 
 ```cli
-$ mlem serve rf fastapi
-⏳️ Loading model from .mlem/model/rf.mlem
+$ mlem serve fastapi --model models/rf
+⏳️ Loading model from models/rf.mlem
 Starting fastapi server...
-🖇️ Adding route for /predict
-🖇️ Adding route for /predict_proba
-🖇️ Adding route for /sklearn_predict
-🖇️ Adding route for /sklearn_predict_proba
+🖇️  Adding route for /predict
+🖇️  Adding route for /predict_proba
+🖇️  Adding route for /sklearn_predict
+🖇️  Adding route for /sklearn_predict_proba
 Checkout openapi docs at <http://0.0.0.0:8080/docs>
-INFO:     Started server process [2917]
+INFO:     Started server process [16696]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)

@@ -211,17 +211,18 @@ saving (even if it's a complex one) and finds out all requirements needed!
 
 ## Productionization
 
-MLEM’s features can be grouped around those common functional use cases. We’ll
-explore them one by one in the next few pages:
+Saving models is fun, but the real value of a model is how you can use it. To
+make it easier to get models to production, MLEM has 4 related functionalities:
+applying, building, serving, and deploying.
 
-- **[Applying models](/doc/get-started/applying)** explains how to load and
-  apply models
+- **[Applying models](/doc/get-started/applying)** explains how to load model in
+  Python or get prediction in command line.
 - **[Exporting models (building)](/doc/get-started/building)** describes how
   models can be built into Python packages, Docker images, etc.
 - **[Serving models](/doc/get-started/serving)** shows how to create a service
-  from your model
+  from your model.
 - **[Deploying models](/doc/get-started/deploying)** shows how you can deploy
   your model with MLEM.
 
 More examples on how to use MLEM in different scenarios can be found in
-[Use Cases](/doc/use-cases) section
+[Use Cases](/doc/use-cases) section.

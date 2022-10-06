@@ -1,9 +1,5 @@
 # Exporting models (building)
 
-Saving and loading models is fun, but the real value of a model is how you can
-use it. To make it easier to get models to production, MLEM has 3 related
-functionalities: building, serving, and deploying. We’ll start with building.
-
 Building is a way to “bake” your model into something usable in production like
 a Docker image, or export your model into another format. For this tutorial we
 will create a pip-ready package from our model. You can see the full list of
