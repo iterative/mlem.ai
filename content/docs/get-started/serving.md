@@ -26,6 +26,9 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 Servers automatically create endpoints from model methods with payload schemas
 corresponding to serialized dataset types.
 
+That's it! You can check out the other available server implementations in
+[User Guide](/doc/user-guide/serving/).
+
 ## Making requests
 
 You can open Swagger UI (OpenAPI) at
