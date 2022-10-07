@@ -21,14 +21,14 @@
         "source": "applying.md"
       },
       {
-        "slug": "building",
-        "label": "Exporting models (building)",
-        "source": "building.md"
-      },
-      {
         "slug": "serving",
         "label": "Serving models",
         "source": "serving.md"
+      },
+      {
+        "slug": "building",
+        "label": "Exporting models",
+        "source": "building.md"
       },
       {
         "slug": "deploying",
@@ -99,7 +99,7 @@
       },
       {
         "slug": "building",
-        "label": "Exporting models (building)",
+        "label": "Exporting models",
         "source": "building/index.md",
         "children": [
           {

@@ -26,6 +26,21 @@ $ mlem build docker docker-builder.mlem \
 `docker-builder.mlem` is going to have a
 [builder specification](/doc/user-guide/building) (we call it declaration).
 
+<details>
+
+### `$ cat docker-builder.mlem`
+
+```yaml
+image:
+  name: rf-docker
+object_type: builder
+server:
+  type: fastapi
+type: docker
+```
+
+</details>
+
 ## Using Docker image
 
 Now you can distribute and run the Docker image. Let's run the container:
