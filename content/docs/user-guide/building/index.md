@@ -13,35 +13,56 @@ command and provide builder-specific arguments.
 ### ⚙️ About builders and arguments
 
 There are different types of builders and each one has it’s own set of available
-arguments. They are listed [here](/doc/object-reference/build), but for quick
-reference you can run `mlem types builder` for list of builders and
-`mlem types builder pip` for list of available arguments
+arguments. You can find them in the nested pages, but for quick reference you
+can run `mlem build --help` for list of builders and
+`mlem build $BUILDER --help` for list of available arguments.
 
 </details>
 
 ## Pre-configured builders
 
-Alternatively, you can pre configure your builder in the form of yaml file
-either manually or via `mlem declare` command which uses the same interface:
+In [Get Started](/doc/get-started/building) we demonstrated how to build a
+docker image out of the model. Now let's see what is the builder declaration we
+mentioned there. You can pre-configure your builder in the form of yaml file
+that we call "declaration" either manually or via `mlem declare` command:
 
 ```cli
-$ mlem declare builder pip my_pip_config \
-  --target build/ --package_name example_mlem_get_started
-💾 Saving builder to my_pip_config.mlem
-$ cat my_pip_config.mlem
-object_type: builder
-package_name: example_mlem_get_started
-target: build/
-type: pip
+$ mlem declare builder docker docker_builder.mlem \
+    --image.name mlem-model \
+    --env.daemon.host "" \
+    --server fastapi
+💾 Saving builder to docker_builder.mlem
 ```
 
-Now you can use this config as a value for `--load` option in `mlem build`
+Let's see the builder declaration:
+
+```yaml
+$ cat docker_builder.mlem
+image:
+  name: mlem-model
+object_type: builder
+server:
+  type: fastapi
+type: docker
+```
+
+This declaration basically defines all things you need to build a docker image.
+It includes image name, what server you want to serve your model with, and some
+optional things like image tag. Now you can use this config as a value for
+`--load` option in `mlem build`:
 
 ```cli
-$ mlem build --load my_pip_config --model rf
-⏳️ Loading builder from pip_config.mlem
-⏳️ Loading model from rf.mlem
-💼 Written `example_mlem_get_started` package data to `build`
+$ mlem build --load docker_builder.mlem \
+    --model https://github.com/iterative/example-mlem-get-started/rf
+⏳️ Loading builder from docker_builder.mlem
+⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/rf
+🛠 Building MLEM wheel file...
+💼 Adding model files...
+🛠 Generating dockerfile...
+💼 Adding sources...
+💼 Generating requirements file...
+🛠 Building docker image mlem-model:latest...
+✅ Built docker image mlem-model:latest
 ```
 
 Also, you can do all of this programmatically via Python API:
@@ -49,9 +70,18 @@ Also, you can do all of this programmatically via Python API:
 ```py
 from mlem.api import build, load_meta
 
-build("pip", "rf", target="build", package_name="example_mlem_get_started")
+build(
+    "docker",
+    "https://github.com/iterative/example-mlem-get-started/rf",
+    image={"name": "build"},
+    server="fastapi",
+    env={"daemon": {"host": ""}},
+)
 # or
-build(load_meta("my_pip_config"), "rf")
+build(
+    load_meta("docker_builder"),
+    "https://github.com/iterative/example-mlem-get-started/rf",
+)
 ```
 
 <details>
@@ -60,6 +90,10 @@ build(load_meta("my_pip_config"), "rf")
 
 Like every other MLEM object, builders can be read from remote repos. Try
 
-`mlem build --load https://github.com/iterative/example-mlem-get-started/pip_config --model rf`
+```cli
+mlem build \
+    --load https://github.com/iterative/example-mlem-get-started/pip_config \
+    --model https://github.com/iterative/example-mlem-get-started/rf
+```
 
 </details>

@@ -1,11 +1,7 @@
 # Docker
 
-Building docker images from the model or packing all necessary things to do that
-in a folder
-
-## Description
-
-**TODO**
+Building a docker image from the model or preparing a folder ready for running
+`$ docker build` in it.
 
 ## Requirements
 
@@ -14,6 +10,9 @@ pip install mlem[docker]
 # or
 pip install docker
 ```
+
+If you want to build images locally, you may want to install
+[Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 ## Examples
 

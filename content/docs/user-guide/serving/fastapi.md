@@ -1,10 +1,8 @@
-# fastapi
+# FastAPI
 
 [FastAPI](https://fastapi.tiangolo.com) is a modern, fast (high-performance),
 web framework for building APIs with Python 3.7+ based on standard Python type
 hints.
-
-## Description
 
 To expose your model to a external users via REST API, MLEM can use FastAPI to
 serve it.
@@ -24,10 +22,11 @@ pip install fastapi uvicorn
 ```python
 from mlem.api import serve
 
-serve(model="https://github.com/iterative/example-mlem-get-started/rf",
-      server="fastapi",
-      host="0.0.0.0",
-      port=8000,
+serve(
+    model="https://github.com/iterative/example-mlem-get-started/rf",
+    server="fastapi",
+    host="0.0.0.0",
+    port=8000,
 )
 ```
 
@@ -45,17 +44,19 @@ $ mlem serve fastapi \
 ```python
 from mlem.api import apply_remote
 
-apply_remote("http",
-             "https://github.com/iterative/example-mlem-get-started/iris.csv",
-             method="predict",
-             host="0.0.0.0",
-             port=8000
+apply_remote(
+    "http",
+    "https://github.com/iterative/example-mlem-get-started/iris.csv",
+    method="predict",
+    host="0.0.0.0",
+    port=8000,
 )
 ```
 
 ### Applying data to running FastAPI server from CLI
 
 ```cli
-$ mlem apply-remote http --method predict --host 0.0.0.0 --port 8000 \
-  --data https://github.com/iterative/example-mlem-get-started/iris.csv
+$ mlem apply-remote http \
+    --method predict --host 0.0.0.0 --port 8000 \
+    --data https://github.com/iterative/example-mlem-get-started/iris.csv
 ```
