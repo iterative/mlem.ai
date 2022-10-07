@@ -8,9 +8,7 @@ The easiest way to do this is to use [save](/doc/api-reference/save) API method.
 ```py
 from mlem.api import save
 
-df = ...
-model = ...
-save(model, "somepath", sample_data=df)
+save(model, "models/mymodel", sample_data=df)
 ```
 
 `model` object can be any supported python object. MLEM works with all major
@@ -38,9 +36,6 @@ to save it later.
 ```py
 from mlem.core.objects import MlemModel
 
-df = ...
-model = ...
 mlem_model = MlemModel.from_obj(model, sample_data=df)
-...
-mlem_model.dump("somepath")
+mlem_model.dump("models/mymodel")
 ```

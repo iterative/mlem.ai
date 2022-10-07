@@ -1,10 +1,13 @@
 # fastapi
 
-FastAPIServer implementation
+[FastAPI](https://fastapi.tiangolo.com) is a modern, fast (high-performance),
+web framework for building APIs with Python 3.7+ based on standard Python type
+hints.
 
 ## Description
 
-**TODO**
+To expose your model to a external users via REST API, MLEM can use FastAPI to
+serve it.
 
 ## Requirements
 

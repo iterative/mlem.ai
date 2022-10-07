@@ -1,10 +1,13 @@
 # RabbitMQ
 
-RabbitMQServer implementation
+[RabbitMQ](https://www.rabbitmq.com) is a widely used open source message
+broker.
 
 ## Description
 
-**TODO**
+MLEM allows you to serve your model via RabbitMQ. This means that your model can
+run as a service, consuming messages with input data and producing messages with
+predictions.
 
 ## Requirements
 
@@ -15,6 +18,8 @@ pip install pika
 ```
 
 ## Examples
+
+@mike0sv I think we need you here to put together an example)
 
 ```python
 
