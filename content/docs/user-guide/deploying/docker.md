@@ -1,11 +1,6 @@
 # Docker
 
-Building docker images from the model or packing all necessary things to do that
-in a folder
-
-## Description
-
-**TODO**
+Running a model inside a Docker Container locally.
 
 ## Requirements
 
@@ -13,6 +8,12 @@ in a folder
 pip install mlem[docker]
 # or
 pip install docker
+```
+
+## TODO
+
+```cli
+$ mlem deploy run docker_container deployment.mlem --model models/rf
 ```
 
 ## Examples
