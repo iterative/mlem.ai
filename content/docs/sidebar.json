@@ -223,11 +223,6 @@
         "source": "init.md"
       },
       {
-        "slug": "list",
-        "label": "list",
-        "source": "list.md"
-      },
-      {
         "slug": "pprint",
         "label": "pprint",
         "source": "pprint.md"
@@ -330,11 +325,6 @@
         "slug": "load_meta",
         "label": "load_meta()",
         "source": "load_meta.md"
-      },
-      {
-        "slug": "ls",
-        "label": "ls()",
-        "source": "ls.md"
       },
       {
         "slug": "import_object",
