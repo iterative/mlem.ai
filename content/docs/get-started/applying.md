@@ -2,7 +2,7 @@
 
 Once you saved the model with MLEM, you can load it to use in Python runtime, or
 ask to generate predictions for a dataset stored on the disk from the command
-line.
+line, like in a batch scoring.
 
 ## Loading model in Python
 
@@ -29,12 +29,10 @@ We see that the prediction was successfully printed in the stdout.
 
 ## Generating predictions for a dataset from the command line
 
-You can also apply your models directly from CLI. For that to work, your data
-should be in a file that is supported by
-[MLEM import](/doc/user-guide/importing) or you should have the
-[data saved with MLEM ](/doc/user-guide/datasets).
+You can also apply your models directly from CLI. This is how we usually do it
+for the batch scoring.
 
-Let's create an example file and run `mlem apply`
+Let's create an example file and run `mlem apply`:
 
 ```cli
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
@@ -45,3 +43,11 @@ $ mlem apply models/rf new_data.csv -i --it pandas[csv]
 🍏 Applying `predict` method...
 [[0.3, 0.3, 0.4]]
 ```
+
+`-i` and `--it pandas[csv]` tells MLEM it's a csv file that should be read with
+Pandas. For that to work, your data should be in a format that is supported by
+[MLEM import](/doc/user-guide/importing). You can learn more about specifying
+these arguments on `mlem apply` page.
+
+Alternatively, you could save the [data with MLEM](/doc/user-guide/datasets) to
+use `mlem apply` on it.
