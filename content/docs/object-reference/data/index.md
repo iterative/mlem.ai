@@ -1,7 +1,10 @@
 # Data extensions
 
-Data extensions add support for new types of data object that MLEM can covert
-into MLEM data objects in [`save` API method](/doc/api-reference/save)
+Converting a dataset into MLEM data object enables methods like `mlem apply` as
+we seen in the [User Guide](/doc/user-guide/data).
+
+Data extensions add support for new types of data object that MLEM can convert
+into MLEM data objects in [`save` API method](/doc/api-reference/save).
 
 Typicaly they will implement
 [DataType](/doc/object-reference/mlem-abcs#datatype),
