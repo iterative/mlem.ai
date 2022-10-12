@@ -371,7 +371,7 @@
   {
     "slug": "object-reference",
     "label": "Object Reference",
-    "source": false,
+    "source": "index.md",
     "children": [
       {
         "slug": "mlem-abcs",
@@ -582,7 +582,7 @@
           },
           {
             "slug": "dvc",
-            "label": "Dvc",
+            "label": "DVC",
             "source": "dvc.md"
           }
         ]
