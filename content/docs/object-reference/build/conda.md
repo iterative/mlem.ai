@@ -1,4 +1,4 @@
-# conda
+# Conda Environments
 
 Create a conda environment using requirements gathered from a model.
 
