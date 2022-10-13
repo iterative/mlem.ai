@@ -48,5 +48,3 @@ Other options include using:
   of the environment.
 - `-c current_env=True` -- whether to install the requirements in a currently
   activated virtual environment.
-
-## Implementation Reference

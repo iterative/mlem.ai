@@ -38,5 +38,3 @@ numpy==1.22.3
 ### unix based requirements
 
 To get a list of `unix` based requirements, use the `-c platform="unix"` option.
-
-## Implementation Reference

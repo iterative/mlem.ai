@@ -108,6 +108,21 @@
             "slug": "docker",
             "label": "Docker",
             "source": "docker.md"
+          },
+          {
+            "slug": "requirements",
+            "label": "Requirements",
+            "source": "requirements.md"
+          },
+          {
+            "slug": "venv",
+            "label": "Virtual Environments",
+            "source": "venv.md"
+          },
+          {
+            "slug": "conda",
+            "label": "Conda Environments",
+            "source": "conda.md"
           }
         ]
       },
@@ -461,21 +476,6 @@
             "slug": "docker",
             "label": "Docker",
             "source": "docker.md"
-          },
-          {
-            "slug": "requirements",
-            "label": "Requirements",
-            "source": "requirements.md"
-          },
-          {
-            "slug": "venv",
-            "label": "Virtual Environments",
-            "source": "venv.md"
-          },
-          {
-            "slug": "conda",
-            "label": "Conda Environments",
-            "source": "conda.md"
           }
         ]
       },

@@ -97,5 +97,3 @@ Other options include using:
   inferred automatically.
 - `-c current_env=True` -- whether to install the requirements in a currently
   activated conda environment.
-
-## Implementation Reference
