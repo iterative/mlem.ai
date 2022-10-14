@@ -18,6 +18,20 @@ const siteMetadata = {
 const plugins = [
   'gatsby-plugin-eslint',
   {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'images',
+      path: `${__dirname}/src/images`
+    }
+  },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'images',
+      path: path.join(__dirname, 'static', 'img')
+    }
+  },
+  {
     resolve: '@dvcorg/gatsby-theme-iterative',
     options: {
       simpleLinkerTerms: require('./content/linked-terms'),
@@ -93,14 +107,8 @@ const plugins = [
       ]
     }
   },
-  {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      name: 'images',
-      path: `${__dirname}/src/images`
-    }
-  },
-  'gatsby-plugin-meta-redirect'
+  'gatsby-plugin-meta-redirect',
+  '@sentry/gatsby'
 ]
 
 module.exports = {
