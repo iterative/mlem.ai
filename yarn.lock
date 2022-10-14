@@ -2587,7 +2587,7 @@
   resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.13.0.tgz#0d47a9278806ece78ba3a83c7dbebce817462759"
   integrity sha512-jnR85LgRLSk7IQe2OhKOPMY4fasJCNQNW0iCXsH+S2R1qnsF+N4ksNkQ+7JyyM9E7F03YpI2qd76bKY0VIn5iA==
   dependencies:
-    "@sentry/types" "7.12.1"
+    "@sentry/types" "7.13.0"
     tslib "^1.9.3"
 
 "@sentry/webpack-plugin@1.19.0":
