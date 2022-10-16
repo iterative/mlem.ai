@@ -15,10 +15,11 @@ pip install mlem[rmq]
 pip install pika
 ```
 
-## Examples
+<!-- ## Examples
+
 
 @mike0sv I think we need you here to put together an example)
 
 ```python
 
-```
+``` -->

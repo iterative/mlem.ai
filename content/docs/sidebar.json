@@ -43,25 +43,22 @@
     "source": "use-cases/index.md",
     "children": [
       {
-        "slug": "dvc",
-        "label": "Versioning MLEM objects with DVC",
-        "source": "dvc.md"
-      },
-      {
-        "slug": "mlem-mr",
-        "label": "Pure Mlem Model Registry",
-        "source": "mlem-mr.md"
-      },
-      {
         "slug": "cicd",
-        "label": "Using in CI/CD",
+        "label": "Deploying and publishing models in CI/CD",
         "source": "cicd.md"
       },
       {
         "slug": "model-registry",
         "label": "Model Registry",
-        "source": "model-registry.md"
-      }
+        "source": "model-registry/index.md",
+        "children": [
+          {
+            "slug": "mlem-mr",
+            "label": "Pure Mlem Model Registry",
+            "source": "mlem-mr.md"
+          }
+        ]
+        }
     ]
   },
   {
@@ -146,6 +143,11 @@
         "label": "Working with data",
         "source": "data/index.md",
         "children": []
+      },
+      {
+        "slug": "dvc",
+        "label": "Versioning MLEM objects with DVC",
+        "source": "dvc.md"
       },
       {
         "slug": "project-structure",
