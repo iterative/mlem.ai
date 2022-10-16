@@ -27,16 +27,16 @@ $ python predict.py
 
 We see that the prediction was successfully printed in the stdout.
 
-## Generating predictions for a dataset from the command line
+## Batch scoring in CLI
 
-You can also apply your models directly from CLI. This is how we usually do it
-for the batch scoring.
-
-Let's create an example file and run `mlem apply`:
+In Batch scoring scenario you often want to apply your model to a dataset from a
+command line. Let's see how MLEM can help by creating an example file and
+running `mlem apply`:
 
 ```cli
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
+
 $ mlem apply models/rf new_data.csv -i --it pandas[csv]
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem

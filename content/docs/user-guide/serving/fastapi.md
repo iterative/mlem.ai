@@ -17,6 +17,10 @@ pip install fastapi uvicorn
 
 ## Examples
 
+Since we showed how to use FastAPI on the
+[parent page](/doc/user-guide/serving), let not repeat that, but see few
+different examples instead.
+
 ### Running FastAPI model server from code
 
 ```python
