@@ -14,16 +14,3 @@ Typicaly they will implement [MlemEnv](/doc/object-reference/mlem-abcs#mlemenv),
 
 Some also implement specific [Server](/doc/object-reference/mlem-abcs#server) or
 [Builder](/doc/object-reference/mlem-abcs#builder) interfaces.
-
-```shell
-$ docker run -v `pwd`:/data -it mlem-model:latest \
-    mlem apply model /data/new_data.csv -i --it "pandas[csv]" \
-        -o /data/preds.csv
-⏳️ Importing object from new_data.csv
-⏳️ Loading model from models/rf.mlem
-🍏 Applying `predict` method...
-💾 Saving data to preds.csv.mlem
-
-$ ls preds.csv*
-preds.csv      preds.csv.mlem
-```

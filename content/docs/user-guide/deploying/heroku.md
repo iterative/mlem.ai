@@ -18,7 +18,7 @@ To create applications on Heroku platform all you need is Heroku API key.
 </details>
 
 You can either set `HEROKU_API_KEY` environment variable or use [Heroku CLI]()
-to run `heroku login`.
+to run `heroku login` and `heroku container:login`.
 
 > You can also set API token via `--api_key` option to some commands, but this
 > may have security issues
