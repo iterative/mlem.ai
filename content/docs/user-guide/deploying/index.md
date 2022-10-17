@@ -1,191 +1,202 @@
 # Deploying models
 
-You can create deployments in the cloud from your models. This uses building and
-serving functions under the hood. For example, Heroku deployment combines Docker
-image building with FastAPI serving.
+With MLEM you can create and manage deployments of your models in the cloud.
+This uses building and serving functionality under the hood.
 
-<admon type="warn">
+Each deployment is MLEM Object that holds following parameters:
 
-This functionality is experimental and is subject to change.
+- **Target environment** **parameters** is where you want your model to be
+  deployed
+- **Deployment parameters** are additional parameters for specific deployment
+  implementation you chose
 
-</admon>
+Also, each deployment has **state**, \*\*\*\*which is a snapshot of the actual
+state of your deployment. It is created and updated by MLEM during deployment
+process to keep track of parameters needed for management. It is stored
+separately from declaration.
 
-## Defining target environment
+## Simple deployment
 
-To deploy something somewhere, we need to define this “somewhere” first, or in
-MLEM terms, declare a `target environment` object. It will contain all the
-information needed to access it. In the case of Heroku, all we need is an API
-key.
+You can try out MLEM deployments with just one command without additional
+configuration. You just need your model saved with MLEM and an environment you
+want to deploy to
 
-<details>
-
-### ⚙️How to obtain Heroku API key
-
-- Go to [heroku.com](http://heroku.com)
-- Sign up or login with existing account
-- Go to account settings by clicking your profile picture on the main page
-- Find API Key section and reveal existing one or re-generate it
-
-</details>
-
-To declare a new target env, run
-
-```cli
-$ mlem declare env heroku staging -c api_key=<you api key>
-💾 Saving env to .mlem/env/staging.mlem
+```yaml
+$ mlem deployment run <env type> <name> --model <model name> --some_option
+option_value
 ```
 
-<admon type="tip">
+A MLEM Object named `<name>` of type `deployment` will be created and deployed
+to target environment.
 
-MLEM will attempt to use the `HEROKU_API_KEY` environment variable if no
-`api_key` argument is provided.
+<aside>
+💡 To view all available `<env type>` values, run `mlem types env`. Some of them may require setting up credential information or other parameters, which can be provided to `mlem deployment run` command via options.
 
-</admon>
+</aside>
 
-## Defining deployment
-
-Now, as we defined our target env, we can deploy our model there. Deployments
-are also MLEM objects, which means that they need to have their definition.
-
-To create one for Heroku, we once again will use `declare` command to configure
-our deployment. We use `example-mlem-get-started-app` for the app name, but you
-can change it to something unique:
-
-```cli
-$ mlem declare deployment heroku myservice \
-                         -c app_name=example-mlem-get-started-app \
-                         -c model=rf \
-                         -c env=staging
-💾 Saving deployment to .mlem/deployment/myservice.mlem
-```
-
-<details>
-
-### ⛳ [Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta)
-
-```cli
-$ git add .mlem/env/staging.mlem .mlem/deployment/myservice.mlem
-$ git commit -m "Add env and deploy meta"
-$ git diff 5-deploy-meta
-```
-
-</details>
-
-Now we can actually run the deployment process (this can take a while):
-
-```cli
-$ mlem deployment run myservice
-⏳️ Loading deployment from .mlem/deployment/myservice.mlem
-🔗 Loading link to .mlem/env/staging.mlem
-🔗 Loading link to .mlem/model/rf.mlem
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-🏛 Creating Heroku App example-mlem-get-started-app
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-🛠 Creating docker image for heroku
-  💼 Adding model files...
-  🛠 Generating dockerfile...
-  💼 Adding sources...
-  💼 Generating requirements file...
-  🛠 Building docker image registry.heroku.com/example-mlem-get-started-app/web...
-  ✅  Built docker image registry.heroku.com/example-mlem-get-started-app/web
-  🔼 Pushed image registry.heroku.com/example-mlem-get-started-app/web to remote registry at host registry.heroku.com
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-🛠 Releasing app my-mlem-service formation
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-✅  Service example-mlem-get-started-app is up. You can check it out at https://example-mlem-get-started-app.herokuapp.com/
-```
-
-<admon type="tip">
-
-You can also define and run the deployment on-the-fly using `-c` options for
-`mlem deployment run`, e.g.:
-
-```cli
-$ mlem deployment run myservice \
-                     -m model -t staging \
-                     -c app_name=example-mlem-get-started-app
-```
-
-</admon>
-
-<details>
-
-### ⛳ [Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
-
-```cli
-$ git add .mlem/deployment/myservice.mlem
-$ git commit -m "Deploy service"
-$ git diff 8-deploy-service
-```
-
-</details>
-
-## Making requests
-
-The application is now live on Heroku. You can go
-[here](http://example-mlem-get-started-app.herokuapp.com) and see the same
-OpenAPI documentation. For details on it, refer to the **Serving** section. You
-can also try to do some requests:
-
-```py
-from mlem.api import load
-from mlem.runtime.client.base import HTTPClient
-
-client = HTTPClient(host="http://example-mlem-get-started-app.herokuapp.com", port=80)
-res = client.predict(load("test_x.csv"))
-```
-
-Also, you can create a client using deployment meta object:
-
-```py
-from mlem.api import load
-
-service = load("myservice")
-client = service.state.get_client()
-res = client.predict(load("test_x.csv"))
-```
-
-There is also the remote counterpart of `apply` command. It will send requests
-to your service instead of loading model into memory. There are two options to
-achieve this in CLI: using the service address or the deploy meta.
-
-```cli
-$ mlem apply-remote http test_x.csv -c host=http://example-mlem-get-started-app.herokuapp.com -c port=80 --json
-[1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
-
-$ mlem deployment apply myservice test_x.csv --json
-[1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
-```
-
-<admon type="tip">
-
-You don’t even need to have the deployment metadata locally:
-
-```cli
-$ mlem deployment apply --json \
-  https://github.com/iterative/example-mlem-get-started/myservice \
-  https://github.com/iterative/example-mlem-get-started/test_x.csv
-```
-
-</admon>
+Also, near `<name>.mlem` file there will be `<name>.mlem.state` file, where MLEM
+will dump some parameters during deployment process.
 
 ## Managing deployment
 
-Finally, you can check the status of your service with:
+After deployment process is done you can use MLEM commands to manage it.
+
+To check status of your deployment run
 
 ```cli
-$ mlem deployment status myservice
-running
+$ mlem deployment status <name>
 ```
 
-And stop your service with
+To remove deployment, run
 
 ```cli
-$ mlem deployment remove myservice
-⏳️ Loading deployment from .mlem/deployment/myservice.mlem
-🔗 Loading link to .mlem/env/staging.mlem
-🔻 Deleting my-mlem-service heroku app
-💾 Updating deployment at .mlem/deployment/myservice.mlem
+$ mlem deployment remove <name>
 ```
 
-Note, that it will not delete the deployment definition, just update its state.
+This will stop the deployment and erase deployment state value
+
+## Making requests
+
+You also can create MLEM Client for your deployment to make some requests:
+
+```python
+from mlem.api import load
+
+service = load("<name>")
+client = service.get_client()
+res = client.predict(data)
+```
+
+Or run `deployment apply` from command line:
+
+```bash
+$ mlem deployment apply <name> <data>
+```
+
+---
+
+## Pre-defining deployment
+
+You can also create deployments without actually running them and later trigger
+already configured deployments. For example, this allows you to track deployment
+parameters in VCS and use it in CI/CD pipelines more easily.
+
+To create deployment declaration, we will use `declare` command:
+
+```bash
+$ mlem declare deployment <deployment type> <name> --some_option option_value
+```
+
+This will create deployment declaration file `<name>.mlem` with all specified
+options.
+
+<admon>
+💡 You can see available deployment types with `mlem types deployment` and available options with `mlem types deployment <deployment type>`
+
+</admon>
+
+Now you can actually run the deployment process just by referencing your
+declaration:
+
+```bash
+$ mlem deployment run --load <name>
+```
+
+## Pre-defining target environment
+
+If you want to re-use your target environment parameters, you can declare a
+separate MLEM Object of type `env` and reference it when creating deployments.
+To do this, run
+
+```yaml
+$ mlem declare env <env type> <name> --key1 value1 --key2 value2
+```
+
+This will create and `env` MLEM Object with name `<name>` that you can reference
+in `mlem deployment run` with `--env <env name>` option or in
+`mlem declare deployment` with `--env=<env name>` option.
+
+## Setting up remote state manager
+
+One of the parameters of the deployment is `state_manager`. Before making any
+deployments, you should think about which state manager implementation to use.
+
+If you are a sole collaborator of your project, don't use CI/CD and you don't
+plan to run multiple deployment commands in parallel, you should be fine with
+the default one. It will save state as local files, you can even commit them to
+VCS.
+
+However, for more advanced usage it will not suffice, because your local files
+will not be available from your colleague’s machine/CI/CD runner/etc, and VCS
+tracked files have, well, versions, which means state may be inconsistent
+between different branches/repo clones. And this is where remote state managers
+come to play.
+
+You can set up a remote filesystem to hold state, which means you'll have
+consistent state among all collaborators. Filelocking mechanism will ensure that
+no race condition will occur.
+
+Other remote state manager implementations will be available in future like
+databases, key-value stores etc. Please express your interest in them via
+issues.
+
+Setting up remote state manager is a lot like setting DVC remote. All you need
+to do is provide uri where you want to store state files. E.g. for s3 it will
+look like this
+
+```bash
+$ mlem config set core.state.uri s3://bucket/path
+```
+
+Note, that all deployments created after that will use it by default if no
+`state_manager` field provided.
+
+You can also override project-configured state manager with option like
+`--state_manager.uri s3://bucket/path` provided to `mlem declare deployment` or
+`mlem deployment run` commands.
+
+## Examples of files
+
+If you are inside MLEM project,
+`mlem declare env <env type> <env name> --option value` will create a
+`<env name>.mlem` file with contents
+
+```yaml
+option: value
+object_type: env
+type: <env_type>
+```
+
+You can edit it manually if you need
+
+State configuration `mlem config set core.state.uri s3://bucket/path` will add
+this section to `.mlem.yaml`
+
+```yaml
+core:
+  state:
+    uri: s3://bucket/path
+```
+
+Declaring deployment with
+`mlem declare deployment <name> --option value --env <env name>` or running
+`mlem deployment run ...` without declaring first will create MLEM Object at
+`<name>.mlem` with contents
+
+```yaml
+option: value
+env: <env name>
+object_type: deployment
+type: <deployment type>
+```
+
+Running the deployment will create a state file at `<name>.mlem.state` (or
+`s3://bucket/path/.mlem.state/<name>.mlem.state` if you configured state
+manager) with contents
+
+```yaml
+model_hash: 65bd55a3bb4bc829abdb02f5cf6f1018
+step1: { step1 metadata }
+step2: { step2 metadata }
+type: <deployment state type>
+```
