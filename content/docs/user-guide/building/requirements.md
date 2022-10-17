@@ -17,11 +17,11 @@ numpy==1.22.3
 ```
 
 One can also save these `requirements` to generate a `requirements.txt` file
-using the `-c target` option which allows us to pass a path of the file i.e.
+using the `--target` option which allows us to pass a path of the file i.e.
 
 ```cli
-$ mlem build model requirements -c target="requirements.txt"
-⏳️ Loading model from sk-model.mlem
+$ mlem build requirements --model model --target requirements.txt
+⏳️ Loading model from model.mlem
 💼 Generating requirements file...
 ✅  requirements.txt generated!
 ```
@@ -35,6 +35,6 @@ pandas==1.4.2
 numpy==1.22.3
 ```
 
-### unix based requirements
+### Unix based requirements
 
 To get a list of `unix` based requirements, use the `-c platform="unix"` option.

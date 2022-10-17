@@ -100,14 +100,19 @@
         "source": "building/index.md",
         "children": [
           {
-            "slug": "pip",
-            "label": "Python Packages",
-            "source": "pip.md"
+            "slug": "conda",
+            "label": "Conda Environment",
+            "source": "conda.md"
           },
           {
             "slug": "docker",
             "label": "Docker",
             "source": "docker.md"
+          },
+          {
+            "slug": "pip",
+            "label": "Python Packages",
+            "source": "pip.md"
           },
           {
             "slug": "requirements",
@@ -116,13 +121,8 @@
           },
           {
             "slug": "venv",
-            "label": "Virtual Environments",
+            "label": "Virtual Environment",
             "source": "venv.md"
-          },
-          {
-            "slug": "conda",
-            "label": "Conda Environments",
-            "source": "conda.md"
           }
         ]
       },
