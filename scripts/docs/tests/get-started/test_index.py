@@ -1,6 +1,7 @@
 import os
 
-from conftest import get_code_snippet, load_docsfile, run_in_dir
+from conftest import assert_file_snippet, get_code_snippet, load_docsfile, \
+    run_in_dir
 
 
 def test_code_snippets(tmpdir):
@@ -13,6 +14,4 @@ def test_code_snippets(tmpdir):
     dir_content = os.listdir(tmpdir / "models")
     assert set(dir_content) == {"rf", "rf.mlem"}
 
-    rfmlem = get_code_snippet(content, index=0, type_="yaml")
-
-    assert (tmpdir / "models" / "rf.mlem").read() == rfmlem
+    assert_file_snippet("get-started", "index.md", index=0, type_="yaml", actual=(tmpdir / "models" / "rf.mlem").read())
