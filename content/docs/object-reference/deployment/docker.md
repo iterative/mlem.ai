@@ -57,7 +57,7 @@
 - `registry: DockerRegistry = DockerRegistry()` - Default registry to push
   images to
 
-- `daemon: DockerDaemon = host=''` - Docker daemon parameters
+- `daemon: DockerDaemon = DockerDaemon()` - Docker daemon parameters
 
 ---
 

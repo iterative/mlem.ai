@@ -32,7 +32,7 @@
 
 - `registry: DockerRegistry = DockerRegistry()` - Docker registry
 
-- `daemon: DockerDaemon = host=''` - Docker daemon
+- `daemon: DockerDaemon = DockerDaemon()` - Docker daemon
 
 - `kube_config_file_path: str` - Path for kube config file of the cluster
 

@@ -17,7 +17,7 @@ from mlem.core.base import MlemABC, load_impl_ext
 from mlem.ext import Extension, ExtensionLoader
 from mlem.utils.entrypoints import list_abstractions, list_implementations, \
     load_entrypoints
-from scripts.docs.utils import replace_sections
+from utils import replace_sections
 
 SIDEBAR_PATH = "../../content/docs/sidebar.json"
 REF_SLUG = "object-reference"

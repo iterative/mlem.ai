@@ -80,9 +80,9 @@ at it:
 ```yaml
 artifacts:
   data:
-    hash: 59440b4398b8d45d8ad64d8d407cfdf9
-    size: 993
-    uri: logreg
+    hash: 5a38e5d68b9b9e69e9e894bcc9b8a601
+    size: 163651
+    uri: rf
 model_type:
   methods:
     predict:
@@ -90,19 +90,16 @@ model_type:
         - name: data
           type_:
             columns:
-              - ''
               - sepal length (cm)
               - sepal width (cm)
               - petal length (cm)
               - petal width (cm)
             dtypes:
-              - int64
               - float64
               - float64
               - float64
               - float64
-            index_cols:
-              - ''
+            index_cols: []
             type: dataframe
       name: predict
       returns:
@@ -115,19 +112,16 @@ model_type:
         - name: data
           type_:
             columns:
-              - ''
               - sepal length (cm)
               - sepal width (cm)
               - petal length (cm)
               - petal width (cm)
             dtypes:
-              - int64
               - float64
               - float64
               - float64
               - float64
-            index_cols:
-              - ''
+            index_cols: []
             type: dataframe
       name: predict_proba
       returns:
@@ -141,19 +135,16 @@ model_type:
         - name: X
           type_:
             columns:
-              - ''
               - sepal length (cm)
               - sepal width (cm)
               - petal length (cm)
               - petal width (cm)
             dtypes:
-              - int64
               - float64
               - float64
               - float64
               - float64
-            index_cols:
-              - ''
+            index_cols: []
             type: dataframe
       name: predict
       returns:
@@ -166,19 +157,16 @@ model_type:
         - name: X
           type_:
             columns:
-              - ''
               - sepal length (cm)
               - sepal width (cm)
               - petal length (cm)
               - petal width (cm)
             dtypes:
-              - int64
               - float64
               - float64
               - float64
               - float64
-            index_cols:
-              - ''
+            index_cols: []
             type: dataframe
       name: predict_proba
       returns:
@@ -191,11 +179,11 @@ model_type:
 object_type: model
 requirements:
   - module: sklearn
-    version: 1.0.2
-  - module: pandas
-    version: 1.4.1
+    version: 1.1.2
   - module: numpy
-    version: 1.22.3
+    version: 1.22.4
+  - module: pandas
+    version: 1.5.0
 ```
 
 </details>

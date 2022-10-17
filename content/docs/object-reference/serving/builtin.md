@@ -50,4 +50,4 @@
 
 **Fields**:
 
-- `version: str = "0.2.9.dev32+g5515c23"` - mlem version
+- `version: str = "0.2.9"` - mlem version
