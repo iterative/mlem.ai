@@ -515,6 +515,11 @@
             "slug": "rabbitmq",
             "label": "RabbitMQ",
             "source": "rabbitmq.md"
+          },
+          {
+            "slug": "sagemaker",
+            "label": "SageMaker",
+            "source": "sagemaker.md"
           }
         ]
       },

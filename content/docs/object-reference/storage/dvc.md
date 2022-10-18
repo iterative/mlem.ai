@@ -1,4 +1,4 @@
-# DVC
+# dvc
 
 ## `class DVCArtifact`
 
