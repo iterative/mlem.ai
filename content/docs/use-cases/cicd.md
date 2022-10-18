@@ -24,7 +24,7 @@ Git tag that kicks off the CI process. To make this build process consistent
 with future deployment, you can create and commit an MLEM declaration:
 
 ```cli
-$ mlem declare builder pip -c package_name=mypackagename -c target=package build-to-pip
+$ mlem declare builder pip --package_name=mypackagename --target=package build-to-pip
 💾 Saving builder to build-to-pip.mlem
 ```
 
@@ -68,7 +68,7 @@ deployment declarations, and commit them to Git:
 $ mlem declare env heroku staging
 💾 Saving env to staging.mlem
 
-$ mlem declare deployment heroku myservice -c app_name=mlem-deployed-in-ci -c model=my-model -c env=staging
+$ mlem declare deployment heroku myservice --app_name=mlem-deployed-in-ci --model=my-model --env=staging
 💾 Saving deployment to myservice.mlem
 ```
 

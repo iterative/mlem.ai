@@ -52,5 +52,5 @@ this) and a local MLEM dataset `mydataset`, run the following command to infer
 the entire dataset with the model and save the output result to `myprediction`
 
 ```cli
-$ mlem apply-remote http mydataset --conf host="127.0.0.1" --conf port=3000 --output myprediction
+$ mlem apply-remote http mydataset --host="127.0.0.1" --port=3000 --output myprediction
 ```

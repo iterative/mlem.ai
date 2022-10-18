@@ -44,7 +44,7 @@ client will know what methods are available and handle serialization and
 deserialization for you. You can use them via CLI:
 
 ```cli
-$ mlem apply-remote http test_x.csv -c host="0.0.0.0" -c port=8080 --json
+$ mlem apply-remote http test_x.csv --host="0.0.0.0" --port=8080 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 

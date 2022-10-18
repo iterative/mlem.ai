@@ -37,14 +37,14 @@ images.
 Build a Docker image from a model
 
 ```cli
-$ mlem build mymodel docker --conf server.type=fastapi --conf image.name=myimage
+$ mlem build mymodel docker --server.type=fastapi --image.name=myimage
 ```
 
 Create a `docker_dir` builder config called `build_dock`, and use it to package
 a model
 
 ```cli
-$ mlem declare builder docker_dir --conf server=fastapi --conf target=build build_dock
+$ mlem declare builder docker_dir --server=fastapi --target=build build_dock
 ...
 
 $ mlem build mymodel --load build_dock

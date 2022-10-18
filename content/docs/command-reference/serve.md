@@ -44,7 +44,7 @@ Easily serve a model from a remote GitHub repository on a local FastAPI HTTP
 server
 
 ```cli
-$ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi --conf port=3000
+$ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi --port=3000
 Starting fastapi server...
 🖇️ Adding route for /predict
 🖇️ Adding route for /predict_proba
