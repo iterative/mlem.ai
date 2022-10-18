@@ -16,35 +16,11 @@ operations apply to any [object type] and location.
 ## Remote MLEM projects
 
 Although you can store MLEM objects in any location such as a Git repo, Cloud
-storage, or external drives, creating a MLEM project lets you organize and
-[discover](#listing-objects) MLEM objects consistently.
+storage, or external drives, creating a MLEM project lets you organize MLEM
+objects consistently.
 
 To create a MLEM project in a remote location, you can provide its URL or path
 to `mlem init`.
-
-## Listing objects
-
-You can list MLEM objects inside a remote MLEM project (e.g. in a Git repo) with
-`mlem list`. There's no need to download/clone the project.
-
-```cli
-$ mlem list https://github.com/iterative/example-mlem-get-started
-Deployments:
- - myservice
-Models:
- - rf
-Envs:
- - staging
-```
-
-<admon type="note">
-
-A [MLEM project] is required as target for `mlem list`. The other operations
-(below) work with loose MLEM objects (not in a MLEM project) as well.
-
-[mlem project]: /doc/command-reference/init
-
-</admon>
 
 ## Loading objects (Python)
 

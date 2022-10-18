@@ -23,12 +23,6 @@ specific information such as `methods` for a `model` or `reader` for `data`.
 Since only one specific object is printed, a `PATH` to the specific MLEM object
 is always required.
 
-<admon type="tip">
-
-You can use [`mlem list`](/doc/command-reference/list) to list MLEM objects.
-
-</admon>
-
 ## Options
 
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]

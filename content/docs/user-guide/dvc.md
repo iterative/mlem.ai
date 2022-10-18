@@ -62,7 +62,7 @@ $ git add .dvcignore
 Finally, we need to stop Git from keeping already indexed binaries.
 
 ```cli
-$ git rm -r --cached .mlem
+$ git rm -r --cached models data
 ```
 
 ⛳
@@ -74,7 +74,7 @@ Next, let’s remove artifacts from Git and re-save them, so MLEM can use new
 storage for them. You don't need to change a single line of code
 
 ```cli
-$ git rm -r --cached .mlem/
+$ git rm -r --cached models data
 $ python train.py
 ```
 
@@ -82,8 +82,8 @@ Finally, let’s add and commit new metafiles to Git and artifacts to DVC,
 respectively:
 
 ```cli
-$ dvc add .mlem/model/rf
-$ git add .mlem
+$ dvc add models/rf
+$ git add models
 $ git commit -m "Switch to dvc storage"
 ...
 
@@ -113,10 +113,10 @@ of a pipelines stage.
 ## Example
 
 Let's continue using the example from above. First, let's stop tracking the
-artifact `.mlem/model/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
+artifact `models/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
 
 ```dvc
-$ dvc remove .mlem/model/rf.dvc
+$ dvc remove models/rf.dvc
 # we can delete the file since there are no other records
 # beside one we added above:
 $ git rm .dvcignore
@@ -132,8 +132,8 @@ stages:
     deps:
       - train.py
     outs:
-      - .mlem/model/rf
-      - .mlem/model/rf.mlem:
+      - models/rf
+      - models/rf.mlem:
           cache: false
 ```
 
@@ -151,5 +151,5 @@ Use `dvc push` to send your updates to remote storage.
 ```
 
 Now DVC will take care of storing binaries, so you'll need to commit model
-metafile (`.mlem/model/rf.mlem`) and `dvc.lock` only. Learn more about
+metafile (`models/rf.mlem`) and `dvc.lock` only. Learn more about
 [DVC](https://dvc.org/doc) and how it can be useful for training your ML models.
