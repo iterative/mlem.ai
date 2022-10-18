@@ -46,8 +46,7 @@ def get_options(command: Command, ctx):
         if options is None:
             options = list(get_options(subcommand, ctx))
             continue
-        new_options = {o.help for o in
-                       get_options(subcommand, ctx)}
+        new_options = {o.help for o in get_options(subcommand, ctx)}
         options = [o for o in options if o.help in new_options]
     yield from options
 
@@ -55,11 +54,13 @@ def get_options(command: Command, ctx):
 def repr_option(option, ctx) -> Opt:
     _, help_ = option.get_help_record(ctx)
     help_ = help_.replace("  ", " ")  # TODO: maybe fix in typer code?
-    return Opt(decls=sorted(option.opts, reverse=True),
-               secondary=sorted(option.secondary_opts, reverse=True),
-               metavar=option.make_metavar(),
-               help=help_,
-               is_flag=option.is_flag if isinstance(option, Option) else False)
+    return Opt(
+        decls=sorted(option.opts, reverse=True),
+        secondary=sorted(option.secondary_opts, reverse=True),
+        metavar=option.make_metavar(),
+        help=help_,
+        is_flag=option.is_flag if isinstance(option, Option) else False,
+    )
 
 
 def generate_options(command: Command, ctx):
@@ -81,15 +82,14 @@ def generate_args(command, ctx):
     metavar = None
     subcommands = None
     if command.name in abc_group:
-        impls = list(
-            sorted([c for c in command.commands if not c.startswith("_")]))
+        impls = list(sorted([c for c in command.commands if not c.startswith("_")]))
         metavar = command.subcommand_metavar
         args.extend(generate_args(list(command.commands.values())[0], ctx).args)
     if command.name in use_group:
-        subcommands = {c.name: c.get_short_help_str() for c in
-                       command.commands.values()}
-    return Args(args=args, impls=impls, impl_metavar=metavar,
-                subcommands=subcommands)
+        subcommands = {
+            c.name: c.get_short_help_str() for c in command.commands.values()
+        }
+    return Args(args=args, impls=impls, impl_metavar=metavar, subcommands=subcommands)
 
 
 def generate_usage(command: Command, ctx):
@@ -102,10 +102,12 @@ def generate_usage(command: Command, ctx):
 
 
 def generate_cli_command(command: Command, ctx):
-    return Spec(args=generate_args(command, ctx),
-                options=generate_options(command, ctx),
-                doc=command.help.strip(),
-                name=get_cmd_name(ctx))
+    return Spec(
+        args=generate_args(command, ctx),
+        options=generate_options(command, ctx),
+        doc=command.help.strip(),
+        name=get_cmd_name(ctx),
+    )
 
 
 def main():
@@ -121,8 +123,7 @@ def main():
             spec[f"{name}/index"] = generate_cli_command(command, subctx)
             for subname, subcommand in command.commands.items():
                 subsubctx = Context(subcommand, subctx, info_name=subname)
-                spec[f"{name}/{subname}"] = generate_cli_command(subcommand,
-                                                                 subsubctx)
+                spec[f"{name}/{subname}"] = generate_cli_command(subcommand, subsubctx)
             continue
         spec[name] = generate_cli_command(command, subctx)
 
@@ -130,5 +131,5 @@ def main():
         json.dump({k: v.dict() for k, v in spec.items()}, f, indent=2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

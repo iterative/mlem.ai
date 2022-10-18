@@ -13,16 +13,20 @@ CLI_DOCS_PATH = "../../content/docs/command-reference"
 DOC_AUTO_REPLACE = {
     "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)",
     "MLEM objects": "[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects)",
-    "MLEM project": "[MLEM project](/doc/user-guide/project-structure)"
+    "MLEM project": "[MLEM project](/doc/user-guide/project-structure)",
 }
 LINE_WIDTH = 80
 
 
-def replace_section(data: str, section_name: str, new_value: str,
-                    section_prefix: str = "## ") -> str:
-    return re.sub(f"{section_prefix}{section_name}(.*?)^{section_prefix}",
-                  f"{section_prefix}{section_name}{new_value}{section_prefix}",
-                  data, flags=re.MULTILINE | re.DOTALL)
+def replace_section(
+    data: str, section_name: str, new_value: str, section_prefix: str = "## "
+) -> str:
+    return re.sub(
+        f"{section_prefix}{section_name}(.*?)^{section_prefix}",
+        f"{section_prefix}{section_name}{new_value}{section_prefix}",
+        data,
+        flags=re.MULTILINE | re.DOTALL,
+    )
 
 
 def repr_option(option: Opt):
@@ -31,8 +35,9 @@ def repr_option(option: Opt):
         decls = ", ".join(f"`{d}`" for d in option.decls)
         if option.secondary:
             decls += " / " + ", ".join(f"`{d}`" for d in option.secondary)
-    return textwrap.fill(f"- {decls} - {option.help}", width=LINE_WIDTH,
-                         subsequent_indent="  ")
+    return textwrap.fill(
+        f"- {decls} - {option.help}", width=LINE_WIDTH, subsequent_indent="  "
+    )
 
 
 def repr_arg(option: Opt):
@@ -40,9 +45,12 @@ def repr_arg(option: Opt):
     metavar = option.metavar.lower()
     option_help = option.help
     if option_help.endswith(" [required]"):
-        option_help = option_help[:-len(" [required]")]
-    return textwrap.fill(f"  {metavar:{margin}}{option_help}", width=LINE_WIDTH,
-                         subsequent_indent=" " * (margin + 2))
+        option_help = option_help[: -len(" [required]")]
+    return textwrap.fill(
+        f"  {metavar:{margin}}{option_help}",
+        width=LINE_WIDTH,
+        subsequent_indent=" " * (margin + 2),
+    )
 
 
 def generate_options(options: List[Opt]):
@@ -90,7 +98,7 @@ def generate_usage(spec: Spec):
     usage = _gen_usage_string(spec)
     argspec = spec.args
     if argspec.args:
-        args = '\n'.join(repr_arg(a) for a in argspec.args)
+        args = "\n".join(repr_arg(a) for a in argspec.args)
         args = f"\n\narguments:\n{args}"
     else:
         args = ""
@@ -102,7 +110,8 @@ def generate_usage(spec: Spec):
     if argspec.subcommands:
         margin = 17
         subcommands = "\n".join(
-            f"  {k:{margin}}{v}" for k, v in argspec.subcommands.items())
+            f"  {k:{margin}}{v}" for k, v in argspec.subcommands.items()
+        )
         subcommands = f"\n\nsubcommands:\n{subcommands}"
     else:
         subcommands = ""
@@ -121,15 +130,15 @@ def generate_cli_command(name: str, spec: Spec):
     with open(path, "r", encoding="utf8") as f:
         data = f.read()
 
-    data = replace_section(data, "usage", generate_usage(spec),
-                           section_prefix="```")
+    data = replace_section(data, "usage", generate_usage(spec), section_prefix="```")
     data = replace_section(data, "Options", generate_options(spec.options))
 
     cmd_name = name.replace("/", " ")
     if cmd_name.endswith(" index"):
-        cmd_name = cmd_name[:-len(" index")]
-    data = replace_section(data, " " + cmd_name, generate_doc(spec.doc),
-                           section_prefix="#")
+        cmd_name = cmd_name[: -len(" index")]
+    data = replace_section(
+        data, " " + cmd_name, generate_doc(spec.doc), section_prefix="#"
+    )
     with open(path, "w", encoding="utf8") as f:
         f.write(data)
 
@@ -154,7 +163,7 @@ def run_lint():
     subprocess.check_output("yarn run format", shell=True, cwd="../../")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from scripts.docs.cli_generate_spec import main as spec_main
 
     spec_main()

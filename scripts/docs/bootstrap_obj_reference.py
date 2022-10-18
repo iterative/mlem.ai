@@ -15,8 +15,11 @@ from typing_extensions import get_origin
 from mlem.cli.utils import get_field_help
 from mlem.core.base import MlemABC, load_impl_ext
 from mlem.ext import Extension, ExtensionLoader
-from mlem.utils.entrypoints import list_abstractions, list_implementations, \
-    load_entrypoints
+from mlem.utils.entrypoints import (
+    list_abstractions,
+    list_implementations,
+    load_entrypoints,
+)
 from utils import replace_sections
 
 SIDEBAR_PATH = "../../content/docs/sidebar.json"
@@ -25,7 +28,7 @@ REF_DIR = "../../content/docs/object-reference"
 
 DOC_REPLACEMENTS = {
     "ModelType": "[ModelType](/doc/object-reference/mlem-abcs#modeltype)",
-    "ModelIO": "[ModelIO](/doc/object-reference/mlem-abcs#modelio)"
+    "ModelIO": "[ModelIO](/doc/object-reference/mlem-abcs#modelio)",
 }
 
 LINE_WIDTH = 80
@@ -35,8 +38,9 @@ def get_extension_doc(module_doc: str):
     doc = "\n\n".join(module_doc.split("\n\n")[1:])
     for key, value in DOC_REPLACEMENTS.items():
         doc = doc.replace(key, value)
-    return textwrap.fill(doc.replace("\n\n", "\n"), width=LINE_WIDTH,
-                         break_on_hyphens=False)
+    return textwrap.fill(
+        doc.replace("\n\n", "\n"), width=LINE_WIDTH, break_on_hyphens=False
+    )
 
 
 def get_extension_reqs(ext: Extension):
@@ -60,19 +64,15 @@ class Field:
     help_: str
 
 
-def iterate_type_fields(
-        cls: Type[BaseModel]
-) -> Iterator[Field]:
+def iterate_type_fields(cls: Type[BaseModel]) -> Iterator[Field]:
     """Recursively get CliTypeFields from BaseModel"""
     field: ModelField
-    for name, field in sorted(
-            cls.__fields__.items(), key=lambda x: not x[1].required
-    ):
+    for name, field in sorted(cls.__fields__.items(), key=lambda x: not x[1].required):
         name = field.alias or name
         if (
-                issubclass(cls, MlemABC)
-                and name in cls.__config__.exclude
-                or field.field_info.exclude
+            issubclass(cls, MlemABC)
+            and name in cls.__config__.exclude
+            or field.field_info.exclude
         ):
             # Skip excluded fields
             continue
@@ -84,9 +84,13 @@ def iterate_type_fields(
             # skip too complicated stuff
             continue
 
-        yield Field(name=name, type_=repr_field_type(field_type),
-                    required=bool(field.required), default=field.default,
-                    help_=get_field_help(cls, name))
+        yield Field(
+            name=name,
+            type_=repr_field_type(field_type),
+            required=bool(field.required),
+            default=field.default,
+            help_=get_field_help(cls, name),
+        )
 
 
 def repr_field_type(type_: Type) -> str:
@@ -118,11 +122,14 @@ def default_value(fd):
 def repr_field_default(field: Field) -> Tuple[str, Type]:
     fd = field.default
     default = f" = {fd}" if fd is not None and fd != "" else ""
-    if default == " = " or issubclass(fd.__class__,
-                                      BaseModel) and fd == default_value(fd):
+    if (
+        default == " = "
+        or issubclass(fd.__class__, BaseModel)
+        and fd == default_value(fd)
+    ):
         default = f" = {fd.__class__.__name__}()"
     if isinstance(fd, str):
-        default = f" = \"{fd}\""
+        default = f' = "{fd}"'
     add_type = None
     if isinstance(fd, BaseModel) and not issubclass(fd.__class__, MlemABC):
         add_type = fd.__class__
@@ -161,27 +168,35 @@ def smart_wrap(value: str, width: int, subsequent_indent: str = ""):
             quotes_open[c] = True
         chars.append(c)
 
-    return textwrap.fill("".join(chars), width=width,
-                         subsequent_indent=subsequent_indent,
-                         break_on_hyphens=False,
-                         break_long_words=False).replace(SPECIAL, " ")
+    return textwrap.fill(
+        "".join(chars),
+        width=width,
+        subsequent_indent=subsequent_indent,
+        break_on_hyphens=False,
+        break_long_words=False,
+    ).replace(SPECIAL, " ")
 
 
 def repr_field(field: Field) -> Tuple[str, Type]:
     req = " _(required)_" if field.required else ""
     default, add_type = repr_field_default(field)
     help_ = re.subn(r"\s+", " ", field.help_)[0]
-    return smart_wrap(
-        f"- `{field.name}: {field.type_}{default}`{req} - {help_}",
-        width=LINE_WIDTH, subsequent_indent="  "), add_type
+    return (
+        smart_wrap(
+            f"- `{field.name}: {field.type_}{default}`{req} - {help_}",
+            width=LINE_WIDTH,
+            subsequent_indent="  ",
+        ),
+        add_type,
+    )
 
 
 def get_impl_docstring(type_):
     doc = inspect.cleandoc(type_.__doc__ or "Class docstring missing").strip()
     return "\n".join(
         f"{textwrap.fill('    ' + line, subsequent_indent='    ', width=LINE_WIDTH - 5)}"
-        for line in
-        doc.splitlines())
+        for line in doc.splitlines()
+    )
 
 
 def get_impl_description(type_: Type[MlemABC]) -> Tuple[str, List[Type]]:
@@ -198,7 +213,8 @@ def get_impl_description(type_: Type[MlemABC]) -> Tuple[str, List[Type]]:
                 add_types.append(add_type)
         fields_doc += "\n\n".join(fds)
     doc = get_impl_docstring(type_)
-    return f"""## `class {type_.__name__}`
+    return (
+        f"""## `class {type_.__name__}`
 
 **MlemABC parent type**: `{type_.abs_name}`
 
@@ -207,7 +223,9 @@ def get_impl_description(type_: Type[MlemABC]) -> Tuple[str, List[Type]]:
 {doc}
 
 {fields_doc}
-""", add_types
+""",
+        add_types,
+    )
 
 
 def get_model_description(type_: Type[BaseModel]) -> str:
@@ -244,8 +262,9 @@ def get_extension_md(extension: str, impls: List[Type[MlemABC]]) -> str:
 {implementations}"""
 
 
-def create_ext_impls_page(section: str, extension: str,
-                          impls: List[Type[MlemABC]], overwrite: bool = False):
+def create_ext_impls_page(
+    section: str, extension: str, impls: List[Type[MlemABC]], overwrite: bool = False
+):
     filename = f"{section}/{extension.lower()}.md"
     path = os.path.join(REF_DIR, filename)
     handcrafted = {}
@@ -275,7 +294,7 @@ ABC_GROUPS = {
     "serving": ["server", "client", "interface"],
     "storage": ["storage", "artifact"],
     "hide": ["requirement", "meta"],
-    "uri": ["resolver"]
+    "uri": ["resolver"],
 }
 ABC_GROUPS_MAP = {v: k for k, values in ABC_GROUPS.items() for v in values}
 
@@ -293,8 +312,7 @@ def get_impl_extension_name(cls: Type[MlemABC]):
 
 
 def main():
-    section_to_ext: Dict[str, Dict[str, List]] = defaultdict(
-        lambda: defaultdict(list))
+    section_to_ext: Dict[str, Dict[str, List]] = defaultdict(lambda: defaultdict(list))
     for abc in list_abstractions(include_hidden=False):
         section = ABC_GROUPS_MAP.get(abc)
         if section == "hide" or section == "other" or not section:
@@ -309,14 +327,16 @@ def main():
             section_to_ext[section][ext_name].append(cls)
 
     section_to_ext = {
-        section: {ext: list(sorted(impls, key=lambda i: i.__name__)) for
-            ext, impls in ext_to_impls.items()
-        } for section, ext_to_impls in section_to_ext.items()
+        section: {
+            ext: list(sorted(impls, key=lambda i: i.__name__))
+            for ext, impls in ext_to_impls.items()
+        }
+        for section, ext_to_impls in section_to_ext.items()
     }
     for section, ext_to_impls in section_to_ext.items():
         for ext, impls in ext_to_impls.items():
             create_ext_impls_page(section, ext, impls, overwrite=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
