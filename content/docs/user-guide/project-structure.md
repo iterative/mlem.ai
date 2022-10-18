@@ -38,7 +38,8 @@ Here is the example of how the same object can be referenced
 - `path = models/rf, project = https://github.com/iterative/example-mlem-get-started, rev=main` -
   using the full path inside MLEM project
 - `path = https://github.com/iterative/example-mlem-get-started/tree/main/models/rf` -
-  everything could be provided via path (path format could differ for different storages)
+  everything could be provided via path (path format could differ for different
+  storages)
 - `path = https://github.com/iterative/example-mlem-get-started/models/rf` -
   also can omit `tree/main` since `main` is default.
 - `path = models/rf, fs = GithubFileSystem(org="iterative", repo="example-mlem-get-started", sha="main")` -

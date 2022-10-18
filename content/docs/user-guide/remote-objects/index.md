@@ -64,8 +64,7 @@ model = load(
 This fetches the `rf` model [from branch `main`] of the
 `example-mlem-get-started` repo and loads it to memory.
 
-[from branch `main`]:
-  https://github.com/iterative/example-mlem-get-started/
+[from branch `main`]: https://github.com/iterative/example-mlem-get-started/
 
 ## Downloading objects
 

@@ -69,9 +69,9 @@ models
 └── rf.mlem
 ```
 
-The model was saved along with some metadata about it: `rf` is the model
-binary and `rf.mlem` is a metafile containing information about the model. Let's take a look
-at it:
+The model was saved along with some metadata about it: `rf` is the model binary
+and `rf.mlem` is a metafile containing information about the model. Let's take a
+look at it:
 
 <details>
 
