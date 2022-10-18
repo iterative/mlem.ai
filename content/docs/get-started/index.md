@@ -20,7 +20,7 @@ $ mkdir mlem-get-started
 $ cd mlem-get-started
 $ python3 -m venv .venv
 $ source .venv/bin/activate
-$ pip install mlem pandas sklearn fastapi docker
+$ pip install pandas scikit-learn mlem[fastapi,heroku]
 ```
 
 </details>
