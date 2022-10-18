@@ -24,7 +24,9 @@ Git tag that kicks off the CI process. To make this build process consistent
 with future deployment, you can create and commit an MLEM declaration:
 
 ```cli
-$ mlem declare builder pip --package_name=mypackagename --target=package build-to-pip
+$ mlem declare builder pip build-to-pip \
+    --package_name=mypackagename \
+    --target=package
 💾 Saving builder to build-to-pip.mlem
 ```
 
@@ -49,7 +51,7 @@ jobs:
       - name: build
         run: |
           pip3 install -r requirements.txt
-          mlem build my-model --load build-to-pip.mlem
+          mlem build --load build-to-pip.mlem --model my-model
 
       - name: publish
         run: |
@@ -65,10 +67,10 @@ The deployment scenario is similar. First you need to create environment and
 deployment declarations, and commit them to Git:
 
 ```cli
-$ mlem declare env heroku staging
-💾 Saving env to staging.mlem
-
-$ mlem declare deployment heroku myservice --app_name=mlem-deployed-in-ci --model=my-model --env=staging
+$ mlem declare deployment heroku myservice \
+    --app_name=mlem-deployed-in-ci \
+    --model=my-model \
+    --env=staging
 💾 Saving deployment to myservice.mlem
 ```
 
@@ -93,7 +95,7 @@ jobs:
       - name: pack
         run: |
           pip3 install -r requirements.txt
-          mlem deployment my-model --load myservice.mlem
+          mlem deployment run --load myservice.mlem --model my-model
 ```
 
 Learn more about deploying ML models [here](/doc/get-started/deploying).
