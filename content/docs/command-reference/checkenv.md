@@ -1,6 +1,6 @@
 # checkenv
 
-Check that current environment satisfies object requirements
+Check that current environment satisfies object requrements
 
 ## Synopsis
 

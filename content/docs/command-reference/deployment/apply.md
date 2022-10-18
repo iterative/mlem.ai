@@ -6,9 +6,8 @@ Apply a deployed model to data.
 
 ```usage
 usage: mlem deployment apply [-p <path>] [--rev <commitish>]
-                             [--dr <path>] [--data-rev <commitish>]
-                             [-o <text>] [--tp <path>] [-m <text>]
-                             [--index] [--json] [-h]
+                             [--dp <path>] [--dr <commitish>] [-o <text>]
+                             [--tp <path>] [-m <text>] [--json] [-h]
                              path data
 
 arguments:
@@ -27,14 +26,13 @@ gathered and returned, also as a MLEM Object.
 
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
 - `--rev <commitish>` - Repo revision to use [default: (none)]
-- `--dr <path>`, `--data-project <path>` - Project with data
-- `--data-rev <commitish>` - Revision of data
+- `--dp <path>`, `--data-project <path>` - Project with data
+- `--dr <commitish>`, `--data-rev <commitish>` - Revision of data
 - `-o <text>`, `--output <text>` - Where to store the outputs.
 - `--tp <path>`, `--target-project <path>` - Project to save target to [default:
   (none)]
 - `-m <text>`, `--method <text>` - Which model method is to be applied [default:
   predict]
-- `--index` / `--no-index` - Whether to index output in .mlem directory
 - `--json` - Output as json
 - `-h`, `--help` - Show this message and exit.
 

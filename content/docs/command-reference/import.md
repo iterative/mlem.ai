@@ -1,13 +1,13 @@
 # import
 
-Create a `.mlem` metafile for a model or data in any file or directory.
+Create a `.mlem` [MLEM Object](/doc/user-guide/basic-concepts) for a model or
+data in any file or directory.
 
 ## Synopsis
 
 ```usage
 usage: mlem import [-p <path>] [--rev <commitish>]
-                   [--tp <path>] [--copy] [--type <text>]
-                   [--index] [-e] [-h]
+                   [--tp <path>] [--copy] [--type <text>] [-h]
                    uri target
 
 arguments:
@@ -35,8 +35,6 @@ load those models/datasets into object for subsequent usage in MLEM context.
   or just link existing file [default: copy]
 - `--type <text>` - Specify how to read file Available types: ['pandas',
   'pickle', 'torch'] [default: (auto infer)]
-- `--index` / `--no-index` - Whether to index output in .mlem directory
-- `-e`, `--external` - Save result not in .mlem, but directly in project
 - `-h`, `--help` - Show this message and exit.
 
 ## Examples

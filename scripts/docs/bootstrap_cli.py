@@ -7,13 +7,16 @@ from typing import Dict, List
 
 from pydantic import BaseModel, parse_obj_as
 
-from scripts.docs.cli_generate_spec import Opt, Spec
+from cli_generate_spec import Opt, Spec
 
 CLI_DOCS_PATH = "../../content/docs/command-reference"
 DOC_AUTO_REPLACE = {
-    "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)",
-    "MLEM objects": "[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects)",
+    "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts)",
+    "MLEM objects": "[MLEM objects](/doc/user-guide/basic-concepts)",
+    "MLEM object": "[MLEM Object](/doc/user-guide/basic-concepts)",
+    "MLEM projects": "[MLEM project](/doc/user-guide/project-structure)",
     "MLEM project": "[MLEM project](/doc/user-guide/project-structure)",
+    "metafile": "[MLEM Object](/doc/user-guide/basic-concepts)",
 }
 LINE_WIDTH = 80
 
@@ -21,6 +24,7 @@ LINE_WIDTH = 80
 def replace_section(
     data: str, section_name: str, new_value: str, section_prefix: str = "## "
 ) -> str:
+    assert f"{section_prefix}{section_name}" in data, f"section '{section_name}' is missing"
     return re.sub(
         f"{section_prefix}{section_name}(.*?)^{section_prefix}",
         f"{section_prefix}{section_name}{new_value}{section_prefix}",
@@ -122,7 +126,7 @@ def generate_usage(spec: Spec):
 def generate_doc(doc):
     for k, v in DOC_AUTO_REPLACE.items():
         doc = doc.replace(k, v)
-    return f"\n\n{textwrap.fill(doc, width=LINE_WIDTH)}\n\n"
+    return f"\n\n{doc}\n\n"
 
 
 def generate_cli_command(name: str, spec: Spec):
@@ -155,16 +159,16 @@ def main():
     for k, s in spec.__root__.items():
         generate_cli_command(k, s)
 
-    os.unlink("spec.json")
+    # os.unlink("spec.json")
 
 
 def run_lint():
-    print("Running liniter")
+    print("Running linter")
     subprocess.check_output("yarn run format", shell=True, cwd="../../")
 
 
 if __name__ == "__main__":
-    from scripts.docs.cli_generate_spec import main as spec_main
+    from cli_generate_spec import main as spec_main
 
     spec_main()
     main()

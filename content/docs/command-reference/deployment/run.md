@@ -6,13 +6,9 @@ declaration or create a new one on-the-fly.
 ## Synopsis
 
 ```usage
-usage: mlem deployment run [-m <text>] [-t <text>] [-p <path>] [-e]
-                           [--index] [-c <text>] [-h]
-                           path
-
-arguments:
-  path             Path to deployment meta (will be created if it does not
-                   exist)
+usage: mlem deployment run [-l <path>] [-m <path>] [--mp <path>]
+                           [--mr <commitish>] [-p <path>]
+                           [--rev <commitish>] [-h]
 ```
 
 ## Description
@@ -24,12 +20,12 @@ options (see below).
 
 ## Options
 
-- `-m <text>`, `--model <text>` - Path to model
-- `-t <text>`, `--env <text>` - Path to target environment
+- `-l <path>`, `--load <path>` - File to load deployment config from
+- `-m <path>`, `--model <path>` - Path to MLEM model
+- `--mp <path>`, `--model-project <path>` - Project with model
+- `--mr <commitish>`, `--model-rev <commitish>` - Revision of model
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `-e`, `--external` - Save result not in .mlem, but directly in project
-- `--index` / `--no-index` - Whether to index output in .mlem directory
-- `-c <text>`, `--conf <text>` - Options in format `field.name=value`
+- `--rev <commitish>` - Repo revision to use [default: (none)]
 - `-h`, `--help` - Show this message and exit.
 
 ## Example: Create a new deployment from scratch

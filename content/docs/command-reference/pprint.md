@@ -1,7 +1,7 @@
 # pprint
 
-Display all details about a specific [MLEM Object](/doc/user-guide/basic-
-concepts#mlem-objects) from an existing MLEM project.
+Display all details about a specific
+[MLEM Object](/doc/user-guide/basic-concepts) from an existing MLEM project.
 
 ## Synopsis
 

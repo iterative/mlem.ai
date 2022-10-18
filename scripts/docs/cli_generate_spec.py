@@ -105,7 +105,7 @@ def generate_cli_command(command: Command, ctx):
     return Spec(
         args=generate_args(command, ctx),
         options=generate_options(command, ctx),
-        doc=command.help.strip(),
+        doc=command.help.split("Documentation")[0].strip(),
         name=get_cmd_name(ctx),
     )
 
@@ -113,19 +113,20 @@ def generate_cli_command(command: Command, ctx):
 def main():
     group = get_group(cli.app)
     ctx = Context(group, info_name="mlem", help_option_names=["-h", "--help"])
-    spec = {}
-    for name, command in group.commands.items():
-        if name in skip:
-            continue
-        subctx = Context(command, ctx, info_name=name)
-        if isinstance(command, Group) and name in use_group:
+    with ctx:
+        spec = {}
+        for name, command in group.commands.items():
+            if name in skip:
+                continue
+            subctx = Context(command, ctx, info_name=name)
+            if isinstance(command, Group) and name in use_group:
 
-            spec[f"{name}/index"] = generate_cli_command(command, subctx)
-            for subname, subcommand in command.commands.items():
-                subsubctx = Context(subcommand, subctx, info_name=subname)
-                spec[f"{name}/{subname}"] = generate_cli_command(subcommand, subsubctx)
-            continue
-        spec[name] = generate_cli_command(command, subctx)
+                spec[f"{name}/index"] = generate_cli_command(command, subctx)
+                for subname, subcommand in command.commands.items():
+                    subsubctx = Context(subcommand, subctx, info_name=subname)
+                    spec[f"{name}/{subname}"] = generate_cli_command(subcommand, subsubctx)
+                continue
+            spec[name] = generate_cli_command(command, subctx)
 
     with open("spec.json", "w", encoding="utf8") as f:
         json.dump({k: v.dict() for k, v in spec.items()}, f, indent=2)

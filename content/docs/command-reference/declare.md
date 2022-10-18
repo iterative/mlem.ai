@@ -1,7 +1,7 @@
 # declare
 
-Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
-metafile from config args and config files.
+Declares a new [MLEM Object](/doc/user-guide/basic-concepts)
+[MLEM Object](/doc/user-guide/basic-concepts) from config args and config files.
 
 ## Synopsis
 

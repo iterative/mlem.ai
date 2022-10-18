@@ -1,14 +1,14 @@
 # link
 
-Create a link (read alias) for an existing [MLEM Object](/doc/user-guide/basic-
-concepts#mlem-objects), including from remote [MLEM project](/doc/user-
-guide/project-structure)s.
+Create a link (read alias) for an existing
+[MLEM Object](/doc/user-guide/basic-concepts), including from remote
+[[MLEM project](/doc/user-guide/project-structure)](/doc/user-guide/project-structure).
 
 ## Synopsis
 
 ```usage
 usage: mlem link [--sp <path>] [--rev <commitish>]
-                 [--tp <path>] [-e] [--f] [--abs] [-h]
+                 [--tp <path>] [--f] [--abs] [-h]
                  source target
 
 arguments:
@@ -32,7 +32,6 @@ to incorporate them in the local workspace.
 - `--rev <commitish>` - Repo revision to use [default: (none)]
 - `--tp <path>`, `--target-project <path>` - Project to save target to [default:
   (none)]
-- `-e`, `--external` - Save result not in .mlem, but directly in project
 - `--follow-links`, `--f` / `--no-follow-links`, `--nf` - If True, first follow
   links while reading {source} before creating this link. [default: follow-
   links]
