@@ -54,7 +54,7 @@ save(
 ```
 
 Here we load well-known iris dataset with sklearn and train a simple classifier.
-But instead of pickling the model we saved it with MLEM. (Check out the
+But instead of pickling the model we saved it with MLEM (check out the
 [full list of ML frameworks](/doc/object-reference/model) that MLEM supports.)
 
 Now let's run this script and see how we save the model.
