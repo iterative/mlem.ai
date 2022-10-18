@@ -80,7 +80,7 @@ that you can subclass `MlemConfig` class and list your options there just like
 any `pydantic`
 [BaseSettings](https://pydantic-docs.helpmanual.io/usage/settings/) class. In
 the inner `Config` class you should set `section` option, and after that values
-for your configuration will be loaded from `.mlem/config.yaml` from
-corresponding section. See
+for your configuration will be loaded from `.mlem.yaml` from corresponding
+section. See
 [`PandasConfig`](https://github.com/iterative/mlem/blob/main/mlem/contrib/pandas.py)
 for example

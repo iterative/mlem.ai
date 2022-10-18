@@ -2,7 +2,7 @@
 
 ## Ways to set
 
-MLEM uses `.mlem/config.yaml` file to load configuration from, but it can be
+MLEM uses `.mlem.yaml` file to load configuration from, but it can be
 overridden (or set) via corresponding env variable with `MLEM_` prefix.
 
 Also, [`mlem config`](/doc/command-reference/config) allows you to manipulate
@@ -30,5 +30,5 @@ config.
 ## Extension config
 
 Different MLEM extensions can provide additional options that you also can set
-via `.mlem/config.yaml` file. Please refer to corresponding extension
+via `.mlem.yaml` file. Please refer to corresponding extension
 documentation.

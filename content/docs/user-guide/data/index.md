@@ -37,10 +37,10 @@ if __name__ == "__main__":
 ```
 
 Executing this script results in a few data frames saved to disk along with
-certain metadata about them in the `.mlem/data` directory:
+certain metadata about them in the `.` directory:
 
 ```
-.mlem/data
+.
 ├── test_x.csv
 ├── test_x.csv.mlem
 ├── test_y.csv

@@ -1,6 +1,7 @@
 # mlem.api.init()
 
-Creates and populates the `.mlem/` directory in `path`.
+Creates `.mlem.yaml` config file in `path`. See
+[User Guide](/doc/user-guide/configuration) for more details.
 
 ```py
 def init(path: str = ".") -> None
@@ -16,8 +17,7 @@ init(path)
 
 ## Description
 
-Initializes a MLEM project by creating a `.mlem/` directory inside the given
-path. A new and empty `config.yaml` is also created inside it.
+Initializes a MLEM project by creating a new and empty `.mlem.yaml` file.
 
 ## Parameters
 

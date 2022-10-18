@@ -22,6 +22,6 @@ arguments:
 
 ```cli
 $ mlem checkenv rf
-⏳️ Loading meta from .mlem/model/rf.mlem
+⏳️ Loading meta from rf.mlem
 ✅  Requirements are satisfied!
 ```

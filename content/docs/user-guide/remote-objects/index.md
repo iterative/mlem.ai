@@ -65,7 +65,7 @@ This fetches the `rf` model [from branch `main`] of the
 `example-mlem-get-started` repo and loads it to memory.
 
 [from branch `main`]:
-  https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model
+  https://github.com/iterative/example-mlem-get-started/
 
 ## Downloading objects
 
@@ -76,14 +76,14 @@ You can download MLEM objects to the local environment in with `mlem clone`
 $ mlem clone rf \
   --project https://github.com/iterative/example-mlem-get-started \
   ml_model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
-🐏 Cloning https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
-💾 Saving model to .mlem/model/ml_model.mlem
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+🐏 Cloning https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+💾 Saving model to ml_model.mlem
 ```
 
-This places the `rf` model [from branch `main`] of the
-`example-mlem-get-started` repo, renames it to `ml_model`, and places it in the
-`.mlem/model` directory.
+This copies the `rf` model [from branch `main`] of the
+`example-mlem-get-started` repo to the current directory and renames it to
+`ml_model`.
 
 ## Cloud storage
 
@@ -100,9 +100,9 @@ Loose objects are typically stored this way because they do not require
 
 ```cli
 $ mlem clone rf s3://example-mlem-get-started/rf
-⏳️ Loading meta from .mlem/model/rf.mlem
-🐏 Cloning .mlem/model/rf.mlem
-💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
+⏳️ Loading meta from rf.mlem
+🐏 Cloning rf.mlem
+💾 Saving model to s3://example-mlem-get-started/rf.mlem
 ```
 
 The `rf` model from S3 bucket `example-mlem-get-started` can also be

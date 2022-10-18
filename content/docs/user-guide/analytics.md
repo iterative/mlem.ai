@@ -44,7 +44,7 @@ HTTPS.
 MLEM analytics help the entire community, so leaving it on is appreciated.
 However, if you want to opt out of MLEM's analytics, you can disable it via
 setting an environment variable `MLEM_NO_ANALYTICS=true` or by adding
-`no_analytics: true` to `.mlem/config.yaml`
+`no_analytics: true` to `.mlem.yaml`
 
 This will disable it for the project. We'll add an option to opt out globally
 soon.

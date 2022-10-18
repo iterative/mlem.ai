@@ -45,10 +45,10 @@ $ mlem types env heroku
 
 # Declare the heroku env
 $ mlem declare env heroku production --api_key mlem_heroku_staging
-💾 Saving env to .mlem/env/staging.mlem
+💾 Saving env to staging.mlem
 
 # Print the contents of the new heroku env metafile
-$ cat .mlem/env/staging.mlem
+$ cat staging.mlem
 api_key: mlem_heroku_staging
 object_type: env
 type: heroku

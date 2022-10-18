@@ -41,7 +41,7 @@ You can use [`mlem list`](/doc/command-reference/list) to list MLEM objects.
 
 ```cli
 $ mlem pprint rf
-⏳️ Loading meta from .mlem/model/rf.mlem
+⏳️ Loading meta from rf.mlem
 {'artifacts': {'data': {'hash': 'a61a1fa54893dcebe6fa448df81a1418',
                         'size': 163651,
                         'type': 'dvc',
@@ -57,7 +57,7 @@ $ mlem pprint rf
 
 ```cli
 $ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv --rev 4-pack
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/4-pack/.mlem/data/iris.csv.mlem
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/4-pack/data/iris.csv.mlem
 {'artifacts': {'data': {'hash': '45109f850511f9474665f2c26f4c79f3',
                         'size': 2470,
                         'uri': 'iris.csv'}},
