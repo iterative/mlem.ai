@@ -36,4 +36,6 @@ of bulk inferring data on the served model.
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
+
+## Examples
