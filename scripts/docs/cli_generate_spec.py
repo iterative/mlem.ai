@@ -124,7 +124,9 @@ def main():
                 spec[f"{name}/index"] = generate_cli_command(command, subctx)
                 for subname, subcommand in command.commands.items():
                     subsubctx = Context(subcommand, subctx, info_name=subname)
-                    spec[f"{name}/{subname}"] = generate_cli_command(subcommand, subsubctx)
+                    spec[f"{name}/{subname}"] = generate_cli_command(
+                        subcommand, subsubctx
+                    )
                 continue
             spec[name] = generate_cli_command(command, subctx)
 
