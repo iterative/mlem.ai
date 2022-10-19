@@ -16,7 +16,9 @@ def get_signature(cmd):
 
 
 def get_docs(cmd):
-    docs = cmd.__doc__ or ""
+    docs = cmd.__doc__
+    if not docs:
+        raise ValueError(f"Command {cmd} has no docstring")
     docs = docs.split("Args:")[0].strip()
     docs = re.subn("\s+", " ", docs)[0]
     return textwrap.fill(docs, width=79)
@@ -63,7 +65,7 @@ def generate_api():
         if not os.path.exists(cmd_path):
             print(f"creating {name}")
         else:
-            print(f"cheching {name}")
+            print(f"checking {name}")
             check_command(cmd, name, cmd_path)
 
 
