@@ -30,10 +30,9 @@ $ pip install pandas scikit-learn mlem[fastapi,heroku]
 To enable all kinds of productionization scenarios MLEM supports, we first need
 to save a ML model with MLEM.
 
-Let's take a look at the following Python script:
+Let's take a look and run the following Python script:
 
 ```py
-# train.py
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 
@@ -53,16 +52,29 @@ save(
 )
 ```
 
-Here we load well-known iris dataset with sklearn and train a simple classifier.
-But instead of pickling the model we saved it with MLEM (check out the
-[full list of ML frameworks](/doc/object-reference/model) that MLEM supports.)
+## Productionization
 
-Now let's run this script and see how MLEM saved the model.
+Ok, you just saved your model with MLEM. Now MLEM can do the heavy machinery for
+you, enabling all these scenarios in a couple lines of code:
+
+- **[Apply model](/doc/get-started/applying)** - load model in Python or get
+  prediction in command line.
+- **[Serve model](/doc/get-started/serving)** - create a service from your model
+  for online serving.
+- **[Build model](/doc/get-started/building)** - export model into Python
+  packages, Docker images, etc.
+- **[Deploy model](/doc/get-started/deploying)** - deploy your model to Heroku,
+  Sagemaker, Kubernetes, etc.
+
+More examples on how to use MLEM in different scenarios can be found in
+[Use Cases](/doc/use-cases) section.
+
+## Codification
+
+Meanwhile, let's see what we got when we saved a model with MLEM (check out the
+[full list of ML frameworks](/doc/user-guide/model) that MLEM supports).
 
 ```cli
-$ python train.py
-...
-
 $ tree models/
 models
 ├── rf
@@ -70,8 +82,8 @@ models
 ```
 
 The model was saved along with some metadata about it: `rf` is the model binary
-and `rf.mlem` is a metafile containing information about the model. Let's take a
-look at it:
+and `rf.mlem` is a metafile containing information about the model. We refer to
+this as to "Codification". Let's take a look at the metafile:
 
 <details>
 
@@ -197,21 +209,3 @@ It's a bit long, but we can see all that we need to use the model later:
 
 Note that we didn't specify requirements: MLEM investigates the object you're
 saving (even if it's a complex one) and finds out all requirements needed!
-
-## Productionization
-
-Saving models is fun, but the real value of a model is how you can use it. To
-make it easier to get models to production, MLEM has 4 related functionalities:
-applying, serving, building and deploying.
-
-- **[Applying models](/doc/get-started/applying)** explains how to load model in
-  Python or get prediction in command line.
-- **[Serving models](/doc/get-started/serving)** shows how to create a service
-  from your model.
-- **[Exporting models (building)](/doc/get-started/building)** describes how
-  models can be built into Python packages, Docker images, etc.
-- **[Deploying models](/doc/get-started/deploying)** shows how you can deploy
-  your model with MLEM.
-
-More examples on how to use MLEM in different scenarios can be found in
-[Use Cases](/doc/use-cases) section.
