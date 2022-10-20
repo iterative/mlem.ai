@@ -5,15 +5,15 @@ description: 'Learn how you can use MLEM to easily manage and deploy models'
 # Get Started
 
 We assume MLEM is already [installed](/doc/install) in your active Python
-environment, as well as `pandas` and `sklearn`. If not, you can follow the
-instructions below:
+environment, as well as `pandas` and `sklearn` (if not, you can follow the
+instructions below).
 
 <details>
 
 ### ⚙️ Expand for setup instructions
 
 Let's create a separate folder and an isolated virtual environment to cleanly
-install all the requirements (including MLEM) there:
+install all the requirements (including MLEM):
 
 ```cli
 $ mkdir mlem-get-started
@@ -27,8 +27,8 @@ $ pip install pandas scikit-learn mlem[fastapi,heroku]
 
 ## Saving your ML model
 
-To enable all kinds of productionization scenarios MLEM supports, we first need
-to save a ML model with MLEM.
+To enable all kinds of productionization scenarios supported by MLEM, we first
+need to save a machine learning model with MLEM.
 
 Let's take a look and run the following Python script:
 
@@ -52,10 +52,16 @@ save(
 )
 ```
 
+Here, we load a well-known
+[Iris flower dataset](https://archive.ics.uci.edu/ml/datasets/iris) with
+scikit-learn and train a simple classifier. But instead of pickling the model,
+we save it with MLEM (check out the full list of supported
+[ML frameworks](/doc/object-reference/model)).
+
 ## Productionization
 
-Ok, you just saved your model with MLEM. Now MLEM can do the heavy machinery for
-you, enabling all these scenarios in a couple lines of code:
+Now MLEM can do the heavy machinery for us, enabling all these scenarios in a
+couple lines of code:
 
 - **[Apply model](/doc/get-started/applying)** - load model in Python or get
   prediction in command line.
@@ -66,13 +72,9 @@ you, enabling all these scenarios in a couple lines of code:
 - **[Deploy model](/doc/get-started/deploying)** - deploy your model to Heroku,
   Sagemaker, Kubernetes, etc.
 
-More examples on how to use MLEM in different scenarios can be found in
-[Use Cases](/doc/use-cases) section.
-
 ## Codification
 
-Meanwhile, let's see what we got when we saved a model with MLEM (check out the
-[full list of ML frameworks](/doc/user-guide/model) that MLEM supports).
+Let's see what we got when we saved a model with MLEM.
 
 ```cli
 $ tree models/
@@ -81,13 +83,22 @@ models
 └── rf.mlem
 ```
 
-The model was saved along with some metadata about it: `rf` is the model binary
-and `rf.mlem` is a metafile containing information about the model. We refer to
-this as to "Codification". Let's take a look at the metafile:
+The model binary was saved to `models/rf`, along with some metadata about it in
+`models/rf.mlem`. We refer to this as to "Codification".
+
+The `.mlem` file is a bit long, but it contains all the metadata we need to use
+the model later:
+
+1. Model methods: `predict` and `predict_proba`
+2. Input data schema: describes the data frame (Iris dataset)
+3. Requirements: `sklearn` and `pandas`, with specific versions
+
+Note that we didn't specify any of this information. MLEM investigates the
+object (even if it's complex) and finds out all of this!
 
 <details>
 
-### `$ cat models/rf.mlem`
+### Click to see the contents of the `rf.mlem` metafile.
 
 ```yaml
 artifacts:
@@ -142,51 +153,6 @@ model_type:
           - null
           - 3
         type: ndarray
-    sklearn_predict:
-      args:
-        - name: X
-          type_:
-            columns:
-              - sepal length (cm)
-              - sepal width (cm)
-              - petal length (cm)
-              - petal width (cm)
-            dtypes:
-              - float64
-              - float64
-              - float64
-              - float64
-            index_cols: []
-            type: dataframe
-      name: predict
-      returns:
-        dtype: int64
-        shape:
-          - null
-        type: ndarray
-    sklearn_predict_proba:
-      args:
-        - name: X
-          type_:
-            columns:
-              - sepal length (cm)
-              - sepal width (cm)
-              - petal length (cm)
-              - petal width (cm)
-            dtypes:
-              - float64
-              - float64
-              - float64
-              - float64
-            index_cols: []
-            type: dataframe
-      name: predict_proba
-      returns:
-        dtype: float64
-        shape:
-          - null
-          - 3
-        type: ndarray
   type: sklearn
 object_type: model
 requirements:
@@ -199,13 +165,3 @@ requirements:
 ```
 
 </details>
-
-It's a bit long, but we can see all that we need to use the model later:
-
-1. Model methods: `predict` and `predict_proba`
-2. Input data schema that describes the DataFrame with the iris dataset
-3. Requirements: `sklearn`, `pandas` with particular versions we need to run
-   this model.
-
-Note that we didn't specify requirements: MLEM investigates the object you're
-saving (even if it's a complex one) and finds out all requirements needed!
