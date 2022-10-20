@@ -1,6 +1,6 @@
 # checkenv
 
-Check that current environment satisfies object requrements
+Check that current Python environment satisfies object requirements.
 
 ## Synopsis
 
