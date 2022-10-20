@@ -157,39 +157,7 @@
       {
         "slug": "remote-objects",
         "label": "Remote objects and projects",
-        "source": "remote-objects/index.md",
-        "children": [
-          {
-            "slug": "dvc",
-            "label": "DVC",
-            "source": "dvc.md",
-            "children": []
-          },
-          {
-            "slug": "clouds",
-            "label": "Clouds (S3, GCS, AZDB etc)",
-            "source": "clouds.md",
-            "children": []
-          },
-          {
-            "slug": "github",
-            "label": "GitHub",
-            "source": "github.md",
-            "children": []
-          },
-          {
-            "slug": "gitlab",
-            "label": "Gitlab",
-            "source": "gitlab.md",
-            "children": []
-          },
-          {
-            "slug": "bitbucket",
-            "label": "BitBucket",
-            "source": "bitbucket.md",
-            "children": []
-          }
-        ]
+        "source": "remote-objects/index.md"
       },
       {
         "slug": "configuration",
