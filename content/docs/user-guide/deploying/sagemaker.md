@@ -120,9 +120,3 @@ pip install mlem[sagemaker]
 # or
 pip install sagemaker boto3
 ```
-
-## Examples
-
-```python
-
-```
