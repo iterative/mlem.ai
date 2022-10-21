@@ -8,29 +8,10 @@ from typing import Dict, List
 from pydantic import BaseModel, parse_obj_as
 
 from cli_generate_spec import Opt, Spec
+from utils import replace_section, place_links_in_doc
 
 CLI_DOCS_PATH = "../../content/docs/command-reference"
-DOC_AUTO_REPLACE = {
-    "MLEM Object": "[MLEM Object](/doc/user-guide/basic-concepts)",
-    "MLEM objects": "[MLEM objects](/doc/user-guide/basic-concepts)",
-    "MLEM object": "[MLEM Object](/doc/user-guide/basic-concepts)",
-    "MLEM projects": "[MLEM project](/doc/user-guide/project-structure)",
-    "MLEM project": "[MLEM project](/doc/user-guide/project-structure)",
-    "metafile": "[MLEM Object](/doc/user-guide/basic-concepts)",
-}
 LINE_WIDTH = 80
-
-
-def replace_section(
-    data: str, section_name: str, new_value: str, section_prefix: str = "## "
-) -> str:
-    assert f"{section_prefix}{section_name}" in data, f"section '{section_name}' is missing"
-    return re.sub(
-        f"{section_prefix}{section_name}(.*?)^{section_prefix}",
-        f"{section_prefix}{section_name}{new_value}{section_prefix}",
-        data,
-        flags=re.MULTILINE | re.DOTALL,
-    )
 
 
 def repr_option(option: Opt):
@@ -123,25 +104,25 @@ def generate_usage(spec: Spec):
     return f"\n{usage}{subcommands}{impls}{args}\n"
 
 
-def generate_doc(doc):
-    for k, v in DOC_AUTO_REPLACE.items():
-        doc = doc.replace(k, v)
-    return f"\n\n{doc}\n\n"
-
-
 def generate_cli_command(name: str, spec: Spec):
     path = os.path.join(CLI_DOCS_PATH, f"{name}.md")
     with open(path, "r", encoding="utf8") as f:
         data = f.read()
 
-    data = replace_section(data, "usage", generate_usage(spec), section_prefix="```")
+    data = replace_section(
+        data,
+        "usage",
+        generate_usage(spec),
+        section_prefix="```",
+        section_prefix_space="",
+    )
     data = replace_section(data, "Options", generate_options(spec.options))
 
     cmd_name = name.replace("/", " ")
     if cmd_name.endswith(" index"):
         cmd_name = cmd_name[: -len(" index")]
     data = replace_section(
-        data, " " + cmd_name, generate_doc(spec.doc), section_prefix="#"
+        data, cmd_name, place_links_in_doc(spec.doc), section_prefix="#"
     )
     with open(path, "w", encoding="utf8") as f:
         f.write(data)
@@ -157,9 +138,10 @@ def main():
 
     # spec.__root__ = {"apply": spec.__root__["apply"]}
     for k, s in spec.__root__.items():
+        print(k)
         generate_cli_command(k, s)
 
-    # os.unlink("spec.json")
+    os.unlink("spec.json")
 
 
 def run_lint():

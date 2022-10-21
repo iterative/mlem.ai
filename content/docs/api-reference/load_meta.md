@@ -1,6 +1,6 @@
 # mlem.api.load_meta()
 
-Loads MlemObject from a given path
+Load MlemObject.
 
 ```py
 def load_meta(
@@ -12,7 +12,7 @@ def load_meta(
     fs: Optional[AbstractFileSystem] = None,
     *,
     force_type: Optional[Type[T]] = None,
-) -> MlemObject
+) -> T
 ```
 
 ### Usage:
@@ -36,17 +36,21 @@ Python object.
 ## Parameters
 
 - **`path`** (required) - Path to the object. Could be local path or path inside
-  a Git repo.
+  a git repo.
 - `project` (optional) - URL to project if object is located there.
-- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
 - `follow_links` (optional) - If object we read is a MLEM link, whether to load
-  the actual object link points to. Defaults to True.
-- `load_value` (optional) - Load actual Python object incorporated in
+  theactual object link points to. Defaults to True.
+- `load_value` (optional) - Load actual python object incorporated in
   MlemObject. Defaults to False.
 - `fs` (optional) - filesystem to load from. If not provided, will be inferred
   from path
 - `force_type` (optional) - type of meta to be loaded. Defaults to MlemObject
   (any mlem meta)
+
+## Returns
+
+`MlemObject`: Saved MlemObject
 
 ## Exceptions
 

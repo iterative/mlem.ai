@@ -34,22 +34,5 @@ images.
 
 ## Examples
 
-Build a Docker image from a model
-
-```cli
-$ mlem build mymodel docker --server.type=fastapi --image.name=myimage
-```
-
-Create a `docker_dir` builder config called `build_dock`, and use it to package
-a model
-
-```cli
-$ mlem declare builder docker_dir --server=fastapi --target=build build_dock
-...
-
-$ mlem build mymodel --load build_dock
-...
-```
-
-For a detailed example using python-package, see the get-started guide
-[building example](/doc/get-started/building).
+For examples, please refer to [Get Started](/doc/get-started/building) or
+[User Guide](/doc/user-guide/building).

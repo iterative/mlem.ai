@@ -9,7 +9,6 @@ def link(
     rev: Optional[str] = None,
     target: Optional[str] = None,
     target_project: Optional[str] = None,
-    external: Optional[bool] = None,
     follow_links: bool = True,
     absolute: bool = False,
 ) -> MlemLink
@@ -27,7 +26,6 @@ link_obj = link(
     model_path,
     target=link_name,
     target_project=os.getcwd(),
-    external=False,
 )
 ```
 
@@ -42,16 +40,19 @@ their aliases for all future purposes.
 ## Parameters
 
 - **`source`** (required) - The object to create link from.
-- `source_project` (optional) - Path to mlem project where to load obj from.
-- `rev` (optional) - Revision if object is stored in Git repo.
+- `source_project` (optional) - Path to mlem project where to load obj from
+- `rev` (optional) - Revision if object is stored in git repo.
 - `target` (optional) - Where to store the link object.
-- `target_project` (optional) - If provided, treat `target` as link name and
-  dump link in MLEM DIR.
-- `external` (optional) - Whether to save link outside mlem dir.
-- `follow_links` (optional) - Whether to make link to the underlying object if
+- `target_project` (optional) - If provided,treat `target` as link name and dump
+  link in MLEM DIR
+- `follow_links` (optional) - Whether to make link to the underlying objectif
   `source` is itself a link. Defaults to True.
 - `absolute` (optional) - Whether to make link absolute or relative to mlem
-  project. Defaults to False.
+  project
+
+## Returns
+
+`MlemLink`: Link object to the `source`.
 
 ## Exceptions
 
