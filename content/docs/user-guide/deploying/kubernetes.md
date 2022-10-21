@@ -1,9 +1,12 @@
 # Kubernetes
 
-To serve models in production in a scalable and failure-safe way, one needs something more than Heroku. [Kubernetes](https://kubernetes.io/docs/home/) is an open source container orchestration engine for automating deployment, scaling, and management of containerized applications.
+To serve models in production in a scalable and failure-safe way, one needs
+something more than Heroku. [Kubernetes](https://kubernetes.io/docs/home/) is an
+open source container orchestration engine for automating deployment, scaling,
+and management of containerized applications.
 
-Below, we will deploy a model to a kubernetes cluster exposing its prediction endpoints through
-a service.
+Below, we will deploy a model to a kubernetes cluster exposing its prediction
+endpoints through a service.
 
 ## Requirements
 
@@ -23,7 +26,9 @@ pip install kubernetes docker
 - Nodes are accessible and reachable, with an external IP address (valid for a
   NodePort service, more details to come below).
 
-One can access a [basic](https://kubernetes.io/docs/tutorials/kubernetes-basics/) tutorial to learn about the above terms.
+One can access a
+[basic](https://kubernetes.io/docs/tutorials/kubernetes-basics/) tutorial to
+learn about the above terms.
 
 ## Description
 
@@ -52,7 +57,8 @@ If you need to use another path, one can pass it with
 
 <admon type="tip">
 
-You can use `mlem deploy run kubernetes -h` to list all the configurable parameters.
+You can use `mlem deploy run kubernetes -h` to list all the configurable
+parameters.
 
 </admon>
 
@@ -206,9 +212,10 @@ mlem          ml-cddbcc89b-zkfhx    1/1     Terminating   0          60m
 
 ## Example: Using EKS cluster with ECR on AWS
 
-The deployment to a cloud managed kubernetes cluster such as [EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) is simple and
-analogous to how it is done in the steps above for a local cluster (such as
-minikube).
+The deployment to a cloud managed kubernetes cluster such as
+[EKS](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html) is
+simple and analogous to how it is done in the steps above for a local cluster
+(such as minikube).
 
 <admon type="info">
 
@@ -229,8 +236,10 @@ used.
 
 </admon>
 
-The popular docker registry choice to be used with EKS is [ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html) (Elastic Container
-Registry). Make sure the EKS cluster has at least read access to ECR.
+The popular docker registry choice to be used with EKS is
+[ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)
+(Elastic Container Registry). Make sure the EKS cluster has at least read access
+to ECR.
 
 ### ECR
 
