@@ -66,12 +66,11 @@ Most of the configurable parameters in the list above come with sensible
 defaults. But at the least, one needs to follow the structure given below:
 
 ```cli
-$ mlem deployment run service_name \
+$ mlem deployment run kubernetes service_name \
     --model model \
-    --env kubernetes \
     --service_type loadbalancer
-⏳️ Loading model from model.mlem
 💾 Saving deployment to service_name.mlem
+⏳️ Loading model from model.mlem
 🛠 Creating docker image ml
   🛠 Building MLEM wheel file...
   💼 Adding model files...
@@ -153,7 +152,7 @@ from the cluster. The docker image will still persist in the registry though.
 If you want to change the model that is currently under deployment, run
 
 ```cli
-$ mlem deploy run service_name --model other-model
+$ mlem deploy run --load service_name --model other-model
 ```
 
 This will build a new docker image corresponding to the `other-model` and will
@@ -177,8 +176,8 @@ built.
 ### Checking the deployment process
 
 ```
-⏳️ Loading deployment from service_name.mlem
 ⏳️ Loading model from other-model.mlem
+⏳️ Loading deployment from service_name.mlem
 🛠 Creating docker image ml
   🛠 Building MLEM wheel file...
   💼 Adding model files...
@@ -252,15 +251,15 @@ Provided that the default kubeconfig file (present at `~/.kube/config`) can
 communicate with EKS, execute the following command:
 
 ```cli
-$ mlem deploy run service_name \
-    --model model --env kubernetes \
+$ mlem deploy run kubernetes service_name \
+    --model model \
     --registry ecr \
     --registry.account 342840881361 \
     --registry.region "us-east-1" \
     --registry.host "342840881361.dkr.ecr.us-east-1.amazonaws.com/classifier" \
     --image_name classifier --service_type loadbalancer
-⏳️ Loading model from model.mlem
 💾 Saving deployment to service_name.mlem
+⏳️ Loading model from model.mlem
 🛠 Creating docker image classifier
   🛠 Building MLEM wheel file...
   💼 Adding model files...
