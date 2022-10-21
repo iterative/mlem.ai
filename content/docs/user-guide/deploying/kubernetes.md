@@ -70,7 +70,6 @@ $ mlem deployment run service_name \
     --model model \
     --env kubernetes \
     --service_type loadbalancer
-
 ⏳️ Loading model from model.mlem
 💾 Saving deployment to service_name.mlem
 🛠 Creating docker image ml
@@ -138,7 +137,6 @@ ping the deployed endpoint to get the predictions back. An example could be:
 
 ```cli
 $ mlem deployment apply service_name data --json
-
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ```
 
@@ -261,7 +259,6 @@ $ mlem deploy run service_name \
     --registry.region "us-east-1" \
     --registry.host "342840881361.dkr.ecr.us-east-1.amazonaws.com/classifier" \
     --image_name classifier --service_type loadbalancer
-
 ⏳️ Loading model from model.mlem
 💾 Saving deployment to service_name.mlem
 🛠 Creating docker image classifier
@@ -348,7 +345,6 @@ ping the deployed endpoint to get the predictions back. An example could be:
 
 ```cli
 $ mlem deployment apply service_name data --json
-
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ```
 
