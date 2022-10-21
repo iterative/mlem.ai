@@ -1,14 +1,16 @@
 # SageMaker
 
-Implements MlemEnv, MlemDeployment and DeployState to work with AWS SageMaker
-
-## Description
-
 MLEM SageMaker allow you to deploy MLEM models to AWS SageMaker. You can learn
 more about SageMaker
 [here](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html).
 
-### Preparing infrastructre
+## Requirements
+
+```bash
+pip install mlem[sagemaker]
+# or
+pip install sagemaker boto3
+```
 
 To be able to deploy to SageMaker you need to do some AWS configuration. This is
 not MLEM specific requirements, rather it's needed for any SageMaker
@@ -44,7 +46,7 @@ It's recommended to use [aws cli](https://aws.amazon.com/cli/) with separate
 profile configured for MLEM. You can also provide credentials with
 [AWS environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
 
-### Configuring and running deployment
+## Configuring and running deployment
 
 [SageMaker Environment](#class-sagemakerenv) declaration can be used to hold
 your SageMaker configuration.
@@ -89,7 +91,7 @@ or block until model is ready with
 $ mlem deployment wait ... -i starting
 ```
 
-### Making requests
+## Making requests
 
 MLEM SageMaker deployments are fully compatible with SageMaker
 [InvokeEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html)
@@ -112,11 +114,3 @@ preds = client.predict(data)
 ```
 
 > MLEM do not support batch invocations. We will add support for them soon
-
-## Requirements
-
-```bash
-pip install mlem[sagemaker]
-# or
-pip install sagemaker boto3
-```
