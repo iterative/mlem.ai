@@ -51,7 +51,7 @@ MLEM tries to find the kubeconfig file from the environment variable
 
 If you need to use another path, one can pass it with
 
-`--conf kube_config_file_path=...`
+`--kube_config_file_path ...`
 
 </details>
 
@@ -69,7 +69,7 @@ defaults. But at the least, one needs to follow the structure given below:
 $ mlem deployment run service_name \
     --model model \
     --env kubernetes \
-    --conf service_type=loadbalancer
+    --service_type loadbalancer
 
 ⏳️ Loading model from model.mlem
 💾 Saving deployment to service_name.mlem
@@ -127,7 +127,7 @@ mlem          ml-cddbcc89b-zkfhx         1/1     Running   0              5m58s
 ```
 
 By default, all resources are created in the `mlem` namespace. This ofcourse is
-configurable using `--conf namespace=prod` where `prod` is the desired namespace
+configurable using `--namespace prod` where `prod` is the desired namespace
 name.
 
 ### Making predictions via MLEM
@@ -256,11 +256,11 @@ communicate with EKS, execute the following command:
 ```cli
 $ mlem deploy run service_name \
     --model model --env kubernetes \
-    --conf registry=ecr \
-    --conf registry.account=342840881361 \
-    --conf registry.region="us-east-1" \
-    --conf registry.host="342840881361.dkr.ecr.us-east-1.amazonaws.com/classifier" \
-    --conf image_name=classifier --conf service_type=loadbalancer
+    --registry ecr \
+    --registry.account 342840881361 \
+    --registry.region "us-east-1" \
+    --registry.host "342840881361.dkr.ecr.us-east-1.amazonaws.com/classifier" \
+    --image_name classifier --service_type loadbalancer
 
 ⏳️ Loading model from model.mlem
 💾 Saving deployment to service_name.mlem
@@ -291,7 +291,7 @@ service created. status='{'conditions': None, 'load_balancer': {'ingress': None}
 ```
 
 - Note that the repository name in ECR i.e. `classifier` has to match with the
-  `image_name` supplied through `--conf`
+  `image_name` supplied through `--image_name`
 
 ### Checking the docker images
 
@@ -320,10 +320,6 @@ kube-system   aws-node-pr8cn                1/1     Running   0          11m
 kube-system   kube-proxy-dfxsv              1/1     Running   0          11m
 mlem          classifier-687655f977-h7wsl   1/1     Running   0          83s
 ```
-
-By default, all resources are created in the `mlem` namespace. This ofcourse is
-configurable using `--conf namespace=prod` where `prod` is the desired namespace
-name.
 
 Services created can be checked via `kubectl get svc -A` which should look like
 the following:
@@ -362,8 +358,7 @@ service type.
 <admon type="info" title="A note about NodePort Service">
 
 While the example discussed above deploys a LoadBalancer Service Type, but one
-can also use NodePort (which is the default) OR via
-`--conf service_type=nodeport`
+can also use NodePort (which is the default) OR via `--service_type nodeport`
 
 While `mlem` knows how to calculate externally reachable IP address, make sure
 the EC2 machine running the pod has external traffic allowed to it. This can be
