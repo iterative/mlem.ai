@@ -327,7 +327,14 @@
       {
         "slug": "use-cases",
         "label": "Use Cases",
-        "source": "use-cases.md"
+        "source": "use-cases/index.md",
+        "children": [
+          {
+            "slug": "model-registry",
+            "source": "model-registry.md",
+            "label": "Model Registry"
+          }
+        ]
       },
       {
         "slug": "user-guide",
