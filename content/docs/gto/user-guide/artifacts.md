@@ -10,3 +10,5 @@ registry itself.
 To keep this metainformation, GTO uses `artifacts.yaml` file and commands like
 `gto annotate`. Please refer to [User Guide](/doc/gto/user-guide). for more
 details.
+
+...tell about how to annotate and remove, about the file structure...

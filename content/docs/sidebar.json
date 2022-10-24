@@ -357,6 +357,11 @@
             "label": "Acting downstream. CI/CD"
           },
           {
+            "slug": "config",
+            "source": "config.md",
+            "label": "Configuring types and stages"
+          },
+          {
             "slug": "storages",
             "source": "storages.md",
             "label": "Storing large artifacts"

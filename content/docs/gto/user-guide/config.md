@@ -1,0 +1,3 @@
+# Configuring types and stages
+
+...tell about limitations in config to allowed types and stages...

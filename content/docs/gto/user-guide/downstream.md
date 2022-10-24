@@ -1,1 +1,3 @@
 # Acting downstream
+
+...tell about CI/CD, webhooks, and external services watching the repo...
