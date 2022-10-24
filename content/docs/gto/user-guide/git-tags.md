@@ -1,0 +1,3 @@
+# Git tags format
+
+...

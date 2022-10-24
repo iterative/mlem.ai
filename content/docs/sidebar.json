@@ -308,5 +308,64 @@
         "source": "docs.md"
       }
     ]
+  },
+  {
+    "slug": "gto",
+    "label": "GTO documentation",
+    "source": "gto/index.md",
+    "children": [
+      {
+        "slug": "install",
+        "source": "install.md",
+        "label": "Installation"
+      },
+      {
+        "slug": "get-started",
+        "label": "Get Started",
+        "source": "get-started.md"
+      },
+      {
+        "slug": "use-cases",
+        "label": "Use Cases",
+        "source": "use-cases.md"
+      },
+      {
+        "slug": "user-guide",
+        "label": "User Guide",
+        "source": "user-guide/index.md",
+        "children": [
+          {
+            "slug": "git-tags",
+            "source": "git-tags.md",
+            "label": "Git tags format"
+          },
+          {
+            "slug": "artifacts",
+            "source": "artifacts.md",
+            "label": "Annotations and artifacts.yaml"
+          },
+          {
+            "slug": "downstream",
+            "source": "downstream.md",
+            "label": "Acting downstream. CI/CD"
+          },
+          {
+            "slug": "storages",
+            "source": "storages.md",
+            "label": "Storing large artifacts"
+          },
+          {
+            "slug": "mlem",
+            "source": "mlem.md",
+            "label": "Deploying models with MLEM"
+          }
+        ]    
+      },
+      {
+        "slug": "command-reference",
+        "label": "Command Reference",
+        "source": "command-reference/index.md"
+      }
+    ]
   }
 ]
