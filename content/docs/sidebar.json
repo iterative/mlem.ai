@@ -349,7 +349,7 @@
           {
             "slug": "artifacts",
             "source": "artifacts.md",
-            "label": "Annotations and artifacts.yaml"
+            "label": "Annotations in artifacts.yaml"
           },
           {
             "slug": "downstream",
