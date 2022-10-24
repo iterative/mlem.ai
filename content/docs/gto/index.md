@@ -1,45 +1,21 @@
 # GTO Documentation
 
-Mention Studio here.
+**GTO** is a tool for creating an Artifact Registry in your Git repository. One
+of the special cases we would like to highlight is creating a **Machine Learning
+Model Registry**.
 
-Mention GTO limitation - in a single repo.
-
-Git Tag Ops. Turn your Git repository into an Artifact Registry:
-
-- Registry: Track new artifacts and their versions for releases and significant
-  changes.
-- Lifecycle Management: Create actionable stages for versions marking status of
-  artifact or it's readiness to be consumed by a specific environment.
-- GitOps: Signal CI/CD automation or other downstream systems to act upon these
-  new versions and lifecycle updates.
-- Enrichments: Annotate and query artifact metadata with additional information.
-
-GTO works by creating annotated Git tags in a standard format.
-
-**GTO** is a tool for
-
-**MLEM** is a tool to easily package, deploy and serve Machine Learning models.
-It seamlessly supports a variety of scenarios like real-time serving and batch
-processing.
-
-<admon type="tip">
-
-When combined with [GTO](https://github.com/iterative/gto), MLEM allows you to
-create a powerful Model Registry out of your Git repository! Such a registry
-serves as a centralized place to store and operationalize your models along with
-their metadata; manage model life-cycle, versions & releases, and easily
-automate tests and deployments using GitOps.
-
-</admon>
+Such a registry serves as a centralized place to store and operationalize your
+artifacts along with their metadata; manage model life-cycle, versions &
+releases, and easily automate tests and deployments using GitOps.
 
 <cards>
 
-  <card href="/doc/gto/install" heading="Installation">
-    Install GTO
-  </card>
-
   <card href="/doc/gto/get-started" heading="Get Started">
     A step-by-step introduction into basic GTO features
+  </card>
+
+  <card href="/doc/gto/user-guide" heading="User Guide">
+    Study the detailed inner-workings of GTO in its user guide.
   </card>
 
   <card href="/doc/gto/use-cases" heading="Use Cases">
