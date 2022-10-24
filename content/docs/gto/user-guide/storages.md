@@ -1,4 +1,3 @@
 ## Working with large artifacts
 
 ...
-

@@ -16,7 +16,7 @@ Git Tag Ops. Turn your Git repository into an Artifact Registry:
 
 GTO works by creating annotated Git tags in a standard format.
 
-**GTO** is a tool for 
+**GTO** is a tool for
 
 **MLEM** is a tool to easily package, deploy and serve Machine Learning models.
 It seamlessly supports a variety of scenarios like real-time serving and batch
