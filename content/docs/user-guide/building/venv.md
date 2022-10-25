@@ -1,18 +1,22 @@
 # Virtual Environments
 
-Create a python virtual environment using requirements gathered from a model.
+Given a model and a list of its dependencies and packages, an environment needs
+to be present that has these requirements readily available so as to use the
+model. To make sure that different dependencies for different models (or
+projects) don't clash,
+[virtual environments](https://realpython.com/python-virtual-environments-a-primer/)
+are used.
 
 ## Description
 
-`mlem` can also create virtual environments based on requirements gathered from
+`MLEM` can create a python virtual environment using requirements gathered from
 a model. This naturally extends the functionality of the
-[`requirements builder`](/doc/object-reference/build/requirements).
+[`requirements builder`](/doc/user-guide/building/requirements).
 
 ### Generating a new virtual environment
 
 ```cli
-$ mlem build model venv -c target="newenv"
-
+$ mlem build venv -m model --target newenv
 ⏳️ Loading model from model.mlem
 💼 Creating virtual env newenv...
 💼 Installing the required packages...
@@ -44,7 +48,7 @@ If the `target` is not passed, the default name for the new environment is
 
 Other options include using:
 
-- `-c no_cache=True` -- to disable caching while fetching packages in creation
-  of the environment.
-- `-c current_env=True` -- whether to install the requirements in a currently
+- `--no_cache True` -- to disable caching while fetching packages in creation of
+  the environment.
+- `--current_env True` -- whether to install the requirements in a currently
   activated virtual environment.
