@@ -5,10 +5,10 @@ serving functions under the hood. For example, Heroku deployment combines Docker
 image building with FastAPI serving.
 
 MLEM can deploy to platforms such as
-[Sagemaker](/doc/user-guide/deploy/sagemaker) and
-[Kubernetes](/doc/user-guide/deploy/sagemaker) (see the full list in
-[User Guide](/doc/user-guide/deploy)). For the Get Started, we'll use Heroku as
-the example.
+[Sagemaker](/doc/user-guide/deploying/sagemaker) and
+[Kubernetes](/doc/user-guide/deploying/sagemaker) (see the full list in
+[User Guide](/doc/user-guide/deploying)). For the Get Started, we'll use Heroku
+as the example.
 
 ## Deploying to Heroku
 
@@ -52,9 +52,9 @@ $ mlem deployment run heroku app.mlem \
 ✅  Service example-mlem-get-started-app is up. You can check it out at https://example-mlem-get-started-app.herokuapp.com/
 ```
 
-Deployment specification (we call it [declaration](/doc/cli-reference/declare))
-was saved to `app.mlem`. Using it, you can re-deploy the same app with a
-different model.
+Deployment specification (we call it
+[declaration](/doc/command-reference/declare)) was saved to `app.mlem`. Using
+it, you can re-deploy the same app with a different model.
 
 <details>
 
@@ -72,7 +72,7 @@ type: heroku
 Beside `app.mlem`, there is one more file that was saved: `app.mlem.state`. It
 contains the information about the deployment we just created, including which
 MLEM model we used, the URL of the deployment and other useful information. You
-can learn more about state files in [User Guide](/doc/user-guide/deploy).
+can learn more about state files in [User Guide](/doc/user-guide/deploying).
 
 ## Making requests
 
@@ -92,6 +92,6 @@ repo 🙌.
 If you would like to destroy the deployment now, you can find the instructions
 [here](/doc/user-guide/deploying).
 
-Please proceed to [Use Cases](/doc/use-case) if you want to see high-level
+Please proceed to [Use Cases](/doc/use-cases) if you want to see high-level
 scenarios MLEM can cover, or go to [User Guide](/doc/user-guide) to see more
 details or short tutorials on how to use specific features of MLEM.

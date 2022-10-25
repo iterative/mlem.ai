@@ -34,6 +34,23 @@ command line. Let's see how MLEM can help by creating an example file and
 running `mlem apply`:
 
 ```cli
+$ git add metrics.json
+$ git commit -m "Evaluate model"
+$ git diff 4-eval
+```
+
+</details>
+
+## Applying from CLI
+
+You can also apply your models directly from CLI. For that to work, your data
+should be in a file that is supported by
+[MLEM import](/doc/user-guide/importing) or you should have the
+[data saved with MLEM ](/doc/user-guide/data).
+
+Let's create an example file and run `mlem apply`
+
+```cli
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
 
