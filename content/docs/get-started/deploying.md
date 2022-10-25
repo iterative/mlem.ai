@@ -6,7 +6,7 @@ image building with FastAPI serving.
 
 MLEM can deploy to platforms such as
 [Sagemaker](/doc/user-guide/deploying/sagemaker) and
-[Kubernetes](/doc/user-guide/deploying/sagemaker) (see the full list in
+[Kubernetes](/doc/user-guide/deploying/kubernetes) (see the full list in
 [User Guide](/doc/user-guide/deploying)). For the Get Started, we'll use Heroku
 as the example.
 
