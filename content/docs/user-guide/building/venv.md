@@ -9,8 +9,8 @@ are used.
 
 ## Description
 
-`MLEM` can create a python virtual environment using requirements gathered from
-a model. This naturally extends the functionality of the
+MLEM can create a python virtual environment using requirements gathered from a
+model. This naturally extends the functionality of the
 [`requirements builder`](/doc/user-guide/building/requirements).
 
 ### Generating a new virtual environment

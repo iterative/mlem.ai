@@ -3,8 +3,8 @@
 Like [virtual environments](/doc/user-guide/building/venv),
 [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)
 follow the same paradigm of isolating dependencies for a package or a model.
-But, they exist globally and are saved in a single location. Further, they need
-not be limited to installation of python packages.
+But, they exist globally and are saved in a single location. Further, they don't
+need to be limited to installation of python packages.
 
 ## Description
 
@@ -21,7 +21,9 @@ Make sure that `conda` command line utility is installed and is accessible.
 ### Generating a new conda environment
 
 ```cli
-$ mlem build conda --model model --target newenv --conda_reqs.0.package_name xtensor --conda_reqs.1.package_name openssl
+$ mlem build conda --model model --target newenv \
+    --conda_reqs.0.package_name xtensor \
+    --conda_reqs.1.package_name openssl
 ⏳️ Loading model from model.mlem
 Collecting package metadata (current_repodata.json): done
 Solving environment: done
