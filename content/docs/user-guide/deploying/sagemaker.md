@@ -51,12 +51,22 @@ profile configured for MLEM. You can also provide credentials with
 [SageMaker Environment](#class-sagemakerenv) declaration can be used to hold
 your SageMaker configuration.
 
-TODO
+```cli
+$ mlem declare env sagemaker ... --role <role> \
+                                 --account <account> \
+                                 --region <region> \
+                                 --bucket <bucket> \
+                                 --ecr_repository <repo>
+```
 
 You can also pre-declare [SageMaker Deployment](#class-sagemakerdeployment)
 itself.
 
-TODO
+```cli
+$ mlem declare deployment sagemaker ... --env ... \
+                                        --method predict \
+                                        --instance_type ml.t2.medium
+```
 
 To run deployment, run
 
