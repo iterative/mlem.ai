@@ -1,16 +1,18 @@
 # Conda Environments
 
-Create a conda environment using requirements gathered from a model.
+Like [virtual environments](/doc/user-guide/building/venv),
+[conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)
+follow the same paradigm of isolating dependencies for a package or a model.
+But, they exist globally and are saved in a single location. Further, they need
+not be limited to installation of python packages.
 
 ## Description
 
-`mlem` can also create conda environments based on requirements gathered from a
-model. This naturally extends the functionality of the
-[`requirements builder`](/doc/object-reference/build/requirements) and is also
-similar to the [`venv builder`](/doc/object-reference/build/venv).
+Currently, Conda based requirements cannot be determined automatically. But, one
+can pass them manually.
 
-In addition to installing conda packages, `pip` based packages will also be
-installed in the `conda` environment.
+In addition to installing conda packages, `pip` based packages (gathered from
+the model) will also be installed in the `conda` environment.
 
 ## Preparation
 
@@ -19,8 +21,7 @@ Make sure that `conda` command line utility is installed and is accessible.
 ### Generating a new conda environment
 
 ```cli
-$ mlem build model conda -c target="newenv"
-
+$ mlem build conda --model model --target newenv --conda_reqs.0.package_name xtensor --conda_reqs.1.package_name openssl
 ⏳️ Loading model from model.mlem
 Collecting package metadata (current_repodata.json): done
 Solving environment: done
@@ -66,6 +67,32 @@ Executing transaction: done
 #     $ conda deactivate
 
 Retrieving notices: ...working... done
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /path/to/envs/newenv
+
+  added / updated specs:
+    - conda-forge::openssl
+    - conda-forge::xtensor
+
+
+The following NEW packages will be INSTALLED:
+
+  xtensor            conda-forge/osx-arm64::xtensor-0.24.3-hf86a087_0 None
+  xtl                conda-forge/osx-arm64::xtl-0.7.4-hc021e02_0 None
+
+The following packages will be UPDATED:
+
+  openssl              pkgs/main::openssl-1.1.1q-h1a28f6b_0 --> conda-forge::openssl-1.1.1q-h03a7124_1 None
+
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Retrieving notices: ...working... done
 Collecting scikit-learn==1.0.2
   Using cached scikit_learn-1.0.2-cp39-cp39-macosx_12_0_arm64.whl (6.9 MB)
 Collecting pandas==1.4.2
@@ -93,7 +120,15 @@ If the `target` is not passed, the default name for the new environment is
 
 Other options include using:
 
-- `-c python_version="3.7"` -- to use a custom python version, by default it is
+- `--python_version 3.7` -- to use a custom python version, by default it is
   inferred automatically.
-- `-c current_env=True` -- whether to install the requirements in a currently
+- `--current_env True` -- whether to install the requirements in a currently
   activated conda environment.
+
+While options for passing a list of conda requirements include:
+
+- `--conda_reqs.0.package_name` -- name of the conda package
+- `--conda_reqs.0.spec` -- denotes selectors for a package such as '>=1.8,<2'
+  (optional)
+- `--conda_reqs.0.channel_name` -- denotes the channel from which a package is
+  to be installed (default is `conda-forge`)

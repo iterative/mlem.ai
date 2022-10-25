@@ -116,6 +116,6 @@ option.
 
 ## Conda requirements
 
-Conda based requirments specify conda packages and cannot be determined
+Conda based requirements specify conda packages and cannot be determined
 automatically as of now. In any case, the `--target` option is not supported for
 it.
