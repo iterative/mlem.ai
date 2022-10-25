@@ -60,8 +60,47 @@ The `--target` option is not supported for unix based requirements.
 ## Custom requirements
 
 Custom requirements represent local python code such as files, zipped sources,
-etc. They cannot be determined automatically as of now. However, file
-requirements always need the `--target` option.
+etc. Custom requirements always need the `--target` option since they are
+materialized at the target.
+
+For instance, a function can be saved via `MLEM` at a location `mlem-f`
+
+```
+from mlem.api import save
+def f(txt):
+    print(txt)
+
+saved = save(f, 'mlem-f')
+```
+
+and the following command could be used to materialize this custom requirement
+at a target:
+
+```cli
+$ mlem build requirements -m mlem-f --req_type custom --target ./dir
+⏳️ Loading model from mlem-f.mlem
+💼 Materializing requirements...
+✅  Materialized to ./dir!
+```
+
+The contents of `dir` can be checked using
+
+```cli
+$ ls dir
+__main__.py
+```
+
+and with
+
+```cli
+cat dir/__main__.py
+from mlem.api import save
+
+def f(hh):
+    print(hh)
+
+saved = save(f, 'mlem-f')
+```
 
 ## File requirements
 
