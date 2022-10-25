@@ -5,8 +5,8 @@ description: 'Learn how you can use MLEM to easily manage and deploy models'
 # Get Started
 
 We assume MLEM is already [installed](/doc/install) in your active Python
-environment, as well as `pandas`, `sklearn`, `fastapi`, `uvicorn` and
-`docker` (if not, you can follow the instructions below).
+environment, as well as `pandas`, `sklearn`, `fastapi`, `uvicorn` and `docker`
+(if not, you can follow the instructions below).
 
 <details>
 

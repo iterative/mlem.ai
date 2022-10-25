@@ -11,8 +11,8 @@ from mlem.api import save
 save(model, "models/mymodel", sample_data=df)
 ```
 
-After that you could work with your model [from CLI](/doc/cli-reference) or call
-[API methods](/doc/api-reference), passing down a path to the saved model.
+After that you could work with your model [from CLI](/doc/command-reference) or
+call [API methods](/doc/api-reference), passing down a path to the saved model.
 
 `model` object can be any supported python object. MLEM works with all major
 popular machine learning frameworks as well as arbitrary python callables.

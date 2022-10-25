@@ -49,5 +49,5 @@ Pandas. For that to work, your data should be in a format that is supported by
 [MLEM import](/doc/user-guide/importing). You can learn more about specifying
 these arguments on `mlem apply` page.
 
-Alternatively, you could save the [data with MLEM](/doc/user-guide/datasets) to
-use `mlem apply` on it.
+Alternatively, you could save the [data with MLEM](/doc/user-guide/data) to use
+`mlem apply` on it.
