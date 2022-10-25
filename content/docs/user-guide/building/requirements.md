@@ -7,8 +7,10 @@ requirements for you automatically for some type of requirements.
 ## Pip based requirements
 
 `MLEM` can export the installable requirements needed for a model using the
-`mlem build requirements -m model` command, where `model` is the path to model
-saved via `mlem`
+
+`mlem build requirements -m model`
+
+command, where `model` is the path to model saved via `mlem`
 
 ```cli
 $ mlem build requirements -m model
@@ -17,8 +19,10 @@ scikit-learn==1.0.2 pandas==1.4.2 numpy==1.22.3
 ```
 
 Thus, the output of the above can be used in conjunction with:
-`pip install $(mlem -q build requirements -m model)` to install the
-requirements.
+
+`pip install $(mlem -q build requirements -m model)`
+
+to install the requirements.
 
 where `-q` stands for the quiet mode which disables the emoji output.
 
@@ -50,9 +54,11 @@ correctly. An example is the
 supported libraries and these can be used as below:
 
 To get a list of `unix` based requirements, use the `--req_type` option such as
+
 `mlem build requirements -m model --req_type unix`.
 
 The output of above can be used in conjunction like:
+
 `apt-get install $(mlem -q build requirements -m model --req_type unix)`
 
 The `--target` option is not supported for unix based requirements.
@@ -93,7 +99,7 @@ __main__.py
 and with
 
 ```cli
-cat dir/__main__.py
+$ cat dir/__main__.py
 from mlem.api import save
 
 def f(hh):
