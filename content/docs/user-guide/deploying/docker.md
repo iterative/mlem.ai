@@ -18,8 +18,9 @@ pip install docker
 
 Deploying to a docker container involves 2 main steps:
 
-1. Build the docker image.
-2. Start the server inside the image.
+1. [Build docker](/doc/user-guide/building/docker) image by running
+   `docker build` under the hood.
+2. Start the server inside the image by running `docker run` under the hood.
 
 One can do this via a single line:
 
@@ -60,4 +61,4 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 ### Configurable parameters
 
 A lot of parameters can be configured, the full list of which can be accessed
-using `mlem deploy run docker_container -h`
+using `mlem deploy run docker_container -h`.
