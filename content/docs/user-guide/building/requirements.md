@@ -1,8 +1,9 @@
 # Requirements
 
 When you have a model saved via MLEM and want to use it, the first step is to
-make sure you have the right dependencies and packages. MLEM can get the list of
-requirements for you automatically for some type of requirements.
+make sure you have the right dependencies and packages. Given a model, MLEM can
+get the list of requirements of different types (including Python, Unix, as well
+as some others).
 
 This complements the [checkenv](/doc/command-reference/checkenv) command.
 

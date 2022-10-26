@@ -96,7 +96,7 @@
       },
       {
         "slug": "building",
-        "label": "Exporting models",
+        "label": "Building models",
         "source": "building/index.md",
         "children": [
           {
