@@ -27,7 +27,8 @@ MLEM uses it to infer your model's signature which will be needed to build and
 deploy it later.
 
 Additionally, MLEM will automatically infer your model requirements (including
-any local code).
+any local code). The determined requirements can be used to
+[create virtual environments](/doc/user-guide/building/requirements)
 
 ## Alternative ways to create MLEM model
 

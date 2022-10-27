@@ -96,18 +96,33 @@
       },
       {
         "slug": "building",
-        "label": "Exporting models",
+        "label": "Building models",
         "source": "building/index.md",
         "children": [
+          {
+            "slug": "conda",
+            "label": "Conda Environment",
+            "source": "conda.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
           {
             "slug": "pip",
             "label": "Python Packages",
             "source": "pip.md"
           },
           {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "docker.md"
+            "slug": "requirements",
+            "label": "Requirements",
+            "source": "requirements.md"
+          },
+          {
+            "slug": "venv",
+            "label": "Virtual Environment",
+            "source": "venv.md"
           }
         ]
       },
@@ -453,14 +468,24 @@
         "source": "build/index.md",
         "children": [
           {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
             "slug": "pip",
             "label": "Python package",
             "source": "pip.md"
           },
           {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "docker.md"
+            "slug": "requirements",
+            "label": "Requirements",
+            "source": "requirements.md"
+          },
+          {
+            "slug": "venv",
+            "label": "Virtual Environment",
+            "source": "venv.md"
           }
         ]
       },

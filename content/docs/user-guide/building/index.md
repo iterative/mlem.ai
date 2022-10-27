@@ -1,8 +1,10 @@
-# Exporting models (building)
+# Building models
 
 Building is a way to “bake” your model into something usable in production like
-a Docker image, or export your model into another format. You can see the full
-list of available builders [here](/doc/object-reference/build).
+a Docker image, or export your model into another format or even export the
+underlying requirements and dependencies of the model, allowing one to create
+virtual environments out of it. You can see the full list of available builders
+[here](/doc/object-reference/build).
 
 To build your MLEM model you need to use either
 [CLI](/doc/command-reference/build) or [API](/doc/api-reference/build) `build`
