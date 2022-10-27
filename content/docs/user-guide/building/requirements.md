@@ -115,11 +115,11 @@ def f(txt):
     print(txt)
 ```
 
-## File requirements
+<!-- ## File requirements
 
 File requirements represent additional files. They cannot be determined
 automatically as of now. However, file requirements always need the `--target`
-option.
+option. -->
 
 ## Conda requirements
 
