@@ -1,10 +1,10 @@
 # Extending
 
 MLEM can be extended to support more model types, data types, servers, builders
-and basically everything listed [here](/doc/user-guide/mlem-abcs). Most of the
-builtin implementations are also extensions located in `mlem.contrib` package.
-It allows MLEM to not load their code if it is not used, which is especially
-cool because it means their requirements are optional.
+and basically everything listed [here](/doc/object-reference/mlem-abcs). Most of
+the builtin implementations are also extensions located in `mlem.contrib`
+package. It allows MLEM to not load their code if it is not used, which is
+especially cool because it means their requirements are optional.
 
 ## Implementing MlemABC
 
@@ -80,7 +80,7 @@ that you can subclass `MlemConfig` class and list your options there just like
 any `pydantic`
 [BaseSettings](https://pydantic-docs.helpmanual.io/usage/settings/) class. In
 the inner `Config` class you should set `section` option, and after that values
-for your configuration will be loaded from `.mlem/config.yaml` from
-corresponding section. See
+for your configuration will be loaded from `.mlem.yaml` from corresponding
+section. See
 [`PandasConfig`](https://github.com/iterative/mlem/blob/main/mlem/contrib/pandas.py)
 for example

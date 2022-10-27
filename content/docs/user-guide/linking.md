@@ -8,8 +8,7 @@ anywhere you need to specify MLEM Object bot in API and CLI.
 <admon type="tip">
 
 Since links are also a type of MLEM Object, they share the same internal logic.
-For example, they are saved under the `.mlem/link` directory. To load an
-instance of `MlemLink` (and not the object it references) provide
+To load an instance of `MlemLink` (and not the object it references) provide
 `follow_links=False` to `load_meta` method.
 
 </admon>

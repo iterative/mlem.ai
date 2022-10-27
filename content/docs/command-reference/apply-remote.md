@@ -1,17 +1,21 @@
 # apply-remote
 
 Apply a deployed-model (possibly remotely) to data. The results will be saved as
-a MLEM object to `output` if provided. Otherwise, it will be printed to
-`stdout`.
+a [MLEM Object](/doc/user-guide/basic-concepts) to `output` if provided.
+Otherwise, it will be printed to `stdout`.
 
 ## Synopsis
 
 ```usage
-usage: mlem apply-remote [options] [subtype] data
+usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>]
+                         [-o <path>] [--tp <path>] [-m <text>]
+                         [--json] [-f <text>] [-h]
+                         [<client> [client options] | --load <declaration>]
 
-arguments:
-[SUBTYPE]  Type of client. Choices: ['http', 'rmq']
-DATA       Path to dataset object  [required]
+Builtin clients:
+- http
+- rmq
+- sagemaker
 ```
 
 ## Description
@@ -27,18 +31,18 @@ clients are `http` and `rmq` - which are used to launch requests against the
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `-o, --output TEXT`: Where to store the outputs.
-- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
-- `-m, --method TEXT`: Which model method is to be applied [default: predict]
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `--json`: Output as json
-- `-l, --load TEXT`: File to load client config from
-- `-c, --conf TEXT`: Options for client in format `field.name=value`
-- `-f, --file_conf TEXT`: File with options for client in format
+- `-d <path>`, `--data <path>` - Path to MLEM dataset [required]
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-o <path>`, `--output <path>` - Where to save model outputs
+- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
+  (none)]
+- `-m <text>`, `--method <text>` - Which model method is to be applied [default:
+  predict]
+- `--json` - Output as json
+- `-f <text>`, `--file_conf <text>` - File with options for client in format
   `field.name=path_to_config`
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Example: Apply a locally hosted model to a local dataset
 
@@ -48,5 +52,5 @@ this) and a local MLEM dataset `mydataset`, run the following command to infer
 the entire dataset with the model and save the output result to `myprediction`
 
 ```cli
-$ mlem apply-remote http mydataset --conf host="127.0.0.1" --conf port=3000 --output myprediction
+$ mlem apply-remote http mydataset --host="127.0.0.1" --port=3000 --output myprediction
 ```

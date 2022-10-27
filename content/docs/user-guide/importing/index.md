@@ -13,4 +13,4 @@ have a live Python object to analyze and tries to recreate it, which may fail.
 </admon>
 
 You can see list of available import implementations
-[here](/doc/user-guide/mlem-abcs#importhook).
+[here](/doc/object-reference/mlem-abcs#importhook).

@@ -4,18 +4,20 @@ You can create deployments in the cloud from your models. This uses building and
 serving functions under the hood. For example, Heroku deployment combines Docker
 image building with FastAPI serving.
 
-<admon type="warn">
+MLEM can deploy to platforms such as
+[Sagemaker](/doc/user-guide/deploying/sagemaker) and
+[Kubernetes](/doc/user-guide/deploying/kubernetes) (see the full list in
+[User Guide](/doc/user-guide/deploying)). For the Get Started, we'll use Heroku
+as the example.
 
-This functionality is experimental and is subject to change.
+## Deploying to Heroku
 
-</admon>
+To create applications on Heroku platform all you need is Heroku API key.
 
-## Defining target environment
-
-To deploy something somewhere, we need to define this “somewhere” first, or in
-MLEM terms, declare a `target environment` object. It will contain all the
-information needed to access it. In the case of Heroku, all we need is an API
-key.
+You can either set `HEROKU_API_KEY` environment variable or use
+[Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to run
+`heroku login`. To allow MLEM to push the Docker image built to Heroku Docker
+Registry, you'll also need to execute `heroku container:login`.
 
 <details>
 
@@ -28,164 +30,68 @@ key.
 
 </details>
 
-To declare a new target env, run
+After we authorized in Heroku, we can run the deployment command:
 
-```cli
-$ mlem declare env heroku staging -c api_key=<you api key>
-💾 Saving env to .mlem/env/staging.mlem
 ```
-
-<admon type="tip">
-
-MLEM will attempt to use the `HEROKU_API_KEY` environment variable if no
-`api_key` argument is provided.
-
-</admon>
-
-## Defining deployment
-
-Now, as we defined our target env, we can deploy our model there. Deployments
-are also MLEM objects, which means that they need to have their definition.
-
-To create one for Heroku, we once again will use `declare` command to configure
-our deployment. We use `example-mlem-get-started-app` for the app name, but you
-can change it to something unique:
-
-```cli
-$ mlem declare deployment heroku myservice \
-                         -c app_name=example-mlem-get-started-app \
-                         -c model=rf \
-                         -c env=staging
-💾 Saving deployment to .mlem/deployment/myservice.mlem
-```
-
-<details>
-
-### ⛳ [Create deployment definition](https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta)
-
-```cli
-$ git add .mlem/env/staging.mlem .mlem/deployment/myservice.mlem
-$ git commit -m "Add env and deploy meta"
-$ git diff 5-deploy-meta
-```
-
-</details>
-
-Now we can actually run the deployment process (this can take a while):
-
-```cli
-$ mlem deployment run myservice
-⏳️ Loading deployment from .mlem/deployment/myservice.mlem
-🔗 Loading link to .mlem/env/staging.mlem
-🔗 Loading link to .mlem/model/rf.mlem
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-🏛 Creating Heroku App example-mlem-get-started-app
-💾 Updating deployment at .mlem/deployment/myservice.mlem
+$ mlem deployment run heroku app.mlem \
+  --model models/rf \
+  --app_name example-mlem-get-started-app
+⏳️ Loading model from models/rf.mlem
+⏳️ Loading deployment from app.mlem
 🛠 Creating docker image for heroku
+  🛠 Building MLEM wheel file...
   💼 Adding model files...
   🛠 Generating dockerfile...
   💼 Adding sources...
   💼 Generating requirements file...
   🛠 Building docker image registry.heroku.com/example-mlem-get-started-app/web...
   ✅  Built docker image registry.heroku.com/example-mlem-get-started-app/web
-  🔼 Pushed image registry.heroku.com/example-mlem-get-started-app/web to remote registry at host registry.heroku.com
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-🛠 Releasing app my-mlem-service formation
-💾 Updating deployment at .mlem/deployment/myservice.mlem
+  🔼 Pushing image registry.heroku.com/example-mlem-get-started-app/web to registry.heroku.com
+  ✅  Pushed image registry.heroku.com/example-mlem-get-started-app/web to registry.heroku.com
+🛠 Releasing app example-mlem-get-started-app formation
 ✅  Service example-mlem-get-started-app is up. You can check it out at https://example-mlem-get-started-app.herokuapp.com/
 ```
 
-<admon type="tip">
-
-You can also define and run the deployment on-the-fly using `-c` options for
-`mlem deployment run`, e.g.:
-
-```cli
-$ mlem deployment run myservice \
-                     -m model -t staging \
-                     -c app_name=example-mlem-get-started-app
-```
-
-</admon>
+Deployment specification (we call it
+[declaration](/doc/command-reference/declare)) was saved to `app.mlem`. Using
+it, you can re-deploy the same app with a different model.
 
 <details>
 
-### ⛳ [Service deployed](https://github.com/iterative/example-mlem-get-started/tree/8-deploy-create)
+### See app.mlem contents
 
-```cli
-$ git add .mlem/deployment/myservice.mlem
-$ git commit -m "Deploy service"
-$ git diff 8-deploy-service
+```yaml
+$ cat app.mlem
+app_name: example-mlem-get-started-app
+object_type: deployment
+type: heroku
 ```
 
 </details>
+
+Beside `app.mlem`, there is one more file that was saved: `app.mlem.state`. It
+contains the information about the deployment we just created, including which
+MLEM model we used, the URL of the deployment and other useful information. You
+can learn more about state files in [User Guide](/doc/user-guide/deploying).
 
 ## Making requests
 
 The application is now live on Heroku. You can go
 [here](http://example-mlem-get-started-app.herokuapp.com) and see the same
-OpenAPI documentation. For details on it, refer to the **Serving** section. You
-can also try to do some requests:
+OpenAPI documentation. To learn how to easily send requests to your model with
+MLEM, refer to the [User Guide](/doc/user-guide/deploying).
 
-```py
-from mlem.api import load
-from mlem.runtime.client.base import HTTPClient
+## What's next?
 
-client = HTTPClient(host="http://example-mlem-get-started-app.herokuapp.com", port=80)
-res = client.predict(load("test_x.csv"))
-```
+That's it! Thanks for checking out the tool. If you have any questions or
+suggestions for us, please reach us out in
+[Discord](https://discord.com/channels/485586884165107732/903647230655881226) or
+create a new [GitHub issue](https://github.com/iterative/mlem/issues) in our
+repo 🙌.
 
-Also, you can create a client using deployment meta object:
+If you would like to destroy the deployment now, you can find the instructions
+[here](/doc/user-guide/deploying).
 
-```py
-from mlem.api import load
-
-service = load("myservice")
-client = service.state.get_client()
-res = client.predict(load("test_x.csv"))
-```
-
-There is also the remote counterpart of `apply` command. It will send requests
-to your service instead of loading model into memory. There are two options to
-achieve this in CLI: using the service address or the deploy meta.
-
-```cli
-$ mlem apply-remote http test_x.csv -c host=http://example-mlem-get-started-app.herokuapp.com -c port=80 --json
-[1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
-
-$ mlem deployment apply myservice test_x.csv --json
-[1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
-```
-
-<admon type="tip">
-
-You don’t even need to have the deployment metadata locally:
-
-```cli
-$ mlem deployment apply --json \
-  https://github.com/iterative/example-mlem-get-started/myservice \
-  https://github.com/iterative/example-mlem-get-started/test_x.csv
-```
-
-</admon>
-
-## Managing deployment
-
-Finally, you can check the status of your service with:
-
-```cli
-$ mlem deployment status myservice
-running
-```
-
-And stop your service with
-
-```cli
-$ mlem deployment remove myservice
-⏳️ Loading deployment from .mlem/deployment/myservice.mlem
-🔗 Loading link to .mlem/env/staging.mlem
-🔻 Deleting my-mlem-service heroku app
-💾 Updating deployment at .mlem/deployment/myservice.mlem
-```
-
-Note, that it will not delete the deployment definition, just update its state.
+Please proceed to [Use Cases](/doc/use-cases) if you want to see high-level
+scenarios MLEM can cover, or go to [User Guide](/doc/user-guide) to see more
+details or short tutorials on how to use specific features of MLEM.

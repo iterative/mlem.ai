@@ -1,15 +1,18 @@
 # import
 
-Create a `.mlem` metafile for a model or data in any file or directory.
+Create a `.mlem` [MLEM Object](/doc/user-guide/basic-concepts) for a model or
+data in any file or directory.
 
 ## Synopsis
 
 ```usage
-usage: mlem import [options] uri target
+usage: mlem import [-p <path>] [--rev <commitish>]
+                   [--tp <path>] [--copy] [--type <text>] [-h]
+                   uri target
 
 arguments:
-URI     File to import  [required]
-TARGET  Path to save MLEM object  [required]
+  uri              File to import
+  target           Path to save MLEM object
 ```
 
 ## Description
@@ -24,16 +27,15 @@ load those models/datasets into object for subsequent usage in MLEM context.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
-- `--copy / --no-copy`: Whether to create a copy of file in target location or
-  just link existing file [default: copy]
-- `--type TEXT`: Specify how to read file Available types: ['pandas', 'pickle']
-  [default: (auto infer)]
-- `--index / --no-index`: Whether to index output in .mlem directory
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `-h, --help`: Show this message and exit.
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
+  (none)]
+- `--copy` / `--no-copy` - Whether to create a copy of file in target location
+  or just link existing file [default: copy]
+- `--type <text>` - Specify how to read file Available types: ['pandas',
+  'pickle', 'torch'] [default: (auto infer)]
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 
@@ -54,6 +56,10 @@ $ mlem import data/model.pkl data/imported_model
 Create a MLEM model from remote `.pkl` (pickle) file
 
 ```cli
-$ mlem import .mlem/model/rf --project https://github.com/iterative/example-mlem-get-started --rev main data/imported_model --type pickle
-💾 Saving model to .mlem/model/data/imported_model.mlem
+$ mlem import models/rf \
+    --project https://github.com/iterative/example-mlem-get-started \
+    --rev main \
+    data/imported_model \
+    --type pickle
+💾 Saving model to data/imported_model.mlem
 ```

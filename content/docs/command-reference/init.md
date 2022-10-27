@@ -1,38 +1,27 @@
 # init
 
-Initialize a MLEM project.
+Initialize a [MLEM project](/doc/user-guide/project-structure).
 
 ## Synopsis
 
 ```usage
-usage: mlem init [options] [path]
+usage: mlem init [-h]
+                 path
 
 arguments:
-[path]      Location (file path or URL) to initialize a MLEM project
+  path             Where to init project
 ```
 
 ## Description
 
-This creates a `.mlem/` directory and an empty `config.yaml` file in the desired
-project `path`, which defaults to the current working directory (`.`).
-
-The existence of a valid `.mlem/` directory in any location (including [remote])
-enables all of MLEM's functions. Specifically, it allows for storing references
-to MLEM objects found in the project (required by `mlem list`) as well as to
-[integrate with DVC](/doc/use-cases/dvc).
-
-<admon type="tip">
-
-We recommend initializing MLEM projects inside Git repositories to track changes
-and manage them using standard Git workflows.
-
-</admon>
-
-[remote]: /doc/user-guide/remote-objects
+This creates a `.mlem.yaml` file in the desired project `path`, which defaults
+to the current working directory (`.`). `.mlem.yaml` is a config file that
+configures MLEM project, including the
+[integration with DVC](/doc/user-guide/dvc).
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 
