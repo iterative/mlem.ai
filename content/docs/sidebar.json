@@ -256,6 +256,11 @@
             "slug": "remove",
             "label": "deployment remove",
             "source": "remove.md"
+          },
+          {
+            "slug": "wait",
+            "label": "deployment wait",
+            "source": "wait.md"
           }
         ]
       },
