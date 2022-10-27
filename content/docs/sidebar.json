@@ -203,24 +203,29 @@
     "source": "command-reference/index.md",
     "children": [
       {
-        "slug": "init",
-        "label": "init",
-        "source": "init.md"
+        "slug": "apply",
+        "label": "apply",
+        "source": "apply.md"
       },
       {
-        "slug": "pprint",
-        "label": "pprint",
-        "source": "pprint.md"
+        "slug": "apply-remote",
+        "label": "apply-remote",
+        "source": "apply-remote.md"
+      },
+      {
+        "slug": "build",
+        "label": "build",
+        "source": "build.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone",
+        "source": "clone.md"
       },
       {
         "slug": "declare",
         "label": "declare",
         "source": "declare.md"
-      },
-      {
-        "slug": "serve",
-        "label": "serve",
-        "source": "serve.md"
       },
       {
         "slug": "deployment",
@@ -250,9 +255,14 @@
         ]
       },
       {
-        "slug": "types",
-        "label": "types",
-        "source": "types.md"
+        "slug": "import",
+        "label": "import",
+        "source": "import.md"
+      },
+      {
+        "slug": "init",
+        "label": "init",
+        "source": "init.md"
       },
       {
         "slug": "link",
@@ -260,29 +270,19 @@
         "source": "link.md"
       },
       {
-        "slug": "clone",
-        "label": "clone",
-        "source": "clone.md"
+        "slug": "pprint",
+        "label": "pprint",
+        "source": "pprint.md"
       },
       {
-        "slug": "import",
-        "label": "import",
-        "source": "import.md"
+        "slug": "serve",
+        "label": "serve",
+        "source": "serve.md"
       },
       {
-        "slug": "build",
-        "label": "build",
-        "source": "build.md"
-      },
-      {
-        "slug": "apply",
-        "label": "apply",
-        "source": "apply.md"
-      },
-      {
-        "slug": "apply-remote",
-        "label": "apply-remote",
-        "source": "apply-remote.md"
+        "slug": "types",
+        "label": "types",
+        "source": "types.md"
       }
     ]
   },
@@ -291,41 +291,6 @@
     "label": "Python API Reference",
     "source": "api-reference/index.md",
     "children": [
-      {
-        "slug": "init",
-        "label": "init()",
-        "source": "init.md"
-      },
-      {
-        "slug": "save",
-        "label": "save()",
-        "source": "save.md"
-      },
-      {
-        "slug": "load",
-        "label": "load()",
-        "source": "load.md"
-      },
-      {
-        "slug": "load_meta",
-        "label": "load_meta()",
-        "source": "load_meta.md"
-      },
-      {
-        "slug": "import_object",
-        "label": "import_object()",
-        "source": "import_object.md"
-      },
-      {
-        "slug": "link",
-        "label": "link()",
-        "source": "link.md"
-      },
-      {
-        "slug": "clone",
-        "label": "clone()",
-        "source": "clone.md"
-      },
       {
         "slug": "apply",
         "label": "apply()",
@@ -342,14 +307,49 @@
         "source": "build.md"
       },
       {
-        "slug": "serve",
-        "label": "serve()",
-        "source": "serve.md"
+        "slug": "clone",
+        "label": "clone()",
+        "source": "clone.md"
       },
       {
         "slug": "deploy",
         "label": "deploy()",
         "source": "deploy.md"
+      },
+      {
+        "slug": "import_object",
+        "label": "import_object()",
+        "source": "import_object.md"
+      },
+      {
+        "slug": "init",
+        "label": "init()",
+        "source": "init.md"
+      },
+      {
+        "slug": "link",
+        "label": "link()",
+        "source": "link.md"
+      },
+      {
+        "slug": "load",
+        "label": "load()",
+        "source": "load.md"
+      },
+      {
+        "slug": "load_meta",
+        "label": "load_meta()",
+        "source": "load_meta.md"
+      },
+      {
+        "slug": "save",
+        "label": "save()",
+        "source": "save.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve()",
+        "source": "serve.md"
       }
     ]
   },
