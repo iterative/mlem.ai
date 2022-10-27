@@ -218,6 +218,11 @@
         "source": "build.md"
       },
       {
+        "slug": "checkenv",
+        "label": "checkenv",
+        "source": "checkenv.md"
+      },
+      {
         "slug": "clone",
         "label": "clone",
         "source": "clone.md"
