@@ -26,24 +26,7 @@ We need to give some example repo with links here and instead move everything be
 Let's build an example using
 [repository from Get Started](https://github.com/iterative/example-mlem-get-started).
 
-That repo already have some models in it:
-
-```cli
-$ mlem ls https://github.com/iterative/example-mlem-get-started
-```
-
-```yaml
-Builders:
-  - pip_config
-Deployments:
-  - myservice
-Envs:
-  - staging
-Models:
-  - rf
-Data:
-  - iris.csv
-```
+That repo already have a `models/rf` model in it.
 
 Let's create new repo first:
 
@@ -57,41 +40,29 @@ $ mlem init
 Let's create some links to them:
 
 ```cli
-$ mlem link --sp https://github.com/iterative/example-mlem-get-started rf first-model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
-💾 Saving link to .mlem/link/first-model.mlem
+$ mlem link --sp https://github.com/iterative/example-mlem-get-started models/rf first-model
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+💾 Saving link to first-model.mlem
 
-$ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev 5-deploy-meta rf second-model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta/.mlem/model/rf.mlem
-💾 Saving link to .mlem/link/second-model.mlem
+$ mlem link --sp https://github.com/iterative/example-mlem-get-started --rev 5-deploy-meta models/rf second-model
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/5-deploy-meta/models/rf.mlem
+💾 Saving link to second-model.mlem
 ```
 
-We've just linked two models from the other repo. You can see both if you run:
+We've just linked two models from the other repo. Let's check out each link:
 
 ```cli
-$ mlem ls
-```
-
-```yaml
-Models:
-  - first-model -> .mlem/model/rf
-  - second-model -> .mlem/model/rf
-```
-
-Let's check out each link:
-
-```cli
-$ cat .mlem/link/first-model.mlem
+$ cat first-model.mlem
 link_type: model
 object_type: link
-path: .mlem/model/rf.mlem
+path: models/rf.mlem
 repo: https://github.com/iterative/example-mlem-get-started/
 rev: main
 
-$ cat .mlem/link/second-model.mlem
+$ cat second-model.mlem
 link_type: model
 object_type: link
-path: .mlem/model/rf.mlem
+path: models/rf.mlem
 repo: https://github.com/iterative/example-mlem-get-started/
 rev: 7-deploy-meta
 ```
@@ -99,6 +70,6 @@ rev: 7-deploy-meta
 Now you can commit those links, push the repo and use it as a model registry:
 
 ```cli
-$ git add .mlem/link/first-model.mlem .mlem/link/second-model.mlem
+$ git add first-model.mlem second-model.mlem
 $ git commit -m "Add links to models"
 ```

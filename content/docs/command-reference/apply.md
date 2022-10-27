@@ -1,15 +1,16 @@
 # apply
 
-Apply a model to data. The result will be saved as a MLEM object to `output` if
-provided. Otherwise, it will be printed to `stdout`.
+Apply a model to data. The result will be saved as a
+[MLEM Object](/doc/user-guide/basic-concepts) to `output` if provided.
+Otherwise, it will be printed to `stdout`.
 
 ## Synopsis
 
 ```usage
 usage: mlem apply [-p <path>] [--rev <commitish>] [-o <path>]
-                  [-m <text>] [--dr <path>]
-                  [--data-rev <commitish>] [-i] [--it <text>]
-                  [-b <integer>] [--index] [-e] [--json] [-h]
+                  [-m <text>] [--dp <path>] [--dr <commitish>]
+                  [-i] [--it <text>] [-b <integer>] [--json]
+                  [-h]
                   model data
 
 arguments:
@@ -38,15 +39,13 @@ datasets.
 - `-o <path>`, `--output <path>` - Where to save model outputs
 - `-m <text>`, `--method <text>` - Which model method is to be applied [default:
   predict]
-- `--dr <path>`, `--data-project <path>` - Project with data
-- `--data-rev <commitish>` - Revision of data
+- `--dp <path>`, `--data-project <path>` - Project with data
+- `--dr <commitish>`, `--data-rev <commitish>` - Revision of data
 - `-i`, `--import` - Try to import data on-the-fly
 - `--it <text>`, `--import-type <text>` - Specify how to read data file for
   import. Available types: ['pandas', 'pickle', 'torch']
 - `-b <integer>`, `--batch_size <integer>` - Batch size for reading data in
   batches
-- `--index` / `--no-index` - Whether to index output in .mlem directory
-- `-e`, `--external` - Save result not in .mlem, but directly in project
 - `--json` - Output as json
 - `-h`, `--help` - Show this message and exit.
 

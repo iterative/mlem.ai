@@ -1,6 +1,6 @@
 # mlem.api.apply_remote()
 
-Apply deployed model (possibly remote) against provided data.
+Apply provided model against provided data.
 
 ```py
 def apply_remote(
@@ -9,7 +9,6 @@ def apply_remote(
     method: str = None,
     output: str = None,
     target_project: str = None,
-    index: bool = False,
     **client_kwargs,
 ) -> Optional[Any]
 ```
@@ -34,14 +33,16 @@ knows how to make requests to the deployed model.
 
 - **`client`** (required) - The client to access methods of deployed model.
 - **`data`** (required) - Input to the model.
-- `method` (optional) - Which model method to use. If None, use the only method
-  model has. If more than one is available, will fail.
-- `output` (optional) - If value is provided, assume its path and save output
+- **`method`** (required) - Which model method to use.If None, use the only
+  method model has.If more than one is available, will fail.
+- `output` (optional) - If value is provided,assume it's path and save output
   there.
-- `target_project` (optional) - The path to project to save the results to.
-- `index` (optional) - Whether to index saved output in MLEM root folder.
-- `client_kwargs` (optional) - Keyword arguments for the underlying client
-  implementation being used.
+- `target_project` (optional) - Path to MLEM project to save the result to.
+- `**client_kwargs` (optional) - Additional arguments to pass to client.
+
+## Returns
+
+If `output=None`, returns results for given data. Otherwise returns None.
 
 ## Exceptions
 

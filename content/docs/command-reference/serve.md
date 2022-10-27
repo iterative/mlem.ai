@@ -38,21 +38,7 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
   `field.name=path_to_config`
 - `-h`, `--help` - Show this message and exit.
 
-## Example: FastAPI HTTP server
+## Examples
 
-Easily serve a model from a remote GitHub repository on a local FastAPI HTTP
-server
-
-```cli
-$ mlem serve https://github.com/iterative/example-mlem-get-started/rf fastapi --conf port=3000
-Starting fastapi server...
-🖇️ Adding route for /predict
-🖇️ Adding route for /predict_proba
-🖇️ Adding route for /sklearn_predict
-🖇️ Adding route for /sklearn_predict_proba
-Checkout openapi docs at <http://0.0.0.0:3000/docs>
-INFO:     Started server process [6083]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)
-```
+For examples, please refer to [Get Started](/doc/get-started/serving) or
+[User Guide](/doc/user-guide/serving).

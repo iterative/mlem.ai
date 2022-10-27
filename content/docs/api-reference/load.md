@@ -1,6 +1,6 @@
 # mlem.api.load()
 
-Load Python object saved by MLEM
+Load python object saved by MLEM.
 
 ```py
 def load(
@@ -31,11 +31,15 @@ MLEM.
 ## Parameters
 
 - **`path`** (required) - Path to the object. Could be local path or path inside
-  a Git repo.
+  a git repo.
 - `project` (optional) - URL to project if object is located there.
-- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
 - `follow_links` (optional) - If object we read is a MLEM link, whether to load
-  the actual object link points to. Defaults to True.
+  theactual object link points to. Defaults to True.
+
+## Returns
+
+`Any`: Python object saved by MLEM
 
 ## Exceptions
 

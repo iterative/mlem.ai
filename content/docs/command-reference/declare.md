@@ -1,7 +1,7 @@
 # declare
 
-Declares a new [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects)
-metafile from config args and config files.
+Declares a new [MLEM Object](/doc/user-guide/basic-concepts)
+[MLEM Object](/doc/user-guide/basic-concepts) from config args and config files.
 
 ## Synopsis
 
@@ -45,10 +45,10 @@ $ mlem types env heroku
 
 # Declare the heroku env
 $ mlem declare env heroku production --api_key mlem_heroku_staging
-💾 Saving env to .mlem/env/staging.mlem
+💾 Saving env to staging.mlem
 
 # Print the contents of the new heroku env metafile
-$ cat .mlem/env/staging.mlem
+$ cat staging.mlem
 api_key: mlem_heroku_staging
 object_type: env
 type: heroku

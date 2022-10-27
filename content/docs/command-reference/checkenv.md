@@ -1,6 +1,6 @@
 # checkenv
 
-Check that current environment satisfies object requrements
+Check that current Python environment satisfies object requirements.
 
 ## Synopsis
 
@@ -19,3 +19,9 @@ arguments:
 - `-h`, `--help` - Show this message and exit.
 
 ## Examples
+
+```cli
+$ mlem checkenv rf
+⏳️ Loading meta from rf.mlem
+✅  Requirements are satisfied!
+```

@@ -9,11 +9,11 @@ usage: mlem deployment [-h]
                        command
 
 subcommands:
-  run              Deploy a model to a target environment.
   remove           Stop and destroy deployed instance.
   status           Print status of deployed service.
   wait             Wait for status of deployed service
   apply            Apply a deployed model to data.
+  run              Deploy a model to a target environment.
 ```
 
 ## Description
@@ -36,4 +36,9 @@ of bulk inferring data on the served model.
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
+
+## Examples
+
+For examples, please refer to [Get Started](/doc/get-started/deploying) or
+[User Guide](/doc/user-guide/deploying).

@@ -1,8 +1,7 @@
 # mlem.api.build()
 
-Build a [MLEM model](/doc/user-guide/mlem-abcs#modeltype) in pip-ready format, a
-built package using whl, docker-build-ready folder or directly build a docker
-image.
+Pack model into something useful, such as docker image, Python package or
+something else.
 
 ```py
 def build(
@@ -27,33 +26,56 @@ This API is the underlying mechanism for the
 programmatically create ship-able assets from MlemModels such as pip-ready
 packages, Docker images, etc.
 
-<admon type="tip">
+<details>
 
-The arguments supplied to this method can be found with `mlem types`:
+### The arguments supplied to this method can be found with `mlem types` command
 
 ```cli
 $ mlem types builder pip
+Type mlem.contrib.pip.base.PipBuilder
+MlemABC parent type: builder
+MlemABC type: pip
+MlemObject type name: builder
+Create a directory python package
+Fields:
 [required] package_name: str
+        Name of python package
 [required] target: str
-[not required] templates_dir: str = []
+        Path to save result
+[not required] templates_dir: List[str] = []
+        list of directories to look for jinja templates
+[not required] templates_dir.0: str = None
+        Element of templates_dir
 [not required] python_version: str = None
+        Required python version
 [not required] short_description: str = ""
+        short_description
 [not required] url: str = ""
+        url
 [not required] email: str = ""
+        author's email
 [not required] author: str = ""
+        author's name
 [not required] version: str = "0.0.0"
-[not required] additional_setup_kwargs: typing.Any = {}
+        package version
+[not required] additional_setup_kwargs: Dict[str, any] = {}
+        additional parameters for setup()
+[not required] additional_setup_kwargs.key: any = None
+        Element of additional_setup_kwargs
 ```
 
-</admon>
+</details>
 
 ## Parameters
 
-- **`builder`** (required) - Builder to use. Out-of-the-box supported string
-  values are ['whl', 'pip', 'docker_dir', 'docker'].
+- **`builder`** (required) - Builder to use.
 - **`model`** (required) - The model to build.
-- `builder_kwargs` (optional) - Keyword arguments for the underlying builder
-  being used.
+- **`builder_kwargs`** (required) - Additional keyword arguments to pass to the
+  builder.
+
+## Returns
+
+The result of the build, different for different builders.
 
 ## Exceptions
 

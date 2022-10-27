@@ -1,15 +1,15 @@
 # apply-remote
 
 Apply a deployed-model (possibly remotely) to data. The results will be saved as
-a MLEM object to `output` if provided. Otherwise, it will be printed to
-`stdout`.
+a [MLEM Object](/doc/user-guide/basic-concepts) to `output` if provided.
+Otherwise, it will be printed to `stdout`.
 
 ## Synopsis
 
 ```usage
 usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>]
                          [-o <path>] [--tp <path>] [-m <text>]
-                         [--index] [--json] [-f <text>] [-h]
+                         [--json] [-f <text>] [-h]
                          [<client> [client options] | --load <declaration>]
 
 Builtin clients:
@@ -39,7 +39,6 @@ clients are `http` and `rmq` - which are used to launch requests against the
   (none)]
 - `-m <text>`, `--method <text>` - Which model method is to be applied [default:
   predict]
-- `--index` / `--no-index` - Whether to index output in .mlem directory
 - `--json` - Output as json
 - `-f <text>`, `--file_conf <text>` - File with options for client in format
   `field.name=path_to_config`
@@ -53,5 +52,5 @@ this) and a local MLEM dataset `mydataset`, run the following command to infer
 the entire dataset with the model and save the output result to `myprediction`
 
 ```cli
-$ mlem apply-remote http mydataset --conf host="127.0.0.1" --conf port=3000 --output myprediction
+$ mlem apply-remote http mydataset --host="127.0.0.1" --port=3000 --output myprediction
 ```

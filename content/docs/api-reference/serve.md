@@ -4,9 +4,7 @@ Serve a model by exposing its methods as endpoints.
 
 ```py
 def serve(
-    model: MlemModel,
-    server: Union[Server, str],
-    **server_kwargs
+    model: Union[str, MlemModel], server: Union[Server, str], **server_kwargs
 )
 ```
 
@@ -27,11 +25,13 @@ easily make requests (for inference or otherwise) against the served model.
 
 ## Parameters
 
-- **`model`** (required) - The model (a MlemModel object) to serve.
-- **`server`** (required) - Which server implementation to use. Out-of-the-box
-  supported ones are ['fastapi', 'rmq', 'heroku']
-- `server_kwargs` (optional) - Keyword arguments for the underlying server
-  implementation being used.
+- **`model`** (required) - The model to serve.
+- **`server`** (required) - Out-of-the-box supported one is "fastapi".
+- **`server_kwargs`** (required) - Additional kwargs to pass to the server.
+
+## Returns
+
+None
 
 ## Exceptions
 

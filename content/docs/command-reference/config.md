@@ -1,6 +1,7 @@
 # config
 
-Manipulate MLEM configuration.
+Manipulate
+[[MLEM config](/doc/user-guide/configuration)](/doc/user-guide/configuration).
 
 ## Synopsys
 

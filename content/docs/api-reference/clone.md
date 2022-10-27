@@ -1,7 +1,7 @@
 # mlem.api.clone()
 
-Clones MLEM object from `path` to `target` and returns Python representation for
-the created object.
+Clones [MLEM Object](/doc/user-guide/basic-concepts) from `path` to `out` and
+returns Python representation for the created object.
 
 ```py
 def clone(
@@ -14,8 +14,6 @@ def clone(
     target_fs: Optional[str] = None,
     follow_links: bool = True,
     load_value: bool = False,
-    index: bool = None,
-    external: bool = None,
 ) -> MlemObject
 ```
 
@@ -37,20 +35,21 @@ target.
 ## Parameters
 
 - **`path`** (required) - Path to the object. Could be local path or path inside
-  a Git repo.
+  a git repo.
 - **`target`** (required) - Path to save the copy of initial object to.
 - `project` (optional) - URL to project if object is located there.
-- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
+- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
 - `fs` (optional) - filesystem to load object from
 - `target_project` (optional) - path to project to save cloned object to
 - `target_fs` (optional) - target filesystem
-- `follow_links` (optional) - If object we read is a MLEM link, whether to load
-  the actual object link points to. Defaults to True.
-- `load_value` (optional) - Load actual Python object incorporated in MlemMeta
-  object. Defaults to False.
-- `index` (optional) - Whether to index output in .mlem directory
-- `external` (optional) - whether to put object inside mlem dir in target
-  project
+- `follow_links` (optional) - If object we read is a MLEM link, whether to
+  loadthe actual object link points to. Defaults to True.
+- `load_value` (optional) - Load actual python object incorporated in
+  MlemObject. Defaults to False.
+
+## Returns
+
+`MlemObject`: Copy of initial object saved to `out`.
 
 ## Exceptions
 

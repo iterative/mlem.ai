@@ -16,24 +16,19 @@
     "source": "get-started/index.md",
     "children": [
       {
-        "slug": "saving",
-        "label": "Saving models",
-        "source": "saving.md"
-      },
-      {
         "slug": "applying",
         "label": "Applying models",
         "source": "applying.md"
       },
       {
-        "slug": "building",
-        "label": "Exporting models (building)",
-        "source": "building.md"
-      },
-      {
         "slug": "serving",
         "label": "Serving models",
         "source": "serving.md"
+      },
+      {
+        "slug": "building",
+        "label": "Building models",
+        "source": "building.md"
       },
       {
         "slug": "deploying",
@@ -48,24 +43,21 @@
     "source": "use-cases/index.md",
     "children": [
       {
-        "slug": "dvc",
-        "label": "Versioning MLEM objects with DVC",
-        "source": "dvc.md"
-      },
-      {
-        "slug": "mlem-mr",
-        "label": "Pure Mlem Model Registry",
-        "source": "mlem-mr.md"
-      },
-      {
         "slug": "cicd",
-        "label": "Using in CI/CD",
+        "label": "Deploying and publishing models in CI/CD",
         "source": "cicd.md"
       },
       {
         "slug": "model-registry",
         "label": "Model Registry",
-        "source": "model-registry.md"
+        "source": "model-registry/index.md",
+        "children": [
+          {
+            "slug": "mlem-mr",
+            "label": "Pure Mlem Model Registry",
+            "source": "mlem-mr.md"
+          }
+        ]
       }
     ]
   },
@@ -80,19 +72,107 @@
         "source": "basic-concepts.md"
       },
       {
+        "slug": "models",
+        "label": "Working with models",
+        "source": "models/index.md",
+        "children": []
+      },
+      {
+        "slug": "serving",
+        "label": "Serving models",
+        "source": "serving/index.md",
+        "children": [
+          {
+            "slug": "fastapi",
+            "label": "FastAPI",
+            "source": "fastapi.md"
+          },
+          {
+            "slug": "rabbitmq",
+            "label": "RabbitMQ",
+            "source": "rabbitmq.md"
+          }
+        ]
+      },
+      {
+        "slug": "building",
+        "label": "Building models",
+        "source": "building/index.md",
+        "children": [
+          {
+            "slug": "conda",
+            "label": "Conda Environment",
+            "source": "conda.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
+            "slug": "pip",
+            "label": "Python Packages",
+            "source": "pip.md"
+          },
+          {
+            "slug": "requirements",
+            "label": "Requirements",
+            "source": "requirements.md"
+          },
+          {
+            "slug": "venv",
+            "label": "Virtual Environment",
+            "source": "venv.md"
+          }
+        ]
+      },
+      {
+        "slug": "deploying",
+        "label": "Deploying models",
+        "source": "deploying/index.md",
+        "children": [
+          {
+            "slug": "heroku",
+            "label": "Heroku",
+            "source": "heroku.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
+            "slug": "kubernetes",
+            "label": "Kubernetes",
+            "source": "kubernetes.md"
+          },
+          {
+            "slug": "sagemaker",
+            "label": "SageMaker",
+            "source": "sagemaker.md"
+          }
+        ]
+      },
+      {
+        "slug": "data",
+        "label": "Working with data",
+        "source": "data/index.md",
+        "children": []
+      },
+      {
+        "slug": "dvc",
+        "label": "Versioning MLEM objects with DVC",
+        "source": "dvc.md"
+      },
+      {
         "slug": "project-structure",
         "label": "Project structure",
         "source": "project-structure.md"
       },
       {
-        "slug": "data",
-        "label": "Working with data",
-        "source": "data.md"
-      },
-      {
         "slug": "remote-objects",
-        "label": "Working with remote projects and objects",
-        "source": "remote-objects.md"
+        "label": "Remote objects and projects",
+        "source": "remote-objects/index.md"
       },
       {
         "slug": "configuration",
@@ -100,24 +180,15 @@
         "source": "configuration.md"
       },
       {
-        "slug": "importing",
-        "label": "Importing existing files",
-        "source": "importing.md"
-      },
-      {
         "slug": "linking",
         "label": "Links",
         "source": "linking.md"
       },
       {
-        "slug": "mlem-abcs",
-        "label": "MLEM ABCs",
-        "source": "mlem-abcs.md"
-      },
-      {
-        "slug": "extending",
-        "label": "Extending",
-        "source": "extending.md"
+        "slug": "importing",
+        "label": "Importing existing files",
+        "source": "importing/index.md",
+        "children": []
       },
       {
         "slug": "analytics",
@@ -132,29 +203,34 @@
     "source": "command-reference/index.md",
     "children": [
       {
-        "slug": "init",
-        "label": "init",
-        "source": "init.md"
+        "slug": "apply",
+        "label": "apply",
+        "source": "apply.md"
       },
       {
-        "slug": "list",
-        "label": "list",
-        "source": "list.md"
+        "slug": "apply-remote",
+        "label": "apply-remote",
+        "source": "apply-remote.md"
       },
       {
-        "slug": "pprint",
-        "label": "pprint",
-        "source": "pprint.md"
+        "slug": "build",
+        "label": "build",
+        "source": "build.md"
+      },
+      {
+        "slug": "checkenv",
+        "label": "checkenv",
+        "source": "checkenv.md"
+      },
+      {
+        "slug": "clone",
+        "label": "clone",
+        "source": "clone.md"
       },
       {
         "slug": "declare",
         "label": "declare",
         "source": "declare.md"
-      },
-      {
-        "slug": "serve",
-        "label": "serve",
-        "source": "serve.md"
       },
       {
         "slug": "deployment",
@@ -180,23 +256,13 @@
             "slug": "remove",
             "label": "deployment remove",
             "source": "remove.md"
+          },
+          {
+            "slug": "wait",
+            "label": "deployment wait",
+            "source": "wait.md"
           }
         ]
-      },
-      {
-        "slug": "types",
-        "label": "types",
-        "source": "types.md"
-      },
-      {
-        "slug": "link",
-        "label": "link",
-        "source": "link.md"
-      },
-      {
-        "slug": "clone",
-        "label": "clone",
-        "source": "clone.md"
       },
       {
         "slug": "import",
@@ -204,19 +270,29 @@
         "source": "import.md"
       },
       {
-        "slug": "build",
-        "label": "build",
-        "source": "build.md"
+        "slug": "init",
+        "label": "init",
+        "source": "init.md"
       },
       {
-        "slug": "apply",
-        "label": "apply",
-        "source": "apply.md"
+        "slug": "link",
+        "label": "link",
+        "source": "link.md"
       },
       {
-        "slug": "apply-remote",
-        "label": "apply-remote",
-        "source": "apply-remote.md"
+        "slug": "pprint",
+        "label": "pprint",
+        "source": "pprint.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve",
+        "source": "serve.md"
+      },
+      {
+        "slug": "types",
+        "label": "types",
+        "source": "types.md"
       }
     ]
   },
@@ -225,46 +301,6 @@
     "label": "Python API Reference",
     "source": "api-reference/index.md",
     "children": [
-      {
-        "slug": "init",
-        "label": "init()",
-        "source": "init.md"
-      },
-      {
-        "slug": "save",
-        "label": "save()",
-        "source": "save.md"
-      },
-      {
-        "slug": "load",
-        "label": "load()",
-        "source": "load.md"
-      },
-      {
-        "slug": "load_meta",
-        "label": "load_meta()",
-        "source": "load_meta.md"
-      },
-      {
-        "slug": "ls",
-        "label": "ls()",
-        "source": "ls.md"
-      },
-      {
-        "slug": "import_object",
-        "label": "import_object()",
-        "source": "import_object.md"
-      },
-      {
-        "slug": "link",
-        "label": "link()",
-        "source": "link.md"
-      },
-      {
-        "slug": "clone",
-        "label": "clone()",
-        "source": "clone.md"
-      },
       {
         "slug": "apply",
         "label": "apply()",
@@ -281,14 +317,290 @@
         "source": "build.md"
       },
       {
-        "slug": "serve",
-        "label": "serve()",
-        "source": "serve.md"
+        "slug": "clone",
+        "label": "clone()",
+        "source": "clone.md"
       },
       {
         "slug": "deploy",
         "label": "deploy()",
         "source": "deploy.md"
+      },
+      {
+        "slug": "import_object",
+        "label": "import_object()",
+        "source": "import_object.md"
+      },
+      {
+        "slug": "init",
+        "label": "init()",
+        "source": "init.md"
+      },
+      {
+        "slug": "link",
+        "label": "link()",
+        "source": "link.md"
+      },
+      {
+        "slug": "load",
+        "label": "load()",
+        "source": "load.md"
+      },
+      {
+        "slug": "load_meta",
+        "label": "load_meta()",
+        "source": "load_meta.md"
+      },
+      {
+        "slug": "save",
+        "label": "save()",
+        "source": "save.md"
+      },
+      {
+        "slug": "serve",
+        "label": "serve()",
+        "source": "serve.md"
+      }
+    ]
+  },
+  {
+    "slug": "object-reference",
+    "label": "Object Reference",
+    "source": "index.md",
+    "children": [
+      {
+        "slug": "mlem-abcs",
+        "label": "MLEM ABCs",
+        "source": "mlem-abcs.md"
+      },
+      {
+        "slug": "mlem-objects",
+        "label": "MLEM Objects",
+        "source": "mlem-objects.md"
+      },
+      {
+        "slug": "model",
+        "label": "Models",
+        "source": "model/index.md",
+        "children": [
+          {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
+            "slug": "callable",
+            "label": "Python callables",
+            "source": "callable.md"
+          },
+          {
+            "slug": "sklearn",
+            "label": "Scikit-Learn",
+            "source": "sklearn.md"
+          },
+          {
+            "slug": "onnx",
+            "label": "Onnx",
+            "source": "onnx.md"
+          },
+          {
+            "slug": "tensorflow",
+            "label": "TensorFlow",
+            "source": "tensorflow.md"
+          },
+          {
+            "slug": "torch",
+            "label": "Torch",
+            "source": "torch.md"
+          },
+          {
+            "slug": "catboost",
+            "label": "CatBoost",
+            "source": "catboost.md"
+          },
+          {
+            "slug": "lightgbm",
+            "label": "LightGBM",
+            "source": "lightgbm.md"
+          },
+          {
+            "slug": "xgboost",
+            "label": "XGBoost",
+            "source": "xgboost.md"
+          }
+        ]
+      },
+      {
+        "slug": "data",
+        "label": "Data",
+        "source": "data/index.md",
+        "children": [
+          {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
+            "slug": "numpy",
+            "label": "NumPy",
+            "source": "numpy.md"
+          },
+          {
+            "slug": "pandas",
+            "label": "Pandas",
+            "source": "pandas.md"
+          },
+          {
+            "slug": "lightgbm",
+            "label": "LightGBM",
+            "source": "lightgbm.md"
+          },
+          {
+            "slug": "torch",
+            "label": "Torch",
+            "source": "torch.md"
+          },
+          {
+            "slug": "tensorflow",
+            "label": "TensorFlow",
+            "source": "tensorflow.md"
+          },
+          {
+            "slug": "xgboost",
+            "label": "XGBoost",
+            "source": "xgboost.md"
+          }
+        ]
+      },
+      {
+        "slug": "build",
+        "label": "Builders",
+        "source": "build/index.md",
+        "children": [
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
+            "slug": "pip",
+            "label": "Python package",
+            "source": "pip.md"
+          },
+          {
+            "slug": "requirements",
+            "label": "Requirements",
+            "source": "requirements.md"
+          },
+          {
+            "slug": "venv",
+            "label": "Virtual Environment",
+            "source": "venv.md"
+          }
+        ]
+      },
+      {
+        "slug": "serving",
+        "label": "Serving",
+        "source": "serving/index.md",
+        "children": [
+          {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
+            "slug": "fastapi",
+            "label": "FastAPI",
+            "source": "fastapi.md"
+          },
+          {
+            "slug": "rabbitmq",
+            "label": "RabbitMQ",
+            "source": "rabbitmq.md"
+          },
+          {
+            "slug": "sagemaker",
+            "label": "SageMaker",
+            "source": "sagemaker.md"
+          }
+        ]
+      },
+      {
+        "slug": "deployment",
+        "label": "Deployments",
+        "source": "deployment/index.md",
+        "children": [
+          {
+            "slug": "heroku",
+            "label": "Heroku",
+            "source": "heroku.md"
+          },
+          {
+            "slug": "sagemaker",
+            "label": "SageMaker",
+            "source": "sagemaker.md"
+          },
+          {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
+            "slug": "kubernetes",
+            "label": "Kubernetes",
+            "source": "kubernetes.md"
+          }
+        ]
+      },
+      {
+        "slug": "uri",
+        "label": "URI Resolving",
+        "source": "uri/index.md",
+        "children": [
+          {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
+            "slug": "github",
+            "label": "GitHub",
+            "source": "github.md"
+          },
+          {
+            "slug": "gitlabfs",
+            "label": "GitLab",
+            "source": "gitlabfs.md"
+          },
+          {
+            "slug": "bitbucketfs",
+            "label": "BitBucket",
+            "source": "bitbucketfs.md"
+          }
+        ]
+      },
+      {
+        "slug": "storage",
+        "label": "Artifact Storage",
+        "source": "storage/index.md",
+        "children": [
+          {
+            "slug": "builtin",
+            "label": "Builtin",
+            "source": "builtin.md"
+          },
+          {
+            "slug": "dvc",
+            "label": "DVC",
+            "source": "dvc.md"
+          }
+        ]
+      },
+      {
+        "slug": "extending",
+        "label": "Extending",
+        "source": "extending.md"
       }
     ]
   },

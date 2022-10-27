@@ -16,35 +16,11 @@ operations apply to any [object type] and location.
 ## Remote MLEM projects
 
 Although you can store MLEM objects in any location such as a Git repo, Cloud
-storage, or external drives, creating a MLEM project lets you organize and
-[discover](#listing-objects) MLEM objects consistently.
+storage, or external drives, creating a MLEM project lets you organize MLEM
+objects consistently.
 
 To create a MLEM project in a remote location, you can provide its URL or path
 to `mlem init`.
-
-## Listing objects
-
-You can list MLEM objects inside a remote MLEM project (e.g. in a Git repo) with
-`mlem list`. There's no need to download/clone the project.
-
-```cli
-$ mlem list https://github.com/iterative/example-mlem-get-started
-Deployments:
- - myservice
-Models:
- - rf
-Envs:
- - staging
-```
-
-<admon type="note">
-
-A [MLEM project] is required as target for `mlem list`. The other operations
-(below) work with loose MLEM objects (not in a MLEM project) as well.
-
-[mlem project]: /doc/command-reference/init
-
-</admon>
 
 ## Loading objects (Python)
 
@@ -64,8 +40,7 @@ model = load(
 This fetches the `rf` model [from branch `main`] of the
 `example-mlem-get-started` repo and loads it to memory.
 
-[from branch `main`]:
-  https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model
+[from branch `main`]: https://github.com/iterative/example-mlem-get-started/
 
 ## Downloading objects
 
@@ -76,14 +51,14 @@ You can download MLEM objects to the local environment in with `mlem clone`
 $ mlem clone rf \
   --project https://github.com/iterative/example-mlem-get-started \
   ml_model
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
-🐏 Cloning https://github.com/iterative/example-mlem-get-started/tree/main/.mlem/model/rf.mlem
-💾 Saving model to .mlem/model/ml_model.mlem
+⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+🐏 Cloning https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+💾 Saving model to ml_model.mlem
 ```
 
-This places the `rf` model [from branch `main`] of the
-`example-mlem-get-started` repo, renames it to `ml_model`, and places it in the
-`.mlem/model` directory.
+This copies the `rf` model [from branch `main`] of the
+`example-mlem-get-started` repo to the current directory and renames it to
+`ml_model`.
 
 ## Cloud storage
 
@@ -100,9 +75,9 @@ Loose objects are typically stored this way because they do not require
 
 ```cli
 $ mlem clone rf s3://example-mlem-get-started/rf
-⏳️ Loading meta from .mlem/model/rf.mlem
-🐏 Cloning .mlem/model/rf.mlem
-💾 Saving model to s3://example-mlem-get-started/.mlem/model/rf.mlem
+⏳️ Loading meta from rf.mlem
+🐏 Cloning rf.mlem
+💾 Saving model to s3://example-mlem-get-started/rf.mlem
 ```
 
 The `rf` model from S3 bucket `example-mlem-get-started` can also be
