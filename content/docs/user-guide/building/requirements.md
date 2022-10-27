@@ -45,6 +45,9 @@ pandas==1.4.2
 numpy==1.22.3
 ```
 
+This is different from [creating a python package](/doc/user-guide/building/pip)
+for the model.
+
 ## Unix based requirements
 
 Some python libraries require unix based packages underneath to function
