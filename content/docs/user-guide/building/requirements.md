@@ -74,9 +74,15 @@ materialized at the target.
 For instance, a function can be saved via `MLEM` at a location `mlem-f`
 
 ```python
-from mlem.api import save
+# file.py
 def f(txt):
     print(txt)
+```
+
+```python
+# save.py
+from mlem.api import save
+from file import f
 
 saved = save(f, 'mlem-f')
 ```
@@ -95,19 +101,15 @@ The contents of `dir` can be checked using
 
 ```cli
 $ ls dir
-__main__.py
+file.py
 ```
 
 and with
 
 ```cli
-$ cat dir/__main__.py
-from mlem.api import save
-
+$ cat dir/file.py
 def f(txt):
     print(txt)
-
-saved = save(f, 'mlem-f')
 ```
 
 ## File requirements
