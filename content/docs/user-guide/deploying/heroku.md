@@ -57,16 +57,15 @@ can change it to something unique:
 
 ```cli
 $ mlem declare deployment heroku app \
-                         --app_name=example-mlem-get-started-app \
-                         --model=models/rf \
-                         --env=staging
+    --app_name=example-mlem-get-started-app \
+    --env=staging
 💾 Saving deployment to app.mlem
 ```
 
 Now we can actually run the deployment process (this can take a while):
 
 ```cli
-$ mlem deployment run --load app.mlem
+$ mlem deployment run --load app.mlem --model=models/rf
 ⏳️ Loading model from models/rf.mlem
 ⏳️ Loading deployment from app.mlem
 🛠 Creating docker image for heroku
@@ -89,9 +88,9 @@ You can also define and run the deployment on-the-fly using options for
 `mlem deployment run`, e.g.:
 
 ```cli
-$ mlem deployment run app \
-                     -m model -t staging \
-                     --app_name=example-mlem-get-started-app
+$ mlem deployment run heroku app \
+    --model models/rf \
+    --app_name=example-mlem-get-started-app
 ```
 
 </admon>
