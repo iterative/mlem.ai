@@ -16,7 +16,7 @@ export default function useStars(): number | null {
 
   // Update on the client side
   useEffect(() => {
-    fetch(`/api/github/stars`).then(res => {
+    fetch(`/api/github/stars?repo=mlem.ai`).then(res => {
       if (res.status === 200) {
         res.json().then(json => {
           setStars(json.stars)
