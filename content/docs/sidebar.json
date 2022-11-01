@@ -2,7 +2,7 @@
   {
     "slug": "",
     "source": "index.md",
-    "label": "MLEM Documentation",
+    "label": "Home",
     "icon": "house"
   },
   {
@@ -311,7 +311,7 @@
   },
   {
     "slug": "gto",
-    "label": "GTO documentation",
+    "label": "GTO",
     "source": "gto/index.md",
     "children": [
       {
