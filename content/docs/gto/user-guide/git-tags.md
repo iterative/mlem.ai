@@ -1,6 +1,6 @@
 # Git tags format
 
-Each event has it's own standard format of Git tags:
+All events have the standard formats of Git tags:
 
 - `{artifact_name}@{version_number}#{e}` for version registration.
 - `{artifact_name}@{version_number}!#{e}` for version deregistration.
