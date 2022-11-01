@@ -117,8 +117,15 @@ artifact `models/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
 
 ```dvc
 $ dvc remove models/rf.dvc
-# we can delete the file since there are no other records
-# beside one we added above:
+```
+
+and
+
+```dvc
+# edit .dvcignore to delete the line with `/**/?*.mlem`
+$ vim .dvcignore
+# OR
+# just delete the file if there are no other records:
 $ git rm .dvcignore
 ```
 
