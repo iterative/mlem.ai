@@ -5,20 +5,20 @@ description:
 
 # Get Started
 
-GTO helps you build a Artifact Registry out of your Git repository. It does so
-by creating Git tags of [special format](/doc/gto/user-guide) and managing
-[`artifacts.yaml` metafile](/doc/gto/user-guide). Since committing large files
-to Git is not a good practice, you shouldn't commit binary files to Git.
-Instead, use DVC, Git-lfs, or any method commit pointers to the binary files
-instead.
+GTO helps you build an Artifact Registry on top of a Git repository (with a
+special case of Machine Learning Model Registry). You can register relevant
+versions of your files (e.g. ML model releases) and assign them to different
+deployment environments (testing, shadow, production, etc.). Git-native
+mechanisms are used, so you can automate the delivery of your ML project with
+CI/CD, and adopt a GitOps approach in general.
 
-This Get Started will walk you through basic GTO Artifact Registy concepts and
-actions you would like to do in the Artifact Registry.
+This Get Started will walk you through basic GTO concepts and actions you would
+like to do in the Artifact Registry.
 
 ## Showing the current state
 
-Assuming GTO is already [installed](/doc/gto/install) in your active python
-environment, let's clone the example repo
+Assuming GTO is already [installed](/doc/gto/install) in your active Python
+environment, let's clone the example repo:
 
 ```cli
 $ git clone https://github.com/iterative/example-gto
@@ -50,11 +50,11 @@ Model versions could be promoted to different stages. Here we have 3 of them:
 ## Registering versions and assigning stages
 
 GTO can [register version](/doc/gto/command-reference/register) of artifacts and
-[assign them to stages](/doc/gto/command-reference/assign). Both functionalities
+[assign stages to them](/doc/gto/command-reference/assign). Both functionalities
 work in a similar way, so let's walkthough only one of them here.
 
-Let's suppose the version `v0.1.13` of `cv-class` was looking very promising,
-and now we want to promote it to `dev` to test it:
+Let's assume the version `v0.1.13` of `cv-class` looks very promising, and now
+we want to promote it to `dev` to test it:
 
 ```cli
 $ gto assign cv-class --version v0.1.13 --stage dev
@@ -63,9 +63,9 @@ To push the changes upstream, run:
     git push origin cv-class#dev#1
 ```
 
-GTO created a Git tag with a special format that contains
-instruction to assign a stage to a version. We can push to Git repository to
-start the CI, but let's ensure that changed our Registry first.
+GTO created a Git tag with a special format that contains instruction to assign
+a stage to a version. We can push to Git repository to start the CI, but let's
+ensure that changed our Registry first.
 
 ```cli
 $ gto show
@@ -79,7 +79,7 @@ $ gto show
 ╘══════════╧══════════╧═════════╧═════════╧════════════╛
 ```
 
-As we can see, the version `v0.1.13` of `cv-class` was promoted to `dev` stage.
+The `gto show` output confirms our expectation.
 
 ## Acting downstream
 
@@ -87,19 +87,25 @@ The power of using Git tags to register versions and assign stages is simple: we
 can act upon them in well-known way - in CI/CD.
 
 To see how it works, let's fork the
-[example-gto repo](https://github.com/iterative/example-gto) and push the tag we
-just created to GitHub. For CI/CD to start, you'll need to enable them on the
-"Actions" page of your fork.
+[example-gto repo](https://github.com/iterative/example-gto/fork) and push the
+tag we just created to GitHub. For CI/CD to start, you'll need to enable them on
+the "Actions" page of your fork.
 
 <details>
 
 ### Step-by-step instruction
 
-will be here
+Fork the repo first. Make sure you uncheck "Copy the `main` branch only" to copy
+Git tags as well:
+<img width="877" alt="image" src="https://user-images.githubusercontent.com/6797716/199275275-439335f4-6f54-4cd7-910d-fc29ad3c095c.png">
+
+Then enable workflows in your repo, for a Git tag to trigger CI:
+<img width="869" alt="image" src="https://user-images.githubusercontent.com/6797716/199272682-dfd628bf-9599-4e85-a623-bf4a10c3d7e1.png">
 
 </details>
 
-Let's do the same thing we did locally, but for your remote repo:
+Let's do the same thing we did locally, but for your remote repo. Don't forget
+to replace the URL:
 
 ```cli
 $ gto assign cv-class --version v0.1.13 --stage dev \
@@ -118,7 +124,10 @@ this information, the step `Deploy (act on assigning a new stage)` was executed
 
 ### CI/CD execution example
 
-screenshot goes here
+<img width="875" alt="image" src="https://user-images.githubusercontent.com/6797716/199276636-bf996ad3-7d9c-4100-9f3c-6444730e4d19.png">
+
+If you want to see more CI examples, check out
+[the example-repo](https://github.com/iterative/example-gto/actions).
 
 </details>
 
