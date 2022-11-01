@@ -113,13 +113,13 @@ of a pipelines stage.
 ## Example
 
 Let's continue using the example from above. First, let's stop tracking the
-artifact `models/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
+artifact `models/rf` in DVC:
 
 ```dvc
 $ dvc remove models/rf.dvc
 ```
 
-and
+and stop ignoring MLEM files in `.dvcignore`:
 
 ```dvc
 # edit .dvcignore to delete the line with `/**/?*.mlem`
