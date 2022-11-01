@@ -63,7 +63,7 @@ To push the changes upstream, run:
     git push origin cv-class#dev#1
 ```
 
-We can see, that GTO created a Git tag with a special format that contains
+GTO created a Git tag with a special format that contains
 instruction to assign a stage to a version. We can push to Git repository to
 start the CI, but let's ensure that changed our Registry first.
 
