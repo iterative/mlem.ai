@@ -5,12 +5,12 @@ description:
 
 # Get Started
 
-GTO helps you build an Artifact Registry on top of a Git repository (with a
-special case of Machine Learning Model Registry). You can register relevant
-versions of your files (e.g. ML model releases) and assign them to different
-deployment environments (testing, shadow, production, etc.). Git-native
-mechanisms are used, so you can automate the delivery of your ML project with
-CI/CD, and adopt a GitOps approach in general.
+GTO helps you build an Artifact Registry on top of a Git repository. You can
+register relevant versions of your files or directories from any source (e.g. ML
+model releases) and assign them to different deployment environments (testing,
+shadow, production, etc.). Git-native mechanisms are used, so you can automate
+the delivery of your software project with CI/CD, and adopt a GitOps approach in
+general.
 
 This Get Started will walk you through basic GTO concepts and actions you would
 like to do in the Artifact Registry.
@@ -25,8 +25,8 @@ $ git clone https://github.com/iterative/example-gto
 $ cd example-gto
 ```
 
-This repo represents a simple example of Machine Learning Model Registry. Let's
-review it:
+This repo represents a simple example of Machine Learning Model Registry (that
+is just a special case of an Artifact Registry for us). Let's review it:
 
 ```cli
 $ gto show
@@ -87,20 +87,20 @@ The power of using Git tags to register versions and assign stages is simple: we
 can act upon them in well-known way - in CI/CD.
 
 To see how it works, let's fork the
-[example-gto repo](https://github.com/iterative/example-gto/fork) and push the
-tag we just created to GitHub. For CI/CD to start, you'll need to enable them on
-the "Actions" page of your fork.
+[example-gto repo](https://github.com/iterative/example-gto) and push the tag we
+just created to GitHub. For CI/CD to start, you'll need to enable them on the
+"Actions" page of your fork.
 
 <details>
 
-### Step-by-step instruction
+### Step-by-step instruction to fork the repo and enable Github workflows
 
-Fork the repo first. Make sure you uncheck "Copy the `main` branch only" to copy
-Git tags as well:
-<img width="877" alt="image" src="https://user-images.githubusercontent.com/6797716/199275275-439335f4-6f54-4cd7-910d-fc29ad3c095c.png">
+1. [Fork the repo](https://github.com/iterative/example-gto/fork). Make sure you
+   uncheck "Copy the `main` branch only" to copy Git tags as well:
+   <img width="877" alt="image" src="https://user-images.githubusercontent.com/6797716/199275275-439335f4-6f54-4cd7-910d-fc29ad3c095c.png">
 
-Then enable workflows in your repo, for a Git tag to trigger CI:
-<img width="869" alt="image" src="https://user-images.githubusercontent.com/6797716/199272682-dfd628bf-9599-4e85-a623-bf4a10c3d7e1.png">
+2. Enable workflows in your repo, for a Git tag to trigger CI:
+   <img width="869" alt="image" src="https://user-images.githubusercontent.com/6797716/199272682-dfd628bf-9599-4e85-a623-bf4a10c3d7e1.png">
 
 </details>
 

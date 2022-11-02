@@ -16,7 +16,7 @@ Let's see an example of `artifacts.yaml` (another example can be found in
 [example-gto](https://github.com/iterative/example-gto/blob/main/artifacts.yaml)):
 
 ```yaml
-awesome:
+awesome: # artifact name
   description: This model is very cool
   labels:
     - ml
