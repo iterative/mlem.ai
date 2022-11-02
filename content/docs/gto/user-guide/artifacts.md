@@ -1,4 +1,4 @@
-# artifacts.yaml metafile
+# Annotations in artifacts.yaml
 
 Using Git tag to register versions and assign stages is handy, but the Git tag
 itself doesn't contain path to the artifact, type of it (it could be `model` or
