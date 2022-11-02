@@ -1,5 +1,17 @@
 # Versioning MLEM objects with DVC
 
+To use MLEM with Git and enable GitOps, we need to commit MLEM models to Git
+repository. While committing `.mlem` metafiles is easy, model binaries and
+datasets are too heavy to store in Git. To fix that, we suggest using
+[DVC](https://dvc.org). DVC
+[stores objects in remote storages](https://dvc.org/doc/start/data-management/data-versioning),
+allowing us to commit just pointers to them.
+
+This page offers a small Tutorial on how to use DVC with already existing MLEM
+project. We will reorganize our example repo to showcase that.
+
+## Setting things up
+
 <details>
 
 ### ⚙️ Expand for setup instructions
@@ -10,7 +22,6 @@ If you want to follow along with this tutorial, you can use our
 ```shell
 $ git clone https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
-$ git checkout 5-deploy-meta
 ```
 
 Next let's create a Python virtual environment to cleanly install all the
@@ -24,25 +35,14 @@ $ pip install -r requirements.txt
 
 </details>
 
-Often it’s a bad idea to store binary files in Git, especially big ones. To
-solve this MLEM can utilize [DVC](https://dvc.org/doc) capabilities to connect
-external cloud storage for model and dataset versioning.
-
-We will reorganize our example repo to use DVC.
-
-## Setting up repo
-
-First, let’s initialize DVC and add a remote (we will use a local one for easier
-testing, but you can use whatever is available to you):
+First, let’s initialize DVC and add a DVC remote (we will use a local one for
+easier testing, but you can use whatever is available to you):
 
 ```cli
 $ dvc init
 $ dvc remote add myremote -d /tmp/dvcstore/
 $ git add .dvc/config
 ```
-
-⛳
-[DVC Initialized](https://github.com/iterative/example-mlem-get-started/tree/7-dvc-dvc-init)
 
 Now, we also need to setup MLEM so it knows to use DVC.
 
@@ -51,9 +51,19 @@ $ mlem config set core.storage.type dvc
 ✅  Set `storage.type` to `dvc` in repo .
 ```
 
-There are two ways to use MLEM with DVC:
-- We could only use DVCs ability to track binary files, but we manually add models to version control. This use is covered in the section [Versioning binaries manually](#versioning-binaries-manually) below.
-- We could also use DVC pipelines to manage all other stages of model building (data cleaning, featurization, training, ...). In this case, we may want DVC to directly store trained models using MLEM. This case is covered below under [Using MLEM in DVC Pipeline](#using-mlem-in-dvc-pipeline).
+After the initial configuration is done, we need to select how we're going to
+use MLEM with DVC:
+
+- We could only use DVCs ability to track binary files, manually adding model
+  binaries to version control. This scenario is covered in the section
+  [Versioning binaries manually](#versioning-binaries-manually) below (use this
+  option if you hear about DVC for the first time).
+- We could use
+  [DVC pipelines](https://dvc.org/doc/start/data-management/data-pipelines) to
+  manage all stages of model creation (data cleaning, featurization, training,
+  etc.). In this case, we may want DVC to automatically store binaries. This
+  case is covered below under
+  [Using MLEM in DVC Pipeline](#using-mlem-in-dvc-pipeline).
 
 ## Versioning binaries manually
 
@@ -70,9 +80,6 @@ Finally, we need to stop Git from keeping already indexed binaries.
 ```cli
 $ git rm -r --cached models data
 ```
-
-⛳
-[Configured MLEM to work with DVC](https://github.com/iterative/example-mlem-get-started/tree/8-dvc-mlem-config)
 
 Next, let’s remove artifacts from Git and re-save them, so MLEM can use new
 storage for them. You don't need to change a single line of code
