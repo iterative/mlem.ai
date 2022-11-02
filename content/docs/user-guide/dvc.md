@@ -51,6 +51,12 @@ $ mlem config set core.storage.type dvc
 ✅  Set `storage.type` to `dvc` in repo .
 ```
 
+There are two ways to use MLEM with DVC:
+- We could only use DVCs ability to track binary files, but we manually add models to version control. This use is covered in the section [Versioning binaries manually](#versioning-binaries-manually) below.
+- We could also use DVC pipelines to manage all other stages of model building (data cleaning, featurization, training, ...). In this case, we may want DVC to directly store trained models using MLEM. This case is covered below under [Using MLEM in DVC Pipeline](#using-mlem-in-dvc-pipeline).
+
+## Versioning binaries manually
+
 Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
 DVC.
 
@@ -67,8 +73,6 @@ $ git rm -r --cached models data
 
 ⛳
 [Configured MLEM to work with DVC](https://github.com/iterative/example-mlem-get-started/tree/8-dvc-mlem-config)
-
-## Saving objects
 
 Next, let’s remove artifacts from Git and re-save them, so MLEM can use new
 storage for them. You don't need to change a single line of code
