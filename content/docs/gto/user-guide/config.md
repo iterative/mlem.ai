@@ -4,8 +4,8 @@ To configure GTO, use file `.gto` in the root of your repo:
 
 ```yaml
 # .gto config file
-types: [model, dataset]  # list of allowed Types
-stages: [dev, stage, prod]  # list of allowed Stages
+types: [model, dataset] # list of allowed Types
+stages: [dev, stage, prod] # list of allowed Stages
 ```
 
 When allowed Stages or Types are specified, GTO will check commands you run and

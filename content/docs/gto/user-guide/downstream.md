@@ -25,7 +25,6 @@ that fetches all Git tags (to correctly interpret the Registry) and finds out
 the version of the artifact that was registered, or the stage that was assigned,
 so you could use them in later steps of the CI.
 
-
 ## Inspecting Git tags
 
 You can use `gto check-ref` to interpret the Git tag:
