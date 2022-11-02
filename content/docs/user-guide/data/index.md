@@ -116,6 +116,6 @@ requirements:
 MLEM now "knows" that it needs `pandas` to load the data -- You don't have to
 specify if it was of type `pd.DataFrame`, `np.array` or `tf.Tensor`.
 
-This out and this handy magic also extends to ML models: when you run
-`mlem.api.save(mymodel, "mymodel", sample_data=X)`, MLEM will investigate `X` to
+This handy magic also extends to `sample_data` argument provided to
+`mlem.api.save(mymodel, "mymodel", sample_data=X)`. MLEM will investigate `X` to
 find out the expected schema of the model's input data.
