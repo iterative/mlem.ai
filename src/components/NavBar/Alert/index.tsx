@@ -11,11 +11,11 @@ const Alert: React.FC<{ collapsed: boolean }> = ({ collapsed }) => (
         🚀
       </span>{' '}
       <p>
-        New Release!{' '}
-        <SmartLink href="https://dvc.org/blog/iterative-studio-model-registry">
-          Git-backed Machine Learning Model Registry
+        MLEM now offers{' '}
+        <SmartLink href="https://iterative.ai/blog/mlem-k8s-sagemaker">
+          deployment to Kubernetes and Sagemaker
         </SmartLink>{' '}
-        for all your model management needs.
+        with a single command.
       </p>
     </div>
   </div>

@@ -26,9 +26,9 @@ $ tree
     &nbsp;&nbsp;emoji: 1.6.1
     `,
   `
-    $ mlem deploy dog-bark-translator heroku
+    $ mlem deploy heroku dog-bark-translator
   🏗️ Building dog-bark-translator:latest docker image...<delay></delay>
-  📤 Pushing docker image to heroku, using envs/heroku.yaml specification...<delay></delay>
+  📤 Pushing docker image to heroku...<delay></delay>
   🚀 Starting application...<delay></delay>
   💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
     `,
