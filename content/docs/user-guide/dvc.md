@@ -54,15 +54,14 @@ $ mlem config set core.storage.type dvc
 After the initial configuration is done, we need to decide how we're going to
 use MLEM with DVC:
 
-1. We could only use DVCs ability to track binary files, manually adding model
-   binaries to version control. This scenario is covered in the
-   [Versioning binaries manually](#versioning-binaries-manually) section below
-   (use this option if you hear about DVC for the first time).
+1. We could manually add model binaries to version control. This scenario is
+   covered in the [Versioning binaries manually](#versioning-binaries-manually)
+   section below (use this option if you hear about DVC for the first time).
 2. We could use
    [DVC Pipelines](https://dvc.org/doc/start/data-management/data-pipelines) to
+   version model binaries automatically. DVC Pipelines are generally used to
    manage all stages of model creation (data cleaning, featurization, training,
-   etc.). In this case, DVC Pipeline can handle storing binaries for us. This
-   case is covered below in
+   etc.). This case is covered below in
    [Using MLEM in DVC Pipeline](#using-mlem-in-dvc-pipeline).
 
 ## Versioning binaries manually
@@ -106,10 +105,10 @@ binaries stored in Git. MLEM will know to use DVC to load them.
 
 ## Using MLEM in DVC Pipeline
 
-[DVC pipelines](https://dvc.org/doc/start/data-management/pipelines) are the
-useful DVC mechanism to build data pipelines, in which you can process your data
-and train your model. You may be already training your ML models in them and
-what to start using MLEM to save those models.
+[DVC pipelines](https://dvc.org/doc/start/data-management/pipelines) is a
+mechanism to build data pipelines, in which you can process your data and train
+your model. You may be already training your ML models in them and what to start
+using MLEM to save those models.
 
 MLEM could be easily plug in into existing DVC pipelines. You'll need to mark
 `.mlem` files as `cache: false`
