@@ -1,5 +1,17 @@
 # Versioning MLEM objects with DVC
 
+To use MLEM with Git and enable GitOps, we need to commit MLEM models to Git
+repository. While committing `.mlem` metafiles is easy, model binaries and
+datasets are too heavy to store in Git. To fix that, we suggest using
+[DVC](https://dvc.org). DVC
+[stores objects in remote storages](https://dvc.org/doc/start/data-management/data-versioning),
+allowing us to commit just pointers to them.
+
+This page offers a small Tutorial on how to use DVC with already existing MLEM
+project. We will reorganize our example repo to showcase that.
+
+## Setting things up
+
 <details>
 
 ### ⚙️ Expand for setup instructions
@@ -10,7 +22,6 @@ If you want to follow along with this tutorial, you can use our
 ```shell
 $ git clone https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
-$ git checkout 5-deploy-meta
 ```
 
 Next let's create a Python virtual environment to cleanly install all the
@@ -24,25 +35,14 @@ $ pip install -r requirements.txt
 
 </details>
 
-Often it’s a bad idea to store binary files in Git, especially big ones. To
-solve this MLEM can utilize [DVC](https://dvc.org/doc) capabilities to connect
-external cloud storage for model and dataset versioning.
-
-We will reorganize our example repo to use DVC.
-
-## Setting up repo
-
-First, let’s initialize DVC and add a remote (we will use a local one for easier
-testing, but you can use whatever is available to you):
+First, let’s initialize DVC and add a DVC remote (we will use a local one for
+easier testing, but you can use whatever is available to you):
 
 ```cli
 $ dvc init
 $ dvc remote add myremote -d /tmp/dvcstore/
 $ git add .dvc/config
 ```
-
-⛳
-[DVC Initialized](https://github.com/iterative/example-mlem-get-started/tree/7-dvc-dvc-init)
 
 Now, we also need to setup MLEM so it knows to use DVC.
 
@@ -51,30 +51,38 @@ $ mlem config set core.storage.type dvc
 ✅  Set `storage.type` to `dvc` in repo .
 ```
 
-Also, let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by
-DVC.
+After the initial configuration is done, we need to decide how we're going to
+use MLEM with DVC:
+
+1. We could manually add model binaries to version control. This scenario is
+   covered in the [Versioning binaries manually](#versioning-binaries-manually)
+   section below (use this option if you hear about DVC for the first time).
+2. We could use
+   [DVC Pipelines](https://dvc.org/doc/start/data-management/data-pipelines) to
+   version model binaries automatically. DVC Pipelines are generally used to
+   manage all stages of model creation (data cleaning, featurization, training,
+   etc.). This case is covered below in
+   [Using MLEM in DVC Pipeline](#using-mlem-in-dvc-pipeline).
+
+## Versioning binaries manually
+
+Let’s add `.mlem` files to `.dvcignore` so that metafiles are ignored by DVC.
 
 ```cli
 $ echo "/**/?*.mlem" > .dvcignore
 $ git add .dvcignore
 ```
 
-Finally, we need to stop Git from keeping already indexed binaries.
+We may need to stop Git from keeping already indexed binaries. For our example
+repo, that would be:
 
 ```cli
 $ git rm -r --cached models data
 ```
 
-⛳
-[Configured MLEM to work with DVC](https://github.com/iterative/example-mlem-get-started/tree/8-dvc-mlem-config)
-
-## Saving objects
-
-Next, let’s remove artifacts from Git and re-save them, so MLEM can use new
-storage for them. You don't need to change a single line of code
+Now we need re-generate them:
 
 ```cli
-$ git rm -r --cached models data
 $ python train.py
 ```
 
@@ -95,34 +103,19 @@ $ git push
 Now, you can load MLEM objects from your repo even though there are no actual
 binaries stored in Git. MLEM will know to use DVC to load them.
 
-⛳
-[Switch to DVC](https://github.com/iterative/example-mlem-get-started/tree/9-dvc-save-models)
+## Using MLEM in DVC Pipeline
 
-# Using MLEM in DVC Pipeline
-
-[DVC pipelines](https://dvc.org/doc/start/data-management/pipelines) are the
-useful DVC mechanism to build data pipelines, in which you can process your data
-and train your model. You may be already training your ML models in them and
-what to start using MLEM to save those models.
+[DVC pipelines](https://dvc.org/doc/start/data-management/pipelines) is a
+mechanism to build data pipelines, in which you can process your data and train
+your model. You may be already training your ML models in them and what to start
+using MLEM to save those models.
 
 MLEM could be easily plug in into existing DVC pipelines. You'll need to mark
 `.mlem` files as `cache: false`
 [outputs](https://dvc.org/doc/user-guide/project-structure/pipelines-files#output-subfields)
 of a pipelines stage.
 
-## Example
-
-Let's continue using the example from above. First, let's stop tracking the
-artifact `models/rf` in DVC and stop ignoring MLEM files in `.dvcignore`.
-
-```dvc
-$ dvc remove models/rf.dvc
-# we can delete the file since there are no other records
-# beside one we added above:
-$ git rm .dvcignore
-```
-
-Now let's create a simple pipeline to train your model:
+Let's create a simple pipeline to train your model:
 
 ```yaml
 # dvc.yaml
@@ -137,9 +130,8 @@ stages:
           cache: false
 ```
 
-The binary was already in, so there's no need to add it again. For the metafile,
-we've added two rows and specify `cache: false` to track it with DVC while
-storing it in Git.
+We mark the metafile with `cache: false` so DVC pipeline is aware of it, while
+still committing it to Git.
 
 You can verify everything is working by running the pipeline:
 
@@ -151,5 +143,7 @@ Use `dvc push` to send your updates to remote storage.
 ```
 
 Now DVC will take care of storing binaries, so you'll need to commit model
-metafile (`models/rf.mlem`) and `dvc.lock` only. Learn more about
-[DVC](https://dvc.org/doc) and how it can be useful for training your ML models.
+metafile (`models/rf.mlem`) and `dvc.lock` only.
+
+Learn more about [DVC](https://dvc.org/doc) and how it can be useful for
+training your ML models.
