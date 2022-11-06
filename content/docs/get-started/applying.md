@@ -12,9 +12,16 @@ Now, we can use MLEM to load the model and calculate some metrics:
 # predict.py
 from mlem.api import load
 
-
 model = load("models/rf")
-y_pred = model.predict_proba([[0, 1, 2, 3]])
+features = [
+    "sepal length (cm)",
+    "sepal width (cm)",
+    "petal length (cm)",
+    "petal width (cm)",
+]
+x = pd.DataFrame([[0, 1, 2, 3]], columns=features)
+y_pred = model.predict_proba(x)
+
 print(y_pred)
 ```
 
@@ -22,7 +29,7 @@ Now, let's run the script
 
 ```cli
 $ python predict.py
-[[0.3, 0.3, 0.4]]
+[[0.47 0.24 0.29]]
 ```
 
 We see that the prediction was successfully printed in the stdout.
@@ -37,11 +44,11 @@ running `mlem apply`:
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
 
-$ mlem apply models/rf new_data.csv -i --it pandas[csv]
+$ mlem apply models/rf new_data.csv -i --it "pandas[csv]"
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem
 🍏 Applying `predict` method...
-[[0.3, 0.3, 0.4]]
+[[0.47 0.24 0.29]]
 ```
 
 `-i` and `--it pandas[csv]` tells MLEM it's a csv file that should be read with
