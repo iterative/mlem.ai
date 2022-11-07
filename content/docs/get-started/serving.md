@@ -9,7 +9,7 @@ serving models via REST API is quite common.
 To start up a FastAPI server run:
 
 ```cli
-$ mlem serve models/rf fastapi
+$ mlem serve fastapi --model models/rf
 ⏳️ Loading model from models/rf.mlem
 Starting fastapi server...
 🖇️  Adding route for /predict
