@@ -48,7 +48,7 @@ $ mlem apply models/rf new_data.csv \
     -m predict_proba -i --it "pandas[csv]"
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem
-🍏 Applying `predict` method...
+🍏 Applying `predict_proba` method...
 [[0.47 0.24 0.29]]
 ```
 
