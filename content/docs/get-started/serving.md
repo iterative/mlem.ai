@@ -42,7 +42,7 @@ Or, alternatively, launch requests at the server from a different terminal,
 Using `curl` or `httpie`. For example:
 
 ```cli
-❯ curl -X 'POST' \
+$ curl -X 'POST' \
   'http://0.0.0.0:8080/predict_proba' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
