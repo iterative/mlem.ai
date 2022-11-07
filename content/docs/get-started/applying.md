@@ -44,7 +44,8 @@ running `mlem apply`:
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
 
-$ mlem apply models/rf new_data.csv  --m predict_proba -i --it "pandas[csv]"
+$ mlem apply models/rf new_data.csv \
+    -m predict_proba -i --it "pandas[csv]"
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem
 🍏 Applying `predict` method...
