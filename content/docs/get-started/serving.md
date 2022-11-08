@@ -38,8 +38,14 @@ While the model server is running, you can use your browser to open the Swagger
 UI (OpenAPI) at [http://localhost:8080/docs](http://localhost:8080/docs) to
 check out OpenAPI spec and query examples.
 
-Or, alternatively, launch requests at the server from a different terminal,
-Using `curl` or `httpie`. For example:
+<details>
+
+### ⚙️ Expand for a CLI inference example
+
+You can launch requests at the running server from a terminal, Using CLI
+commands like `curl` or `httpie`.
+
+For example:
 
 ```cli
 $ curl -X 'POST' \
@@ -63,6 +69,8 @@ $ curl -X 'POST' \
 
 The Swagger UI even helps to generate `curl` commands similar to the above
 interactively.
+
+</details>
 
 When it comes to serving and inferring your model, MLEM can do even more to help
 you. Not only does MLEM take care of serving, but it can also help you with
