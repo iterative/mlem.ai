@@ -93,6 +93,6 @@
     "*.{js,json,css,md}": "prettier --write"
   },
   "engines": {
-    "node": ">=14.x <=17.x"
+    "node": ">=14.x <=18.12"
   }
 }
