@@ -75,4 +75,4 @@ interactively.
 When it comes to serving and inferring your model, MLEM can do even more to help
 you. Not only does MLEM take care of serving, but it can also help you with
 client code to query/infer the model or model server. Learn more about this in
-[User Guide](/doc/user-guide/serving/).
+[Serving User Guide](/doc/user-guide/serving/).
