@@ -1,16 +1,18 @@
 # clone
 
-Copy a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from `uri` and
-saves a copy of it to `target` path.
+Copy a [MLEM Object](/doc/user-guide/basic-concepts) from `uri` and saves a copy
+of it to `target` path.
 
 ## Synopsis
 
 ```usage
-usage: mlem clone [options] uri target
+usage: mlem clone [-p <path>] [--rev <commitish>]
+                  [--tp <path>] [-h]
+                  uri target
 
 arguments:
-URI     URI to object you want to clone  [required]
-TARGET  Path to store the downloaded object.  [required]
+  uri              URI to object you want to clone
+  target           Path to store the downloaded object.
 ```
 
 ## Description
@@ -22,12 +24,11 @@ repository.
 
 ## Options
 
-- `-p, --project TEXT`: Path to MLEM project [default: (none)]
-- `--rev TEXT`: Repo revision to use [default: (none)]
-- `--target-project, --tp TEXT`: Project to save target to [default: (none)]
-- `-e, --external`: Save result not in .mlem, but directly in project
-- `--link / --no-link`: Whether to create link for output in .mlem directory
-- `--help`: Show this message and exit.
+- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
+  (none)]
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

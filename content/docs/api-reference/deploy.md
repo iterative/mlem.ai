@@ -1,28 +1,20 @@
 # mlem.api.deploy()
 
-Deploy a model to target environment. Can use existing deployment declaration or
-create a new one on-the-fly.
+Deploy a model to a target environment. Can use an existing deployment
+declaration or create a new one on-the-fly.
 
 ```py
 def deploy(
-    deploy_meta_or_path: Union[MlemDeploy, str],
-    model: Union[MlemModel, str] = None,
+    deploy_meta_or_path: Union[MlemDeployment, str],
+    model: Union[MlemModel, str],
     env: Union[MlemEnv, str] = None,
     project: Optional[str] = None,
+    rev: Optional[str] = None,
     fs: Optional[AbstractFileSystem] = None,
-    external: bool = None,
-    index: bool = None,
+    env_kwargs: Dict[str, Any] = None,
     **deploy_kwargs,
-) -> MlemDeploy
+) -> MlemDeployment
 ```
-
-[//]: # '### Usage:'
-[//]: #
-[//]: # '```py'
-[//]: # 'from mlem.api import deploy'
-[//]: #
-[//]: # '#TODO'
-[//]: # '```'
 
 ## Description
 
@@ -32,17 +24,18 @@ provides a programmatic way to create deployments for a target environment.
 
 ## Parameters
 
-- **`deploy_meta_or_path`** (required) - Path to deployment meta (will be
-  created if it does not exist)
-- `model` (optional) - Path to model
-- `env` (optional) - Path to target environment
-- `project` (optional) - Path to MLEM project
-- `fs` (optional) - filesystem to load deploy meta from. If not provided, will
-  be inferred from `deploy_meta_or_path`
-- `external` (optional) - Save result not in mlem dir, but directly in project
-- `index` (optional) - Whether to index output in .mlem directory
-- `deploy_kwargs` (optional) - Configuration for new deployment meta if it does
-  not exist
+- **`deploy_meta_or_path`** (required) - MlemDeployment object or path to it.
+- **`model`** (required) - The model to deploy.
+- **`env`** (required) - The environment to deploy to.
+- `project` (optional) - Path to mlem project where to load obj from.
+- `rev` (optional) - Revision if object is stored in git repo.
+- `fs` (optional) - Filesystem to use to load the object.
+- `env_kwargs` (optional) - Additional kwargs to pass to the environment.
+- `deploy_kwargs` (optional) - Additional kwargs to pass to the deployment.
+
+## Returns
+
+`MlemDeployment`: The deployment object.
 
 ## Exceptions
 

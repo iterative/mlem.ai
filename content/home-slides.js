@@ -8,13 +8,13 @@ const terminalSlideData = [
   >>> mlem.api.save(model, "dog-bark-translator")
   >>>
 
-$ tree .mlem/model
-  .mlem/model/
+$ tree 
+  .
   ├── dog-bark-translator
   └── dog-bark-translator.mlem
 `,
   `
-    $ cat .mlem/model/dog-bark-translator.mlem
+    $ cat dog-bark-translator.mlem
     type: sklearn
     methods:
     &nbsp;&nbsp;predict:
@@ -26,9 +26,9 @@ $ tree .mlem/model
     &nbsp;&nbsp;emoji: 1.6.1
     `,
   `
-    $ mlem deploy dog-bark-translator heroku
+    $ mlem deploy heroku dog-bark-translator
   🏗️ Building dog-bark-translator:latest docker image...<delay></delay>
-  📤 Pushing docker image to heroku, using envs/heroku.yaml specification...<delay></delay>
+  📤 Pushing docker image to heroku...<delay></delay>
   🚀 Starting application...<delay></delay>
   💫 Application is live, check it out at https://dog-bark-translator.iterative.ai
     `,

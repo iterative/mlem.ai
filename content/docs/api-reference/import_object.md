@@ -1,7 +1,7 @@
 # mlem.api.import_object()
 
-Try to load an object as MLEM model (or dataset) and return it, optionally
-saving to the specified target location.
+Try to load an object as MLEM model (or data) and return it, optionally saving
+to the specified target location.
 
 ```py
 def import_object(
@@ -14,8 +14,6 @@ def import_object(
     target_fs: Optional[AbstractFileSystem] = None,
     type_: Optional[str] = None,
     copy_data: bool = True,
-    external: bool = None,
-    index: bool = None,
 )
 ```
 
@@ -47,19 +45,21 @@ command.
 
 ## Parameters
 
-- **`path`** (required) - Path of file to import.
-- `project` (optional) - Path to MLEM project.
-- `rev` (optional) - revision, could be Git commit SHA, branch name or tag.
-- `fs` (optional) - FileSystem for the `path` argument
-- `target` (optional) - Path to save MLEM object into.
-- `target_project` (optional) - Path to MLEM project for `target`.
-- `target_fs` (optional) - FileSystem for the `target` argument
-- `type_` (optional) - Specify how to read file. Available types: ['pickle',
-  'pandas']. Defaults to auto-infer.
-- `copy_data` (optional) - Whether to create a copy of file in target location
-  or just link existing file. Defaults to True.
-- `external` (optional) - Save result directly to `target` (not inside `.mlem/`)
-- `index` (optional) - Whether to index output in `.mlem/` directory
+- **`path`** (required) - Path to the object to import.
+- `project` (optional) - Path to mlem project where to load obj from.
+- `rev` (optional) - Revision if object is stored in git repo.
+- `fs` (optional) - Filesystem to use to load the object.
+- `target` (optional) - Where to store the imported object.
+- `target_project` (optional) - If provided, treat `target` as object name and
+  dumpobject in this MLEM Project.
+- `target_fs` (optional) - Filesystem to use to save the object.
+- `type_` (optional) - Type of the object to import. If not provided, will try
+  toinfer from the object itself.
+- `copy_data` (optional) - Whether to copy data to the target location.
+
+## Returns
+
+`MlemObject`: Imported object.
 
 ## Exceptions
 

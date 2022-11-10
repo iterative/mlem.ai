@@ -1,6 +1,6 @@
 # mlem.api.apply()
 
-Apply provided model against provided data
+Apply provided model against provided data.
 
 ```py
 def apply(
@@ -9,8 +9,6 @@ def apply(
     method: str = None,
     output: str = None,
     target_project: str = None,
-    index: bool = None,
-    external: bool = None,
     batch_size: Optional[int] = None,
 ) -> Optional[Any]
 ```
@@ -33,16 +31,19 @@ required.
 
 ## Parameters
 
-- **`model`** (required) - MLEM model (a MlemModel object).
+- **`model`** (required) - MLEM model.
 - **`data`** (required) - Input to the model.
-- `method` (optional) - Which model method to use. If None, use the only method
-  model has. If more than one is available, will fail.
-- `output` (optional) - If value is provided, assume its path and save output
+- `method` (optional) - Which model method to use.If None, use the only method
+  model has.If more than one is available, will fail.
+- `output` (optional) - If value is provided,assume it's path and save output
   there.
-- `target_project` (optional) - The path to project to save the results to.
-- `index` (optional) - Whether to index saved output in MLEM root folder.
-- `external` (optional) - Whether to save result outside mlem dir.
-- `batch_size` (optional) - If data is to be loaded and applied in batches.
+- `target_project` (optional) - Path to MLEM project to save the result to.
+- `batch_size` (optional) - If provided, will process data in batches of given
+  size.
+
+## Returns
+
+If `output=None`, returns results for given data. Otherwise returns None.
 
 ## Exceptions
 

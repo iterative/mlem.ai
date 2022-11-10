@@ -7,9 +7,9 @@ For a list of all commands, type `mlem -h`
 
 ## Typical MLEM workflow
 
-- Initialize a MLEM project in a Git Repo with
-  [mlem init](/doc/command-reference/init).
-- Save Models and Data with MLEM.
+First, save models with MLEM using [mlem.api.save](/doc/api-reference/save).
+Second, productionize them as you want:
+
 - Load and Apply models with [mlem apply](/doc/command-reference/apply).
 - Build models into Python packages or Docker images with
   [mlem build](/doc/command-reference/build).

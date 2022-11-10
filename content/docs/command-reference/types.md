@@ -6,11 +6,13 @@ subtype is not provided, list all available MLEM types.
 ## Synopsis
 
 ```usage
-usage: mlem types [options] [abc] [sub_type]
+usage: mlem types [-h]
+                  [abc] [sub_type]
 
 arguments:
-[ABC]       Subtype to list implementations. List subtypes if not provided
-[SUB_TYPE]  Type of `meta` subtype
+  [abc]            Subtype to list implementations. List subtypes if not
+                   provided.
+  [sub_type]       Type of `meta` subtype
 ```
 
 ## Description
@@ -21,14 +23,14 @@ different implementations available for a specific `SUB_TYPE` (argument).
 This can be useful, for example, to see which types of servers are supported for
 hosting and serving a model (see [Examples](#examples)).
 
-Check out [MLEM ABCs](/doc/user-guide/mlem-abcs) for a list of abstract base
-classes that subclass `mlem.core.base.MlemABC`. These constitute the building
-blocks of MLEM, and can be subclassed to add new functionalities and
+Check out [MLEM ABCs](/doc/object-reference/mlem-abcs) for a list of abstract
+base classes that subclass `mlem.core.base.MlemABC`. These constitute the
+building blocks of MLEM, and can be subclassed to add new functionalities and
 capabilities.
 
 ## Options
 
-- `-h, --help`: Show this message and exit.
+- `-h`, `--help` - Show this message and exit.
 
 ## Examples
 

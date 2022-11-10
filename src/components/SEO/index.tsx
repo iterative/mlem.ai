@@ -13,7 +13,7 @@ interface ISEOProps {
   article?: string
 }
 
-const defaultSocialImage = '/social-image.png'
+const defaultSocialImage = '/social-share.png'
 
 const SEO: React.FC<ISEOProps> = ({
   title,
