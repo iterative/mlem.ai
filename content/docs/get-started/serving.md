@@ -23,6 +23,9 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
+The server now runs, and listens on `http://0.0.0.0:8080` as stated in the
+output.
+
 Servers automatically create endpoints from model methods using `sample_data`
 argument provided to [mlem.api.save](/doc/api-reference/save).
 
@@ -31,10 +34,45 @@ That's it! You can check out the other available server implementations in
 
 ## Making requests
 
-While serving the model, you can open Swagger UI (OpenAPI) at
-[http://localhost:8080/docs](http://localhost:8080/docs) to check out OpenAPI
-spec and query examples.
+While the model server is running, you can use your browser to open the Swagger
+UI (OpenAPI) at [http://localhost:8080/docs](http://localhost:8080/docs) to
+check out OpenAPI spec and query examples.
 
-MLEM can help you with not only serving, but also querying the model. Using MLEM
-API or CLI you can send requests to your model without implementing the "client"
-part. Learn more about this in [User Guide](/doc/user-guide/serving/).
+<details>
+
+### ⚙️ Expand for a CLI inference example
+
+You can launch requests at the running server from a terminal, Using CLI
+commands like `curl` or `httpie`.
+
+For example:
+
+```cli
+$ curl -X 'POST' \
+  'http://0.0.0.0:8080/predict_proba' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "data": {
+    "values": [
+      {
+        "sepal length (cm)": 0,
+        "sepal width (cm)": 1,
+        "petal length (cm)": 2,
+        "petal width (cm)": 3
+      }
+    ]
+  }
+}'
+[[0.47,0.24,0.29]]
+```
+
+The Swagger UI even helps to generate `curl` commands similar to the above
+interactively.
+
+</details>
+
+When it comes to serving and inferring your model, MLEM can do even more to help
+you. Not only does MLEM take care of serving, but it can also help you with
+client code to query/infer the model or model server. Learn more about this in
+[Serving User Guide](/doc/user-guide/serving/).
