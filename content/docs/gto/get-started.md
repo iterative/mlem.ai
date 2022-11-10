@@ -138,7 +138,7 @@ If you want to see more CI examples, check out
 Thanks for completing this Get Started!
 
 - If you want how to specify artifact's metainformation like `path`, `type` and
-  `description`, check out [User Guide](/doc/gto/user-guide).
+  `description`, check out [User Guide](/doc/gto/user-guide/artifacts).
 - If you want to learn about using DVC to keep your artifact binaries in remote
   storages, check out [DVC docs](https://dvc.org/doc).
 - If you want to learn more about Studio, check out

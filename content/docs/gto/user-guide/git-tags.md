@@ -1,5 +1,12 @@
 # Git tags format
 
+<admon type="tip">
+
+You can work with GTO without knowing the used Git tag names conventions, since
+commands like `gto register` and `gto assign` abstracts that away from you.
+
+</admon>
+
 All events have the standard formats of Git tags:
 
 - `{artifact_name}@{version_number}#{e}` for version registration.
