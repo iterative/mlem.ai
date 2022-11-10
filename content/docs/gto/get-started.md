@@ -86,14 +86,16 @@ The `gto show` output confirms our expectation.
 The power of using Git tags to register versions and assign stages is simple: we
 can act upon them in well-known way - in CI/CD.
 
-To see how it works, let's fork the
-[example-gto repo](https://github.com/iterative/example-gto) and push the tag we
-just created to GitHub. For CI/CD to start, you'll need to enable them on the
-"Actions" page of your fork.
 
 <details>
 
-### Step-by-step instruction to fork the repo and enable Github workflows
+### Click to set up a working repository to try this.
+
+Let's fork the
+[example-gto repo](https://github.com/iterative/example-gto) repo
+(you'll need a [GitHub](https://github.com/signup) account first). For
+CI/CD to start, you'll need to enable it on the "Actions" page of your
+fork.
 
 1. [Fork the repo](https://github.com/iterative/example-gto/fork). Make sure you
    uncheck "Copy the `main` branch only" to copy Git tags as well:

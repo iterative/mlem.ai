@@ -8,7 +8,7 @@ more advanced cases, we should codify them in the registry itself.
 
 To keep this metainformation, GTO uses `artifacts.yaml` file. Commands like
 [`annotate`](/doc/gto/command-reference/annotate) and
-[`remove`](/doc/gto/command-reference/remote) are used to modify it, while
+[`remove`](/doc/gto/command-reference/remove) are used to modify it, while
 [`describe`](/doc/gto/command-reference/describe) helps get them when they're
 needed.
 
@@ -39,7 +39,7 @@ GTO the artifact file is committed to Git.
 - Virtual artifacts could be an external path (e.g. `s3://mybucket/myfile`) or a
   local path to a metafile representing an externally stored artifact file (as
   [with DVC](https://dvc.org/doc/start/data-management)). In this case, GTO
-  can't pin versions to a physical state of the artifact and guarantee it's
+  can't pin versions to a physical state of the artifact and guarantee its
   immutability later, e.g. if `s3://mybucket/myfile` changes the registry won't
   know it, nor have a way to recover the original file.
 

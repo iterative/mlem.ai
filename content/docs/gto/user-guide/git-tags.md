@@ -10,7 +10,7 @@ All events have the standard formats of Git tags:
 
 All of them share two parts:
 
-1. `{artifact}` prefix part.
+1. `{artifact_name}` prefix part.
 2. `#{e}` counter at the end that can be omitted (in "simple" Git tag format).
 
 Generally, `#{e}` counter is used, because Git doesn't allow to create two Git
