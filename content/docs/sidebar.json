@@ -688,7 +688,59 @@
       {
         "slug": "command-reference",
         "label": "Command Reference",
-        "source": "command-reference/index.md"
+        "source": "command-reference/index.md",
+        "children": [
+          {
+            "slug": "annotate",
+            "source": "annotate.md",
+            "label": "annotate"
+          },
+          {
+            "slug": "assign",
+            "source": "assign.md",
+            "label": "assign"
+          },
+          {
+            "slug": "check-ref",
+            "source": "check-ref.md",
+            "label": "check-ref"
+          },
+          {
+            "slug": "deprecate",
+            "source": "deprecate.md",
+            "label": "deprecate"
+          },
+          {
+            "slug": "describe",
+            "source": "describe.md",
+            "label": "describe"
+          },
+          {
+            "slug": "history",
+            "source": "history.md",
+            "label": "history"
+          },
+          {
+            "slug": "register",
+            "source": "register.md",
+            "label": "register"
+          },
+          {
+            "slug": "remove",
+            "source": "remove.md",
+            "label": "remove"
+          },
+          {
+            "slug": "show",
+            "source": "show.md",
+            "label": "show"
+          },
+          {
+            "slug": "stages",
+            "source": "stages.md",
+            "label": "stages"
+          }
+        ]
       }
     ]
   }
