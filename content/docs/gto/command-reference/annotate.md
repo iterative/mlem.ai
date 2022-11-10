@@ -1,6 +1,6 @@
 # annotate
 
-Update artifact metadata annotations
+Update artifact metadata annotations.
 
 ## Synopsis
 

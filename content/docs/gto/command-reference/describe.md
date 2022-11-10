@@ -1,6 +1,6 @@
 # describe
 
-Display enrichments for an artifact
+Display enrichments for an artifact.
 
 ## Synopsis
 

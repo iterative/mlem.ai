@@ -1,6 +1,6 @@
 # show
 
-Show the registry state, highest version, or what's assigned in stage
+Show the registry state, highest version, or what's assigned in stage.
 
 ## Synopsis
 

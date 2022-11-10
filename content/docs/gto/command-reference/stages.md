@@ -1,6 +1,6 @@
 # stages
 
-Print list of stages used in the registry
+Print list of stages used in the registry.
 
 ## Synopsis
 

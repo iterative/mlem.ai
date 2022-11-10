@@ -1,6 +1,6 @@
 # remove
 
-Remove the enrichment for given artifact
+Remove the enrichment for given artifact.
 
 ## Synopsis
 

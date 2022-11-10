@@ -1,6 +1,6 @@
 # assign
 
-Assign stage to specific artifact version
+Assign stage to specific artifact version.
 
 ## Synopsis
 

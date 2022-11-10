@@ -1,6 +1,6 @@
 # history
 
-Show a journal of registry operations
+Show a journal of registry operations.
 
 ## Synopsis
 
