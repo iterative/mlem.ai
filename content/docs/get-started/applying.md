@@ -12,7 +12,7 @@ Now, we can use MLEM to load the model and calculate some metrics:
 # predict.py
 from mlem.api import load
 
-model = load("models/rf")
+model = load("models/rf")  # RandomForestClassifier
 features = [
     "sepal length (cm)",
     "sepal width (cm)",
@@ -45,13 +45,20 @@ $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
 
 $ mlem apply models/rf new_data.csv \
-    -m predict_proba -i --it "pandas[csv]"
+    --method predict_proba \
+    --import --it "pandas[csv]"
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem
 🍏 Applying `predict_proba` method...
 [[0.47 0.24 0.29]]
 ```
 
+<details>
+
+### Learn more about `--method`, `--import` and `--it` options used
+
+- The `--method`/`-m` flag tells MLEM to invoke the `predict_proba` method and
+  return the class probabilities, instead of the default `predict`.
 - The `--import`/`-i` flag tells MLEM to import the data on the fly.
 - The `--import-type` / `--it` flag, helps MLEM understand the data format.
   Here, it's `pandas[csv]` a csv file that should be read with Pandas. For that
@@ -59,8 +66,7 @@ $ mlem apply models/rf new_data.csv \
   [MLEM import](/doc/user-guide/importing). You can learn more about specifying
   these arguments on `mlem apply` page.
 
-- The `--method`/`-m` flag tells MLEM to invoke the `predict_proba` method and
-  return the class probabilities, instead of the default `predict`.
-
 Alternatively, you could save the [data with MLEM](/doc/user-guide/data) to use
 `mlem apply` on it.
+
+</details>
