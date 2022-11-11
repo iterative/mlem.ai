@@ -15,6 +15,16 @@ arguments:
 
 ## Description
 
+You can use `gto check-ref` to interpret a Git tag:
+
+```console
+$ gto check-ref -r build/example-gto churn#prod#3
+✅  Stage "prod" was assigned to version "v3.0.0" of artifact "churn"
+```
+
+For machine-consumable format, use `--json` flag or output specific pieces of
+information with `--name`, `--version`, `--stage` or `--event`.
+
 ## Options
 
 - `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
@@ -24,9 +34,3 @@ arguments:
 - `--event` - Show event
 - `--stage` - Show artifact stage
 - `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-    $ gto check-ref rf@v1.0.0
-    $ gto check-ref rf#prod --name
-    $ gto check-ref rf#prod --version

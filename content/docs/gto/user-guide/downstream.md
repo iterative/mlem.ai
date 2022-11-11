@@ -17,24 +17,16 @@ like REST API to check if changes happened. As an example, check out
 
 ## Getting started with CI/CD
 
-To act upon registrations and assignments (Git tags), you can create simple CI
-workflow. Check out
-[the example workflow in `example-gto` repo](https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml).
+To act upon registrations and assignments (Git tags), you can create a simple CI
+workflow. To see an example, check out
+[the workflow in `example-gto` repo](https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml).
 The workflow uses [the GTO GH Action](https://github.com/iterative/gto-action)
-that fetches all Git tags (to correctly interpret the Registry) and finds out
-the version of the artifact that was registered, or the stage that was assigned,
-so you could use them in later steps of the CI.
+that fetches all Git tags (to correctly interpret the Registry), finds out the
+`version` of the artifact that was registered, the `stage` that was assigned,
+and annotations details such as `path`, `type`, `description`, etc, so you could
+use them in the next steps of the CI.
 
-## Inspecting Git tags
+## Helpful commands
 
-You can use `gto check-ref` to interpret the Git tag:
-
-```console
-$ gto check-ref -r build/example-gto churn#prod#3
-✅  Stage "prod" was assigned to version "v3.0.0" of artifact "churn"
-```
-
-For machine-consumable format, use `--json` flag or output specific pieces of
-information with `--name`, `--version`, `--stage` or `--event`.
-
-TODO: add `gto describe` here.
+If you would like to set up CI/CD, but don't want to use GTO GH Action, check
+out `gto check-ref` and `gto describe` commands.

@@ -22,10 +22,10 @@ arguments:
 
 - `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
 - `--version <text>`, `--ver <text>` - Version name in SemVer format
-- `-m <text>`, `--message <text>` - Message to annotate git tag with
-- `--simple <text>` - [auto, true, false] Use simple notation, e.g. rf#prod
-  instead of rf#prod-5 [default: auto]
-- `--force` - Create a git tag even if it already exists and is in effect
+- `-m <text>`, `--message <text>` - Message to annotate the Git tag with
+- `--simple <text>` - Use simple notation, e.g. `rf#prod` instead of `rf#prod-5`
+  [supported values: auto, true, false] [default: auto]
+- `--force` - Create the Git tag even if it already exists and is in effect
 - `--bump-major` - Bump major version
 - `--bump-minor` - Bump minor version
 - `--bump-patch` - Bump patch version

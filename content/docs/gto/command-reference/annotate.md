@@ -16,6 +16,25 @@ arguments:
 
 ## Description
 
+The command adds the artifact annotation to `artifacts.yaml` file.
+
+For example:
+
+```console
+$ gto annotate nn --type model --path models/neural_network.h5
+```
+
+will create
+
+```yaml
+artifacts:
+  nn:
+    type: model
+    path: models/neural_network.h5
+```
+
+This information can be later retrieved by running `gto describe` command.
+
 ## Options
 
 - `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
@@ -28,7 +47,3 @@ arguments:
 - `--push` - Push created commit automatically (experimental) - will set
   commit=True
 - `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-$ gto annotate nn --type model --path models/neural_network.h5
