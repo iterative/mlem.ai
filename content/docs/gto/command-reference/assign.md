@@ -18,14 +18,18 @@ arguments:
 
 ## Description
 
-The command assigns a stage to the artifact version.
-
-For example, this will assign version "v1.0.0" of artifact "nn" to stage "prod":
+To assign an actionable stage for a specific artifact version use the same
+`gto assign` command. Stages can mark the artifact readiness for a specific
+consumer. You can plug in a real downsteam system via CI/CD or web hooks, e.g.
+to redeploy an ML model.
 
 ```cli
-$ gto assign nn --version v1.0.0 --stage prod
-Created git tag 'nn#prod#1' that assigns stage to version 'v1.0.0'
+$ gto assign awesome-model --version v0.0.1 --stage prod
+Created git tag 'awesome-model#prod#1' that assigns stage to 'v0.0.1'
 ```
+
+GTO creates a special Git tag in
+[the standard format](/doc/gto/user-guide/git-tags).
 
 ## Options
 

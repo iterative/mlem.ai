@@ -29,4 +29,4 @@ use them in the next steps of the CI.
 ## Helpful commands
 
 If you would like to set up CI/CD, but don't want to use GTO GH Action, check
-out `gto check-ref` and `gto describe` commands.
+out `gto show`, `gto check-ref` and `gto describe` commands.

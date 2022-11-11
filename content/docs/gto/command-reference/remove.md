@@ -14,6 +14,9 @@ arguments:
 
 ## Description
 
+This command removes the artifact annotation from `artifacts.yaml`. Don't forget
+to commit the change.
+
 ## Options
 
 - `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
@@ -21,7 +24,3 @@ arguments:
 - `--push` - Push created commit automatically (experimental) - will set
   commit=True
 - `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-     $ gto remove nn

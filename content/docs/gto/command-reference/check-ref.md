@@ -17,7 +17,7 @@ arguments:
 
 You can use `gto check-ref` to interpret a Git tag:
 
-```console
+```cli
 $ gto check-ref -r build/example-gto churn#prod#3
 ✅  Stage "prod" was assigned to version "v3.0.0" of artifact "churn"
 ```

@@ -18,6 +18,22 @@ arguments:
 
 ## Description
 
+Registering a version is usually done to mark significant changes to the
+artifact. To release a new version (including the very first one), use
+`gto register`.
+
+```cli
+$ gto register awesome-model HEAD --version v0.0.1
+Created git tag 'awesome-model@v0.0.1' that registers a version
+```
+
+GTO creates a special Git tag for the artifact version, in
+[the standard format](/doc/gto/user-guide/git-tags).
+
+The version is now associated to the current Git commit (`HEAD`). You can use
+another Git commit if you provide it's hexsha as an additional argument, like
+`$ gto register awesome-model abc1234`.
+
 ## Options
 
 - `-r <text>`, `--repo <text>` - Local or remote repository [default: .]

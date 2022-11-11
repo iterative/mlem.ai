@@ -15,6 +15,19 @@ arguments:
 
 ## Description
 
+To get details about an artifact (from `artifacts.yaml`) use `gto describe`:
+
+```cli
+$ gto describe churn -r https://github.com/iterative/example-gto
+{
+    "type": "model",
+    "path": "models/churn.pkl",
+    "virtual": false
+}
+```
+
+The output is in JSON format for ease of parsing programatically.
+
 ## Options
 
 - `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
@@ -23,8 +36,3 @@ arguments:
 - `--path` - Show path
 - `--description` - Show description
 - `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-    $ gto describe nn --rev HEAD
-    $ gto describe nn@v0.0.1
