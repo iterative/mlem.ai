@@ -13,8 +13,10 @@ the delivery of your software project with CI/CD, and adopt a GitOps approach in
 general.
 
 Assuming GTO is already [installed](/doc/gto/install) in your active Python
-environment, let's clone an example [ML Model Registry] and review it
-with `git show`:
+environment, let's clone an example [ML Model Registry] and review it with
+`git show`:
+
+[ml model registry]: /doc/use-cases/model-registry
 
 ```cli
 $ git clone https://github.com/iterative/example-gto
@@ -30,47 +32,64 @@ $ gto show
 ```
 
 3 artifacts (models `churn`, `segment`, and `cv-class`) and their `latest`
-versions (per [SemVer](https://semver.org)) are listed. We also have 3 stages: 
-`dev`, `prod`, and `staging`. The model versions (if any) assigned to each
-stage are shown.
+versions (per [SemVer](https://semver.org)) are listed. We also have 3 stages:
+`dev`, `prod`, and `staging`. The model versions (if any) assigned to each stage
+are shown.
 
-## Registering versions and assigning stages
+## Registering a new version
 
-You can `gto register` artifacts and `gto assign` them to stages. Both functionalities
-work in a similar way, so let's walkthough only one of them here.
-
-Let's assume the version `v0.1.13` of `cv-class` looks very promising, and now
-we want to promote it to `dev` to test it:
+Registering a version is usually done to mark significant changes to the
+artifact. Let's assume this is the case for the `cv-class` model in `HEAD` and
+we would like to create a new version of it:
 
 ```cli
-$ gto assign cv-class --version v0.1.13 --stage dev
-Created git tag 'cv-class#dev#1' that assigns stage to version 'v0.1.13'
+$ gto register cv-class
+Created git tag 'cv-class@v0.1.14' that registers version
 To push the changes upstream, run:
-    git push origin cv-class#dev#1
+    git push origin cv-class@v0.1.14
+
+# this version will be shown in `gto show` now:
+$ gto show
+╒══════════╤══════════╤════════╤═════════╤════════════╕
+│ name     │ latest   │ #dev   │ #prod   │ #staging   │
+╞══════════╪══════════╪════════╪═════════╪════════════╡
+│ churn    │ v3.1.1   │ v3.1.1 │ v3.0.0  │ v3.1.0     │
+│ segment  │ v0.4.1   │ v0.4.1 │ -       │ -          │
+│ cv-class │ v0.1.14  │ -      │ -       │ -          │
+╘══════════╧══════════╧════════╧═════════╧════════════╛
 ```
 
-GTO created a Git tag with a special format that contains instruction to assign
-a stage to a version.
+## Assigning stages
+
+Let's assume the version we just registered looks very promising, and we want to
+promote it to `dev` to test it:
 
 ```cli
+$ gto assign cv-class --stage dev
+Created git tag 'cv-class#dev#1' that assigns stage to version 'v0.1.14'
+To push the changes upstream, run:
+    git push origin cv-class#dev#1
+
+# stage assignment can be seen with `gto show`:
 $ gto show
 ╒══════════╤══════════╤═════════╤═════════╤════════════╕
 │ name     │ latest   │ #dev    │ #prod   │ #staging   │
 ╞══════════╪══════════╪═════════╪═════════╪════════════╡
-│ churn    │ v3.1.1   │ v3.1.1  │ v3.0.0  │ v3.1.1     │
+│ churn    │ v3.1.1   │ v3.1.1  │ v3.0.0  │ v3.1.0     │
 │ segment  │ v0.4.1   │ v0.4.1  │ -       │ -          │
-│ cv-class │ v0.1.13  │ v0.1.13 │ -       │ -          │
-│ awesome  │ v0.0.1   │ -       │ -       │ -          │
+│ cv-class │ v0.1.14  │ v0.1.14 │ -       │ -          │
 ╘══════════╧══════════╧═════════╧═════════╧════════════╛
 ```
 
 We can push to Git repository to start a CI job!
 
-## Acting downstream
+## Act on new versions and stage assignments in CI/CD
 
-GTO [uses Git tags] to register artifact versions and assign them to stages. This
-means we can act upon these operations in any Git-based system such as many
+GTO [uses Git tags] to register artifact versions and assign them to stages.
+This means we can act upon these operations in any Git-based system such as many
 CI/CD platforms.
+
+[uses git tags]: /doc/gto/user-guide/git-tags
 
 <details>
 
@@ -93,15 +112,19 @@ Let's do the same thing we did locally, but for your remote repo. Don't forget
 to replace the URL:
 
 ```cli
-$ gto assign cv-class --version v0.1.13 --stage dev \
+# since we didn't register a version on remote, GTO will do that for us:
+$ gto assign cv-class --stage dev \
     --repo https://github.com/aguschin/example-gto
-Created git tag 'cv-class#dev#1' that assigns stage to version 'v0.1.13'
+Created git tag 'cv-class@v0.1.14' that registers a version
+Running `git push origin cv-class@v0.1.14`
+Successfully pushed git tag cv-class@v0.1.14 on remote.
+Created git tag 'cv-class#dev#1' that assigns stage to version 'v0.1.14'
 Running `git push origin cv-class#dev#1`
 Successfully pushed git tag cv-class#dev#1 on remote.
 ```
 
 Now the CI/CD should start, and you should see that we found out: it was
-`cv-class` artifact, version `v0.1.13` that was assigned to `dev` stage. Using
+`cv-class` artifact, version `v0.1.14` that was assigned to `dev` stage. Using
 this information, the step `Deploy (act on assigning a new stage)` was executed
 (while `Publish (act on registering a new version)` was skipped):
 
@@ -128,29 +151,3 @@ Thanks for completing this Get Started!
   [Studio docs](https://dvc.org/doc/studio).
 - If you want to learn about using MLEM to deploying your model upon GTO stage
   assignments, check out [MLEM docs](/doc/).
-
-<!-- Adding a new artifact
-
-We just saw how to commit a new ML model to the repo. It's saved under
-`models/awesome.pkl`. Let's register the very first version of it.
-
-```cli
-$ gto register awesome
-Created git tag 'awesome@v0.0.1' that registers version
-To push the changes upstream, run:
-    git push origin awesome@v0.0.1
-```
-
-Nice! Let's see the registry state now:
-
-```cli
-$ gto show
-╒══════════╤══════════╤════════╤═════════╤════════════╕
-│ name     │ latest   │ #dev   │ #prod   │ #staging   │
-╞══════════╪══════════╪════════╪═════════╪════════════╡
-│ churn    │ v3.1.1   │ v3.1.1 │ v3.0.0  │ v3.1.0     │
-│ segment  │ v0.4.1   │ v0.4.1 │ -       │ -          │
-│ cv-class │ v0.1.13  │ -      │ -       │ -          │
-│ awesome  │ v0.0.1   │ -      │ -       │ -          │
-╘══════════╧══════════╧════════╧═════════╧════════════╛
-``` -->
