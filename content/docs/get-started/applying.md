@@ -12,9 +12,16 @@ Now, we can use MLEM to load the model and calculate some metrics:
 # predict.py
 from mlem.api import load
 
+model = load("models/rf")  # RandomForestClassifier
+features = [
+    "sepal length (cm)",
+    "sepal width (cm)",
+    "petal length (cm)",
+    "petal width (cm)",
+]
+x = pd.DataFrame([[0, 1, 2, 3]], columns=features)
+y_pred = model.predict_proba(x)
 
-model = load("models/rf")
-y_pred = model.predict_proba([[0, 1, 2, 3]])
 print(y_pred)
 ```
 
@@ -22,7 +29,7 @@ Now, let's run the script
 
 ```cli
 $ python predict.py
-[[0.3, 0.3, 0.4]]
+[[0.47 0.24 0.29]]
 ```
 
 We see that the prediction was successfully printed in the stdout.
@@ -37,17 +44,29 @@ running `mlem apply`:
 $ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3" > new_data.csv
 
-$ mlem apply models/rf new_data.csv -i --it pandas[csv]
+$ mlem apply models/rf new_data.csv \
+    --method predict_proba \
+    --import --it "pandas[csv]"
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem
-🍏 Applying `predict` method...
-[[0.3, 0.3, 0.4]]
+🍏 Applying `predict_proba` method...
+[[0.47 0.24 0.29]]
 ```
 
-`-i` and `--it pandas[csv]` tells MLEM it's a csv file that should be read with
-Pandas. For that to work, your data should be in a format that is supported by
-[MLEM import](/doc/user-guide/importing). You can learn more about specifying
-these arguments on `mlem apply` page.
+<details>
+
+### Learn more about `--method`, `--import` and `--it` options used
+
+- The `--method`/`-m` flag tells MLEM to invoke the `predict_proba` method and
+  return the class probabilities, instead of the default `predict`.
+- The `--import`/`-i` flag tells MLEM to import the data on the fly.
+- The `--import-type` / `--it` flag, helps MLEM understand the data format.
+  Here, it's `pandas[csv]` a csv file that should be read with Pandas. For that
+  to work, your data should be in a format that is supported by
+  [MLEM import](/doc/user-guide/importing). You can learn more about specifying
+  these arguments on `mlem apply` page.
 
 Alternatively, you could save the [data with MLEM](/doc/user-guide/data) to use
 `mlem apply` on it.
+
+</details>
