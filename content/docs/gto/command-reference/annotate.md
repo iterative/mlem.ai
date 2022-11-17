@@ -44,8 +44,12 @@ awesome-model:
 
 This information can be later retrieved by running `gto describe` command.
 
-> Don't forget to commit `artifacts.yaml` with Git to associate it with the
-> latest artifact version and stage in any copy of the repo.
+<admon type="tip">
+
+Don't forget to commit `artifacts.yaml` with Git to associate it with the
+latest artifact version and stage in any copy of the repo.
+
+</admon>
 
 By default GTO saves artifact as `virtual`. Use the `--must_exist` flag to tell
 GTO the artifact file is committed to Git.
@@ -65,10 +69,6 @@ GTO the artifact file is committed to Git.
   immutability later, e.g. if `s3://mybucket/myfile` changes the registry won't
   know it, nor have a way to recover the original file.
 
-> In future versions, we will support additional enrichments: useful information
-> that other tools like [DVC](https://dvc.org/) and [MLEM](https://mlem.ai/) can
-> provide about the artifacts. This will allow treating DVC repo outputs as
-> usual artifacts instead of `virtual` ones.
 
 </details>
 

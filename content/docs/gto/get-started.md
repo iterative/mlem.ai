@@ -12,23 +12,13 @@ shadow, production, etc.). Git-native mechanisms are used, so you can automate
 the delivery of your software project with CI/CD, and adopt a GitOps approach in
 general.
 
-This Get Started will walk you through basic GTO concepts and actions you would
-like to do in the Artifact Registry.
-
-## Showing the current state
-
 Assuming GTO is already [installed](/doc/gto/install) in your active Python
-environment, let's clone the example repo:
+environment, let's clone an example [ML Model Registry] and review it
+with `git show`:
 
 ```cli
 $ git clone https://github.com/iterative/example-gto
 $ cd example-gto
-```
-
-This repo represents a simple example of Machine Learning Model Registry (that
-is just a special case of an Artifact Registry for us). Let's review it:
-
-```cli
 $ gto show
 ╒══════════╤══════════╤════════╤═════════╤════════════╕
 │ name     │ latest   │ #dev   │ #prod   │ #staging   │
@@ -39,18 +29,14 @@ $ gto show
 ╘══════════╧══════════╧════════╧═════════╧════════════╛
 ```
 
-Here we have 3 models: `churn`, `segment` and `cv-class`. The latest versions of
-them are shown in the column named `latest`. The latest is selected as the one
-having the greatest [SemVer](https://semver.org).
-
-Model versions could be promoted to different stages. Here we have 3 of them:
-`dev`, `prod` and `staging`. When a model was never promoted to a stage, we see
-`-` in the field.
+3 artifacts (models `churn`, `segment`, and `cv-class`) and their `latest`
+versions (per [SemVer](https://semver.org)) are listed. We also have 3 stages: 
+`dev`, `prod`, and `staging`. The model versions (if any) assigned to each
+stage are shown.
 
 ## Registering versions and assigning stages
 
-GTO can [register version](/doc/gto/command-reference/register) of artifacts and
-[assign stages to them](/doc/gto/command-reference/assign). Both functionalities
+You can `gto register` artifacts and `gto assign` them to stages. Both functionalities
 work in a similar way, so let's walkthough only one of them here.
 
 Let's assume the version `v0.1.13` of `cv-class` looks very promising, and now
@@ -64,8 +50,7 @@ To push the changes upstream, run:
 ```
 
 GTO created a Git tag with a special format that contains instruction to assign
-a stage to a version. We can push to Git repository to start the CI, but let's
-ensure that changed our Registry first.
+a stage to a version.
 
 ```cli
 $ gto show
@@ -79,12 +64,13 @@ $ gto show
 ╘══════════╧══════════╧═════════╧═════════╧════════════╛
 ```
 
-The `gto show` output confirms our expectation.
+We can push to Git repository to start a CI job!
 
 ## Acting downstream
 
-The power of using Git tags to register versions and assign stages is simple: we
-can act upon them in well-known way - in CI/CD.
+GTO [uses Git tags] to register artifact versions and assign them to stages. This
+means we can act upon these operations in any Git-based system such as many
+CI/CD platforms.
 
 <details>
 
@@ -98,7 +84,7 @@ start, you'll need to enable it on the "Actions" page of your fork.
    uncheck "Copy the `main` branch only" to copy Git tags as well:
    <img width="877" alt="image" src="https://user-images.githubusercontent.com/6797716/199275275-439335f4-6f54-4cd7-910d-fc29ad3c095c.png">
 
-2. Enable workflows in your repo, for a Git tag to trigger CI:
+2. Enable workflows in your repo for a new Git tag to trigger CI:
    <img width="869" alt="image" src="https://user-images.githubusercontent.com/6797716/199272682-dfd628bf-9599-4e85-a623-bf4a10c3d7e1.png">
 
 </details>
