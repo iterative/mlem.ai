@@ -1,27 +1,11 @@
 # GTO Command Reference
 
-GTO is a command line tool (`gto` binary). For a list of all commands, type
-`gto -h`.
+GTO is a command line tool (see [installation](/doc/gto/install)). For a list of
+all commands, type `gto -h`.
 
-## Read the registry
+## Typical GTO workflow
 
-- Show the registry state, highest version, or what's assigned in stage with
-  `gto show`
-- Find out the artifact version registered/assigned with ref with
-  `gto check-ref`
-- Show a journal of registry operations with `gto history`
-- Print list of stages used in the registry with `gto stages`
-
-## Modify artifacts
-
-- Assign stage to specific artifact version with `gto assign`
-- Deprecate artifact, deregister a version, or unassign a stage with
-  `gto deprecate`
-- Create an artifact version to signify an important, published or released
-  iteration with `gto register`
-
-## Manage artifact enrichments
-
-- Update artifact metadata annotations with `gto annotate`
-- Display enrichments for an artifact with `gto describe`
-- Remove the enrichment for given artifact with `gto remove`
+- Register artifact versions with `gto register`
+- Assign stages to them with `gto assign`
+- Read the registry with `gto show` and `gto history`
+- Edit artifact metadata with `gto annotate` and read it with `gto describe`
