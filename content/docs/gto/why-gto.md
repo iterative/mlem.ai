@@ -1,8 +1,12 @@
-# Use Cases
+# Why GTO?
 
 **GTO** is a tool for creating an Artifact Registry in your Git repository. One
 of the special cases we would like to highlight is creating a
-[Machine Learning Model Registry](/doc/gto/use-cases/model-registry).
+[Machine Learning Model Registry](/doc/use-cases/model-registry).
+
+<details>
+
+## Why do we need such a Registry?
 
 Such a registry serves as a centralized place to store and operationalize your
 artifacts along with their metadata; manage model life-cycle, versions &
@@ -21,7 +25,7 @@ GTO helps you achieve all of them in a [GitOps](https://www.gitops.tech) way. If
 you would like to see an example, please follow
 [Get Started](/doc/gto/get-started).
 
-## Why GTO?
+</details>
 
 In Software Engineering, Git is a heart of the Software system. The code is
 committed to Git and CI/CD triggers on new commits making the downstream action

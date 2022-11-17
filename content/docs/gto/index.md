@@ -1,8 +1,8 @@
 # GTO Documentation
 
 **GTO** is a tool for creating an Artifact Registry in your Git repository. One
-of the special cases we would like to highlight is creating a **Machine Learning
-Model Registry**.
+of the special cases we would like to highlight is creating a
+[Machine Learning Model Registry](/doc/use-cases/model-registry).
 
 Such a registry serves as a centralized place to store and operationalize your
 artifacts along with their metadata; manage model life-cycle, versions &
