@@ -10,7 +10,7 @@ using `pickle`, a special extension for that framework will allow to save the
 model in framework-specific format and support special features of that
 framework.
 
-Typicaly model extension will implement
+Typicaly model extensions will implement
 [ModelType](/doc/object-reference/mlem-abcs#modeltype) and
 [ModelIO](/doc/object-reference/mlem-abcs#modelio) interfaces.
 

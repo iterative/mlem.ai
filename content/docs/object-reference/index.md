@@ -2,7 +2,7 @@
 
 This section is for you if you want to see the detailed reference for
 configuring MLEM Objects (such as
-[what parameters are needed to configure an Kubernetes Deployment](/doc/object-reference/deployment/kubernetes)),
+[what parameters are needed to configure a Kubernetes Deployment](/doc/object-reference/deployment/kubernetes)),
 or if you're looking to support new functionality (to contribute back to MLEM or
 just for your own use) and looking out for examples, such as:
 

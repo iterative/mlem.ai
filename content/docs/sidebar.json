@@ -16,24 +16,14 @@
     "source": "get-started/index.md",
     "children": [
       {
-        "slug": "applying",
-        "label": "Applying models",
-        "source": "applying.md"
+        "slug": "management",
+        "label": "Basic model management",
+        "source": "management.md"
       },
       {
-        "slug": "serving",
-        "label": "Serving models",
-        "source": "serving.md"
-      },
-      {
-        "slug": "building",
-        "label": "Building models",
-        "source": "building.md"
-      },
-      {
-        "slug": "deploying",
-        "label": "Deploying models",
-        "source": "deploying.md"
+        "slug": "deploying-and-serving",
+        "label": "Deploying and serving models",
+        "source": "deploying-and-serving.md"
       }
     ]
   },
