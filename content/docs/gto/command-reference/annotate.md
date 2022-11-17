@@ -46,8 +46,8 @@ This information can be later retrieved by running `gto describe` command.
 
 <admon type="tip">
 
-Don't forget to commit `artifacts.yaml` with Git to associate it with the
-latest artifact version and stage in any copy of the repo.
+Don't forget to commit `artifacts.yaml` with Git to associate it with the latest
+artifact version and stage in any copy of the repo.
 
 </admon>
 
@@ -68,7 +68,6 @@ GTO the artifact file is committed to Git.
   can't pin versions to a physical state of the artifact and guarantee its
   immutability later, e.g. if `s3://mybucket/myfile` changes the registry won't
   know it, nor have a way to recover the original file.
-
 
 </details>
 

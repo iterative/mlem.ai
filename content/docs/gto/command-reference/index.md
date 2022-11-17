@@ -1,6 +1,7 @@
 # GTO Command Reference
 
-GTO is a command line tool (`gto` binary). For a list of all commands, type `gto -h`.
+GTO is a command line tool (`gto` binary). For a list of all commands, type
+`gto -h`.
 
 ## Read the registry
 

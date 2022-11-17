@@ -637,53 +637,19 @@
         "source": "get-started.md"
       },
       {
-        "slug": "use-cases",
-        "label": "Use Cases",
-        "source": "use-cases/index.md",
-        "children": [
-          {
-            "slug": "model-registry",
-            "source": "model-registry.md",
-            "label": "Model Registry"
-          }
-        ]
-      },
-      {
         "slug": "user-guide",
         "label": "User Guide",
-        "source": "user-guide/index.md",
-        "children": [
-          {
-            "slug": "git-tags",
-            "source": "git-tags.md",
-            "label": "Git tags format"
-          },
-          {
-            "slug": "artifacts",
-            "source": "artifacts.md",
-            "label": "Annotations in artifacts.yaml"
-          },
-          {
-            "slug": "downstream",
-            "source": "downstream.md",
-            "label": "Acting downstream. CI/CD"
-          },
-          {
-            "slug": "config",
-            "source": "config.md",
-            "label": "Configuring types and stages"
-          },
-          {
-            "slug": "storages",
-            "source": "storages.md",
-            "label": "Storing large artifacts"
-          },
-          {
-            "slug": "mlem",
-            "source": "mlem.md",
-            "label": "Deploying models with MLEM"
-          }
-        ]
+        "source": "user-guide.md"
+      },
+      {
+        "slug": "dvc",
+        "source": "dvc.md",
+        "label": "GTO with DVC"
+      },
+      {
+        "slug": "mlem",
+        "source": "mlem.md",
+        "label": "GTO with MLEM"
       },
       {
         "slug": "command-reference",

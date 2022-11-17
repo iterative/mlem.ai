@@ -18,8 +18,8 @@ releases, and easily automate tests and deployments using GitOps.
     Study the detailed inner-workings of GTO in its user guide.
   </card>
 
-  <card href="/doc/gto/use-cases" heading="Use Cases">
-    Non-exhaustive list of scenarios GTO can help with
+  <card href="/doc/use-cases/model-registry" heading="Use Cases">
+    Using GTO to build a Model Registry
   </card>
 
   <card href="/doc/gto/command-reference" heading="Command Reference">
