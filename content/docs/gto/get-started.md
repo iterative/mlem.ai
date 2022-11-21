@@ -89,7 +89,7 @@ GTO [uses Git tags] to register artifact versions and assign them to stages.
 This means we can act upon these operations in any Git-based system such as many
 CI/CD platforms.
 
-[uses git tags]: /doc/gto/user-guide/git-tags
+[uses git tags]: /doc/gto/user-guide#git-tags-format
 
 <details>
 

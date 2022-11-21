@@ -28,7 +28,7 @@ Created git tag 'awesome-model@v0.0.1' that registers a version
 ```
 
 GTO creates a special Git tag for the artifact version, in
-[the standard format](/doc/gto/user-guide/git-tags).
+[the standard format](/doc/gto/user-guide#git-tags-format).
 
 The version is now associated to the current Git commit (`HEAD`). You can use
 another Git commit if you provide it's hexsha as an additional argument, like

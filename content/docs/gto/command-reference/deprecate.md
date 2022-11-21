@@ -46,7 +46,7 @@ Created git tag 'awesome-model#prod!#2' that unassigns a stage from 'v0.0.1'
 ### Unassigning a stage: some details and options
 
 GTO creates a special Git tag in
-[the standard format](/doc/gto/user-guide/git-tags).
+[the standard format](/doc/gto/user-guide#git-tags-format).
 
 Note, that later you can create this stage again, if you need to, by calling
 `$ gto assign` again.

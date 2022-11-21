@@ -29,7 +29,7 @@ Created git tag 'awesome-model#prod#1' that assigns stage to 'v0.0.1'
 ```
 
 GTO creates a special Git tag in
-[the standard format](/doc/gto/user-guide/git-tags).
+[the standard format](/doc/gto/user-guide#git-tags-format).
 
 ## Options
 

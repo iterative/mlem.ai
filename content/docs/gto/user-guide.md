@@ -55,7 +55,7 @@ use them in the next steps of the CI.
 If you would like to set up CI/CD, but don't want to use GTO GH Action, check
 out `gto show`, `gto check-ref` and `gto describe` commands.
 
-## Configuring types and stages
+## Configuring GTO
 
 To configure GTO, use file `.gto` in the root of your repo:
 
