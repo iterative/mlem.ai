@@ -3,8 +3,8 @@
 GTO helps you build a Artifact Registry out of your Git repository. It does so
 by creating Git tags of special format and managing `artifacts.yaml` metafile.
 Since committing large files to Git is not a good practice, you should consider
-not committing your artifacts to Git. Instead, use [DVC](/doc/gto/dvc), Git-lfs,
-or any method commit pointers to the binary files instead.
+not committing your artifacts to Git. Instead, use [DVC](https://dvc.org/doc),
+Git-lfs, or any method commit pointers to the binary files instead.
 
 ## Annotations in artifacts.yaml
 
