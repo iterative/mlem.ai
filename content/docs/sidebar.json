@@ -632,11 +632,6 @@
         "label": "Installation"
       },
       {
-        "slug": "why-gto",
-        "source": "why-gto.md",
-        "label": "Why GTO"
-      },
-      {
         "slug": "get-started",
         "label": "Get Started",
         "source": "get-started.md"
@@ -645,16 +640,6 @@
         "slug": "user-guide",
         "label": "User Guide",
         "source": "user-guide.md"
-      },
-      {
-        "slug": "dvc",
-        "source": "dvc.md",
-        "label": "GTO with DVC"
-      },
-      {
-        "slug": "mlem",
-        "source": "mlem.md",
-        "label": "GTO with MLEM"
       },
       {
         "slug": "command-reference",
