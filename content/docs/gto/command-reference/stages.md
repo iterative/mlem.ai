@@ -12,8 +12,8 @@ usage: gto stages [-r <text>] [--allowed] [--used] [--json]
 ## Description
 
 This command is used to get a list of stages used in the registry - whether
-directly from [the config file](/doc/gto/user-guide#configuring-gto), or from all GTO Git
-tags that exist.
+directly from [the config file](/doc/gto/user-guide#configuring-gto), or from
+all GTO Git tags that exist.
 
 ## Options
 
