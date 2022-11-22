@@ -83,7 +83,7 @@ $ gto show
 
 We can push to Git repository to start a CI job!
 
-## Act on new versions and stage assignments in CI/CD
+## Act on registrations and assignments in CI/CD
 
 GTO [uses Git tags] to register artifact versions and assign them to stages.
 This means we can act upon these operations in any Git-based system such as many
@@ -108,8 +108,22 @@ start, you'll need to enable it on the "Actions" page of your fork.
 
 </details>
 
-Let's do the same thing we did locally, but for your remote repo. Don't forget
-to replace the URL:
+Now let's push the Git tags we created locally to your repository (don't forget
+to replace `aguschin` with your username):
+
+```cli
+$ git remote update origin https://github.com/aguschin/example-gto
+$ git push origin cv-class@v0.1.14 cv-class#dev#1
+ * [new tag]         cv-class@v0.1.14 -> cv-class@v0.1.14
+ * [new tag]         cv-class#dev#1 -> cv-class#dev#1
+```
+
+<details>
+
+### Or just repeat the assignment for your new repo
+
+We can do the same thing we did locally, but for your remote repo (don't forget
+to replace `aguschin` with your username):
 
 ```cli
 # since we didn't register a version on remote, GTO will do that for us:
@@ -123,27 +137,34 @@ Running `git push origin cv-class#dev#1`
 Successfully pushed git tag cv-class#dev#1 on remote.
 ```
 
-Now the CI/CD should start, and you should see that we found out: it was
-`cv-class` artifact, version `v0.1.14` that was assigned to `dev` stage. Using
-this information, the step `Deploy (act on assigning a new stage)` was executed
-(while `Publish (act on registering a new version)` was skipped):
+</details>
 
-<details>
-
-### CI/CD execution example
+Git tags pushed trigger the
+[CI workflow](https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml):
 
 <img width="875" alt="image" src="https://user-images.githubusercontent.com/6797716/199276636-bf996ad3-7d9c-4100-9f3c-6444730e4d19.png">
 
-If you want to see more CI examples, check out
-[the example-repo](https://github.com/iterative/example-gto/actions).
+"GTO: figure out what was registered/promoted" step interprets the Git tag that
+triggered the workflow and passes the information to the next steps. The
+information is used later to trigger "Publish" or "Deploy" steps (since the CI
+on the screenshot was triggered by `cv-class#dev#1` Git tag, the "Publish" step
+was skipped).
 
-</details>
+If you want to see CI examples without reproducing this Get Started, you can
+check out them in
+[the example-repo](https://github.com/iterative/example-gto/actions).
 
 ## Next steps
 
 Thanks for completing this Get Started!
 
-<!-- - To specify important artifact's metainformation like `path`, `type` and
-  `description`, check out [User Guide](/doc/gto/user-guide).
-- To use DVC with GTO, check out [DVC docs](https://dvc.org/doc).
+- Learn how to
+  [specify important artifact's metainformation](/doc/gto/user-guide#annotations-in-artifactsyaml)
+  like `path`, `type` and `description` in the Artifact registry.
+- Learn more about [acting in CI/CD](/doc/gto/user-guide#acting-downstream) upon
+  version registrations and stage assignments.
+- Reach us out in [GH issues](https://github.com/iterative/gto/issues) or in
+  [Discord](https://discord.com/invite/dvwXA2N) to get your questions answered!
+
+<!-- - To use DVC with GTO, check out [DVC docs](https://dvc.org/doc).
 - To deploy models upon GTO stage assignments, check out [MLEM docs](/doc/). -->
