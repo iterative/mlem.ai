@@ -31,7 +31,7 @@ You can load [MLEM objects] from remote locations inside Python code with
 from mlem.api import load
 
 model = load(
-    "rf",
+    "models/rf",
     project="https://github.com/iterative/example-mlem-get-started",
     rev="main"
 )
@@ -48,7 +48,7 @@ You can download MLEM objects to the local environment in with `mlem clone`
 (CLI).
 
 ```cli
-$ mlem clone rf \
+$ mlem clone models/rf \
   --project https://github.com/iterative/example-mlem-get-started \
   ml_model
 ⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
