@@ -36,9 +36,9 @@ unserialized data in `<field_name>_raw` field.
 
 Here is the list of all MLEM ABCs.
 
-# General
+## General
 
-## MlemObject
+### MlemObject
 
 Represents a **[MLEM Object](/doc/user-guide/basic-concepts)**
 
@@ -47,7 +47,7 @@ Represents a **[MLEM Object](/doc/user-guide/basic-concepts)**
 For more info and list of subtypes look
 [here](/doc/user-guide/basic-concepts#mlem-object-types)
 
-## Requirement
+### Requirement
 
 Represents different types of requirements for MLEM Object.
 
@@ -61,7 +61,7 @@ Implementations:
   package. Contains name and source code for the module/package.
 - `unix` - unix package typically installed through `apt` or `yum`
 
-## ImportHook
+### ImportHook
 
 Represents some file format that MLEM can try to
 [import](/doc/user-guide/importing).
@@ -77,9 +77,9 @@ Implementations:
   `csv, json, excel, parquet, feather, stata, html, parquet`. Some formats
   require additional dependencies.
 
-# Models
+## Models
 
-## ModelType
+### ModelType
 
 This class is basically a wrapper for all Model classes of different libraries.
 Yes, yet another standard. If you want to add support for your ML Model in MLEM,
@@ -108,7 +108,7 @@ The one notable implementation is `callable`: it treats any Python callable
 object as a model with a single method `__call__`. That means you can turn
 functions and class methods into MLEM Models as well!
 
-## ModelIO
+### ModelIO
 
 Represents a way that model can be saved and loaded. A required field of
 `ModelType` class. If a ML library has its own way to save and load models, it
@@ -127,9 +127,9 @@ types inside your object and use their IO's for them. This is very handy when
 you for example wrap your `torch` NN with a Python function: the function part
 will be pickled, and the NN will be saved using `torch_io`.
 
-# Data
+## Data
 
-## DataType
+### DataType
 
 Holds metadata about data, like type, dimensions, column names etc.
 
@@ -172,7 +172,7 @@ Special:
 
 - `unspecified` - Special dataset type when no dataset info was provided
 
-## DataReader
+### DataReader
 
 Holds all the information needed to read dataset.
 
@@ -187,7 +187,7 @@ Holds all the information needed to read dataset.
 - `pandas`
 - `numpy`
 
-## DataWriter
+### DataWriter
 
 Writes data to files, producing a list of `Artifact` and corresponding
 [`DataReader`](#datareader)
@@ -199,9 +199,9 @@ Writes data to files, producing a list of `Artifact` and corresponding
 - `pandas`
 - `numpy`
 
-# Storage
+## Storage
 
-## Artifact
+### Artifact
 
 Represents a file saved in some storage.
 
@@ -213,7 +213,7 @@ Represents a file saved in some storage.
 - `fsspec` - file in remote file system
 - `dvc` - file in dvc cache
 
-## Storage
+### Storage
 
 Defines where the artifacts will be written. Produces corresponding `Artifact`
 instances.
@@ -227,9 +227,9 @@ instances.
 - `dvc` - store files locally, but try to read them from DVC cache if they are
   absent
 
-# Runtime
+## Runtime
 
-## Interface
+### Interface
 
 Represents an interface for service runtime. Provides a mapping method name to
 its signature. Also provides executor functions for those methods.
@@ -242,7 +242,7 @@ its signature. Also provides executor functions for those methods.
   methods marked with `@expose` decorator.
 - `model` - dynamically create interface from [`ModelType`](#modeltype)
 
-## Server
+### Server
 
 Runs configured interface, exposing its methods as endpoints.
 
@@ -254,7 +254,7 @@ Runs configured interface, exposing its methods as endpoints.
 - `rmq` - creates a queue in `RabbitMQ` instance and a consumer for each
   interface method
 
-## Client
+### Client
 
 Clients for corresponding servers
 
@@ -265,9 +265,9 @@ Clients for corresponding servers
 - `http` - makes request for http servers like `fastapi`
 - `rmq` - client for `rmq` server
 
-# Building
+## Building
 
-## Builder
+### Builder
 
 Declaration for creating a `build` from model. You can learn more about building
 [here](/doc/get-started/building)
@@ -289,9 +289,9 @@ Docker:
 - `docker_dir` - create a directory with context for Docker image building
 - `docker` - build a Docker image from model
 
-# Deployment
+## Deployment
 
-## MlemEnv
+### MlemEnv
 
 Declaration of target environment for deploying models.
 
@@ -301,7 +301,7 @@ Declaration of target environment for deploying models.
 
 - `heroku` - an account on heroku platform
 
-## MlemDeployment
+### MlemDeployment
 
 Declaration and state of deployed model.
 
@@ -322,7 +322,7 @@ Related commands: [API](/doc/api-reference/deploy),
 
 - `heroku` - app deployed to Heroku platform
 
-## DeployState
+### DeployState
 
 Represents state of the deployment
 
