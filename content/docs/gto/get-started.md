@@ -6,8 +6,8 @@ description:
 # Get Started
 
 GTO helps you build an Artifact Registry on top of a Git repository. You can
-register relevant versions of your files or directories from any source (e.g. ML
-model releases) and assign them to different deployment environments (testing,
+register relevant versions of your files or directories (e.g. ML model releases)
+from any source (other repos) and assign them to different deployment stages (testing,
 shadow, production, etc.). Git-native mechanisms are used, so you can automate
 the delivery of your software project with CI/CD, and adopt a GitOps approach in
 general.
