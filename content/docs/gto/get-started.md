@@ -154,7 +154,7 @@ If you want to see CI examples without reproducing this Get Started, you can
 check out them in
 [the example-repo](https://github.com/iterative/example-gto/actions).
 
-## Next steps
+## What's next?
 
 Thanks for completing this Get Started!
 
