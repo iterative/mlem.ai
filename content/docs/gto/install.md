@@ -8,8 +8,8 @@ which version is installed, run `gto --version`.
 
 ## Install as a Python library
 
-GTO is distributed as a Python library, so it works on any OS. You can install it with a package
-manager like [pip](https://pypi.org/project/pip/) or
+GTO is distributed as a Python library, so it works on any OS. You can install
+it with a package manager like [pip](https://pypi.org/project/pip/) or
 [Conda](https://docs.conda.io/en/latest/).
 
 <admon type="info">
@@ -27,5 +27,5 @@ encapsulate your local environment.
 $ pip install gto
 ```
 
-This will install the [`gto`](https://mlem.ai/doc/gto/command-reference) command-line interface (CLI) and make the Python API
-available for use in code.
+This will install the [`gto`](https://mlem.ai/doc/gto/command-reference)
+command-line interface (CLI) and make the Python API available for use in code.

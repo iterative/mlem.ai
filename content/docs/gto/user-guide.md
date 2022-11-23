@@ -3,10 +3,10 @@
 GTO helps you build an Artifact Registry out of your Git repository. It creates
 annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
 [special format](#git-tag-message-format) in their message, and manages an
-`artifacts.yaml` file.
-Since committing large files to Git is not a good practice, you should consider
-not committing your artifacts to Git. Instead, use [DVC](https://dvc.org/doc),
-Git-lfs, or any method commit pointers to the binary files instead.
+`artifacts.yaml` file. Since committing large files to Git is not a good
+practice, you should consider not committing your artifacts to Git. Instead, use
+[DVC](https://dvc.org/doc), Git-lfs, or any method commit pointers to the binary
+files instead.
 
 ## Annotations in artifacts.yaml
 
@@ -27,9 +27,9 @@ repo.
 
 ## Acting in CI/CD
 
-Once Git tags are pushed, you can start acting in systems downstream. A
-popular options is to use CI/CD (triggered when Git tags are pushed).
-For general details, check out something like
+Once Git tags are pushed, you can start acting in systems downstream. A popular
+options is to use CI/CD (triggered when Git tags are pushed). For general
+details, check out something like
 [GitHub Actions](https://github.com/features/actions),
 [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) or
 [Circle CI](https://circleci.com).

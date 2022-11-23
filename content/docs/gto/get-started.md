@@ -8,8 +8,9 @@ description:
 GTO helps you manage machine learning artifact versions in a Git repository, and
 their deployment stages (testing, shadow, production, etc.).
 
-Assuming GTO is already [installed](/doc/gto/install) in your Python environment,
-let's clone an [example model registry] and review it's current state with `gto show`:
+Assuming GTO is already [installed](/doc/gto/install) in your Python
+environment, let's clone an [example model registry] and review it's current
+state with `gto show`:
 
 [example model registry]: https://github.com/iterative/example-gto
 
@@ -54,8 +55,8 @@ $ gto show
 ╘══════════╧══════════╧════════╧═════════╧════════════╛
 ```
 
-This creates a Git tag attached to the latest Git commit (`HEAD`) which bumps the
-artifact's version automatically (in this case from `v0.1.13` to `v0.1.14`).
+This creates a Git tag attached to the latest Git commit (`HEAD`) which bumps
+the artifact's version automatically (in this case from `v0.1.13` to `v0.1.14`).
 
 ## Assigning stages
 
@@ -84,8 +85,8 @@ This also creates a Git tag, which associates the latest version of `cv-class`
 ## Act in CI/CD upon registrations and assignments
 
 You may have noticed that `gto` reminds you how to `git push` the [tags] created
-during registrations and promotions. The benefit of these Git-native mechanism is
-that you can act upon GTO operations in any Git-based system downstream, for
+during registrations and promotions. The benefit of these Git-native mechanism
+is that you can act upon GTO operations in any Git-based system downstream, for
 example automating model deployments with CI/CD.
 
 [tags]: /doc/gto/user-guide#git-tags-message-format
@@ -129,8 +130,7 @@ $ git push origin cv-class@v0.1.14
 ```
 
 Alternatively, GTO operations can target another `--repo` directly. Let's try
-the [stage assignment](#assigning-stages) again for example, but on your
-remote:
+the [stage assignment](#assigning-stages) again for example, but on your remote:
 
 ```cli
 # Replace myuser with your GitHub user below.
@@ -146,7 +146,8 @@ the target repo.
 
 <admon type="info">
 
-To see what the example repo's [CI/CD jobs] look like, see its [GitHub Actions] page.
+To see what the example repo's [CI/CD jobs] look like, see its [GitHub Actions]
+page.
 
 [ci/cd jobs]:
   https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml
