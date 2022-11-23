@@ -642,6 +642,11 @@
         "source": "user-guide.md"
       },
       {
+        "slug": "dvc",
+        "label": "GTO with DVC",
+        "source": "dvc.md"
+      },
+      {
         "slug": "command-reference",
         "label": "Command Reference",
         "source": "command-reference/index.md",
