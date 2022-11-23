@@ -16,9 +16,9 @@
     "source": "get-started/index.md",
     "children": [
       {
-        "slug": "management",
-        "label": "Basic model management",
-        "source": "management.md"
+        "slug": "model-prediction",
+        "label": "Model Prediction",
+        "source": "model-prediction.md"
       },
       {
         "slug": "deploying-and-serving",
