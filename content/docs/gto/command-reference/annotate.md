@@ -1,6 +1,6 @@
 # annotate
 
-Create or update metainformation about an artifact.
+Create or update metadata about an artifact.
 
 ## Synopsis
 

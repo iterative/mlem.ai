@@ -1,7 +1,7 @@
 # GTO Command Reference
 
-GTO is a command line tool (see [installation](/doc/gto/install)). For a list of
-all commands, type `gto -h`.
+GTO is a command line tool. It works on top of Git. For a list of all commands,
+type `gto -h`.
 
 ## Typical GTO workflow
 

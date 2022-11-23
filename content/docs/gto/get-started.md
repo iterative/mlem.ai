@@ -5,22 +5,18 @@ description:
 
 # Get Started
 
-GTO helps you build an Artifact Registry on top of a Git repository. You can
-register relevant versions of your files or directories (e.g. ML model releases)
-from any source (other repos) and assign them to different deployment stages (testing,
-shadow, production, etc.). Git-native mechanisms are used, so you can automate
-the delivery of your software project with CI/CD, and adopt a GitOps approach in
-general.
+GTO helps you manage machine learning artifact versions in a Git repository, and
+their deployment stages (testing, shadow, production, etc.).
 
-Assuming GTO is already [installed](/doc/gto/install) in your active Python
-environment, let's clone an example [ML Model Registry] and review it with
-`git show`:
+Assuming GTO is already [installed](/doc/gto/install) in your Python environment,
+let's clone an [example model registry] and review it's current state with `gto show`:
 
-[ml model registry]: /doc/use-cases/model-registry
+[example model registry]: https://github.com/iterative/example-gto
 
 ```cli
 $ git clone https://github.com/iterative/example-gto
 $ cd example-gto
+
 $ gto show
 ╒══════════╤══════════╤════════╤═════════╤════════════╕
 │ name     │ latest   │ #dev   │ #prod   │ #staging   │
@@ -38,9 +34,9 @@ are shown.
 
 ## Registering a new version
 
-Registering a version is usually done to mark significant changes to the
-artifact. Let's assume this is the case for the `cv-class` model in `HEAD` and
-we would like to create a new version of it:
+`gto register` lets you mark significant artifact versions (e.g. an ML model
+release). Let's register a new version of `cv-class` and check the registry
+status again:
 
 ```cli
 $ gto register cv-class
@@ -48,7 +44,6 @@ Created git tag 'cv-class@v0.1.14' that registers version
 To push the changes upstream, run:
     git push origin cv-class@v0.1.14
 
-# this version will be shown in `gto show` now:
 $ gto show
 ╒══════════╤══════════╤════════╤═════════╤════════════╕
 │ name     │ latest   │ #dev   │ #prod   │ #staging   │
@@ -59,10 +54,13 @@ $ gto show
 ╘══════════╧══════════╧════════╧═════════╧════════════╛
 ```
 
+This creates a Git tag attached to the latest Git commit (`HEAD`) which bumps the
+artifact's version automatically (in this case from `v0.1.13` to `v0.1.14`).
+
 ## Assigning stages
 
-Let's assume the version we just registered looks very promising, and we want to
-promote it to `dev` to test it:
+The version we just registered looks very promising. You can promote it with
+`gto assign`, for example to the `dev` stage (for testing):
 
 ```cli
 $ gto assign cv-class --stage dev
@@ -70,7 +68,6 @@ Created git tag 'cv-class#dev#1' that assigns stage to version 'v0.1.14'
 To push the changes upstream, run:
     git push origin cv-class#dev#1
 
-# stage assignment can be seen with `gto show`:
 $ gto show
 ╒══════════╤══════════╤═════════╤═════════╤════════════╕
 │ name     │ latest   │ #dev    │ #prod   │ #staging   │
@@ -81,78 +78,81 @@ $ gto show
 ╘══════════╧══════════╧═════════╧═════════╧════════════╛
 ```
 
-We can push to Git repository to start a CI job!
+This also creates a Git tag, which associates the latest version of `cv-class`
+(`v0.1.14`) to `dev`.
 
-## Act on registrations and assignments in CI/CD
+## Act in CI/CD upon registrations and assignments
 
-GTO [uses Git tags] to register artifact versions and assign them to stages.
-This means we can act upon these operations in any Git-based system such as many
-CI/CD platforms.
+You may have noticed that `gto` reminds you how to `git push` the [tags] created
+during registrations and promotions. The benefit of these Git-native mechanism is
+that you can act upon GTO operations in any Git-based system downstream, for
+example automating model deployments with CI/CD.
 
-[uses git tags]: /doc/gto/user-guide#git-tags-format
+[tags]: /doc/gto/user-guide#git-tags-message-format
 
 <details>
 
-### Click to set up a working repository to try this.
+### Click to set up a Git remote you can push to.
 
-Let's fork the [example-gto repo](https://github.com/iterative/example-gto) repo
-(you'll need a [GitHub](https://github.com/signup) account first). For CI/CD to
-start, you'll need to enable it on the "Actions" page of your fork.
+<admon type="info">
 
-1. [Fork the repo](https://github.com/iterative/example-gto/fork). Make sure you
-   uncheck "Copy the `main` branch only" to copy Git tags as well:
-   <img width="877" alt="image" src="https://user-images.githubusercontent.com/6797716/199275275-439335f4-6f54-4cd7-910d-fc29ad3c095c.png">
+You'll need a [GitHub account](https://github.com/signup)) for this.
 
-2. Enable workflows in your repo for a new Git tag to trigger CI:
-   <img width="869" alt="image" src="https://user-images.githubusercontent.com/6797716/199272682-dfd628bf-9599-4e85-a623-bf4a10c3d7e1.png">
+</admon>
+
+1. [Fork the example repo]. Make sure you uncheck "Copy the `main` branch only"
+   to preserve the repo's tags.
+
+2. Enable the [workflows] in your fork's **Settings** -> **Actions** page. Now
+   its [preconfigured jobs] will trigger when Git tags are pushed.
+
+[fork the example repo]: https://github.com/iterative/example-gto/fork
+[workflows]: https://docs.github.com/en/actions/using-workflows/about-workflows
+[preconfigured jobs]:
+  https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml
+
+3. Update your local repo's default remote (`origin`) with your fork (replace
+   `myuser` with your GitHub username):
+
+   ```cli
+   $ git remote update origin https://github.com/myuser/example-gto
+   ```
 
 </details>
 
-Now let's push the Git tags we created locally to your repository (don't forget
-to replace `aguschin` with your username):
+To trigger your CI/CD workflows, you can push any of the Git tags created with
+GTO, for example the [latest model version](#registering-a-new-version):
 
 ```cli
-$ git remote update origin https://github.com/aguschin/example-gto
-$ git push origin cv-class@v0.1.14 cv-class#dev#1
- * [new tag]         cv-class@v0.1.14 -> cv-class@v0.1.14
- * [new tag]         cv-class#dev#1 -> cv-class#dev#1
+$ git push origin cv-class@v0.1.14
+* [new tag]         cv-class@v0.1.14 -> cv-class@v0.1.14
 ```
 
-<details>
-
-### Or just repeat the assignment for your new repo
-
-We can do the same thing we did locally, but for your remote repo (don't forget
-to replace `aguschin` with your username):
+Alternatively, GTO operations can target another `--repo` directly. Let's try
+the [stage assignment](#assigning-stages) again for example, but on your
+remote:
 
 ```cli
-# since we didn't register a version on remote, GTO will do that for us:
+# Replace myuser with your GitHub user below.
 $ gto assign cv-class --stage dev \
-    --repo https://github.com/aguschin/example-gto
-Created git tag 'cv-class@v0.1.14' that registers a version
-Running `git push origin cv-class@v0.1.14`
-Successfully pushed git tag cv-class@v0.1.14 on remote.
+             --repo https://github.com/myuser/example-gto
 Created git tag 'cv-class#dev#1' that assigns stage to version 'v0.1.14'
 Running `git push origin cv-class#dev#1`
 Successfully pushed git tag cv-class#dev#1 on remote.
 ```
 
-</details>
+Note that the tag is created locally first (if not present) and then pushed to
+the target repo.
 
-Git tags pushed trigger the
-[CI workflow](https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml):
+<admon type="info">
 
-<img width="875" alt="image" src="https://user-images.githubusercontent.com/6797716/199276636-bf996ad3-7d9c-4100-9f3c-6444730e4d19.png">
+To see what the example repo's [CI/CD jobs] look like, see its [GitHub Actions] page.
 
-"GTO: figure out what was registered/promoted" step interprets the Git tag that
-triggered the workflow and passes the information to the next steps. The
-information is used later to trigger "Publish" or "Deploy" steps (since the CI
-on the screenshot was triggered by `cv-class#dev#1` Git tag, the "Publish" step
-was skipped).
+[ci/cd jobs]:
+  https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml
+[github actions]: https://github.com/iterative/example-gto/actions
 
-If you want to see CI examples without reproducing this Get Started, you can
-check out them in
-[the example-repo](https://github.com/iterative/example-gto/actions).
+</admon>
 
 ## What's next?
 
@@ -161,10 +161,7 @@ Thanks for completing this Get Started!
 - Learn how to
   [specify important artifact's metainformation](/doc/gto/user-guide#annotations-in-artifactsyaml)
   like `path`, `type` and `description` in the Artifact registry.
-- Learn more about [acting in CI/CD](/doc/gto/user-guide#acting-downstream) upon
+- Learn more about [acting in CI/CD](/doc/gto/user-guide#acting-in-ci-cd) upon
   version registrations and stage assignments.
 - Reach us out in [GH issues](https://github.com/iterative/gto/issues) or in
   [Discord](https://discord.com/invite/dvwXA2N) to get your questions answered!
-
-<!-- - To use DVC with GTO, check out [DVC docs](https://dvc.org/doc).
-- To deploy models upon GTO stage assignments, check out [MLEM docs](/doc/). -->

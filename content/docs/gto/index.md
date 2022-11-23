@@ -1,11 +1,11 @@
 # GTO Documentation
 
-**GTO** is a tool for creating an Artifact Registry in your Git repository. One
-of the special cases we would like to highlight is creating a
+**GTO** (Git Tag Ops) is a tool for creating an Artifact Registry
+in your Git repository. An important special case is a
 [Machine Learning Model Registry](/doc/use-cases/model-registry).
 
 Such a registry serves as a centralized place to store and operationalize your
-artifacts along with their metadata; manage model life-cycle, versions &
+artifacts along with their metadata; manage artifact's life-cycle, versions &
 releases, and easily automate tests and deployments using GitOps.
 
 <cards>
@@ -35,5 +35,7 @@ specific help. We are very responsive ⚡.
 ✅ Check out our [GitHub repository](https://github.com/iterative/gto) and give
 us a ⭐ if you like the project!
 
-✅ Contribute to MLEM [on GitHub](https://github.com/iterative/gto) or help us
-improve this [documentation](https://github.com/iterative/mlem.ai) 🙏.
+✅ Contribute to GTO [on GitHub](https://github.com/iterative/gto) or help us
+improve this
+[documentation](https://github.com/iterative/mlem.ai/tree/main/content/docs/gto)
+🙏.

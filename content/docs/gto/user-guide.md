@@ -1,7 +1,9 @@
 # User Guide
 
-GTO helps you build a Artifact Registry out of your Git repository. It does so
-by creating Git tags of special format and managing `artifacts.yaml` metafile.
+GTO helps you build an Artifact Registry out of your Git repository. It creates
+annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
+[special format](#git-tag-message-format) in their message, and manages an
+`artifacts.yaml` file.
 Since committing large files to Git is not a good practice, you should consider
 not committing your artifacts to Git. Instead, use [DVC](https://dvc.org/doc),
 Git-lfs, or any method commit pointers to the binary files instead.
@@ -11,8 +13,9 @@ Git-lfs, or any method commit pointers to the binary files instead.
 Using Git tag to register versions and assign stages is handy, but the Git tag
 itself doesn't contain path to the artifact, type of it (it could be `model` or
 `dataset`), or any other information you may find useful. For simple projects
-(e.g. single artifact) we can assume the details in a downstream system. But for
-more advanced cases, we should codify them in the registry itself.
+(e.g. single artifact) we can assume the details
+[in a CI/CD system](#acting-in-ci-cd) downstream. But for more advanced cases,
+we should codify them in the registry itself.
 
 To keep this metainformation, GTO uses `artifacts.yaml` file. Commands like
 `gto annotate` and `gto remove` are used to modify it, while `gto describe`
@@ -22,10 +25,10 @@ If you would like to see an example of `artifacts.yaml`, check out the
 [example-gto](https://github.com/iterative/example-gto/blob/main/artifacts.yaml)
 repo.
 
-## Acting downstream
+## Acting in CI/CD
 
-Once Git tag was pushed, you can start acting downstream. One of the popular
-options here is to use CI/CD, setting it to be triggered by pushing a Git tag.
+Once Git tags are pushed, you can start acting in systems downstream. A
+popular options is to use CI/CD (triggered when Git tags are pushed).
 For general details, check out something like
 [GitHub Actions](https://github.com/features/actions),
 [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) or
@@ -76,12 +79,12 @@ Alternatively, you can use environment variables (note the `GTO_` prefix)
 $ GTO_EMOJIS=false gto show
 ```
 
-## Git tags format
+## Git tag message format
 
 <admon type="tip">
 
-You can work with GTO without knowing the used Git tag names conventions, since
-commands like `gto register` and `gto assign` abstracts that away from you.
+You can work with GTO without knowing these conventions, since
+[`gto` commands](/doc/command-reference) take care of everything for you.
 
 </admon>
 

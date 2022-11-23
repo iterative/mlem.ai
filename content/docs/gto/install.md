@@ -1,18 +1,16 @@
 # Installation
 
-To create an Artifact Registry with GTO, you only need a Git repo and GTO
-package installed. There's no need to set up any services or databases, compared
-to many other Model Registry offerings.
+You'll need [Python](https://www.python.org/) to install GTO, and
+[Git](https://git-scm.com/) to use it.
 
 To check whether GTO is installed in your environment, run `which gto`. To check
 which version is installed, run `gto --version`.
 
 ## Install as a Python library
 
-GTO is a Python library. It works on any OS. You can install it with a package
+GTO is distributed as a Python library, so it works on any OS. You can install it with a package
 manager like [pip](https://pypi.org/project/pip/) or
-[Conda](https://docs.conda.io/en/latest/), or as a Python
-[requirement](https://pip.pypa.io/en/latest/user_guide/#requirements-files).
+[Conda](https://docs.conda.io/en/latest/).
 
 <admon type="info">
 
@@ -29,5 +27,5 @@ encapsulate your local environment.
 $ pip install gto
 ```
 
-This will install the `gto` command-line interface (CLI) and make the Python API
+This will install the [`gto`](https://mlem.ai/doc/gto/command-reference) command-line interface (CLI) and make the Python API
 available for use in code.
