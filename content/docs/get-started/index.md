@@ -62,8 +62,6 @@ we save it with MLEM (check out the full list of supported
 Once you saved the model with MLEM, you can load it to use in a Python runtime,
 or generate predictions for a dataset stored on the disk from the command line.
 
-### MLEM Model Metafiles
-
 Let's see what we got when we saved the `rf` model with MLEM above.
 
 ```cli
