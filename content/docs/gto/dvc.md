@@ -1,7 +1,12 @@
 # GTO with DVC
 
 While GTO enables building an Artifact Registry in Git repo, it doesn't version
-artifact binaries themselves. There are few ways to resolve this:
+artifact binaries themselves. This guide will show how to do that with DVC, and
+use GTO with DVC.
+
+<details>
+
+### Learn about different approaches to this
 
 1. You can commit artifacts to Git repo. If they aren't small enough, this is
    not recommended. To bypass this limitation, you can try using Git-lfs.
@@ -11,15 +16,11 @@ artifact binaries themselves. There are few ways to resolve this:
    in `artifacts.yaml`. This can be done, if your artifacts are already
    versioned by some external system.
 
-This guide will show how to use DVC with GTO.
+</details>
 
-## Tracking artifacts with DVC
-
-If you don't version your artifacts with DVC yet, you should start with DVC Get
-Started first, and then come back to this Guide.
-
-Note that you can add remote artifacts with `dvc import-url`. (do we need some
-examples in this section?)
+If you are new to DVC, you should start with
+[DVC Get Started](https://dvc.org/doc/start) first, and then come back to this
+Guide.
 
 <!-- ```
 
@@ -30,19 +31,39 @@ dvc import-url --no-download azure://container-name/data.parquet
 
 ``` -->
 
-## Annotating DVC-tracked artifacts
+## Tracking an artifact with DVC
 
-Once you have DVC artifacts in your repo, you can annotate them with GTO:
+First, we need to start tracking artifact with DVC. If you produce this artifact
+in DVC Pipelines, it's done automatically.
+
+If the artifact is located inside your Git repo, you can use `dvc add`:
 
 ```cli
-# assuming `model.pkl` is tracked with DVC
+$ dvc add model.pkl
+$ git add model.pkl.dvc
+```
+
+If the artifact is located in some external storage, we can use `dvc import-url`
+to still keep metainformation about it in the repo (use `--no-download` to skip
+downloading it):
+
+```cli
+$ dvc import-url --no-download s3://container/model.pkl
+$ git add model.pkl.dvc
+```
+
+## Annotating DVC-tracked artifacts
+
+Once the artifact is tracked with DVC within your repo, we can annotate it with
+GTO:
+
+```cli
 $ gto annotate model --path model.pkl
 ```
 
 This will modify `artifacts.yaml`, adding:
 
 ```yaml
-# artifacts.yaml
 model:
   path: model.pkl
 ```
@@ -50,27 +71,44 @@ model:
 Now you should commit changes to Git, and you can register versions and assign
 stages using that new commit.
 
+```cli
+$ git add artifacts.yaml
+$ git commit -m "version artifact binaries with DVC and annotate it with GTO"
+$ git push
+```
+
+Now your changes is live in your Git repo and you can download your artifact to
+use it 🙌
+
 ## Downloading artifacts
 
-To download DVC-tracked artifact, you need to use `dvc import` command:
+When you want to download GTO artifact which binaries are stored with DVC, you
+need to use `dvc import` command:
 
 ```cli
-dvc import $REPO $ARTIFACT_PATH --rev $REVISION -o $NEW_ARTIFACT_PATH
+$ dvc import $REPO $ARTIFACT_PATH \
+    --rev $REVISION -o $NEW_ARTIFACT_PATH
 ```
+
+<admon type="tip">
 
 Usually you would have the right revision (such as in CI - it would be the Git
 tag that triggered it), but if you need to download the latest version, you can
 use:
 
 ```cli
-$ gto show --repo https://github.com/iterative/example-gto churn@greatest --ref
+$ gto show --repo https://github.com/iterative/example-gto \
+    churn@greatest --ref
 ```
 
 For a model version in stage, that will be:
 
 ```cli
-$ gto show --repo https://github.com/iterative/example-gto churn#dev --ref
+$ gto show --repo https://github.com/iterative/example-gto \
+    churn#dev --ref
 ```
+
+</admon>
 
 Artifact path can be discovered by `gto describe`:
 
@@ -78,15 +116,15 @@ Artifact path can be discovered by `gto describe`:
 $ gto describe model --rev $REVISION
 ```
 
-### Example: downloading from outside
+### Example: downloading from outside the repo
 
 Uniting this pieces together, if you need to download the latest version of
 `model` from outside:
 
 ```cli
 $ REVISION=$(gto show --repo $REPO model@greatest --ref)
-$ ARTIFACT_PATH=$(gto describe --repo $REPO model --rev $REVISION --path)
-$ dvc import $REPO model --rev $REVISION -o $ARTIFACT_PATH
+$ ARTIFACT_PATH=$(gto describe --repo $REPO $ARTIFACT --rev $REVISION --path)
+$ dvc import $REPO $ARTIFACT --rev $REVISION -o $ARTIFACT_PATH
 ```
 
 ### Example: downloading in CI
