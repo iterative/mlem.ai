@@ -69,7 +69,7 @@ model:
 ```
 
 Now you should commit changes to Git, and you can register versions and assign
-stages using that new commit.
+stages referencing the new commit.
 
 ```cli
 $ git add artifacts.yaml

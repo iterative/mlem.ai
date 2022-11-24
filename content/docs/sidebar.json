@@ -647,6 +647,11 @@
         "source": "dvc.md"
       },
       {
+        "slug": "mlem",
+        "label": "GTO with MLEM",
+        "source": "mlem.md"
+      },
+      {
         "slug": "command-reference",
         "label": "Command Reference",
         "source": "command-reference/index.md",
