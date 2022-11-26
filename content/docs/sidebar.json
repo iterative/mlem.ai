@@ -13,19 +13,7 @@
   {
     "slug": "get-started",
     "label": "Get Started",
-    "source": "get-started/index.md",
-    "children": [
-      {
-        "slug": "model-prediction",
-        "label": "Model Prediction",
-        "source": "model-prediction.md"
-      },
-      {
-        "slug": "deploying-and-serving",
-        "label": "Deploying and serving models",
-        "source": "deploying-and-serving.md"
-      }
-    ]
+    "source": "get-started/index.md"
   },
   {
     "slug": "use-cases",
