@@ -5,7 +5,7 @@ annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
 [special format](#git-tag-message-format) in their message, and manages an
 `artifacts.yaml` file. Since committing large files to Git is not a good
 practice, you should consider not committing your artifacts to Git. Instead, use
-[DVC](https://dvc.org/doc), Git-lfs, or any method commit pointers to the binary
+[DVC](/doc/user-guide/dvc), Git-lfs, or any method commit pointers to the binary
 files instead.
 
 ## Annotations in artifacts.yaml

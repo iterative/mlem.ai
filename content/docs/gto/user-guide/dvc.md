@@ -1,15 +1,16 @@
 # GTO with DVC
 
-While GTO enables building an Artifact Registry in Git repo, it doesn't version
-artifact binaries themselves. This guide will show how to do that with DVC, and
-use GTO with DVC.
+In many ML projects, data isn't stored in a Git repository and needs to be
+downloaded from external sources. [DVC](https://dvc.org) is a common way to
+store binaries for the artifacts registered with GTO.
 
 <details>
 
 ### Learn about different approaches to this
 
 1. You can commit artifacts to Git repo. If they aren't small enough, this is
-   not recommended. To bypass this limitation, you can try using Git-lfs.
+   not recommended. To bypass this limitation, you can use
+   [Git-lfs](https://git-lfs.github.com).
 2. You can version binaries with [DVC](https://dvc.org/) and commit pointers to
    them to the repo. This is the recommended approach for large files.
 3. You can version binaries manually somewhere, specifying URL to them as `path`

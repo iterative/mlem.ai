@@ -78,8 +78,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
       - id: gto
         uses: iterative/gto-action@v1
       - uses: actions/setup-python@v2
@@ -98,6 +96,10 @@ jobs:
               --env.registry docker_io
 ```
 
+Note that builder can be
+[pre-configured](/doc/user-guide/building#pre-configured-builders) to specify
+some options that should be fixed.
+
 </tab>
 <tab title="GitHub: deploy a model">
 
@@ -110,9 +112,10 @@ on:
     tags:
       - '*'
 
+# specify credentials needed to run deployment and keep the deployment state
 env:
-  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }} # credentials needed to run deployment
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }} # creds needed to keep deployment state
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
@@ -121,8 +124,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
       - id: gto
         uses: iterative/gto-action@v1
       - uses: actions/setup-python@v2
@@ -130,7 +131,7 @@ jobs:
         run: |
           pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
-      - if: steps.gto.outputs.event == 'registration'
+      - if: steps.gto.outputs.event == 'assignment'
         run: |
           # TODO: check this works
           mlem deployment run \
@@ -138,8 +139,8 @@ jobs:
             --model ${{ steps.gto.outputs.path }}
 ```
 
-This relies on having deployment declarations in the `deploy` directory, such
-as:
+This relies on having [deployment declarations](/doc/user-guide/deploying) in
+the `deploy/` directory, such as:
 
 ```yaml
 # deploy/dev.yaml
@@ -150,6 +151,19 @@ app_name: mlem-dev
 
 This declaration is read by MLEM in CI and the model promoted to `dev` is
 deployed to https://mlem-dev.herokuapp.com.
+
+Note, that you need to provide environment variables to deploy to Heroku and
+update the [deployment state](/doc/user-guide/deploying). The location for the
+state should be
+[configured](/doc/user-guide/deploying#setting-up-remote-state-manager) in MLEM
+config file:
+
+```yaml
+# .mlem.yaml
+core:
+  state:
+    uri: s3://bucket/path
+```
 
 Check out [another example](https://github.com/iterative/example-gto/tree/mlem)
 of MLEM model deployment in the `main` branch of the `example-gto` repo.
