@@ -83,58 +83,42 @@ use it 🙌
 ## Downloading artifacts
 
 When you want to download GTO artifact which binaries are stored with DVC, you
-need to use `dvc import` command:
+need to use `dvc get` or `dvc import` command:
 
 ```cli
-$ dvc import $REPO $ARTIFACT_PATH \
-    --rev $REVISION -o $NEW_ARTIFACT_PATH
+$ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
 ```
 
-<admon type="tip">
+Check out [User Guide](/doc/gto/user-guide#getting-artifacts-downstream) to
+learn how to find out `ARTIFACT_PATH` and `REVISION`.
 
-Usually you would have the right revision (such as in CI - it would be the Git
-tag that triggered it), but if you need to download the latest version, you can
-use:
-
-```cli
-$ gto show --repo https://github.com/iterative/example-gto \
-    churn@greatest --ref
-```
-
-For a model version in stage, that will be:
-
-```cli
-$ gto show --repo https://github.com/iterative/example-gto \
-    churn#dev --ref
-```
-
-</admon>
-
-Artifact path can be discovered by `gto describe`:
-
-```cli
-$ gto describe model --rev $REVISION
-```
+<details>
 
 ### Example: downloading from outside the repo
 
-Uniting this pieces together, if you need to download the latest version of
-`model` from outside:
+If you need to download the latest version of `model`, that would be:
 
 ```cli
 $ REVISION=$(gto show --repo $REPO model@greatest --ref)
 $ ARTIFACT_PATH=$(gto describe --repo $REPO $ARTIFACT --rev $REVISION --path)
-$ dvc import $REPO $ARTIFACT --rev $REVISION -o $ARTIFACT_PATH
+$ dvc get $REPO $ARTIFACT --rev $REVISION -o $ARTIFACT_PATH
 ```
+
+</details>
+
+<details>
 
 ### Example: downloading in CI
 
-In CI that would be a bit simpler (taking GH Actions as an example):
+If you need to download an artifact from the same repo, that would be a bit
+simpler (taking GH Actions as an example):
 
 ```cli
 $ ARTIFACT_PATH=$(gto describe model --rev $GITHUB_REF --path)
-$ dvc import . model --rev $GITHUB_REF -o $ARTIFACT_PATH
+$ dvc pull $ARTIFACT_PATH
 ```
+
+</details>
 
 <!--
 Refer to DVC install guide and Get Started to learn DVC first. If you're already

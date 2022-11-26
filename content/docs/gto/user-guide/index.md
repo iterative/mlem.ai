@@ -17,13 +17,45 @@ itself doesn't contain path to the artifact, type of it (it could be `model` or
 [in a CI/CD system](#acting-in-ci-cd) downstream. But for more advanced cases,
 we should codify them in the registry itself.
 
-To keep this metainformation, GTO uses `artifacts.yaml` file. Commands like
+To keep this metadata, GTO uses `artifacts.yaml` file. Commands like
 `gto annotate` and `gto remove` are used to modify it, while `gto describe`
 helps get them when they're needed.
 
-If you would like to see an example of `artifacts.yaml`, check out the
+<admon type="tip">
+
+An example of `artifacts.yaml` can be found in
 [example-gto](https://github.com/iterative/example-gto/blob/main/artifacts.yaml)
 repo.
+
+</admon>
+
+## Getting artifacts downstream
+
+We may need to get a specific artifact version (latest or currently in stage) in
+production environment to use it. GTO itself doesn't provide a way to download
+an artifact, but you can use [DVC](/doc/user-guide/dvc) or
+[MLEM](/doc/user-guide/mlem) to do that.
+
+In all cases, you'll need to figure out the Git revision that you need, and path
+to the artifact in that revision (note that in CI it's already defined for you -
+e.g. it's `GITHUB_REF` env var in Github Actions):
+
+```cli
+# getting the Git reference for the latest version
+$ gto show churn@greatest --ref
+churn@v3.1.1
+
+# for a model version in stage, that will be
+$ gto show churn#prod --ref
+churn@v3.0.0
+```
+
+Artifact path can be discovered by `gto describe`:
+
+```cli
+$ gto describe churn --rev churn@v3.0.0 --path
+models/churn.pkl
+```
 
 ## Acting in CI/CD
 

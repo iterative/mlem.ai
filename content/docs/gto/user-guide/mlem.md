@@ -37,6 +37,22 @@ $ git push
 
 Now your changes is live in your Git repo and ready to be used 🙌
 
+## Using GTO artifacts with MLEM
+
+When you want to use a GTO artifact with MLEM, you need to get the right
+revision and path (see
+[User Guide](/doc/gto/user-guide#getting-artifacts-downstream)). Since MLEM can
+work with remote artifacts, just point to it in any MLEM command (taking
+`mlem build` as an example):
+
+```cli
+$ mlem build docker \
+    --project $REPO \
+    --model $ARTIFACT_PATH \
+    --rev $REVISION \
+    --image.name mlem-model
+```
+
 ## Creating a CI/CD workflow
 
 Since Git tags can trigger a CI/CD workflow, now we need to add the workflow we
