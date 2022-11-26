@@ -640,7 +640,7 @@
         "slug": "user-guide",
         "label": "User Guide",
         "source": "user-guide/index.md",
-        "children":[
+        "children": [
           {
             "slug": "dvc",
             "label": "GTO with DVC",
