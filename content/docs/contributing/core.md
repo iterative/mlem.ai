@@ -1,9 +1,8 @@
 # Contributing to MLEM
 
 We welcome contributions to [MLEM](https://github.com/iterative/mlem) by the
-community. See the
-[Contributing to the Documentation](/doc/user-guide/contributing/docs) guide if
-you want to fix or update the documentation or this website.
+community. See the [Contributing to the Documentation](/doc/contributing/docs)
+guide if you want to fix or update the documentation or this website.
 
 ## How to report a problem
 
