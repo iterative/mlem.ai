@@ -36,9 +36,9 @@ production environment to use it. GTO itself doesn't provide a way to download
 an artifact, but you can use [DVC](/doc/user-guide/dvc) or
 [MLEM](/doc/user-guide/mlem) to do that.
 
-In all cases, you'll need to figure out the Git revision that you need, and path
-to the artifact in that revision (note that in CI it's already defined for you -
-e.g. it's `GITHUB_REF` env var in Github Actions):
+In all cases, you'll need to figure out the Git revision that you need (note
+that in CI it's already defined for you - e.g. it's `GITHUB_REF` env var in
+Github Actions):
 
 ```cli
 # getting the Git reference for the latest version
@@ -50,7 +50,9 @@ $ gto show churn#prod --ref
 churn@v3.0.0
 ```
 
-Artifact path can be discovered by `gto describe`:
+Beside the right revision, you may need artifact `path`. If
+[annotated](#annotations-in-artifactsyaml), it can be discovered by
+`gto describe`:
 
 ```cli
 $ gto describe churn --rev churn@v3.0.0 --path
