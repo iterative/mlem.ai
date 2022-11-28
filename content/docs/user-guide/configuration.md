@@ -24,7 +24,7 @@ config.
 - `additional_extensions` - comma-separated list of extension modules to
   force-load on MLEM import.
 - `autoload_exts` - turn on
-  [dynamic extension loading](/doc/user-guide/extending#extension-dynamic-loading).
+  [dynamic extension loading](/doc/object-reference/extending#extension-dynamic-loading).
   Default `True`
 
 ## Extension config

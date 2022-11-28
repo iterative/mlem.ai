@@ -27,7 +27,7 @@ the `/docs` endpoint.
 HTTP Requests to the model-server can be made either with the corresponding
 built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 [`httpie`](https://httpie.io/) CLIs, or the
-[`requests` Python library](https://docs.python-requests.org/).
+[`requests` Python library](https://requests.readthedocs.io).
 
 ## Options
 
