@@ -40,5 +40,5 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 
 ## Examples
 
-For examples, please refer to [Get Started](/doc/get-started/serving) or
-[User Guide](/doc/user-guide/serving).
+For examples, please refer to [Get Started](/doc/get-started) tutorial or the
+[Serving User Guide](/doc/user-guide/serving).
