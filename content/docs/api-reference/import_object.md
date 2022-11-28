@@ -53,8 +53,8 @@ command.
 - `target_project` (optional) - If provided, treat `target` as object name and
   dumpobject in this MLEM Project.
 - `target_fs` (optional) - Filesystem to use to save the object.
-- `type_` (optional) - Type of the object to import. If not provided, will try
-  toinfer from the object itself.
+- `type` (optional) - Type of the object to import. If not provided, will try
+  to infer from the object itself.
 - `copy_data` (optional) - Whether to copy data to the target location.
 
 ## Returns
