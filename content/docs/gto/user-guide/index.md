@@ -5,8 +5,8 @@ annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
 [special format](#git-tags-format) in their message, and manages an
 `artifacts.yaml` file. Since committing large files to Git is not a good
 practice, you should consider not committing your artifacts to Git. Instead,
-[use DVC](/doc/gto/user-guide/dvc), Git-lfs, or any method to commit pointers to the
-binary files instead.
+[use DVC](/doc/gto/user-guide/dvc), Git-lfs, or any method to commit pointers to
+the binary files instead.
 
 ## Annotations in artifacts.yaml
 
@@ -43,8 +43,8 @@ to find the [Git reference] (tag) you need (note that
 
 <admon type="tip">
 
-GTO doesn't provide a way to deliver the artifacts, but you can [use DVC]
-or [employ MLEM] for that.
+GTO doesn't provide a way to deliver the artifacts, but you can [use DVC] or
+[employ MLEM] for that.
 
 [use dvc]: /doc/gto/user-guide/dvc
 [employ mlem]: /doc/gto/user-guide/mlem
@@ -71,9 +71,8 @@ models/churn.pkl
 
 ## Acting in CI/CD
 
-A popular deployment
-options is to use CI/CD (triggered when Git tags are pushed). For general
-details, check out something like
+A popular deployment option is to use CI/CD (triggered when Git tags are
+pushed). For general details, check out something like
 [GitHub Actions](https://github.com/features/actions),
 [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) or
 [Circle CI](https://circleci.com).
