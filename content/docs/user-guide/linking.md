@@ -38,4 +38,4 @@ create an alias for that object.
 
 Also, since links can target specific commits, tags or branches in a versioned
 repository, they can be used in a variety of different scenarios, for example to
-create a [centralized Model Registry](/doc/use-cases/mlem-mr).
+create a [centralized Model Registry](/doc/use-cases/model-registry/mlem-mr).

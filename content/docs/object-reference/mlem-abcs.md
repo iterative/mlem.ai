@@ -1,7 +1,7 @@
 # MLEM ABCs
 
 MLEM has a number of abstract base classes that anyone can implement to
-[extend](/doc/user-guide/extending) to add new capabilities to MLEM.
+[extend](/doc/object-reference/extending) to add new capabilities to MLEM.
 
 <details>
 
@@ -12,8 +12,8 @@ class, which is a subclass of pydantic `BaseModel` with additional polymorphic
 magic.
 
 That means that all subclasses are also `BaseModel`s and should be serializable.
-This way MLEM can save/load them as part of the other objects or configure them
-via `-c` notation in CLI.
+This way MLEM can save/load them as part of the other objects or dynamically
+provide options to configure them in CLI.
 
 </details>
 
@@ -270,7 +270,7 @@ Clients for corresponding servers
 ### Builder
 
 Declaration for creating a `build` from model. You can learn more about building
-[here](/doc/get-started/building)
+in this [User Guide](/doc/user-guide/building)
 
 **Base class**: `mlem.core.objects.MlemBuilder`
 

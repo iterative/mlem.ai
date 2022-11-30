@@ -31,9 +31,9 @@ accurately measure user counts vs. event counts.
 ## Implementation
 
 The code is viewable in
-[analytics.py](https://github.com/iterative/mlem/mlem/analytics.py). They are
-done in a separate background process and fail fast to avoid delaying any
-execution. They will fail immediately and silently if you have no network
+[analytics.py](https://github.com/iterative/telemetry-python/blob/main/src/iterative_telemetry/__init__.py).
+They are done in a separate background process and fail fast to avoid delaying
+any execution. They will fail immediately and silently if you have no network
 connection.
 
 MLEM's analytics are sent through Iterative's proxy to Google BigQuery over
