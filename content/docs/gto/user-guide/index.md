@@ -2,7 +2,7 @@
 
 GTO helps you build an Artifact Registry out of your Git repository. It creates
 annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
-[special format](#git-tag-message-format) in their message, and manages an
+[special format](#git-tags-format) in their message, and manages an
 `artifacts.yaml` file. Since committing large files to Git is not a good
 practice, you should consider not committing your artifacts to Git. Instead, use
 [DVC](/doc/user-guide/dvc), Git-lfs, or any method commit pointers to the binary
@@ -113,7 +113,7 @@ Alternatively, you can use environment variables (note the `GTO_` prefix)
 $ GTO_EMOJIS=false gto show
 ```
 
-## Git tag message format
+## Git tags format
 
 <admon type="tip">
 

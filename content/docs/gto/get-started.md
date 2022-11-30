@@ -89,7 +89,7 @@ during registrations and promotions. The benefit of these Git-native mechanism
 is that you can act upon GTO operations in any Git-based system downstream, for
 example automating model deployments with CI/CD.
 
-[tags]: /doc/gto/user-guide#git-tags-message-format
+[tags]: /doc/gto/user-guide#git-tags-format
 
 <details>
 
