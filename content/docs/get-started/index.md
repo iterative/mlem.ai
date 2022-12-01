@@ -21,7 +21,7 @@ $ mkdir mlem-get-started
 $ cd mlem-get-started
 $ python3 -m venv .venv
 $ source .venv/bin/activate
-$ pip install pandas scikit-learn mlem[fastapi,heroku]
+$ pip install pandas scikit-learn mlem[fastapi,heroku,docker]
 ```
 
 We'll use docker later on to package and serve a model locally. To install
@@ -37,49 +37,62 @@ That's it, it's that simple! You're ready to MLEM.
 Before we see how many things MLEM can do for us, we first need to save an ML
 model to a file with MLEM.
 
-As a basic example, create and execute the following `train.py` Python script:
+<details>
+
+### As a basic example, you use the following `train.py` Python script:
 
 ```py
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
+import joblib
 
-from mlem.api import save
-
-
-data, y = load_iris(return_X_y=True, as_frame=True)
-rf = RandomForestClassifier(
+df, y = load_iris(return_X_y=True, as_frame=True)
+clf = RandomForestClassifier(
     n_jobs=2,
     random_state=42,
 )
-rf.fit(data, y)
+clf.fit(df, y)
+joblib.dump(clf, "models/rf")
+```
+
+</details>
+
+<toggle>
+<tab title="From code">
+Just replace model saving code with
+
+```py
+from mlem.api import save
 save(
-    rf,
+    clf,
     "models/rf",
-    sample_data=data,
+    sample_data=df,
 )
 ```
 
-Here, we loaded a well-known
-[Iris flower dataset](https://archive.ics.uci.edu/ml/datasets/iris) with
-`scikit-learn` and trained a simple classifier. Instead of pickling the model,
-we persisted it using MLEM's `save` API.
+</tab>
+
+<tab title="From existing file">
+Just run
+
+```cli
+$ mlem import models/rf models/rf.mlem --type pickle
+```
+
+</tab>
+
+</toggle>
 
 `scikit-learn` is just an example of many supported ML frameworks. Check out the
 [full list here](/doc/object-reference/model).
 
-Now, let's see what MLEM saved by using the `tree` terminal command:
+MLEM automatically saved an additional metadata file `models/rf.mlem`. We refer
+to this as a "Codification" of the model. This `.mlem` "metafile" contains all
+the information we need in order to use the model later.
 
-```cli
-$ tree models/
-models
-├── rf
-└── rf.mlem
-```
+<details>
 
-Alongside the model binary `models/rf`, MLEM saved an additional metadata file
-`models/rf.mlem`. We refer to this as a "Codification" of the model. This
-`.mlem` "metafile" contains all the information we need in order to use the
-model later:
+### Click to see the description and full contents of the `rf.mlem` metafile.
 
 1. Model methods: Like `predict` and `predict_proba`
 2. Input data schema: Describes the dataframe (Iris dataset)
@@ -92,10 +105,6 @@ Note that we didn't have to specify any of this information ourselves. MLEM
 inspects the object (even if it's complex) and infers all of this automatically!
 
 </admon>
-
-<details>
-
-### Click to see the full contents of the `rf.mlem` metafile.
 
 ```yaml
 artifacts:
@@ -181,49 +190,23 @@ about our models (or other objects) for us.
 
 </details>
 
-## Model Prediction
-
-Once we saved the model with MLEM we can load it to either use in our Python
-code or from the command line to generate predictions for any dataset. This
-allows us to easily decouple model training code from testing and deployment
-code.
+## Getting those sweet predictions
 
 Let's try it out:
 
 <toggle>
-<tab title="Python Script">
-
-### Python code usage
+<tab title="From code">
 
 Load the model we saved earlier in a simple Python script to predict some
 probabilities.
 
-Create this `predict.py` script:
-
 ```py
 from mlem.api import load
 
-model = load("models/rf")  # RandomForestClassifier
-features = [
-    "sepal length (cm)",
-    "sepal width (cm)",
-    "petal length (cm)",
-    "petal width (cm)",
-]
-x = pd.DataFrame([[0, 1, 2, 3]], columns=features)
-y_pred = model.predict_proba(x)
+model = load("models/rf")
 
-print(y_pred)
+y_pred = model.predict_proba(df)
 ```
-
-Now, let's run the script:
-
-```cli
-$ python predict.py
-[[0.47 0.24 0.29]]
-```
-
-We see that the prediction probabilities were successfully printed to stdout.
 
 </tab>
 
@@ -231,19 +214,7 @@ We see that the prediction probabilities were successfully printed to stdout.
 
 ### Batch scoring
 
-The MLEM CLI allows us to natively use any saved model directly for prediction
-or batch scoring with any local dataset. This is very handy if we want to get
-some quick feedback about a model we just created.
-
-First, create an example dataset file to apply, we'll go with a `csv` format:
-
-```cli
-$ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
-0,1,2,3" > new_data.csv
-```
-
-Next, simply run `mlem apply` to apply this dataset against our model's
-`predict_proba` method:
+Assuming `new_data.csv` has the same columns as our model expects:
 
 ```cli
 $ mlem apply models/rf new_data.csv \
@@ -255,8 +226,6 @@ $ mlem apply models/rf new_data.csv \
 🍏 Applying `predict_proba` method...
 [[0.47 0.24 0.29]]
 ```
-
-And we get our expected prediction probabilities as output.
 
 <details>
 
@@ -279,11 +248,6 @@ Alternatively, you could save the dataset itself
 </tab>
 </toggle>
 
-We saw that MLEM provides a consistent and friendly way for you to work with
-models both via API and CLI. However, MLEM **really** shines when you need to
-package and deploy your models, either as part of an application or locally for
-testing.
-
 ## Deploying and Serving models
 
 MLEM can serve a model for you using different server implementations, for
@@ -292,29 +256,29 @@ since serving models via a REST API is a very common use case.
 
 ## Local model serving
 
-First thing first, let's run a model server locally on our machine. To launch a
-local FastAPI model server, simply run:
+To launch a local FastAPI model server, simply run:
+
+<toggle>
+<tab title="Command Line">
 
 ```cli
 $ mlem serve fastapi --model models/rf
-⏳️ Loading model from models/rf.mlem
-Starting fastapi server...
-🖇️  Adding route for /predict
-🖇️  Adding route for /predict_proba
-🖇️  Adding route for /sklearn_predict
-🖇️  Adding route for /sklearn_predict_proba
-Checkout openapi docs at <http://0.0.0.0:8080/docs>
-INFO:     Started server process [16696]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
+
+</tab>
+<tab title="From code">
+
+```py
+from mlem.api import serve
+
+serve("models/rf", "fastapi")
+```
+
+</tab>
+</toggle>
 
 The server is now running and listening on `http://0.0.0.0:8080` for HTTP
 requests.
-
-Servers automatically create endpoints from model methods using the
-`sample_data` argument provided to [`mlem.api.save`](/doc/api-reference/save).
 
 <admon type="tip">
 
@@ -337,16 +301,16 @@ more about this in
 
 </admon>
 
+TODO: tabs with SwaggerUI/cURL/mlem apply remote/using mlem clients
+
 ## Deploying models to production
 
-Now, let's take model serving a step further and use production worthy
-deployment technologies. MLEM lets you easily package and deploy your models
-using a variety of platforms like [Docker](/doc/user-guide/deploying/docker),
+MLEM also lets you easily package and deploy your models using a variety of
+platforms like [Docker](/doc/user-guide/deploying/docker),
 [Heroku](/doc/user-guide/deploying/heroku),
 [Sagemaker](/doc/user-guide/deploying/sagemaker) and
-[Kubernetes](/doc/user-guide/deploying/kubernetes), so you don't have to deal
-With the DevOps and implementation details of deployment yourself. See the full
-list in the [Deploying User Guide](/doc/user-guide/deploying).
+[Kubernetes](/doc/user-guide/deploying/kubernetes). See the full list in the
+[Deploying User Guide](/doc/user-guide/deploying).
 
 Let's take a look at a few examples:
 
@@ -355,75 +319,47 @@ Let's take a look at a few examples:
 
 ### Running a Dockerized model server
 
-#### Building a Docker container
+#### Running a Docker container
 
-First, we use a simple `mlem build` command to build a container image. With
-this one simple command you build a FastAPI model server and package it into a
-Docker container image:
+With one simple command you can build and run a Docker container image with
+FastAPI model server:
+
+<toggle>
+<tab title="Command Line">
 
 ```cli
-$ mlem build docker docker-builder.mlem \
+$ mlem deployment run docker_container app.mlem \
     --model models/rf \
-    --image.name mlem-model
-⏳️ Loading model from models/rf.mlem
-🛠 Building MLEM wheel file...
-💼 Adding model files...
-🛠 Generating dockerfile...
-💼 Adding sources...
-💼 Generating requirements file...
-🛠 Building docker image mlem-model:latest...
-✅  Built docker image mlem-model:latest
+    --image_name mlem-model \
+    --server fastapi
 ```
 
+</tab>
+
+<tab title="From code">
+
+```py
+# TODO
+```
+
+</tab>
+
+</toggle>
 This will create a `mlem-model:latest` Docker image, and also a
-[builder specification](/doc/user-guide/building) metafile called
-`docker-builder.mlem` .
+[deployment specification](/doc/user-guide/deploying) metafile called
+`app.mlem` .
 
-<details>
-
-#### Click to see to see the builder metafile contents
-
-Let's take a look at the created metafile describing the docker container image:
-
-`$ cat docker-builder.mlem`
-
-```yaml
-image:
-  name: rf-docker
-object_type: builder
-server:
-  type: fastapi
-type: docker
-```
-
-We can see most of the complexity is hidden away in the `server` behavior and
-`docker` type, allowing MLEM to do all the heavy lifting for us.
-
-</details>
-
-Now that we have a docker image for our model server, we can either use it
-locally, or push it to any container registry for publishing and distribution
-using standard `docker` commands and workflows. To keep this guide short and
-local, we'll use `docker` to run the containerized server on our machine:
-
-```cli
-$ docker run -p 8080:8080 mlem-model:latest
-Starting fastapi server...
-🖇️  Adding route for /predict
-🖇️  Adding route for /predict_proba
-🖇️  Adding route for /sklearn_predict
-🖇️  Adding route for /sklearn_predict_proba
-Checkout openapi docs at <http://0.0.0.0:8080/docs>
-INFO:     Started server process [16696]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
-```
-
-As we can see, the container is running a FastAPI server, in a similar way to
-the local serving scenario above. We can now again open the
-https://localhost:8080/docs in a browser and query the model with `curl` or with
+The container is running a FastAPI server, in a similar way to the local serving
+scenario above. We can now again open the https://localhost:8080/docs (TODO:
+check ports config) in a browser and query the model with `curl` or with
 `mlem apply-remote`.
+
+<admon type="info">
+
+You can also just build docker images without running them. For that use
+`mlem build`
+
+</admon>
 
 </tab>
 
@@ -457,20 +393,6 @@ After getting authorized with Heroku, we can run the deployment command:
 $ mlem deployment run heroku app.mlem \
   --model models/rf \
   --app_name {your-name}-mlem-get-started-app
-⏳️ Loading model from models/rf.mlem
-⏳️ Loading deployment from app.mlem
-🛠 Creating docker image for heroku
-  🛠 Building MLEM wheel file...
-  💼 Adding model files...
-  🛠 Generating dockerfile...
-  💼 Adding sources...
-  💼 Generating requirements file...
-  🛠 Building docker image registry.heroku.com/{your-name}-mlem-get-started-app/web...
-  ✅  Built docker image registry.heroku.com/{your-name}-mlem-get-started-app/web
-  🔼 Pushing image registry.heroku.com/{your-name}-mlem-get-started-app/web to registry.heroku.com
-  ✅  Pushed image registry.heroku.com/{your-name}-mlem-get-started-app/web to registry.heroku.com
-🛠 Releasing app {your-name}-mlem-get-started-app formation
-✅  Service {your-name}-mlem-get-started-app is up. You can check it out at https://{your-name}-mlem-get-started-app.herokuapp.com/
 ```
 
 A Deployment specification (or [declaration](/doc/command-reference/declare))
