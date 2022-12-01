@@ -13,7 +13,7 @@ def serve(
 ```py
 from mlem.api import serve
 
-serve(model, server_obj)
+serve(model, "fastapi")
 ```
 
 ## Description
@@ -42,17 +42,15 @@ None
 ```py
 from sklearn.datasets import load_iris
 from sklearn.tree import DecisionTreeClassifier
-from mlem.core.objects import MlemModel
-from mlem.runtime.interface import ModelInterface
-from mlem.contrib.fastapi import FastAPIServer
 
+from mlem.core.objects import MlemModel
+from mlem.contrib.fastapi import FastAPIServer
 from mlem.api import serve
 
 train, target = load_iris(return_X_y=True)
 model = DecisionTreeClassifier().fit(train, target)
 m = MlemModel.from_obj(model, sample_data=train)
-interface = ModelInterface.from_model(m)
 
-server_obj = FastAPIServer().app_init(interface)
+server_obj = FastAPIServer(port=9000)
 serve(m, server_obj)
 ```
