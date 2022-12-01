@@ -39,7 +39,7 @@ model to a file with MLEM.
 
 <details>
 
-### As a basic example, you use the following `train.py` Python script:
+### As a basic example, create and execute the following `train.py` Python script:
 
 ```py
 from sklearn.datasets import load_iris
@@ -221,11 +221,11 @@ $ mlem apply models/rf new_data.csv \
     --method predict_proba \
     --import \
     --import-type "pandas[csv]"
-⏳️ Importing object from new_data.csv
-⏳️ Loading model from models/rf.mlem
-🍏 Applying `predict_proba` method...
+
 [[0.47 0.24 0.29]]
 ```
+
+And we get our expected prediction probabilities as output.
 
 <details>
 
@@ -303,7 +303,7 @@ more about this in
 
 TODO: tabs with SwaggerUI/cURL/mlem apply remote/using mlem clients
 
-## Deploying models to production
+</tab>
 
 MLEM also lets you easily package and deploy your models using a variety of
 platforms like [Docker](/doc/user-guide/deploying/docker),
