@@ -10,11 +10,11 @@ files instead.
 
 ## Annotations in artifacts.yaml
 
-Using Git tag to register versions and assign stages is handy, but the Git tag
-itself doesn't contain path to the artifact, type of it (it could be `model` or
-`dataset`), or any other information you may find useful. For simple projects
-(e.g. single artifact) we can assume the details
-[in a CI/CD system](#acting-in-ci-cd) downstream. But for more advanced cases,
+Using Git tags to register artifact versions and assign stages is handy, but the Git tag
+itself doesn't contain a path to the artifact files, their type (`model` or
+`dataset`), or any other useful information about them. For simple projects
+(e.g. a single artifact) we can assume the details whenever we consume the artifacts
+(e.g. [in CI/CD](#acting-in-ci-cd)). But for more advanced cases,
 we should codify them in the registry itself.
 
 To keep this metainformation, GTO uses `artifacts.yaml` file. Commands like
