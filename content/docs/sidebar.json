@@ -11,6 +11,11 @@
     "label": "Installation"
   },
   {
+    "slug": "config",
+    "label": "Usage templates",
+    "source": "config.md"
+  },
+  {
     "slug": "get-started",
     "label": "Get Started",
     "source": "get-started/index.md",
