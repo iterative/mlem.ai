@@ -34,18 +34,7 @@ const plugins = [
   {
     resolve: '@dvcorg/gatsby-theme-iterative',
     options: {
-      simpleLinkerTerms: require('./content/linked-terms'),
-      cssBase: path.join(
-        'src',
-        '@dvcorg',
-        'gatsby-theme-iterative',
-        'components',
-        'Page',
-        'base.css'
-      ),
-      customMediaConfig: {
-        importFrom: './src/styles/media.css'
-      }
+      simpleLinkerTerms: require('./content/linked-terms')
     }
   },
   {

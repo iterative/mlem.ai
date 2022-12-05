@@ -1,3 +1,4 @@
+const themeConfig = require('@dvcorg/gatsby-theme-iterative/tailwind.config')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
@@ -99,6 +100,7 @@ module.exports = {
       8: '8px'
     },
     screens: {
+      ...themeConfig.theme.extend.screens,
       xs: '414px',
       ...defaultTheme.screens
     },
@@ -144,6 +146,7 @@ module.exports = {
     extend: {}
   },
   plugins: [
+    ...themeConfig.plugins,
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.text-gradient': {
