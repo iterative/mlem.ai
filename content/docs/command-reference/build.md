@@ -37,5 +37,5 @@ images.
 
 ## Examples
 
-For examples, please refer to [Get Started](/doc/get-started/building) or
-[User Guide](/doc/user-guide/building).
+For examples, please refer to the
+[Building User Guide](/doc/user-guide/building).
