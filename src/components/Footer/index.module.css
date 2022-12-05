@@ -8,11 +8,11 @@
     max-width: 1152px;
     padding: 0 16px;
 
-    @media (--md-scr) {
+    @media screen(md) {
       padding: 0 32px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       padding: 0 80px;
     }
   }
@@ -23,14 +23,14 @@
     flex-wrap: wrap;
     height: 480px;
 
-    @media (--md-scr) {
+    @media screen(md) {
       flex-direction: row;
       flex-wrap: nowrap;
       height: initial;
     }
 
     li {
-      @media (--md-scr) {
+      @media screen(md) {
         margin-right: 72px;
 
         &:first-child {
@@ -42,7 +42,7 @@
         }
       }
 
-      @media (--lg-scr) {
+      @media screen(lg) {
         &:first-child {
           display: flex;
         }
@@ -57,7 +57,7 @@
     justify-content: center;
     padding: 24px 0;
 
-    @media (--md-scr) {
+    @media screen(md) {
       text-align: left;
       justify-content: flex-start;
     }
@@ -67,7 +67,7 @@
       flex-direction: column;
       align-items: center;
 
-      @media (--md-scr) {
+      @media screen(md) {
         align-items: flex-start;
       }
 
@@ -78,7 +78,7 @@
       svg:first-child {
         margin-bottom: 12px;
 
-        @media (--lg-scr) {
+        @media screen(lg) {
           width: 32px;
           height: 32px;
         }
@@ -87,7 +87,7 @@
       &Name {
         width: 107px;
 
-        @media (--md-scr) {
+        @media screen(md) {
           width: 135px;
         }
       }
@@ -97,7 +97,7 @@
       margin-top: 16px;
       @apply text-gray-700 text-base leading-8 md:text-lg md:leading-13;
 
-      @media (--md-scr) {
+      @media screen(md) {
         margin-top: 8px;
       }
     }

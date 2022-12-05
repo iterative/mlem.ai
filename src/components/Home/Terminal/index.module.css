@@ -18,7 +18,7 @@
     margin: 0 4px 8px 0;
     @apply rounded-full;
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       margin-bottom: 12px;
       width: 8px;
       height: 8px;
@@ -30,7 +30,7 @@
     overflow-y: auto;
     @apply font-mono;
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       height: calc(100% - 20px);
     }
 

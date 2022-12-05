@@ -3,7 +3,7 @@
   padding: 8px;
   display: block;
 
-  @media (--md-scr) {
+  @media screen(md) {
     padding: 12px;
   }
 

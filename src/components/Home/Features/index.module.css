@@ -10,7 +10,7 @@
       @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
       animation-name: 'blink';
 
-      @media (--md-scr) {
+      @media screen(md) {
         top: -2px;
       }
     }
@@ -23,7 +23,7 @@
     top: -4px;
     list-style: none;
 
-    @media (--md-scr) {
+    @media screen(md) {
       position: static;
       display: flex;
       justify-content: space-between;
@@ -38,11 +38,11 @@
       @apply font-medium;
     }
 
-    @media (--md-scr) {
+    @media screen(md) {
       width: calc((100% - 16px * 3) / 4);
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       padding-top: 24px;
       width: calc((100% - 24px * 3) / 4);
     }

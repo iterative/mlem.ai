@@ -1,11 +1,12 @@
 import * as React from 'react'
-import Layout from '../components/Layout'
 import Home from '../components/Home'
+import MainLayout from '@dvcorg/gatsby-theme-iterative/src/components/MainLayout'
+import { PageProps } from 'gatsby'
 
-const IndexPage: React.FC = () => (
-  <Layout title="Home">
+const IndexPage = ({ location }: PageProps) => (
+  <MainLayout location={location} className="mt-14">
     <Home />
-  </Layout>
+  </MainLayout>
 )
 
 export default IndexPage

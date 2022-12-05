@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import React from 'react'
-import SmartLink from '../../SmartLink'
+import SmartLink from '../../../../../components/SmartLink'
 
 import * as styles from './index.module.css'
 
