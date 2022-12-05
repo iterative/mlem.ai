@@ -6,7 +6,7 @@ Create an API from model methods using a server implementation.
 
 ```usage
 usage: mlem serve [-m <path>] [-p <path>] [--rev <commitish>]
-                  [-f <text>] [-h]
+                  [-f <text>] [--standartize] [-h]
                   [<server> [server options] | --load <declaration>]
 
 Builtin servers:
@@ -36,6 +36,8 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 - `--rev <commitish>` - Repo revision to use [default: (none)]
 - `-f <text>`, `--file_conf <text>` - File with options for server in format
   `field.name=path_to_config`
+- `--standartize` / `--no-standartize` - Whether to conform model interface to
+  standard ('predict' method with single arg 'data') [default: standartize]
 - `-h`, `--help` - Show this message and exit.
 
 ## Examples

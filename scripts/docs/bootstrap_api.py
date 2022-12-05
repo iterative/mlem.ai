@@ -4,7 +4,7 @@ import re
 import textwrap
 from pathlib import Path
 
-from utils import replace_section, place_links_in_doc
+from utils import replace_section, place_links_in_doc, run_lint
 
 DOCS_PATH = Path(__file__).parent.parent.parent / "content" / "docs"
 API_DOCS_PATH = str(DOCS_PATH / "api-reference")
@@ -40,9 +40,9 @@ def generate_signature(cmd):
 def generate_parameters(cmd, sep="\n- "):
     # to add "(required)" or "(optional)"
     required_params = (
-        len(inspect.signature(cmd).parameters)
-        - len(cmd.__defaults__ or {})
-        - len(cmd.__kwdefaults__ or {})
+            len(inspect.signature(cmd).parameters)
+            - len(cmd.__defaults__ or {})
+            - len(cmd.__kwdefaults__ or {})
     )
     docs = get_docs(cmd)
     docs = docs.split("Args:\n")[1].split("Returns:")[0]
@@ -79,7 +79,8 @@ def check_command(cmd, name, path):
         content = f.read()
 
     if "## Returns" not in content:
-        content = content.replace("## Exceptions", "## Returns\n\n## Exceptions")
+        content = content.replace("## Exceptions",
+                                  "## Returns\n\n## Exceptions")
 
     content = replace_section(
         content,
@@ -122,3 +123,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    run_lint()

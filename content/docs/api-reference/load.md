@@ -4,7 +4,7 @@ Load python object saved by MLEM.
 
 ```py
 def load(
-    path: str,
+    path: Union[str, os.PathLike],
     project: Optional[str] = None,
     rev: Optional[str] = None,
     batch_size: Optional[int] = None,
