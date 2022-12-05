@@ -4,10 +4,15 @@
   text-size-adjust: none;
 }
 
+:root {
+  --font-base: 'BrandonGrotesque', sans-serif;
+  --font-mono: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+}
+
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_light.woff2') format('woff2'),
-    url('./brandon_light.woff') format('woff');
+  src: url('./fonts/brandon_light.woff2') format('woff2'),
+    url('./fonts/brandon_light.woff') format('woff');
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -15,8 +20,8 @@
 
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_light_it.woff2') format('woff2'),
-    url('./brandon_light_it.woff') format('woff');
+  src: url('./fonts/brandon_light_it.woff2') format('woff2'),
+    url('./fonts/brandon_light_it.woff') format('woff');
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -24,8 +29,8 @@
 
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_reg.woff2') format('woff2'),
-    url('./brandon_reg.woff') format('woff');
+  src: url('./fonts/brandon_reg.woff2') format('woff2'),
+    url('./fonts/brandon_reg.woff') format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -33,8 +38,8 @@
 
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_reg_it.woff2') format('woff2'),
-    url('./brandon_reg_it.woff') format('woff');
+  src: url('./fonts/brandon_reg_it.woff2') format('woff2'),
+    url('./fonts/brandon_reg_it.woff') format('woff');
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -42,8 +47,8 @@
 
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_med.woff2') format('woff2'),
-    url('./brandon_med.woff') format('woff');
+  src: url('./fonts/brandon_med.woff2') format('woff2'),
+    url('./fonts/brandon_med.woff') format('woff');
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -51,8 +56,8 @@
 
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_med_it.woff2') format('woff2'),
-    url('./brandon_med_it.woff') format('woff');
+  src: url('./fonts/brandon_med_it.woff2') format('woff2'),
+    url('./fonts/brandon_med_it.woff') format('woff');
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -60,8 +65,8 @@
 
 @font-face {
   font-family: 'BrandonGrotesque';
-  src: url('./brandon_bld.woff2') format('woff2'),
-    url('./brandon_bld.woff') format('woff');
+  src: url('./fonts/brandon_bld.woff2') format('woff2'),
+    url('./fonts/brandon_bld.woff') format('woff');
   font-style: normal;
   font-weight: 700;
   font-display: swap;
