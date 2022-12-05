@@ -48,6 +48,4 @@
 
     Class docstring missing
 
-**Fields**:
-
-- `version: str = "0.2.9.dev16+gb7b6879"` - mlem version
+**No fields**

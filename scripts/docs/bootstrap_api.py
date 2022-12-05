@@ -12,6 +12,7 @@ API_DOCS_PATH = str(DOCS_PATH / "api-reference")
 
 def get_signature(cmd):
     source = inspect.getsource(cmd)
+    source = "\n".join(l for l in source.split("\n") if not l.startswith("@"))
     return source.split('"""')[0].strip().strip(":")
 
 
@@ -114,6 +115,9 @@ def generate_api():
             print(f"creating {name}")
         else:
             print(f"checking {name}")
+            if hasattr(cmd, "__wrapped__"):
+                cmd = cmd.__wrapped__
+
             check_command(cmd, name, cmd_path)
 
 
