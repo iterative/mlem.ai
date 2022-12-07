@@ -56,16 +56,22 @@ Commit the changes to Git in order to `gto register` artifact versions and
 ```cli
 $ git add artifacts.yaml
 $ git commit -m "version artifact binaries with DVC and annotate it with GTO"
+```
+
+To share your work, you'll need [remote storage] setup in DVC. You can then
+upload the artifact files and the changes to the repo:
+
+[remote storage]: https://dvc.org/doc/command-reference/remote
+
+```cli
+$ dvc push
 $ git push
 ```
 
-Now your changes is live in your Git repo and you can download your artifact to
-use it 🙌
-
 ## Downloading artifacts
 
-When you want to download GTO artifact which binaries are stored with DVC, you
-need to use `dvc get` or `dvc import` command:
+To download GTO artifact files tracked with DVC, you
+can use the `dvc get` or `dvc import` commands (or simply use `dvc pull` if you `cd`  inside the repo).
 
 ```cli
 $ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
