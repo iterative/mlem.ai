@@ -1,8 +1,11 @@
 # GTO with DVC
 
-In many ML projects, data isn't stored in a Git repository and needs to be
-downloaded from external sources. [DVC](https://dvc.org) is a common way to
-store binaries for the artifacts registered with GTO.
+Large files are typically not stored in a Git repository, so they need to be
+downloaded from external sources. [DVC](https://dvc.org) is a great way to
+store your GTO artifact files while keeping a pointer in the
+repo, and simplifying [data management] and synchronization.
+
+[data management]: https://dvc.org/doc/user-guide/data-management
 
 <details>
 
@@ -19,18 +22,12 @@ store binaries for the artifacts registered with GTO.
 
 </details>
 
-If you are new to DVC, you should start with
-[DVC Get Started](https://dvc.org/doc/start) first, and then come back to this
-Guide.
+<admon icon="book">
 
-<!-- ```
+If you're new to DVC,
+[get started here](https://dvc.org/doc/start) first.
 
-dvc init --no-scm dvc remote add az azure://container-name export
-AZURE_STORAGE_CONNECTION_STRING='YOUR_CONNECTION_STRING'
-
-dvc import-url --no-download azure://container-name/data.parquet
-
-``` -->
+</admon>
 
 ## Tracking an artifact with DVC
 
@@ -62,15 +59,15 @@ GTO:
 $ gto annotate model --path model.pkl
 ```
 
-This will modify `artifacts.yaml`, adding:
+This will write the following to `artifacts.yaml`:
 
 ```yaml
 model:
   path: model.pkl
 ```
 
-Now you should commit changes to Git, and you can register versions and assign
-stages referencing the new commit.
+Commit the changes to Git in order to `gto register` artifact versions and
+`gto assign` them to deployment stages referencing the new commit.
 
 ```cli
 $ git add artifacts.yaml
@@ -120,25 +117,3 @@ $ dvc pull $ARTIFACT_PATH
 ```
 
 </details>
-
-<!--
-Refer to DVC install guide and Get Started to learn DVC first. If you're already
-familiar with DVC, let's set it up for GTO repo (use your remote storage instead
-of `s3://mybucket/myrepo`):
-
-```cli
-$ dvc init
-$ dvc remote add myremote -d s3://mybucket/myrepo
-$ git add .dvc/config
-```
-
-##
-
-If you want to version your artifact with DVC, you need to add it to DVC first
-(skip this step if you already have DVC-tracked artifacts):
-
-```cli
-$ dvc add path/to/artifact
-$ dvc push
-$ git add
-``` -->

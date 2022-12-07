@@ -2,11 +2,17 @@
 
 GTO helps you build an Artifact Registry out of your Git repository. It creates
 annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
-[special format](#git-tags-format) in their message, and manages an
-`artifacts.yaml` file. Since committing large files to Git is not a good
-practice, you should consider not committing your artifacts to Git. Instead,
-[use DVC](/doc/gto/user-guide/dvc), Git-lfs, or any method to commit pointers to
-the binary files instead.
+[special format](#git-tags-format), and manages an
+`artifacts.yaml` file.
+
+<admon type="tip">
+
+Storing large files in Git repos is not a good practice.
+Avoid committing your ML artifacts to Git. You can
+[use DVC](/doc/gto/user-guide/dvc), Git LFS, or any other method to commit pointers to
+the data, models, etc. instead.
+
+</admon>
 
 ## Annotations in artifacts.yaml
 
@@ -17,15 +23,14 @@ itself doesn't contain path to the artifact, type of it (it could be `model` or
 [in a CI/CD system](#acting-in-ci-cd) downstream. But for more advanced cases,
 we should codify them in the registry itself.
 
-To keep this metadata, GTO uses `artifacts.yaml` file. Commands like
-`gto annotate` and `gto remove` are used to modify it, while `gto describe`
-helps get them when they're needed.
+To keep this metadata, GTO uses a human-readable `artifacts.yaml` file. The
+`gto describe`, `gto annotate`, and `gto remove` commands are used to display and
+manage it's contents.
 
 <admon type="tip">
 
-An example of `artifacts.yaml` can be found in
-[example-gto](https://github.com/iterative/example-gto/blob/main/artifacts.yaml)
-repo.
+An example `artifacts.yaml` can be found
+[in the `example-gto` repo](https://github.com/iterative/example-gto).
 
 </admon>
 
@@ -52,8 +57,7 @@ GTO doesn't provide a way to deliver the artifacts, but you can [use DVC] or
 </admon>
 
 ```cli
-# getting the Git reference for the latest version
-$ gto show churn@greatest --ref
+$ gto show churn@latest --ref
 churn@v3.1.1
 
 $ gto show churn#prod --ref  # by assigned stage
