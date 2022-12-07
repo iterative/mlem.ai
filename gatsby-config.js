@@ -3,6 +3,7 @@ const path = require('path')
 
 const apiMiddleware = require('@dvcorg/websites-server/src/middleware/api')
 const redirectsMiddleware = require('@dvcorg/websites-server/src/middleware/redirects')
+import sentryConfig from '@dvcorg/gatsby-theme-iterative/sentry-config'
 
 const siteMetadata = {
   title: 'MLEM - Machine Learning Engineering Management',
@@ -108,7 +109,10 @@ const plugins = [
     }
   },
   'gatsby-plugin-meta-redirect',
-  '@sentry/gatsby'
+  {
+    resolve: '@sentry/gatsby',
+    options: sentryConfig
+  }
 ]
 
 module.exports = {
