@@ -7,21 +7,6 @@ your GTO artifact files while keeping a pointer in the repo, and simplifying
 
 [data management]: https://dvc.org/doc/user-guide/data-management
 
-<details>
-
-### Learn about different approaches to this
-
-1. You can commit artifacts to Git repo. If they aren't small enough, this is
-   not recommended. To bypass this limitation, you can use
-   [Git-lfs](https://git-lfs.github.com).
-2. You can version binaries with [DVC](https://dvc.org/) and commit pointers to
-   them to the repo. This is the recommended approach for large files.
-3. You can version binaries manually somewhere, specifying URL to them as `path`
-   in `artifacts.yaml`. This can be done, if your artifacts are already
-   versioned by some external system.
-
-</details>
-
 <admon icon="book">
 
 If you're new to DVC, [get started here](https://dvc.org/doc/start) first.
