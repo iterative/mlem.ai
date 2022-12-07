@@ -105,7 +105,7 @@ binaries stored in Git. MLEM will know to use DVC to load them.
 
 ## Using MLEM in DVC Pipeline
 
-[DVC pipelines](https://dvc.org/doc/start/data-management/pipelines) is a
+[DVC pipelines](https://dvc.org/doc/start/data-management/data-pipelines) is a
 mechanism to build data pipelines, in which you can process your data and train
 your model. You may be already training your ML models in them and what to start
 using MLEM to save those models.

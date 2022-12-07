@@ -1,7 +1,6 @@
 # config
 
-Manipulate
-[[MLEM config](/doc/user-guide/configuration)](/doc/user-guide/configuration).
+Manipulate [MLEM config](/doc/user-guide/configuration).
 
 ## Synopsys
 
@@ -9,8 +8,11 @@ Manipulate
 usage: mlem config [-h]
 ```
 
+## Description
+
+Use `mlem config set` to set config values and `mlem config get` to get
+currently active settings.
+
 ## Options
 
 - `-h`, `--help` - Show this message and exit.
-
-## Examples
