@@ -1,9 +1,9 @@
 # GTO with DVC
 
 Large files are typically not stored in a Git repository, so they need to be
-downloaded from external sources. [DVC](https://dvc.org) is a great way to
-store your GTO artifact files while keeping a pointer in the
-repo, and simplifying [data management] and synchronization.
+downloaded from external sources. [DVC](https://dvc.org) is a great way to store
+your GTO artifact files while keeping a pointer in the repo, and simplifying
+[data management] and synchronization.
 
 [data management]: https://dvc.org/doc/user-guide/data-management
 
@@ -24,8 +24,7 @@ repo, and simplifying [data management] and synchronization.
 
 <admon icon="book">
 
-If you're new to DVC,
-[get started here](https://dvc.org/doc/start) first.
+If you're new to DVC, [get started here](https://dvc.org/doc/start) first.
 
 </admon>
 

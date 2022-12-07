@@ -2,15 +2,13 @@
 
 GTO helps you build an Artifact Registry out of your Git repository. It creates
 annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
-[special format](#git-tags-format), and manages an
-`artifacts.yaml` file.
+[special format](#git-tags-format), and manages an `artifacts.yaml` file.
 
 <admon type="tip">
 
-Storing large files in Git repos is not a good practice.
-Avoid committing your ML artifacts to Git. You can
-[use DVC](/doc/gto/user-guide/dvc), Git LFS, or any other method to commit pointers to
-the data, models, etc. instead.
+Storing large files in Git repos is not a good practice. Avoid committing your
+ML artifacts to Git. You can [use DVC](/doc/gto/user-guide/dvc), Git LFS, or any
+other method to commit pointers to the data, models, etc. instead.
 
 </admon>
 
@@ -24,8 +22,8 @@ itself doesn't contain path to the artifact, type of it (it could be `model` or
 we should codify them in the registry itself.
 
 To keep this metadata, GTO uses a human-readable `artifacts.yaml` file. The
-`gto describe`, `gto annotate`, and `gto remove` commands are used to display and
-manage it's contents.
+`gto describe`, `gto annotate`, and `gto remove` commands are used to display
+and manage it's contents.
 
 <admon type="tip">
 
