@@ -3,7 +3,6 @@ const path = require('path')
 
 const apiMiddleware = require('@dvcorg/websites-server/src/middleware/api')
 const redirectsMiddleware = require('@dvcorg/websites-server/src/middleware/redirects')
-const sentryConfig = require('@dvcorg/gatsby-theme-iterative/sentry-config')
 
 const siteMetadata = {
   title: 'MLEM - Machine Learning Engineering Management',
