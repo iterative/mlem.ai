@@ -70,8 +70,8 @@ $ git push
 
 ## Downloading artifacts
 
-To download GTO artifact files tracked with DVC, you
-can use the `dvc get` or `dvc import` commands (or simply use `dvc pull` if you `cd`  inside the repo).
+To download GTO artifact files tracked with DVC, you can use the `dvc get` or
+`dvc import` commands (or simply use `dvc pull` if you `cd` inside the repo).
 
 ```cli
 $ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
