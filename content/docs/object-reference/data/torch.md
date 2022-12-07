@@ -22,9 +22,7 @@
 
     Read torch tensors
 
-**Fields**:
-
-- `data_type: DataType` _(required)_ - Resulting data type
+**No fields**
 
 ---
 

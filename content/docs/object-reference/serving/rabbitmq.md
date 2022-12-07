@@ -41,9 +41,8 @@
 
 - `queue_prefix: str = ""` - Queue prefix
 
-- `interface: InterfaceDescriptor` - Optional augmented interface
+- `request_serializer: Serializer` - Serializer to use for all requests
 
-- `strict_interface: bool = False` - Whether to force identical interface
+- `response_serializer: Serializer` - Serializer to use for all responses
 
-- `standardize: bool = True` - Whether to conform model interface to standard
-  ("predict" method with single arg "data")
+- `standardize: bool = True` - Use standard model interface
