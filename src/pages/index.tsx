@@ -1,10 +1,8 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
 import Home from '../components/Home'
-import * as Sentry from '@sentry/gatsby'
 
 const IndexPage: React.FC = () => {
-  Sentry.captureMessage('Test message!')
   return (
     <Layout title="Home">
       <button
