@@ -31,14 +31,11 @@ automatically used by MLEM to wire and expose endpoints on the application
 server upon deployment. Applying data on the deployment is a very handy shortcut
 of bulk inferring data on the served model.
 
-> Currently, only `heroku` is supported as a target but more platforms will be
-> added soon!
-
 ## Options
 
 - `-h`, `--help` - Show this message and exit.
 
 ## Examples
 
-For examples, please refer to [Get Started](/doc/get-started/deploying) or
-[User Guide](/doc/user-guide/deploying).
+For examples, please refer to [Get Started](/doc/get-started) tutorial or the
+[Deploying User Guide](/doc/user-guide/deploying).

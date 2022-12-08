@@ -10,11 +10,7 @@
 
 **Fields**:
 
-- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
-
 - `model_hash: str` - Hash of deployed model meta
-
-- `model_link: TypedMlemLink` - Link to deployed model
 
 - `image: DockerImage` - Built image
 
@@ -29,8 +25,6 @@
 - `method_signature: Signature` - Signature of deployed method
 
 - `region: str` - AWS Region
-
-- `previous: SagemakerDeployState` - Previous state
 
 ---
 

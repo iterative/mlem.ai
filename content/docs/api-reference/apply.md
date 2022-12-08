@@ -4,7 +4,7 @@ Apply provided model against provided data.
 
 ```py
 def apply(
-    model: Union[str, MlemModel],
+    model: Union[str, MlemModel, Any],
     *data: Union[str, MlemData, Any],
     method: str = None,
     output: str = None,

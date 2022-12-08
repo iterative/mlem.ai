@@ -10,7 +10,7 @@ MLEM is a Python library. You can install it with a package manager like
 [Conda](https://docs.conda.io/en/latest/), or as a Python
 [requirement](https://pip.pypa.io/en/latest/user_guide/#requirements-files).
 
-<admon type="info">
+<admon type="tip">
 
 We **strongly** recommend creating a [virtual environment] or using [pipx] to
 encapsulate your local environment.

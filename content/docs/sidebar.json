@@ -13,29 +13,7 @@
   {
     "slug": "get-started",
     "label": "Get Started",
-    "source": "get-started/index.md",
-    "children": [
-      {
-        "slug": "applying",
-        "label": "Applying models",
-        "source": "applying.md"
-      },
-      {
-        "slug": "serving",
-        "label": "Serving models",
-        "source": "serving.md"
-      },
-      {
-        "slug": "building",
-        "label": "Building models",
-        "source": "building.md"
-      },
-      {
-        "slug": "deploying",
-        "label": "Deploying models",
-        "source": "deploying.md"
-      }
-    ]
+    "source": "get-started/index.md"
   },
   {
     "slug": "use-cases",

@@ -43,6 +43,42 @@
 
 ---
 
+## `class BinaryDataReader`
+
+**MlemABC parent type**: `data_reader`
+
+**MlemABC type**: `binary`
+
+    Reader for binary data
+
+**No fields**
+
+---
+
+## `class BinaryDataType`
+
+**MlemABC parent type**: `data_type`
+
+**MlemABC type**: `binary`
+
+    Represents raw binary data
+
+**No fields**
+
+---
+
+## `class BinaryDataWriter`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `binary`
+
+    Writer for binary data
+
+**No fields**
+
+---
+
 ## `class DictReader`
 
 **MlemABC parent type**: `data_reader`

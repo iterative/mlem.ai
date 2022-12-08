@@ -270,7 +270,7 @@ Clients for corresponding servers
 ### Builder
 
 Declaration for creating a `build` from model. You can learn more about building
-[here](/doc/get-started/building)
+in this [User Guide](/doc/user-guide/building)
 
 **Base class**: `mlem.core.objects.MlemBuilder`
 

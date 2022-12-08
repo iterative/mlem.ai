@@ -20,7 +20,7 @@ from mlem.utils.entrypoints import (
     list_implementations,
     load_entrypoints,
 )
-from utils import replace_sections
+from utils import replace_sections, run_lint
 
 SIDEBAR_PATH = "../../content/docs/sidebar.json"
 REF_SLUG = "object-reference"
@@ -340,3 +340,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    run_lint()

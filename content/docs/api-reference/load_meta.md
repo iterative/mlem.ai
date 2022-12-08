@@ -4,7 +4,7 @@ Load MlemObject.
 
 ```py
 def load_meta(
-    path: str,
+    path: Union[str, os.PathLike],
     project: Optional[str] = None,
     rev: Optional[str] = None,
     follow_links: bool = True,

@@ -4,7 +4,9 @@ Serve a model by exposing its methods as endpoints.
 
 ```py
 def serve(
-    model: Union[str, MlemModel], server: Union[Server, str], **server_kwargs
+    model: Union[str, MlemModel],
+    server: Union[Server, str],
+    **server_kwargs,
 )
 ```
 

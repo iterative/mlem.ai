@@ -1,0 +1,20 @@
+restylers:
+  - name: prettier
+    arguments:
+      [
+        '--arrow-parens=avoid',
+        '--print-width=80',
+        '--prose-wrap=always',
+        '--no-semi',
+        '--single-quote=true',
+        '--tab-width=2',
+        '--trailing-comma=none',
+        '--use-tabs=false'
+      ]
+    include:
+      - '**/*.md'
+      - '**/*.jsx'
+      - '**/*.tsx'
+      - '**/*.js'
+      - '**/*.ts'
+      - '**/*.json'

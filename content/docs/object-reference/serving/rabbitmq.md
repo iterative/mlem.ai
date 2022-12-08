@@ -40,3 +40,9 @@
 - `exchange: str = ""` - RMQ exchange to use
 
 - `queue_prefix: str = ""` - Queue prefix
+
+- `request_serializer: Serializer` - Serializer to use for all requests
+
+- `response_serializer: Serializer` - Serializer to use for all responses
+
+- `standardize: bool = True` - Use standard model interface

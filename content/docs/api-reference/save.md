@@ -5,7 +5,7 @@ Saves given object to a given path.
 ```py
 def save(
     obj: Any,
-    path: str,
+    path: Union[str, os.PathLike],
     project: Optional[str] = None,
     sample_data=None,
     fs: Optional[AbstractFileSystem] = None,

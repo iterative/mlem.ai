@@ -20,14 +20,13 @@ Builtin clients:
 
 ## Description
 
-Models which are deployed somewhere remotely or are being
-[served](/doc/get-started/serving) locally, can have their methods called using
-the `apply-remote` command. This command is similar to
-[apply](/doc/command-reference/apply), with the only difference being the model
-is deployed remotely using a deployment, or served locally. To access the
-methods of the `served` model, a `client` is needed. Currently, the available
-clients are `http` and `rmq` - which are used to launch requests against the
-`fastapi` and `rmq` server types, correspondingly.
+Models which are deployed somewhere remotely or are being served locally, can
+have their methods called using the `apply-remote` command. This command is
+similar to [apply](/doc/command-reference/apply), with the only difference being
+the model is deployed remotely using a deployment, or served locally. To access
+the methods of the `served` model, a `client` is needed. Currently, the
+available clients are `http` and `rmq` - which are used to launch requests
+against the `fastapi` and `rmq` server types, correspondingly.
 
 ## Options
 
