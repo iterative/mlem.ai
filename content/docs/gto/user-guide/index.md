@@ -50,7 +50,7 @@ GTO doesn't provide a way to deliver the artifacts, but you can [use DVC] or
 [employ MLEM] for that.
 
 [use dvc]: /doc/gto/user-guide/dvc
-[employ mlem]: /doc/gto/user-guide/mlem
+[employ mlem]: https://mlem.ai
 
 </admon>
 
