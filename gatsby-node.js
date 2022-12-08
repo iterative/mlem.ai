@@ -76,20 +76,7 @@ exports.createResolvers = async ({ createResolvers }) => {
         async resolve() {
           const { GITHUB_TOKEN } = process.env
           if (GITHUB_TOKEN) {
-            const query = await graphql(
-              `
-                {
-                  repository(owner: "iterative", name: "mlem") {
-                    stargazers {
-                      totalCount
-                    }
-                  }
-                }
-              `,
-              { headers: { authorization: `token ${GITHUB_TOKEN}` } }
-            )
-
-            const stars = query.repository.stargazers.totalCount
+            const stars = await getStars({ owner: 'iterative', repo: 'mlem' })
             return { stars }
           }
           return { stars: 8888 }
