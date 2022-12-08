@@ -32,6 +32,22 @@ const formattedTerminalLines = terminalSlides.map(string => {
   return lines[0].text === '' ? lines.slice(1) : lines
 })
 
+async function getStars({ owner, repo }) {
+  const response = await request({
+    method: 'GET',
+    url: '/repos/{owner}/{repo}',
+    owner,
+    repo,
+    headers: {
+      authorization: `token ${process.env.GITHUB_TOKEN}`
+    }
+  })
+
+  const stars = response.data.stargazers_count
+
+  return stars
+}
+
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const { createNode } = actions
 
