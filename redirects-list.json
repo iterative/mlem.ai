@@ -4,5 +4,6 @@
   "^/(?:docs|documentation)(/.*)?$            /doc$1",
   "^/(.+)/$                                   /$1",
 
-  "^/doc/user-guide/remote-projects$          /doc/user-guide/remote-objects 302"
+  "^/doc/user-guide/remote-projects$          /doc/user-guide/remote-objects 302",
+  "^/doc/get-started/*                         /doc/get-started 302"
 ]
