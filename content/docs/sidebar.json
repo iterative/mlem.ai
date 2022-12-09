@@ -623,6 +623,11 @@
             "slug": "dvc",
             "label": "GTO with DVC",
             "source": "dvc.md"
+          },
+          {
+            "slug": "mlem",
+            "label": "GTO with MLEM",
+            "source": "mlem.md"
           }
         ]
       },
