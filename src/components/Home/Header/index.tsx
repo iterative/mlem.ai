@@ -63,7 +63,7 @@ const logosData: Array<{
   {
     widthSm: 66,
     widthMd: 88,
-    widthLg: 124,
+    widthLg: 136,
     src: fastapiLogo,
     alt: 'FastAPI logo'
   },
@@ -89,9 +89,9 @@ const logosData: Array<{
     alt: 'Heroku logo'
   },
   {
-    widthSm: 66,
-    widthMd: 88,
-    widthLg: 124,
+    widthSm: 55,
+    widthMd: 75,
+    widthLg: 108,
     src: kubernetesLogo,
     alt: 'Kubernetes logo'
   },
@@ -125,8 +125,8 @@ const logosData: Array<{
   },
   {
     widthSm: 66,
-    widthMd: 88,
-    widthLg: 124,
+    widthMd: 78,
+    widthLg: 110,
     src: condaLogo,
     alt: 'Conda logo'
   },
@@ -187,16 +187,16 @@ const logosData: Array<{
     alt: 'Catboost logo'
   },
   {
-    widthSm: 81,
-    widthMd: 96,
-    widthLg: 135,
+    widthSm: 66,
+    widthMd: 78,
+    widthLg: 120,
     src: numpyLogo,
     alt: 'Numpy logo'
   },
   {
-    widthSm: 81,
-    widthMd: 96,
-    widthLg: 135,
+    widthSm: 66,
+    widthMd: 78,
+    widthLg: 110,
     src: pandasLogo,
     alt: 'Pandas logo'
   }
