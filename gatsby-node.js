@@ -1,6 +1,6 @@
 const Prism = require('prismjs')
 const loadLanguages = require('prismjs/components/')
-const { graphql } = require('@octokit/graphql')
+const { request } = require('@octokit/request')
 
 const terminalSlides = require('./content/home-slides')
 
@@ -31,6 +31,22 @@ const formattedTerminalLines = terminalSlides.map(string => {
   })
   return lines[0].text === '' ? lines.slice(1) : lines
 })
+
+async function getStars({ owner, repo }) {
+  const response = await request({
+    method: 'GET',
+    url: '/repos/{owner}/{repo}',
+    owner,
+    repo,
+    headers: {
+      authorization: `token ${process.env.GITHUB_TOKEN}`
+    }
+  })
+
+  const stars = response.data.stargazers_count
+
+  return stars
+}
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const { createNode } = actions
@@ -76,20 +92,7 @@ exports.createResolvers = async ({ createResolvers }) => {
         async resolve() {
           const { GITHUB_TOKEN } = process.env
           if (GITHUB_TOKEN) {
-            const query = await graphql(
-              `
-                {
-                  repository(owner: "iterative", name: "mlem") {
-                    stargazers {
-                      totalCount
-                    }
-                  }
-                }
-              `,
-              { headers: { authorization: `token ${GITHUB_TOKEN}` } }
-            )
-
-            const stars = query.repository.stargazers.totalCount
+            const stars = await getStars({ owner: 'iterative', repo: 'mlem' })
             return { stars }
           }
           return { stars: 8888 }

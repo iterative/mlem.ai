@@ -617,7 +617,14 @@
       {
         "slug": "user-guide",
         "label": "User Guide",
-        "source": "user-guide.md"
+        "source": "user-guide/index.md",
+        "children": [
+          {
+            "slug": "dvc",
+            "label": "GTO with DVC",
+            "source": "dvc.md"
+          }
+        ]
       },
       {
         "slug": "command-reference",
