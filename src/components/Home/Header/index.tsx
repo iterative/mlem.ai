@@ -10,6 +10,7 @@ import condaLogo from '../../../images/logo/conda.png'
 import dmlcXgboostLogo from '../../../images/logo/dmlc-xgboost.png'
 import dockerLogo from '../../../images/logo/docker.png'
 import fastapiLogo from '../../../images/logo/fastapi.png'
+import flyioLogo from '../../../images/logo/flyio.png'
 import herokuLogo from '../../../images/logo/heroku.png'
 import kerasLogo from '../../../images/logo/keras.png'
 import kubernetesLogo from '../../../images/logo/kubernetes.png'
@@ -100,6 +101,13 @@ const logosData: Array<{
     widthLg: 124,
     src: sagemakerLogo,
     alt: 'Sagemaker logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: flyioLogo,
+    alt: 'Fly.io logo'
   },
   {
     widthSm: 66,
