@@ -36,9 +36,10 @@
     list-style: none;
 
     @media (--md-scr) {
-      flex-wrap: nowrap;
-      justify-content: space-between;
       margin: 34px 0 0;
+      li {
+        flex-basis: 16.5%;
+      }
     }
 
     @media (--lg-scr) {
