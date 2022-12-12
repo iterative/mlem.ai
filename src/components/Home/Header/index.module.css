@@ -1,4 +1,5 @@
 .header {
+  @apply my-10;
   text-align: left;
 
   &__title {
@@ -27,7 +28,6 @@
   }
 
   &__logos {
-    grid-area: logos;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -63,31 +63,16 @@
 
 .main {
   @media screen(md) {
-    display: grid;
-    grid-template-areas: 'captions slides' 'buttons slides';
-    grid-template-columns: 1fr 336px;
-    grid-template-rows: min-content 1fr;
-    margin: 0 -32px 0 -14px;
+    padding: 0 -32px 0 -14px;
     column-gap: 16px;
   }
 
   @media screen(lg) {
-    grid-template-columns: calc((100% - 64px) / 2) 1fr;
     column-gap: 24px;
-    margin: 48px -80px 0 -18px;
-  }
-
-  .cli__slidesWrapper {
-    grid-area: slides;
-  }
-
-  .cli__captions {
-    grid-area: captions;
+    padding: 48px -80px 0 -18px;
   }
 
   &__buttons {
-    grid-area: buttons;
-
     @media screen(md) {
       display: flex;
       align-items: flex-start;
@@ -128,14 +113,10 @@
       width: 320px;
       height: 234px;
       padding: 34px 20px 34px 16px;
-      box-sizing: content-box;
       @apply rounded-4;
     }
 
     @media screen(lg) {
-      box-sizing: border-box;
-      width: calc(100% + 18px);
-      height: calc(244px + 32px);
       padding: 16px 64px 16px 24px;
       margin: 0 0 0 -24px;
       align-self: center;
@@ -143,6 +124,7 @@
   }
 
   &__slides {
+    width: 100%;
     list-style: none;
     display: flex;
     position: relative;

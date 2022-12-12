@@ -34,7 +34,8 @@ const plugins = [
   {
     resolve: '@dvcorg/gatsby-theme-iterative',
     options: {
-      simpleLinkerTerms: require('./content/linked-terms')
+      simpleLinkerTerms: require('./content/linked-terms'),
+      glossaryInstanceName: false
     }
   },
   {

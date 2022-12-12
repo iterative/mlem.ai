@@ -1,11 +1,20 @@
 import React from 'react'
 import Header from './Header'
 import Features from './Features'
-import * as styles from './index.module.css'
+import cn from 'classnames'
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
-    <div className={styles.homeMain}>
+    <div
+      className={cn(
+        'flex',
+        'flex-col',
+        'flex-nowrap',
+        'w-full',
+        'max-w-5xl',
+        'mx-auto'
+      )}
+    >
       <Header />
       <Features />
     </div>

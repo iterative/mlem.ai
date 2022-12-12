@@ -168,90 +168,107 @@ const Header: React.FC = () => {
         <span className={styles.header__titleUnderscore}>_</span>
       </h1>
       <div className={styles.main}>
-        <div className={styles.cli__slidesWrapper}>
-          <ul
-            style={
-              {
-                '--selected-i': selectedCli,
-                '--length': cliSlideData.length
-              } as React.CSSProperties
-            }
-            className={styles.cli__slides}
-            onTouchMove={handleTouchMove}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-          >
-            {cliSlideData.map((data, i) => (
-              <li key={i} className={cn(i === selectedCli && styles.selected)}>
-                <Terminal
-                  lines={data.lines}
-                  setTypedRef={(el: {
-                    destroy: () => void
-                    reset: () => void
-                  }) => {
-                    typedRefs.current[i] = el
-                  }}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <ul className={styles.cli__dots}>
-          {cliSlideData.map((_, i) => (
-            <li key={i}>
-              <button
-                className={cn(i === selectedCli && styles.selected)}
-                onFocus={() => {
-                  setCli(i)
-                }}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul
-          className={cn(styles.cli__captions, 'flex md:hidden')}
-          style={
-            {
-              '--selected-i': selectedCli,
-              '--length': cliSlideData.length
-            } as React.CSSProperties
-          }
-          onTouchMove={handleTouchMove}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+        <div
+          className={cn(
+            'md:flex',
+            'md:flex-row-reverse',
+            'md:flex-nowrap',
+            'items-center',
+            'justify-center'
+          )}
         >
-          {cliCaptionData.map(({ bold, text }, i) => (
-            <li key={i}>
-              <p className={styles.cli__boldText}>{bold}</p>
-              <p className={styles.cli__text}>{text}</p>
-            </li>
-          ))}
-        </ul>
-        <ul
-          className={cn(styles.cli__captions, 'hidden md:flex')}
-          style={
-            {
-              '--selected-i': selectedCli,
-              '--length': cliSlideData.length
-            } as React.CSSProperties
-          }
-        >
-          {cliCaptionData.map(({ bold, text }, i) => (
-            <li
-              key={i}
-              className={cn(i === selectedCli && styles.cli__caption_selected)}
+          <div className={cn(styles.cli__slidesWrapper, 'shrink-0', 'grow-0')}>
+            <ul
+              style={
+                {
+                  '--selected-i': selectedCli,
+                  '--length': cliSlideData.length
+                } as React.CSSProperties
+              }
+              className={styles.cli__slides}
+              onTouchMove={handleTouchMove}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
-              <button
-                onClick={() => {
-                  setCli(i)
-                }}
-              >
-                <p className={styles.cli__boldText}>{bold}</p>
-                <p className={styles.cli__text}>{text}</p>
-              </button>
-            </li>
-          ))}
-        </ul>
+              {cliSlideData.map((data, i) => (
+                <li
+                  key={i}
+                  className={cn(i === selectedCli && styles.selected)}
+                >
+                  <Terminal
+                    lines={data.lines}
+                    setTypedRef={(el: {
+                      destroy: () => void
+                      reset: () => void
+                    }) => {
+                      typedRefs.current[i] = el
+                    }}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={cn('shrink-1 grow-1')}>
+            <ul className={styles.cli__dots}>
+              {cliSlideData.map((_, i) => (
+                <li key={i}>
+                  <button
+                    className={cn(i === selectedCli && styles.selected)}
+                    onFocus={() => {
+                      setCli(i)
+                    }}
+                  />
+                </li>
+              ))}
+            </ul>
+            <ul
+              className={cn(styles.cli__captions, 'flex md:hidden')}
+              style={
+                {
+                  '--selected-i': selectedCli,
+                  '--length': cliSlideData.length
+                } as React.CSSProperties
+              }
+              onTouchMove={handleTouchMove}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {cliCaptionData.map(({ bold, text }, i) => (
+                <li key={i}>
+                  <p className={styles.cli__boldText}>{bold}</p>
+                  <p className={styles.cli__text}>{text}</p>
+                </li>
+              ))}
+            </ul>
+            <ul
+              className={cn(styles.cli__captions, 'hidden md:flex')}
+              style={
+                {
+                  '--selected-i': selectedCli,
+                  '--length': cliSlideData.length
+                } as React.CSSProperties
+              }
+            >
+              {cliCaptionData.map(({ bold, text }, i) => (
+                <li
+                  key={i}
+                  className={cn(
+                    i === selectedCli && styles.cli__caption_selected
+                  )}
+                >
+                  <button
+                    onClick={() => {
+                      setCli(i)
+                    }}
+                  >
+                    <p className={styles.cli__boldText}>{bold}</p>
+                    <p className={styles.cli__text}>{text}</p>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
         <div className={styles.main__buttons}>
           <Button className={styles.button} href="/doc/get-started">
             Get Started
