@@ -32,18 +32,18 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    padding: 10px;
     list-style: none;
 
     @media (--md-scr) {
       margin: 34px 0 0;
       li {
-        flex-basis: 19.5%;
+        flex-basis: 20%;
       }
     }
 
     @media (--lg-scr) {
-      margin: 12px 0 0;
+      margin: 12px -40px 0;
     }
   }
 
@@ -53,7 +53,7 @@
 
     @media (--md-scr) {
       width: var(--width-md);
-      margin: 10;
+      margin: 0 auto 10px;
     }
 
     @media (--lg-scr) {
