@@ -1,17 +1,17 @@
 ---
-description: 'Learn how you can use MLEM to easily manage and deploy models'
+description: 'Learn how you can use MLEM to easily manage and deploy machine learning models'
 ---
 
 # Get Started
 
 For this guide, we will need a Python environment with the following python
-packages installed: `pandas`, `scikit-learn`, `mlem[fastapi,heroku]`.
-Additionally, we'll require `docker` to be installed on your local machine to
-showcase building and deploying a containerized model server.
+packages installed: `pandas`, `scikit-learn`, `mlem[fastapi,heroku]`. We'll also
+use [Docker](https://docs.docker.com/get-docker/) as a way to [build and
+serve](#deploying-models-to-production) a machine learning model locally.
 
 <details>
 
-### ⚙️ Expand for detailed setup instructions
+### ⚙️ Click for setup instructions
 
 Let's create a separate folder and an isolated virtual environment to cleanly
 install all the requirements we need:
@@ -24,20 +24,13 @@ $ source .venv/bin/activate
 $ pip install pandas scikit-learn mlem[fastapi,heroku]
 ```
 
-We'll use docker later on to package and serve a model locally. To install
-docker, please refer to the
-[official installation guide](https://docs.docker.com/get-docker/).
-
-That's it, it's that simple! You're ready to MLEM.
-
 </details>
 
 ## Saving your model
 
 Before we see how many things MLEM can do for us, we first need to save an ML
-model to a file with MLEM.
-
-As a basic example, create and execute the following `train.py` Python script:
+model to a file with MLEM. As an example, create and execute the following
+`train.py` Python script:
 
 ```py
 from sklearn.datasets import load_iris
@@ -59,43 +52,40 @@ save(
 )
 ```
 
-Here, we loaded a well-known
-[Iris flower dataset](https://archive.ics.uci.edu/ml/datasets/iris) with
-`scikit-learn` and trained a simple classifier. Instead of pickling the model,
-we persisted it using MLEM's `save` API.
+Here, we loaded a well-known [Iris flower dataset] with scikit-learn and trained
+a simple classifier (see the full list of [supported ML frameworks]). Instead of
+pickling the model, we captured it using `mlem.api.save`, which created the
+following files:
 
-`scikit-learn` is just an example of many supported ML frameworks. Check out the
-[full list here](/doc/object-reference/model).
-
-Now, let's see what MLEM saved by using the `tree` terminal command:
-
-```cli
-$ tree models/
+```
 models
 ├── rf
 └── rf.mlem
 ```
 
-Alongside the model binary `models/rf`, MLEM saved an additional metadata file
-`models/rf.mlem`. We refer to this as a "Codification" of the model. This
-`.mlem` "metafile" contains all the information we need in order to use the
-model later:
+Alongside the model binary `models/rf`, MLEM saved metafile `models/rf.mlem`,
+which contains all the information we need in order to use the model later:
 
 1. Model methods: Like `predict` and `predict_proba`
 2. Input data schema: Describes the dataframe (Iris dataset)
 3. Python Requirements: `sklearn` and `pandas` in this case, with the specific
    versions used to train the model
 
-<admon type='tip'>
+<admon type="info">
 
-Note that we didn't have to specify any of this information ourselves. MLEM
-inspects the object (even if it's complex) and infers all of this automatically!
+We didn't have to specify any of this information ourselves. MLEM inspects the
+object and infers all of this automatically! We call this process [codification]
+of the model.
 
 </admon>
 
+[iris flower dataset]: https://archive.ics.uci.edu/ml/datasets/iris
+[supported ml frameworks]: /doc/object-reference/model
+[codification]: /doc/user-guide
+
 <details>
 
-### Click to see the full contents of the `rf.mlem` metafile.
+### Click to see the full contents of `rf.mlem`.
 
 ```yaml
 artifacts:
@@ -163,24 +153,6 @@ requirements:
 
 </details>
 
-<details>
-
-### Click to learn about model codification
-
-#### Why do it the MLEM way ?
-
-Saving models to files or loading them back into python objects may seem like a
-deceptively simple task at first. For example, `pickle` and `torch` libraries
-can serialize/deserialize model objects to/from files. However, MLEM adds some
-"special sauce" by inspecting the objects and serializing their metadata into
-`.mlem` files and intelligently using this later on. This metadata is necessary
-to reliably enable actions like packaging and serving of different models types
-down in various ways. MLEM allows us to automate a lot of the pain points we
-would hit later on in our ML workflow by codifying and managing this metadata
-about our models (or other objects) for us.
-
-</details>
-
 ## Model Prediction
 
 Once we saved the model with MLEM we can load it to either use in our Python
@@ -191,9 +163,9 @@ code.
 Let's try it out:
 
 <toggle>
-<tab title="Python Script">
+<tab title="Python code">
 
-### Python code usage
+### Load your model
 
 Load the model we saved earlier in a simple Python script to predict some
 probabilities.
@@ -227,7 +199,7 @@ We see that the prediction probabilities were successfully printed to stdout.
 
 </tab>
 
-<tab title="Command Line">
+<tab title="Command line">
 
 ### Batch scoring
 
@@ -323,7 +295,7 @@ Servers automatically create endpoints from model methods using the
 
 </admon>
 
-#### Making requests
+### Making requests
 
 While the model server is running, you can use your browser to open the Swagger
 UI (OpenAPI) at [http://localhost:8080/docs](http://localhost:8080/docs) and
