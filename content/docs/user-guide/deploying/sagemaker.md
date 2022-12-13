@@ -84,7 +84,7 @@ things will happen.
    configured ECR repository.
 2. Model is packaged and uploaded to configured s3 bucket as per
    [this doc](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model)
-3. Enpoint Configuration is created as per
+3. Endpoint Configuration is created as per
    [this doc](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-endpoint-config)
 4. Model is deployed thus creating a SageMaker Endpoint
 
