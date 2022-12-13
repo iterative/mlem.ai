@@ -1,13 +1,16 @@
 ---
-description: 'Learn how you can use MLEM to easily manage and deploy machine learning models'
+description:
+  'Learn how you can use MLEM to easily manage and deploy machine learning
+  models'
 ---
 
 # Get Started
 
 For this guide, we will need a Python environment with the following python
 packages installed: `pandas`, `scikit-learn`, `mlem[fastapi,heroku]`. We'll also
-use [Docker](https://docs.docker.com/get-docker/) as a way to [build and
-serve](#deploying-models-to-production) a machine learning model locally.
+use [Docker](https://docs.docker.com/get-docker/) as a way to
+[build and serve](#deploying-models-to-production) a machine learning model
+locally.
 
 <details>
 
