@@ -6,7 +6,7 @@ pages.
 
 ## Running server
 
-To start up FastAPI server run:
+To start a FastAPI server, run:
 
 ```cli
 $ mlem serve fastapi --model https://github.com/iterative/example-mlem-get-started/rf
@@ -23,32 +23,34 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-Servers automatically create endpoints from model methods with payload schemas
-corresponding to serialized dataset types.
+The server is now running and listening for requests on the URL shown
+above.Endpoints are created automatically from model methods (using the
+`sample_data` [provided earlier](#saving-your-model)). You can open the
+[Swagger UI](http://localhost:8080/docs) in your browser to explore the OpenAPI
+spec and query examples.
 
-Note, that serving the model requires you to have the correct packages to be
-installed. You can check out how to create a `venv` with right packages with
-MLEM, or how to serve the model in a
+<admon type="info">
+
+This requires the correct packages to be installed. You can check out how to
+create a complete `venv` with MLEM or how to serve the model in a
 [Docker container](/doc/user-guide/deploying/docker).
+
+</admon>
 
 ## Making requests
 
-You can open Swagger UI (OpenAPI) at
-[http://localhost:8080/docs](http://localhost:8080/docs) to check out OpenAPI
-spec and query examples.
-
-Each server implementation also has its client implementation counterpart, in
-the case of FastAPI server it’s HTTPClient. Clients can be used to make requests
-to servers. Since a server also exposes the model interface description, the
-client will know what methods are available and handle serialization and
-deserialization for you. You can use them via CLI:
+Each server implementation also has its client counterpart (e.g. `HTTPClient`
+for FastAPI). Clients can be used to make requests. Since a server also exposes
+the model interface description, the client will know what methods are available
+and handle serialization for you. You can use them via `mlem apply-remote`:
 
 ```cli
-$ mlem apply-remote http test_x.csv --host="0.0.0.0" --port=8080 --json
+$ mlem apply-remote http test_x.csv --json \
+                    --host="0.0.0.0" --port=8080
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 ```
 
-or via Python API:
+Or from Python using the `mlem.api`:
 
 ```py
 from mlem.api import load
@@ -60,7 +62,7 @@ res = client.predict(load("test_x.csv"))
 
 <details>
 
-### 💡 Or query the model directly with curl
+### Or query directly from terminal using `curl`:
 
 ```cli
 $ curl -X 'POST' \
