@@ -514,11 +514,11 @@ you for checking out MLEM!
 
 ## What's next?
 
-Please proceed to [Use Cases](/doc/use-cases) if you want to see high-level
-scenarios MLEM can cover, or go to [User Guide](/doc/user-guide) to see more
-details or short tutorials on how to use specific features of MLEM.
+Please go to [Use Cases](/doc/use-cases) if you want to see high-level scenarios
+MLEM can cover, or to the [User Guide](/doc/user-guide) to see more details and
+examples on how to use specific features of MLEM.
 
-If you have any questions or suggestions for us, please reach us out in
+If you have any questions or suggestions for us, please reach out in
 [Discord](https://discord.com/channels/485586884165107732/903647230655881226) or
 create a new [GitHub issue](https://github.com/iterative/mlem/issues) in our
 repo 🙌.

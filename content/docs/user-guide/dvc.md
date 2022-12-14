@@ -7,8 +7,8 @@ datasets are too heavy to store in Git. To fix that, we suggest using
 [stores objects in remote storages](https://dvc.org/doc/start/data-management/data-versioning),
 allowing us to commit just pointers to them.
 
-This page offers a small Tutorial on how to use DVC with already existing MLEM
-project. We will reorganize our example repo to showcase that.
+This page explains how to use DVC with an existing MLEM project. We will
+reorganize our example repo to showcase that.
 
 ## Setting things up
 
