@@ -9,7 +9,7 @@ serve it.
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[fastapi]
 # or
 pip install fastapi uvicorn
@@ -23,7 +23,7 @@ different examples instead.
 
 ### Running FastAPI model server from code
 
-```python
+```py
 from mlem.api import serve
 
 serve(
@@ -45,7 +45,7 @@ $ mlem serve fastapi \
 
 ### Applying data to running FastAPI server from API
 
-```python
+```py
 from mlem.api import apply_remote
 
 apply_remote(

@@ -453,7 +453,7 @@ you'll also need to execute `heroku container:login`.
 
 After getting authorized with Heroku, we can run the deployment command:
 
-```
+```cli
 $ mlem deployment run heroku app.mlem \
   --model models/rf \
   --app_name {your-name}-mlem-get-started-app

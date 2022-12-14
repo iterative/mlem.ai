@@ -6,7 +6,7 @@ more about SageMaker
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[sagemaker]
 # or
 pip install sagemaker boto3
@@ -36,7 +36,7 @@ and
 > This script is not part of MLEM public API, so you'll need to run it manually
 > like this
 
-```python
+```py
 from mlem.contrib.sagemaker.env_setup import sagemaker_terraform
 
 sagemaker_terraform(export_secret="creds.csv")
@@ -109,7 +109,7 @@ API, however it's a lot easier to use
 [MLEM SagemakerClient](#class-sagemakerclient). To obtain one, just call
 `get_client` method on your deployment object.
 
-```python
+```py
 from mlem.api import load_meta
 
 service = load_meta("...")
@@ -118,7 +118,7 @@ client = service.get_client()
 
 You can then use this `client` instance to invoke your model as if it is local.
 
-```python
+```py
 data = ...  # pd.DataFrame or whatever model.predict accepts
 preds = client.predict(data)
 ```

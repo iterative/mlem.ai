@@ -58,7 +58,7 @@ example_mlem_get_started.predict(df)
 
 ### Creating Python package from model using API
 
-```python
+```py
 from mlem.api import build
 
 build(builder="pip",

@@ -9,7 +9,7 @@ sklearn-compatible classes as well as `Pipeline`
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[sklearn]
 # or
 pip install scikit-learn
@@ -19,7 +19,7 @@ pip install scikit-learn
 
 ### Saving and loading Scikit-Learn model
 
-```python
+```py
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 
