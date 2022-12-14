@@ -57,23 +57,23 @@ This will stop the deployment and erase deployment state value
 
 ## Making requests
 
-You also can create MLEM Client for your deployment to make some requests:
+You also can create a MLEM client for your deployment from Python code
+(`mlem.api.load`) to make some requests:
 
 ```python
 from mlem.api import load
+
 
 service = load("<name>")
 client = service.get_client()
 res = client.predict(data)
 ```
 
-Or run `deployment apply` from command line:
+Or use `mlem deployment apply` from command line:
 
-```bash
+```cli
 $ mlem deployment apply <name> <data>
 ```
-
----
 
 ## Pre-defining deployment
 
