@@ -1,23 +1,24 @@
 ---
 description:
-  'Learn how you can use MLEM to easily manage and deploy machine learning
-  models'
+  'Learn how to use MLEM to manage and deploy machine learning models easily.'
 ---
 
-# Get Started
+# Get Started with MLEM
 
-For this guide, you will need a Python environment with the following python
-packages installed: `pandas`, `scikit-learn`, `mlem[fastapi,heroku]`. You'll
-also use [Docker](https://docs.Docker.com/get-docker/) as a way to
-[build and serve](#deploying-models-to-production) a machine learning model
-locally.
+<!--
+## Get Started with MLEM
+-->
+
+<admon type="info">
+
+You will need a Python environment with the following packages: `pandas`,
+`scikit-learn`, `mlem[fastapi,heroku]`.
 
 <details>
 
 ### ⚙️ Click for setup instructions
 
-Let's create a separate folder and an isolated virtual environment to cleanly
-install all the requirements:
+Let's create a [`venv`] to cleanly install all the requirements:
 
 ```cli
 $ mkdir mlem-get-started
@@ -27,12 +28,20 @@ $ source .venv/bin/activate
 $ pip install pandas scikit-learn mlem[fastapi,heroku]
 ```
 
+[`venv`]: https://docs.python.org/3/library/venv.html
+
 </details>
+
+We'll also use [Docker](https://docs.Docker.com/get-docker/) as a way to
+[build and serve](#deploying-models-to-production) an ML model locally.
+
+</admon>
 
 ## Saving your model
 
-Before we explore everything that MLEM can do, you need to save an ML model with
-MLEM. As an example, create and execute the following `train.py` Python script:
+Before we explore everything that MLEM can do, you need to save a machine
+learning model with MLEM. As an example, create and execute the following
+`train.py` Python script:
 
 ```py
 from sklearn.datasets import load_iris
@@ -55,9 +64,8 @@ save(
 ```
 
 Here, we loaded a well-known [Iris flower dataset] with scikit-learn and trained
-a simple classifier (see the full list of [supported ML frameworks]). Instead of
-pickling the model, we captured it using `mlem.api.save`, which creates the
-following files:
+a simple classifier (see the full list of [supported ML frameworks]). We then
+captures it using `mlem.api.save`, which creates the following files:
 
 ```
 models
@@ -75,7 +83,7 @@ which contains all the information needed to use the model later:
 
 <admon type="info">
 
-You didn't have to specify any of this information directly. MLEM inspects the
+We didn't have to specify any of this information directly: MLEM inspects the
 object and infers all of this automatically! We call this process [codification]
 of the model.
 
@@ -167,7 +175,7 @@ scripts.
 
 ### Load your model
 
-Load the `rf` model we saved earlier in a `predict.py` Python script and run it:
+Load the `rf` model we saved earlier in a `predict.py` Python script:
 
 ```py
 from mlem.api import load
@@ -186,12 +194,12 @@ y_pred = model.predict_proba(x)
 print(y_pred)
 ```
 
+You can run it to print the prediction probabilities:
+
 ```cli
 $ python predict.py
 [[0.47 0.24 0.29]]
 ```
-
-The prediction probabilities get printed.
 
 </tab>
 
@@ -209,8 +217,9 @@ sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3
 ```
 
-Save the contents above in a file called `new_data.csv` and run `mlem apply` as
-shown below to feed it to our model's `predict_proba` method:
+Save the contents above in a file called `new_data.csv` and `mlem apply` itit to
+our model's `predict_proba` method as shown below to print the prediction
+probabilities:
 
 ```cli
 $ mlem apply models/rf new_data.csv \
@@ -222,11 +231,9 @@ $ mlem apply models/rf new_data.csv \
 [[0.47 0.24 0.29]]
 ```
 
-The prediction probabilities get printed.
-
 <details>
 
-#### Click to learn more about the CLI options used.
+#### Click to learn more about the command options used.
 
 - The `--method`/`-m` flag tells MLEM to invoke the `predict_proba` method and
   return the class probabilities, instead of the default `predict`.
@@ -253,8 +260,8 @@ an application or locally for testing.
 
 ### Local model serving
 
-You can `mlem serve` a model for you using different [server implementations].
-Let's use FastAPI here, since serving models via a REST API is a common need:
+You can `mlem serve` a model using different [server implementations]. Let's use
+FastAPI here, since serving models as a REST API is a common need:
 
 ```cli
 $ mlem serve fastapi --model models/rf
@@ -265,14 +272,12 @@ Starting fastapi server...
 🖇️  Adding route for /sklearn_predict
 🖇️  Adding route for /sklearn_predict_proba
 Checkout openapi docs at <http://0.0.0.0:8080/docs>
-INFO:     Started server process [16696]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
+...
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-The server is now running and listening for requests on the URL shown above.
-Endpoints are created automatically from model methods (using the `sample_data`
+The server is now running and listening for requests on `localhost`. Endpoints
+are created automatically from model methods (using the `sample_data`
 [provided earlier](#saving-your-model)). You can open the
 [Swagger UI](http://localhost:8080/docs) in your browser to explore the OpenAPI
 spec and query examples.
@@ -281,7 +286,7 @@ spec and query examples.
 
 <admon type="tip">
 
-MLEM can also [generate client-side] code to query/infer the model server
+MLEM can also [generate client-side] code to infer and query the model server
 
 [generate client-side]: /doc/user-guide/serving#making-requests
 
@@ -315,7 +320,6 @@ $ mlem build Docker Docker-builder.mlem \
     --image.name mlem-model
 ⏳️ Loading model from models/rf.mlem
 ...
-🛠 Building Docker image mlem-model:latest...
 ✅  Built Docker image mlem-model:latest
 ```
 
@@ -340,9 +344,9 @@ Most of the complexity is hidden away in the `server` implementation and
 
 </details>
 
-You can now either use the Docker image locally, or push it to a container
-registry for publishing and distribution using standard Docker workflows. Let's
-`docker run` the server on our machine, for example:
+You can either use the Docker image locally, or push it to a container registry
+for publishing and distribution using standard Docker workflows. Let's [`docker
+run`] the server on our machine, for example:
 
 ```cli
 $ docker run -p 8080:8080 mlem-model:latest
@@ -358,9 +362,10 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-You can open the Swagger UI at `https://localhost:8080/docs` in a browser and
-[query the model] with `curl`, `mlem apply-remote`, etc.
+You can now open the Swagger UI at `https://localhost:8080/docs` in a browser
+and [query the model] with `curl`, `mlem apply-remote`, etc.
 
+[`docker run`]: https://docs.docker.com/engine/reference/commandline/run/
 [query the model]: /doc/user-guide/deploying#making-requests
 
 </tab>
@@ -377,10 +382,10 @@ with the `HEROKU_API_KEY` env var or use the [`heroku login`] command.
 You'll also need to run [`heroku container:login`] to allow MLEM to push Docker
 images to Heroku's container registry.
 
-<!-- TODO: Get docs URLs -->
-
-[`heroku login`]: https://devcenter.heroku.com/articles/heroku-cli#
-[`heroku container:login`]: https://devcenter.heroku.com/articles/heroku-cli#
+[`heroku login`]:
+  https://devcenter.heroku.com/articles/heroku-cli#get-started-with-the-heroku-cli
+[`heroku container:login`]:
+  https://devcenter.heroku.com/articles/heroku-cli-commands#heroku-container
 [heroku api key]: http://heroku.com#
 
 </admon>
@@ -444,7 +449,7 @@ more about [making requests]. You can also [destroy the deployment] when needed.
 
 Please go to [Use Cases](/doc/use-cases) if you want to see high-level scenarios
 MLEM can cover, or to the [User Guide](/doc/user-guide) to see more details and
-examples on how to use specific features of MLEM.
+examples on MLEM usage.
 
 If you have any questions or suggestions for us, please reach out in
 [Discord](https://discord.com/channels/485586884165107732/903647230655881226) or
