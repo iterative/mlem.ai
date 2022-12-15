@@ -26,7 +26,20 @@ $ gto describe churn -r https://github.com/iterative/example-gto
 }
 ```
 
-The output is in JSON format for ease of parsing programatically.
+The output is in JSON format for ease of parsing programmatically.
+
+Note, that for local repos the `artifacts.yaml` is read from the workspace
+without Git, so if you have uncommitted changes, they will be reflected in the
+output. If you want to read from specific commit, you need to specify `--rev`
+option.
+
+You can also get annotation for latest versions or version in stage with (these
+are the same shortcuts as in `gto show`):
+
+```cli
+$ gto describe churn@latest
+$ gto describe churn#dev
+```
 
 ## Options
 

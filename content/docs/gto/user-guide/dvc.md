@@ -87,9 +87,9 @@ learn how to find out `ARTIFACT_PATH` and `REVISION`.
 If you need to download the latest version of `model`, that would be:
 
 ```cli
-$ REVISION=$(gto show --repo $REPO model@greatest --ref)
-$ ARTIFACT_PATH=$(gto describe --repo $REPO $ARTIFACT --rev $REVISION --path)
-$ dvc get $REPO $ARTIFACT --rev $REVISION -o $ARTIFACT_PATH
+$ ARTIFACT_PATH=$(gto describe --repo $REPO model@latest --path)
+$ REVISION=$(gto show --repo $REPO model@latest --ref)
+$ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $ARTIFACT_PATH
 ```
 
 </details>
