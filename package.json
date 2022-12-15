@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@dvcorg/gatsby-theme-iterative": "0.1.24",
-    "@dvcorg/websites-server": "^0.0.14",
+    "@dvcorg/websites-server": "^0.0.16",
     "@octokit/request": "^6.2.2",
     "@sentry/gatsby": "^7.13.0",
     "@svgr/webpack": "6.3.1",
