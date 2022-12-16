@@ -667,6 +667,11 @@
             "label": "describe"
           },
           {
+            "slug": "doctor",
+            "source": "doctor.md",
+            "label": "doctor"
+          },
+          {
             "slug": "history",
             "source": "history.md",
             "label": "history"
