@@ -25,15 +25,17 @@ For example,
 $ gto annotate awesome-model \
   --type model \
   --path models/neural_network.h5 \
-  --label ml
-  --label cool
-  --description "This model is very cool"
+  --label ml \
+  --label cool \
+  --description "This model is very cool" \
+  --custom "{'foo': 'bar'}"
 ```
 
 will create
 
 ```yaml
 awesome-model:
+  custom: "{'foo': 'bar'}"
   description: This model is very cool
   labels:
     - ml
@@ -43,6 +45,11 @@ awesome-model:
 ```
 
 This information can be later retrieved by running `gto describe` command.
+
+`--custom` option allows you to add custom metadata. Within `gto annotate` GTO
+treats input as string, but you can edit artifacts.yaml to add arbitrary
+information that fits yaml format, such as dict or list, or more complex
+structures.
 
 <admon type="tip">
 
@@ -79,6 +86,7 @@ GTO the artifact file is committed to Git.
 - `-e`, `--must-exist` - Verify artifact is committed to Git
 - `--label <text>` - Labels to add to artifact
 - `-d <text>`, `--description <text>` - Artifact description
+- `-c <text>`, `--custom <text>` - Custom metadata to add to artifact
 - `--commit` - Automatically commit changes due to this command (experimental)
 - `--push` - Push created commit automatically (experimental) - will set
   commit=True
