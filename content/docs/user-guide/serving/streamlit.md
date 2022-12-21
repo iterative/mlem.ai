@@ -15,7 +15,7 @@ pip install mlem[streamlit]
 pip install fastapi uvicorn streamlit streamlit_pydantic
 ```
 
-## Examples 
+## Examples
 
 ### Running Streamlit model server from CLI
 
