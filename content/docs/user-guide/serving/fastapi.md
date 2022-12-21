@@ -27,7 +27,7 @@ different examples instead.
 from mlem.api import serve
 
 serve(
-    model="https://github.com/iterative/example-mlem-get-started/rf",
+    model="https://github.com/iterative/example-mlem-get-started/models/rf",
     server="fastapi",
     host="0.0.0.0",
     port=8000,
@@ -38,7 +38,7 @@ serve(
 
 ```cli
 $ mlem serve fastapi \
-  --model https://github.com/iterative/example-mlem-get-started/rf \
+  --model https://github.com/iterative/example-mlem-get-started/models/rf \
   --host 0.0.0.0 --port 8000
 )
 ```
@@ -50,7 +50,7 @@ from mlem.api import apply_remote
 
 apply_remote(
     "http",
-    "https://github.com/iterative/example-mlem-get-started/iris.csv",
+    "https://github.com/iterative/example-mlem-get-started/data/iris.csv",
     method="predict",
     host="0.0.0.0",
     port=8000,
@@ -62,5 +62,5 @@ apply_remote(
 ```cli
 $ mlem apply-remote http \
     --method predict --host 0.0.0.0 --port 8000 \
-    --data https://github.com/iterative/example-mlem-get-started/iris.csv
+    --data https://github.com/iterative/example-mlem-get-started/data/iris.csv
 ```
