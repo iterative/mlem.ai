@@ -15,3 +15,5 @@
 - `aws_vars: AWSVars` _(required)_ - AWS Configuration
 
 - `signature: Signature` _(required)_ - Signature of deployed method
+
+- `raw: bool = False` - Pass values as-is without serializers
