@@ -10,6 +10,8 @@ def save(
     sample_data=None,
     fs: Optional[AbstractFileSystem] = None,
     params: Dict[str, str] = None,
+    preprocess: Union[Any, Dict[str, Any]] = None,
+    postprocess: Union[Any, Dict[str, Any]] = None,
 ) -> MlemObject
 ```
 
@@ -38,6 +40,8 @@ systems (eg: `S3`). The function returns and saves the object as a
   metadata
 - `fs` (optional) - FileSystem for the `path` argument
 - `params` (optional) - arbitrary params for object
+- `preprocess` (optional) - applies before the model
+- `postprocess`(optional) - applies after the model
 
 ## Returns
 
@@ -63,4 +67,28 @@ model = DecisionTreeClassifier().fit(train, target)
 path = os.path.join(os.getcwd(), "saved-model")
 
 save(model, path, sample_data=train)
+```
+
+## Example: use pre- and post-processors
+
+```py
+def apply_emdedding(word):
+    # apply embedding
+    ...
+    return embedding
+
+
+def return_classname(prediction):
+    if len(prediction.shape) > 1:
+        return "A surname" if prediction[0][0] < prediction[0][1] else "Not a surname"
+    return "A surname" if prediction[0] else "Not a surname"
+
+
+mlem.api.save(
+    classify_word,  # trained on a dataset created by applying `apply_emdedding`
+    "surname_classifier",
+    preprocess=apply_emdedding,
+    postprocess=return_classname,
+    sample_data="Gagarin",
+)
 ```

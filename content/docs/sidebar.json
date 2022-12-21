@@ -51,7 +51,7 @@
       },
       {
         "slug": "models",
-        "label": "Working with models",
+        "label": "Saving models",
         "source": "models/index.md",
         "children": []
       },
@@ -261,6 +261,11 @@
         "slug": "link",
         "label": "link",
         "source": "link.md"
+      },
+      {
+        "slug": "migrate",
+        "label": "migrate",
+        "source": "migrate.md"
       },
       {
         "slug": "pprint",
