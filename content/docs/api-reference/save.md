@@ -29,6 +29,10 @@ Saves a given object to a given path. The path can belong to different file
 systems (eg: `S3`). The function returns and saves the object as a
 [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects).
 
+We often need to apply some preprocessing before and after the model is applied,
+for that we have `preprocess` and `postprocess` arguments. You can think of them
+like about running `postprocess(model(preprocess(x)))`. See examples below.
+
 ## Parameters
 
 - **`obj`** (required) - Object to dump
@@ -71,6 +75,8 @@ save(model, path, sample_data=train)
 
 ## Example: use pre- and post-processors
 
+`preprocess` and `postprocess` can be functions or MLEM models:
+
 ```py
 def apply_emdedding(word):
     # apply embedding
@@ -89,6 +95,26 @@ mlem.api.save(
     "surname_classifier",
     preprocess=apply_emdedding,
     postprocess=return_classname,
+    sample_data="Gagarin",
+)
+```
+
+If you need different pre- and post-processor for different model methods, you
+can specify them with dictionaries (let's assume `classify_word` is a sklearn
+model and have two methods: `predict` and `predict_proba`):
+
+```py
+mlem.api.save(
+    classify_word,  # trained on a dataset created by applying `apply_emdedding`
+    "surname_classifier",
+    preprocess={
+        "predict": apply_emdedding,
+        "predict_proba": apply_emdedding,
+    },
+    postprocess={
+        "predict": lambda p: "A surname" if p[0] else "Not a surname",
+        "predict_proba": lambda p: "A surname" if p[0][0] < p[0][1] else "Not a surname",
+    },
     sample_data="Gagarin",
 )
 ```
