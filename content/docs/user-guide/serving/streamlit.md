@@ -52,3 +52,7 @@ serve(
     ui_port=80,
 )
 ```
+
+Note that if your model consume a sequence of items or sequence-like object
+(such as `pandas.DataFrame`), Streamlit UI will expect to receive a single item
+from that list (e.g. `pandas.Series`).
