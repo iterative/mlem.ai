@@ -66,6 +66,11 @@
             "source": "fastapi.md"
           },
           {
+            "slug": "streamlit",
+            "label": "Streamlit",
+            "source": "streamlit.md"
+          },
+          {
             "slug": "rabbitmq",
             "label": "RabbitMQ",
             "source": "rabbitmq.md"
@@ -256,6 +261,11 @@
         "slug": "link",
         "label": "link",
         "source": "link.md"
+      },
+      {
+        "slug": "migrate",
+        "label": "migrate",
+        "source": "migrate.md"
       },
       {
         "slug": "pprint",
@@ -501,6 +511,11 @@
             "slug": "sagemaker",
             "label": "SageMaker",
             "source": "sagemaker.md"
+          },
+          {
+            "slug": "streamlit",
+            "label": "Streamlit",
+            "source": "streamlit.md"
           }
         ]
       },
@@ -540,6 +555,11 @@
             "slug": "builtin",
             "label": "Builtin",
             "source": "builtin.md"
+          },
+          {
+            "slug": "git",
+            "label": "git",
+            "source": "git.md"
           },
           {
             "slug": "github",

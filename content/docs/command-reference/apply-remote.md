@@ -7,9 +7,10 @@ Otherwise, it will be printed to `stdout`.
 ## Synopsis
 
 ```usage
-usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>]
-                         [-o <path>] [--tp <path>] [-m <text>]
-                         [--json] [-f <text>] [-h]
+usage: mlem apply-remote [--raw] [-d <path>] [-p <path>]
+                         [--rev <commitish>] [-o <path>]
+                         [--tp <path>] [-m <text>] [--json]
+                         [-f <text>] [-h]
                          [<client> [client options] | --load <declaration>]
 
 Builtin clients:
@@ -30,6 +31,7 @@ against the `fastapi` and `rmq` server types, correspondingly.
 
 ## Options
 
+- `--raw <boolean>` - Pass values as-is without serializers [default: False]
 - `-d <path>`, `--data <path>` - Path to MLEM dataset [required]
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
 - `--rev <commitish>` - Repo revision to use [default: (none)]
