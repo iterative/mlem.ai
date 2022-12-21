@@ -51,7 +51,7 @@
       },
       {
         "slug": "models",
-        "label": "Saving models",
+        "label": "Working with models",
         "source": "models/index.md",
         "children": []
       },

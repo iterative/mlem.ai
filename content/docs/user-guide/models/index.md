@@ -1,4 +1,4 @@
-# Saving models
+# Working with models
 
 To be able to use all MLEM features, you need to turn your model into a MLEM
 model first.
