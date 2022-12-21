@@ -39,8 +39,8 @@ like about running `postprocess(model(preprocess(x)))`. See examples below.
 - **`path`** (required) - If not located on LocalFileSystem, then should be
   urior `fs` argument should be provided
 - `project` (optional) - path to mlem project (optional)
-- `sample_data` (optional) - If the object is a model or function, you
-  canprovide input data sample, so MLEM will include it's schemain the model's
+- `sample_data` (optional) - If the object is a model or function, you can
+  provide input data sample, so MLEM will include it's schema in the model's
   metadata
 - `fs` (optional) - FileSystem for the `path` argument
 - `params` (optional) - arbitrary params for object
