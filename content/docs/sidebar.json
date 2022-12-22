@@ -643,6 +643,11 @@
             "slug": "dvc",
             "label": "GTO with DVC",
             "source": "dvc.md"
+          },
+          {
+            "slug": "mlem",
+            "label": "GTO with MLEM",
+            "source": "mlem.md"
           }
         ]
       },
@@ -680,6 +685,11 @@
             "slug": "describe",
             "source": "describe.md",
             "label": "describe"
+          },
+          {
+            "slug": "doctor",
+            "source": "doctor.md",
+            "label": "doctor"
           },
           {
             "slug": "history",
