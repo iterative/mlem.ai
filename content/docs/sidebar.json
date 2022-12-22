@@ -672,11 +672,6 @@
             "label": "check-ref"
           },
           {
-            "slug": "config",
-            "source": "config.md",
-            "label": "config"
-          },
-          {
             "slug": "deprecate",
             "source": "deprecate.md",
             "label": "deprecate"
