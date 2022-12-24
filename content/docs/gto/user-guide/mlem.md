@@ -77,6 +77,12 @@ jobs:
     name: Build a Docker image for new model versions
     runs-on: ubuntu-latest
     steps:
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        # set credentials to login to DockerHub
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: actions/checkout@v3
       - id: gto
         uses: iterative/gto-action@v1
@@ -87,13 +93,11 @@ jobs:
           pip install -r requirements.txt
       - if: steps.gto.outputs.event == 'registration'
         run: |
-          # TODO: check this works
-          # What credentials we need to specify to publish image somewhere?
           mlem build docker \
               --model '${{ steps.gto.outputs.path }}' \
               --image.name ${{ steps.gto.outputs.name }} \
               --image.tag '${{ steps.gto.outputs.version }}' \
-              --env.registry docker_io
+              --image.registry docker_io
 ```
 
 Note that builder can be
@@ -112,7 +116,7 @@ on:
     tags:
       - '*'
 
-# specify credentials needed to run deployment and keep the deployment state
+# set credentials to run deployment and save its state to s3
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

@@ -67,7 +67,7 @@ You may need the artifact's file path. If
 `gto describe`:
 
 ```cli
-$ gto describe churn --rev churn@v3.0.0 --path
+$ gto describe churn@v3.0.0 --path
 models/churn.pkl
 ```
 
