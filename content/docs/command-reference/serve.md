@@ -22,6 +22,7 @@ usage: mlem serve [--request_serializer <str>]
 Builtin servers:
 - fastapi
 - rmq
+- streamlit
 ```
 
 ## Description

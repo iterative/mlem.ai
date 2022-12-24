@@ -5,13 +5,26 @@ import cn from 'classnames'
 import GithubLine from './GithubLine'
 import Terminal from '../Terminal'
 import Button from '../../Button'
-import tensorflowLogo from '../../../images/logo/tensorflow.png'
-import pytorchLogo from '../../../images/logo/pytorch.png'
-import dmlcXgboostLogo from '../../../images/logo/dmlc-xgboost.png'
-import scikitLearnLogo from '../../../images/logo/scikit-learn.png'
-import lightGbmLogo from '../../../images/logo/light-gbm.png'
-import kerasLogo from '../../../images/logo/keras.png'
 import catboostLogo from '../../../images/logo/catboost.png'
+import condaLogo from '../../../images/logo/conda.png'
+import dmlcXgboostLogo from '../../../images/logo/dmlc-xgboost.png'
+import dockerLogo from '../../../images/logo/docker.png'
+import fastapiLogo from '../../../images/logo/fastapi.png'
+import flyioLogo from '../../../images/logo/flyio.png'
+import herokuLogo from '../../../images/logo/heroku.png'
+import kerasLogo from '../../../images/logo/keras.png'
+import kubernetesLogo from '../../../images/logo/kubernetes.png'
+import lightGbmLogo from '../../../images/logo/light-gbm.png'
+import numpyLogo from '../../../images/logo/numpy.png'
+import onnxLogo from '../../../images/logo/onnx.png'
+import pandasLogo from '../../../images/logo/pandas.png'
+import pythonLogo from '../../../images/logo/python.png'
+import pytorchLogo from '../../../images/logo/pytorch.png'
+import rabbitmqLogo from '../../../images/logo/rabbitmq.png'
+import sagemakerLogo from '../../../images/logo/sagemaker.png'
+import scikitLearnLogo from '../../../images/logo/scikit-learn.png'
+import streamlitLogo from '../../../images/logo/streamlit.png'
+import tensorflowLogo from '../../../images/logo/tensorflow.png'
 import * as styles from './index.module.css'
 
 interface ITypedRef {
@@ -47,6 +60,83 @@ const logosData: Array<{
   widthLg: number
   alt: string
 }> = [
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 136,
+    src: fastapiLogo,
+    alt: 'FastAPI logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: dockerLogo,
+    alt: 'Docker logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: streamlitLogo,
+    alt: 'Streamlit logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: herokuLogo,
+    alt: 'Heroku logo'
+  },
+  {
+    widthSm: 55,
+    widthMd: 75,
+    widthLg: 108,
+    src: kubernetesLogo,
+    alt: 'Kubernetes logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: sagemakerLogo,
+    alt: 'Sagemaker logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: flyioLogo,
+    alt: 'Fly.io logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: rabbitmqLogo,
+    alt: 'RabbitMQ logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: pythonLogo,
+    alt: 'Python logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 78,
+    widthLg: 110,
+    src: condaLogo,
+    alt: 'Conda logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 88,
+    widthLg: 124,
+    src: onnxLogo,
+    alt: 'ONNX logo'
+  },
   {
     widthSm: 66,
     widthMd: 88,
@@ -95,6 +185,20 @@ const logosData: Array<{
     widthLg: 135,
     src: catboostLogo,
     alt: 'Catboost logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 78,
+    widthLg: 120,
+    src: numpyLogo,
+    alt: 'Numpy logo'
+  },
+  {
+    widthSm: 66,
+    widthMd: 78,
+    widthLg: 110,
+    src: pandasLogo,
+    alt: 'Pandas logo'
   }
 ]
 

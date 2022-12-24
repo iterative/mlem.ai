@@ -10,7 +10,7 @@ DOC_AUTO_REPLACE = {
     "MLEM project": "[MLEM project](/doc/user-guide/project-structure)",
     "metafile": "[MLEM Object](/doc/user-guide/basic-concepts)",
     "MLEM configuration": "[MLEM config](/doc/user-guide/configuration)",
-    "MLEM config": "[MLEM config](/doc/user-guide/configuration)",
+    # "MLEM config": "[MLEM config](/doc/user-guide/configuration)",  # repeats itself
 }
 
 

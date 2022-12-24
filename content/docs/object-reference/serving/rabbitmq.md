@@ -18,6 +18,8 @@
 
 - `queue_prefix: str = ""` - Queue prefix
 
+- `raw: bool = False` - Pass values as-is without serializers
+
 - `timeout: float = 0` - Time to wait for response. 0 means indefinite
 
 ---
