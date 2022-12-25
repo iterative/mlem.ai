@@ -9,17 +9,8 @@ predictions.
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[rmq]
 # or
 pip install pika
 ```
-
-<!-- ## Examples
-
-
-@mike0sv I think we need you here to put together an example)
-
-```python
-
-``` -->

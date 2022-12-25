@@ -9,7 +9,7 @@ primitives
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[numpy]
 # or
 pip install numpy
@@ -19,7 +19,7 @@ pip install numpy
 
 ### Saving and loading numpy array
 
-```python
+```py
 import numpy as np
 
 from mlem.api import save, load

@@ -11,14 +11,8 @@
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[xgboost]
 # or
 pip install xgboost
-```
-
-## Examples
-
-```python
-
 ```

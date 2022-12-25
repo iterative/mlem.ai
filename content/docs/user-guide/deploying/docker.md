@@ -8,7 +8,7 @@ locally.
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[docker]
 # or
 pip install docker

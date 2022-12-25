@@ -10,7 +10,7 @@ Implementations of [ModelType](/doc/object-reference/mlem-abcs#modeltype) and
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[catboost]
 # or
 pip install catboost
@@ -18,6 +18,6 @@ pip install catboost
 
 ## Examples
 
-```python
+```py
 
 ```

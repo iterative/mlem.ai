@@ -5,7 +5,7 @@ Building a docker image from the model or preparing a folder ready for running
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[docker]
 # or
 pip install docker

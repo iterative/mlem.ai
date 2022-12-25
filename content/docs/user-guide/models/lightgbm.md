@@ -11,14 +11,8 @@
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[lightgbm]
 # or
 pip install lightgbm
-```
-
-## Examples
-
-```python
-
 ```

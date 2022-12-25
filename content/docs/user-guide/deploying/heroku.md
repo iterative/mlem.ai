@@ -6,7 +6,7 @@ platforms such as Sagemaker or Kubernetes, we recommend to start with Heroku.
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[heroku]
 # or
 pip install fastapi uvicorn docker

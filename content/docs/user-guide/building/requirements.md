@@ -76,13 +76,13 @@ materialized at the target.
 
 For instance, a function can be saved via `MLEM` at a location `mlem-f`
 
-```python
+```py
 # func.py
 def f(txt):
     print(txt)
 ```
 
-```python
+```py
 # save.py
 from mlem.api import save
 from func import f

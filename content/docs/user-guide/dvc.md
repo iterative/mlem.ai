@@ -19,7 +19,7 @@ reorganize our example repo to showcase that.
 If you want to follow along with this tutorial, you can use our
 [example repo](https://github.com/iterative/example-mlem-get-started).
 
-```shell
+```cli
 $ git clone https://github.com/iterative/example-mlem-get-started
 $ cd example-mlem-get-started
 ```
@@ -27,7 +27,7 @@ $ cd example-mlem-get-started
 Next let's create a Python virtual environment to cleanly install all the
 requirements with `pip` (including DVC and MLEM).
 
-```shell
+```cli
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
@@ -135,7 +135,7 @@ still committing it to Git.
 
 You can verify everything is working by running the pipeline:
 
-```dvc
+```cli
 $ dvc repro
 Running stage 'train':
 > python train.py
