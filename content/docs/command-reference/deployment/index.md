@@ -38,4 +38,4 @@ of bulk inferring data on the served model.
 ## Examples
 
 For examples, please refer to [Get Started](/doc/get-started) tutorial or the
-[Deploying User Guide](/doc/user-guide/deploying).
+[Deploying](/doc/user-guide/deploying) guide.

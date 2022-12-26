@@ -91,4 +91,4 @@ built-in client, or common HTTP clients, such as [`curl`](https://curl.se/) and
 ## Examples
 
 For examples, please refer to the [Get Started](/doc/get-started) or the
-[Serving guide](/doc/user-guide/serving).
+[Serving](/doc/user-guide/serving) guide.
