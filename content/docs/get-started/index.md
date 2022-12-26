@@ -4,10 +4,12 @@ description: 'Learn how you can use MLEM to easily manage and deploy models'
 
 # Get Started
 
+## Setup
+
 For this guide, we will need a Python environment with the following python
-packages installed: `pandas`, `scikit-learn`, `mlem[fastapi,heroku]`.
-Additionally, we'll require `docker` to be installed on your local machine to
-showcase building and deploying a containerized model server.
+packages installed: `pandas`, `scikit-learn` and `mlem[fastapi]`. Additionally,
+we'll require `docker` to be installed on your machine to showcase building and
+deploying a containerized model servers.
 
 <details>
 
@@ -21,53 +23,119 @@ $ mkdir mlem-get-started
 $ cd mlem-get-started
 $ python3 -m venv .venv
 $ source .venv/bin/activate
-$ pip install pandas scikit-learn mlem[fastapi,heroku]
+$ pip install pandas scikit-learn mlem[fastapi]
 ```
 
-We'll use docker later on to package and serve a model locally. To install
-docker, please refer to the
-[official installation guide](https://docs.docker.com/get-docker/).
+- We'll use docker later on to package and serve a model locally. To install
+  docker, please refer to the
+  [official installation guide](https://docs.docker.com/get-docker/).
+- In the [last section](#deploying-models-in-production) of the guide, we will
+  mention additional pip packages which will be needed per our deployment type
+  (e.g. `mlem[kubernetes]` to deploy on a Kubernetes cluster).
 
 That's it, it's that simple! You're ready to MLEM.
 
 </details>
 
-## Saving your model
+## Saving models
 
-Before we see how many things MLEM can do for us, we first need to save an ML
-model to a file with MLEM.
+To unlock MLEM's power, we need to capture model metadata that is not usually
+captured when models are saved.
 
-As a basic example, create and execute the following `train.py` Python script:
+Let's say we want to save a model to the path `models/rf`. This is usually done
+with a framework helpers like `torch.save()`, or better yet, libraries like
+`pickle` or `joblib`.
+
+<details>
+
+### Here's a typical example of training code
+
+Consider the following `train.py`:
 
 ```py
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
+import joblib
 
-from mlem.api import save
-
-
+# load data
 data, y = load_iris(return_X_y=True, as_frame=True)
+
+# instantiate and train model
 rf = RandomForestClassifier(
     n_jobs=2,
     random_state=42,
 )
 rf.fit(data, y)
-save(
-    rf,
-    "models/rf",
-    sample_data=data,
-)
+
+# save to file
+joblib.dump(rf, "models/rf")
 ```
 
-Here, we loaded a well-known
+Here We loaded a well-known
 [Iris flower dataset](https://archive.ics.uci.edu/ml/datasets/iris) with
-`scikit-learn` and trained a simple classifier. Instead of pickling the model,
-we persisted it using MLEM's `save` API.
+`scikit-learn` and trained a simple classifier. Note that `scikit-learn` is just
+an example of many MLEM supported ML frameworks (
+[full list here](/doc/object-reference/model)). Finally, we used `joblib` to
+serialize it to file, so executing the script will dump the model to
+`./models/rf`.
 
-`scikit-learn` is just an example of many supported ML frameworks. Check out the
-[full list here](/doc/object-reference/model).
+</details>
 
-Now, let's see what MLEM saved by using the `tree` terminal command:
+MLEM can analyze the code (or model files), and extract extra metadata which
+will become very useful when using the model.
+
+We can either save the model with MLEM to begin with, or use MLEM to import
+existing model file and save the metadata as a side effect.
+
+<toggle>
+<tab title="Save new models">
+
+Just replace the line saving the model with a call to `mlem.api.save`:
+
+```py
+from mlem.api import save
+...
+
+# instead of joblib.dump(rf, "models/rf")
+save(rf, "models/rf", sample_data=df)
+```
+
+The `sample_data` argument will prove useful later when serving the model. MLEM
+uses it to infer the data schema of the payload automatically!
+
+</tab>
+
+<tab title="Import existing models">
+
+You can use `mlem.api.import_object()` to "import" the object from Python code,
+which would create the the `rf.mlem` metadata file:
+
+```py
+import os
+
+from mlem.api import import_object
+
+model_path = os.path.join(os.getcwd(), "models", "rf")
+target_path = os.path.join(os.getcwd(), "models", "rf.mlem")
+model = import_object(path=model_path, target=target_path, type_="pickle")
+```
+
+or just use `mlem import` from your terminal for the same effect:
+
+```cli
+mlem import models/rf models/rf.mlem --type pickle
+```
+
+Learn more about importing models in the [importing](/doc/user-guide/importing)
+guide.
+
+</tab>
+
+</toggle>
+
+Alongside the model binary `models/rf`, MLEM added the metadata file
+`models/rf.mlem`. We refer to this as a
+["Codification" of the model](/doc/user-guide/basic-concepts#model-codification).
 
 ```cli
 $ tree models/
@@ -76,129 +144,21 @@ models
 └── rf.mlem
 ```
 
-Alongside the model binary `models/rf`, MLEM saved an additional metadata file
-`models/rf.mlem`. We refer to this as a "Codification" of the model. This
-`.mlem` "metafile" contains all the information we need in order to use the
-model later:
+Actually, this is all also true for other types of objects, like datasets!
 
-1. Model methods: Like `predict` and `predict_proba`
-2. Input data schema: Describes the dataframe (Iris dataset)
-3. Python Requirements: `sklearn` and `pandas` in this case, with the specific
-   versions used to train the model
+## Getting Model Predictions
 
-<admon type='tip'>
-
-Note that we didn't have to specify any of this information ourselves. MLEM
-inspects the object (even if it's complex) and infers all of this automatically!
-
-</admon>
-
-<details>
-
-### Click to see the full contents of the `rf.mlem` metafile.
-
-```yaml
-artifacts:
-  data:
-    hash: 5a38e5d68b9b9e69e9e894bcc9b8a601
-    size: 163651
-    uri: rf
-model_type:
-  methods:
-    predict:
-      args:
-        - name: data
-          type_:
-            columns:
-              - sepal length (cm)
-              - sepal width (cm)
-              - petal length (cm)
-              - petal width (cm)
-            dtypes:
-              - float64
-              - float64
-              - float64
-              - float64
-            index_cols: []
-            type: dataframe
-      name: predict
-      returns:
-        dtype: int64
-        shape:
-          - null
-        type: ndarray
-    predict_proba:
-      args:
-        - name: data
-          type_:
-            columns:
-              - sepal length (cm)
-              - sepal width (cm)
-              - petal length (cm)
-              - petal width (cm)
-            dtypes:
-              - float64
-              - float64
-              - float64
-              - float64
-            index_cols: []
-            type: dataframe
-      name: predict_proba
-      returns:
-        dtype: float64
-        shape:
-          - null
-          - 3
-        type: ndarray
-  type: sklearn
-object_type: model
-requirements:
-  - module: sklearn
-    version: 1.1.2
-  - module: numpy
-    version: 1.22.4
-  - module: pandas
-    version: 1.5.0
-```
-
-</details>
-
-<details>
-
-### Click to learn about model codification
-
-#### Why do it the MLEM way ?
-
-Saving models to files or loading them back into python objects may seem like a
-deceptively simple task at first. For example, `pickle` and `torch` libraries
-can serialize/deserialize model objects to/from files. However, MLEM adds some
-"special sauce" by inspecting the objects and serializing their metadata into
-`.mlem` files and intelligently using this later on. This metadata is necessary
-to reliably enable actions like packaging and serving of different models types
-down in various ways. MLEM allows us to automate a lot of the pain points we
-would hit later on in our ML workflow by codifying and managing this metadata
-about our models (or other objects) for us.
-
-</details>
-
-## Model Prediction
-
-Once we saved the model with MLEM we can load it to either use in our Python
-code or from the command line to generate predictions for any dataset. This
-allows us to easily decouple model training code from testing and deployment
-code.
-
-Let's try it out:
+Using your model is now natural. You can either load and natively call the model
+object in your Python code anywhere, or use MLEM CLI for batch scoring against
+any dataset. Let's try our model out:
 
 <toggle>
-<tab title="Python Script">
+<tab title="Python Code">
 
-### Python code usage
-
-Load the model we saved earlier in a simple Python script to predict some
+Let's load the model we saved earlier using `mlem.api.load()` and predict some
 probabilities.
 
-Create this `predict.py` script:
+Try creating and running this simple `predict.py` script:
 
 ```py
 from mlem.api import load
@@ -210,36 +170,34 @@ features = [
     "petal length (cm)",
     "petal width (cm)",
 ]
-x = pd.DataFrame([[0, 1, 2, 3]], columns=features)
-y_pred = model.predict_proba(x)
+df = pd.DataFrame([[0, 1, 2, 3]], columns=features)
+y_pred = model.predict_proba(df)
 
 print(y_pred)
 ```
 
-Now, let's run the script:
+The loaded object is fully functioning, and as expected, we get:
 
 ```cli
 $ python predict.py
 [[0.47 0.24 0.29]]
 ```
 
-We see that the prediction probabilities were successfully printed to stdout.
-
 </tab>
 
 <tab title="Command Line">
 
-### Batch scoring
+Use MLEM CLI to apply any local dataset against any model for prediction or
+batch scoring.
 
-The MLEM CLI allows us to natively use any saved model directly for prediction
-or batch scoring with any local dataset. This is very handy if we want to get
-some quick feedback about a model we just created.
-
-First, create an example dataset file to apply, we'll go with a `csv` format:
+Let's create an example dataset file, we'll go with a `csv` format:
 
 ```cli
-$ echo "sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
-0,1,2,3" > new_data.csv
+$ cat <<EOF > new_data.csv
+sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
+0,1,2,3
+4,5,6,7
+EOF
 ```
 
 Next, simply run `mlem apply` to apply this dataset against our model's
@@ -250,13 +208,22 @@ $ mlem apply models/rf new_data.csv \
     --method predict_proba \
     --import \
     --import-type "pandas[csv]"
+```
+
+And we get our expected probabilities as output:
+
+```cli
 ⏳️ Importing object from new_data.csv
 ⏳️ Loading model from models/rf.mlem
 🍏 Applying `predict_proba` method...
-[[0.47 0.24 0.29]]
+[[0.47, 0.24, 0.29], [0.03, 0.1, 0.87]]
 ```
 
-And we get our expected prediction probabilities as output.
+<admon type="info">
+
+This is very handy to get quick feedback about a model without writing any code.
+
+</admon>
 
 <details>
 
@@ -279,172 +246,132 @@ Alternatively, you could save the dataset itself
 </tab>
 </toggle>
 
-We saw that MLEM provides a consistent and friendly way for you to work with
-models both via API and CLI. However, MLEM **really** shines when you need to
-package and deploy your models, either as part of an application or locally for
-testing.
+Ok, we saw how easy working with models is, both via API and CLI. However, MLEM
+**really shines** when you need to package and deploy your models! (⌐■_■)
 
-## Deploying and Serving models
+## Serving models locally
 
-MLEM can serve a model for you using different server implementations, for
-example FastAPI or RabbitMQ. Here we'll check out how it works with FastAPI
-since serving models via a REST API is a very common use case.
+MLEM can serve any model for you using different server implementations like
+FastAPI, RabbitMQ or Streamlit. Let's check out how it works with FastAPI since
+using it for serving is very common.
 
-## Local model serving
-
-First thing first, let's run a model server locally on our machine. To launch a
-local FastAPI model server, simply run:
+To launch a FastAPI model server locally, simply run:
 
 ```cli
 $ mlem serve fastapi --model models/rf
-⏳️ Loading model from models/rf.mlem
-Starting fastapi server...
-🖇️  Adding route for /predict
-🖇️  Adding route for /predict_proba
-🖇️  Adding route for /sklearn_predict
-🖇️  Adding route for /sklearn_predict_proba
-Checkout openapi docs at <http://0.0.0.0:8080/docs>
-INFO:     Started server process [16696]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-The server is now running and listening on `http://0.0.0.0:8080` for HTTP
-requests.
+🤩 The server is now running, **serving your model**, and listening on
+`http://0.0.0.0:8080` for HTTP requests.
 
-Servers automatically create endpoints from model methods using the
-`sample_data` argument provided to [`mlem.api.save`](/doc/api-reference/save).
-
-<admon type="tip">
-
-Servers automatically create endpoints from model methods using the
-`sample_data` argument provided to [`mlem.api.save`](/doc/api-reference/save).
-
-</admon>
-
-#### Making requests
+### Making requests
 
 While the model server is running, you can use your browser to open the Swagger
-UI (OpenAPI) at [http://localhost:8080/docs](http://localhost:8080/docs) and
-check out OpenAPI spec and query examples.
+UI at [http://localhost:8080/docs](http://localhost:8080/docs) and check out
+OpenAPI spec and query examples.
 
 <admon type="info">
 
-MLEM can also generate client-side code to query/infer the model server. Learn
-more about this in
-[Serving User Guide](/doc/user-guide/serving#making-requests).
+MLEM can also generate a client code object to query/infer the model server.
 
 </admon>
 
-## Deploying models to production
+Check out the [serving guide](/doc/user-guide/serving) to learn more.
 
-Now, let's take model serving a step further and use production worthy
-deployment technologies. MLEM lets you easily package and deploy your models
-using a variety of platforms like [Docker](/doc/user-guide/deploying/docker),
+## Deploying models in production
+
+💪 Now, let's take model serving a step further.
+
+MLEM lets you easily package and deploy your models to a variety of platforms
+like [Docker](/doc/user-guide/deploying/docker),
 [Heroku](/doc/user-guide/deploying/heroku),
 [Sagemaker](/doc/user-guide/deploying/sagemaker) and
-[Kubernetes](/doc/user-guide/deploying/kubernetes), so you don't have to deal
-with the DevOps and implementation details of deployment yourself. See the full
-list in the [Deploying User Guide](/doc/user-guide/deploying).
+[Kubernetes](/doc/user-guide/deploying/kubernetes). This way, you don't have to
+deal with the DevOps and implementation details of the servers and deployments.
+
+<admon type="warn">
+
+**Security Notice:** Be careful when exposing resources / servers on a public
+network. For any production use case make sure you have proper authentication
+and authorization layers set up (not covered in this guide). The examples below
+assume no sensitive code, data or infra are involved for the sake of simplicity.
+
+</admon>
 
 Let's take a look at a few examples:
 
 <toggle>
 <tab title="Docker container">
 
-### Running a Dockerized model server
+### Python requirements
 
-#### Building a Docker container
+```py
+pip install mlem[docker]
+```
 
-First, we use a simple `mlem build` command to build a container image. With
-this one simple command you build a FastAPI model server and package it into a
-Docker container image:
+### Deploying a Docker container
+
+With one simple command, you can package your model+server into a Docker image,
+and run it in a container:
 
 ```cli
-$ mlem build docker docker-builder.mlem \
+$ mlem deployment run docker_container docker_app.mlem \
     --model models/rf \
-    --image.name mlem-model
-⏳️ Loading model from models/rf.mlem
-🛠 Building MLEM wheel file...
-💼 Adding model files...
-🛠 Generating dockerfile...
-💼 Adding sources...
-💼 Generating requirements file...
-🛠 Building docker image mlem-model:latest...
-✅  Built docker image mlem-model:latest
+    --image_name mlem-rf-server \
+    --server fastapi
 ```
 
-This will create a `mlem-model:latest` Docker image, and also a
-[builder specification](/doc/user-guide/building) metafile called
-`docker-builder.mlem` .
+The container is now running your model server, and you can open
+https://localhost:8080/docs in a browser, or query the model with `curl` /
+`mlem apply-remote`.
 
-<details>
+The above command will create a `mlem-rf-server:latest` Docker image, which can
+now be pushed to any container registry for publishing and distribution.
 
-#### Click to see to see the builder metafile contents
+<admon type="tip">
 
-Let's take a look at the created metafile describing the docker container image:
+You can run `mlem build` if you only want to build the Docker image. Check out
+the [docker deployment](/doc/user-guide/deploying/docker) guide for more
+details.
 
-`$ cat docker-builder.mlem`
+</admon>
 
-```yaml
-image:
-  name: rf-docker
-object_type: builder
-server:
-  type: fastapi
-type: docker
-```
+### Removing the deployment
 
-We can see most of the complexity is hidden away in the `server` behavior and
-`docker` type, allowing MLEM to do all the heavy lifting for us.
-
-</details>
-
-Now that we have a docker image for our model server, we can either use it
-locally, or push it to any container registry for publishing and distribution
-using standard `docker` commands and workflows. To keep this guide short and
-local, we'll use `docker` to run the containerized server on our machine:
+To remove the deployment, simply run:
 
 ```cli
-$ docker run -p 8080:8080 mlem-model:latest
-Starting fastapi server...
-🖇️  Adding route for /predict
-🖇️  Adding route for /predict_proba
-🖇️  Adding route for /sklearn_predict
-🖇️  Adding route for /sklearn_predict_proba
-Checkout openapi docs at <http://0.0.0.0:8080/docs>
-INFO:     Started server process [16696]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+mlem deployment remove docker_app.mlem
 ```
-
-As we can see, the container is running a FastAPI server, in a similar way to
-the local serving scenario above. We can now again open the
-https://localhost:8080/docs in a browser and query the model with `curl` or with
-`mlem apply-remote`.
 
 </tab>
 
 <tab title="Heroku">
 
+### Python requirements
+
+```py
+pip install mlem[heroku]
+```
+
 ### Deploying a Heroku app
 
-To create applications on Heroku platform you need a Heroku API key.
-
-You can either set the `HEROKU_API_KEY` environment variable or use
-[Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and run
-`heroku login`.
+To create applications on the Heroku platform you need a Heroku API key.
 
 <details>
 
-#### ⚙️ How to obtain Heroku API key
+#### ⚙️ working with the Heroku API key
+
+To obtain a Heruko API key:
 
 - Go to [heroku.com](http://heroku.com)
 - Sign up or login with an existing account
 - Go to account settings by clicking your profile picture on the main page
 - Find the API Key section, and reveal an existing key or re-generate it
+
+After obtaining the key, you can either set the `HEROKU_API_KEY` environment
+variable or use [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+and run `heroku login`.
 
 </details>
 
@@ -453,64 +380,124 @@ you'll also need to execute `heroku container:login`.
 
 After getting authorized with Heroku, we can run the deployment command:
 
-```cli
-$ mlem deployment run heroku app.mlem \
+```
+$ mlem deployment run heroku heroku_app.mlem \
   --model models/rf \
   --app_name {your-name}-mlem-get-started-app
-⏳️ Loading model from models/rf.mlem
-⏳️ Loading deployment from app.mlem
-🛠 Creating docker image for heroku
-  🛠 Building MLEM wheel file...
-  💼 Adding model files...
-  🛠 Generating dockerfile...
-  💼 Adding sources...
-  💼 Generating requirements file...
-  🛠 Building docker image registry.heroku.com/{your-name}-mlem-get-started-app/web...
-  ✅  Built docker image registry.heroku.com/{your-name}-mlem-get-started-app/web
-  🔼 Pushing image registry.heroku.com/{your-name}-mlem-get-started-app/web to registry.heroku.com
-  ✅  Pushed image registry.heroku.com/{your-name}-mlem-get-started-app/web to registry.heroku.com
-🛠 Releasing app {your-name}-mlem-get-started-app formation
-✅  Service {your-name}-mlem-get-started-app is up. You can check it out at https://{your-name}-mlem-get-started-app.herokuapp.com/
 ```
-
-A Deployment specification (or [declaration](/doc/command-reference/declare))
-was saved to `app.mlem`. Using this app declaration, you can re-deploy the same
-Heroku application with a different model.
-
-<details>
-
-#### See app.mlem contents
-
-```yaml
-$ cat app.mlem
-app_name: example-mlem-get-started-app
-object_type: deployment
-type: heroku
-```
-
-</details>
-
-Beside `app.mlem`, there is one more file that was saved: `app.mlem.state`. It
-contains the information about the deployment we just created, including which
-MLEM model we used, the URL of the deployment and other useful information. You
-can learn more about state files in [User Guide](/doc/user-guide/deploying).
 
 #### Making requests
 
-Your example application is now live on Heroku! You can browse to
+Your application is now live on Heroku! You can browse to
 [this deployed example](http://example-mlem-get-started-app.herokuapp.com) and
-see the same OpenAPI documentation as you would see in your local or docker
+see the same OpenAPI docs UI as you would see in your local or docker
 deployments. To learn how to easily send requests to your model with MLEM, refer
-to the [Deployment User Guide](/doc/user-guide/deploying).
+to the [deployment](/doc/user-guide/deploying) guide.
 
-If you would like to destroy the deployment now, you can find the instructions
-[here](/doc/user-guide/deploying#managing-deployment).
+### Removing the deployment
+
+To remove the deployment, simply run:
+
+```cli
+mlem deployment remove heroku_app.mlem
+```
 
 </tab>
+
+<tab title="Kubernetes">
+
+### Python requirements
+
+```py
+pip install mlem[kubernetes]
+```
+
+### Deploying on a Kubernetes cluster
+
+If you have a K8s cluster available and properly configured (see
+[prerequisites](/doc/user-guide/deploying/kubernetes#prerequisites)), MLEM will
+deploy your model to the cluster with a single command. This includes the
+following key steps:
+
+- building a Docker image
+- pushing it to the configured docker registry (this example uses
+  [dockerhub](https://hub.docker.com/))
+- creating the appropriate K8s resources to spin up your server on the cluster
+  using the pushed image
+
+Before running the MLEM command to deploy, we'll first have to `docker login` to
+the container registry to allow pushing the image there:
+
+```cli
+$ docker login docker.io/{username}
+Username: ******
+Password: ******
+Login Succeeded
+```
+
+Great, we're ready to deploy the app:
+
+```
+$ mlem deployment run kubernetes k8s_app.mlem \
+  --model models/rf \
+  --registry remote \
+  --registry.host=docker.io/{username} \
+  --image_name mlem-rf-server \
+  --namespace mlem
+```
+
+That's it! We're already up and running, check it out:
+
+```cli
+$ kubectl -n mlem get all
+NAME                                  READY   STATUS    RESTARTS   AGE
+pod/mlem-rf-server-6c9945bcdf-rh9fc   1/1     Running   0          71s
+
+NAME                     TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/mlem-rf-server   NodePort   10.104.251.44   <none>        8080:32701/TCP   71s
+
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/mlem-rf-server   1/1     1            1           71s
+
+NAME                                        DESIRED   CURRENT   READY   AGE
+replicaset.apps/mlem-rf-server-6c9945bcdf   1         1         1       71s
+```
+
+To expose your model server for external requests, MLEM creates a `NodePort`
+service by default. You can use other service types using the `--service_type`
+option.
+
+If you're running a local K8s cluster (e.g. Docker Desktop) for example, you'd
+be able to access the cluster network from your localhost interface, and your
+app would be available on http://localhost:31103, as seen in the
+`service/mlem-rf-server` resource above.
+
+### Removing the deployment
+
+To remove the deployment, simply run:
+
+```cli
+mlem deployment remove k8s_app.mlem
+```
+
+</tab>
+
 </toggle>
 
-Congratulations! You've made it through and got a model server deployed!! Thank
-you for checking out MLEM!
+For any of the deployments above, `mlem deployment run` will create 2 auxiliary
+files:
+
+- `{deployment}.mlem` - A deployment spec (or
+  [declaration](/doc/command-reference/declare)). Reusing this app declaration
+  you can, for example, re-deploy the same application with a different model.
+
+- `{deployment}.mlem.state` - A state file containing more information about the
+  deployment, including which MLEM model we used, and the URL of the deployment.
+  You can learn more about state files in the
+  [deploying](/doc/user-guide/deploying) guide.
+
+🙌 Congratulations! You've made it through and got a model server deployed!!
+Thank you for checking out MLEM!
 
 ## What's next?
 
@@ -521,4 +508,4 @@ examples on how to use specific features of MLEM.
 If you have any questions or suggestions for us, please reach out in
 [Discord](https://discord.com/channels/485586884165107732/903647230655881226) or
 create a new [GitHub issue](https://github.com/iterative/mlem/issues) in our
-repo 🙌.
+repo.
