@@ -314,7 +314,7 @@ With this single command, you build a FastAPI server packaged into a Docker
 container image:
 
 ```cli
-$ mlem build Docker Docker-builder.mlem \
+$ mlem build docker docker-builder.mlem \
     --model models/rf \
     --image.name mlem-model
 ⏳️ Loading model from models/rf.mlem
