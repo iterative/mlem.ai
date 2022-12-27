@@ -323,7 +323,7 @@ $ mlem build Docker Docker-builder.mlem \
 ```
 
 This creates a `mlem-model:latest` Docker image and a builder metafile called
-`Docker-builder.mlem` describing the container.
+`docker-builder.mlem` describing the container.
 
 <details>
 
