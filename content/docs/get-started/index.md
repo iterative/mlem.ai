@@ -299,7 +299,7 @@ with a variety of platforms like [Docker], [Heroku], [Sagemaker] and
 [Kubernetes] (see also the [Deploying] guide). Now you don't have to deal with
 low-level DevOps yourself. Let's look at a few examples:
 
-[docker]: /doc/user-guide/deploying/Docker
+[docker]: /doc/user-guide/deploying/docker
 [heroku]: /doc/user-guide/deploying/heroku
 [sagemaker]: /doc/user-guide/deploying/sagemaker
 [kubernetes]: /doc/user-guide/deploying/kubernetes
