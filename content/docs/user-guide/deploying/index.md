@@ -63,7 +63,6 @@ You also can create a MLEM client for your deployment from Python code
 ```python
 from mlem.api import load
 
-
 service = load("<name>")
 client = service.get_client()
 res = client.predict(data)

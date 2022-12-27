@@ -366,7 +366,7 @@ You can now open the Swagger UI at `https://localhost:8080/docs` in a browser
 and [query the model] with `curl`, `mlem apply-remote`, etc.
 
 [`docker run`]: https://docs.docker.com/engine/reference/commandline/run/
-[query the model]: /doc/user-guide/deploying#making-requests
+[query the model]: /doc/user-guide/serving#making-requests
 
 </tab>
 
