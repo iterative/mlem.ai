@@ -205,7 +205,7 @@ $ python predict.py
 
 <tab title="Command line">
 
-### Batch scoring
+### Model scoring
 
 `mlem` lets you use any saved model natively for prediction or batch scoring
 with any dataset. This is very handy if you want to get quick feedback about a
