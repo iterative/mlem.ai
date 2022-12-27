@@ -268,15 +268,15 @@ $ mlem serve fastapi --model models/rf
 Starting fastapi server...
 🖇️  Adding route for /predict
 🖇️  Adding route for /predict_proba
-🖇️  Adding route for /sklearn_predict
-🖇️  Adding route for /sklearn_predict_proba
+🖇️  Adding route for /predict
+🖇️  Adding route for /predict_proba
 Checkout openapi docs at <http://0.0.0.0:8080/docs>
 ...
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-The server is now running and listening for requests on `localhost`. Endpoints
-are created automatically from model methods (using the `sample_data`
+The server is now running and listening for requests on `localhost:8080`.
+Endpoints are created automatically from model methods (using the `sample_data`
 [provided earlier](#saving-your-model)). You can open the
 [Swagger UI](http://localhost:8080/docs) in your browser to explore the OpenAPI
 spec and query examples.
@@ -314,7 +314,7 @@ With this single command, you build a FastAPI server packaged into a Docker
 container image:
 
 ```cli
-$ mlem build Docker Docker-builder.mlem \
+$ mlem build docker docker-builder.mlem \
     --model models/rf \
     --image.name mlem-model
 ⏳️ Loading model from models/rf.mlem
@@ -323,11 +323,11 @@ $ mlem build Docker Docker-builder.mlem \
 ```
 
 This creates a `mlem-model:latest` Docker image and a builder metafile called
-`Docker-builder.mlem` describing the container.
+`docker-builder.mlem` describing the container.
 
 <details>
 
-#### Click to see to see the contents of `Docker-builder.mlem`.
+#### Click to see to see the contents of `docker-builder.mlem`.
 
 ```yaml
 image:
