@@ -90,7 +90,7 @@ This will start the server on the default port, `8000`. Visit
 enable the pre-commit Git hook that will be formatting and linting your code and
 documentation files automatically.
 
-### All commands
+### Useful commands
 
 These Node scripts are specified in the docs repo's `package.json` file.
 
@@ -100,32 +100,31 @@ To build the project and run it:
 - `yarn build` - build assets in the `public` directory.
 - `yarn start` - run production static server over the `public` directory.
 
-> All the tests, formatting, and linters below will be enforced automatically
-> upon [submitting PRs](#submitting-changes).
+<admon>
 
-If you change source code files, run tests:
+All the tests, formatting, and linters below will be enforced automatically
+upon [submitting PRs](#submitting-changes).
 
-- `yarn test` - run tests.
+</admon>
 
-We use [Prettier](https://prettier.io/) to format our source code. Below is a
-set of wrapper commands for your convenience:
+We use [Prettier](https://prettier.io/) to format our source code, and
+[ESLint](https://eslint.org/)) to check source code style. Below is a set of
+wrapper commands for your convenience:
 
-- `yarn format-check` - check all source and content files that they are
+- `yarn check-format` - check all source and content files that they are
   properly formatted. This script does not fix any found issue, only reports
   them.
-- `yarn format-all` - fix all found problems.
+- `yarn format` - fix all found problems.
 - `yarn format-staged` - same, but only on staged files.
-- `yarn format <file>` - run this script `yarn format <file-name>` to format a
-  specific file.
-
-We use linters (e.g. [ESLint](https://eslint.org/)) to check source code style
-and detect different errors:
-
 - `yarn lint-ts` - lint source code files (`.ts`, `.js`, `tsx`, etc).
-- `yarn lint-css` - lint `.css` files.
+- `yarn check-format-and-lint` - run both full format and linting.
 
-> Note that you can always use the formatter or linter directly (e.g.
-> `yarn eslint <file>` or `yarn prettier --check <file>`).
+<admon type="tip">
+
+Note that you can always use the formatter or linter directly (e.g.
+`yarn eslint <file>` or `yarn prettier --check <file>`).
+
+</admon>
 
 ### ENV variables
 
@@ -156,7 +155,7 @@ that is installed when `yarn` runs (see [dev env](#development-environment)).
 
 - You can see the configuration of our formatter tool (Prettier)
   [here](https://github.com/iterative/mlem.ai/blob/master/.prettierrc). You may
-  also run the formatting [commands](#all-commands) manually.
+  also run the formatting [commands](#useful-commands) manually.
   ([Advanced usage](https://prettier.io/docs/en/cli.html) of Prettier is
   available through `yarn prettier ...`)
 
