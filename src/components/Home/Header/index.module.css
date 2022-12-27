@@ -47,13 +47,18 @@
     }
   }
 
+  &__list {
+    margin: 12px 16px 0 0;
+    @media (--md-scr) {
+      margin: 0 auto 10px;
+    }
+  }
+
   &__logo {
     width: var(--width-sm);
-    margin: 12px 16px 0 0;
 
     @media (--md-scr) {
       width: var(--width-md);
-      margin: 0 auto 10px;
     }
 
     @media (--lg-scr) {
