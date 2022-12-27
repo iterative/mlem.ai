@@ -379,6 +379,7 @@ To allow MLEM to push the Docker image built to the Heroku Docker Registry,
 you'll also need to execute `heroku container:login`.
 
 After getting authorized with Heroku, we can run the deployment command:
+
 ```
 $ mlem deployment run heroku heroku_app.mlem \
   --model models/rf \
@@ -466,9 +467,9 @@ To expose your model server for external requests, MLEM creates a `NodePort`
 service by default. You can use other service types using the `--service_type`
 option.
 
-If you're running a local K8s cluster (e.g. Docker Desktop) for example, you'd be
-able to access the cluster network from your localhost interface, and your app
-would be available on http://localhost:31103, as seen in the
+If you're running a local K8s cluster (e.g. Docker Desktop) for example, you'd
+be able to access the cluster network from your localhost interface, and your
+app would be available on http://localhost:31103, as seen in the
 `service/mlem-rf-server` resource above.
 
 ### Removing the deployment
@@ -495,9 +496,8 @@ files:
   You can learn more about state files in the
   [deploying](/doc/user-guide/deploying) guide.
 
-
-🙌 Congratulations! You've made it through and got a model server deployed!! Thank
-you for checking out MLEM!
+🙌 Congratulations! You've made it through and got a model server deployed!!
+Thank you for checking out MLEM!
 
 ## What's next?
 
