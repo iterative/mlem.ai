@@ -65,7 +65,7 @@ save(
 
 Here, we loaded a well-known [Iris flower dataset] with scikit-learn and trained
 a simple classifier (see the full list of [supported ML frameworks]). We then
-captures it using `mlem.api.save`, which creates the following files:
+capture it using `mlem.api.save`, which creates the following files:
 
 ```
 models
