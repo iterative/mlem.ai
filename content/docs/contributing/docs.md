@@ -102,8 +102,8 @@ To build the project and run it:
 
 <admon>
 
-All the tests, formatting, and linters below will be enforced automatically
-upon [submitting PRs](#submitting-changes).
+All the tests, formatting, and linters below will be enforced automatically upon
+[submitting PRs](#submitting-changes).
 
 </admon>
 
