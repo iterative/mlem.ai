@@ -327,7 +327,7 @@ This creates a `mlem-model:latest` Docker image and a builder metafile called
 
 <details>
 
-#### Click to see to see the contents of `Docker-builder.mlem`.
+#### Click to see to see the contents of `docker-builder.mlem`.
 
 ```yaml
 image:
