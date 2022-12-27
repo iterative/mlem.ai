@@ -10,7 +10,7 @@ endpoints through a service.
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[kubernetes]
 # or
 pip install kubernetes docker
@@ -179,7 +179,7 @@ built.
 
 ### Checking the deployment process
 
-```
+```cli
 ⏳️ Loading model from other-model.mlem
 ⏳️ Loading deployment from service_name.mlem
 🛠 Creating docker image ml

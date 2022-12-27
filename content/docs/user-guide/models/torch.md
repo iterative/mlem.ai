@@ -11,14 +11,8 @@ DataType, Reader and Writer implementations for `torch.Tensor`
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[torch]
 # or
 pip install torch
-```
-
-## Examples
-
-```python
-
 ```

@@ -10,14 +10,8 @@
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[onnx]
 # or
 pip install onnx
-```
-
-## Examples
-
-```python
-
 ```
