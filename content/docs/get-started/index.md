@@ -275,7 +275,7 @@ Checkout openapi docs at <http://0.0.0.0:8080/docs>
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-The server is now running and listening for requests on `localhost`. Endpoints
+The server is now running and listening for requests on `localhost:8080`. Endpoints
 are created automatically from model methods (using the `sample_data`
 [provided earlier](#saving-your-model)). You can open the
 [Swagger UI](http://localhost:8080/docs) in your browser to explore the OpenAPI
