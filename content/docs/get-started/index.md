@@ -209,17 +209,16 @@ $ python predict.py
 
 `mlem` lets you use any saved model natively for prediction or batch scoring
 with any dataset. This is very handy if you want to get quick feedback about a
-model, for example. Let's create a sample dataset and apply it to the `rf` model
-we saved earlier:
+model, for example. Let's create a sample `new_data.csv` dataset and apply it to
+our `rf` model:
 
 ```csv
 sepal length (cm),sepal width (cm),petal length (cm),petal width (cm)
 0,1,2,3
 ```
 
-Save the contents above in a file called `new_data.csv` and `mlem apply` itit to
-our model's `predict_proba` method as shown below to print the prediction
-probabilities:
+After creating the CSV file, `mlem apply` it to our model's `predict_proba`
+method as shown below to print the prediction probabilities:
 
 ```cli
 $ mlem apply models/rf new_data.csv \
