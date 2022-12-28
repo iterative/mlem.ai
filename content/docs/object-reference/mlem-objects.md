@@ -2,12 +2,11 @@
 
 <details>
 
-### Implementation details
+### For developers
 
-From a developer's perspective, MLEM Objects are instances of one of the
-subclasses of `MlemObject` class. MLEM is using extended
-[pydantic](https://pydantic-docs.helpmanual.io/) functionality to save and load
-them from files.
+MLEM Objects are instances of one of the subclasses of `MlemObject` class. MLEM
+is using extended [pydantic](https://pydantic-docs.helpmanual.io/) functionality
+to save and load them from files.
 
 You can get `MlemObject` instance if you use `load_meta` API method instead of
 simple `load`.
@@ -30,17 +29,7 @@ You can check out what methods MLEM Objects have in
 
 ## MLEM Object Types
 
-Here are all the builtin MLEM Object types
-
-Model and Data are special types that can have artifacts, so they have two
-additional fields:
-
-- `artifacts` - a string-to-artifacts mapping, where artifact is an instance of
-  [`Artifact`](/doc/object-reference/mlem-abcs#artifact) which represents a file
-  stored somewhere (local/cloud/dvc cache etc)
-- `requirements` - a list of
-  [`Requirement`](/doc/object-reference/mlem-abcs#requirement) which are needed
-  to use that object in runtime
+These are the builtin types of MLEM Objects.
 
 ### Model
 
@@ -55,6 +44,12 @@ Represents an ML model, but can be generalized to any model or even any
 - `model_type` (_lazy_) -
   [ModelType](/doc/object-reference/mlem-abcs#modeltype), which is polymorphic
   and holds metadata about model's framework, methods and io.
+- `artifacts` - a string-to-artifacts mapping.
+  [`Artifact`](/doc/object-reference/mlem-abcs#artifact) instances represent a
+  file stored somewhere (local/cloud/dvc cache etc.)
+- `requirements` - a list of
+  [`Requirement`](/doc/object-reference/mlem-abcs#requirement) instances, needed
+  to use that object in runtime
 
 ### Data
 
@@ -69,6 +64,12 @@ Represent data, which can be used as an input to one of Model's methods.
 - `data_type` (_transient_) -
   [`DataType`](/doc/object-reference/mlem-abcs#datatype) with dataset value and
   metadata (available once data is read)
+- `artifacts` - a string-to-artifacts mapping.
+  [`Artifact`](/doc/object-reference/mlem-abcs#artifact) instances represent a
+  file stored somewhere (local/cloud/dvc cache etc.)
+- `requirements` - a list of
+  [`Requirement`](/doc/object-reference/mlem-abcs#requirement) instances, needed
+  to use that object in runtime
 
 ### Link
 
@@ -86,8 +87,8 @@ Represents a link (pointer) to another MLEM Object. More on that
 
 ### Other types
 
-Some of the `MLEM ABCs` are also MLEM Objects.
+Some of the `MLEM ABCs` are also MLEM Objects:
 
 - [Builder](/doc/object-reference/mlem-abcs#builder)
-- [Target Environment](/doc/object-reference/mlem-abcs#mlemenv)
-- [Deployment](/doc/object-reference/mlem-abcs#mlemdeployment)
+- [MlemEnv](/doc/object-reference/mlem-abcs#mlemenv)
+- [MlemDeployment](/doc/object-reference/mlem-abcs#mlemdeployment)

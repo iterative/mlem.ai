@@ -345,8 +345,8 @@ using a variety of platforms like [Docker](/doc/user-guide/deploying/docker),
 [Heroku](/doc/user-guide/deploying/heroku),
 [Sagemaker](/doc/user-guide/deploying/sagemaker) and
 [Kubernetes](/doc/user-guide/deploying/kubernetes), so you don't have to deal
-with the DevOps and implementation details of deployment yourself. See the full
-list in the [Deploying User Guide](/doc/user-guide/deploying).
+with the DevOps and deployment details yourself. See the full list in the
+[Deploying User Guide](/doc/user-guide/deploying).
 
 Let's take a look at a few examples:
 

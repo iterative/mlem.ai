@@ -4,7 +4,7 @@
 
 The most important concept in MLEM is **MLEM Object**. Basically, MLEM is a
 library to create, manage and use different **MLEM Objects**, such as models,
-data and other types you can read about below.
+data and other [types](/doc/object-reference/mlem-objects).
 
 <admon type="info">
 

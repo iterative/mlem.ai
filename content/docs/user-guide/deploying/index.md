@@ -141,7 +141,7 @@ databases, key-value stores etc. Please express your interest in them via
 issues.
 
 Setting up remote state manager is a lot like setting DVC remote. All you need
-to do is provide uri where you want to store state files. E.g. for s3 it will
+to do is provide a URI where you want to store state files. E.g. for s3 it will
 look like this
 
 ```cli
