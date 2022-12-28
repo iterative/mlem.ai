@@ -23,7 +23,7 @@ config.
 - `emojis` - whether to show 🖇️🦉🤩🇪🇲🅾️🇯ℹ️🇸🤩🦉🖇️ in CLI output. Default: ✅
 - `log_level` - logging level to use. Default: `INFO`
 - `no_analytics` - whether to stop collecting usage telemetry. Default: `False`
-- `state` - allows you to set the `url` for a [remote state manager].
+- `state` - allows you to set the `uri` for a [remote state manager].
 
 [dynamic extension loading]:
   /doc/object-reference/extending#extension-dynamic-loading
