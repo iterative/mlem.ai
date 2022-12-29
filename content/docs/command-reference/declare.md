@@ -26,9 +26,8 @@ This is particularly useful for configuring environments and deployments.
 
 Each MLEM Object, along with its subtype (which represents a particular
 implementation), will accept different configuration arguments. The list of
-configuration arguments per type can be fetched by running the
-[`mlem types`](/doc/command-reference/types) command. For an example output,
-check out the last example [here](/doc/command-reference/types#examples)
+configuration arguments per type can be fetched by running the `mlem types`
+command. Check out this [example output](/doc/command-reference/types#examples).
 
 ## Options
 
