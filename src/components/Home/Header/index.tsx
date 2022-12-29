@@ -77,35 +77,40 @@ const logosData: Array<ILogo> = [
     widthMd: 88,
     widthLg: 124,
     src: dockerLogo,
-    alt: 'Docker logo'
+    alt: 'Docker logo',
+    link: '/doc/user-guide/building/docker'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: streamlitLogo,
-    alt: 'Streamlit logo'
+    alt: 'Streamlit logo',
+    link: '/doc/user-guide/serving/streamlit'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: herokuLogo,
-    alt: 'Heroku logo'
+    alt: 'Heroku logo',
+    link: '/doc/user-guide/deploying/heroku'
   },
   {
     widthSm: 55,
     widthMd: 75,
     widthLg: 108,
     src: kubernetesLogo,
-    alt: 'Kubernetes logo'
+    alt: 'Kubernetes logo',
+    link: '/doc/user-guide/deploying/kubernetes'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: sagemakerLogo,
-    alt: 'Sagemaker logo'
+    alt: 'Sagemaker logo',
+    link: '/doc/user-guide/deploying/sagemaker'
   },
   {
     widthSm: 66,
@@ -119,91 +124,104 @@ const logosData: Array<ILogo> = [
     widthMd: 88,
     widthLg: 124,
     src: rabbitmqLogo,
-    alt: 'RabbitMQ logo'
+    alt: 'RabbitMQ logo',
+    link: '/doc/user-guide/serving/rabbitmq'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: pythonLogo,
-    alt: 'Python logo'
+    alt: 'Python logo',
+    link: '/doc/user-guide/building/pip'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 110,
     src: condaLogo,
-    alt: 'Conda logo'
+    alt: 'Conda logo',
+    link: '/doc/user-guide/building/conda'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: onnxLogo,
-    alt: 'ONNX logo'
+    alt: 'ONNX logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: tensorflowLogo,
-    alt: 'Tensorflow logo'
+    alt: 'Tensorflow logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 60,
     widthMd: 79,
     widthLg: 112,
     src: pytorchLogo,
-    alt: 'PyTorch logo'
+    alt: 'PyTorch logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 48,
     widthMd: 64,
     widthLg: 90,
     src: dmlcXgboostLogo,
-    alt: 'dmlc xgboost logo'
+    alt: 'dmlc xgboost logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 38,
     widthMd: 50,
     widthLg: 71,
     src: scikitLearnLogo,
-    alt: 'scikit learn logo'
+    alt: 'scikit learn logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 110,
     src: lightGbmLogo,
-    alt: 'Light GBM logo'
+    alt: 'Light GBM logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 54,
     widthMd: 64,
     widthLg: 90,
     src: kerasLogo,
-    alt: 'Keras logo'
+    alt: 'Keras logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 81,
     widthMd: 96,
     widthLg: 135,
     src: catboostLogo,
-    alt: 'Catboost logo'
+    alt: 'Catboost logo',
+    link: '/doc/user-guide/models'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 120,
     src: numpyLogo,
-    alt: 'Numpy logo'
+    alt: 'Numpy logo',
+    link: '/doc/user-guide/data'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 110,
     src: pandasLogo,
-    alt: 'Pandas logo'
+    alt: 'Pandas logo',
+    link: '/doc/user-guide/data'
   }
 ]
 
@@ -409,7 +427,7 @@ const Header: React.FC = () => {
               <Link href={logoDetails.link} className="group">
                 <LogoImage
                   {...logoDetails}
-                  className="p-1 inline-block rounded-4 border border-solid border-transparent group-hover:border-purple-800 group-active:bg-gray-200 transition-colors "
+                  className="p-1 inline-block rounded-4 md:rounded-6 lg:rounded-8 border border-solid border-transparent group-hover:border-purple-800 group-active:bg-gray-200 transition-colors "
                 />
               </Link>
             ) : (
