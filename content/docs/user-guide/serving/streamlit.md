@@ -27,7 +27,7 @@ $ mlem serve streamlit \
 Serving a model with Streamlit automatically expose [FastAPI] endpoint as well.
 You can use this if you want to have two interfaces simultaneously.
 
-[FastAPI]: /doc/user-guide/serving/fastapi
+[fastapi]: /doc/user-guide/serving/fastapi
 
 ### Running Streamlit model server from code
 
