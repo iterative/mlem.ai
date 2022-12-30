@@ -422,19 +422,13 @@ const Header: React.FC = () => {
               key={i}
               className={cn(
                 styles.header__list,
-                'flex items-center pl-1 pb-1 justify-center rounded-4 md:rounded-6 lg:rounded-8 border border-solid border-transparent hover:border-purple-800 active:bg-gray-200 transition-colors'
+                'hover:border-purple-800 active:bg-gray-200 transition-colors'
               )}
             >
               <LogoImage {...logoDetails} />
             </Link>
           ) : (
-            <li
-              key={i}
-              className={cn(
-                styles.header__list,
-                'flex items-center justify-center'
-              )}
-            >
+            <li key={i} className={cn(styles.header__list)}>
               <LogoImage {...logoDetails} />
             </li>
           )
