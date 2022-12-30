@@ -30,16 +30,13 @@
     grid-area: logos;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     padding: 10px;
     list-style: none;
 
     @media (--md-scr) {
       margin: 34px 0 0;
-      li {
-        flex-basis: 20%;
-      }
     }
 
     @media (--lg-scr) {
@@ -51,6 +48,7 @@
     margin: 12px 16px 0 0;
     @media (--md-scr) {
       margin: 0 auto 10px;
+      flex-basis: 20%;
     }
   }
 

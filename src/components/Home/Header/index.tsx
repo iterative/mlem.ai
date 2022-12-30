@@ -415,26 +415,30 @@ const Header: React.FC = () => {
         </div>
       </div>
       <ul className={styles.header__logos}>
-        {logosData.map((logoDetails, i) => (
-          <li
-            key={i}
-            className={cn(
-              styles.header__list,
-              'flex items-center justify-center'
-            )}
-          >
-            {logoDetails?.link ? (
-              <Link href={logoDetails.link} className="group">
-                <LogoImage
-                  {...logoDetails}
-                  className="p-1 inline-block rounded-4 md:rounded-6 lg:rounded-8 border border-solid border-transparent group-hover:border-purple-800 group-active:bg-gray-200 transition-colors "
-                />
-              </Link>
-            ) : (
+        {logosData.map((logoDetails, i) =>
+          logoDetails?.link ? (
+            <Link
+              href={logoDetails.link}
+              key={i}
+              className={cn(
+                styles.header__list,
+                'flex items-center pl-1 pb-1 justify-center rounded-4 md:rounded-6 lg:rounded-8 border border-solid border-transparent hover:border-purple-800 active:bg-gray-200 transition-colors'
+              )}
+            >
               <LogoImage {...logoDetails} />
-            )}
-          </li>
-        ))}
+            </Link>
+          ) : (
+            <li
+              key={i}
+              className={cn(
+                styles.header__list,
+                'flex items-center justify-center'
+              )}
+            >
+              <LogoImage {...logoDetails} />
+            </li>
+          )
+        )}
       </ul>
     </header>
   )
