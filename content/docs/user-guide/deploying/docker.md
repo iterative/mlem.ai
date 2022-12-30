@@ -9,9 +9,9 @@ locally.
 ## Requirements
 
 ```cli
-pip install mlem[docker]
+$ pip install mlem[docker]
 # or
-pip install docker
+$ pip install docker
 ```
 
 ## Description

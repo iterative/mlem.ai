@@ -10,9 +10,9 @@ primitives
 ## Requirements
 
 ```cli
-pip install mlem[numpy]
+$ pip install mlem[numpy]
 # or
-pip install numpy
+$ pip install numpy
 ```
 
 ## Examples

@@ -12,7 +12,7 @@ DataType, Reader and Writer implementations for `torch.Tensor`
 ## Requirements
 
 ```cli
-pip install mlem[torch]
+$ pip install mlem[torch]
 # or
-pip install torch
+$ pip install torch
 ```

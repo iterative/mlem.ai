@@ -7,9 +7,9 @@ platforms such as Sagemaker or Kubernetes, we recommend to start with Heroku.
 ## Requirements
 
 ```cli
-pip install mlem[heroku]
+$ pip install mlem[heroku]
 # or
-pip install fastapi uvicorn docker
+$ pip install fastapi uvicorn docker
 ```
 
 To create applications on Heroku platform all you need is Heroku API key. You

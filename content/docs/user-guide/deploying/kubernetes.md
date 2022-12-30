@@ -11,9 +11,9 @@ endpoints through a service.
 ## Requirements
 
 ```cli
-pip install mlem[kubernetes]
+$ pip install mlem[kubernetes]
 # or
-pip install kubernetes docker
+$ pip install kubernetes docker
 ```
 
 ### Preparation

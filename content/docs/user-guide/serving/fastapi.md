@@ -10,9 +10,9 @@ serve it.
 ## Requirements
 
 ```cli
-pip install mlem[fastapi]
+$ pip install mlem[fastapi]
 # or
-pip install fastapi uvicorn
+$ pip install fastapi uvicorn
 ```
 
 ## Examples

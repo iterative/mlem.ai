@@ -11,7 +11,7 @@
 ## Requirements
 
 ```cli
-pip install mlem[tensorflow]
+$ pip install mlem[tensorflow]
 # or
-pip install tensorflow
+$ pip install tensorflow
 ```

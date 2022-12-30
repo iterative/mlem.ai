@@ -10,10 +10,10 @@ Each deployment is MLEM Object that holds following parameters:
 - **Deployment parameters** are additional parameters for specific deployment
   implementation you chose
 
-Also, each deployment has **state**, \*\*\*\*which is a snapshot of the actual
-state of your deployment. It is created and updated by MLEM during deployment
-process to keep track of parameters needed for management. It is stored
-separately from declaration.
+Also, each deployment has **state**, which is a snapshot of the actual state of
+your deployment. It is created and updated by MLEM during deployment process to
+keep track of parameters needed for management. It is stored separately from
+declaration.
 
 ## Simple deployment
 
@@ -22,17 +22,15 @@ configuration. You just need your model saved with MLEM and an environment you
 want to deploy to
 
 ```yaml
-$ mlem deployment run <env type> <name> --model <model name> --some_option
-option_value
+$ mlem deployment run <env type> <name> \
+    --model <model name> \
+    --some_option option_value
 ```
 
 A MLEM Object named `<name>` of type `deployment` will be created and deployed
 to target environment.
 
-<aside>
-💡 To view all available `<env type>` values, run `mlem types env`. Some of them may require setting up credential information or other parameters, which can be provided to `mlem deployment run` command via options.
-
-</aside>
+To view all available `<env type>` values, run `mlem types env`. Some of them may require setting up credential information or other parameters, which can be provided to `mlem deployment run` command via options.
 
 Also, near `<name>.mlem` file there will be `<name>.mlem.state` file, where MLEM
 will dump some parameters during deployment process.

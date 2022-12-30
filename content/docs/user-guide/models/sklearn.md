@@ -10,9 +10,9 @@ sklearn-compatible classes as well as `Pipeline`
 ## Requirements
 
 ```cli
-pip install mlem[sklearn]
+$ pip install mlem[sklearn]
 # or
-pip install scikit-learn
+$ pip install scikit-learn
 ```
 
 ## Examples

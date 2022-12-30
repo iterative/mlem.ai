@@ -93,7 +93,7 @@ build(
 Like every other MLEM object, builders can be read from remote repos. Try
 
 ```cli
-mlem build \
+$ mlem build \
     --load https://github.com/iterative/example-mlem-get-started/pip_config \
     --model https://github.com/iterative/example-mlem-get-started/rf
 ```
