@@ -33,21 +33,33 @@ deceptively simple task at first. For example, `pickle` and `torch` libraries
 can serialize/deserialize model objects to/from files, or you can use `joblib`
 to serialize NumPy-heavy models more effectively.
 
-However, when MLEM is used to (save python model
-objects)[/doc/user-guide/api-reference/save] or enrich existing model files
-using the (import command)[/doc/user-guide/importing], it adds its "special
-sauce" - the `.mlem` metadata file! Those additional "metafile" is a yaml
-representation of the (MLEM Object)[#mlem-object] corresponding to the model
-Python object. It contains all the missing information MLEM needs in order to
-reliably recreate the Python object later. This is why refer to this operation
-as a "codification" of the model, and is a very powerful concept, underlining a
-lot of MLEM's abilities.
+However, when MLEM is used to
+[save python model objects](/doc/user-guide/api-reference/save) or enrich
+existing model files using the [import command](/doc/user-guide/importing), it
+adds its "special sauce" - all the things needed to reliably recreate this
+Python object later are extracted **auto-magically** and are written to a
+`.mlem` metadata file. This additional "metafile" is a yaml representation of
+the [MLEM Object](#mlem-object) corresponding to the model Python object. This
+is why we refer to this operation as a "codification" of the model, and is a
+very powerful concept, underlining a lot of MLEM's abilities.
+
+Here are the key advantages of using MLEM to save your models:
+
+- Deep inspection and input data schema serialization - more details on what's
+  extracted below
+- Standardized, single tool to save/load models - decoupled from your ML
+  framework of choice (`torch`, `catboost`, `sklearn` or any other package)
+- Drop-in replacement for most existing use-cases
+- MLEM is modular by design, supporting new formats for models/data and other
+  objects is easy and native as an umbrella tool on top of existing technologies
 
 Here is a breakdown of the data MLEM extracts from models objects:
 
 1. Model methods: Like `predict` and `predict_proba`
-2. Input data schema: Describes the dataframe (Iris dataset)
-3. Python Requirements: `sklearn` and `pandas` in this case, with the specific
+2. Deep recursive inspection - custom Python functions and objects, like other
+   models/transformers/preprocessors your model calls under the hood
+3. Input data schema: Describes the dataframe (Iris dataset)
+4. Python Requirements: `sklearn` and `pandas` in this case, with the specific
    versions used to train the model
 
 Down the line this metadata enables us to easily and reliably package and serve
@@ -55,9 +67,9 @@ different model types in various ways using MLEM.
 
 <admon type='tip'>
 
-This is extracted auto-magically when we save/import models with MLEM. We don't
-have to specify any of this ourselves. MLEM inspects the object (even if it's
-complex) and infers all of this automatically!
+This is extracted by MLEM when we save/import models with MLEM. We don't have to
+specify any of this ourselves. MLEM inspects the object (even if it's complex)
+and infers all of this automatically!
 
 </admon>
 

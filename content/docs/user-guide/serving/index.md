@@ -32,9 +32,9 @@ infer the payload schemas.
 </admon>
 
 Note, that serving the model requires you to have the correct packages to be
-installed. You can check out how to create a `venv` with right packages with
-MLEM, or how to serve the model in a
-[Docker container](/doc/user-guide/deploying/docker).
+installed. You can check out how to create
+[a `venv` with right packages](/doc/user-guide/building/venv) with MLEM, or how
+to serve the model in a [Docker container](/doc/user-guide/deploying/docker).
 
 ## Making requests
 

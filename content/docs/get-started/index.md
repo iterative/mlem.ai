@@ -4,8 +4,6 @@ description: 'Learn how you can use MLEM to easily manage and deploy models'
 
 # Get Started
 
-## Setup
-
 For this guide, we will need a Python environment with the following python
 packages installed: `pandas`, `scikit-learn` and `mlem[fastapi]`. Additionally,
 we'll require `docker` to be installed on your machine to showcase building and
@@ -111,19 +109,15 @@ You can use `mlem.api.import_object()` to "import" the object from Python code,
 which would create the the `rf.mlem` metadata file:
 
 ```py
-import os
-
 from mlem.api import import_object
 
-model_path = os.path.join(os.getcwd(), "models", "rf")
-target_path = os.path.join(os.getcwd(), "models", "rf.mlem")
-model = import_object(path=model_path, target=target_path, type_="pickle")
+model = import_object(path="models/rf", target="models/rf.mlem", type_="pickle")
 ```
 
 or just use `mlem import` from your terminal for the same effect:
 
 ```cli
-mlem import models/rf models/rf.mlem --type pickle
+$ mlem import models/rf models/rf.mlem --type pickle
 ```
 
 Learn more about importing models in the [importing](/doc/user-guide/importing)
@@ -144,7 +138,8 @@ models
 └── rf.mlem
 ```
 
-Actually, this is all also true for other types of objects, like datasets!
+Actually, this is all also true for other types of objects, like
+[datasets](/doc/user-guide/data)!
 
 ## Getting Model Predictions
 
@@ -252,8 +247,10 @@ Ok, we saw how easy working with models is, both via API and CLI. However, MLEM
 ## Serving models locally
 
 MLEM can serve any model for you using different server implementations like
-FastAPI, RabbitMQ or Streamlit. Let's check out how it works with FastAPI since
-using it for serving is very common.
+[FastAPI](/doc/user-guide-serving/fastapi),
+[RabbitMQ](/doc/user-guide/serving/rabbitmnq) or
+[Streamlit](/doc/user-guide/serving/streamlit). Let's check out how it works
+with FastAPI since using it for serving is very common.
 
 To launch a FastAPI model server locally, simply run:
 
