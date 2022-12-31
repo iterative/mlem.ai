@@ -45,7 +45,7 @@ Represents a **[MLEM Object](/doc/user-guide/basic-concepts)**
 **Base class**: `mlem.core.objects.MlemObject`
 
 For more info and list of subtypes look
-[here](/doc/user-guide/basic-concepts#mlem-object-types)
+[here](/doc/object-reference/mlem-objects#mlem-object-types)
 
 ### Requirement
 

@@ -211,6 +211,11 @@
         "source": "clone.md"
       },
       {
+        "slug": "config",
+        "label": "config",
+        "source": "config.md"
+      },
+      {
         "slug": "declare",
         "label": "declare",
         "source": "declare.md"

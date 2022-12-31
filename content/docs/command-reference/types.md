@@ -1,7 +1,9 @@
 # types
 
 List different implementations available for a particular MLEM type. If a
-subtype is not provided, list all available MLEM types.
+subtype is not provided, list all available MLEM [types].
+
+[types]: /doc/object-reference/mlem-objects#mlem-object-types
 
 ## Synopsis
 
@@ -10,15 +12,16 @@ usage: mlem types [-h]
                   [abc] [sub_type]
 
 arguments:
-  [abc]            Subtype to list implementations. List subtypes if not
-                   provided.
+  [abc]            Subtype to list implementations.
+                   List subtypes if not provided.
   [sub_type]       Type of `meta` subtype
 ```
 
 ## Description
 
-This command can be used to see all available MLEM classes, or to list the
-different implementations available for a specific `SUB_TYPE` (argument).
+This command can be used to see all available MLEM object types (classes), or to
+list the different implementations available for a specific `SUB_TYPE`
+(argument).
 
 This can be useful, for example, to see which types of servers are supported for
 hosting and serving a model (see [Examples](#examples)).
