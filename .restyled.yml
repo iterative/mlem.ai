@@ -1,16 +1,10 @@
 restylers:
+
+  - clang-format:
+      enabled: false
+
   - name: prettier
-    arguments:
-      [
-        '--arrow-parens=avoid',
-        '--print-width=80',
-        '--prose-wrap=always',
-        '--no-semi',
-        '--single-quote=true',
-        '--tab-width=2',
-        '--trailing-comma=none',
-        '--use-tabs=false'
-      ]
+    arguments: ['--config=./.prettierrc', '--ignore-path=./.prettierignore']
     include:
       - '**/*.md'
       - '**/*.jsx'
