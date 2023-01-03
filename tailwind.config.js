@@ -2,8 +2,12 @@ const themeConfig = require('@dvcorg/gatsby-theme-iterative/tailwind.config')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { lg, xs, xl, ...maxScreens } = themeConfig.theme.extend.screens
+
 module.exports = {
   content: [
+    ...themeConfig.content,
     './src/**/*.js',
     './src/**/*.jsx',
     './src/**/*.ts',
@@ -100,9 +104,9 @@ module.exports = {
       8: '8px'
     },
     screens: {
-      ...themeConfig.theme.extend.screens,
       xs: '414px',
-      ...defaultTheme.screens
+      ...defaultTheme.screens,
+      ...maxScreens
     },
     extend: {
       borderOpacity: {

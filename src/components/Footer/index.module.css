@@ -1,6 +1,7 @@
 .footer {
   padding: 24px 0;
   background-color: #fff;
+  z-index: 10;
   @apply border-gray-200 border-solid border-t-2;
 
   &__container {
