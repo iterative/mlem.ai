@@ -41,11 +41,3 @@ provides a programmatic way to create deployments for a target environment.
 
 - `MlemObjectNotFound` - Thrown if we can't find MLEM object
 - `ValueError` - Please provide model and env args for new deployment
-
-[//]: # '## Examples'
-[//]: #
-[//]: # '```py'
-[//]: # 'from mlem.api import deploy'
-[//]: #
-[//]: # '#TODO'
-[//]: # '```'

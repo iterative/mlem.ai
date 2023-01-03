@@ -1,14 +1,12 @@
 import json
 import os
-import re
-import subprocess
 import textwrap
 from typing import Dict, List
 
 from pydantic import BaseModel, parse_obj_as
 
 from cli_generate_spec import Opt, Spec
-from utils import replace_section, place_links_in_doc
+from utils import place_links_in_doc, replace_section, run_lint
 
 CLI_DOCS_PATH = "../../content/docs/command-reference"
 LINE_WIDTH = 80
@@ -142,11 +140,6 @@ def main():
         generate_cli_command(k, s)
 
     os.unlink("spec.json")
-
-
-def run_lint():
-    print("Running linter")
-    subprocess.check_output("yarn run format", shell=True, cwd="../../")
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ operations apply to any [object type] and location.
 </admon>
 
 [mlem objects]: /doc/user-guide/basic-concepts#mlem-objects
-[object type]: /doc/user-guide/basic-concepts#mlem-object-types
+[object type]: /doc/object-reference/mlem-objects#mlem-object-types
 
 ## Remote MLEM projects
 

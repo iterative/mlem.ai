@@ -18,6 +18,8 @@
 
 - `queue_prefix: str = ""` - Queue prefix
 
+- `raw: bool = False` - Pass values as-is without serializers
+
 - `timeout: float = 0` - Time to wait for response. 0 means indefinite
 
 ---
@@ -40,3 +42,9 @@
 - `exchange: str = ""` - RMQ exchange to use
 
 - `queue_prefix: str = ""` - Queue prefix
+
+- `request_serializer: Serializer` - Serializer to use for all requests
+
+- `response_serializer: Serializer` - Serializer to use for all responses
+
+- `standardize: bool = True` - Use standard model interface

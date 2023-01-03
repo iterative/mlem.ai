@@ -23,10 +23,10 @@ can run `mlem build --help` for list of builders and
 
 ## Pre-configured builders
 
-In [Get Started](/doc/get-started/building) we demonstrated how to build a
-docker image out of the model. Now let's see what is the builder declaration we
-mentioned there. You can pre-configure your builder in the form of yaml file
-that we call "declaration" either manually or via `mlem declare` command:
+In the [Get Started](/doc/get-started) we demonstrated how to build a Docker
+image out of the model server. Let's look into the builder declaration, which
+you can pre-configure your builder with a YAML file (either manually or with
+`mlem declare`):
 
 ```cli
 $ mlem declare builder docker docker_builder.mlem \

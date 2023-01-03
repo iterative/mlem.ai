@@ -10,7 +10,7 @@ endpoints through a service.
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[kubernetes]
 # or
 pip install kubernetes docker
@@ -26,9 +26,13 @@ pip install kubernetes docker
 - Nodes are accessible and reachable, with an external IP address (valid for a
   NodePort service, more details to come below).
 
-One can access a
-[basic](https://kubernetes.io/docs/tutorials/kubernetes-basics/) tutorial to
-learn about the above terms.
+<admon type="tip">
+
+See the
+[Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/) to
+learn about the concepts above.
+
+</admon>
 
 ## Description
 
@@ -175,7 +179,7 @@ built.
 
 ### Checking the deployment process
 
-```
+```cli
 ⏳️ Loading model from other-model.mlem
 ⏳️ Loading deployment from service_name.mlem
 🛠 Creating docker image ml
@@ -216,19 +220,17 @@ simple and analogous to how it is done in the steps above for a local cluster
 
 <admon type="info">
 
-To setup an EKS cluster, you can simply use [`eksctl`](https://eksctl.io/)
-
-A simple command such as
+To set up an EKS cluster, you can use [`eksctl`](https://eksctl.io/):
 
 ```cli
 eksctl create cluster --name cluster-name --region us-east-1
 ```
 
-will setup an EKS cluster for you with default parameters such as two `m5.large`
-worker nodes.
+> This will provision an EKS cluster with default parameters, such as two
+> `m5.large` worker nodes.
 
 Other tools such as
-[`terraform`](https://learn.hashicorp.com/tutorials/terraform/eks) can also be
+[Terraform](https://learn.hashicorp.com/tutorials/terraform/eks) can also be
 used.
 
 </admon>

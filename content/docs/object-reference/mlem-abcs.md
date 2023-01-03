@@ -45,7 +45,7 @@ Represents a **[MLEM Object](/doc/user-guide/basic-concepts)**
 **Base class**: `mlem.core.objects.MlemObject`
 
 For more info and list of subtypes look
-[here](/doc/user-guide/basic-concepts#mlem-object-types)
+[here](/doc/object-reference/mlem-objects#mlem-object-types)
 
 ### Requirement
 
@@ -270,7 +270,7 @@ Clients for corresponding servers
 ### Builder
 
 Declaration for creating a `build` from model. You can learn more about building
-[here](/doc/get-started/building)
+in this [User Guide](/doc/user-guide/building)
 
 **Base class**: `mlem.core.objects.MlemBuilder`
 

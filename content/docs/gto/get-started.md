@@ -89,7 +89,7 @@ during registrations and promotions. The benefit of these Git-native mechanism
 is that you can act upon GTO operations in any Git-based system downstream, for
 example automating model deployments with CI/CD.
 
-[tags]: /doc/gto/user-guide#git-tags-message-format
+[tags]: /doc/gto/user-guide#git-tags-format
 
 <details>
 
@@ -160,9 +160,9 @@ page.
 Thanks for completing this Get Started!
 
 - Learn how to
-  [specify important artifact's metainformation](/doc/gto/user-guide#annotations-in-artifactsyaml)
-  like `path`, `type` and `description` in the Artifact registry.
-- Learn more about [acting in CI/CD](/doc/gto/user-guide#acting-in-ci-cd) upon
+  [get your artifacts](/doc/gto/user-guide#getting-artifacts-downstream) when
+  you need them (e.g. get the latest version or the version in specific stage).
+- Learn more about [acting in CI/CD](/doc/gto/user-guide#acting-in-cicd) upon
   version registrations and stage assignments.
 - Reach us out in [GH issues](https://github.com/iterative/gto/issues) or in
   [Discord](https://discord.com/invite/dvwXA2N) to get your questions answered!

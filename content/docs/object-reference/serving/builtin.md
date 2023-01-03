@@ -10,6 +10,8 @@
 
 **Fields**:
 
+- `raw: bool = False` - Pass values as-is without serializers
+
 - `host: str = "0.0.0.0"` - Server host
 
 - `port: int = 8080` - Server port
@@ -24,7 +26,9 @@
 
     Interface that descibes model methods
 
-**No fields**
+**Fields**:
+
+- `model: MlemModel` _(required)_ - Model metadata
 
 ---
 
@@ -48,6 +52,4 @@
 
     Class docstring missing
 
-**Fields**:
-
-- `version: str = "0.2.9.dev16+gb7b6879"` - mlem version
+**No fields**

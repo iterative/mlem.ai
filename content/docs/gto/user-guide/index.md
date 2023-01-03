@@ -2,34 +2,79 @@
 
 GTO helps you build an Artifact Registry out of your Git repository. It creates
 annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
-[special format](#git-tag-message-format) in their message, and manages an
-`artifacts.yaml` file. Since committing large files to Git is not a good
-practice, you should consider not committing your artifacts to Git. Instead, use
-[DVC](https://dvc.org/doc), Git-lfs, or any method commit pointers to the binary
-files instead.
+[special format](#git-tags-format), and manages an `artifacts.yaml` file.
+
+<admon type="tip">
+
+Storing large files in Git repos is not a good practice. Avoid committing your
+ML artifacts to Git. You can [use DVC](/doc/gto/user-guide/dvc), Git LFS, or any
+other method to commit pointers to the data, models, etc. instead.
+
+</admon>
 
 ## Annotations in artifacts.yaml
 
-Using Git tag to register versions and assign stages is handy, but the Git tag
-itself doesn't contain path to the artifact, type of it (it could be `model` or
-`dataset`), or any other information you may find useful. For simple projects
-(e.g. single artifact) we can assume the details
-[in a CI/CD system](#acting-in-ci-cd) downstream. But for more advanced cases,
-we should codify them in the registry itself.
+Using Git tags to register artifact versions and assign stages is handy, but the
+Git tag itself doesn't contain a path to the artifact files, their type (`model`
+or `dataset`), or any other useful information about them. For simple projects
+(e.g. a single artifact) we can assume the details whenever we consume the
+artifacts (e.g. [in CI/CD](#acting-in-ci-cd)). But for more advanced cases, we
+should codify them in the registry itself.
 
-To keep this metainformation, GTO uses `artifacts.yaml` file. Commands like
-`gto annotate` and `gto remove` are used to modify it, while `gto describe`
-helps get them when they're needed.
+To keep this metadata, GTO uses a human-readable `artifacts.yaml` file. The
+`gto describe`, `gto annotate`, and `gto remove` commands are used to display
+and manage it's contents.
 
-If you would like to see an example of `artifacts.yaml`, check out the
-[example-gto](https://github.com/iterative/example-gto/blob/main/artifacts.yaml)
-repo.
+<admon type="tip">
+
+An example `artifacts.yaml` can be found
+[in the `example-gto` repo](https://github.com/iterative/example-gto).
+
+</admon>
+
+## Getting artifacts in systems downstream
+
+You may need to get a specific artifact version to a certain environment, most
+likely the latest one or the one currently assigned to the stage. Use `gto show`
+to find the [Git reference] (tag) you need (note that
+[CI platforms](#acting-in-ci-cd) may expose it for you, e.g. the `GITHUB_REF`
+[env var in GitHub Actions]):
+
+[git reference]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
+[env var in github actions]:
+  https://docs.github.com/en/actions/learn-github-actions/environment-variables
+
+<admon type="tip">
+
+GTO doesn't provide a way to deliver the artifacts, but you can [use DVC] or
+[employ MLEM] for that.
+
+[use dvc]: /doc/gto/user-guide/dvc
+[employ mlem]: https://mlem.ai
+
+</admon>
+
+```cli
+$ gto show churn@latest --ref
+churn@v3.1.1
+
+$ gto show churn#prod --ref  # by assigned stage
+churn@v3.0.0
+```
+
+You may need the artifact's file path. If
+[annotated](#annotations-in-artifactsyaml), it can be discovered with
+`gto describe`:
+
+```cli
+$ gto describe churn@v3.0.0 --path
+models/churn.pkl
+```
 
 ## Acting in CI/CD
 
-Once Git tags are pushed, you can start acting in systems downstream. A popular
-options is to use CI/CD (triggered when Git tags are pushed). For general
-details, check out something like
+A popular deployment option is to use CI/CD (triggered when Git tags are
+pushed). For general details, check out something like
 [GitHub Actions](https://github.com/features/actions),
 [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) or
 [Circle CI](https://circleci.com).
@@ -79,7 +124,7 @@ Alternatively, you can use environment variables (note the `GTO_` prefix)
 $ GTO_EMOJIS=false gto show
 ```
 
-## Git tag message format
+## Git tags format
 
 <admon type="tip">
 

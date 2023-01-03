@@ -71,7 +71,7 @@
 
 **Fields**:
 
-- `python_version: str = "3.10.5"` - Python version to use default: version of
+- `python_version: str = "3.9.5"` - Python version to use default: version of
   running interpreter
 
 - `run_cmd: str = "sh run.sh"` - command to run in container

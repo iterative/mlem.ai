@@ -10,14 +10,8 @@
 
 ## Requirements
 
-```bash
+```cli
 pip install mlem[tensorflow]
 # or
 pip install tensorflow
-```
-
-## Examples
-
-```python
-
 ```

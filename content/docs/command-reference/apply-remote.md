@@ -7,9 +7,10 @@ Otherwise, it will be printed to `stdout`.
 ## Synopsis
 
 ```usage
-usage: mlem apply-remote [-d <path>] [-p <path>] [--rev <commitish>]
-                         [-o <path>] [--tp <path>] [-m <text>]
-                         [--json] [-f <text>] [-h]
+usage: mlem apply-remote [--raw] [-d <path>] [-p <path>]
+                         [--rev <commitish>] [-o <path>]
+                         [--tp <path>] [-m <text>] [--json]
+                         [-f <text>] [-h]
                          [<client> [client options] | --load <declaration>]
 
 Builtin clients:
@@ -20,17 +21,17 @@ Builtin clients:
 
 ## Description
 
-Models which are deployed somewhere remotely or are being
-[served](/doc/get-started/serving) locally, can have their methods called using
-the `apply-remote` command. This command is similar to
-[apply](/doc/command-reference/apply), with the only difference being the model
-is deployed remotely using a deployment, or served locally. To access the
-methods of the `served` model, a `client` is needed. Currently, the available
-clients are `http` and `rmq` - which are used to launch requests against the
-`fastapi` and `rmq` server types, correspondingly.
+Models which are deployed somewhere remotely or are being served locally, can
+have their methods called using the `apply-remote` command. This command is
+similar to [apply](/doc/command-reference/apply), with the only difference being
+the model is deployed remotely using a deployment, or served locally. To access
+the methods of the `served` model, a `client` is needed. Currently, the
+available clients are `http` and `rmq` - which are used to launch requests
+against the `fastapi` and `rmq` server types, correspondingly.
 
 ## Options
 
+- `--raw <boolean>` - Pass values as-is without serializers [default: False]
 - `-d <path>`, `--data <path>` - Path to MLEM dataset [required]
 - `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
 - `--rev <commitish>` - Repo revision to use [default: (none)]

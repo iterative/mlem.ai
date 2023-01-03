@@ -13,29 +13,7 @@
   {
     "slug": "get-started",
     "label": "Get Started",
-    "source": "get-started/index.md",
-    "children": [
-      {
-        "slug": "applying",
-        "label": "Applying models",
-        "source": "applying.md"
-      },
-      {
-        "slug": "serving",
-        "label": "Serving models",
-        "source": "serving.md"
-      },
-      {
-        "slug": "building",
-        "label": "Building models",
-        "source": "building.md"
-      },
-      {
-        "slug": "deploying",
-        "label": "Deploying models",
-        "source": "deploying.md"
-      }
-    ]
+    "source": "get-started/index.md"
   },
   {
     "slug": "use-cases",
@@ -86,6 +64,11 @@
             "slug": "fastapi",
             "label": "FastAPI",
             "source": "fastapi.md"
+          },
+          {
+            "slug": "streamlit",
+            "label": "Streamlit",
+            "source": "streamlit.md"
           },
           {
             "slug": "rabbitmq",
@@ -228,6 +211,11 @@
         "source": "clone.md"
       },
       {
+        "slug": "config",
+        "label": "config",
+        "source": "config.md"
+      },
+      {
         "slug": "declare",
         "label": "declare",
         "source": "declare.md"
@@ -278,6 +266,11 @@
         "slug": "link",
         "label": "link",
         "source": "link.md"
+      },
+      {
+        "slug": "migrate",
+        "label": "migrate",
+        "source": "migrate.md"
       },
       {
         "slug": "pprint",
@@ -523,6 +516,11 @@
             "slug": "sagemaker",
             "label": "SageMaker",
             "source": "sagemaker.md"
+          },
+          {
+            "slug": "streamlit",
+            "label": "Streamlit",
+            "source": "streamlit.md"
           }
         ]
       },
@@ -562,6 +560,11 @@
             "slug": "builtin",
             "label": "Builtin",
             "source": "builtin.md"
+          },
+          {
+            "slug": "git",
+            "label": "git",
+            "source": "git.md"
           },
           {
             "slug": "github",
@@ -639,7 +642,19 @@
       {
         "slug": "user-guide",
         "label": "User Guide",
-        "source": "user-guide.md"
+        "source": "user-guide/index.md",
+        "children": [
+          {
+            "slug": "dvc",
+            "label": "GTO with DVC",
+            "source": "dvc.md"
+          },
+          {
+            "slug": "mlem",
+            "label": "GTO with MLEM",
+            "source": "mlem.md"
+          }
+        ]
       },
       {
         "slug": "command-reference",
@@ -662,11 +677,6 @@
             "label": "check-ref"
           },
           {
-            "slug": "config",
-            "source": "config.md",
-            "label": "config"
-          },
-          {
             "slug": "deprecate",
             "source": "deprecate.md",
             "label": "deprecate"
@@ -675,6 +685,11 @@
             "slug": "describe",
             "source": "describe.md",
             "label": "describe"
+          },
+          {
+            "slug": "doctor",
+            "source": "doctor.md",
+            "label": "doctor"
           },
           {
             "slug": "history",

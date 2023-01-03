@@ -69,7 +69,7 @@ res = client.predict(data)
 
 Or run `deployment apply` from command line:
 
-```bash
+```cli
 $ mlem deployment apply <name> <data>
 ```
 
@@ -83,7 +83,7 @@ parameters in VCS and use it in CI/CD pipelines more easily.
 
 To create deployment declaration, we will use `declare` command:
 
-```bash
+```cli
 $ mlem declare deployment <deployment type> <name> --some_option option_value
 ```
 
@@ -98,7 +98,7 @@ options.
 Now you can actually run the deployment process just by referencing your
 declaration:
 
-```bash
+```cli
 $ mlem deployment run --load <name>
 ```
 
@@ -141,10 +141,10 @@ databases, key-value stores etc. Please express your interest in them via
 issues.
 
 Setting up remote state manager is a lot like setting DVC remote. All you need
-to do is provide uri where you want to store state files. E.g. for s3 it will
+to do is provide a URI where you want to store state files. E.g. for s3 it will
 look like this
 
-```bash
+```cli
 $ mlem config set core.state.uri s3://bucket/path
 ```
 

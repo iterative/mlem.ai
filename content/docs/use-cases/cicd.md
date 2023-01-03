@@ -59,7 +59,7 @@ jobs:
 ```
 
 Learn more about building (packaging) ML models
-[here](/doc/get-started/building).
+[here](/doc/user-guide/building).
 
 ## Deploy an ML model
 
@@ -98,4 +98,4 @@ jobs:
           mlem deployment run --load myservice.mlem --model my-model
 ```
 
-Learn more about deploying ML models [here](/doc/get-started/deploying).
+Learn more about deploying ML models [here](/doc/user-guide/deploying).

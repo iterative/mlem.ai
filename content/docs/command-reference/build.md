@@ -11,9 +11,12 @@ usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>]
                   [<builder> [builder options] | --load <declaration>]
 
 Builtin builders:
+- conda
 - docker
 - docker_dir
 - pip
+- requirements
+- venv
 - whl
 ```
 
@@ -34,5 +37,5 @@ images.
 
 ## Examples
 
-For examples, please refer to [Get Started](/doc/get-started/building) or
-[User Guide](/doc/user-guide/building).
+For examples, please refer to the
+[Building User Guide](/doc/user-guide/building).

@@ -32,13 +32,14 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 24px 0;
+    padding: 10px;
     list-style: none;
 
     @media screen(md) {
-      flex-wrap: nowrap;
-      justify-content: space-between;
       margin: 34px 0 0;
+      li {
+        flex-basis: 20%;
+      }
     }
 
     @media screen(lg) {
@@ -52,7 +53,7 @@
 
     @media screen(md) {
       width: var(--width-md);
-      margin: 0;
+      margin: 0 auto 10px;
     }
 
     @media screen(lg) {
