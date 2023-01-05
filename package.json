@@ -82,11 +82,6 @@
     "gatsby"
   ],
   "license": "0BSD",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,ts,tsx,json}": "eslint",
     "*.{js,json,css,md}": "prettier --write"
