@@ -30,12 +30,8 @@
   }
 }
 
-#markdown-root {
-  margin-top: 0;
-}
-
 html {
-  @apply scroll-pt-16;
+  @apply scroll-pt-[4.5rem];
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
@@ -107,4 +103,8 @@ body.user-is-tabbing .link-with-focus {
 /* Prevent mobile browsers from changing font-size */
 * {
   text-size-adjust: none;
+}
+
+[class^='styles-module--innerSidebar'] {
+  @apply pt-20;
 }
