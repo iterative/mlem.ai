@@ -148,32 +148,28 @@ const logosData: Array<ILogo> = [
     widthMd: 88,
     widthLg: 124,
     src: onnxLogo,
-    alt: 'ONNX logo',
-    link: '/doc/user-guide/models'
+    alt: 'ONNX logo'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: tensorflowLogo,
-    alt: 'Tensorflow logo',
-    link: '/doc/user-guide/models'
+    alt: 'Tensorflow logo'
   },
   {
     widthSm: 60,
     widthMd: 79,
     widthLg: 112,
     src: pytorchLogo,
-    alt: 'PyTorch logo',
-    link: '/doc/user-guide/models'
+    alt: 'PyTorch logo'
   },
   {
     widthSm: 48,
     widthMd: 64,
     widthLg: 90,
     src: dmlcXgboostLogo,
-    alt: 'dmlc xgboost logo',
-    link: '/doc/user-guide/models'
+    alt: 'dmlc xgboost logo'
   },
   {
     widthSm: 38,
@@ -181,31 +177,28 @@ const logosData: Array<ILogo> = [
     widthLg: 71,
     src: scikitLearnLogo,
     alt: 'scikit learn logo',
-    link: '/doc/user-guide/models'
+    link: '/doc/get-started'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 110,
     src: lightGbmLogo,
-    alt: 'Light GBM logo',
-    link: '/doc/user-guide/models'
+    alt: 'Light GBM logo'
   },
   {
     widthSm: 54,
     widthMd: 64,
     widthLg: 90,
     src: kerasLogo,
-    alt: 'Keras logo',
-    link: '/doc/user-guide/models'
+    alt: 'Keras logo'
   },
   {
     widthSm: 81,
     widthMd: 96,
     widthLg: 135,
     src: catboostLogo,
-    alt: 'Catboost logo',
-    link: '/doc/user-guide/models'
+    alt: 'Catboost logo'
   },
   {
     widthSm: 66,
