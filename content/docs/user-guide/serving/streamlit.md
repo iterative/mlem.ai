@@ -22,12 +22,24 @@ $ pip install fastapi uvicorn streamlit streamlit_pydantic
 ```cli
 $ mlem serve streamlit \
   --model https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+Starting streamlit server...
+🖇️  Adding route for /predict
+🖇️  Adding route for /predict_proba
+Checkout openapi docs at <http://0.0.0.0:8080/docs>
+INFO:     Started server process [42223]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://0.0.0.0:80
 ```
 
-Serving a model with Streamlit automatically expose [FastAPI] endpoint as well.
+Serving a model with Streamlit automatically expose
+[FastAPI](/doc/user-guide/serving/fastapi) endpoint as well.
 You can use this if you want to have two interfaces simultaneously.
-
-[fastapi]: /doc/user-guide/serving/fastapi
 
 ### Running Streamlit model server from code
 

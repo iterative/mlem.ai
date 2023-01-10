@@ -41,6 +41,15 @@ $ mlem serve fastapi \
   --model https://github.com/iterative/example-mlem-get-started/models/rf \
   --host 0.0.0.0 --port 8000
 )
+⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/tree/main/models/rf.mlem
+Starting fastapi server...
+🖇️  Adding route for /predict
+🖇️  Adding route for /predict_proba
+Checkout openapi docs at <http://0.0.0.0:8000/docs>
+INFO:     Started server process [86184]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 ```
 
 ### Applying data to running FastAPI server from API

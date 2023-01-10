@@ -22,8 +22,9 @@ configuration. You just need your model saved with MLEM and an environment you
 want to deploy to
 
 ```yaml
-$ mlem deployment run <env type> <name> \ --model <model name> \ --some_option
-option_value
+$ mlem deployment run <env type> <name> \
+  --model <model name> \
+  --some_option option_value
 ```
 
 A MLEM Object named `<name>` of type `deployment` will be created and deployed
