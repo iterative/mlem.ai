@@ -38,8 +38,8 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
 Serving a model with Streamlit automatically expose
-[FastAPI](/doc/user-guide/serving/fastapi) endpoint as well.
-You can use this if you want to have two interfaces simultaneously.
+[FastAPI](/doc/user-guide/serving/fastapi) endpoint as well. You can use this if
+you want to have two interfaces simultaneously.
 
 ### Running Streamlit model server from code
 
