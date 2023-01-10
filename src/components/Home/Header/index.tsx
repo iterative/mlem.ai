@@ -124,8 +124,7 @@ const logosData: Array<ILogo> = [
     widthMd: 88,
     widthLg: 124,
     src: rabbitmqLogo,
-    alt: 'RabbitMQ logo',
-    link: '/doc/user-guide/serving/rabbitmq'
+    alt: 'RabbitMQ logo'
   },
   {
     widthSm: 66,
