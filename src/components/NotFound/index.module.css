@@ -7,7 +7,7 @@
   justify-content: center;
 
   &__title {
-    @apply text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
+    @apply my-5 text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
   }
 
   &__text {

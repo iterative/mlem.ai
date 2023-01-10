@@ -10,7 +10,7 @@ const PageLayout: React.FC<
 > = props => {
   return (
     <MainLayout {...props}>
-      <div className={cn(styles.layout, 'mt-20')}>
+      <div className={cn(styles.layout, 'pt-24')}>
         <div className={styles.layout__container}>{props.children}</div>
       </div>
     </MainLayout>
