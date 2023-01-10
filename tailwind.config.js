@@ -104,7 +104,7 @@ module.exports = {
       8: '8px'
     },
     screens: {
-      xs: '414px',
+      xs,
       ...defaultTheme.screens,
       ...maxScreens
     },
