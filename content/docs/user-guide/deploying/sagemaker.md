@@ -7,9 +7,9 @@ more about SageMaker
 ## Requirements
 
 ```cli
-pip install mlem[sagemaker]
+$ pip install mlem[sagemaker]
 # or
-pip install sagemaker boto3
+$ pip install sagemaker boto3
 ```
 
 To be able to deploy to SageMaker you need to do some AWS configuration. This is

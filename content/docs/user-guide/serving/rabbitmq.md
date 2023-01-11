@@ -10,7 +10,7 @@ predictions.
 ## Requirements
 
 ```cli
-pip install mlem[rmq]
+$ pip install mlem[rmq]
 # or
-pip install pika
+$ pip install pika
 ```

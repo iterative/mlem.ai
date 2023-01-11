@@ -12,7 +12,7 @@
 ## Requirements
 
 ```cli
-pip install mlem[xgboost]
+$ pip install mlem[xgboost]
 # or
-pip install xgboost
+$ pip install xgboost
 ```

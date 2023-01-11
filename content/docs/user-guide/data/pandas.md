@@ -10,7 +10,7 @@ ImportHook implementation for files saved with pandas
 ## Requirements
 
 ```cli
-pip install mlem[pandas]
+$ pip install mlem[pandas]
 # or
-pip install pandas
+$ pip install pandas
 ```

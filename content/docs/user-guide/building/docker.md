@@ -6,9 +6,9 @@ Building a docker image from the model or preparing a folder ready for running
 ## Requirements
 
 ```cli
-pip install mlem[docker]
+$ pip install mlem[docker]
 # or
-pip install docker
+$ pip install docker
 ```
 
 If you want to build images locally, you may want to install

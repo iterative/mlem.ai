@@ -12,7 +12,7 @@
 ## Requirements
 
 ```cli
-pip install mlem[lightgbm]
+$ pip install mlem[lightgbm]
 # or
-pip install lightgbm
+$ pip install lightgbm
 ```

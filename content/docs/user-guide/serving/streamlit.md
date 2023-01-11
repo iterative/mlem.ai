@@ -9,10 +9,10 @@ auto-generated UI.
 
 ## Requirements
 
-```bash
-pip install mlem[streamlit]
+```cli
+$ pip install mlem[streamlit]
 # or
-pip install fastapi uvicorn streamlit streamlit_pydantic
+$ pip install fastapi uvicorn streamlit streamlit_pydantic
 ```
 
 ## Examples
@@ -37,8 +37,9 @@ INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
   URL: http://0.0.0.0:80
 ```
 
-Serving a model with Streamlit automatically expose FastAPI endpoint as well.
-You can use this if you want to have two interfaces simultaneously.
+Serving a model with Streamlit automatically expose
+[FastAPI](/doc/user-guide/serving/fastapi) endpoint as well. You can use this if
+you want to have two interfaces simultaneously.
 
 ### Running Streamlit model server from code
 

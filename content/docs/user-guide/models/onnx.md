@@ -11,7 +11,7 @@
 ## Requirements
 
 ```cli
-pip install mlem[onnx]
+$ pip install mlem[onnx]
 # or
-pip install onnx
+$ pip install onnx
 ```

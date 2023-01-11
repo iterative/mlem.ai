@@ -48,10 +48,10 @@ def get_extension_reqs(ext: Extension):
         return ""
     extra = ext.extra or ext.module.split(".")[-1]
     reqs = " ".join(ext.reqs_packages)
-    return f"""```bash
-pip install mlem[{extra}]
+    return f"""```cli
+$ pip install mlem[{extra}]
 # or
-pip install {reqs}
+$ pip install {reqs}
 ```"""
 
 
