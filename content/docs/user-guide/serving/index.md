@@ -23,13 +23,18 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 ```
 
-Servers automatically create endpoints from model methods with payload schemas
-corresponding to serialized dataset types.
+<admon type="tip">
+
+Servers automatically create endpoints from model methods using the
+`sample_data` argument provided to [`mlem.api.save`](/doc/api-reference/save) to
+infer the payload schemas.
+
+</admon>
 
 Note, that serving the model requires you to have the correct packages to be
-installed. You can check out how to create a `venv` with right packages with
-MLEM, or how to serve the model in a
-[Docker container](/doc/user-guide/deploying/docker).
+installed. You can check out how to create
+[a `venv` with right packages](/doc/user-guide/building/venv) with MLEM, or how
+to serve the model in a [Docker container](/doc/user-guide/deploying/docker).
 
 ## Making requests
 

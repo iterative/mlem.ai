@@ -16,21 +16,30 @@ $ pip install mlem[kubernetes]
 $ pip install kubernetes docker
 ```
 
-### Preparation
+### Prerequisites
 
-- Make sure you have a Kubernetes cluster accessible, with the corresponding
-  kubeconfig file available.
-- The cluster has access to a docker registry so as to pull docker images.
+In order to deploy your model-server on a K8s cluster, you must first have a
+ready setup. Namely:
+
+- Make sure you have a Kubernetes cluster properly set up and accessible, with
+  the corresponding kubeconfig file available. It doesn't matter which flavour -
+  vanilla, GKE, EKS, AKS, Openshift, etc. If you're using multiple kubeconfig or
+  a non-default kubeconfig location, check out
+  [the section below](#specifying-a-custom-kubeconfig).
+- Your local machine and the target cluster both have access to a docker
+  registry. MLEM will build and push the image from your executor machine, and
+  the k8s cluster will need to have access and permissions to pull those images.
 - Relevant permissions to create resources on the cluster -- deployment,
   service, etc. are present.
-- Nodes are accessible and reachable, with an external IP address (valid for a
-  NodePort service, more details to come below).
+- Nodes are accessible and reachable, with some external IP address (if you're
+  using a NodePort service to expose your server, more details below).
 
 <admon type="tip">
 
-See the
+As a quick sanity command - try runnign `kubectl get pods` to check your cluster
+is reachable and kubeconfig configured correctly. See the
 [Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/) to
-learn about the concepts above.
+learn more about the concepts above.
 
 </admon>
 
@@ -46,9 +55,7 @@ Once this is done, one can use the usual workflow of
 [`mlem deployment run`](/doc/command-reference/deployment/run) to deploy on
 Kubernetes.
 
-<details>
-
-### ⚙️ About which cluster to use
+### Specifying a custom kubeconfig
 
 MLEM tries to find the kubeconfig file from the environment variable
 `KUBECONFIG` or the default location `~/.kube/config`.
@@ -56,8 +63,6 @@ MLEM tries to find the kubeconfig file from the environment variable
 If you need to use another path, one can pass it with
 
 `--kube_config_file_path ...`
-
-</details>
 
 <admon type="tip">
 
