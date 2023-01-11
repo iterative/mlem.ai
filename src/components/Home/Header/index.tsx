@@ -26,10 +26,20 @@ import scikitLearnLogo from '../../../images/logo/scikit-learn.png'
 import streamlitLogo from '../../../images/logo/streamlit.png'
 import tensorflowLogo from '../../../images/logo/tensorflow.png'
 import * as styles from './index.module.css'
+import Link from '@dvcorg/gatsby-theme-iterative/src/components/Link'
 
 interface ITypedRef {
   reset: () => void
   destroy: () => void
+}
+
+interface ILogo {
+  src: string
+  widthSm: number
+  widthMd: number
+  widthLg: number
+  alt: string
+  link?: string
 }
 
 const cliCaptionData: Array<{ bold: string; text: string }> = [
@@ -53,54 +63,54 @@ const cliCaptionData: Array<{ bold: string; text: string }> = [
   }
 ]
 
-const logosData: Array<{
-  src: string
-  widthSm: number
-  widthMd: number
-  widthLg: number
-  alt: string
-}> = [
+const logosData: Array<ILogo> = [
   {
-    widthSm: 66,
-    widthMd: 88,
-    widthLg: 136,
+    widthSm: 74,
+    widthMd: 96,
+    widthLg: 144,
     src: fastapiLogo,
-    alt: 'FastAPI logo'
+    alt: 'FastAPI logo',
+    link: '/doc/user-guide/serving/fastapi'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: dockerLogo,
-    alt: 'Docker logo'
+    alt: 'Docker logo',
+    link: '/doc/user-guide/building/docker'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: streamlitLogo,
-    alt: 'Streamlit logo'
+    alt: 'Streamlit logo',
+    link: '/doc/user-guide/serving/streamlit'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: herokuLogo,
-    alt: 'Heroku logo'
+    alt: 'Heroku logo',
+    link: '/doc/user-guide/deploying/heroku'
   },
   {
     widthSm: 55,
     widthMd: 75,
     widthLg: 108,
     src: kubernetesLogo,
-    alt: 'Kubernetes logo'
+    alt: 'Kubernetes logo',
+    link: '/doc/user-guide/deploying/kubernetes'
   },
   {
     widthSm: 66,
     widthMd: 88,
     widthLg: 124,
     src: sagemakerLogo,
-    alt: 'Sagemaker logo'
+    alt: 'Sagemaker logo',
+    link: '/doc/user-guide/deploying/sagemaker'
   },
   {
     widthSm: 66,
@@ -121,14 +131,16 @@ const logosData: Array<{
     widthMd: 88,
     widthLg: 124,
     src: pythonLogo,
-    alt: 'Python logo'
+    alt: 'Python logo',
+    link: '/doc/user-guide/building/pip'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 110,
     src: condaLogo,
-    alt: 'Conda logo'
+    alt: 'Conda logo',
+    link: '/doc/user-guide/building/conda'
   },
   {
     widthSm: 66,
@@ -163,7 +175,8 @@ const logosData: Array<{
     widthMd: 50,
     widthLg: 71,
     src: scikitLearnLogo,
-    alt: 'scikit learn logo'
+    alt: 'scikit learn logo',
+    link: '/doc/get-started'
   },
   {
     widthSm: 66,
@@ -191,16 +204,41 @@ const logosData: Array<{
     widthMd: 78,
     widthLg: 120,
     src: numpyLogo,
-    alt: 'Numpy logo'
+    alt: 'Numpy logo',
+    link: '/doc/user-guide/data'
   },
   {
     widthSm: 66,
     widthMd: 78,
     widthLg: 110,
     src: pandasLogo,
-    alt: 'Pandas logo'
+    alt: 'Pandas logo',
+    link: '/doc/user-guide/data'
   }
 ]
+
+const LogoImage = ({
+  widthSm,
+  widthMd,
+  widthLg,
+  src,
+  alt,
+  className
+}: ILogo & { className?: string }) => (
+  <img
+    alt={alt}
+    src={src}
+    className={cn(styles.header__logo, className)}
+    width={widthMd}
+    style={
+      {
+        '--width-sm': `${widthSm}px`,
+        '--width-md': `${widthMd}px`,
+        '--width-lg': `${widthLg}px`
+      } as React.CSSProperties
+    }
+  />
+)
 
 interface ITerminalSlideData {
   allTerminalSlide: {
@@ -369,24 +407,24 @@ const Header: React.FC = () => {
         </div>
       </div>
       <ul className={styles.header__logos}>
-        {logosData.map(({ widthSm, widthMd, widthLg, src, alt }, i) => (
-          <li key={i}>
-            <img
-              alt={alt}
-              src={src}
-              className={styles.header__logo}
-              width={widthMd}
-              height={35}
-              style={
-                {
-                  '--width-sm': `${widthSm}px`,
-                  '--width-md': `${widthMd}px`,
-                  '--width-lg': `${widthLg}px`
-                } as React.CSSProperties
-              }
-            />
-          </li>
-        ))}
+        {logosData.map((logoDetails, i) =>
+          logoDetails?.link ? (
+            <Link
+              href={logoDetails.link}
+              key={i}
+              className={cn(
+                styles.header__list,
+                'hover:border-purple-800 active:bg-gray-200 transition-colors'
+              )}
+            >
+              <LogoImage {...logoDetails} />
+            </Link>
+          ) : (
+            <li key={i} className={cn(styles.header__list)}>
+              <LogoImage {...logoDetails} />
+            </li>
+          )
+        )}
       </ul>
     </div>
   )
