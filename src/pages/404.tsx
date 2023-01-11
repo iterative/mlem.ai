@@ -1,11 +1,15 @@
+import SEO from '@dvcorg/gatsby-theme-iterative/src/components/SEO'
+import { PageProps } from 'gatsby'
 import * as React from 'react'
-import Layout from '../components/Layout'
-import NotFound from '../components/NotFound'
 
-const NotFoundPage: React.FC = () => (
-  <Layout title="Page not found!">
+import NotFound from '../components/NotFound'
+import PageLayout from '../components/PageLayout'
+
+const NotFoundPage: React.FC<PageProps> = props => (
+  <PageLayout {...props}>
+    <SEO title="Page not found!" />
     <NotFound />
-  </Layout>
+  </PageLayout>
 )
 
 export default NotFoundPage

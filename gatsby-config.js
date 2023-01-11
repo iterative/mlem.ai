@@ -35,17 +35,7 @@ const plugins = [
     resolve: '@dvcorg/gatsby-theme-iterative',
     options: {
       simpleLinkerTerms: require('./content/linked-terms'),
-      cssBase: path.join(
-        'src',
-        '@dvcorg',
-        'gatsby-theme-iterative',
-        'components',
-        'Page',
-        'base.css'
-      ),
-      customMediaConfig: {
-        importFrom: './src/styles/media.css'
-      }
+      glossaryInstanceName: false
     }
   },
   {
@@ -107,8 +97,7 @@ const plugins = [
       ]
     }
   },
-  'gatsby-plugin-meta-redirect',
-  '@sentry/gatsby'
+  'gatsby-plugin-meta-redirect'
 ]
 
 module.exports = {

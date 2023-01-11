@@ -5,10 +5,10 @@ import * as styles from './index.module.css'
 
 const Home: React.FC = () => {
   return (
-    <main className={styles.homeMain}>
+    <div className={styles.homeMain}>
       <Header />
       <Features />
-    </main>
+    </div>
   )
 }
 

@@ -1,16 +1,17 @@
 import React from 'react'
 import cn from 'classnames'
-import { ReactComponent as StudioSVG } from '../../../images/icons/studio.svg'
-import { ReactComponent as DvcSVG } from '../../../images/icons/dvc.svg'
-import { ReactComponent as CmlSVG } from '../../../images/icons/cml.svg'
-import { ReactComponent as MlemSVG } from '../../../images/icons/mlem.svg'
-import { ReactComponent as ExternalLinkSVG } from '../../../images/icons/external-link.svg'
-import { ReactComponent as DownSVG } from '../../../images/icons/down.svg'
-import { ReactComponent as VsCodeSVG } from '../../../images/icons/vscode.svg'
-import SmartLink from '../../SmartLink'
+import { ReactComponent as StudioSVG } from '../../../../../images/icons/studio.svg'
+import { ReactComponent as DvcSVG } from '../../../../../images/icons/dvc.svg'
+import { ReactComponent as CmlSVG } from '../../../../../images/icons/cml.svg'
+import { ReactComponent as MlemSVG } from '../../../../../images/icons/mlem.svg'
+import { ReactComponent as ExternalLinkSVG } from '../../../../../images/icons/external-link.svg'
+import { ReactComponent as DownSVG } from '../../../../../images/icons/down.svg'
+import { ReactComponent as VsCodeSVG } from '../../../../../images/icons/vscode.svg'
+
+import SmartLink from '../../../../../components/SmartLink'
 import * as styles from './index.module.css'
-import usePopup from '../../../utils/hooks/usePopup'
-import onSelectKey from '../../../utils/onSelectKey'
+import usePopup from '../../../../../utils/hooks/usePopup'
+import onSelectKey from '../../../../../utils/onSelectKey'
 
 interface IOtherToolsPopupProps {
   navItemClassName: string

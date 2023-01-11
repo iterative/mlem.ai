@@ -21,16 +21,17 @@
   --layout-alert-height: 35px;
   --layout-header-height: 52px;
 
-  @media (--md-scr) {
+  @media screen(md) {
     --layout-header-height: 60px;
   }
 
-  @media (--lg-scr) {
+  @media screen(lg) {
     --layout-header-height: 68px;
   }
 }
 
 html {
+  @apply scroll-pt-[4.5rem];
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
@@ -41,6 +42,13 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-black);
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
 }
 
 /* Focus state styles for interactive elements */
@@ -95,4 +103,8 @@ body.user-is-tabbing .link-with-focus {
 /* Prevent mobile browsers from changing font-size */
 * {
   text-size-adjust: none;
+}
+
+[class^='styles-module--innerSidebar'] {
+  @apply pt-20;
 }

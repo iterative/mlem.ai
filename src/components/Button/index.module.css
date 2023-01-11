@@ -10,12 +10,12 @@
   letter-spacing: 0.5px;
   @apply font-medium rounded-4 md:rounded-6 lg:rounded-8 text-lg leading-4 lg:text-lg;
 
-  @media (--md-scr) {
+  @media screen(md) {
     width: fit-content;
     padding: 12px 16px;
   }
 
-  @media (--lg-scr) {
+  @media screen(lg) {
     padding: 16px 20px;
   }
 
@@ -85,11 +85,11 @@
     height: min-content;
     width: min-content;
 
-    @media (--md-scr) {
+    @media screen(md) {
       padding: 12px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       padding: 16px;
     }
 
@@ -102,7 +102,7 @@
     fill: currentColor;
     margin-right: 8px;
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       margin-right: 12px;
     }
 

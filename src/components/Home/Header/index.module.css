@@ -5,11 +5,11 @@
     margin: 0;
     @apply text-gradient bg-teal-purple-gradient text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
 
-    @media (--md-scr) {
+    @media screen(md) {
       margin-top: 8px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       margin-top: 16px;
       max-width: 720px;
     }
@@ -20,7 +20,7 @@
       @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
       animation-name: 'blink';
 
-      @media (--lg-scr) {
+      @media screen(lg) {
         top: -3px;
       }
     }
@@ -35,14 +35,14 @@
     padding: 10px;
     list-style: none;
 
-    @media (--md-scr) {
+    @media screen(md) {
       margin: 34px 0 0;
       li {
         flex-basis: 20%;
       }
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       margin: 12px -40px 0;
     }
   }
@@ -51,19 +51,19 @@
     width: var(--width-sm);
     margin: 12px 16px 0 0;
 
-    @media (--md-scr) {
+    @media screen(md) {
       width: var(--width-md);
       margin: 0 auto 10px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       width: var(--width-lg);
     }
   }
 }
 
 .main {
-  @media (--md-scr) {
+  @media screen(md) {
     display: grid;
     grid-template-areas: 'captions slides' 'buttons slides';
     grid-template-columns: 1fr 336px;
@@ -72,7 +72,7 @@
     column-gap: 16px;
   }
 
-  @media (--lg-scr) {
+  @media screen(lg) {
     grid-template-columns: calc((100% - 64px) / 2) 1fr;
     column-gap: 24px;
     margin: 48px -80px 0 -18px;
@@ -89,24 +89,24 @@
   &__buttons {
     grid-area: buttons;
 
-    @media (--md-scr) {
+    @media screen(md) {
       display: flex;
       align-items: flex-start;
       padding: 12px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       padding: 16px;
     }
 
     .button {
       margin-top: 8px;
 
-      @media (--md-scr) {
+      @media screen(md) {
         margin: 0 12px 0 0;
       }
 
-      @media (--lg-scr) {
+      @media screen(lg) {
         margin: 0 16px 0 0;
       }
 
@@ -125,7 +125,7 @@
     padding: 24px 0 16px 0;
     margin: 0 0 0 -16px;
 
-    @media (--md-scr) {
+    @media screen(md) {
       width: 320px;
       height: 234px;
       padding: 34px 20px 34px 16px;
@@ -133,7 +133,7 @@
       @apply rounded-4;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       box-sizing: border-box;
       width: calc(100% + 18px);
       height: calc(244px + 32px);
@@ -164,17 +164,17 @@
         opacity: 1;
       }
 
-      @media (--md-scr) {
+      @media screen(md) {
         width: 320px;
         opacity: 0;
       }
 
-      @media (--lg-scr) {
+      @media screen(lg) {
         width: 100%;
       }
     }
 
-    @media (--md-scr) {
+    @media screen(md) {
       right: calc((100% + 8px) * var(--selected-i));
     }
   }
@@ -198,7 +198,7 @@
       }
     }
 
-    @media (--md-scr) {
+    @media screen(md) {
       display: none;
     }
   }
@@ -211,14 +211,14 @@
     right: calc((100% + 16px) * var(--selected-i));
     text-align: left;
 
-    @media (--md-scr) {
+    @media screen(md) {
       flex-direction: column;
       position: static;
       width: 100%;
       margin: 34px 0 0;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       margin: 0;
     }
 
@@ -228,7 +228,7 @@
       flex-direction: column;
       border-radius: 8px;
 
-      @media (--md-scr) {
+      @media screen(md) {
         width: 100%;
         padding: 12px;
 
@@ -241,7 +241,7 @@
         }
       }
 
-      @media (--lg-scr) {
+      @media screen(lg) {
         padding: 16px;
       }
 
@@ -251,18 +251,18 @@
         margin: 8px 0;
         @apply border-solid border-l-2;
 
-        @media (--lg-scr) {
+        @media screen(lg) {
           padding: 8px 16px;
         }
 
         .cli__text {
-          @media (--md-scr) {
+          @media screen(md) {
             margin: 2px 0 0;
             height: auto;
             opacity: 1;
           }
 
-          @media (--lg-scr) {
+          @media screen(lg) {
             margin: 4px 0 0;
           }
         }
@@ -282,7 +282,7 @@
     @apply text-gray-600 text-base leading-7 lg:text-lg lg:leading-8;
     margin: 4px 0 0 0;
 
-    @media (--md-scr) {
+    @media screen(md) {
       margin: 0;
       transition: height 0.2s ease-in-out, margin 0.2s ease-in-out,
         opacity 0.2s ease-in-out;

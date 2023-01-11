@@ -1,8 +1,13 @@
+const themeConfig = require('@dvcorg/gatsby-theme-iterative/tailwind.config')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { lg, xs, xl, ...maxScreens } = themeConfig.theme.extend.screens
+
 module.exports = {
   content: [
+    ...themeConfig.content,
     './src/**/*.js',
     './src/**/*.jsx',
     './src/**/*.ts',
@@ -99,8 +104,9 @@ module.exports = {
       8: '8px'
     },
     screens: {
-      xs: '414px',
-      ...defaultTheme.screens
+      xs,
+      ...defaultTheme.screens,
+      ...maxScreens
     },
     extend: {
       borderOpacity: {
@@ -144,6 +150,7 @@ module.exports = {
     extend: {}
   },
   plugins: [
+    ...themeConfig.plugins,
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.text-gradient': {

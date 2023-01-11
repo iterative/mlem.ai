@@ -1,0 +1,14 @@
+.layoutWrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.layoutContent {
+  flex: 1;
+}
+
+.mainLayout {
+  font-weight: 400 !important;
+  background-color: #fff;
+}

@@ -38,22 +38,22 @@
   padding: 8px 16px;
   justify-content: center;
 
-  @media (--md-scr) {
+  @media screen(md) {
     padding: 8px 32px;
   }
 
-  @media (--lg-scr) {
+  @media screen(lg) {
     padding: 8px 80px;
   }
 
   &__brandLogo {
     width: 90px;
 
-    @media (--md-scr) {
+    @media screen(md) {
       width: 108px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       width: 115px;
     }
   }
@@ -79,11 +79,11 @@
     -moz-text-fill-color: transparent;
     @apply bg-orange-purple-gradient text-tiny md:text-base leading-6;
 
-    @media (--md-scr) {
+    @media screen(md) {
       padding: 12px;
     }
 
-    @media (--lg-scr) {
+    @media screen(lg) {
       padding: 16px;
     }
 
@@ -98,14 +98,14 @@
     > * {
       margin-right: 8px;
 
-      @media (--md-scr) {
+      @media screen(md) {
         margin-right: 24px;
       }
 
       &:last-child {
         margin-right: 0;
 
-        @media (--md-scr) {
+        @media screen(md) {
           margin-right: 12px;
         }
       }
@@ -117,14 +117,14 @@
     align-items: center;
     @apply text-tiny md:text-lg leading-6 text-gray-900;
 
-    @media (--sm-scr) {
+    @media screen(sm) {
       display: flex;
     }
 
     svg {
       margin-left: 5px;
 
-      @media (--lg-scr) {
+      @media screen(lg) {
         margin-left: 7px;
         width: 18px;
         height: 18px;
@@ -135,7 +135,7 @@
   &__button {
     display: none;
 
-    @media (--md-scr) {
+    @media screen(md) {
       display: flex;
     }
   }
@@ -146,7 +146,7 @@
     padding: 0;
     list-style: none;
 
-    @media (--md-scr) {
+    @media screen(md) {
       margin-right: 12px;
     }
   }

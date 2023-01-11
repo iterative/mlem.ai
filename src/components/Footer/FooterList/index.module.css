@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 50%;
 
-  @media (--md-scr) {
+  @media screen(md) {
     width: initial;
   }
 
@@ -16,7 +16,7 @@
   &__links {
     margin-bottom: 24px;
 
-    @media (--md-scr) {
+    @media screen(md) {
       display: grid;
       grid-template-rows: auto auto auto;
       grid-auto-flow: column;
@@ -30,7 +30,7 @@
     align-items: center;
     @apply text-gray-750 text-base leading-12 md:leading-7;
 
-    @media (--md-scr) {
+    @media screen(md) {
       padding: 5px 0;
     }
 
@@ -46,7 +46,7 @@
         fill: currentColor;
       }
 
-      @media (--md-scr) {
+      @media screen(md) {
         width: 16px;
         height: 16px;
       }
