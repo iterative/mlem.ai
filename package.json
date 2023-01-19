@@ -21,14 +21,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@dvcorg/gatsby-theme-iterative": "^0.3.1",
-    "@dvcorg/websites-server": "^0.0.18",
+    "@dvcorg/gatsby-theme-iterative": "^0.3.2",
+    "@dvcorg/websites-server": "^0.0.19",
     "@octokit/request": "^6.2.2",
     "@svgr/webpack": "6.5.1",
     "autoprefixer": "10.4.13",
     "classnames": "2.3.2",
     "express": "4.18.2",
-    "gatsby": "5.4.1",
+    "gatsby": "5.4.2",
     "gatsby-plugin-image": "3.4.0",
     "gatsby-plugin-manifest": "5.4.0",
     "gatsby-plugin-meta-redirect": "1.1.1",
