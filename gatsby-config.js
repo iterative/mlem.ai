@@ -6,7 +6,7 @@ const redirectsMiddleware = require('@dvcorg/websites-server/src/middleware/redi
 
 const siteMetadata = {
   title: 'MLEM - Simplifying Machine Learning Model Deployment',
-  description: 'The open-source tool to simplify your ML model deployments',
+  description: 'The Open-Source tool to simplify your ML model deployments',
   siteUrl: process.env.HEROKU_APP_NAME
     ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
     : 'https://mlem.ai',
