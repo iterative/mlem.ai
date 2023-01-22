@@ -306,7 +306,7 @@ const Header: React.FC = () => {
   return (
     <div id="overview" className={styles.header}>
       <h1 className={styles.header__title}>
-        Open-source tool to simplify ML model deployment
+        The open-source tool to simplify your ML model deployments
         <span className={styles.header__titleUnderscore}>_</span>
       </h1>
       <div className={styles.main}>
