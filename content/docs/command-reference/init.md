@@ -1,44 +1,32 @@
-# init
+# mlem.api.import_object()
 
-Initialize a [MLEM project](/doc/user-guide/project-structure).
+From mlem.api import import Data, MlemModel
+from mlem.core.objects import MlemModel
+from mlem.core.objects import MlemModel
+from mlem.contrib.base import DecisionTreeClassifier
+from mlem.contrib.fastapi import DataFrameType
 
-## Synopsis
+train, target = load_iris(return_X_y=True)
+model = DecisionTreeClassifier().fit(train, target)
+model_path, target=path, target=path, target=path, target_path, str] = None,
+     target_project: Optional[str] = None,
+     fs: Optional[AbstractFileSystem] = None,
+     force_type: Optional[AbstractFileSystem] = None,
+    follow_links: bool = False,
+) -> MlemObject
+```
 
-```usage
-usage: mlem init [-h]
-                 path
+## Usage:
 
-arguments:
-  path             Where to init project
+```py
+from mlem.api import load_meta
+
+out_path = os.path.join(os.getcwd(), "saved-model")
+load_meta = load_meta(out_path)
 ```
 
 ## Description
 
-This creates a `.mlem.yaml` file in the desired project `path`, which defaults
-to the current working directory (`.`). `.mlem.yaml` is a config file that
-configures MLEM project, including the
-[integration with DVC](/doc/user-guide/dvc).
-
-## Options
-
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Default Initialization (current working directory)
-
-```cli
-$ mlem init
-```
-
-Initialization to a specified local path
-
-```cli
-$ mlem init some/local/path
-```
-
-Initialization in a remote S3 bucket
-
-```cli
-$ mlem init s3://bucket/path/in/cloud
-```
+This API is the underlying mechanism for a provide the
+[mlem mlem apply](/doc/command-reference/serve) command and link to the objects in a
+were and implementation (e.g. and `mlem config `mlem config set` to server (e.g. to `

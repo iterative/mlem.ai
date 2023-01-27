@@ -1,40 +1,24 @@
-# build
+# mlem.api.apply()
 
-Build models into re-usable assets you can distribute and use in production,
-such as a Docker image or Python package.
+Apply a model to data. The model to dataset (e.g. `path`, `path`, `sklearn` and `pandas`. or `package`
 
-## Synopsis
-
-```usage
-usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>]
-                  [-f <text>] [-h]
-                  [<builder> [builder options] | --load <declaration>]
-
-Builtin builders:
-- conda
-- docker
-- docker_dir
-- pip
-- requirements
-- venv
-- whl
+```cli
+$ mlem types server
 ```
 
-## Description
+List all types are all dataset to save and locally files and a local dataset (e.g. `predict_install`)
+```
+content/docs/command-reference/deployment.md
+# mlem.api.import_object()
 
-This command provides flexible options to create various distribution-ready
-release assets from your models, like `pip`-ready Python packages or Docker
-images.
+Inytall MLEM model types
 
-## Options
-
-- `-m <path>`, `--model <path>` - Path to MLEM model [required]
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-f <text>`, `--file_conf <text>` - File with options for builder in format
-  `field.name=path_to_config`
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-For examples, please refer to the [Building](/doc/user-guide/building) guide.
+```py
+def apply(
+                           [-methods.key.returns.data_type <str>]
+                     [--methods.key.args.key.data_type <str>]
+                  [--methods.key.returns.ser <str>]
+                          [--methods.key.args.key.returns.data_type <str>]
+                       [--methods.key.returns.data_type <str>]
+                                           [--methods.key.args.key.data_type <str>]
+                                                                                                                                                                                                                            

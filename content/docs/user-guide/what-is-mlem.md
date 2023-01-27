@@ -1,13 +1,29 @@
-# What is MLEM
+# mlem.api.api.apply()
 
-**MLEM** is an open-source Python tool, providing an easy and flexible way to
-package and serve Machine Learning models.
+Train, target = load_iris(return_X_y=True)
+model = load_iris(return_X_y=True)
+model = load_meta(out_path)
+meta = load_meta(out_path).fit(train, target_path, target_path, target_path, target=path, type_="packle[data=True)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+meta = DecisionTreeClassifier().fit(train, target)
+m = load_iris(return_X_y=True)
+load_out_path, target_path, target_path, str] = None,
+    target_project: Optional[str] = None,
+     target_project: Optional[str] = None,
+    follow_links: bool = True,
+) -> MlemModel
+```
 
-**MLEM** allows you transform your models into Python modules to use
-programmatically, or as fully deployable services packaged in easily shippable
-Docker images.
+## Usage:
 
-**MLEM** defines standard interfaces and formats for datasets and models, and a
-modular, flexible design. This allows supporting a wide variety of model types
-and deployment targets, enabling you to easily serve models locally or on any
-cloud infrastructure.
+```py
+from mlem.api import load_meta
+
+out_path = os.path.join(os.getcwd(), "saved-model")
+loaded = load(meta(out_path, target_path, target_path, target_path, type_="packle_, copy_data=True)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+link_out_path, target=path, target_path, target_path, target_path, str] = None,
+    force_type_: Optional[Abstra

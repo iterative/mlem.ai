@@ -1,61 +1,29 @@
-# types
+# mlem.api.api.apply()
 
-List different implementations available for a particular MLEM type. If a
-subtype is not provided, list all available MLEM [types].
-
-[types]: /doc/object-reference/mlem-objects#mlem-object-types
-
-## Synopsis
-
-```usage
-usage: mlem types [-h]
-                  [abc] [sub_type]
-
-arguments:
-  [abc]            Subtype to list implementations.
-                   List subtypes if not provided.
-  [sub_type]       Type of `meta` subtype
+Train, target = load_iris(return_X_y=True)
+model = load_iris(return_X_y=True)
+model = load_meta(out_path)
+meta = load_meta(out_path).fit(train, target_path, target_path, target_path, target=path, type_="packle[data=True)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+meta = DecisionTreeClassifier().fit(train, target)
+m = load_iris(return_X_y=True)
+load_out_path, target_path, target_path, str] = None,
+    target_project: Optional[str] = None,
+     target_project: Optional[str] = None,
+    follow_links: bool = True,
+) -> MlemModel
 ```
 
-## Description
+## Usage:
 
-This command can be used to see all available MLEM object types (classes), or to
-list the different implementations available for a specific `SUB_TYPE`
-(argument).
+```py
+from mlem.api import load_meta
 
-This can be useful, for example, to see which types of servers are supported for
-hosting and serving a model (see [Examples](#examples)).
-
-Check out [MLEM ABCs](/doc/object-reference/mlem-abcs) for a list of abstract
-base classes that subclass `mlem.core.base.MlemABC`. These constitute the
-building blocks of MLEM, and can be subclassed to add new functionalities and
-capabilities.
-
-## Options
-
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-List MLEM abstract base classes
-
-```cli
-# List ABCs
-$ mlem types
-...
-```
-
-List available server implementations
-
-```cli
-$ mlem types server
-['rmq', 'heroku', 'fastapi']
-```
-
-List configuration for a particular implementation
-
-```cli
-$ mlem types server fastapi
-[not required] host: str = "0.0.0.0"
-[not required] port: int = 8080
-```
+out_path = os.path.join(os.getcwd(), "saved-model")
+loaded = load(meta(out_path, target_path, target_path, target_path, type_="packle_, copy_data=True)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+link_out_path, target=path, target_path, target_path, target_path, str] = None,
+    force_type_: Optional[Abstra

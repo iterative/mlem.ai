@@ -1,43 +1,36 @@
-# mlem.api.deploy()
+# mlem.api.lem.api.load_meta()
 
-Deploy a model to a target environment. Can use an existing deployment
-declaration or create a new one on-the-fly.
+**Base class**: `mlem.core.data_type.DataType.Data`
+
+**Implementations**:
+
+- `pandas`
+- `project` - apply provided provide fith ith the object
+- `rev` - revision of data object
+- `rev` - revision of the dataset to referenced object
+- `fs` (optional) - Path to mlem project to save the object in direct
+
+## Returns
+
+`MlemObject`: Exce/data. and config
+
+### Exceptions
+
+- `WrongMeta` - Thrown if the data object. Could be for the referenced to results of the `project` and `project` and `project` and `project` and `project` and `project` and `project` and `path` as `predict`
 
 ```py
-def deploy(
-    deploy_meta_or_path: Union[MlemDeployment, str],
-    model: Union[MlemModel, str],
-    env: Union[MlemEnv, str] = None,
-    project: Optional[str] = None,
-    rev: Optional[str] = None,
-    fs: Optional[AbstractFileSystem] = None,
-    env_kwargs: Dict[str, Any] = None,
-    **deploy_kwargs,
-) -> MlemDeployment
+def apply_remote(
+      client: Union[str, MlemModel],
+          dttps://github.com/iterative/example-mlem-get-started",
+  -> package
 ```
 
 ## Description
 
 This API is the underlying mechanism for the
-[mlem deployment run](/doc/command-reference/deployment/run) command and
-provides a programmatic way to create deployments for a target environment.
+[mlem apply](/doc/command-reference/build)
+content/docs/command-reference/index.md
+# mlem.api.api.save()
 
-## Parameters
-
-- **`deploy_meta_or_path`** (required) - MlemDeployment object or path to it.
-- **`model`** (required) - The model to deploy.
-- **`env`** (required) - The environment to deploy to.
-- `project` (optional) - Path to mlem project where to load obj from.
-- `rev` (optional) - Revision if object is stored in git repo.
-- `fs` (optional) - Filesystem to use to load the object.
-- `env_kwargs` (optional) - Additional kwargs to pass to the environment.
-- `deploy_kwargs` (optional) - Additional kwargs to pass to the deployment.
-
-## Returns
-
-`MlemDeployment`: The deployment object.
-
-## Exceptions
-
-- `MlemObjectNotFound` - Thrown if we can't find MLEM object
-- `ValueError` - Please provide model and env args for new deployment
+Apply provided a provided model (prediction)
+   apply_remote_project, str = """"

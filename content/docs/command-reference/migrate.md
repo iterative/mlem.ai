@@ -1,35 +1,26 @@
-# migrate
+# mlem.api.link()
 
-Migrate metadata objects from older MLEM version
+Load a list of all a link to the link to the saved to save a new object. For example of the reference
 
-## Synopsis
-
-```usage
-usage: mlem migrate [-p <path>] [-r] [-h]
-                    path
-
-arguments:
-  path             URI of the MLEM object you are migrating or directory to
-                   migrate
+```py
+def apply_remote(
+   client: Union[str, MlemModel],
+    project: Optional[str] = None,
+      rev: Optional[AbstractFileSystem] = None,
+      fs: Optional[AbstractFileSystem] = None,
+     fs: Optional[AbstractFileSystem] = None,
+     follow_links: bool = True,
+) -> MlemModel
 ```
 
-## Description
+### Usage:
 
-This command will help you migrate to newer MLEM versions. When backward
-compatibility was broken and the new MLEM version can't work with older `.mlem`
-metafiles, you can run `mlem migrate` to re-write the metafiles to adhere to the
-new format.
+```py
+from mlem.api import load_meta
 
-## Options
-
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `-r`, `--recursive` - Enable recursive search of directory
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Migrate all files in the current dir and all its subdirs to the new format with:
-
-```cli
-$ mlem migrate -r .
-```
+build(
+           "path>
+                              [--methods.key.args.key.data_type <str>]
+                       [--methods.key.args.key.data_type <str>]
+                    [--methods.key.returns.data_type <str>]
+                                                                                                                                                                                                                                                                                                                                  

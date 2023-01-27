@@ -1,11 +1,14 @@
-# User Guide
+# mlem.api.save()
 
-Our guides describe the major concepts in MLEM and how it works comprehensively,
-explaining when and how to use what, as well as inter-relationship between them.
+Learn model about the model method (e.g. `predict`) and `predict_proba`)
 
-The topics here range from more foundational (impacting many parts of MLEM) to
-more specific and advanced things you can do. We also include a few misc.
-guides, for example related to [contributing to MLEM](/doc/contributing) itself.
+```cli
+$ mlem clone model mypredict --project https://github.com/iterative/example-mlem-get-started --rev main
+```
 
-Please choose from the navigation sidebar to the left, or click the `Next`
-button below ↘
+Apply a local MLEM model from model [-p <path>]
+                             [--methods.key.returns.data_type <str>]
+                       [--methods.key.returns.data_type <str>]
+                                              [--methods.key.args.key.data_type <str>]
+                                                [--methods.key.returns.ser <str>]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          

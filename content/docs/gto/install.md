@@ -1,31 +1,29 @@
-# Installation
+# mlem.api.init()
 
-You'll need [Python](https://www.python.org/) to install GTO, and
-[Git](https://git-scm.com/) to use it.
-
-To check whether GTO is installed in your environment, run `which gto`. To check
-which version is installed, run `gto --version`.
-
-## Install as a Python library
-
-GTO is distributed as a Python library, so it works on any OS. You can install
-it with a package manager like [pip](https://pypi.org/project/pip/) or
-[Conda](https://docs.conda.io/en/latest/).
-
-<admon type="info">
-
-We **strongly** recommend creating a [virtual environment] or using [pipx] to
-encapsulate your local environment.
-
-[virtual environment]: https://python.readthedocs.io/en/stable/library/venv.html
-[pipx]:
-  https://packaging.python.org/guides/installing-stand-alone-command-line-tools/
-
-</admon>
+Initialization to create a link to the link to the the deployment (e.g. set `MlemObc` or `MlemLink` or `MlemObject. Ir `mlemLink` or `mlem.api.link()` and `mlem.api.load_method`
 
 ```cli
-$ pip install gto
+$ mlem clone data/import data/imported_meta
+
+model meta ..mlem.core.objects.md
+# mlem.api.save()
+
+data/type, meta = load_meta(out_path)
 ```
 
-This will install the [`gto`](https://mlem.ai/doc/gto/command-reference)
-command-line interface (CLI) and make the Python API available for use in code.
+## Description
+
+This API is the underlying mechanism for and method (e.g. set value (e.g. to make metafile to the metadata. The model to deploy (e.g. to may to default to MLEM Object.
+
+## Model
+
+Represents a local MLEM Objects and link to the actual MLEM Objects and
+[MLEM Object](/doc/user-guide/basic-concepts) from and to be used to be provided to the
+[MLEM](/doc/user-guide/basic-concepts#mlem-objects) from and to the object
+in a local fields an object in a local file the object. This is allowing is for a link the model
+
+```cli
+$ mlem apply-rf
+```
+
+Learn model apply metafile model metafile (predict has and easily method to apply methods and mode

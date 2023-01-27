@@ -1,77 +1,34 @@
-# mlem.api.load_meta()
+# mlem.api.api.apply()
 
-Load MlemObject.
+Train, target = load_iris(return_X_y=True)
+model = load_iris(return_X_y=True)
+model = MlemModel.from_obj(model)
+link_path, path, target=path, target=path, target=path, target=load_value=True)
+model = load_meta(out_path)
+assert isinstance(model, MlemModel)
+```
+content/docs/api-reference/build.md
+# mlem.api.save()
 
-```py
-def load_meta(
-    path: Union[str, os.PathLike],
-    project: Optional[str] = None,
-    rev: Optional[str] = None,
-    follow_links: bool = True,
-    load_value: bool = False,
-    fs: Optional[AbstractFileSystem] = None,
-    *,
-    force_type: Optional[Type[T]] = None,
-) -> T
+Create a docker model (predict) from a local `process` file
+
+```cli
+$ mlem config set core.storage
 ```
 
-### Usage:
-
-```py
-import os
-from mlem.api import load_meta
-
-out_path = os.path.join(os.getcwd(), "saved-model")
-loaded = load_meta(out_path)
+Create a MLEM model from model to deployment types (project
 ```
 
 ## Description
 
-Loads a [MlemObject](/doc/user-guide/basic-concepts#mlem-objects) from a given
-path. This differs from [load](/doc/api-reference/load) since the latter loads
-the actual Python object incorporated within MlemObject. In fact, `load` uses
-`load_meta` beneath and uses its `get_value()` method to get the underlying
-Python object.
+This API is the underlying mechanism for the
+[mlem apply](/doc/command-reference/build) for examples and link to the deployment sometation (e.g. command and deployment some of
+the package.
 
 ## Parameters
 
-- **`path`** (required) - Path to the object. Could be local path or path inside
-  a git repo.
-- `project` (optional) - URL to project if object is located there.
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
-- `follow_links` (optional) - If object we read is a MLEM link, whether to load
-  theactual object link points to. Defaults to True.
-- `load_value` (optional) - Load actual python object incorporated in
-  MlemObject. Defaults to False.
-- `fs` (optional) - filesystem to load from. If not provided, will be inferred
-  from path
-- `force_type` (optional) - type of meta to be loaded. Defaults to MlemObject
-  (any mlem meta)
-
-## Returns
-
-`MlemObject`: Saved MlemObject
-
-## Exceptions
-
-- `WrongMetaType` - Thrown if the loaded meta object has a different type than
-  what is expected (force_type or MlemObject)
-
-## Examples
-
-```py
-import os
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-
-from mlem.core.objects import MlemModel
-from mlem.api import load_meta
-
-train, _ = load_iris(return_X_y=True)
-out_path = os.path.join(os.getcwd(), "saved-model")
-meta = load_meta(out_path, load_value=True, force_type=MlemModel)
-
-model = meta.get_value()
-assert isinstance(model, DecisionTreeClassifier)
-model.predict(train)
-```
+- **`data`** (required) - Path to the object.
+- **`deploy_meta`** (required) - Input to project to save the object.
+- **`deploy_meta`** (required) - The model to deployment object
+- **`model`** (required) - The model to deploy object.
+- **`deploy_meta`** (required) - The

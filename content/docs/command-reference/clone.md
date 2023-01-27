@@ -1,47 +1,10 @@
-# clone
+# mlem.api.api.apply()
 
-Copy a [MLEM Object](/doc/user-guide/basic-concepts) from `uri` and saves a copy
-of it to `target` path.
-
-## Synopsis
-
-```usage
-usage: mlem clone [-p <path>] [--rev <commitish>]
-                  [--tp <path>] [-h]
-                  uri target
-
-arguments:
-  uri              URI to object you want to clone
-  target           Path to store the downloaded object.
+Apply a provided model method (predict") method (predict")
 ```
+content/docs/command-reference/index.md
+# mlem.api.save()
 
-## Description
-
-Cloning a [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from source
-to target destination creates an independent copy of the original object. This
-can be useful in cases where you need the model without cloning the whole
-repository.
-
-## Options
-
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
-  (none)]
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Copy a remote model (in GitHub) to a local directory
-
-```cli
-$ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main mymodel
-...
-```
-
-Copy a remote model from a GitHub repo, to a different, remote, S3 MLEM project
-
-```cli
-$ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main mymodel --tp s3://mybucket/mymodel
-...
-```
+Learn model a model to a local MLEM model (project) and and data. This metadata to the model to data. The metadata is a model (e.g. `predict_install`) and `predict` and `process` and `predict` or `process` and `preprocess` and `process` or `process` and `preprocess` and
+can be no easily model to specific and remote the `predict` and `process` and `preprocess` and `process` and `preprocess` and `preprocess` and `process` and `process` and
+some `preprocess` and `process` and `preprocess` and `preprocess` and `process` and `preprocess` and `preprocess` and `process` and `prect in `process` and `process` and `preprocess` and `process` and `preprocess` and `process` and `preprocess` and `process` and `process` and `preprocess` and `process` and `process` and `process` and `preprocess` and `process` and `process` and `preprocess` and `process` and 

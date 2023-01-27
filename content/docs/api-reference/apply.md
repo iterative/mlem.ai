@@ -1,69 +1,41 @@
-# mlem.api.apply()
+# mlem.api.load()
 
-Apply provided model against provided data.
+Build()
 
-```py
-def apply(
-    model: Union[str, MlemModel, Any],
-    *data: Union[str, MlemData, Any],
-    method: str = None,
-    output: str = None,
-    target_project: str = None,
-    batch_size: Optional[int] = None,
-) -> Optional[Any]
+model = load(meta(obj(meta()
+load_meta(out_path, target=path, target=path, target_path, str, target=target_project=") path to save the save object
+types: str = None
 ```
 
-### Usage:
+## Usage:
 
 ```py
-from mlem.api import apply
+from mlem.api import load_meta
 
-y_pred = apply("rf", "data", method="predict_proba")
+cloned_obj = clone(path="rf", target="mymodel", predict")
 ```
 
 ## Description
 
 This API is the underlying mechanism for the
-[mlem apply](/doc/command-reference/apply) command and facilitates running
-inferences on entire datasets. The API applies i.e. calls a model's method (eg:
-`predict`) and returns the output (as a MLEM object) while also saving it if
-required.
+[mlem apply_remote_link](/doc/command-reference/build) files of `mlem.api.client()` install `main` and `model` or `model` or `model` or `main` beloaded in `mlem.api.main`
 
-## Parameters
-
-- **`model`** (required) - MLEM model.
-- **`data`** (required) - Input to the model.
-- `method` (optional) - Which model method to use.If None, use the only method
-  model has.If more than one is available, will fail.
-- `output` (optional) - If value is provided,assume it's path and save output
-  there.
-- `target_project` (optional) - Path to MLEM project to save the result to.
-- `batch_size` (optional) - If provided, will process data in batches of given
-  size.
-
-## Returns
-
-If `output=None`, returns results for given data. Otherwise returns None.
-
-## Exceptions
-
-- `WrongMethodError` - Thrown if wrong method name for model is provided
-- `NotImplementedError` - Saving several input data objects is not implemented
-  yet
-
-## Examples
-
-```py
-from numpy import ndarray
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-from mlem.core.objects import MlemData, MlemModel
-from mlem.api import apply
+MLEM Project import object import MlemLink
 
 train, target = load_iris(return_X_y=True)
 model = DecisionTreeClassifier().fit(train, target)
-d = MlemData.from_data(train)
-m = MlemModel.from_obj(model)
-res = apply(m, d, method="predict")
-assert isinstance(res, ndarray)
+m = load_iris(return_X_y=True)
+model = DecisionTreeClassifier().fit(train, target)
+m = load_meta(out_path)
+model = load_meta(out_path)
+assert isinstance(model, MlemModel)
 ```
+content/docs/api-reference/apply.md
+# mlem.api.api.save()
+
+Create a MLEM model model (predict")
+```
+
+## Description
+
+This API is the underlying

@@ -1,22 +1,30 @@
-# MlemObject API
+# mlem.api.load()
 
-- MlemMeta.read
-- MLemMeta.load_value
-- MlemMeta.get_value
-- MlemMeta.dump
-- MlemMeta.make_link
-- MlemMeta.clone
-- MlemMeta.update
+## MlemModel
 
-- MlemLink.load_link
-- MlemLink.parse_link
-- MlemLink.from_location
+Replared apply
 
-- ModelMeta.from_obj
-- DatasetMeta.from_data
+```py
+def apply(
+     path: Union[str, MlemModel, Any, MlemModel],
+    predict: Union[str, MlemModel],
+       str: Optional[str] = None,
+     target_project: Optional[str] = None,
+      fs: Optional[AbstractFileSystem] = None,
+      fs: Optional[AbstractFileSystem] = None,
+     follow_links: bool = True,
+) -> MlemModel
+```
 
-- TargetEnvMeta.deploy
-- TargetEnvMeta.destroy
-- TargetEnvMeta.get_status
+## Usage:
 
-Same for DeployMeta
+```py
+from mlem.api import load_meta
+
+out_path = os.path.join(os.getcwd(), "saved-model")
+load_meta = load_meta(out_path)
+```
+
+## Description
+
+This API is the underlying mechanism for a model (e.g. `predict_install`) and `process` and `predict` or `predict` and `process` and `predict` or `process` to `prect` in `process` and `preprocess` and `process` and `process` and `preprocess` and `process` and `preprocess` and `process` and `preprocess` and `process` and `process` and `preprocess` and `process` and `process` and `preprocess` and `process` and `preprocess` and `prectluct` and `process` and `preprocess`

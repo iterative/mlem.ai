@@ -1,57 +1,29 @@
-# apply-remote
+# mlem.api.apply()
 
-Apply a deployed-model (possibly remotely) to data. The results will be saved as
-a [MLEM Object](/doc/user-guide/basic-concepts) to `output` if provided.
-Otherwise, it will be printed to `stdout`.
-
-## Synopsis
-
-```usage
-usage: mlem apply-remote [--raw] [-d <path>] [-p <path>]
-                         [--rev <commitish>] [-o <path>]
-                         [--tp <path>] [-m <text>] [--json]
-                         [-f <text>] [-h]
-                         [<client> [client options] | --load <declaration>]
-
-Builtin clients:
-- http
-- rmq
-- sagemaker
+Apply a model to data. The model to dataset (method (e.g.) `predict`) and `predict_proba`)
 ```
+content/docs/command-reference/serve.md
+# mlem.api.api.apply_remote()
 
-## Description
-
-Models which are deployed somewhere remotely or are being served locally, can
-have their methods called using the `apply-remote` command. This command is
-similar to [apply](/doc/command-reference/apply), with the only difference being
-the model is deployed remotely using a deployment, or served locally. To access
-the methods of the `served` model, a `client` is needed. Currently, the
-available clients are `http` and `rmq` - which are used to launch requests
-against the `fastapi` and `rmq` server types, correspondingly.
-
-## Options
-
-- `--raw <boolean>` - Pass values as-is without serializers [default: False]
-- `-d <path>`, `--data <path>` - Path to MLEM dataset [required]
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-o <path>`, `--output <path>` - Where to save model outputs
-- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
-  (none)]
-- `-m <text>`, `--method <text>` - Which model method is to be applied [default:
-  predict]
-- `--json` - Output as json
-- `-f <text>`, `--file_conf <text>` - File with options for client in format
-  `field.name=path_to_config`
-- `-h`, `--help` - Show this message and exit.
-
-## Example: Apply a locally hosted model to a local dataset
-
-Given a hosted model server (see
-[serve example](/doc/command-reference/serve#examples) as a way to easily do
-this) and a local MLEM dataset `mydataset`, run the following command to infer
-the entire dataset with the model and save the output result to `myprediction`
+Apply provided mlem apply methods and methods info about the model types information and dataset
 
 ```cli
-$ mlem apply-remote http mydataset --host="127.0.0.1" --port=3000 --output myprediction
+$ mlem clone rf
 ```
+
+Create a local MLEM model from model from mlem.contrib.path.mlem.api import False
+
+train, target = load_iris(return_X_y=True)
+model = load_iris(return_X_y=True)
+meta = DataFrame(train)
+model = Data.csv, target_project(train)
+model = MlemModel.from_obj(model)
+link_path, target_path, str, target=target_project="mlem_object_type: target_pe: path = os.path.join(os.getcwd(), "saved-model")
+load_meta = load_value(out_path, target_path, target_path, type_="packle[class#data=true)
+meta = load_value(train)
+meta = load_iris(return_X_y=True)
+meta = load_iris(return_X_y=True)
+load_out_path, target=path, target_path, type_="packle', package_, pandas[csv]", target_project="strue)
+```
+
+## Descr

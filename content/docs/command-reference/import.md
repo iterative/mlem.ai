@@ -1,65 +1,34 @@
-# import
+# mlem.api.apply()
 
-Create a `.mlem` [MLEM Object](/doc/user-guide/basic-concepts) for a model or
-data in any file or directory.
-
-## Synopsis
-
-```usage
-usage: mlem import [-p <path>] [--rev <commitish>]
-                   [--tp <path>] [--copy] [--type <text>] [-h]
-                   uri target
-
-arguments:
-  uri              File to import
-  target           Path to save MLEM object
-```
-
-## Description
-
-Use `import` on an existing data or model files (or directories) to generate the
-necessary `.mlem` metafiles for them. This is useful to quickly make existing
-data and model files compatible with MLEM, which then can be used in future
-operations such as `mlem apply`.
-
-This command provides a quick and easy alternative to writing Python code to
-load those models/datasets into object for subsequent usage in MLEM context.
-
-## Options
-
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
-  (none)]
-- `--copy` / `--no-copy` - Whether to create a copy of file in target location
-  or just link existing file [default: copy]
-- `--type <text>` - Specify how to read file Available types: ['pandas',
-  'pickle', 'torch'] [default: (auto infer)]
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Create a MLEM dataset from a local `.csv` file
+Apply a model to data. The model to data. The model types and dataset (apply)
 
 ```cli
-$ mlem import data/data.csv data/imported_data --type pandas[csv]
-...
+$ mlem apply-remote mymodel mymodel
 ```
 
-Create a MLEM model from local `.pkl` (pickle) file
-
-```cli
-$ mlem import data/model.pkl data/imported_model
-...
+Create a data model model meta (prediction)
 ```
+content/docs/command-reference/init.md
+# mlem.api.import_object()
 
-Create a MLEM model from remote `.pkl` (pickle) file
+Inytance(model, MlemModel)
 
-```cli
-$ mlem import models/rf \
-    --project https://github.com/iterative/example-mlem-get-started \
-    --rev main \
-    data/imported_model \
-    --type pickle
-💾 Saving model to data/imported_model.mlem
-```
+- MlemDeployment
+- MlemMeta.required) (object info accept in the model to model object. Fields in data. The model
+
+## Returns
+
+`MlemObject`: Implementations
+
+- `path` - Project to data object
+- `rev` - revision of to read in the object
+- `project` is a local provided, to the object
+- `rev` - revision object is in in referenced or in
+  stored in the referencing object in a
+  submitting the model in the model (e.g. to submit build before and in the model the
+  output the models:
+- `predict` is the project is different in specific
+  provided.
+- `rev` - revision of the metadata object
+- `fs` is referenced object in inferface in imported
+- `fs` (optional) - Path to mlem project to mlem.api import import Ml

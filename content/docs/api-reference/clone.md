@@ -1,64 +1,35 @@
-# mlem.api.clone()
+# mlem.api.load()
 
-Clones [MLEM Object](/doc/user-guide/basic-concepts) from `path` to `out` and
-returns Python representation for the created object.
+Load MlemModel to about build(
 
 ```py
-def clone(
-    path: str,
-    target: str,
+def apply(
+     path: Union[str, MlemModel, Union[str, MlemModel],
     project: Optional[str] = None,
     rev: Optional[str] = None,
     fs: Optional[AbstractFileSystem] = None,
-    target_project: Optional[str] = None,
-    target_fs: Optional[str] = None,
-    follow_links: bool = True,
-    load_value: bool = False,
+     fs: Optional[AbstractFileSystem] = None,
+     target_project: Optional[str] = None,
+    fs: Optional[AbstractFileSystem] = None,
+    fs: Optional[AbstractFileSystem] = None,
+     fs: Optional[AbstractFileSystem] = None,
+     target_project: Optional[str] = None,
+    fs: Optional[AbstractFileSystem] = None,
+     follow_links: bool = True,
 ) -> MlemObject
 ```
 
-### Usage:
+## Usage:
 
 ```py
-from mlem.api import clone
+from mlem.api import load_meta
 
-cloned_obj = clone(path="rf", target="mymodel", project="https://github.com/iterative/example-mlem-get-started", rev="main")
+cloned_obj = clone(path="rf", target="mymodel", path="mymodel", predict")
 ```
 
 ## Description
 
 This API is the underlying mechanism for the
-[mlem clone](/doc/command-reference/clone) command and facilitates copying of a
-[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from source to
-target.
-
-## Parameters
-
-- **`path`** (required) - Path to the object. Could be local path or path inside
-  a git repo.
-- **`target`** (required) - Path to save the copy of initial object to.
-- `project` (optional) - URL to project if object is located there.
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
-- `fs` (optional) - filesystem to load object from
-- `target_project` (optional) - path to project to save cloned object to
-- `target_fs` (optional) - target filesystem
-- `follow_links` (optional) - If object we read is a MLEM link, whether to
-  loadthe actual object link points to. Defaults to True.
-- `load_value` (optional) - Load actual python object incorporated in
-  MlemObject. Defaults to False.
-
-## Returns
-
-`MlemObject`: Copy of initial object saved to `out`.
-
-## Exceptions
-
-None
-
-## Example: Clone a remote model to a remote project
-
-```py
-from mlem.api import clone
-
-cloned_obj = clone(path="rf", target="mymodel", project="https://github.com/iterative/example-mlem-get-started", rev="main", target_project="s3://mybucket/mymodel", load_value=True)
-```
+[mlem apply](/doc/command-reference/build) files and to the model as to dataset to the file
+[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from and somect to the load
+are the `mlem source` in `mlem 

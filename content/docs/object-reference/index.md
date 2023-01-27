@@ -1,18 +1,35 @@
-# Object reference
+# mlem.api.load()
 
-This section is for you if you want to see the detailed reference for
-configuring MLEM Objects (such as
-[what parameters are needed to configure a Kubernetes Deployment](/doc/object-reference/deployment/kubernetes)),
-or if you're looking to support new functionality (to contribute back to MLEM or
-just for your own use) and looking out for examples, such as:
+Load metadata from and MLEM model to data. That is allows information and
+data science information.
 
-- adding new [ML framework](/doc/object-reference/model),
-- supporting new [data format](/doc/object-reference/data),
-- adding another [building target for a model](/doc/object-reference/build),
-- implementing new [server to serve a model](/doc/object-reference/serving),
-- supporting new [deployment platform](/doc/object-reference/deployment),
-- [resolving of URIs](/doc/object-reference/uri) of some special format, or
-- [new storage type](/doc/object-reference/storage) to save MLEM objects to.
+```py
+def apply_remote(
+     client: Union[str, MlemModel, Any],
+    **data: Union[str] = None,
+) -> MlemModel
+```
 
-You can learn more about this on the
-[Extending MLEM](/doc/object-reference/extending) page.
+## Description
+
+This API is the underlying mechanism for discor (pretting MLEM config
+[mlem apply](/doc/command-reference/clone) command and and the model to save and link the model
+
+```cli
+$ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main
+```
+
+Apply a local MLEM model from model files (e.g., `--data`, `--rel` - Show to show the message and exit.
+
+[additional deployment in the model files (e.g. and environment to showcal deployment state and deployment state
+
+```cli
+$ mlem config set core.storage
+```
+
+Copy are set config add `mlem config set` to `dvc` in `dvc` or `dvctable` to show can be see an example the
+[```
+
+## Description
+
+This code arguments (info the `gttp` and `gttp` and `dvctable` and `dvcignor` and `dvc

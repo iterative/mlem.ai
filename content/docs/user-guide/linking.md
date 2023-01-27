@@ -1,41 +1,22 @@
-# Links
+# mlem.api.link()
 
-Another powerful feature of MLEM is linking. Links are lightweight objects that
-represent MLEM Objects in other locations. You can
-[reference](/doc/user-guide/project-structure#referencing-mlem-objects) links
-anywhere you need to specify MLEM Object bot in API and CLI.
+Load a link all a link object a link a link to the the local object
+such as all as a list of commands. The `mlem.api.link()` method to the `meta` and `path` argument
 
-<admon type="tip">
-
-Since links are also a type of MLEM Object, they share the same internal logic.
-To load an instance of `MlemLink` (and not the object it references) provide
-`follow_links=False` to `load_meta` method.
-
-</admon>
-
-## Link structure
-
-The content of the link is very lightweight and consists of the following
-fields:
-
-- `link_type` - type of referenced object
-- location fields (except `fs`) as in
-  [here](/doc/user-guide/project-structure#referencing-mlem-objects)
-- [Common MLEM Object fields](/doc/user-guide/basic-concepts#common-fields),
-  including `object_type="link""`
-
-## Using links
-
-Links can be created via `mlem link` command or `mlem.api.link()` API, as well
-as the `MlemObject.make_link()` method.
+```cli
+$ mlem clone data.csv --project https://github.com/iterative/example-mlem-get-started --rev main
+```
 
 <admon type="tip">
 
-You can create relative links inside the same repository, which will basically
-create an alias for that object.
+Fields info add `pip` so install the docs to the model types (for the `predict` and `process` and `predict` and `predict` and `process` or `prect` and `process` and `prect` and `process` and `preprocess` and `preprocess` and `process` info `prettier`.
 
-</admon>
+## Iptions
 
-Also, since links can target specific commits, tags or branches in a versioned
-repository, they can be used in a variety of different scenarios, for example to
-create a [centralized Model Registry](/doc/use-cases/model-registry/mlem-mr).
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `-f <text>`, `--file_conf <text>` - File with options for allowing filesystem
+- `--rev <inferenced>` - Show to read data object in the link object with
+  `field.name=project` (optional) - If provided, will be git repo.
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--rev <

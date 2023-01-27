@@ -1,15 +1,39 @@
-# Python API
+# mlem.api.load()
 
-MLEM can be used as a Python library, simply [install](/doc/install) with `pip`
-or `conda`. This reference provides the details about the functions in the API
-module `mlem.api`, which can be imported in any regular way, for example:
+Load MlemModel to about build(
 
 ```py
-import mlem.api
+def apply(
+     path: Union[str, MlemModel, Union[str, MlemModel],
+    project: Optional[str] = None,
+    rev: Optional[str] = None,
+    fs: Optional[AbstractFileSystem] = None,
+     follow_links: bool = True,
+) -> MlemModel
 ```
 
-The purpose of this API is to provide programmatic access to operate on models
-and datasets from Python code.
+### Usage:
 
-Please choose a function from the navigation sidebar to the left, or click the
-`Next` button below to jump into the first one ↘
+```py
+from mlem.api import load_meta
+
+out_path = os.path.join(os.getcwd(), "saved-model")
+loaded = load_meta(out_path, target_path, target_path, target_path, str] = None,
+    rev: Optional[AbstractFileSystem] = None,
+     target_project: Optional[str] = None,
+     fs: Optional[AbstractFileSystem] = None,
+     follow_links: bool = False,
+) -> MlemData
+```
+
+## Usage:
+
+```py
+from mlem.api import load_meta
+
+build(
+            csv target=pe: builder_os.getcwd(), "saved-model")
+                 --methods.key.returns.data_type data/type <str>]
+                   [--methods.key.args.key.data_type <str>]
+                                 [--methods.key.args.key.data_type <str>]
+                        

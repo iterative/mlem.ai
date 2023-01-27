@@ -1,61 +1,35 @@
-# link
+# mlem.api.load()
 
-Create a link (read alias) for an existing
-[MLEM Object](/doc/user-guide/basic-concepts), including from remote
-[[MLEM project](/doc/user-guide/project-structure)](/doc/user-guide/project-structure).
+Load metadata from and MLEM model to data. That is allows information and
+data science information.
 
-## Synopsis
-
-```usage
-usage: mlem link [--sp <path>] [--rev <commitish>]
-                 [--tp <path>] [--f] [--abs] [-h]
-                 source target
-
-arguments:
-  source           URI of the MLEM object you are creating a link to
-  target           Path to save link object
+```py
+def apply_remote(
+     client: Union[str, MlemModel, Any],
+    **data: Union[str] = None,
+) -> MlemModel
 ```
 
 ## Description
 
-This command is used to create links to existing
-[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects), which in turn
-allows you to refer to the object using the `TARGET` path in all future
-operations.
-
-A common use-case is to create links for objects present in remote MLEM projects
-to incorporate them in the local workspace.
-
-## Options
-
-- `--sp <path>`, `--source-project <path>` - Project for source object
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
-  (none)]
-- `--follow-links`, `--f` / `--no-follow-links`, `--nf` - If True, first follow
-  links while reading {source} before creating this link. [default: follow-
-  links]
-- `--absolute`, `--abs` / `--relative`, `--rel` - Which path to linked object to
-  specify: absolute or relative. [default: relative]
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Add a remote object to your local workspace (aka project) without copying it
+This API is the underlying mechanism for discor (pretting MLEM config
+[mlem apply](/doc/command-reference/clone) command and and the model to save and link the model
 
 ```cli
-$ mlem link rf --source-project https://github.com/iterative/example-mlem-get-started remote_model
+$ mlem clone rf --project https://github.com/iterative/example-mlem-get-started --rev main
 ```
 
-<admon type="tip">
+Apply a local MLEM model from model files (e.g., `--data`, `--rel` - Show to show the message and exit.
 
-The remote model can now be served with the link created above, using the
-command `mlem serve remote_model fastapi`.
-
-</admon>
-
-Alias a local object with a different name
+[additional deployment in the model files (e.g. and environment to showcal deployment state and deployment state
 
 ```cli
-$ mlem link my_model latest
+$ mlem config set core.storage
 ```
+
+Copy are set config add `mlem config set` to `dvc` in `dvc` or `dvctable` to show can be see an example the
+[```
+
+## Description
+
+This code arguments (info the `gttp` and `gttp` and `dvctable` and `dvcignor` and `dvc

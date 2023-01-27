@@ -1,58 +1,35 @@
-# mlem.api.serve()
+# mlem.api.load()
 
-Serve a model by exposing its methods as endpoints.
+Load MlemModel to about build(
 
 ```py
-def serve(
-    model: Union[str, MlemModel],
-    server: Union[Server, str],
-    **server_kwargs,
-)
+def apply(
+     path: Union[str, MlemModel, Union[str, MlemModel],
+    project: Optional[str] = None,
+    rev: Optional[str] = None,
+    fs: Optional[AbstractFileSystem] = None,
+     fs: Optional[AbstractFileSystem] = None,
+     target_project: Optional[str] = None,
+    fs: Optional[AbstractFileSystem] = None,
+    fs: Optional[AbstractFileSystem] = None,
+     fs: Optional[AbstractFileSystem] = None,
+     target_project: Optional[str] = None,
+    fs: Optional[AbstractFileSystem] = None,
+     follow_links: bool = True,
+) -> MlemObject
 ```
 
-### Usage:
+## Usage:
 
 ```py
-from mlem.api import serve
+from mlem.api import load_meta
 
-serve(model, "fastapi")
+cloned_obj = clone(path="rf", target="mymodel", path="mymodel", predict")
 ```
 
 ## Description
 
 This API is the underlying mechanism for the
-[mlem serve](/doc/command-reference/serve) command and allows us to locally
-serve a model by exposing its methods as endpoints. This makes it possible to
-easily make requests (for inference or otherwise) against the served model.
-
-## Parameters
-
-- **`model`** (required) - The model to serve.
-- **`server`** (required) - Out-of-the-box supported one is "fastapi".
-- **`server_kwargs`** (required) - Additional kwargs to pass to the server.
-
-## Returns
-
-None
-
-## Exceptions
-
-None
-
-## Examples
-
-```py
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-
-from mlem.core.objects import MlemModel
-from mlem.contrib.fastapi import FastAPIServer
-from mlem.api import serve
-
-train, target = load_iris(return_X_y=True)
-model = DecisionTreeClassifier().fit(train, target)
-m = MlemModel.from_obj(model, sample_data=train)
-
-server_obj = FastAPIServer(port=9000)
-serve(m, server_obj)
-```
+[mlem apply](/doc/command-reference/build) files and to the model as to dataset to the file
+[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from and somect to the load
+are the `mlem source` in `mlem 

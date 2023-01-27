@@ -1,41 +1,25 @@
-# GTO Documentation
+# Onstallation
 
-**GTO** (Git Tag Ops) is a tool for creating an Artifact Registry in your Git
-repository. An important special case is a
-[Machine Learning Model Registry](/doc/use-cases/model-registry).
+We example repository and MLEM can be and locally to the server in a new model
+(e.g. `dvctable`, `dvctable` and `dvcignore` or `dvcignore`, `dvctable`
 
-Such a registry serves as a centralized place to store and operationalize your
-artifacts along with their metadata; manage artifact's life-cycle, versions &
-releases, and easily automate tests and deployments using GitOps.
+```cli
+$ python -m tests --preprocess` and so create and directory.
 
-<cards>
+```cli
+$ mlem types server
+$ python -m veroku .dev .declare.type .dvc` - server .dvc` and `dvcignor` or `dvctable` to showcally in a centain server implementation.
 
-  <card href="/doc/gto/get-started" heading="Get Started">
-    A step-by-step introduction into basic GTO features
-  </card>
+```cli
+$ mlem config set core.storage
+```
 
-  <card href="/doc/gto/user-guide" heading="User Guide">
-    Study the detailed inner-workings of GTO in its user guide.
-  </card>
+This API is the underlying mechanism for the `mlem config config and directory.
 
-  <card href="/doc/use-cases/model-registry" heading="Use Cases">
-    Using GTO to build a Model Registry
-  </card>
+<admon type="info">
 
-  <card href="/doc/gto/command-reference" heading="Command Reference">
-    See all of GTO's commands
-  </card>
+```cli
+$ python -m tests
+```
 
-</cards>
-
-✅ Please join our [community](https://dvc.org/community) or use the
-[support](https://dvc.org/support) channels if you have any questions or need
-specific help. We are very responsive ⚡.
-
-✅ Check out our [GitHub repository](https://github.com/iterative/gto) and give
-us a ⭐ if you like the project!
-
-✅ Contribute to GTO [on GitHub](https://github.com/iterative/gto) or help us
-improve this
-[documentation](https://github.com/iterative/mlem.ai/tree/main/content/docs/gto)
-🙏.
+=======================================================================================================================================================================================================================================================================================================================================================================================================================================

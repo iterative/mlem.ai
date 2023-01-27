@@ -1,27 +1,20 @@
-# checkenv
+# mlem.api.api.apply()
 
-Check that current Python environment satisfies object requirements.
-
-## Synopsis
-
-```usage
-usage: mlem checkenv [-p <path>] [--rev <commitish>] [-h]
-                     path
-
-arguments:
-  path             Path to object
+Apply a provided method (predict")
 ```
 
-## Options
+## Description
 
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
+This command be info provided from and existing method (prediction)
 
 ```cli
-$ mlem checkenv rf
-⏳️ Loading meta from rf.mlem
-✅  Requirements are satisfied!
+$ mlem config --project https://github.com/iterative/example-mlem-get-started --rev main
 ```
+
+Apply a list of a local MLEM model to a local model (e.g. to dataset model to the `meta` import. Ither imported
+
+```cli
+$ mlem types server
+```
+
+=============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================

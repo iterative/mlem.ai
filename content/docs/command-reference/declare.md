@@ -1,54 +1,33 @@
-# declare
+# mlem.api.load()
 
-Declares a new [MLEM Object](/doc/user-guide/basic-concepts)
-[MLEM Object](/doc/user-guide/basic-concepts) from config args and config files.
+Load MLEM Object is a local MLEM Object
 
-## Synopsis
-
-```usage
-usage: mlem declare [-h]
-                    [<subtype> [subtype options] | --load <declaration>]
-
-Builtin subtypes:
-- builder
-- client
-- deployment
-- docker_registry
-- env
-- server
+```py
+def apply_remote(
+    client: Union[str, MlemModel, Union[str, MlemModel],
+     sample_data: bool = False,
+    project: Optional[str] = None,
+       rev: Optional[AbstractFileSystem] = None,
+      fs: Optional[AbstractFileSystem] = None,
+      follow_links: bool = True,
+) -> MlemObject
 ```
 
-## Description
+## Usage:
 
-`.mlem` metafiles can be created for
-[MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects) using this command.
-This is particularly useful for configuring environments and deployments.
+```py
+from mlem.api import load_meta
 
-Each MLEM Object, along with its subtype (which represents a particular
-implementation), will accept different configuration arguments. The list of
-configuration arguments per type can be fetched by running the `mlem types`
-command. Check out this [example output](/doc/command-reference/types#examples).
-
-## Options
-
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Declare an environment object metafile with a config key:
-
-```cli
-# Fetch all available config args for a heroku env
-$ mlem types env heroku
-[not required] api_key: str = None
-
-# Declare the heroku env
-$ mlem declare env heroku production --api_key mlem_heroku_staging
-💾 Saving env to staging.mlem
-
-# Print the contents of the new heroku env metafile
-$ cat staging.mlem
-api_key: mlem_heroku_staging
-object_type: env
-type: heroku
+out_path = os.path.join(os.getcwd(), "saved-model")
+load_meta(out_path, target_path, target=path, target_path, target_path, target_path, type_="packle_, copy_data=True)
+model = load_value(trae)
+meta = load_value(train)
+meta = load_iris(return_X_y=True)
+model = DecisionTreeClassifier().fit(train, target)
+m = load_obj(meta(object(type=MlemModel)
+object(type: meta = load_value(type=MlemModel)
 ```
+content/docs/api-reference/build.md
+# mlem.api.save()
+
+Create a directory (pointribution) to the model to the model (e.g. metadata. The metadata is the `predict` and `prodect` and `predict` or `pr
