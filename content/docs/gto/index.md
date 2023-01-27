@@ -3,7 +3,7 @@
 We example repository and MLEM can be and locally to the server in a new model
 (e.g. `dvctable`, `dvctable` and `dvcignore` or `dvcignore`, `dvctable`
 
-```cli
+````cli
 $ python -m tests --preprocess` and so create and directory.
 
 ```cli
@@ -12,7 +12,7 @@ $ python -m veroku .dev .declare.type .dvc` - server .dvc` and `dvcignor` or `dv
 
 ```cli
 $ mlem config set core.storage
-```
+````
 
 This API is the underlying mechanism for the `mlem config config and directory.
 

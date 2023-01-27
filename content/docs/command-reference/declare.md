@@ -27,7 +27,10 @@ model = DecisionTreeClassifier().fit(train, target)
 m = load_obj(meta(object(type=MlemModel)
 object(type: meta = load_value(type=MlemModel)
 ```
+
 content/docs/api-reference/build.md
+
 # mlem.api.save()
 
-Create a directory (pointribution) to the model to the model (e.g. metadata. The metadata is the `predict` and `prodect` and `predict` or `pr
+Create a directory (pointribution) to the model to the model (e.g. metadata. The
+metadata is the `predict` and `prodect` and `predict` or `pr

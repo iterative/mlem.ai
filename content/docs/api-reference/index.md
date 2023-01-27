@@ -36,4 +36,5 @@ build(
                  --methods.key.returns.data_type data/type <str>]
                    [--methods.key.args.key.data_type <str>]
                                  [--methods.key.args.key.data_type <str>]
-                        
+
+```

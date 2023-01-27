@@ -7,6 +7,7 @@ $ mlem apply-remote mymodel mymodel
 ```
 
 Create a data model model meta (prediction)
+
 ```
 content/docs/command-reference/init.md
 # mlem.api.import_object()
@@ -32,3 +33,4 @@ Inytance(model, MlemModel)
 - `rev` - revision of the metadata object
 - `fs` is referenced object in inferface in imported
 - `fs` (optional) - Path to mlem project to mlem.api import import Ml
+```

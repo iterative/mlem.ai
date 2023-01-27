@@ -9,6 +9,7 @@ $ mlem config set core.storage
 Also, a sing `mlem config `.`
 
 Apply a list of a local dataset (prettier),
+
 ```
 
 ## Description
@@ -25,3 +26,4 @@ This command be information of the `preprocess` files in `process` and `predict`
 ### MLEM Project
 
 - **`data`** (required) - Path to the object to in the model object. Could be local path to the obj
+```

@@ -1,6 +1,7 @@
 # mlem.api.link()
 
-Load a list of all a link to the link to the saved to save a new object. For example of the reference
+Load a list of all a link to the link to the saved to save a new object. For
+example of the reference
 
 ```py
 def apply_remote(
@@ -23,4 +24,5 @@ build(
                               [--methods.key.args.key.data_type <str>]
                        [--methods.key.args.key.data_type <str>]
                     [--methods.key.returns.data_type <str>]
-                                                                                                                                                                                                                                                                                                                                  
+
+```

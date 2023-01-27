@@ -6,9 +6,6 @@ Learn model about the model method (e.g. `predict`) and `predict_proba`)
 $ mlem clone model mypredict --project https://github.com/iterative/example-mlem-get-started --rev main
 ```
 
-Apply a local MLEM model from model [-p <path>]
-                             [--methods.key.returns.data_type <str>]
-                       [--methods.key.returns.data_type <str>]
-                                              [--methods.key.args.key.data_type <str>]
-                                                [--methods.key.returns.ser <str>]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+Apply a local MLEM model from model [-p <path>] [--methods.key.returns.data_type
+<str>] [--methods.key.returns.data_type <str>] [--methods.key.args.key.data_type
+<str>] [--methods.key.returns.ser <str>]

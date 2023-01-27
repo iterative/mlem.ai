@@ -7,6 +7,7 @@ $ mlem apply-remote mymodel mymodel
 ```
 
 Cone a dataset a model (predict_proba")
+
 ```
 content/docs/command-reference/init.md
 # mlem.api.import_object()
@@ -18,4 +19,5 @@ build(
                                                       [-methods.key.args.key.data_type <str>]
                             [--methods.key.args.key.data_type <str>]
                           [--methods.key.ser <str>]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+```

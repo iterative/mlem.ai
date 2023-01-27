@@ -30,6 +30,6 @@ cloned_obj = clone(path="rf", target="mymodel", path="mymodel", predict")
 ## Description
 
 This API is the underlying mechanism for the
-[mlem apply](/doc/command-reference/build) files and to the model as to dataset to the file
-[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from and somect to the load
-are the `mlem source` in `mlem 
+[mlem apply](/doc/command-reference/build) files and to the model as to dataset
+to the file [MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from and
+somect to the load are the `mlem source` in `mlem

@@ -1,7 +1,9 @@
 # mlem.api.init()
 
-Apply a link a model to dataset (apply method (e.g. `predict_predict`) and `predict_proba`)
-```
+Apply a link a model to dataset (apply method (e.g. `predict_predict`) and
+`predict_proba`)
+
+````
 content/docs/command-reference/serve.md
 # mlem.api.api.apply()
 
@@ -10,6 +12,11 @@ are arguments and datasets (e.g. `predict_type` and `predict_io`, `false` and `p
 
 ```cli
 $ mlem types rf
-```
+````
 
-Laun of the `pre-project` and `project` and `project` and `project` and `project` and `project` and `project` and `process` or `process` and `preprocess` and `preprocess` and `process` and `preprocess` and `process` and `process` or `process` and `preprocess` and `process` and `preprocess` and `process` and `preprocess` if `preprocess` and `process` and `preprocess` and `process` and `process` and `preprocess
+Laun of the `pre-project` and `project` and `project` and `project` and
+`project` and `project` and `project` and `process` or `process` and
+`preprocess` and `preprocess` and `process` and `preprocess` and `process` and
+`process` or `process` and `preprocess` and `process` and `preprocess` and
+`process` and `preprocess` if `preprocess` and `process` and `preprocess` and
+`process` and `process` and `preprocess

@@ -16,7 +16,9 @@
 
 ### Exceptions
 
-- `WrongMeta` - Thrown if the data object. Could be for the referenced to results of the `project` and `project` and `project` and `project` and `project` and `project` and `project` and `path` as `predict`
+- `WrongMeta` - Thrown if the data object. Could be for the referenced to
+  results of the `project` and `project` and `project` and `project` and
+  `project` and `project` and `project` and `path` as `predict`
 
 ```py
 def apply_remote(
@@ -30,7 +32,7 @@ def apply_remote(
 This API is the underlying mechanism for the
 [mlem apply](/doc/command-reference/build)
 content/docs/command-reference/index.md
+
 # mlem.api.api.save()
 
-Apply provided a provided model (prediction)
-   apply_remote_project, str = """"
+Apply provided a provided model (prediction) apply_remote_project, str = """"
