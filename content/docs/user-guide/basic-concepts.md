@@ -34,14 +34,14 @@ can serialize/deserialize model objects to/from files, or you can use `joblib`
 to serialize NumPy-heavy models more effectively.
 
 However, when MLEM is used to
-[save python model objects](/doc/user-guide/api-reference/save) or enrich
-existing model files using the [import command](/doc/user-guide/importing), it
-adds its "special sauce" - all the things needed to reliably recreate this
-Python object later are extracted **auto-magically** and are written to a
-`.mlem` metadata file. This additional "metafile" is a yaml representation of
-the [MLEM Object](#mlem-object) corresponding to the model Python object. This
-is why we refer to this operation as a "codification" of the model, and is a
-very powerful concept, underlining a lot of MLEM's abilities.
+[save python model objects](/doc/api-reference/save) or enrich existing model
+files using the [import command](/doc/user-guide/importing), it adds its
+"special sauce" - all the things needed to reliably recreate this Python object
+later are extracted **auto-magically** and are written to a `.mlem` metadata
+file. This additional "metafile" is a yaml representation of the
+[MLEM Object](#mlem-object) corresponding to the model Python object. This is
+why we refer to this operation as a "codification" of the model, and is a very
+powerful concept, underlining a lot of MLEM's abilities.
 
 Here are the key advantages of using MLEM to save your models:
 
