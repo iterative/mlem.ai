@@ -6,7 +6,7 @@ import PageLayout from '../components/PageLayout'
 
 const IndexPage = (props: PageProps) => (
   <PageLayout {...props}>
-    <SEO title="Home" />
+    <SEO />
     <Home />
   </PageLayout>
 )
