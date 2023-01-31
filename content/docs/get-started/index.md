@@ -247,8 +247,8 @@ Ok, we saw how easy working with models is, both via API and CLI. However, MLEM
 ## Serving models locally
 
 MLEM can serve any model for you using different server implementations like
-[FastAPI](/doc/user-guide-serving/fastapi),
-[RabbitMQ](/doc/user-guide/serving/rabbitmnq) or
+[FastAPI](/doc/user-guide/serving/fastapi),
+[RabbitMQ](/doc/user-guide/serving/rabbitmq) or
 [Streamlit](/doc/user-guide/serving/streamlit). Let's check out how it works
 with FastAPI since using it for serving is very common.
 

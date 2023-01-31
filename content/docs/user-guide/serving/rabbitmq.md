@@ -14,3 +14,11 @@ $ pip install mlem[rmq]
 # or
 $ pip install pika
 ```
+
+<admon type="tip">
+
+Hi! We didn't get to writing the User Guide for RabbitMQ, but we'll be happy to
+help you with that! Just reach us out in [Discord](https://mlem.ai/chat) or
+[GitHub issues](https://github.com/iterative/mlem/issues)!
+
+</admon>
