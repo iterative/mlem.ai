@@ -5,14 +5,23 @@ const apiMiddleware = require('@dvcorg/websites-server/src/middleware/api')
 const redirectsMiddleware = require('@dvcorg/websites-server/src/middleware/redirects')
 
 const siteMetadata = {
-  title: 'MLEM - Simplifying Machine Learning Model Deployment',
+  title: 'Simplifying Machine Learning Model Deployment',
   description: 'Ship, deploy and serve ML models faster',
   siteUrl: process.env.HEROKU_APP_NAME
     ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
     : 'https://mlem.ai',
-  twitterUsername: '@DVCorg',
+  twitterUsername: '@Iterativeai',
   titleTemplate: '%s | MLEM',
-  keywords: ['mlem']
+  keywords: [
+    'machine learning',
+    'models',
+    'model deployment',
+    'model serving',
+    'devops',
+    'mlops',
+    'operations',
+    'cloud serving'
+  ]
 }
 
 const plugins = [
