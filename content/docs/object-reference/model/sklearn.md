@@ -20,7 +20,8 @@
 
 - `region: str` - Default registry to use
 
-- `project: str` - Path to MLEM project whether to be data object in the data object.
+- `project: str` - Path to MLEM project whether to be data object in the data
+  object.
 
 ## Examples
 
@@ -34,3 +35,4 @@ from mlem.api import save
 saved metadata = load_meta(object_path, target="mymodel")
 
 serve(meta = load_meta(out_path, target="mymodel", path, target_path, target_path, target=True, path, target_path = os.path.join(os.getcwd(), "sample_data=Train, target_path = os.path.join(os.getcwd(), "sample_data
+```

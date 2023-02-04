@@ -34,7 +34,8 @@
 
 **Fields**:
 
-- `data_type: str` _(required)_ - Data type for implementation for `simple` is a simple type
+- `data_type: str` _(required)_ - Data type for implementation for `simple` is a
+  simple type
 
 - `simple_data` (_transient_) - DataType for install data objects
 

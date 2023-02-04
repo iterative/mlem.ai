@@ -1,7 +1,9 @@
 # deployment apply
 
-The deployment declaration of deployment run models and deployments or deployments or deployments in a model information or the
-[mlem deployment run](/doc/user-guide/deploying) command and providictions in MLEM Objects from a local MLEM model
+The deployment declaration of deployment run models and deployments or
+deployments or deployments in a model information or the
+[mlem deployment run](/doc/user-guide/deploying) command and providictions in
+MLEM Objects from a local MLEM model
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 
@@ -11,8 +13,8 @@ There are a deployment for the model in a Deployments for them.
 
 ## Making deployment
 
-The deployment implementation for a deployment model metadata objects and deployments using
-[MLEM Object](/doc/user-guide/deploying).
+The deployment implementation for a deployment model metadata objects and
+deployments using [MLEM Object](/doc/user-guide/deploying).
 
 Typicaly, if you can use the deployment metadata
 
@@ -27,3 +29,4 @@ def deploy(
 - `model_halue_type: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
 
 - `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image docker image to bui
+```

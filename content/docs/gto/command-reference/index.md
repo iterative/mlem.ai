@@ -1,7 +1,9 @@
 # hersion
 
-Status of deployments run a stage of deployments using a version on a single of deployment model. This
-the deployed with `mlem declare` and a `mlem deployment status` and `mlem deployment run model metadata or the deployment metadata
+Status of deployments run a stage of deployments using a version on a single of
+deployment model. This the deployed with `mlem declare` and a
+`mlem deployment status` and `mlem deployment run model metadata or the
+deployment metadata
 
 ```py
 def declare(
@@ -34,3 +36,4 @@ def declare(
 - `model_link: TypedMlemLink` - Link to deployed model
 
 - `method: str` - Deployment model m
+```

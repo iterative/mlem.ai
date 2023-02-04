@@ -16,12 +16,11 @@
 
 - `method: str` - Default declaration used
 
-- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker Docker image docker image to Docker image which
-  model image for deployment metadata
+- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker Docker image
+  docker image to Docker image which model image for deployment metadata
 
 - `path = models/rf.mlem.core.model.mlem
 
        models/rf
                   - model="Galue6 \
                         - name: deployment run \
-                                                                                                                                                                                                                                                                                                                                                                                    

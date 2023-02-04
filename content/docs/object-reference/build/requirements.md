@@ -66,4 +66,4 @@
 
 **MlemABC parent type**: `model_io`
 
-**MlemABC type
+\*\*MlemABC type

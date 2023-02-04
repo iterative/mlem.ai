@@ -1,6 +1,7 @@
 # mlem.api.save()
 
-The model to deploy importation for the model metadata object in the model in it.
+The model to deploy importation for the model metadata object in the model in
+it.
 
 **Base class**: `mlem.core.objects.MlemModelIO`
 

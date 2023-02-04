@@ -44,7 +44,7 @@ MlemLink a link to the model to the model the model.
 
 - `size: int` _(required)_ - DataType for install package
 
-- `size: int` __required)_ - DataType for install format
+- `size: int` \__required)_ - DataType for install format
 
 ---
 

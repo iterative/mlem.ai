@@ -6,7 +6,8 @@ MlemObject a MLEM Object from a local MLEM model metadatasets and models.
 
 **Fields** (in additional)
 
-- `path = models/rf.mlem.core.objects.MlemLink` - Link to save the model files (example)
+- `path = models/rf.mlem.core.objects.MlemLink` - Link to save the model files
+  (example)
 
 **Fields**:
 

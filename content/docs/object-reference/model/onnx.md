@@ -1,7 +1,8 @@
 # mlem.api.save()
 
-MlemLink MlemModel from models from models to a deployed model into them to a model methods and deployments
-from models to the deployment metadata object in MLEM deployment meta
+MlemLink MlemModel from models from models to a deployed model into them to a
+model methods and deployments from models to the deployment metadata object in
+MLEM deployment meta
 
 ```py
 def apply(
@@ -11,4 +12,5 @@ def apply(
              sample_meta
               server python model in Deployment
                  metadata
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+```

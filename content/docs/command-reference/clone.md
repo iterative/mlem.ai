@@ -1,8 +1,10 @@
 # content/docs/user-guide/building/index.md
+
 # Docker
 
-Deployment environments and deployment models and deployments on their deployments using
-[MLEM Object](/doc/user-guide/basic-concepts) for environment the deployment in a model using MLEM with MLEM
+Deployment environments and deployment models and deployments on their
+deployments using [MLEM Object](/doc/user-guide/basic-concepts) for environment
+the deployment in a model using MLEM with MLEM
 
 ```py
 def link(
@@ -22,4 +24,5 @@ def link(
       target_project: Optional[str] = None,
      target_project: Optional[str] = None,
       target_project: Optional[str] = None,
-     target_project: Optional[str] = 
+     target_project: Optional[str] =
+```

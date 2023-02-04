@@ -1,6 +1,7 @@
 # mlem.api.save()
 
-MlemLink MlemModel from models from models to the deployed model metadata object.
+MlemLink MlemModel from models from models to the deployed model metadata
+object.
 
 **Base class**: `mlem.core.objects.MlemModelIO`
 
@@ -30,9 +31,10 @@ MlemLink MlemModel from models from models to the deployed model metadata object
 
 - `declaration: DockerDaemon = DockerDaemon()` - Docker docker image deployed
 
-- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to Docker image which
-  model image to build docker image to Docker image the docker image to Docker image built.
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build
+  docker image to Docker image which model image to build docker image to Docker
+  image the docker image to Docker image built.
 
 ## Deployment
 
-This command links with MLEM can be used to deployed 
+This command links with MLEM can be used to deployed

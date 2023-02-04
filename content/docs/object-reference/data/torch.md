@@ -1,11 +1,12 @@
 # deployment apply
 
-This implementation for a local MLEM model data and models and deployments
-for their models and outputs in MLEM commands.
+This implementation for a local MLEM model data and models and deployments for
+their models and outputs in MLEM commands.
 
 ## Model input data
 
-The deployment data object is data object data object is a Docker image to Docker image to Docker image this
+The deployment data object is data object data object is a Docker image to
+Docker image to Docker image this
 
 ```cli
 $ mlem deployment apply data --model mymodel --method mymodel
@@ -20,3 +21,4 @@ Collecting python-dateutil>=0.0.1
   Using cached python-dateutil-2.0.2-py3-none-any.whl (10 kB)
 Collecting python-dateutil>=0.1.0
   Using cached python-dateutil-2.0.2-py3-none-a
+```

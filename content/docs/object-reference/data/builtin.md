@@ -6,7 +6,7 @@
 
 **MlemABC type**: `binary`
 
-   DataType implementation for `pickle`
+DataType implementation for `pickle`
 
 **Fields**:
 

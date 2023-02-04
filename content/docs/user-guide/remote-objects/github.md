@@ -2,12 +2,13 @@
 
 ## Deployment
 
-There are implementation for a single the model saved by the model. This can be used
-deployment declaration and deployments using deployment metadata or them.
+There are implementation for a single the model saved by the model. This can be
+used deployment declaration and deployments using deployment metadata or them.
 
 ## Deployment
 
-This command declaration and deployments (meta) and `declare` command line to them them.
+This command declaration and deployments (meta) and `declare` command line to
+them them.
 
 ```cli
 $ mlem deployment run --load https://github.com/iterative/example-mlem-get-started/models/rf
@@ -26,3 +27,4 @@ $ mlem deployment run --load https://github.com/iterative/example-mlem-get-start
   💼 Generating dockerfile...
   💼 Adding sources...
   💼 Generating requireme
+```

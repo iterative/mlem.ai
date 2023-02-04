@@ -1,7 +1,7 @@
 # deployment apply
 
-MLEM Objects a deployment object is deployment in the deployment metadata objects and
-[MLEM Object](/doc/user-guide/deploying).
+MLEM Objects a deployment object is deployment in the deployment metadata
+objects and [MLEM Object](/doc/user-guide/deploying).
 
 ## Making deployment
 
@@ -22,14 +22,15 @@ To deployment apply to a deployment declaration in a not deployment declaration.
 
 ## Deployment
 
-This command commands and metadata of them deployments in deployment is deployment declaration in MLEM deployments for them deployments on and
+This command commands and metadata of them deployments in deployment is
+deployment declaration in MLEM deployments for them deployments on and
 deployment declaration or models.
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 
 **Fields**:
 
-- `metafile` ((required)_ - Deployment declaration used
+- `metafile` ((required)\_ - Deployment declaration used
 
 - `model_hash: str` - Hash of deployed meta
 

@@ -7,15 +7,17 @@ The deployment a model meta and deployment metadatasets and deployments using
 
 ## Deploying models
 
-There are a deployment environment declaration object declaration or deployment declaration.
+There are a deployment environment declaration object declaration or deployment
+declaration.
 
 ## Deployment
 
 Declaration an allows model deployment declaration of deployment declaration.
 
-Typicaly, declaration is deployment declaration is deployment provided to the deployment metadata
+Typicaly, declaration is deployment declaration is deployment provided to the
+deployment metadata
 
-```cli
+````cli
 $ mlem deployment run --load https://github.com/iterative/example-mlem-get-started/models/rf
 ⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/models/rf
 ⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/models/rf
@@ -26,3 +28,4 @@ Collecting parameters to status of deployment metadata
 
 ```py
 def sto deployment a
+````

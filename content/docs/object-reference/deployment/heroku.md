@@ -1,6 +1,7 @@
 # deployment apply
 
-MLEM Objects a deployment on a model to deploy metadata object in a model deployment meta
+MLEM Objects a deployment on a model to deploy metadata object in a model
+deployment meta
 
 **Fields**:
 

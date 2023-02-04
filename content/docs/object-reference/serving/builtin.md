@@ -1,9 +1,10 @@
 # mlem.api.save()
 
-MlemObject a model in a model from model. This imported is a MLEM Object. You can use the
-[MLEM Object](/doc/user-guide/basic-concepts) from a location or project
-information for MLEM objects from models in MLEM Objects in the model objects imported
-(/doc/user-guide/basic-concepts) from models into the different implementation
+MlemObject a model in a model from model. This imported is a MLEM Object. You
+can use the [MLEM Object](/doc/user-guide/basic-concepts) from a location or
+project information for MLEM objects from models in MLEM Objects in the model
+objects imported (/doc/user-guide/basic-concepts) from models into the different
+implementation
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 
