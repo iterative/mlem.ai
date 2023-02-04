@@ -2,7 +2,8 @@
 
 ## Deployment
 
-Some an example model to deploy remote the deployment state of deployment models to
+Some an example model to deploy remote the deployment state of deployment models
+to
 
 ```cli
 $ mlem declare deployment remove --model my-model --method model
@@ -33,3 +34,4 @@ $ mlem declare deployment remove --model my-model --method model
 💼 Generating dockerfile...
 💼 Adding sources...
 💼 Gen
+```

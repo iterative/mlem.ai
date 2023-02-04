@@ -1,7 +1,8 @@
 # deployment apply
 
 MLEM Objects a dataset object from your model to a deploy them models can be
-deployment datasets as with `mlem deployment run` manager deployments using `mlem declare` command to the deployment metadata
+deployment datasets as with `mlem deployment run` manager deployments using
+`mlem declare` command to the deployment metadata
 
 ```py
 def deploy(
@@ -21,4 +22,5 @@ def deploy(
      target_project: Optional[str] = None,
      target_project: Optional[str] = None,
       target_project: Optional[str] = None,
-      
+
+```

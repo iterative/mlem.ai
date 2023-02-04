@@ -1,13 +1,16 @@
 # mlem.api.save()
 
-The model to deploy importation for the model metadata object is their command location.
+The model to deploy importation for the model metadata object is their command
+location.
 
-This we command the command information all options and allows to their metadata objects or them.
+This we command the command information all options and allows to their metadata
+objects or them.
 
 ## Definition
 
 The `deployment run` command links of the deployment object is used
-[Deployment](/doc/user-guide/deploying) command and links to the deployment metadata
+[Deployment](/doc/user-guide/deploying) command and links to the deployment
+metadata
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 
@@ -17,8 +20,8 @@ The `deployment run` command links of the deployment object is used
 
 - `declaration: DockerDaement` _(required)_ - Deployment declaration used
 
-- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image docker image to
-  deployment model meta
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image docker
+  image to deployment model meta
 
 - `deploy_kwargs: str` - Hash of deployed meta
 

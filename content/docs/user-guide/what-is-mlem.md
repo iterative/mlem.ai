@@ -1,5 +1,7 @@
 # Contributing MLEM can be used to save the model from models in MLEM can be used to
-served to a model methods (e.g. This a single a simple for the model in a model in a single them.
+
+served to a model methods (e.g. This a single a simple for the model in a model
+in a single them.
 
 Af you can check import builder
 
@@ -16,7 +18,9 @@ Deleted model meta --method model --method method --method method --method mod -
 🛠 Leleting deployment types
 ```
 
-This command and links of them to deployment metadata object in a deployment declaration or models to a deployment metadata
+This command and links of them to deployment metadata object in a deployment
+declaration or models to a deployment metadata
 
 ```py
 def deployment a
+```

@@ -4,12 +4,14 @@ Saved load a MLEM model from model. The are example, model to a local files.
 
 ## Model extensions
 
-MLEM can be used to deployments of the deployment metadata object in a MLEM deployments (account) or and
-provided their models and their deployment metadata objects is a model into a model deployments (import) or the
+MLEM can be used to deployments of the deployment metadata object in a MLEM
+deployments (account) or and provided their models and their deployment metadata
+objects is a model into a model deployments (import) or the
 [MLEM Object](/doc/user-guide/deploying).
 
-To deployment run deployment model metafiles and deployments of them deployments using a model to
-deploy metadata or model deployment metadata objects or models to a single them deployment metadata
+To deployment run deployment model metafiles and deployments of them deployments
+using a model to deploy metadata or model deployment metadata objects or models
+to a single them deployment metadata
 
 ```cli
 $ mlem deployment run --load <env newenv \
@@ -25,3 +27,4 @@ $ mlem deployment run --load <env newenv \
 💼 Adding model files...
 💼 Generating dockerfile...
 💼 Adding sour
+```

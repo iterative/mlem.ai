@@ -1,7 +1,8 @@
 # Deployment run
 
-Declaration of environment deployment run deployments on environment. This command and
-access and in MLEM Objects can be used to deployed models and deployments with `mlem declare` metafiles in a model in a deployment, metadata
+Declaration of environment deployment run deployments on environment. This
+command and access and in MLEM Objects can be used to deployed models and
+deployments with `mlem declare` metafiles in a model in a deployment, metadata
 
 ```py
 def declare(
@@ -48,3 +49,4 @@ def declare(
 **MlemABC type**: `dict`
 
      DataType for dict with sindebary
+```

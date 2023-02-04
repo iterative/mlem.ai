@@ -1,6 +1,7 @@
 # Deploy models
 
-Deploy and model to a deployment metadata objects or methods them deployments and deployments
+Deploy and model to a deployment metadata objects or methods them deployments
+and deployments
 
 **Fields**:
 

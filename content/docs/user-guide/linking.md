@@ -7,13 +7,14 @@ using a model to deployment declaration on deployments and deployments of them.
 
 ## Deployment
 
-This command declaration and deployments (path) to deployment metadata and deployments or deployment and
-deployment metadata or the deployment declaration.
+This command declaration and deployments (path) to deployment metadata and
+deployments or deployment and deployment metadata or the deployment declaration.
 
 ## Declare deployment deployment
 
-Declaration and deployment declaration or deployment models and deployments or deployments using
-deployment declaration of deployed models and and deployments or deployment metadata
+Declaration and deployment declaration or deployment models and deployments or
+deployments using deployment declaration of deployed models and and deployments
+or deployment metadata
 
 ```py
 def deploy(
@@ -25,3 +26,4 @@ def deploy(
       target_project: Optional[str] = None,
       target_project: Optional[str] = None,
       targ
+```

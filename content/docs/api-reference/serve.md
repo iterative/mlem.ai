@@ -1,7 +1,8 @@
 # mlem.api.save()
 
-MLEM Objects and MLEM model from models and provided to easily in MLEM commands. This is a simple is default with
-`mlem build` for `model` files install python model is a simple format.
+MLEM Objects and MLEM model from models and provided to easily in MLEM commands.
+This is a simple is default with `mlem build` for `model` files install python
+model is a simple format.
 
 **Base class**: `mlem.core.objects.MlemLink`
 
@@ -34,7 +35,7 @@ MLEM Objects and MLEM model from models and provided to easily in MLEM commands.
 
 - `state: str` _(required)_ - Data type of data type
 
-----
+---
 
 ## `class DynamicDictType`
 
@@ -42,4 +43,4 @@ MLEM Objects and MLEM model from models and provided to easily in MLEM commands.
 
 **MlemABC type**: `dict`
 
-    DataType for dicts without fixed set 
+    DataType for dicts without fixed set

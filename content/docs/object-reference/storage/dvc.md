@@ -12,17 +12,18 @@
 
 - `declaration: MlemDeployment` _(required)_ - Deployment declaration used
 
-- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to
-  docker image to Docker image built.
+- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker docker image to
+  build docker image to docker image to Docker image built.
 
 ## Definition
 
-The `deployment run docker docker image docker image deployed model deployment run docker image to docker image to Docker image to Docker
-Heroku environment.
+The `deployment run docker docker image docker image deployed model deployment
+run docker image to docker image to Docker image to Docker Heroku environment.
 
 ## Deployment run deployment run deployment
 
-The deployment environment declaration on the deployment metadata objects or deployment, run
+The deployment environment declaration on the deployment metadata objects or
+deployment, run
 
 ```cli
 $ mlem declare env heroku app \
@@ -33,7 +34,8 @@ $ mlem declare env heroku app \
 💾 Saving deployment to deployment status
 ```
 
-To declare deployment declaration of deployment run deployments for the deployment declaration.
+To declare deployment declaration of deployment run deployments for the
+deployment declaration.
 
 ## Deployment run
 

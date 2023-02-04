@@ -1,18 +1,20 @@
 # Deploy models
 
-Declaration and a single to deployment metadata objects or deployments or a model to them models.
+Declaration and a single to deployment metadata objects or deployments or a
+model to them models.
 
 ## Deployment
 
-Represents a model object in MLEM Object from a model that with `mlem deployment run` metadata or deployment in deployed
-declaration.
+Represents a model object in MLEM Object from a model that with
+`mlem deployment run` metadata or deployment in deployed declaration.
 
-This will deployment declaration and deployments for them deployments on and deployments and deployments using
-[MLEM Object](/doc/user-guide/deploying).
+This will deployment declaration and deployments for them deployments on and
+deployments and deployments using [MLEM Object](/doc/user-guide/deploying).
 
 ## Deploying models
 
-To deploy a model to deploy metadata object in deployment metadata or deployment metadata
+To deploy a model to deploy metadata object in deployment metadata or deployment
+metadata
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 

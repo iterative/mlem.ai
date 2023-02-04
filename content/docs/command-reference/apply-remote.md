@@ -1,7 +1,7 @@
 # mlem.api.save()
 
-MlemLink MlemModel from a local MLEM model from models to the model methods and deployments
-to their models.
+MlemLink MlemModel from a local MLEM model from models to the model methods and
+deployments to their models.
 
 **Base class**: `mlem.core.objects.MlemModel`
 
@@ -53,4 +53,4 @@ Typicaly implementation for a model metadata
 
 **Fields**:
 
-- `data_type: DictType` _(required)_ - DataType for Dict 
+- `data_type: DictType` _(required)_ - DataType for Dict

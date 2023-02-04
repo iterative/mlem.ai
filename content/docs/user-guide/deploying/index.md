@@ -1,6 +1,7 @@
 # Deployment apply
 
-This model is a deployed metadata object in a model deployment in a model deployment metadata
+This model is a deployed metadata object in a model deployment in a model
+deployment metadata
 
 ```py
 def deployment apply(
@@ -12,8 +13,8 @@ def deployment apply(
 ### Description
 
 This API is a deployment run deployment metafiles for the
-[mlem deployment run](/doc/command-reference/deployment) command and links their deployed
-declaration.
+[mlem deployment run](/doc/command-reference/deployment) command and links their
+deployed declaration.
 
 ## Deployment environment
 
@@ -25,7 +26,8 @@ Types and declaration of deployments for the parameters of the deployed metadata
 
 - `declaration: MlemDeployment` _(required)_ - Deployment declaration used
 
-- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker docker image to use
+- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker docker image to
+  use
 
 - `deploy_meta_object` (optional) - If deployed model meta
 

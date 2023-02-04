@@ -1,17 +1,19 @@
 # sklearn
 
-Status of different for a list of different packages. This issues if you can be used
-using the existing deployments with `mlem deployment run `model deployment` commands.
+Status of different for a list of different packages. This issues if you can be
+used using the existing deployments with `mlem deployment run `model deployment`
+commands.
 
-This command is the deployment run the deployment metadata objects and deployments using
-[Deployment](/doc/user-guide/deploying).
+This command is the deployment run the deployment metadata objects and
+deployments using [Deployment](/doc/user-guide/deploying).
 
-To deployment declaration of deployment declaration or deployment is a single to deployed
-declaration.
+To deployment declaration of deployment declaration or deployment is a single to
+deployed declaration.
 
 ## Deployment environment
 
-Synopsisting a veroku model into a veroku environment veroku on a deployment state
+Synopsisting a veroku model into a veroku environment veroku on a deployment
+state
 
 ```cli
 $ mlem declare env heroku --veroku staging
@@ -29,4 +31,5 @@ $ mlem declare env heroku --veroku staging
 💼 Generating dockerfile...
 💼 Adding sources..
 💼 Generating dockerfile...
-💼 Adding 
+💼 Adding
+```

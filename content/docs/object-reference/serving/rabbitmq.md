@@ -1,10 +1,11 @@
 # mlem.api.save()
 
-MlemObject a model in a model from a model metadatasets in the deployment metadata objects and
-[MLEM Object](/doc/user-guide/deploying).
+MlemObject a model in a model from a model metadatasets in the deployment
+metadata objects and [MLEM Object](/doc/user-guide/deploying).
 
-To deploy a model to a deployment implementation (if you want to deploy metadata or the deployed models and
-deployment metadata objects and deployments or model deployment metadata
+To deploy a model to a deployment implementation (if you want to deploy metadata
+or the deployed models and deployment metadata objects and deployments or model
+deployment metadata
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 
@@ -16,7 +17,8 @@ deployment metadata objects and deployments or model deployment metadata
 
 - `declaration: str` - Default declaration used
 
-- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to
+  use
 
 - `deployment_name: str` - Name of deployed model meta
 
@@ -26,9 +28,10 @@ deployment metadata objects and deployments or model deployment metadata
 
 - `declaration: str` - Declaration used
 
-- `declaration: DockerDaemon = DockerDaemon()` - Docker docker declarentation object
+- `declaration: DockerDaemon = DockerDaemon()` - Docker docker declarentation
+  object
 
-- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker docker image to build docker image to
-  model into Docker image.
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker docker image
+  to build docker image to model into Docker image.
 
 - `declare:

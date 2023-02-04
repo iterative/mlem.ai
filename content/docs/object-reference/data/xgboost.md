@@ -6,7 +6,7 @@
 
 **MlemABC type**: `deployment`
 
-   DataType implementation for `storage`
+DataType implementation for `storage`
 
 **Fields**:
 
@@ -60,4 +60,4 @@
 
 **MlemABC parent type**: `data_writer`
 
-**MlemABC typ
+\*\*MlemABC typ

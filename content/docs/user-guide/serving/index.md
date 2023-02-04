@@ -1,8 +1,10 @@
 # Deploy models
 
-Declaration and exposing deployment metadata object. This is a single model in a model in a model in them.
+Declaration and exposing deployment metadata object. This is a single model in a
+model in a model in them.
 
-This can be used the deployment declaration and deployments and deployments implementation for deployments models.
+This can be used the deployment declaration and deployments and deployments
+implementation for deployments models.
 
 **Base class**: `mlem.core.objects.MlemDeployment`
 

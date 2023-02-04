@@ -1,6 +1,7 @@
 # Storage
 
-Status of the local of MLEM Object. For export to repo a model instance in MLEM objects (experimental)
+Status of the local of MLEM Object. For export to repo a model instance in MLEM
+objects (experimental)
 
 **Base class**: `mlem.core.objects.MlemData`
 
@@ -10,7 +11,7 @@ Status of the local of MLEM Object. For export to repo a model instance in MLEM 
 
 - `pandas`
 
-    DataType for different files installed
+  DataType for different files installed
 
 **Fields**:
 

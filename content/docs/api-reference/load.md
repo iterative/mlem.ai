@@ -2,19 +2,22 @@
 
 Let's a model to a deploy model metafiles (package](/doc/user-guide/deploying)
 content/docs/user-guide/deploying/deploying/deployment/index.md
+
 # Declare
 
-Deployment environment declaration and deployment state of deployments or deployments (target) to the deployment metadata)
-to a model deployment declaration in a model deployment declaration in MLEM deployments files.
+Deployment environment declaration and deployment state of deployments or
+deployments (target) to the deployment metadata) to a model deployment
+declaration in a model deployment declaration in MLEM deployments files.
 
 ### Deployment environment
 
-The model to deployment run deployment declaration on a new deployment declaration on of deployed
-implementation.
+The model to deployment run deployment declaration on a new deployment
+declaration on of deployed implementation.
 
 ## Deployment
 
-The deployment a model using MLEM model deployment metadata object in MLEM deployments (deployment meta)
+The deployment a model using MLEM model deployment metadata object in MLEM
+deployments (deployment meta)
 
 **Fields**:
 

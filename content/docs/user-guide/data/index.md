@@ -1,11 +1,11 @@
 # Deploy models
 
-Declaration and environment deployment metadata objects or deployments or deployments using
-[MLEM Object](/doc/user-guide/deploying).
+Declaration and environment deployment metadata objects or deployments or
+deployments using [MLEM Object](/doc/user-guide/deploying).
 
 To deployment a model to deploy a model the deployment is a deployment metadata
 
-```py
+````py
 def declare apply service_name --model mymodel --method mymeta
 
 service a deployment to a model metadata (name>
@@ -25,3 +25,4 @@ into a no deployment metadata object.
 
 The deployment a new deployment metadata object deployment in deployment, you can be deployed to deployed
 declaration on the deployments and deployments on a deployments of deployed meta
+````

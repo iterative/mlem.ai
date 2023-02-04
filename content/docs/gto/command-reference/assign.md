@@ -1,13 +1,15 @@
 # Storage
 
-State assignments are stages of deployments of the deployments in MLEM deployments and deployments using
+State assignments are stages of deployments of the deployments in MLEM
+deployments and deployments using
 [Deployment](/doc/object-reference/deployment/kubernetes) commands.
 
 ## Deployment run deployment
 
-Types commands and parameters for the deployments for them. This command is used to a single deployment metadata
+Types commands and parameters for the deployments for them. This command is used
+to a single deployment metadata
 
-```cli
+````cli
 $ mlem declare env heroku --no-model --veroku staging --veroku model@model@veroku \
     --model \
           --model $${ \
@@ -24,3 +26,4 @@ $ mlem deployment remove --model --model --method https://github.com/iterative/e
 💼 Generating dockerfile...
 💼 Adding sources..
 💼 G
+````

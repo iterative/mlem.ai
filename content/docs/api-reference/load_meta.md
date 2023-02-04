@@ -8,4 +8,5 @@ some information of the documentation.
 ```usage
 usage: mlem deployment run [-load <name> --model <declaration>]
                                                                      [--methods <declaration>] [--method <declaration>]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+```

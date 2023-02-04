@@ -56,4 +56,4 @@
 
 - `data_type: DataType` _(required)_ - DataType for install format
 
-- `data_type: DataType` _(
+- `data_type: DataType` \_(

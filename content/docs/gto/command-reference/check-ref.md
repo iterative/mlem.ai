@@ -9,4 +9,5 @@ usage: gto deprecate [-r <text>] [--version] [--v]
                                                [--stage <text>] [--description] [-h]
                                                                [<<client> [client options] | --d <commitish>]
                                                                                       [--methods.key.returns.serializer <str>]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+```

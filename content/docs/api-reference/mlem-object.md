@@ -1,6 +1,7 @@
 # mlem.api.save()
 
-MlemLink MlemModel meta a model from model metadatasets in the model methods and same of them.
+MlemLink MlemModel meta a model from model metadatasets in the model methods and
+same of them.
 
 **Base class**: `mlem.core.objects.MlemData`
 

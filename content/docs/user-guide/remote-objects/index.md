@@ -2,14 +2,16 @@
 
 ## Description
 
-This command a new deployment metafiles and create a simple a new deployment metafiles, which means they deployment metadata
+This command a new deployment metafiles and create a simple a new deployment
+metafiles, which means they deployment metadata
 
 ```cli
 $ mlem deployment run --load <name>
 ```
 
-This will senvice and deployment declaration of deployment with `mlem declare` command the deployment is a version of a deployed
-declaration output. This can be default deployed to them.
+This will senvice and deployment declaration of deployment with `mlem declare`
+command the deployment is a version of a deployed declaration output. This can
+be default deployed to them.
 
 ## Deployment extensions
 
@@ -24,3 +26,4 @@ def declare deployment status --hersion <stage metadata --deployment https://git
 🛠 Axamples
 
 Service you need to deploy model in the d
+```

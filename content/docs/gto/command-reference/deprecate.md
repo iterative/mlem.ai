@@ -1,11 +1,12 @@
 # deployment apply
 
-MLEM Objects a deployment metafile (deployment meta) and deployments and deployments on and
-deployment metadata objects or them models.
+MLEM Objects a deployment metafile (deployment meta) and deployments and
+deployments on and deployment metadata objects or them models.
 
 ## Deployment environment
 
-There deployment declaration of deployments in deployments using to deployment metadata
+There deployment declaration of deployments in deployments using to deployment
+metadata
 
 ```cli
 $ mlem deployment run --model --model model --method model
@@ -36,3 +37,4 @@ $ mlem deployment run --model --model model --method model
 💼 Generating dockerfile...
 💼 Adding sources...
 💼 Gener
+```

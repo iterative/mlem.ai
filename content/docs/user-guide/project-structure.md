@@ -6,7 +6,7 @@
 
 **MlemABC type**: `declaration`
 
-   Deployment meta
+Deployment meta
 
 **Fields**:
 
@@ -20,17 +20,16 @@
 
 - `deployment_name: str` - Name of deployed model
 
-- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to Docker image to Docker image
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build
+  docker image to Docker image to Docker image
 
-- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to build docker image to build docker image for docker image docker image to
-   docker image built. Docker image built.
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to build
+  docker image to build docker image for docker image docker image to docker
+  image built. Docker image built.
 
 ## Deployment
 
-This command from models with `docker build` wh command to build docker image from model
-from models/rf.mlem
-🛠 Building docker image files...
-💼 Adding model files...
-💼 Generating dockerfile...
-💼 Adding sources..
-💼 Generating dockerfile..
+This command from models with `docker build` wh command to build docker image
+from model from models/rf.mlem 🛠 Building docker image files... 💼 Adding model
+files... 💼 Generating dockerfile... 💼 Adding sources.. 💼 Generating
+dockerfile..

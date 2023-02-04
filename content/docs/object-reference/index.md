@@ -32,6 +32,7 @@ MlemLink MLEM commands to the deployment model metafiles to a model metafiles.
 
 - `declaration: DockerDaemon = DockerBuildArgs()` - Docker registry
 
-- `docker_declarer: str` - Docker DockerBuild docker image for Docker image for Docker Docker image for Docker image docker
+- `docker_declarer: str` - Docker DockerBuild docker image for Docker image for
+  Docker Docker image for Docker image docker
 
 - `docker_container_i

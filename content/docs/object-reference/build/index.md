@@ -12,4 +12,5 @@ Synopsis
 usage: mlem deployment run [-p <path>] [--rev <commitish>] [--push>] [--push] [--push] [--push] [--push] [--push] [--push] [--project <path>] [--output <path>] [--o <path>] [--dr <commitish>]
                                                           [--methods.key.returns.serializer <str>]
                                                             [--methods.key.returns.serializer <str>]
-                                                                                                                                                                                                                                                                                                                                                                                                
+
+```

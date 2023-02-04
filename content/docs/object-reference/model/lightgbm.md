@@ -34,6 +34,8 @@
 
 - `deployment_name: str` - Name of deployed model meta
 
-- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to
+  use
 
-- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker i
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build
+  docker i
