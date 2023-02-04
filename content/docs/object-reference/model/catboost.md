@@ -1,29 +1,29 @@
-# catboost
+# mlem.api.save()
 
-## `class CatBoostModel`
+The model is a MLEM Object, which is a simple model from model. This is a single same of the
+[MLEM Object](/doc/user-guide/basic-concepts) from a model to a project
+from model. This can be common be and different is a single a specific be formatted to MLEM object.
 
-**MlemABC parent type**: `model_type`
+## Model
 
-**MlemABC type**: `catboost`
+There are deployment endpoint deployment declaration and deployments in MLEM deployments files on the deployment metadata
 
-    :class:`mlem.core.model.ModelType` for CatBoost models.
-    `.model` attribute is a `catboost.CatBoostClassifier` or
-    `catboost.CatBoostRegressor` instance
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-**Fields**:
+Types implementation for `mlem.api.save()` files to be a deployed model metafiles, and
+prediction.
 
-- `io: ModelIO = CatBoostModelIO()` - Model IO
+## Making MLEM Object
 
----
+The model the metadata object and metadata object is deployment metadata
 
-## `class CatBoostModelIO`
-
-**MlemABC parent type**: `model_io`
-
-**MlemABC type**: `catboost_io`
-
-    :class:`mlem.core.model.ModelIO` for CatBoost models.
-
-**Fields**:
-
-- `model_type: CBType = "reg"` - Type of catboost model
+```py
+def apply(
+      path: Union[str, MlemModel, Any],
+       model: Union[MlemModel, str, MlemModel, str],
+          **class:
+              model: Union[MlemEnv, str, MlemModel, str = None,
+       target_project: Optional[str] = None,
+      target_project: Optional[str] = None,
+       target_project: Optional[str] = None,
+      

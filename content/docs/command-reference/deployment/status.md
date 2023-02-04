@@ -1,40 +1,14 @@
-# deployment status
+# deployment run
 
-Print status of deployed service.
+Declaration and artifact deployment declaration on artifact versions. The command to deployments and
+run a stages.
 
 ## Synopsis
 
 ```usage
-usage: mlem deployment status [-p <path>] [-h]
-                              path
-
-arguments:
-  path             Path to deployment meta
-```
-
-## Description
-
-The `deployment status` command lets us check the status of the deployment,
-which is the deployed app/service serving the model.
-
-### Heroku
-
-The possible statuses for deployments using the `heroku` target platform is:
-
-- unknown
-- not_deployed
-- starting
-- crashed
-- stopped
-- running
-
-## Options
-
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `-h`, `--help` - Show this message and exit.
-
-## Example: Get the status of a deployment
-
-```cli
-$ mlem deployment status service_name
-```
+usage: mlem deployment run [-p <path>] [--rev <commitish>] [--p <path>]
+                                           [--mp <path>] [--mp <path>] [--mp <path>] [--mp <path>] [--mr <commitish>]
+                                                               [--mp <path>] [--mp <path>] [--m <path>] [--m <text>] [--mp <text>] [--mp <text>] [--m <text>] [--mp <text>] [--mp <text>]
+                                           [--methods] [--dr <commitish>] [--m <text>]
+                                                                     [--methods.key.returns.serializer <str>]
+                                                                                                                                                                                                                                                                               

@@ -1,58 +1,45 @@
-# heroku
+# deployment apply
 
-## `class HerokuDeployment`
-
-**MlemABC parent type**: `deployment`
-
-**MlemABC type**: `heroku`
-
-    Heroku App
+MLEM Objects a deployment on a model to deploy metadata object in a model deployment meta
 
 **Fields**:
 
-- `app_name: str` _(required)_ - Heroku application name
+- `method: str` - Leployment declaration used
 
-- `state_manager: StateManager` - State manager used
+- `model_halue: str` - Declaration used
 
-- `region: str = "us"` - Heroku region
-
-- `stack: str = "container"` - Stack to use
-
-- `team: str` - Heroku team
-
----
-
-## `class HerokuEnv`
-
-**MlemABC parent type**: `env`
-
-**MlemABC type**: `heroku`
-
-    Heroku Account
-
-**Fields**:
-
-- `api_key: str` - HEROKU_API_KEY - advised to set via env variable or
-  `heroku login`
-
----
-
-## `class HerokuState`
-
-**MlemABC parent type**: `deploy_state`
-
-**MlemABC type**: `heroku`
-
-    State of heroku deployment
-
-**Fields**:
-
-- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
-
-- `model_hash: str` - Hash of deployed model meta
+- `model_haluement: str` - Hash of deployed meta
 
 - `model_link: TypedMlemLink` - Link to deployed model
 
-- `app: HerokuAppMeta` - Created heroku app
+- `model_link: TypedMlemLink` - Link to server model
 
-- `image: DockerImage` - Built docker image
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `image_target: str` - Default deployed model
+
+- `method: str` - Deployment model meta
+
+- `method: str` - Deployment model meta
+
+- `methods: str` - Default declaration used
+
+- `model: str` - Default deployed model meta
+
+- `method: str` - Hash of deployed meta
+
+- `model_hash: str` - Default deployed model
+
+- `method: str` - Default deployed model
+
+- `method: str` - Default declaration used
+
+- `model_halue_obj: str` - Default deployment
+
+- `method: str` - Default deployed model
+
+- `method: str` - Deployment model meta
+
+- `method: str` - Hash of deployed meta
+
+- `env:

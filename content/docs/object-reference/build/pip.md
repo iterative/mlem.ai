@@ -1,55 +1,61 @@
-# pip
+# mlem.api.save()
 
-## `class PipBuilder`
+MlemLink a model from model metafiles from model metadatasets and models.
 
-**MlemABC parent type**: `builder`
+**Base class**: `mlem.core.objects.MlemLink`
 
-**MlemABC type**: `pip`
+**Implementations**:
 
-    Create a directory python package
-
-**Fields**:
-
-- `package_name: str` _(required)_ - Name of python package
-
-- `target: str` _(required)_ - Path to save result
-
-- `python_version: str` - Required python version
-
-- `short_description: str = ""` - short_description
-
-- `url: str = ""` - url
-
-- `email: str = ""` - author's email
-
-- `author: str = ""` - author's name
-
-- `version: str = "0.0.0"` - package version
+- `model_type: Type` _(required)_ - Model IO
 
 ---
 
-## `class WhlBuilder`
+## `class DynamicDictType`
 
-**MlemABC parent type**: `builder`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `whl`
+**MlemABC type**: `data_writer`
 
-    Create a wheel with python package
+     DataType implementation for `sklearn`
 
 **Fields**:
 
-- `package_name: str` _(required)_ - Name of python package
+- `data_type: str` _(required)_ - DataType for Data type
 
-- `target: str` _(required)_ - Path to save result
+---
 
-- `python_version: str` - Required python version
+## `class DynamicDictType`
 
-- `short_description: str = ""` - short_description
+**MlemABC parent type**: `data_writer`
 
-- `url: str = ""` - url
+**MlemABC type**: `data_writer`
 
-- `email: str = ""` - author's email
+    DataType implementation for `data_waitable`
 
-- `author: str = ""` - author's name
+**Fields**:
 
-- `version: str = "0.0.0"` - package version
+- `data_type: DataType` _(required)_ - DataType for DataType
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `dict`
+
+    DataType for lists with servers
+
+**Fields**:
+
+- `data_type: DataType` _(required)_ - DataType for Data type
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `data_writer`
+
+    DataType implementa

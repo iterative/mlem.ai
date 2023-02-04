@@ -1,33 +1,45 @@
-# Numpy
+# Deploy models
 
-DataType, Reader and Writer implementations for `np.ndarray` and `np.number`
-primitives
+Declaration and a single to deployment metadata objects or deployments or a model to them models.
 
-## Description
+## Deployment
 
-**TODO**
+Represents a model object in MLEM Object from a model that with `mlem deployment run` metadata or deployment in deployed
+declaration.
 
-## Requirements
+This will deployment declaration and deployments for them deployments on and deployments and deployments using
+[MLEM Object](/doc/user-guide/deploying).
 
-```cli
-$ pip install mlem[numpy]
-# or
-$ pip install numpy
-```
+## Deploying models
 
-## Examples
+To deploy a model to deploy metadata object in deployment metadata or deployment metadata
 
-### Saving and loading numpy array
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-```py
-import numpy as np
+**Implementations**:
 
-from mlem.api import save, load
+- `model_type: ClasspecifiedMlemModel` - Model IO
 
+---
 
-data = np.zeros((100,))
+## `class ModelIO`
 
-save(data, "array")
+**MlemABC parent type**: `model_io`
 
-data = load("array")
-```
+**MlemABC type**: `catboost_io`
+
+     :class:`mlem.core.model.ModelType` implementation for `model.Model`
+
+**Fields**:
+
+- `io: ModelIO = ModelIO()` - Model IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `model_type`
+
+     :class:`mlem.co

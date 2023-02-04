@@ -1,15 +1,69 @@
-# requirements
-
-## `class RequirementsBuilder`
-
-**MlemABC parent type**: `builder`
-
-**MlemABC type**: `requirements`
-
-    MlemBuilder implementation for building requirements
+# mlem.contrib.file.com_import_objects.MlemModel)
 
 **Fields**:
 
-- `target: str` - Target path for requirements
+- `io: ModelIO = ModelIO()` - Model IO
 
-- `req_type: str = "installable"` - Type of requirements, example: unix
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `model_type`
+
+      ModelType implementation for `model.Model`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFTensorWriter`
+
+**MlemABC parent type**: `model_type`
+
+**MlemABC type**: `model_type`
+
+      ModelType implementation for `model.Model`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class ModelIO`
+
+**MlemABC parent type**: `model_type`
+
+**MlemABC type**: `model_type`
+
+      ModelType implementation for `model.Model`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `model_io`
+
+     Model Model Model
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type

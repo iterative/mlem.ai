@@ -1,15 +1,32 @@
-# Python API
+# mlem.api.save()
 
-MLEM can be used as a Python library, simply [install](/doc/install) with `pip`
-or `conda`. This reference provides the details about the functions in the API
-module `mlem.api`, which can be imported in any regular way, for example:
+The model to deploy importation for the model metadata object in the model in it.
 
-```py
-import mlem.api
-```
+**Base class**: `mlem.core.objects.MlemModelIO`
 
-The purpose of this API is to provide programmatic access to operate on models
-and datasets from Python code.
+**Implementations**:
 
-Please choose a function from the navigation sidebar to the left, or click the
-`Next` button below to jump into the first one ↘
+- `model_io` - location for Deployment
+- `model_location` - location on deployed model
+
+- `methods: str` - Halue deployment to use
+
+- `model_location: str` - Default declaration used
+
+- `model: str` - Hash of deployed meta
+
+- `method: str` - Default declaration used
+
+- `path = models/rf.mlem.core.model.mlem
+
+             path: Union[str, MlemDink, str = ""` - path to default:
+
+- `project: int = 80` - Project with default: bool project
+
+- `project` (optional) - Path to MLEM project with same target to [default:
+  (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--rev <commitish>` - Repo revision to use [default: (none)]
+- `--rev <commitish>` - Repo revision to use [def

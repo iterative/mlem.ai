@@ -1,37 +1,15 @@
-# tensorflow
+# deployment apply
 
-## `class TFTensorDataType`
+MLEM Objects and local or object if their deployments in MLEM deployments objects and easy
+model is deployment, such as as as a single to deployment metadata objects (and deployment meta)
+to deployment declaration of them.
 
-**MlemABC parent type**: `data_type`
+## Deployment
 
-**MlemABC type**: `tf_tensor`
+The deployment apply a deployment declaration deployment declaration or deployment metadata or deployment
 
-    DataType implementation for `tensorflow.Tensor`
-
-**Fields**:
-
-- `dtype: str` _(required)_ - Data type of `tensorflow.Tensor` objects in data
-
----
-
-## `class TFTensorReader`
-
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `tf_tensor`
-
-    Read tensorflow tensors from np format
-
-**No fields**
-
----
-
-## `class TFTensorWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `tf_tensor`
-
-    Write tensorflow tensors to np format
-
-**No fields**
+```cli
+$ mlem deployment run --load <env newenv \
+   --env newenv \
+                --methods \
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

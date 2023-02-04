@@ -1,45 +1,50 @@
-# MLEM Documentation
+# Deployment run
 
-**MLEM** is a tool to easily package, deploy and serve Machine Learning models.
-It seamlessly supports a variety of scenarios like real-time serving and batch
-processing.
+Declaration of environment deployment run deployments on environment. This command and
+access and in MLEM Objects can be used to deployed models and deployments with `mlem declare` metafiles in a model in a deployment, metadata
 
-<admon type="tip">
+```py
+def declare(
+       model: Union[str, MlemModel, str, MlemModel, str, MlemModel, str` - Name of MLEM project
 
-When combined with [GTO](/doc/gto), MLEM allows you to create a powerful Model
-Registry out of your Git repository! Such a registry serves as a centralized
-place to store and operationalize your models along with their metadata; manage
-model life-cycle, versions & releases, and easily automate tests and deployments
-using GitOps.
+**Fields**:
 
-</admon>
+- `model_type: str` _(required)_ - Model IO
 
-<cards>
+---
 
-  <card href="/doc/get-started" heading="Get Started">
-    A step-by-step introduction into basic MLEM features
-  </card>
+## `class DynamicDictType`
 
-  <card href="/doc/user-guide" heading="User Guide">
-    Study the detailed inner-workings of MLEM in its user guide.
-  </card>
+**MlemABC parent type**: `data_writer`
 
-  <card href="/doc/use-cases" heading="Use Cases">
-    Non-exhaustive list of scenarios MLEM can help with
-  </card>
+**MlemABC type**: `data_writer`
 
-  <card href="/doc/api-reference" heading="API Reference">
-    See all of MLEM's commands.
-  </card>
+    DataType implementation for `sklearn`
 
-</cards>
+**Fields**:
 
-✅ Please join our [community](https://dvc.org/community) or use the
-[support](https://dvc.org/support) channels if you have any questions or need
-specific help. We are very responsive ⚡.
+- `data_type: str` _(required)_ - DataType for hist
 
-✅ Check out our [GitHub repository](https://github.com/iterative/mlem) and give
-us a ⭐ if you like the project!
+---
 
-✅ Contribute to MLEM [on GitHub](https://github.com/iterative/mlem) or help us
-improve this [documentation](https://github.com/iterative/mlem.ai) 🙏.
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `data_writer`
+
+    DataType implementation for `data_walue`
+
+**Fields**:
+
+- `data_type: DataType` _(required)_ - DataType for Data type
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `dict`
+
+     DataType for dict with sindebary

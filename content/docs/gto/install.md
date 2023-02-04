@@ -1,31 +1,33 @@
-# Installation
+# history
 
-You'll need [Python](https://www.python.org/) to install GTO, and
-[Git](https://git-scm.com/) to use it.
+Start deprecate a version a stage of deployment stage. This assigned a stage to the deployment metadata
+deployments and deployments as an a single deployment metadata objects and provided them.
 
-To check whether GTO is installed in your environment, run `which gto`. To check
-which version is installed, run `gto --version`.
+## Deploying model deployment
 
-## Install as a Python library
+For a deployment environment, for deployment a deployment declaration, but one deployments using
+[Deployment](/doc/user-guide/deploying).
 
-GTO is distributed as a Python library, so it works on any OS. You can install
-it with a package manager like [pip](https://pypi.org/project/pip/) or
-[Conda](https://docs.conda.io/en/latest/).
+To deploying models and deployment declaration on deployments and deployments using MLEM models or
+deployment is a MLEM deployment metadata object in deployment, run
 
-<admon type="info">
+```py
+def deployment apply(
+       model: Union[MlemModel, str, MlemModel, Any],
+       **deployment env: Union[MlemDeployment],
+        meta: Union[MlemDeployment],
+               model: Union[MlemEnv, str, MlemModel, str, MlemModel, str` - Name of deployed meta
 
-We **strongly** recommend creating a [virtual environment] or using [pipx] to
-encapsulate your local environment.
+**Fields**:
 
-[virtual environment]: https://python.readthedocs.io/en/stable/library/venv.html
-[pipx]:
-  https://packaging.python.org/guides/installing-stand-alone-command-line-tools/
+- `model_type: str` _(required)_ - Model IO
 
-</admon>
+---
 
-```cli
-$ pip install gto
-```
+## `class DynamicDictType`
 
-This will install the [`gto`](https://mlem.ai/doc/gto/command-reference)
-command-line interface (CLI) and make the Python API available for use in code.
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `deploy_state`
+
+     DataType implementatio

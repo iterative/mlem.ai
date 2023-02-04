@@ -1,79 +1,38 @@
-# mlem.api.import_object()
+# mlem.api.save()
 
-Try to load an object as MLEM model (or data) and return it, optionally saving
-to the specified target location.
+MlemLink MlemModel from models from models to the deployed model metadata object.
 
-```py
-def import_object(
-    path: str,
-    project: Optional[str] = None,
-    rev: Optional[str] = None,
-    fs: Optional[AbstractFileSystem] = None,
-    target: Optional[str] = None,
-    target_project: Optional[str] = None,
-    target_fs: Optional[AbstractFileSystem] = None,
-    type_: Optional[str] = None,
-    copy_data: bool = True,
-)
-```
+**Base class**: `mlem.core.objects.MlemModelIO`
 
-### Usage:
+**Implementations**:
 
-```py
-import os
-from mlem.api import import_object
-from mlem.core.objects import MlemData
-from mlem.contrib.pandas import DataFrameType
+- `model_io` - location of Model meta
 
-path = os.path.join(os.getcwd(), "data.csv")
-target_path = os.path.join(os.getcwd(), "imported_data")
-meta = import_object(path, target=target_path, type_="pandas[csv]", copy_data=True)
+- `image_name: str` - Name of the deployed meta
 
-assert isinstance(meta, MlemData)
-dt = meta.dataset
-assert isinstance(dt, DataFrameType)
-```
+- `model_link: TypedMlemLink` - Input declaration object
 
-## Description
+- `model_halue: TypedMlemLink` _(required)_ - Declaration type
 
-Existing datasets and model files are imported as
-[MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects). Specifically, they
-are tried to be loaded as `MlemModel` or `MlemData`. The function also supports
-saving these objects for future use within the MLEM context. This API is the
-underlying mechanism for the [mlem import](/doc/command-reference/import)
-command.
+---
 
-## Parameters
+## `class DynamicDictType`
 
-- **`path`** (required) - Path to the object to import.
-- `project` (optional) - Path to mlem project where to load obj from.
-- `rev` (optional) - Revision if object is stored in git repo.
-- `fs` (optional) - Filesystem to use to load the object.
-- `target` (optional) - Where to store the imported object.
-- `target_project` (optional) - If provided, treat `target` as object name and
-  dumpobject in this MLEM Project.
-- `target_fs` (optional) - Filesystem to use to save the object.
-- `type_` (optional) - Type of the object to import. If not provided, will try
-  toinfer from the object itself.
-- `copy_data` (optional) - Whether to copy data to the target location.
+**MlemABC parent type**: `deployment`
 
-## Returns
+**MlemABC type**: `declaration`
 
-`MlemObject`: Imported object.
+    Deployment implementation for `mlem serve` declare deployments
 
-## Exceptions
+**Fields**:
 
-None
+- `declaration: DockerDaement` _(required)_ - Deployment declaration used
 
-## Example: Import a saved model as MlemModel
+- `declaration: DockerDaemon = DockerDaemon()` - Docker docker image deployed
 
-```py
-import os
-from mlem.core.objects import MlemModel
-from mlem.api import import_object
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to Docker image which
+  model image to build docker image to Docker image the docker image to Docker image built.
 
-path = os.path.join(os.getcwd(), "mymodel")
-target_path = os.path.join(os.getcwd(), "mlem_model")
-meta = import_object(path, target=target_path, type_="pickle", copy_data=True)
-assert isinstance(meta, MlemModel)
-```
+## Deployment
+
+This command links with MLEM can be used to deployed 

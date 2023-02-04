@@ -1,11 +1,59 @@
-# bitbucketfs
+# mlem.api.save()
 
-## `class BitBucketResolver`
+MlemObject a MLEM Object from a local MLEM model metadatasets and models.
 
-**MlemABC parent type**: `resolver`
+**Base class**: `mlem.core.objects.MlemLink`
 
-**MlemABC type**: `bitbucket`
+**Fields** (in additional)
 
-    Resolve bitbucket URIs
+- `path = models/rf.mlem.core.objects.MlemLink` - Link to save the model files (example)
 
-**No fields**
+**Fields**:
+
+- `path = models/rf.mlem.core.model.ModelIO`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `model_type`
+
+     ModelType implementation for `model.Model`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFTensorWriter`
+
+**MlemABC parent type**: `model_type`
+
+**MlemABC type**: `model_type`
+
+      ModelType implementation for `.model.Model`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_type`
+
+**MlemABC type**: `model_type`
+
+      DataType implementation for `model.Model`
+
+**Fields**:
+
+- `model_type: str` _(required)_ - Model

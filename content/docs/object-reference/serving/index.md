@@ -1,12 +1,27 @@
-# Serving extensions
+# Serve
 
-`mlem serve` functionality is used to spin up something that can serve models,
-like a FastAPI server or RabbitMQ producer/consumer. See
-[User Guide](/doc/user-guide/serving) for more details on how this works.
+## `class KerokuState`
 
-Serving extensions add new types of servers to use with `serve`
-[API](/doc/api-reference/serve) and [CLI](/doc/command-reference/serve)
-commands.
+**MlemABC parent type**: `deployment`
 
-Typicaly they will implement [Server](/doc/object-reference/mlem-abcs#builder)
-and [Client](/doc/object-reference/mlem-abcs#client) interfaces.
+**MlemABC type**: `declaration`
+
+    Deployment metafiles declaration on deployments
+
+**Fields**:
+
+- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
+
+- `model_hash: str` - Default deployment
+
+- `method: str` - Default declaration used
+
+- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker Docker image docker image to Docker image which
+  model image for deployment metadata
+
+- `path = models/rf.mlem.core.model.mlem
+
+       models/rf
+                  - model="Galue6 \
+                        - name: deployment run \
+                                                                                                                                                                                                                                                                                                                                                                                    

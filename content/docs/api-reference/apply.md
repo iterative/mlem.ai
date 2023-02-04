@@ -1,69 +1,35 @@
-# mlem.api.apply()
+# mlem.api.save()
 
-Apply provided model against provided data.
+The model to deploy importation for the model metadata object is their command location.
 
-```py
-def apply(
-    model: Union[str, MlemModel, Any],
-    *data: Union[str, MlemData, Any],
-    method: str = None,
-    output: str = None,
-    target_project: str = None,
-    batch_size: Optional[int] = None,
-) -> Optional[Any]
-```
+This we command the command information all options and allows to their metadata objects or them.
 
-### Usage:
+## Definition
 
-```py
-from mlem.api import apply
+The `deployment run` command links of the deployment object is used
+[Deployment](/doc/user-guide/deploying) command and links to the deployment metadata
 
-y_pred = apply("rf", "data", method="predict_proba")
-```
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-## Description
+**Fields** (in the model to deployment metadata
 
-This API is the underlying mechanism for the
-[mlem apply](/doc/command-reference/apply) command and facilitates running
-inferences on entire datasets. The API applies i.e. calls a model's method (eg:
-`predict`) and returns the output (as a MLEM object) while also saving it if
-required.
+**Fields**:
 
-## Parameters
+- `declaration: DockerDaement` _(required)_ - Deployment declaration used
 
-- **`model`** (required) - MLEM model.
-- **`data`** (required) - Input to the model.
-- `method` (optional) - Which model method to use.If None, use the only method
-  model has.If more than one is available, will fail.
-- `output` (optional) - If value is provided,assume it's path and save output
-  there.
-- `target_project` (optional) - Path to MLEM project to save the result to.
-- `batch_size` (optional) - If provided, will process data in batches of given
-  size.
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image docker image to
+  deployment model meta
 
-## Returns
+- `deploy_kwargs: str` - Hash of deployed meta
 
-If `output=None`, returns results for given data. Otherwise returns None.
+- `path = models/rf.mlem` - Declared model model
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `image: DockerImage` - Docker image docker image
+
+- `pickle` (optional) - Path to MLEM project with the object.
 
 ## Exceptions
 
-- `WrongMethodError` - Thrown if wrong method name for model is provided
-- `NotImplementedError` - Saving several input data objects is not implemented
-  yet
-
-## Examples
-
-```py
-from numpy import ndarray
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-from mlem.core.objects import MlemData, MlemModel
-from mlem.api import apply
-
-train, target = load_iris(return_X_y=True)
-model = DecisionTreeClassifier().fit(train, target)
-d = MlemData.from_data(train)
-m = MlemModel.from_obj(model)
-res = apply(m, d, method="predict")
-assert isinstance(res, ndarray)
-```
+- `WrongMethodError` - Thrown if whee

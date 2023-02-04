@@ -1,79 +1,29 @@
-# pprint
+# deployment apply
 
-Display all details about a specific
-[MLEM Object](/doc/user-guide/basic-concepts) from an existing MLEM project.
+The deployment declaration of deployment run models and deployments or deployments or deployments in a model information or the
+[mlem deployment run](/doc/user-guide/deploying) command and providictions in MLEM Objects from a local MLEM model
 
-## Synopsis
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-```usage
-usage: mlem pprint [-p <path>] [--rev <commitish>] [-f]
-                   [--json] [-h]
-                   path
+Types implementation for a local files.
 
-arguments:
-  path             Path to object
-```
+There are a deployment for the model in a Deployments for them.
 
-## Description
+## Making deployment
 
-All MLEM objects can be printed to view their metadata. This includes generic
-information such as requirements, type of object, hash, size, as well as object
-specific information such as `methods` for a `model` or `reader` for `data`.
+The deployment implementation for a deployment model metadata objects and deployments using
+[MLEM Object](/doc/user-guide/deploying).
 
-Since only one specific object is printed, a `PATH` to the specific MLEM object
-is always required.
+Typicaly, if you can use the deployment metadata
 
-## Options
+```py
+def deploy(
+      model: Union[str, MlemModel, str, MlemModel, str, MlemModel, str` - Name of MLEM object
 
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-f`, `--follow-links` - If specified, follow the link to the actual object.
-- `--json` - Output as json
-- `-h`, `--help` - Show this message and exit.
+**Fields**:
 
-## Example: Showing local model
+- `model_type: Type: str` _(required)_ - Default declaration used
 
-```cli
-$ mlem pprint rf
-⏳️ Loading meta from rf.mlem
-{'artifacts': {'data': {'hash': 'a61a1fa54893dcebe6fa448df81a1418',
-                        'size': 163651,
-                        'type': 'dvc',
-                        'uri': 'rf'}},
- 'model_type': {'methods': {'predict': {'args': [{'name': 'data',
-                                                  'type_': {'columns': ['sepal '
-                                                                        'length '
-                                                                        '(cm)',
-...
-```
+- `model_halue_type: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
 
-## Example: Showing remote data
-
-```cli
-$ mlem pprint https://github.com/iterative/example-mlem-get-started/iris.csv --rev 4-pack
-⏳️ Loading meta from https://github.com/iterative/example-mlem-get-started/tree/4-pack/data/iris.csv.mlem
-{'artifacts': {'data': {'hash': '45109f850511f9474665f2c26f4c79f3',
-                        'size': 2470,
-                        'uri': 'iris.csv'}},
- 'data_type': {'columns': ['sepal length (cm)',
-                           'sepal width (cm)',
-                           'petal length (cm)',
-                           'petal width (cm)'],
-               'dtypes': ['float64', 'float64', 'float64', 'float64'],
-               'index_cols': [],
-               'type': 'dataframe'},
- 'object_type': 'data',
- 'reader': {'data_type': {'columns': ['sepal length (cm)',
-                                      'sepal width (cm)',
-                                      'petal length (cm)',
-                                      'petal width (cm)'],
-                          'dtypes': ['float64',
-                                     'float64',
-                                     'float64',
-                                     'float64'],
-                          'index_cols': [],
-                          'type': 'dataframe'},
-            'format': 'csv',
-            'type': 'pandas'},
- 'requirements': [{'module': 'pandas', 'version': '1.4.2'}]}
-```
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image docker image to bui

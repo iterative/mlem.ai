@@ -1,41 +1,9 @@
-# Scikit-Learn
+# Serving local deployment environment.
 
-[ModelType](/doc/object-reference/mlem-abcs#modeltype) implementations for any
-sklearn-compatible classes as well as `Pipeline`
+## Synopsis
 
-## Description
-
-**TODO**
-
-## Requirements
-
-```cli
-$ pip install mlem[sklearn]
-# or
-$ pip install scikit-learn
-```
-
-## Examples
-
-### Saving and loading Scikit-Learn model
-
-```py
-from sklearn.datasets import load_iris
-from sklearn.ensemble import RandomForestClassifier
-
-from mlem.api import save, load
-
-
-data, y = load_iris(return_X_y=True, as_frame=True)
-rf = RandomForestClassifier()
-rf.fit(data, y)
-
-save(
-    rf,
-    "rf",
-    sample_data=data,
-)
-
-rf = load("rf")
-rf.predict(data)
-```
+```usage
+usage: mlem deployment run [-p <path>] [--push] [--push] [--push] [--push] [--o <path>] [--push] [--o <path>] [--o <path>]
+                                                           [--ref]
+                                                                                                       [<<<commitish>] [-h]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

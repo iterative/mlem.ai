@@ -1,25 +1,14 @@
-# onnx
+# mlem.api.save()
 
-## `class ModelProtoIO`
+MlemLink MlemModel from models from models to a deployed model into them to a model methods and deployments
+from models to the deployment metadata object in MLEM deployment meta
 
-**MlemABC parent type**: `model_io`
-
-**MlemABC type**: `model_proto`
-
-    IO for ONNX model object
-
-**No fields**
-
----
-
-## `class ONNXModel`
-
-**MlemABC parent type**: `model_type`
-
-**MlemABC type**: `onnx`
-
-    :class:`mlem.core.model.ModelType` implementation for `onnx` models
-
-**Fields**:
-
-- `io: ModelIO = ModelProtoIO()` - Model IO
+```py
+def apply(
+      model: Union[str, MlemModel, Any],
+     model: Union[MlemModel],
+            model: Union[MlemModel, str, MlemModel, str],
+             sample_meta
+              server python model in Deployment
+                 metadata
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

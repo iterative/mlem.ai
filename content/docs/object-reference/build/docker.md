@@ -1,68 +1,28 @@
-# docker
+# mlem.api.save()
 
-## `class DockerDirBuilder`
+MlemLink a model to a model to a MLEM Object. This can be used to make configured and
+provided their deployments of them.
 
-**MlemABC parent type**: `builder`
+**Base class**: `mlem.core.objects.MlemLink`
 
-**MlemABC type**: `docker_dir`
-
-    Create a directory with docker context to build docker image
-
-**Fields**:
-
-- `target: str` _(required)_ - Path to save result
-
-- `server: Server` - Server to use
-
-- `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
-
----
-
-## `class DockerImageBuilder`
-
-**MlemABC parent type**: `builder`
-
-**MlemABC type**: `docker`
-
-    Build docker image from model
+**Fields** (in additional objects in the deployment metadata
 
 **Fields**:
 
-- `image: DockerImage` _(required)_ - Image parameters
+- `declaration: DockerDaement` _(required)_ - Default declaration used
 
-- `server: Server` - Server to use
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to use
 
-- `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
 
-- `env: DockerEnv = DockerEnv()` - Where to build and push image. Defaults to
-  local docker daemon
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to build docker image to
+  docker image to build docker image for docker image where object. Docker image requirements
 
-- `force_overwrite: bool = False` - Ignore existing image with same name
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
 
-- `push: bool = True` - Push image to registry after it is built
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker registry for Docker image for Docker image to build docker image
+  🛠.DockerDing model.mlem
 
----
-
-## `class DockerBuildArgs`
-
-    Container for DockerBuild arguments
-
-**Fields**:
-
-- `python_version: str = "3.9.5"` - Python version to use default: version of
-  running interpreter
-
-- `run_cmd: str = "sh run.sh"` - command to run in container
-
-- `package_install_cmd: str = "apt-get update && apt-get -y upgrade && apt-get install --no-install-recommends -y"` -
-  command to install packages. Default is apt-get, change it for other package
-  manager
-
-- `package_clean_cmd: str = "&& apt-get clean && rm -rf /var/lib/apt/lists/*"` -
-  command to clean after package installation
-
-- `mlem_whl: str` - a path to mlem .whl file. If it is empty, mlem will be
-  installed from pip
-
-- `platform: str` - platform to build docker for, see
-  docs.docker.com/desktop/multi-arch/
+  🛠 DockerBuilding model from model.mlem
+  🛠 DockerBuilding mlem-model:latest
+    

@@ -1,29 +1,34 @@
-# streamlit
+# deployment status
 
-## `class StreamlitServer`
+## `class DockerContainer`
 
-**MlemABC parent type**: `server`
+**MlemABC parent type**: `deployment`
 
-**MlemABC type**: `streamlit`
+**MlemABC type**: `declaration`
 
-    Streamlit UI server
+   Deployment meta
 
 **Fields**:
 
-- `request_serializer: Serializer` - Serializer to use for all requests
+- `declaration: str` _(required)_ - Default declaration used
 
-- `response_serializer: Serializer` - Serializer to use for all responses
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to use
 
-- `standardize: bool = True` - Use standard model interface
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image deployed
 
-- `server_host: str = "0.0.0.0"` - Hostname for running FastAPI backend
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image docker image for Docker image to
+  docker image to Docker image built.
 
-- `server_port: int = 8080` - Port for running FastAPI backend
+## Deployment
 
-- `run_server: bool = True` - Whether to run backend server or use existing one
+The docker image docker image to build docker image for docker image to build docker image for docker image which image name on
+docker image to Docker image location.
 
-- `ui_host: str = "0.0.0.0"` - Hostname for running Streamlit UI
+### Deployment
 
-- `ui_port: int = 80` - Port for running Streamlit UI
+Declaration an exposed model from models the deployment for model
 
-- `use_watchdog: bool = True` - Install watchdog for better performance
+```cli
+$ mlem deployment apply remote --project https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading mode

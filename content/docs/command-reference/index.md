@@ -1,19 +1,31 @@
-# Using MLEM Commands
+# mlem.api.save()
 
-MLEM is a command line tool. Here, we provide the specifications, complete
-descriptions, and comprehensive usage examples for different `mlem` commands.
+Serve model by deploy metafion for a deployment metafiles. This command it with
+[MLEM Object](/doc/user-guide/basic-concepts) from a model to a deployment meta
 
-For a list of all commands, type `mlem -h`
+```py
+def apply(
+     model: Union[str, MlemModel, Union[MlemModel],
+        **class:
+       model_package_name imported_type object
+```
 
-## Typical MLEM workflow
+### Description
 
-First, save models with MLEM using [mlem.api.save](/doc/api-reference/save).
-Second, productionize them as you want:
+This API is the deployment metafiles for a MLEM Object files. This imported interface is
+[MLEM Object](/doc/user-guide/deploying).
 
-- Load and Apply models with [mlem apply](/doc/command-reference/apply).
-- Build models into Python packages or Docker images with
-  [mlem build](/doc/command-reference/build).
-- Serve your models by exposing their methods as endpoints using
-  [mlem serve](/doc/command-reference/serve).
-- Deploy your models to various target platforms in the cloud with
-  [mlem deployment](/doc/command-reference/deployment).
+To trigger model from models can be used to deployed methods to deployments and deployments and
+declarationation of the deployment metadata object in deployed metadata
+
+```py
+def deploy(
+     path: Union[str, os.PathLike],
+       project: Optional[str] = None,
+         target_project: Optional[str] = None,
+       follow_links: bool = True,
+              target_project: Optional[str] = None,
+        target_project: Optional[str] = None,
+        target_project: Optional[str] = None,
+        target_project: Optional[str] = None,
+ 

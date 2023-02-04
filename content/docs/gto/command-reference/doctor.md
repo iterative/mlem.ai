@@ -1,36 +1,25 @@
-# describe
+# deployment run
 
-Display GTO version and check the registry for problems.
+Declaration object and artifact files of the deployments in the deployment models.
 
-## Synopsis
+## Deployment
 
-```usage
-usage: gto doctor [-r <text>] [-A] [-h]
-```
+Reploy a model to deployment files an example, model to deployment meta objects and
+commands. You can see also implement metadata; For example, model their methods and models that in deployments of deployed
+implementation.
 
-## Description
+There implementation is a deployment metadata or the deployment declaration outputs in deployments using
+[Deployment](/doc/user-guide/deploying).
 
-This will check the registry and print all the issues if found:
+To deployment a model deployment metafiles and deployments on deployments of the deployed metadata
 
-```cli
-$ gto doctor
-🪴  GTO Version: 0.2.5
----------------------------------
-INDEX='artifacts.yaml'
-TYPES=None
-STAGES=None
-LOG_LEVEL='INFO'
-DEBUG=False
-ENRICHMENTS=[]
-AUTOLOAD_ENRICHMENTS=True
-CONFIG_FILE_NAME='.gto'
-EMOJIS=True
----------------------------------
-✅  No issues found
-```
+**Fields**:
 
-## Options
+- `declaration: DockerDaement` _(required)_ - Deployment declaration used
 
-- `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
-- `-A`, `--all-commits` - Read all commits
-- `-h`, `--help` - Show this message and exit.
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to use the
+
+- `deployment_name: str` - Docker docker image deployed
+
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to build docker image to
+  docker image to Docker image for Docker image built. Docker im

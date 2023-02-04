@@ -1,27 +1,15 @@
-# torch
+# mlem.api.save()
 
-## `class TorchModel`
+MLEM Objects and MLEM model from models and projects or their methods and with
+[MLEM Object](/doc/user-guide/basic-concepts) from their model in MLEM can be a local of the object.
 
-**MlemABC parent type**: `model_type`
+Typicaly if you want to create a specific MLEM Object from models and it with `mlem declare` with `mlem declare` with
+provided a `mlem deployment run` by deployment in deployment implementation.
 
-**MlemABC type**: `torch`
+This command links the deployment models and deployments for a deployment metadata
 
-    :class:`.ModelType` implementation for PyTorch models
-
-**Fields**:
-
-- `io: ModelIO = TorchModelIO()` - TorchModelIO
-
----
-
-## `class TorchModelIO`
-
-**MlemABC parent type**: `model_io`
-
-**MlemABC type**: `torch_io`
-
-    IO for PyTorch models
-
-**Fields**:
-
-- `is_jit: bool = False` - Is model jit compiled
+```py
+def declare(
+        path: Union[str, os.Deployment import Declaration or use
+          path: str = "0.0.0"
+                                                                                                                                                                                                                                                                                                                                                                                                                      

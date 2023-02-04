@@ -1,12 +1,36 @@
-# tensorflow
+# mlem.api.save()
 
-## `class TFKerasModel`
+MlemObject a MLEM Object from a local MLEM model metadataset objects or them.
+
+**Base class**: `mlem.core.objects.MlemLink`
+
+**Implementations**:
+
+- `model_type: CatBoostModelIO` _(required)_ - Model IO
+
+---
+
+## `class TFTensorWriter`
 
 **MlemABC parent type**: `model_type`
 
-**MlemABC type**: `tf_keras`
+**MlemABC type**: `model_type`
 
-    :class:`.ModelType` implementation for Tensorflow Keras models
+      ModelType implementation for `model.ModelIO`
+
+**Fields**:
+
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_io`
+
+**MlemABC type**: `model_type`
+
+     ModelType implementation for `location`
 
 **Fields**:
 
@@ -16,13 +40,22 @@
 
 ## `class TFKerasModelIO`
 
-**MlemABC parent type**: `model_io`
+**MlemABC parent type**: `model_type`
 
-**MlemABC type**: `tf_keras`
+**MlemABC type**: `model_type`
 
-    IO for Tensorflow Keras models (:class:`tensorflow.keras.Model`
-    objects)
+      ModelType implementation for `model.Model`
 
 **Fields**:
 
-- `save_format: str` - `tf` for custom net classes and `h5` otherwise
+- `io: ModelIO = TFKerasModelIO()` - Model IO
+
+---
+
+## `class TFKerasModelIO`
+
+**MlemABC parent type**: `model_type`
+
+**MlemABC type**: `model_type`
+
+      ModelType implementation for `model.Mod

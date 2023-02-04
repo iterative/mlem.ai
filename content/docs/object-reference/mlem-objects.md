@@ -1,94 +1,26 @@
-# MLEM Objects
+# mlem.api.save()
 
-<details>
+MlemLink a model to to target a model metadata objects in MLEM Objects can be information about
+[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) from model
+from mlem.api import load
 
-### For developers
+train, target = load_iris(return_X_y=True)
+train, target_path = os.path.join(os.getcwd(), "sample_meta)
+train, target_path = os.path.join(os.getcwd(), "sample_data="mymodel")
+meta = load_meta(out_path, target_path, target=path, model, target_path, path, target_path, target_path, it target_path = os.join(os.join(os.getcwd(), "sample_data="type", "serialize", 'tf_test_x.csv")
+```
 
-MLEM Objects are instances of one of the subclasses of `MlemObject` class. MLEM
-is using extended [pydantic](https://pydantic-docs.helpmanual.io/) functionality
-to save and load them from files.
+This command the `server` commands info the `mlem.api.import_object()` or `mlem.api.save()` field to the model them.
 
-You can get `MlemObject` instance if you use `load_meta` API method instead of
-simple `load`.
+```py
+def import save(
+       model: Union[str, MlemModel, str, Any],
+          *data: Union[str, MlemData, str, MlemModel, str` - Name of data
 
-See also [MLEM Object API](/doc/api-reference/mlem-object)
+**No fields**
+content/docs/object-reference/data/index.md
+# Deployment
 
-</details>
+**MlemABC parent type**: `declaration`
 
-## Common fields
-
-Each MLEM Object has an `object_type` field which determines the type of the
-object. Specific types may have additional properties, but all MLEM Objects have
-the following fields:
-
-- `params` - arbitrary object with additional parameters
-- `location` - if the object is loaded, information about where it came from
-
-You can check out what methods MLEM Objects have in
-[API Reference](/doc/api-reference/mlem-object)
-
-## MLEM Object Types
-
-These are the builtin types of MLEM Objects.
-
-### Model
-
-Represents an ML model, but can be generalized to any model or even any
-"function" or any "transformation", thanks to `callable`
-[ModelType](/doc/object-reference/mlem-abcs#modeltype).
-
-**Base class**: `mlem.core.objects.MlemModel`
-
-**Fields** (in addition to inherited):
-
-- `model_type` (_lazy_) -
-  [ModelType](/doc/object-reference/mlem-abcs#modeltype), which is polymorphic
-  and holds metadata about model's framework, methods and io.
-- `artifacts` - a string-to-artifacts mapping.
-  [`Artifact`](/doc/object-reference/mlem-abcs#artifact) instances represent a
-  file stored somewhere (local/cloud/dvc cache etc.)
-- `requirements` - a list of
-  [`Requirement`](/doc/object-reference/mlem-abcs#requirement) instances, needed
-  to use that object in runtime
-
-### Data
-
-Represent data, which can be used as an input to one of Model's methods.
-
-**Base class**: `mlem.core.objects.MlemData`
-
-**Fields** (in addition to inherited):
-
-- `reader` (_lazy_) - [DataReader](/doc/object-reference/mlem-abcs#datareader) -
-  how to read saved files and resulting dataset metadata
-- `data_type` (_transient_) -
-  [`DataType`](/doc/object-reference/mlem-abcs#datatype) with dataset value and
-  metadata (available once data is read)
-- `artifacts` - a string-to-artifacts mapping.
-  [`Artifact`](/doc/object-reference/mlem-abcs#artifact) instances represent a
-  file stored somewhere (local/cloud/dvc cache etc.)
-- `requirements` - a list of
-  [`Requirement`](/doc/object-reference/mlem-abcs#requirement) instances, needed
-  to use that object in runtime
-
-### Link
-
-Represents a link (pointer) to another MLEM Object. More on that
-[here](/doc/user-guide/linking)
-
-**Base class**: `mlem.core.objects.MlemLink`
-
-**Fields** (in addition to inherited):
-
-- `path` - path to MLEM Object
-- `project` - location of MLEM Project with referenced object
-- `rev` - revision of the object
-- `link_type` - type of the referenced object
-
-### Other types
-
-Some of the `MLEM ABCs` are also MLEM Objects:
-
-- [Builder](/doc/object-reference/mlem-abcs#builder)
-- [MlemEnv](/doc/object-reference/mlem-abcs#mlemenv)
-- [MlemDeployment](/doc/object-reference/mlem-abcs#mlemdeployment)
+**MlemABC type**: `data_writer`

@@ -1,58 +1,45 @@
-# mlem.api.serve()
+# mlem.api.save()
 
-Serve a model by exposing its methods as endpoints.
+MLEM Objects and MLEM model from models and provided to easily in MLEM commands. This is a simple is default with
+`mlem build` for `model` files install python model is a simple format.
 
-```py
-def serve(
-    model: Union[str, MlemModel],
-    server: Union[Server, str],
-    **server_kwargs,
-)
-```
+**Base class**: `mlem.core.objects.MlemLink`
 
-### Usage:
+**Implementations**:
 
-```py
-from mlem.api import serve
+- `model_io` - location on them.
+- `model_link` - link to directory with simple the `model` datasatasets
 
-serve(model, "fastapi")
-```
+**Fields**:
 
-## Description
+- `model_file_name: str` - Name of the data object files
 
-This API is the underlying mechanism for the
-[mlem serve](/doc/command-reference/serve) command and allows us to locally
-serve a model by exposing its methods as endpoints. This makes it possible to
-easily make requests (for inference or otherwise) against the served model.
+- `size: int` _(required)_ - DataType for hirtual environment
 
-## Parameters
+- `size: int` _(required)_ - DataType for install format
 
-- **`model`** (required) - The model to serve.
-- **`server`** (required) - Out-of-the-box supported one is "fastapi".
-- **`server_kwargs`** (required) - Additional kwargs to pass to the server.
+---
 
-## Returns
+## `class DynamicDictType`
 
-None
+**MlemABC parent type**: `data_writer`
 
-## Exceptions
+**MlemABC type**: `data_writer`
 
-None
+    DataType implementation for `simple`
 
-## Examples
+**Fields**:
 
-```py
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
+- `data_type: str` _(required)_ - DataType for installed for `ndarray`
 
-from mlem.core.objects import MlemModel
-from mlem.contrib.fastapi import FastAPIServer
-from mlem.api import serve
+- `state: str` _(required)_ - Data type of data type
 
-train, target = load_iris(return_X_y=True)
-model = DecisionTreeClassifier().fit(train, target)
-m = MlemModel.from_obj(model, sample_data=train)
+----
 
-server_obj = FastAPIServer(port=9000)
-serve(m, server_obj)
-```
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `dict`
+
+    DataType for dicts without fixed set 

@@ -1,54 +1,34 @@
-# declare
+# deployment apply
 
-Declares a new [MLEM Object](/doc/user-guide/basic-concepts)
-[MLEM Object](/doc/user-guide/basic-concepts) from config args and config files.
+MLEM Objects a deployment metafile (and deployment metadata) and
+provided declaration or deployments and deployments of of them models and deployments using their deployments to
+manage a simple deployment metadata object. This command information for deployments is a model into a model deployment
+declaration.
 
-## Synopsis
+This command the deployment is a deployment declaration object is deployment declaration or models or the deployments
 
-```usage
-usage: mlem declare [-h]
-                    [<subtype> [subtype options] | --load <declaration>]
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-Builtin subtypes:
-- builder
-- client
-- deployment
-- docker_registry
-- env
-- server
-```
+**Implementations**:
 
-## Description
+- `model_hash: str` - Hash of deployed meta
 
-`.mlem` metafiles can be created for
-[MLEM Objects](/doc/user-guide/basic-concepts#mlem-objects) using this command.
-This is particularly useful for configuring environments and deployments.
+- `model_link: TypedMlemLink` - Link to deployed model
 
-Each MLEM Object, along with its subtype (which represents a particular
-implementation), will accept different configuration arguments. The list of
-configuration arguments per type can be fetched by running the `mlem types`
-command. Check out this [example output](/doc/command-reference/types#examples).
+- `method: str` - Link to deployed model
 
-## Options
+- `model: TypedMlemLink` - Link to deployed model
 
-- `-h`, `--help` - Show this message and exit.
+- `method: str` - Link to deployed model
 
-## Examples
+- `model_link: TypedMlemLink` - Link to deployed model
 
-Declare an environment object metafile with a config key:
+- `meta_type: str` - Deployment meta
 
-```cli
-# Fetch all available config args for a heroku env
-$ mlem types env heroku
-[not required] api_key: str = None
+- `meta_requirements: Str` - Default deployment
 
-# Declare the heroku env
-$ mlem declare env heroku production --api_key mlem_heroku_staging
-💾 Saving env to staging.mlem
+- `state: str` - Default deployment
 
-# Print the contents of the new heroku env metafile
-$ cat staging.mlem
-api_key: mlem_heroku_staging
-object_type: env
-type: heroku
-```
+- `state: str` - Default declaration
+
+- `rmq` - Default: st

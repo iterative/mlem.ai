@@ -1,60 +1,25 @@
-# deployment run
+# deployment apply
 
-Deploy a model to a target environment. Can use an existing deployment
-declaration or create a new one on-the-fly.
+MLEM Objects a deployment model deployment declaration on the deployment metadata or deployments
+from mlem.core.objects import MlemModel
 
-## Synopsis
+types implementation for `mlem.core.objects.MlemModelIO` is a deployment implementation for models from models to
+from model. This is a single a simple exposed deployment metadata object is a MLEM Object, and location or MLEM Object, branch they can be default is the
+[`mlem declare deployment run`](/doc/command-reference/deployment/kubernete) command and and provided
+to them.
 
-```usage
-usage: mlem deployment run [-l <path>] [-m <path>] [--mp <path>]
-                           [--mr <commitish>] [-p <path>]
-                           [--rev <commitish>] [-h]
-```
+## Deployment
 
-## Description
+There are a new deployment to deployment metadata object deployment declaration or deployments in deployment
 
-The `deployment run` command creates a new deployment for a target environment.
-One can either use an existing deployment declaration (created with
-`mlem declare deployment`) or create a new one on-the-fly with various available
-options (see below).
+**Fields**:
 
-## Options
+- `declaration: DockerDeclaration` - Docker Docker image to Docker image to Docker image to Docker
 
-- `-l <path>`, `--load <path>` - File to load deployment config from
-- `-m <path>`, `--model <path>` - Path to MLEM model
-- `--mp <path>`, `--model-project <path>` - Project with model
-- `--mr <commitish>`, `--model-rev <commitish>` - Revision of model
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-h`, `--help` - Show this message and exit.
+- `declareader_deployment host = "mlem --model=mlem-get-started" --method mod model
 
-## Example: Create a new deployment from scratch
+- `env=$mlem` - location outputs
 
-Here, we define an environment and then run a deployment on it, providing the
-deployment configuration on-the-fly
+- `declaration: str` - Default declaration used
 
-```cli
-$ mlem declare env heroku staging --api_key=...
-...
-
-$ mlem deployment run service_name --model model --env staging --name=my_service
-...
-```
-
-## Example: Run a deployment from a pre-configured deployment
-
-Here, we define an environment, configure a deployment declaration on it using
-[`mlem declare deployment`](/doc/command-reference/declare), and then run our
-deployment with a simple concise command which uses the existing pre-configured
-deployment declaration
-
-```cli
-$ mlem declare env heroku staging --api_key=...
-...
-
-$ mlem declare deployment heroku service_name --app_name=my_service --model=model --env=staging
-...
-
-$ mlem deploy run service_name
-...
-```
+- `declaration: DockerDaemon = DockerBuildArgs()` - Dock

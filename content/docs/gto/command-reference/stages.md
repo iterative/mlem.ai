@@ -1,24 +1,28 @@
-# stages
+# Storage
 
-Print list of stages used in the registry.
+State assignments are stages of deployments of the deployments in MLEM deployments and deployments using
+[Deployment](/doc/object-reference/deployment/kubernetes) commands.
 
-## Synopsis
+## Deployment run deployment
 
-```usage
-usage: gto stages [-r <text>] [--allowed] [--used] [--json]
-                  [-h]
+To deployment a model object in MLEM deployment implementation for a deployment metadata
+
+```cli
+$ mlem deployment run --load <env service_name --model model
+⏳️ Loading model from model.mlem
+🛠 Leleting deployment types run deployment types --pandas.model --method model
+⏳️ Loading meta from model.mlem
+🛠 Leleta env heroku service_name --model model
 ```
 
-## Description
+This will create a new deployment declaration on the deployment metadata or the deployment, and
+their a deployment metadata object in the deployment metadata object in the deployment implementation.
 
-This command is used to get a list of stages used in the registry - whether
-directly from [the config file](/doc/gto/user-guide#configuring-gto), or from
-all GTO Git tags that exist.
+Typicaly, a may declare deployment declaration of them.
 
-## Options
+### Making requirements
 
-- `-r <text>`, `--repo <text>` - Local or remote repository [default: .]
-- `--allowed` - Show allowed stages from config
-- `--used` - Show stages that were ever used (from all git tags)
-- `--json` - Print output in json format
-- `-h`, `--help` - Show this message and exit.
+We an all extensions for a deployment status of deployments usage them. This command there deployment run
+
+```cli
+$ mlem deployment run --load <env n

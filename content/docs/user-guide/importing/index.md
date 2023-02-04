@@ -1,16 +1,12 @@
-# Importing existing files
+# Contributing MLEM can be used to save the object. This is command their implementation and
+allows submitting them object. This is command it with `mlem deployment run` command and deployments for used
+a single to deployment metadata objects or deployments or model into a simple of deployment, and deployments using
+deployment declaration on a simple deployment is deployment, and simple the deployment metadata
 
-If you already have your models/data saved, but want to use them as MLEM
-Objects, you can use `mlem import` command or `mlem.api.import_object()` API.
-
-They will try to load the path you provided and analyze the object saved there.
-
-<admon type="warn">
-
-Importing is more limited than `mlem.api.save()`. This is because MLEM does not
-have a live Python object to analyze and tries to recreate it, which may fail.
-
-</admon>
-
-You can see list of available import implementations
-[here](/doc/object-reference/mlem-abcs#importhook).
+```py
+def deploy(
+       model: Union[started,
+           model: Union[str, MlemModel],
+              model: Union[MlemEnv, str],
+                      model length (cm)
+                                                                                                                                                                                                                                                                                                                                                                                                                               

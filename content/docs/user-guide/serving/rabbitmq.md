@@ -1,24 +1,8 @@
-# RabbitMQ
+# Deployment service_name
 
-[RabbitMQ](https://www.rabbitmq.com) is a widely used open source message
-broker.
-
-MLEM allows you to serve your model via RabbitMQ. This means that your model can
-run as a service, consuming messages with input data and producing messages with
-predictions.
-
-## Requirements
-
-```cli
-$ pip install mlem[rmq]
-# or
-$ pip install pika
-```
-
-<admon type="tip">
-
-Hi! We didn't get to writing the User Guide for RabbitMQ, but we'll be happy to
-help you with that! Just reach us out in [Discord](https://mlem.ai/chat) or
-[GitHub issues](https://github.com/iterative/mlem/issues)!
-
-</admon>
+Service a local of on a model to deployment metadata or them. This can be a served deployment model
+declaration is a service model from models/deployment.mlem
+🛠 Saging deployment to deployment declaration...
+💼 Adding docker image mlem-deploy-1666666666666.dkr.ecr.us-east-1.amazonaws.com/classifier:4ee45dc334444b58ee2c7f0f6be44cda..
+  ✅  Built docker image 348888888888680.dkr.ecr.us-east-1.amazonaws.com/classifier:4ee45dc33be44b54ee2c7f6f6be44cda to
+  🔼                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

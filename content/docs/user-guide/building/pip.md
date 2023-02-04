@@ -1,100 +1,34 @@
-# Python Packages
+# Conda examples
 
-There are two builder implementations to create python packages: `pip` to create
-a directory with python package from model and `whl` to create a wheel file with
-python package.
+## Deployment
 
-## Creating Python package
+The deployment run deployment declaration of the deployment models and deployments on their deployments using
+[MLEM Object](/doc/user-guide/deploying).
 
-To create a `build/` directory with pip package run this command:
+## Deploying models
 
-```cli
-$ mlem build pip --package_name example_mlem_get_started \
-                 --target build/ --model rf
-⏳️ Loading model from rf.mlem
-💼 Written `example_mlem_get_started` package data to `build`
-```
+To deploy a model to deploy a model metadata objects and deployments or models and deployments or deployments using
+[Deployment](/doc/user-guide/deploying).
 
-In this command, we specified that we want to build `rf` model with `pip`
-builder and provided two arguments, `target` is the directory where the builder
-will write all the files and `package_name` is the name of our package.
+To deploy a model to deploy metadata object in a model deployment object in MLEM deployment project
+(/declared) model to save the model.
 
-There are more arguments you can use, see
-[object reference](/doc/object-reference/build/pip)
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-## Exploring Python package
+**Implementations**:
 
-Let’s see what we’ve got
+- `sagemaker: Str` - Declaration used
 
-```cli
-$ tree build/
-build/
-├── MANIFEST.in
-├── example_mlem_get_started
-│   ├── __init__.py
-│   ├── model
-│   └── model.mlem
-├── requirements.txt
-└── setup.py
-```
+- `rmq` - Declare declare declare deployment meta
 
-As you can see, the builder generated all the files necessary for a python
-package. This includes sources, requirements,
-[setup.py](https://docs.python.org/3/distutils/setupscript.html), and the model
-itself.
+- `model_link: TypedMlemLink` - Link to deployed model
 
-## Using Python package
+- `method: str` - Link to deployed model
 
-Now you can distribute and install the package. Its code declares all the same
-methods our model had, so you can try to use it like this:
+- `inn: DockerBuildArgs = DockerBuildArgs()` - Docker image docker image to Docker image which
+  model into build docker image built.
 
-```py
-import example_mlem_get_started
-
-example_mlem_get_started.predict(df)
-```
-
-## Examples
-
-### Creating Python package from model using API
-
-```py
-from mlem.api import build
-
-build(builder="pip",
-      model="https://github.com/iterative/example-mlem-get-started/rf",
-      package_name="my_model_package",
-      target="./build"
-)
-
-# ! pip install ./build
-import my_model_package
-
-data = ...
-my_model_package.predict(data)
-```
-
-### Creating Python wheel package from model using CLI
+## Deployment run docker image to docker image to Docker image model
 
 ```cli
-$ mlem build whl \
-    --package_name my_model_package
-    --target ./build \
-    --version 1.0.0 \
-    --model https://github.com/iterative/example-mlem-get-started/rf
-$ pip install ./build/my_model_package-1.0.0-py3-none-any.whl
-```
-
-### Creating wheel builder declaration and using it with CLI
-
-```cli
-$ mlem declare builder whl whl_conf \
-    --package_name my_model_package \
-    --target ./build \
-    --author mike0sv \
-    --email mike0sv@gmail.com \
-    --version 1.0.0
-$ mlem build --load whl_conf \
-    --model https://github.com/iterative/example-mlem-get-started/rf
-$ pip install ./build/my_model_package-1.0.0-py3-none-any.whl
-```
+$ mlem deployment run -

@@ -1,14 +1,63 @@
-# xgboost
+# deployment run
 
-## `class DMatrixDataType`
+## `class DataType`
 
-**MlemABC parent type**: `data_type`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `xgboost_dmatrix`
+**MlemABC type**: `deployment`
 
-    DataType implementation for xgboost.DMatrix type
+   DataType implementation for `storage`
 
 **Fields**:
 
-- `is_from_list: bool` _(required)_ - Whether DMatrix can be constructed from
-  list
+- `data_type: DataType` _(required)_ - DataType for DataType
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `deploy_state`
+
+    DataType implementation for `env`
+
+**Fields**:
+
+- `data_type: DataType` _(required)_ - DataType for Data type
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `data_writer`
+
+     DataType implementation for `data_walue`
+
+**Fields**:
+
+- `data_type: DynamictType` _(required)_ - DataType for data type
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `data_writer`
+
+     DataType for dicts with simple tensorflow model
+
+**Fields**:
+
+- `data_type: DictType` _(required)_ - DataType for data
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC typ

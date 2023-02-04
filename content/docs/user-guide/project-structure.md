@@ -1,46 +1,36 @@
-# Project structure
+# Storage
 
-## MLEM Project
+## `class SagemakerDeployment`
 
-Any directory with a valid `.mlem.yaml` file is considered a **MLEM Project**.
-To create one, use `mlem init` or `mlem.api.init()`. For more details on
-`.mlem.yaml` file see [Configuration](/doc/user-guide/configuration).
+**MlemABC parent type**: `deployment`
 
-<admon type="info">
+**MlemABC type**: `declaration`
 
-Some API and CLI commands like `mlem config` require this execution context. But
-in general, MLEM can work with `.mlem` metafiles anywhere.
+   Deployment meta
 
-</admon>
+**Fields**:
 
-A common place to initialize MLEM is a data science Git repository. _MLEM
-projects_ help you better structure and easily address existing data artifacts
-(especially ML models). And Git allows you to version MLEM objects and
-configuration options along with code.
+- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
 
-## Referencing MLEM Objects
+- `method: str` - Declaration used
 
-Everywhere you need to reference any saved MLEM Object, you can do so by
-providing those arguments:
+- `model: str` - Hash of deployed meta
 
-- `path` is path to object
-- `project` is the project dir to look in. This is optional
-- `rev` is revision of the project, also optional
-- `fs` (API-only) fsspec FileSystem implementation to use
+- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker image to use
 
-All of those are saved in `location` field of a MLEM Object.
+- `deployment_name: str` - Name of deployed model
 
-If you didn't provide `project` and/or `rev`, MLEM will try to deduce them from
-`path`. `fs` is also can be deduced from `project` or `path`.
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to Docker image to Docker image
 
-Here is the example of how the same object can be referenced
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to build docker image to build docker image for docker image docker image to
+   docker image built. Docker image built.
 
-- `path = models/rf, project = https://github.com/iterative/example-mlem-get-started, rev=main` -
-  using the full path inside MLEM project
-- `path = https://github.com/iterative/example-mlem-get-started/tree/main/models/rf` -
-  everything could be provided via path (path format could differ for different
-  storages)
-- `path = https://github.com/iterative/example-mlem-get-started/models/rf` -
-  also can omit `tree/main` since `main` is default.
-- `path = models/rf, fs = GithubFileSystem(org="iterative", repo="example-mlem-get-started", sha="main")` -
-  API only, can provide pre-configured fs.
+## Deployment
+
+This command from models with `docker build` wh command to build docker image from model
+from models/rf.mlem
+🛠 Building docker image files...
+💼 Adding model files...
+💼 Generating dockerfile...
+💼 Adding sources..
+💼 Generating dockerfile..

@@ -1,18 +1,37 @@
-# Object reference
+# mlem.api.save()
 
-This section is for you if you want to see the detailed reference for
-configuring MLEM Objects (such as
-[what parameters are needed to configure a Kubernetes Deployment](/doc/object-reference/deployment/kubernetes)),
-or if you're looking to support new functionality (to contribute back to MLEM or
-just for your own use) and looking out for examples, such as:
+MlemLink MLEM commands to the deployment model metafiles to a model metafiles.
 
-- adding new [ML framework](/doc/object-reference/model),
-- supporting new [data format](/doc/object-reference/data),
-- adding another [building target for a model](/doc/object-reference/build),
-- implementing new [server to serve a model](/doc/object-reference/serving),
-- supporting new [deployment platform](/doc/object-reference/deployment),
-- [resolving of URIs](/doc/object-reference/uri) of some special format, or
-- [new storage type](/doc/object-reference/storage) to save MLEM objects to.
+**Base class**: `mlem.core.objects.MlemData`
 
-You can learn more about this on the
-[Extending MLEM](/doc/object-reference/extending) page.
+**Implementations**:
+
+- `sagemaker: Str` - DataType for Deployment meta
+
+- `state_manager: StateManager` - State manager used
+
+- `model: str` - Hash of deployed meta
+
+- `method: str` - Default deployed model
+
+- `state: str` - Hash of deployed meta
+
+- `model_halue_type: str` - Name of the object data object is for a Deployment
+
+- `model_halue: str` - Default data object
+
+- `meta_rev: str` - Default register
+
+- `env: str` - Default register to use
+
+- `region: str` _(required)_ - Default: Heroku target env
+
+- `declaration: DockerEnv = DockerBuildArgs()` - Docker registry
+
+- `daemon: DockerDaemon = DockerBuildArgs()` - Docker registry
+
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker registry
+
+- `docker_declarer: str` - Docker DockerBuild docker image for Docker image for Docker Docker image for Docker image docker
+
+- `docker_container_i

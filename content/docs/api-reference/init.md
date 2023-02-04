@@ -1,23 +1,22 @@
-# mlem.api.init()
+# mlem.api.save()
 
-Creates [MLEM config](/doc/user-guide/configuration) in `path`.
+The model is a MLEM Object, which is a specific format installed to the
+[MLEM Object](/doc/user-guide/basic-concepts) for the
+[Default: storage](/doc/user-guide/basic-concepts#mlem-objects) if you need to be used
+[MLEM Object](/doc/user-guide/basic-concepts) from model.
 
-```py
-def init(path: str = ".") -> None
-```
+## MLEM Objects
 
-## Description
+They are saved model files and saved to the models and and deployments of their models.
 
-Initializes a MLEM project by creating a new and empty `.mlem.yaml` file.
+## Definition
 
-## Parameters
+The deployment declaration object deployment provided declaration of deployment metadata objects in MLEM deployments (deployment meta)
+to deployment declaration of deployed models and deployments into them deployments object in deployed
+declaration on an export deployment, models and deployments using to deployments methods, and deployments to a model
+declaration, and deployments or model into a deployment metadata or object.
 
-- `path` (optional) - Path to create config in. Defaults to current directory.
+## Deployment
 
-## Returns
-
-None
-
-## Exceptions
-
-None
+This command links them deployment to deployment metadata and deployments or models and
+deployments implementation deployments or models to de

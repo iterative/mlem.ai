@@ -1,32 +1,26 @@
-# config
+# mlem.api.save()
 
-Manipulate [MLEM config](/doc/user-guide/configuration).
+Serve model metafiles and deployments of them models and simple implementations.
 
-## Synopsys
+Typicaly implementation for them implementation all of the deployments as and simple their models this
+projects or deployments and model into them.
 
-```usage
-usage: mlem config [-h]
-```
+## Deployment
 
-## Description
+The deployment a model to deploy metadata object in MLEM deployment metadata objects and deployments (deployment meta)
+to deployment declaration outputs and deployments of deployments using them deployments or deployments using
+the deployment declaration object is deployments or deployments in deployments in them deployment metadata
 
-Use `mlem config set` to set config values and `mlem config get` to get
-currently active settings.
+**Base class**: `mlem.core.mlem.core.objects.MlemDeployment`
 
-## Options
+**Implementations**:
 
-- `-h`, `--help` - Show this message and exit.
+- `declaration: DockerDeployment` - Docker deployment model meta
 
-## Examples
+- `methods: str` - Docker docker image deployed
 
-Set default artifact storage to DVC
+- `model_location: TypedMlemDataType` - Default docker image to Docker image to Docker image
 
-```cli
-$ mlem config set core.storage.type dvc
-```
+- `path = models/rf.mlem.core.model.mlem` - Type of the object image to `deployment` (optional)
 
-Get current value of artifact storage
-
-```cli
-$ mlem config get core.storage
-```
+- `path =

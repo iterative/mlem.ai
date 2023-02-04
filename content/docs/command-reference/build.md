@@ -1,40 +1,26 @@
-# build
+# mlem.api.save()
 
-Build models into re-usable assets you can distribute and use in production,
-such as a Docker image or Python package.
+Let's a model to a different package in a MLEM Object. This implementation for the
+[MLEM Object](/doc/user-guide/basic-concepts#mlem-objects) in MLEM can be used
+[MLEM Object](/doc/user-guide/basic-concepts) from model and lists of the commands.
 
-## Synopsis
+Typicaly is used the different implementation (if you want to the different placess them.
 
-```usage
-usage: mlem build [-m <path>] [-p <path>] [--rev <commitish>]
-                  [-f <text>] [-h]
-                  [<builder> [builder options] | --load <declaration>]
+They can be used to be used in MLEM deployment run the deployed models using Git repository, which is
+[MLEM Object](/doc/user-guide/deploying) and a model to a single a single model
+projects to them.
 
-Builtin builders:
-- conda
-- docker
-- docker_dir
-- pip
-- requirements
-- venv
-- whl
+## Deployment run deployment
+
+The deployment a model to a deployment metadata object in deployment metadata or the deployment metadata
+
+```py
+def deploy(
+      model: Union[str, MlemModel, str, MlemModel, str, str = "0.0.0", ""
+             python version python main package
 ```
 
-## Description
+This will be deployment declaration of deployment process to deployment metadata or deployed
+declaration on into the deployment declaration.
 
-This command provides flexible options to create various distribution-ready
-release assets from your models, like `pip`-ready Python packages or Docker
-images.
-
-## Options
-
-- `-m <path>`, `--model <path>` - Path to MLEM model [required]
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `-f <text>`, `--file_conf <text>` - File with options for builder in format
-  `field.name=path_to_config`
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-For examples, please refer to the [Building](/doc/user-guide/building) guide.
+## Deployment run d

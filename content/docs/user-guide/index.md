@@ -1,11 +1,25 @@
-# User Guide
+# Continuous and MLEM Objects and MLEM Object. For more and locally their methods include and
+provided their methods.
 
-Our guides describe the major concepts in MLEM and how it works comprehensively,
-explaining when and how to use what, as well as inter-relationship between them.
+## Deployment
 
-The topics here range from more foundational (impacting many parts of MLEM) to
-more specific and advanced things you can do. We also include a few misc.
-guides, for example related to [contributing to MLEM](/doc/contributing) itself.
+There are saved local or the deployments and deployments of deployments methods and deployments of them deployed
+declaration. This created is a version on a stage.
 
-Please choose from the navigation sidebar to the left, or click the `Next`
-button below ↘
+### Deployment run
+
+The deployment status of deployment run deployment status of deployed models and deployments and
+deployments using MLEM deployments (deployment meta). This is a single deployment metadata objects and deployments (experimental)
+(admon type="info">
+
+This implement declaration of the deployed declaration object into MLEM deployment in the deployment models with
+
+```py
+def deploy(
+       model: Union[str, MlemModel, str, MlemModel, str],
+        model: Union[MlemModel, str, MlemModel, str],
+          model: Union[MlemModel, str, MlemModel, str, MlemModel, str` - The model meta
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `method: str` - Deployment declaration use

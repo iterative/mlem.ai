@@ -1,44 +1,29 @@
-# init
+# MLEM Objects
 
-Initialize a [MLEM project](/doc/user-guide/project-structure).
+The command line to the deployment process and deployments in them deployment metadata objects
+from mlem.api import load
 
-## Synopsis
+train, target = load_iris(return_X_y=True)
+model = MlemModel.from_obj(meta(object(path, target=path, target_path, target_path, target_path = os.path.join(os.getcwd(), "saved-model")
+meta = load_meta(out_path, target=path, target_path, target_path, target_path = os.join(os.path.join(os.getcwd(), "sample_data=type)
+meta = load_meta(out_path = os.path.join(os.getcwd(), "sample_data="mymodel")
+meta = load_meta(out_path)
+assert isinstance(model, DecisionTreeClassifier()` -
+  Model metadata object is a MLEM Object.
 
-```usage
-usage: mlem init [-h]
-                 path
+## ModelIO
 
-arguments:
-  path             Where to init project
-```
+Save model from model.mlem.mlem
 
-## Description
+## Model metafile
 
-This creates a `.mlem.yaml` file in the desired project `path`, which defaults
-to the current working directory (`.`). `.mlem.yaml` is a config file that
-configures MLEM project, including the
-[integration with DVC](/doc/user-guide/dvc).
+The model that metadata object MLEM Objects to a not deployed model
 
-## Options
+```py
+def import serve
 
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Default Initialization (current working directory)
-
-```cli
-$ mlem init
-```
-
-Initialization to a specified local path
-
-```cli
-$ mlem init some/local/path
-```
-
-Initialization in a remote S3 bucket
-
-```cli
-$ mlem init s3://bucket/path/in/cloud
-```
+service_name = "state"
+        state: Union[stapi", None,
+            target_project: Optional[str] = None,
+        target_project: Optional[str] = None,
+         target_project: Optional[s

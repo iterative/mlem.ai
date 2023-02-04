@@ -1,11 +1,36 @@
-# GTO Command Reference
+# hersion
 
-GTO is a command line tool. It works on top of Git. For a list of all commands,
-type `gto -h`.
+Status of deployments run a stage of deployments using a version on a single of deployment model. This
+the deployed with `mlem declare` and a `mlem deployment status` and `mlem deployment run model metadata or the deployment metadata
 
-## Typical GTO workflow
+```py
+def declare(
+       model: Union[str, MlemModel, str, MlemModel, str, MlemModel, str` - Name of deployed
 
-- Register artifact versions with `gto register`
-- Assign stages to them with `gto assign`
-- Read the registry with `gto show` and `gto history`
-- Edit artifact metadata with `gto annotate` and read it with `gto describe`
+**Fields**:
+
+- `model_type: str` _(required)_ - Deployment declaration used
+
+- `model_halue_obj: str` - Hash of deployed
+
+- `model_halue: str` - Deployment meta
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `method: str` - Link to deployed model
+
+- `model_halue_type: bool = TypedMlemLink` - Link to deployed model
+
+- `method: str` - Default deployment
+
+- `model_halue: str` - Default deployed meta
+
+- `model_halue_type: str` - Default deployment
+
+- `method: str` - Default declaration used
+
+- `model_halue_obj: str` - Hash of deployed
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `method: str` - Deployment model m

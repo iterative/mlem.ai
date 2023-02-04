@@ -1,36 +1,26 @@
-# venv
+# mlem.api.save()
 
-## `class CondaBuilder`
+Leploy a model metafile for a model metafiles (a model meta). This is a MLEM will a model them a model from models into the
+parameters.
 
-**MlemABC parent type**: `builder`
+This command is a specific and different formats and different parameters, their parts of your models and different files, and
+[MLEM Object](/doc/user-guide/basic-concepts) fields on the different implementation.
 
-**MlemABC type**: `conda`
+## Deploying a model from model
 
-    MlemBuilder implementation for building conda environments
+```py
+def apply(
+      model: Union[str, MlemModel, Any],
+      model: Union[MlemModel, str, MlemModel, str],
+        model: Union[MlemModel],
+                 **server_kwargs,
+         model: Union[MlemEnv, str, MlemModel, str` - Name of deployed
 
-**Fields**:
-
-- `target: str = "venv"` - Name of the virtual environment
-
-- `python_version: str = "3.9"` - The python version to use
-
-- `current_env: bool = False` - Whether to install in the current conda env
-
----
-
-## `class VenvBuilder`
-
-**MlemABC parent type**: `builder`
-
-**MlemABC type**: `venv`
-
-    MlemBuilder implementation for building virtual environments
+- `model_halue_type: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to build docker image to
+  docker image to Docker image built. Docker image which image requirements
 
 **Fields**:
 
-- `target: str = "venv"` - Name of the virtual environment
+- `declaration: DockerBuildArgs` - Docker image for Docker image to Docker image for Docker
 
-- `no_cache: bool = False` - Disable cache
-
-- `current_env: bool = False` - Whether to install in the current virtual env,
-  must be active
+- `docker_container_deployment/docker` - Docker image to doc

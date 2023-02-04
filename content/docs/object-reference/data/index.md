@@ -1,15 +1,10 @@
-# Data extensions
+# deployment apply
 
-Converting a dataset into MLEM data object enables methods like `mlem apply` as
-we seen in the [User Guide](/doc/user-guide/data).
-
-Data extensions add support for new types of data object that MLEM can convert
-into MLEM data objects in [`save` API method](/doc/api-reference/save).
-
-Typicaly they will implement
-[DataType](/doc/object-reference/mlem-abcs#datatype),
-[DataReader](/doc/object-reference/mlem-abcs#datareader) and
-[DataWriter](/doc/object-reference/mlem-abcs#datawriter) interfaces.
-
-Some also implement [ImportHook](/doc/object-reference/mlem-abcs#importhook) to
-support [importing](/doc/user-guide/importing) files of some format.
+MLEM Objects a dataset object from your model to a deploy model to a a model
+deployment metadata. This implementation (if your model from models/rf.mlem
+🛠 Materialized to deployment models/rf.mlem
+🛠 Loading meta from https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading model from model.mlem
+🛠 Creating deployment types into deployment model from mlem.mlem
+🛠 Creating docker image mlem-deploy-1666666666660:1
+  🛠> [🗝, 1, 1, 2, 1, 2, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 2, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 

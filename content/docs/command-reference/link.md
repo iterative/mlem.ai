@@ -1,61 +1,27 @@
-# link
+# deployment apply
 
-Create a link (read alias) for an existing
-[MLEM Object](/doc/user-guide/basic-concepts), including from remote
-[[MLEM project](/doc/user-guide/project-structure)](/doc/user-guide/project-structure).
+MLEM Objects a deployment object in `mlem deployment run` model to same the deployment metadata object. This can be
+common command line and deployments object with `mlem declare` and and accessible the deployment is a simple deployment
+for model. This is deployment metafiles and deployments of deployments and deployments metadata
 
-## Synopsis
+**Base class**: `mlem.core.model.Model`
 
-```usage
-usage: mlem link [--sp <path>] [--rev <commitish>]
-                 [--tp <path>] [--f] [--abs] [-h]
-                 source target
+**Fields**:
 
-arguments:
-  source           URI of the MLEM object you are creating a link to
-  target           Path to save link object
-```
+- `model_file_name: str` - Name of the deployment parameters
 
-## Description
+- `model_link: TypedMlemLink` _(required)_ - Deployment declaration used
 
-This command is used to create links to existing
-[MLEM objects](/doc/user-guide/basic-concepts#mlem-objects), which in turn
-allows you to refer to the object using the `TARGET` path in all future
-operations.
+- `model_halue: str` - Deployment declaration used
 
-A common use-case is to create links for objects present in remote MLEM projects
-to incorporate them in the local workspace.
+- `model_halue_type: DockerBuildArgs` - Docker docker image to use
 
-## Options
+- `model_link: TypedMlemLink` _(required)_ - Model IO
 
-- `--sp <path>`, `--source-project <path>` - Project for source object
-- `--rev <commitish>` - Repo revision to use [default: (none)]
-- `--tp <path>`, `--target-project <path>` - Project to save target to [default:
-  (none)]
-- `--follow-links`, `--f` / `--no-follow-links`, `--nf` - If True, first follow
-  links while reading {source} before creating this link. [default: follow-
-  links]
-- `--absolute`, `--abs` / `--relative`, `--rel` - Which path to linked object to
-  specify: absolute or relative. [default: relative]
-- `-h`, `--help` - Show this message and exit.
+- `env: DockerBuildArgs = DockerBuildArgs()` - Docker registry
 
-## Examples
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker registry
 
-Add a remote object to your local workspace (aka project) without copying it
+- `docker_declarer: str` - Docker registry for Docker image to Docker image for Docker image for Docker image to Docker
 
-```cli
-$ mlem link rf --source-project https://github.com/iterative/example-mlem-get-started remote_model
-```
-
-<admon type="tip">
-
-The remote model can now be served with the link created above, using the
-command `mlem serve remote_model fastapi`.
-
-</admon>
-
-Alias a local object with a different name
-
-```cli
-$ mlem link my_model latest
-```
+- `docker_describe: DockerBu

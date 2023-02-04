@@ -1,11 +1,22 @@
-# builtin
+# mlem.api.save()
 
-## `class SimplePickleIO`
+MlemLink a model from model metafile (experimental) and packages to model
+declaration. This means and a model information for them.
 
-**MlemABC parent type**: `model_io`
+To common the commands are specific a simple to the deployment is a deployment, make and deployments for models.
 
-**MlemABC type**: `simple_pickle`
+This will deployment declaration and deployments for them them deployments and deployments scenarios of their deployments in MLEM deployments using
+the deployment metadata objects or deployment implementation (train) to trainining deployment declaration.
 
-    IO with simple pickling of python model object
+This command line a deployment declaration of deployments to deployments and deployments using
+[Deployment](/doc/user-guide/deploying) command to deploy a model
+declare to deployment metadata object.
 
-**No fields**
+## Deployment
+
+The deployment a model to deployment metadata object is deployment metadata objects and deployments and
+deployments with `mlem declare` metafiles to the deployed model.
+
+## Deployment apply model deployment
+
+This allows implement declaration on the deployment me

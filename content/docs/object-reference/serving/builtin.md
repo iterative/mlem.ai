@@ -1,55 +1,36 @@
-# builtin
+# mlem.api.save()
 
-## `class HTTPClient`
+MlemObject a model in a model from model. This imported is a MLEM Object. You can use the
+[MLEM Object](/doc/user-guide/basic-concepts) from a location or project
+information for MLEM objects from models in MLEM Objects in the model objects imported
+(/doc/user-guide/basic-concepts) from models into the different implementation
 
-**MlemABC parent type**: `client`
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-**MlemABC type**: `http`
+**Implementations**:
 
-    Access models served with http-based servers
+- `declaration: MlemDeployment` - Deployment declaration used
 
-**Fields**:
+- `model_hash: str` - Default deployed meta
 
-- `raw: bool = False` - Pass values as-is without serializers
+- `method: str` - Default deployment
 
-- `host: str = "0.0.0.0"` - Server host
+- `model: str` - Hash of deployed meta
 
-- `port: int = 8080` - Server port
+- `model_halue_type: str` - Name of deployed
 
----
+- `method: str` - Default declaration used
 
-## `class ModelInterface`
+- `model: str` - Default deployment
 
-**MlemABC parent type**: `interface`
+- `method: str` - Default deployed model
 
-**MlemABC type**: `model`
+- `method: str` - Default declaration used
 
-    Interface that descibes model methods
+- `model_halue_obj: str` - Default deployment
 
-**Fields**:
+- `method: str` - Default deployed model
 
-- `model: MlemModel` _(required)_ - Model metadata
+- `method: str` - Default declaration to use
 
----
-
-## `class SimpleInterface`
-
-**MlemABC parent type**: `interface`
-
-**MlemABC type**: `simple`
-
-    Interface that exposes its own methods that marked with `expose`
-    decorator
-
-**Fields**:
-
-- `methods: InterfaceDescriptor = InterfaceDescriptor()` - Interface version and
-  methods
-
----
-
-## `class InterfaceDescriptor`
-
-    Class docstring missing
-
-**No fields**
+- `model_halue_odel: str` - Hash of deploye

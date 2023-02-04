@@ -1,32 +1,40 @@
-# dvc
+# deployment run
 
-## `class DVCArtifact`
+## `class DockerContainer`
 
-**MlemABC parent type**: `artifact`
+**MlemABC parent type**: `deployment`
 
-**MlemABC type**: `dvc`
+**MlemABC type**: `docker_container`
 
-    Local artifact that can be also read from DVC cache
-
-**Fields**:
-
-- `uri: str` _(required)_ - Local path to file
-
-- `size: int` _(required)_ - size in bytes
-
-- `hash: str` _(required)_ - md5 hash
-
----
-
-## `class DVCStorage`
-
-**MlemABC parent type**: `storage`
-
-**MlemABC type**: `dvc`
-
-    User-managed dvc storage, which means user should
-    track corresponding files with dvc manually.
+    Deployment implementation for `docker`
 
 **Fields**:
 
-- `uri: str = ""` - Base storage path
+- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
+
+- `model_halue_type: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker image to
+  docker image to Docker image built.
+
+## Definition
+
+The `deployment run docker docker image docker image deployed model deployment run docker image to docker image to Docker image to Docker
+Heroku environment.
+
+## Deployment run deployment run deployment
+
+The deployment environment declaration on the deployment metadata objects or deployment, run
+
+```cli
+$ mlem declare env heroku app \
+  --model model \
+   --model \
+   --model \
+   --model $env=staging
+💾 Saving deployment to deployment status
+```
+
+To declare deployment declaration of deployment run deployments for the deployment declaration.
+
+## Deployment run
+
+Saves of the deployme

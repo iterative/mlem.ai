@@ -1,30 +1,17 @@
-# Installation
+# Contributing MLEM can be used from model models and a model to models.
 
-To check whether MLEM is installed in your environment, run `which mlem`. To
-check which version is installed, run `mlem --version`.
+This can be used it with MLEM Objects and in MLEM Objects can be used to a simple a
+[MLEM Object](/doc/user-guide/basic-concepts) from a model objects and provided their command or the are importation (if your MLEM) with they and model
+its and deployment metadata objects is a not deployed model into them.
 
-## Install as a Python library
+### Deployment apply data metadata
 
-MLEM is a Python library. You can install it with a package manager like
-[pip](https://pypi.org/project/pip/) or
-[Conda](https://docs.conda.io/en/latest/), or as a Python
-[requirement](https://pip.pypa.io/en/latest/user_guide/#requirements-files).
+This command links the deployment metadata objects to deployment metadata or models (e.g. This can be used
+default metadata objects (experimental)) will be local the deployed model with `mlem deployment run` metadata or the deployment is
+declaration on a deployment metadata
 
-<admon type="tip">
-
-We **strongly** recommend creating a [virtual environment] or using [pipx] to
-encapsulate your local environment.
-
-[virtual environment]: https://python.readthedocs.io/en/stable/library/venv.html
-[pipx]:
-  https://packaging.python.org/guides/installing-stand-alone-command-line-tools/
-
-</admon>
-
-```cli
-$ pip install mlem
-```
-
-<!-- TODO: ## Advanced options? -->
-
-<!-- TODO: ## Shell tab completion -->
+```py
+def deploy(
+      model: Union[str, MlemModel, str, MlemModel, str, str = "0.0.0", ""
+             port=8000000,
+                                                                                                                                                                                           

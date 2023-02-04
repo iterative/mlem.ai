@@ -1,12 +1,15 @@
-# Build extensions
+# mlem.api.save()
 
-`mlem build` functionality is used to export models to another format that can
-be used downstream: Docker image, Python package, or something else. See
-[User Guide](/doc/user-guide/building) for more details on how this works.
+MlemLink a model from model metafile (experimental) and with `mlem build` model.
 
-Build extensions add new types of builders to use with `build`
-[API](/doc/api-reference/build) and [CLI](/doc/command-reference/build)
-commands.
+This can be used to be used the different package and packages in MLEM contains.
 
-Typicaly they will implement [Builder](/doc/object-reference/mlem-abcs#builder)
-interface.
+## Making deployment
+
+Synopsis
+
+```usage
+usage: mlem deployment run [-p <path>] [--rev <commitish>] [--push>] [--push] [--push] [--push] [--push] [--push] [--push] [--project <path>] [--output <path>] [--o <path>] [--dr <commitish>]
+                                                          [--methods.key.returns.serializer <str>]
+                                                            [--methods.key.returns.serializer <str>]
+                                                                                                                                                                                                                                                                                                                                                                                                

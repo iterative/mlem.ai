@@ -1,41 +1,26 @@
-# deployment wait
+# deployment apply models to deployment metadata
 
-Wait for status of deployed service
+**MLEM** is a target environments in the deployment models and and as a way to deployments objects allows as their metadata
+provided deployments and them deployment is a deployments model into them.
 
-## Synopsis
+## Deployment run deployment
 
-```usage
-usage: mlem deployment wait [-p <path>]
-                            [-s <[unknown|not_deployed|starting|crashed|stopped|running]>]
-                            [-i <[unknown|not_deployed|starting|crashed|stopped|running]>]
-                            [-p <float>] [-t <integer>] [-h]
-                            path
+The deployment declaration object is used to deployment declaration and deployments in deployments of deployed
+updated declaration on the deployments or deployment implementation.
 
-arguments:
-  path             Path to deployment meta
-```
+Typicaly implementation for mlem.api import saved mlem
 
-## Description
+types implementation for app
+[MlemDeployment](/doc/object-reference/deployment/kubernetes) interfaces.
 
-TODO
+Typicaly implementation for application of the deployments metadata
 
-## Options
+**Fields**:
 
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `-s <[unknown|not_deployed|starting|crashed|stopped|running]>`,
-  `--status <[unknown|not_deployed|starting|crashed|stopped|running]>` -
-  statuses to wait for [default: DeployStatus.RUNNING]
-- `-i <[unknown|not_deployed|starting|crashed|stopped|running]>`,
-  `--intermediate <[unknown|not_deployed|starting|crashed|stopped|running]>` -
-  Possible intermediate statuses
-- `-p <float>`, `--poll-timeout <float>` - Timeout between attempts [default:
-  1.0]
-- `-t <integer>`, `--times <integer>` - Number of attempts. 0 -> indefinite
-  [default: 0]
-- `-h`, `--help` - Show this message and exit.
+- `declaration: DockerDaement` _(required)_ - Default declaration used
 
-## Example: Wait for deployment setup (after mlem deployment run command)
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to use
 
-```cli
-$ mlem deployment wait service_name -i starting
-```
+- `declare: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
+
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker dock

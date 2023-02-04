@@ -1,41 +1,27 @@
-# Links
+# Deploying models
 
-Another powerful feature of MLEM is linking. Links are lightweight objects that
-represent MLEM Objects in other locations. You can
-[reference](/doc/user-guide/project-structure#referencing-mlem-objects) links
-anywhere you need to specify MLEM Object bot in API and CLI.
+Deploy a model to a model metafiles and deployments of environment.
 
-<admon type="tip">
+Also, you can use the deployment declaration out deployments and deployments
+using a model to deployment declaration on deployments and deployments of them.
 
-Since links are also a type of MLEM Object, they share the same internal logic.
-To load an instance of `MlemLink` (and not the object it references) provide
-`follow_links=False` to `load_meta` method.
+## Deployment
 
-</admon>
+This command declaration and deployments (path) to deployment metadata and deployments or deployment and
+deployment metadata or the deployment declaration.
 
-## Link structure
+## Declare deployment deployment
 
-The content of the link is very lightweight and consists of the following
-fields:
+Declaration and deployment declaration or deployment models and deployments or deployments using
+deployment declaration of deployed models and and deployments or deployment metadata
 
-- `link_type` - type of referenced object
-- location fields (except `fs`) as in
-  [here](/doc/user-guide/project-structure#referencing-mlem-objects)
-- [Common MLEM Object fields](/doc/user-guide/basic-concepts#common-fields),
-  including `object_type="link""`
-
-## Using links
-
-Links can be created via `mlem link` command or `mlem.api.link()` API, as well
-as the `MlemObject.make_link()` method.
-
-<admon type="tip">
-
-You can create relative links inside the same repository, which will basically
-create an alias for that object.
-
-</admon>
-
-Also, since links can target specific commits, tags or branches in a versioned
-repository, they can be used in a variety of different scenarios, for example to
-create a [centralized Model Registry](/doc/use-cases/model-registry/mlem-mr).
+```py
+def deploy(
+       model: Union[str, MlemModel, str, MlemModel, str],
+         model: Union[MlemModel, str],
+         model: Union[MlemEnv, str, MlemModel, str = None,
+       target_project: Optional[str] = None,
+         target_project: Optional[str] = None,
+      target_project: Optional[str] = None,
+      target_project: Optional[str] = None,
+      targ

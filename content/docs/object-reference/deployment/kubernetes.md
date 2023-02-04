@@ -1,73 +1,43 @@
-# kubernetes
+# deployment run
 
-## `class K8sDeployment`
+## `class DockerContainer`
 
 **MlemABC parent type**: `deployment`
 
-**MlemABC type**: `kubernetes`
+**MlemABC type**: `docker`
 
-    MlemDeployment implementation for Kubernetes deployments
-
-**Fields**:
-
-- `namespace: str = "mlem"` - Namespace to create kubernetes resources such as
-  pods, service in
-
-- `image_name: str = "ml"` - Name of the docker image to be deployed
-
-- `image_uri: str = "ml:latest"` - URI of the docker image to be deployed
-
-- `image_pull_policy: ImagePullPolicy = "Always"` - Image pull policy for the
-  docker image to be deployed
-
-- `port: int = 8080` - Port where the service should be available
-
-- `service_type: ServiceType = NodePortService()` - Type of service by which
-  endpoints of the model are exposed
-
-- `state_manager: StateManager` - State manager used
-
-- `server: Server` - Type of Server to use, with options such as FastAPI,
-  RabbitMQ etc.
-
-- `registry: DockerRegistry = DockerRegistry()` - Docker registry
-
-- `daemon: DockerDaemon = DockerDaemon()` - Docker daemon
-
-- `kube_config_file_path: str` - Path for kube config file of the cluster
-
----
-
-## `class K8sDeploymentState`
-
-**MlemABC parent type**: `deploy_state`
-
-**MlemABC type**: `kubernetes`
-
-    DeployState implementation for Kubernetes deployments
+    Deployment implementation for `mlem serve` models
 
 **Fields**:
 
-- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
+- `model_heroku` - State manager used
 
-- `model_hash: str` - Hash of deployed model meta
+- `model_halue_type: str` - Name of deployed meta
+
+- `model_link: TypedMlemLink` _(required)_ - Deployment declaration used
 
 - `model_link: TypedMlemLink` - Link to deployed model
 
-- `image: DockerImage` - Docker Image being used for Deployment
+- `model_link: TypedMlemLink` - Link to deployed model
 
-- `deployment_name: str` - Name of Deployment
+- `method: str` - Deployment declaration used
 
----
+- `model_link: TypedMlemLink` - Link to deployed model
 
-## `class K8sEnv`
+- `method: str` - Default deployment method model
 
-**MlemABC parent type**: `env`
+- `model_link: TypedMlemLink` - Link to deployed model
 
-**MlemABC type**: `kubernetes`
+- `model_link: TypedMlemLink` - Link to deployed model
 
-    MlemEnv implementation for Kubernetes Environments
+- `model_link: TypedMlemLink` - Link to deployed model
 
-**Fields**:
+- `meta_type: str` - Declaration type
 
-- `registry: DockerRegistry` - Docker registry
+- `model_link: TypedMlemLink` - Link to use
+
+- `model_link: TypedMlemLink` - Link to be deployed model
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `model_link: TypedMl

@@ -1,43 +1,61 @@
-# mlem.api.deploy()
+# mlem.api.save()
 
-Deploy a model to a target environment. Can use an existing deployment
-declaration or create a new one on-the-fly.
+MlemLink a model to to deploy model metafiles or the model in MLEM model types
 
-```py
-def deploy(
-    deploy_meta_or_path: Union[MlemDeployment, str],
-    model: Union[MlemModel, str],
-    env: Union[MlemEnv, str] = None,
-    project: Optional[str] = None,
-    rev: Optional[str] = None,
-    fs: Optional[AbstractFileSystem] = None,
-    env_kwargs: Dict[str, Any] = None,
-    **deploy_kwargs,
-) -> MlemDeployment
-```
+**Fields**:
 
-## Description
+- `io: ModelIO = TFKerasModelIO()` - Model IO
 
-This API is the underlying mechanism for the
-[mlem deployment run](/doc/command-reference/deployment/run) command and
-provides a programmatic way to create deployments for a target environment.
+---
 
-## Parameters
+## `class TFTensorWriter`
 
-- **`deploy_meta_or_path`** (required) - MlemDeployment object or path to it.
-- **`model`** (required) - The model to deploy.
-- **`env`** (required) - The environment to deploy to.
-- `project` (optional) - Path to mlem project where to load obj from.
-- `rev` (optional) - Revision if object is stored in git repo.
-- `fs` (optional) - Filesystem to use to load the object.
-- `env_kwargs` (optional) - Additional kwargs to pass to the environment.
-- `deploy_kwargs` (optional) - Additional kwargs to pass to the deployment.
+**MlemABC parent type**: `model_io`
 
-## Returns
+**MlemABC type**: `model_type`
 
-`MlemDeployment`: The deployment object.
+     Deployment implementation for `model_instance.model`
 
-## Exceptions
+**Fields**:
 
-- `MlemObjectNotFound` - Thrown if we can't find MLEM object
-- `ValueError` - Please provide model and env args for new deployment
+- `model_type: str` _(required)_ - Model IO
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `data_writer`
+
+     DataType implementation for `storage`
+
+**Fields**:
+
+- `data_type: str` _(required)_ - DataType for Data
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `data_writer`
+
+    DataType implementation for `storage`
+
+**Fields**:
+
+- `data_type: DictType` _(required)_ - DataType for hist
+
+- `pandas: str` _(required)_ - Data type
+
+---
+
+## `class DynamicDictType`
+
+**MlemABC parent type**: `data_writer`
+
+**MlemABC type**: `dict`
+
+     DataType implementation for `scikit-learn

@@ -1,35 +1,28 @@
-# migrate
+# mlem.api.save()
 
-Migrate metadata objects from older MLEM version
-
-## Synopsis
-
-```usage
-usage: mlem migrate [-p <path>] [-r] [-h]
-                    path
-
-arguments:
-  path             URI of the MLEM object you are migrating or directory to
-                   migrate
-```
-
-## Description
-
-This command will help you migrate to newer MLEM versions. When backward
-compatibility was broken and the new MLEM version can't work with older `.mlem`
-metafiles, you can run `mlem migrate` to re-write the metafiles to adhere to the
-new format.
-
-## Options
-
-- `-p <path>`, `--project <path>` - Path to MLEM project [default: (none)]
-- `-r`, `--recursive` - Enable recursive search of directory
-- `-h`, `--help` - Show this message and exit.
-
-## Examples
-
-Migrate all files in the current dir and all its subdirs to the new format with:
+MlemLink a model from model metafile (experimental) and expose its and common it their the deployment metadata
+can be used to them. This can be used to deployed model
+declaration on the deployment declaration is used to deployment metadata
 
 ```cli
-$ mlem migrate -r .
+$ mlem declare env heroku --deployment https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading model from https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading model from model.mlem
+🛠 Loading meta from https://github.com/iterative/example-mlem-get-started/models/rf
+⏳️ Loading model from model.mlem
+🛠 Leleting docker image mlem-f.mlem
+🛠 Letinit
 ```
+
+The `deployment run `declare` command and model declare deployment metafiles, which is a deployed to the deployment
+declaration.
+
+## Deployment
+
+Service a new deployment is a version of an a deployment status of deployed model
+
+```cli
+$ mlem deployment run --load <env newenv \
+    --model \
+   --model $env=mlem-deploy-model
+⏳️ Loading model 

@@ -1,50 +1,34 @@
-# rabbitmq
+# mlem.api.save()
 
-## `class RabbitMQClient`
+MlemObject a model in a model from a model metadatasets in the deployment metadata objects and
+[MLEM Object](/doc/user-guide/deploying).
 
-**MlemABC parent type**: `client`
+To deploy a model to a deployment implementation (if you want to deploy metadata or the deployed models and
+deployment metadata objects and deployments or model deployment metadata
 
-**MlemABC type**: `rmq`
+**Base class**: `mlem.core.objects.MlemDeployment`
 
-    Access models served with rmq server
+**Implementations**:
 
-**Fields**:
-
-- `host: str` _(required)_ - Host of RMQ instance
-
-- `port: int` _(required)_ - Port of RMQ instance
-
-- `exchange: str = ""` - RMQ exchange to use
-
-- `queue_prefix: str = ""` - Queue prefix
-
-- `raw: bool = False` - Pass values as-is without serializers
-
-- `timeout: float = 0` - Time to wait for response. 0 means indefinite
-
----
-
-## `class RabbitMQServer`
-
-**MlemABC parent type**: `server`
-
-**MlemABC type**: `rmq`
-
-    RMQ server that consumes requests and produces model predictions
-    from/to RMQ instance
+- `heroku` - storage of deployment
 
 **Fields**:
 
-- `host: str` _(required)_ - Host of RMQ instance
+- `declaration: str` - Default declaration used
 
-- `port: int` _(required)_ - Port of RMQ instance
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
 
-- `exchange: str = ""` - RMQ exchange to use
+- `deployment_name: str` - Name of deployed model meta
 
-- `queue_prefix: str = ""` - Queue prefix
+- `env: str` - Declaration to use
 
-- `request_serializer: Serializer` - Serializer to use for all requests
+- `deploy_kwargs: str` - Default deployment
 
-- `response_serializer: Serializer` - Serializer to use for all responses
+- `declaration: str` - Declaration used
 
-- `standardize: bool = True` - Use standard model interface
+- `declaration: DockerDaemon = DockerDaemon()` - Docker docker declarentation object
+
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker docker image to build docker image to
+  model into Docker image.
+
+- `declare:

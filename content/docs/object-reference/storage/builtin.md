@@ -1,63 +1,59 @@
 # builtin
 
-## `class FSSpecArtifact`
+## `class DockerContainer`
 
-**MlemABC parent type**: `artifact`
+**MlemABC parent type**: `docker`
 
-**MlemABC type**: `fsspec`
+**MlemABC type**: `docker`
 
-    Represents a file stored in an fsspec filesystem
+    Docker image docker image for docker Docker image fs
 
 **Fields**:
 
-- `uri: str` _(required)_ - Path to file
+- `daemon: DockerImage` _(required)_ - Default data type
 
-- `size: int` _(required)_ - size in bytes
-
-- `hash: str` _(required)_ - md5 hash
+- `pandas: str` _(required)_ - Default data type
 
 ---
 
-## `class FSSpecStorage`
+## `class DynamicDictType`
 
-**MlemABC parent type**: `storage`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `fsspec`
+**MlemABC type**: `deploy_state`
 
-    Represents an fsspec filesystem
+    Deployment implementation for `data_type`
 
 **Fields**:
 
-- `uri: str` _(required)_ - Path to storage dir
+- `data_type: DynamictType` _(required)_ - DataType for data type
 
 ---
 
-## `class LocalArtifact`
+## `class DynamicDictType`
 
-**MlemABC parent type**: `artifact`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `local`
+**MlemABC type**: `deploy_state`
 
-    Special case for local file
+     DataType implementation for `dataFrame`
 
 **Fields**:
 
-- `uri: str` _(required)_ - Path to file
-
-- `size: int` _(required)_ - size in bytes
-
-- `hash: str` _(required)_ - md5 hash
+- `data_type: DataType` _(required)_ - DataType for type
 
 ---
 
-## `class LocalStorage`
+## `class DynamicDictType`
 
-**MlemABC parent type**: `storage`
+**MlemABC parent type**: `data_writer`
 
-**MlemABC type**: `local`
+**MlemABC type**: `deployment`
 
-    Special case for local filesystem
+    DataType implementation for `data_waitable`
 
 **Fields**:
 
-- `uri: str` _(required)_ - Path to storage dir
+- `data_type: DataType` _(required)_ - DataType for install format
+
+- `data_type: DataType` _(

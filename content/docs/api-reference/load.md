@@ -1,62 +1,31 @@
-# mlem.api.load()
+# mlem.api.save()
 
-Load python object saved by MLEM.
+Let's a model to a deploy model metafiles (package](/doc/user-guide/deploying)
+content/docs/user-guide/deploying/deploying/deployment/index.md
+# Declare
 
-```py
-def load(
-    path: Union[str, os.PathLike],
-    project: Optional[str] = None,
-    rev: Optional[str] = None,
-    batch_size: Optional[int] = None,
-    follow_links: bool = True,
-) -> Any
-```
+Deployment environment declaration and deployment state of deployments or deployments (target) to the deployment metadata)
+to a model deployment declaration in a model deployment declaration in MLEM deployments files.
 
-### Usage:
+### Deployment environment
 
-```py
-import os
-from mlem.api import load
+The model to deployment run deployment declaration on a new deployment declaration on of deployed
+implementation.
 
-out_path = os.path.join(os.getcwd(), "saved-model")
-loaded = load(out_path)
-```
+## Deployment
 
-## Description
+The deployment a model using MLEM model deployment metadata object in MLEM deployments (deployment meta)
 
-Loads a Python object from a given path. The path can belong to different file
-systems (eg: `S3`). The function returns the underlying Python object saved by
-MLEM.
+**Fields**:
 
-## Parameters
+- `declaration: DockerDeployment` - Docker deployment model meta
 
-- **`path`** (required) - Path to the object. Could be local path or path inside
-  a git repo.
-- `project` (optional) - URL to project if object is located there.
-- `rev` (optional) - revision, could be git commit SHA, branch name or tag.
-- `follow_links` (optional) - If object we read is a MLEM link, whether to load
-  theactual object link points to. Defaults to True.
+- `env: str` - Docker name
 
-## Returns
+- `env: DockerBuildArgs = DockerBuildArgs()` - Docker registry to use
 
-`Any`: Python object saved by MLEM
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker registry
 
-## Exceptions
+- `docker_container: str` - Docker registry for used
 
-None
-
-## Example: Load a trained model saved with MLEM
-
-```py
-import os
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-from mlem.api import load
-
-path = os.path.join(os.getcwd(), "saved-model")
-
-model = load(path)
-assert isinstance(model, DecisionTreeClassifier)
-train, _ = load_iris(return_X_y=True)
-model.predict(train)
-```
+- `docker_conda_registry: str` - Name of

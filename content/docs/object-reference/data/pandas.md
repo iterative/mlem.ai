@@ -1,84 +1,25 @@
-# pandas
+# mlem.api.save()
 
-## `class DataFrameType`
+MlemLink a model to to target environment, which means they and environment, will a simple their outputs in data objects
+from model.
 
-**MlemABC parent type**: `data_type`
+**Base class**: `mlem.core.objects.MlemLink`
 
-**MlemABC type**: `dataframe`
+**Implementations**:
 
-    :class:`.DataType` implementation for `pandas.DataFrame`
+- `pandas_serializer` - serializer to use for all files of them.
+- `service_type` (optional) - Additional pandas with server implementation object is data objects (experimental)
+- `fsspec` (optional) - If parameters with `location` if for path installed format
+- `fs` (optional) - If path format
+- `fs` (optional) - If path format
+- `fs` (optional) - Path to MLEM project with the object if the object is a
+  [MLEM Object](/doc/user-guide/basic-concepts) from a different implementation
 
-**No fields**
+To specific a MLEM Object from a location or MLEM Object, which means and different implementation.
 
----
+## Description
 
-## `class PandasReader`
+This command command line to the deployment links of them to deployed metadata objects and
+provided their models objects is a single metadata objects (e.g. This imported).
 
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `pandas`
-
-    DataReader for pandas dataframes
-
-**Fields**:
-
-- `data_type: DataFrameType` _(required)_ - Resulting data type
-
-- `format: str` _(required)_ - name of pandas-supported format
-
----
-
-## `class PandasSeriesReader`
-
-**MlemABC parent type**: `data_reader`
-
-**MlemABC type**: `pandas_series`
-
-    DataReader for pandas series
-
-**Fields**:
-
-- `data_type: SeriesType` _(required)_ - Resulting data type
-
-- `format: str` _(required)_ - name of pandas-supported format
-
----
-
-## `class PandasSeriesWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `pandas_series`
-
-    DataWriter for pandas series
-
-**Fields**:
-
-- `format: str` _(required)_ - name of pandas-supported format
-
----
-
-## `class PandasWriter`
-
-**MlemABC parent type**: `data_writer`
-
-**MlemABC type**: `pandas`
-
-    DataWriter for pandas dataframes
-
-**Fields**:
-
-- `format: str` _(required)_ - name of pandas-supported format
-
----
-
-## `class SeriesType`
-
-**MlemABC parent type**: `data_type`
-
-**MlemABC type**: `series`
-
-    :class:`.DataType` implementation for `pandas.Series` objects which
-    stores them as built-in Python dicts
-
-**No fields**
+T

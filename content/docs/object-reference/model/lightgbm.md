@@ -1,27 +1,39 @@
-# lightgbm
+# hightual environment
 
-## `class LightGBMModel`
+## `class DockerContainer`
 
-**MlemABC parent type**: `model_type`
+**MlemABC parent type**: `docker`
 
-**MlemABC type**: `lightgbm`
+**MlemABC type**: `heroku`
 
-    :class:`.ModelType` implementation for `lightgbm.Booster` type
-
-**Fields**:
-
-- `io: ModelIO = LightGBMModelIO()` - LightGBMModelIO
-
----
-
-## `class LightGBMModelIO`
-
-**MlemABC parent type**: `model_io`
-
-**MlemABC type**: `lightgbm_io`
-
-    :class:`.ModelIO` implementation for `lightgbm.Booster` type
+    Deployment metafiles deployment
 
 **Fields**:
 
-- `model_file_name: str = "model.lgb"` - Filename to use
+- `declaration: MlemDeployment` _(required)_ - Deployment declaration used
+
+- `model_hash: str` - Hash of deployed model meta
+
+- `method: str` - Deployment model method method into used
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `method: str` - Deployment declaration used
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `method: str` - Link to use
+
+- `model: str` - Link to deployed model meta
+
+- `model_link: TypedMlemLink` - Link to deployed model
+
+- `image: DockerImage` - DockerBuild arguments
+
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to use
+
+- `deployment_name: str` - Name of deployed model meta
+
+- `declaration: DockerBuildArgs = DockerBuildArgs()` - Docker docker image to use
+
+- `declaration: DockerDaemon = DockerBuildArgs()` - Docker docker image to build docker i
