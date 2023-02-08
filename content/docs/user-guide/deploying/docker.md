@@ -62,3 +62,19 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 
 A lot of parameters can be configured, the full list of which can be accessed
 using `mlem deploy run docker_container -h`.
+
+### Example: running REST API service from CLI
+
+```cli
+$ mlem deploy run docker_container app.mlem -m model --server fastapi --ports.0 8080:8080
+```
+
+You can specify other [servers](/doc/user-guide/serving/) to use.
+Note that `--ports.0` exposes port 8080 outside of the container.
+Each server typically uses some specific port. You can check the default port by running `mlem serve $SERVER --help`. You can also set it like this:
+
+```cli
+$ mlem deploy run docker_container app.mlem -m model --server fastapi --ports.0 5000:5000 --server.port 5000
+```
+
+Note that the param name in `--server.$PARAM` that controls the port can be different for different server implementations. Use `mlem serve $SERVER --help` to find out the right one.
