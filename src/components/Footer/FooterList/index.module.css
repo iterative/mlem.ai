@@ -40,10 +40,10 @@
 
     &Icon {
       margin-right: 10px;
-      fill: currentColor;
+      fill: currentcolor;
 
       path {
-        fill: currentColor;
+        fill: currentcolor;
       }
 
       @media screen(md) {

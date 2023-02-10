@@ -1,6 +1,5 @@
 /* Prevent mobile browsers from changing font-size */
 * {
-  -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
 
@@ -10,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_light.woff2') format('woff2'),
     url('./fonts/brandon_light.woff') format('woff');
   font-style: normal;
@@ -19,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_light_it.woff2') format('woff2'),
     url('./fonts/brandon_light_it.woff') format('woff');
   font-style: italic;
@@ -28,7 +27,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_reg.woff2') format('woff2'),
     url('./fonts/brandon_reg.woff') format('woff');
   font-style: normal;
@@ -37,7 +36,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_reg_it.woff2') format('woff2'),
     url('./fonts/brandon_reg_it.woff') format('woff');
   font-style: italic;
@@ -46,7 +45,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_med.woff2') format('woff2'),
     url('./fonts/brandon_med.woff') format('woff');
   font-style: normal;
@@ -55,7 +54,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_med_it.woff2') format('woff2'),
     url('./fonts/brandon_med_it.woff') format('woff');
   font-style: italic;
@@ -64,7 +63,7 @@
 }
 
 @font-face {
-  font-family: 'BrandonGrotesque';
+  font-family: BrandonGrotesque;
   src: url('./fonts/brandon_bld.woff2') format('woff2'),
     url('./fonts/brandon_bld.woff') format('woff');
   font-style: normal;

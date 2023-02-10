@@ -19,13 +19,11 @@
 
   &__links {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     height: 480px;
 
     @media screen(md) {
-      flex-direction: row;
-      flex-wrap: nowrap;
+      flex-flow: row nowrap;
       height: initial;
     }
 

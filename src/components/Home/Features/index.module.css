@@ -1,6 +1,6 @@
 .features {
   &__title {
-    margin: 24px 0 16px 0;
+    margin: 24px 0 16px;
     width: fit-content;
     @apply text-gradient bg-teal-purple-gradient font-bold text-2xl leading-6 md:text-4xl md:leading-8 lg:text-6xl lg:leading-10;
 
@@ -8,6 +8,7 @@
       position: relative;
       top: -1px;
       @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
+
       animation-name: 'blink';
 
       @media screen(md) {
