@@ -61,6 +61,7 @@
     grid-area: title;
     display: flex;
     align-items: center;
+
     @apply text-gray-900 text-lg leading-8 font-medium;
 
     svg {
@@ -85,6 +86,7 @@
 
   &__description {
     grid-area: description;
+
     @apply text-gray-600 text-base leading-6;
   }
 }

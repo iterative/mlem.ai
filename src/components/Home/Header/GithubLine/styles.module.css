@@ -4,6 +4,7 @@
   font-weight: 500;
   line-height: 20px;
   padding: 16px 4px;
+
   @media (min-width: 768px) {
     padding: 16px;
   }
@@ -17,6 +18,7 @@
 .link {
   margin-left: 0.3em;
   font-weight: 500;
+
   @apply text-gray-600 underline;
 
   &:focus,

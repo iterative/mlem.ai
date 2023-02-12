@@ -3,6 +3,7 @@
 
   &__title {
     margin: 0;
+
     @apply text-gradient bg-teal-purple-gradient text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
 
     @media screen(md) {
@@ -17,6 +18,7 @@
     &Underscore {
       position: relative;
       top: -2px;
+
       @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
 
       animation-name: 'blink';
@@ -151,6 +153,7 @@
       height: 234px;
       padding: 34px 20px 34px 16px;
       box-sizing: content-box;
+
       @apply rounded-4;
     }
 
@@ -212,6 +215,7 @@
     button {
       width: 8px;
       height: 8px;
+
       @apply bg-gray-900 bg-opacity-10 rounded-full;
 
       &.selected {
@@ -270,6 +274,7 @@
         border-image: linear-gradient(to bottom, #945dd6 0%, #13adc7 100%) 2;
         padding: 8px 12px;
         margin: 8px 0;
+
         @apply border-solid border-l-2;
 
         @media screen(lg) {

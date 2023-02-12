@@ -76,6 +76,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+
     @apply bg-orange-purple-gradient text-tiny md:text-base leading-6;
 
     @media screen(md) {
@@ -114,6 +115,7 @@
   &__link {
     display: none;
     align-items: center;
+
     @apply text-tiny md:text-lg leading-6 text-gray-900;
 
     @media screen(sm) {

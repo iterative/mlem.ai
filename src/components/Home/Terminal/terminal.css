@@ -6,6 +6,7 @@ pre {
   .token.comment,
   .token.block-comment {
     font-weight: normal;
+
     @apply text-gray-800;
   }
 
