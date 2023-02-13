@@ -1,0 +1,14 @@
+restylers:
+  - name: prettier
+    arguments: ['--write']
+    include:
+      - '**/*.css'
+      - '**/*.js'
+      - '**/*.json'
+      - '**/*.jsx'
+      - '**/*.md'
+      - '**/*.mdx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.yaml'
+      - '**/*.yml'
