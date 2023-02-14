@@ -36,13 +36,3 @@ jobs:
 
       - name: Check TypeScript compilation
         run: yarn lint-ts
-
-      # - name: Run tests
-      #   run: yarn test
-
-      # - name: Publish to Chromatic
-      #   uses: chromaui/action@v1
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      #     exitOnceUploaded: true
