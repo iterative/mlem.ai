@@ -43,6 +43,7 @@
 
   a {
     text-decoration: underline;
+
     @apply hover:opacity-75;
   }
 }

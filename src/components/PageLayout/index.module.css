@@ -1,6 +1,7 @@
 .layout {
   min-width: 320px;
   overflow: hidden;
+
   @apply text-gray-800 bg-layout-gradient font-brandon;
 }
 

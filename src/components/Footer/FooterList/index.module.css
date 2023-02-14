@@ -10,6 +10,7 @@
   &__title {
     text-transform: uppercase;
     margin: 4px 0;
+
     @apply text-gray-700 text-xxs leading-7 font-medium;
   }
 
@@ -28,6 +29,7 @@
     padding: 4px 0;
     display: flex;
     align-items: center;
+
     @apply text-gray-750 text-base leading-12 md:leading-7;
 
     @media screen(md) {
@@ -40,10 +42,10 @@
 
     &Icon {
       margin-right: 10px;
-      fill: currentColor;
+      fill: currentcolor;
 
       path {
-        fill: currentColor;
+        fill: currentcolor;
       }
 
       @media screen(md) {

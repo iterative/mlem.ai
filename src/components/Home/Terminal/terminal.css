@@ -6,6 +6,7 @@ pre {
   .token.comment,
   .token.block-comment {
     font-weight: normal;
+
     @apply text-gray-800;
   }
 
@@ -59,6 +60,7 @@ pre {
 
   .token.dvc {
     @apply text-gray-800;
+
     font-weight: bold;
   }
 

@@ -1,14 +1,14 @@
 restylers:
-
-  - clang-format:
-      enabled: false
-
   - name: prettier
     arguments: ['--config=./.prettierrc', '--ignore-path=./.prettierignore']
     include:
-      - '**/*.md'
-      - '**/*.jsx'
-      - '**/*.tsx'
+      - '**/*.css'
       - '**/*.js'
-      - '**/*.ts'
       - '**/*.json'
+      - '**/*.jsx'
+      - '**/*.md'
+      - '**/*.mdx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.yaml'
+      - '**/*.yml'

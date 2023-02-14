@@ -8,6 +8,7 @@
   text-align: center;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   letter-spacing: 0.5px;
+
   @apply font-medium rounded-4 md:rounded-6 lg:rounded-8 text-lg leading-4 lg:text-lg;
 
   @media screen(md) {
@@ -23,11 +24,11 @@
     &_primary {
       z-index: 1;
       position: relative;
+
       @apply text-white bg-teal-purple-gradient;
 
       &:hover {
-        box-shadow: 0px 3px 4px rgba(46, 49, 55, 0.1),
-          0px 0px 2px rgba(46, 49, 55, 0.15);
+        box-shadow: 0 3px 4px rgb(46 49 55 / 10%), 0 0 2px rgb(46 49 55 / 15%);
       }
 
       &:focus,
@@ -47,6 +48,7 @@
         border-radius: 100px;
         border-radius: inherit;
         transition: opacity 0.2s ease-out;
+
         @apply bg-teal-purple-gradient-light;
       }
 
@@ -59,8 +61,8 @@
       @apply text-purple-800 bg-transparent;
 
       &:hover {
-        box-shadow: 0px 3px 4px rgba(46, 49, 55, 0.1),
-          0px 0px 2px rgba(46, 49, 55, 0.15);
+        box-shadow: 0 3px 4px rgb(46 49 55 / 10%), 0 0 2px rgb(46 49 55 / 15%);
+
         @apply bg-gray-100;
       }
 
@@ -71,6 +73,7 @@
 
     &_disabled {
       background-image: none;
+
       @apply bg-gray-200 text-gray-400;
 
       &:hover,
@@ -99,7 +102,7 @@
   }
 
   &__icon {
-    fill: currentColor;
+    fill: currentcolor;
     margin-right: 8px;
 
     @media screen(lg) {
@@ -107,7 +110,7 @@
     }
 
     path {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 }

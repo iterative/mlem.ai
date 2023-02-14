@@ -32,6 +32,7 @@
 
 html {
   @apply scroll-pt-[4.5rem];
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;

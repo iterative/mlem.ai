@@ -1,5 +1,6 @@
 .socialIcon {
   @apply text-gray-800;
+
   padding: 8px;
   display: block;
 
@@ -12,10 +13,10 @@
   }
 
   svg {
-    fill: currentColor;
+    fill: currentcolor;
 
     path {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 }

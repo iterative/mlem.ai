@@ -3,6 +3,7 @@
 
   &__title {
     margin: 0;
+
     @apply text-gradient bg-teal-purple-gradient text-3xl leading-11 font-bold md:text-6xl md:leading-14 lg:text-9xl lg:leading-14;
 
     @media screen(md) {
@@ -17,7 +18,9 @@
     &Underscore {
       position: relative;
       top: -2px;
+
       @apply motion-safe:animate-blink text-gradient bg-orange-gradient;
+
       animation-name: 'blink';
 
       @media screen(lg) {
@@ -28,6 +31,7 @@
 
   &__logos {
     grid-area: logos;
+
     /**
     * User input values.
     */
@@ -44,11 +48,13 @@
       (100% - var(--total-gap-width)) / var(--grid-column-count)
     );
 
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
-    );
+    grid-template: auto / repeat(
+        auto-fill,
+        minmax(
+          max(var(--grid-item--min-width), var(--grid-item--max-width)),
+          1fr
+        )
+      );
     grid-gap: var(--grid-layout-gap);
     display: grid;
     grid-auto-rows: 1fr;
@@ -84,9 +90,7 @@
 .main {
   @media screen(md) {
     display: grid;
-    grid-template-areas: 'captions slides' 'buttons slides';
-    grid-template-columns: 1fr 336px;
-    grid-template-rows: min-content 1fr;
+    grid-template: 'captions slides' min-content 'buttons slides' 1fr / 1fr 336px;
     margin: 0 -32px 0 -14px;
     column-gap: 16px;
   }
@@ -141,7 +145,7 @@
   &__slidesWrapper {
     overflow: hidden;
     width: 100vw;
-    padding: 24px 0 16px 0;
+    padding: 24px 0 16px;
     margin: 0 0 0 -16px;
 
     @media screen(md) {
@@ -149,6 +153,7 @@
       height: 234px;
       padding: 34px 20px 34px 16px;
       box-sizing: content-box;
+
       @apply rounded-4;
     }
 
@@ -210,6 +215,7 @@
     button {
       width: 8px;
       height: 8px;
+
       @apply bg-gray-900 bg-opacity-10 rounded-full;
 
       &.selected {
@@ -268,6 +274,7 @@
         border-image: linear-gradient(to bottom, #945dd6 0%, #13adc7 100%) 2;
         padding: 8px 12px;
         margin: 8px 0;
+
         @apply border-solid border-l-2;
 
         @media screen(lg) {
@@ -299,7 +306,8 @@
 
   &__text {
     @apply text-gray-600 text-base leading-7 lg:text-lg lg:leading-8;
-    margin: 4px 0 0 0;
+
+    margin: 4px 0 0;
 
     @media screen(md) {
       margin: 0;

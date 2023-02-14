@@ -10,8 +10,9 @@
   flex-flow: column nowrap;
   align-items: center;
   transition: 0.5s all, 0s width;
+
   &.hasAlert {
-    height: calc(var(--layout-header-height)+var(--layout-alert-height));
+    height: calc(var(--layout-header-height) + var(--layout-alert-height));
   }
 }
 
@@ -67,16 +68,15 @@
     padding: 8px;
     white-space: nowrap;
     letter-spacing: 0.02em;
-    background-clip: text;
     background-color: #fff 18.77%;
     background-size: 100%;
     font-style: normal;
     text-align: left;
     width: fit-content;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+
     @apply bg-orange-purple-gradient text-tiny md:text-base leading-6;
 
     @media screen(md) {
@@ -115,6 +115,7 @@
   &__link {
     display: none;
     align-items: center;
+
     @apply text-tiny md:text-lg leading-6 text-gray-900;
 
     @media screen(sm) {
