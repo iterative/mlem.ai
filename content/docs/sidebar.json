@@ -540,8 +540,8 @@
             "source": "docker.md"
           },
           {
-            "slug": "fly",
-            "label": "Fly",
+            "slug": "flyio",
+            "label": "Fly.io",
             "source": "flyio.md"
           },
           {
