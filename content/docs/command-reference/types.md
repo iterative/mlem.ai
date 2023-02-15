@@ -1,7 +1,9 @@
 # types
 
 List different implementations available for a particular MLEM type. If a
-subtype is not provided, list all available MLEM types.
+subtype is not provided, list all available MLEM [types].
+
+[types]: /doc/object-reference/mlem-objects#mlem-object-types
 
 ## Synopsis
 
