@@ -28,16 +28,15 @@
 
 **Fields**:
 
-- `image: DockerImage` _(required)_ - Image parameters
+- `image: DockerImageOptions` _(required)_ - Image parameters
 
 - `server: Server` - Server to use
 
 - `args: DockerBuildArgs = DockerBuildArgs()` - Additional docker arguments
 
-- `env: DockerEnv = DockerEnv()` - Where to build and push image. Defaults to
-  local docker daemon
+- `daemon: DockerDaemon = DockerDaemon()` - Docker daemon to use
 
-- `force_overwrite: bool = False` - Ignore existing image with same name
+- `force_overwrite: bool = True` - Ignore existing image with same name
 
 - `push: bool = True` - Push image to registry after it is built
 

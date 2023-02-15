@@ -66,4 +66,4 @@ def replace_sections(
 
 def run_lint():
     print("Running linter")
-    subprocess.check_output("yarn run format", shell=True, cwd="../../")
+    subprocess.check_output("yarn run format-all", shell=True, cwd="../../")

@@ -25,3 +25,17 @@
 **Fields**:
 
 - `io: ModelIO = SimplePickleIO()` - IO
+
+---
+
+## `class SklearnTransformer`
+
+**MlemABC parent type**: `model_type`
+
+**MlemABC type**: `sklearn_transformer`
+
+    Model Type implementation for sklearn transformers
+
+**Fields**:
+
+- `io: ModelIO = SimplePickleIO()` - IO

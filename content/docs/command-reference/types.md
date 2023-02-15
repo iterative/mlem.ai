@@ -1,9 +1,7 @@
 # types
 
 List different implementations available for a particular MLEM type. If a
-subtype is not provided, list all available MLEM [types].
-
-[types]: /doc/object-reference/mlem-objects#mlem-object-types
+subtype is not provided, list all available MLEM types.
 
 ## Synopsis
 
@@ -12,8 +10,8 @@ usage: mlem types [-h]
                   [abc] [sub_type]
 
 arguments:
-  [abc]            Subtype to list implementations.
-                   List subtypes if not provided.
+  [abc]            Subtype to list implementations. List subtypes if not
+                   provided.
   [sub_type]       Type of `meta` subtype
 ```
 

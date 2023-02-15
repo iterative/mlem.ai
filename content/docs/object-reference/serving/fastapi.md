@@ -19,3 +19,5 @@
 - `host: str = "0.0.0.0"` - Network interface to use
 
 - `port: int = 8080` - Port to use
+
+- `debug: bool = False` - If true will not wrap exceptions

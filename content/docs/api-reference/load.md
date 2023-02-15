@@ -9,6 +9,7 @@ def load(
     rev: Optional[str] = None,
     batch_size: Optional[int] = None,
     follow_links: bool = True,
+    try_migrations: bool = False,
 ) -> Any
 ```
 

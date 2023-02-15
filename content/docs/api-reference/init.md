@@ -1,6 +1,6 @@
 # mlem.api.init()
 
-Creates [MLEM config](/doc/user-guide/configuration) in `path`.
+Creates MLEM config in `path`.
 
 ```py
 def init(path: str = ".") -> None

@@ -18,7 +18,7 @@
 
 - `container_name: str` - Name to use for container
 
-- `image_name: str` - Name to use for image
+- `image: DockerImageOptions` - Image configuration
 
 - `rm: bool = True` - Remove container on stop
 
