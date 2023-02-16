@@ -150,7 +150,7 @@ training your ML models.
 
 ## Working with private repositories
 
-If you commit your models to a private repository and use DVC to store binaries,
+If you commit model metafiles to a private repo and use DVC to store binaries,
 you'll need to authorize both via SSH (for DVC) and via HTTPS (for MLEM).
 
 SSH authorization is usually achieved by running `git push` against a SSH
