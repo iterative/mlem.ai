@@ -63,7 +63,7 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 A lot of parameters can be configured, the full list of which can be accessed
 using `mlem deploy run docker_container -h`.
 
-### Example: running REST API service from CLI
+## Example: running REST API service from CLI
 
 ```cli
 $ mlem deploy run docker_container app.mlem -m model --server fastapi --ports.0 8080:8080
