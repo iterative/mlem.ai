@@ -115,14 +115,19 @@
         "source": "deploying/index.md",
         "children": [
           {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
             "slug": "heroku",
             "label": "Heroku",
             "source": "heroku.md"
           },
           {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "docker.md"
+            "slug": "flyio",
+            "label": "Fly.io",
+            "source": "flyio.md"
           },
           {
             "slug": "kubernetes",

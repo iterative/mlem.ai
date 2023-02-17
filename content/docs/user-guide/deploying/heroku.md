@@ -2,7 +2,8 @@
 
 [Heroku](https://heroku.com) is the platform suitable for deploy of simple
 applications. If you don't have an experience with deploying to external
-platforms such as Sagemaker or Kubernetes, we recommend to start with Heroku.
+platforms such as Sagemaker or Kubernetes, we recommend to start with Heroku or
+[Fly.io](/doc/user-guide/deploying/flyio).
 
 ## Requirements
 
