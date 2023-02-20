@@ -179,6 +179,11 @@
         "children": []
       },
       {
+        "slug": "sdk",
+        "label": "Using models in different programming languages",
+        "source": "sdk.md"
+      },
+      {
         "slug": "analytics",
         "label": "Anonymized Usage Analytics",
         "source": "analytics.md"
