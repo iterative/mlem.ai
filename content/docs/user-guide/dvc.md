@@ -151,15 +151,20 @@ training your ML models.
 ## Working with private repositories
 
 If you commit your models to a private repository and use DVC to store binaries,
-you'll need to authorize both via SSH (for DVC) and via HTTPS (for MLEM).
+you'll need to authenticate both via SSH and via HTTPS. SSH authentication is
+required for DVC, since DVC shallow clones the repo underneath via SSH. MLEM
+instead uses `fsspec`'s
+[`GitHubFileSystem`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.implementations.github.GithubFileSystem)
+to access the repo, which uses HTTP and authenticate with it underneath.
 
-SSH authorization is usually achieved by running `git push` against a SSH
+SSH authentication is usually achieved by running `git push` against a SSH
 remote, or it can be done with
 [`gh auth login`](https://cli.github.com/manual/gh_auth_login) (if you use
 Github).
 
-HTTPS authorization is done by setting `GITHUB_USERNAME` and `GITHUB_TOKEN` env
-vars. You can generate a token [here](https://github.com/settings/tokens).
+HTTPS authentication is done by setting `GITHUB_USERNAME` and `GITHUB_TOKEN`
+environment variables. You need to generate a token
+[here](https://github.com/settings/tokens).
 
 It's is important to first authenticate with SSH and then with HTTPS. Otherwise,
 running `gh auth login` will complain that `GITHUB_USERNAME` and `GITHUB_TOKEN`
