@@ -147,3 +147,26 @@ metafile (`models/rf.mlem`) and `dvc.lock` only.
 
 Learn more about [DVC](https://dvc.org/doc) and how it can be useful for
 training your ML models.
+
+## Working with private repositories
+
+If you commit model metafiles to a private repo and use DVC to store binaries,
+you'll need to authenticate both via SSH and via HTTPS. SSH authentication is
+required for DVC, since DVC shallow clones the repo underneath via SSH. MLEM
+instead uses `fsspec`'s
+[`GitHubFileSystem`](https://filesystem-spec.readthedocs.io/en/latest/api.html#fsspec.implementations.github.GithubFileSystem)
+to access the repo, which uses HTTPS for authentication.
+
+SSH authentication is usually achieved by running `git push` against a SSH
+remote, or can be done using
+[`gh auth login`](https://cli.github.com/manual/gh_auth_login) (if you use
+Github).
+
+HTTPS authentication is done by setting `GITHUB_USERNAME` and `GITHUB_TOKEN`
+environment variables. You need to generate a token
+[here](https://github.com/settings/tokens).
+
+It's important to first authenticate with SSH, and only then with HTTPS.
+Otherwise, running `gh auth login` will complain that `GITHUB_USERNAME` and
+`GITHUB_TOKEN` were already set (it assumes there should be a single
+authentication method in place, while we need both).
