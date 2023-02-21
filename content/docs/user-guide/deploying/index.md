@@ -11,9 +11,12 @@ Each deployment is MLEM Object that holds following parameters:
   implementation you chose
 
 Also, each deployment has **state**, which is a snapshot of the actual state of
-your deployment. It is created and updated by MLEM during deployment process to
-keep track of parameters needed for management. It is stored separately from
-declaration.
+your deployment. It is created and updated by MLEM during the deployment process
+to keep track of parameters needed for state management, and is stored
+separately from the declaration. If you use Git to develop your models
+(recommended!), the declaration should be committed to the repo, while state
+should be gitignored, and kept in a remote storage like s3, to allow updating it
+once you re-deploy the model locally or in CI/CD without creating new commits.
 
 ## Simple deployment
 
@@ -22,14 +25,14 @@ configuration. You just need your model saved with MLEM and an environment you
 want to deploy to
 
 ```yaml
-$ mlem deployment run <env type> <name> \ --model <model name> \ --some_option
-option_value
+$ mlem deployment run <env_type> <name> \ --model <model_name> \ --some_option
+<option_value>
 ```
 
 A MLEM Object named `<name>` of type `deployment` will be created and deployed
 to target environment.
 
-To view all available `<env type>` values, run `mlem types env`. Some of them
+To view all available `<env_type>` values, run `mlem types env`. Some of them
 may require setting up credential information or other parameters, which can be
 provided to `mlem deployment run` command via options.
 
@@ -56,7 +59,8 @@ This will stop the deployment and erase deployment state value
 
 ## Making requests
 
-You also can create MLEM Client for your deployment to make some requests:
+You also can create a MLEM client for your deployment from Python code
+(`mlem.api.load`) to make some requests:
 
 ```python
 from mlem.api import load
@@ -66,13 +70,11 @@ client = service.get_client()
 res = client.predict(data)
 ```
 
-Or run `deployment apply` from command line:
+Or use `mlem deployment apply` from command line:
 
 ```cli
 $ mlem deployment apply <name> <data>
 ```
-
----
 
 ## Pre-defining deployment
 
@@ -140,7 +142,7 @@ databases, key-value stores etc. Please express your interest in them via
 issues.
 
 Setting up remote state manager is a lot like setting DVC remote. All you need
-to do is provide a URI where you want to store state files. E.g. for s3 it will
+to do is provide uri where you want to store state files. E.g. for s3 it will
 look like this
 
 ```cli
