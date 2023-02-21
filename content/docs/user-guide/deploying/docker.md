@@ -72,9 +72,10 @@ $ mlem deploy run docker_container app.mlem -m model --server fastapi --ports.0 
 You can specify other [servers](/doc/user-guide/serving/) to use. Note that
 `--ports.0` exposes port 8080 outside of the container. Each server typically
 uses some specific port. You can check the default port by running
-`mlem serve $SERVER --help`.
-For some server implementations (like fastapi) you can also set explicit listening port.
-The below command shows how to modify the listening port to `5000` and than map it on the host network directly on the same port:
+`mlem serve $SERVER --help`. For some server implementations (like fastapi) you
+can also set explicit listening port. The below command shows how to modify the
+listening port to `5000` and than map it on the host network directly on the
+same port:
 
 ```cli
 $ mlem deploy run docker_container app.mlem -m model --server fastapi --ports.0 5000:5000 --server.port 5000
