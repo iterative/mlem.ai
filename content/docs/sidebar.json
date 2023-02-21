@@ -449,6 +449,11 @@
             "source": "numpy.md"
           },
           {
+            "slug": "scipy",
+            "label": "SciPy",
+            "source": "scipy.md"
+          },
+          {
             "slug": "pandas",
             "label": "Pandas",
             "source": "pandas.md"
@@ -540,6 +545,16 @@
         "source": "deployment/index.md",
         "children": [
           {
+            "slug": "docker",
+            "label": "Docker",
+            "source": "docker.md"
+          },
+          {
+            "slug": "flyio",
+            "label": "Fly.io",
+            "source": "flyio.md"
+          },
+          {
             "slug": "heroku",
             "label": "Heroku",
             "source": "heroku.md"
@@ -548,11 +563,6 @@
             "slug": "sagemaker",
             "label": "SageMaker",
             "source": "sagemaker.md"
-          },
-          {
-            "slug": "docker",
-            "label": "Docker",
-            "source": "docker.md"
           },
           {
             "slug": "kubernetes",

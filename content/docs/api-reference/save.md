@@ -45,7 +45,7 @@ like about running `postprocess(model(preprocess(x)))`. See examples below.
 - `fs` (optional) - FileSystem for the `path` argument
 - `params` (optional) - arbitrary params for object
 - `preprocess` (optional) - applies before the model
-- `postprocess`(optional) - applies after the model
+- `postprocess` (optional) - applies after the model
 
 ## Returns
 

@@ -10,6 +10,7 @@ def load_meta(
     follow_links: bool = True,
     load_value: bool = False,
     fs: Optional[AbstractFileSystem] = None,
+    try_migrations: bool = False,
     *,
     force_type: Optional[Type[T]] = None,
 ) -> T
@@ -45,6 +46,8 @@ Python object.
   MlemObject. Defaults to False.
 - `fs` (optional) - filesystem to load from. If not provided, will be inferred
   from path
+- `try_migrations` (optional) - If loading older versions of metadata, try to
+  apply migrations
 - `force_type` (optional) - type of meta to be loaded. Defaults to MlemObject
   (any mlem meta)
 
