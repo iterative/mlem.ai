@@ -150,7 +150,7 @@ training your ML models.
 
 ## Working with private repositories
 
-If you commit your models to a private repository and use DVC to store binaries,
+If you commit model metafiles to a private repo and use DVC to store binaries,
 you'll need to authenticate both via SSH and via HTTPS. SSH authentication is
 required for DVC, since DVC shallow clones the repo underneath via SSH. MLEM
 instead uses `fsspec`'s
