@@ -52,26 +52,28 @@ profile configured for MLEM. You can also provide credentials with
 your SageMaker configuration.
 
 ```cli
-$ mlem declare env sagemaker ... --role <role> \
-                                 --account <account> \
-                                 --region <region> \
-                                 --bucket <bucket> \
-                                 --ecr_repository <repo>
+$ mlem declare env sagemaker env.mlem \
+    --role <role> \
+    --account <account> \
+    --region <region> \
+    --bucket <bucket> \
+    --ecr_repository <repo>
 ```
 
 You can also pre-declare [SageMaker Deployment](#class-sagemakerdeployment)
 itself.
 
 ```cli
-$ mlem declare deployment sagemaker ... --env ... \
-                                        --method predict \
-                                        --instance_type ml.t2.medium
+$ mlem declare deployment sagemaker app.mlem \
+    --env env.mlem \
+    --method predict \
+    --instance_type ml.t2.medium
 ```
 
-To run deployment, run
+To deploy a model then, run
 
 ```cli
-$ mlem deployment run ... --model <path>
+$ mlem deployment run --load app.mlem --model <path>
 ```
 
 ### What happens internally
@@ -92,13 +94,13 @@ After this command exits, however it can take some time on SageMakers side to
 actually run VMs with your model. You can check status with
 
 ```cli
-$ mlem deployment status ...
+$ mlem deployment status --load app.mlem
 ```
 
 or block until model is ready with
 
 ```cli
-$ mlem deployment wait ... -i starting
+$ mlem deployment wait --load app.mlem -i starting
 ```
 
 ## Making requests
