@@ -52,8 +52,7 @@
       {
         "slug": "models",
         "label": "Working with models",
-        "source": "models/index.md",
-        "children": []
+        "source": "models/index.md"
       },
       {
         "slug": "serving",
@@ -144,8 +143,7 @@
       {
         "slug": "data",
         "label": "Working with data",
-        "source": "data/index.md",
-        "children": []
+        "source": "data/index.md"
       },
       {
         "slug": "dvc",
@@ -175,8 +173,7 @@
       {
         "slug": "importing",
         "label": "Importing existing files",
-        "source": "importing/index.md",
-        "children": []
+        "source": "importing/index.md"
       },
       {
         "slug": "sdk",
