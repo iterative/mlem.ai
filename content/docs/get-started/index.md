@@ -158,8 +158,6 @@ Try creating and running this simple `predict.py` script:
 ```py
 from mlem.api import load
 
-import pandas as pd
-
 model = load("models/rf")  # RandomForestClassifier
 features = [
     "sepal length (cm)",
