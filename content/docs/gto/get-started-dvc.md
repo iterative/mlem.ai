@@ -35,7 +35,7 @@ live.log_artifact(artifact, "path", type="model")
 
 This will make them appear in DVC Model Registry:
 
-<img width="1536" alt="image" src="https://user-images.githubusercontent.com/6797716/223443152-84f57b79-3395-4965-97f9-edc81896a1dc.png">
+![](https://user-images.githubusercontent.com/6797716/223443152-84f57b79-3395-4965-97f9-edc81896a1dc.png)
 
 and make them shown as models in `dvc ls`:
 
@@ -100,3 +100,16 @@ your `.dvc/config`:
 # .dvc/config
 types: [model, data]
 ```
+
+## Seeing new model versions pushed with DVC experiments
+
+After you run `dvc exp push` to push your experiment that updates your model,
+you'll see a commit candidate to be registered:
+
+![](https://user-images.githubusercontent.com/6797716/223444959-d8ddd1a0-5582-405f-9ab0-807e1a0c9489.png)
+
+In future you'll also be able to compare that new model version pushed (even non
+semver-registered) with the latest one on this MDP. Or have a button to go to
+the main repo view with to compare:
+
+![](https://user-images.githubusercontent.com/6797716/223445799-7ae65e58-6a9e-42a8-890a-f04839349873.png)
