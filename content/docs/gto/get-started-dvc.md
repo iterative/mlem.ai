@@ -33,10 +33,11 @@ You can also specify that while using DVCLive:
 live.log_artifact(artifact, "path", type="model")
 ```
 
-This will make them appear in DVC Model Registry and in be shown as models in
-`dvc ls`:
+This will make them appear in DVC Model Registry:
 
 <img width="1536" alt="image" src="https://user-images.githubusercontent.com/6797716/223443152-84f57b79-3395-4965-97f9-edc81896a1dc.png">
+
+and make them shown as models in `dvc ls`:
 
 ```dvc
 $ dvc ls --registry  # add `--type model` to see models only
