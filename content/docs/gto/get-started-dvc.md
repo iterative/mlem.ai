@@ -1,9 +1,9 @@
 # Get Started DVC
 
-To work leverage concepts of Model and Data Registries in a more meaningful way,
-you can denote the `type` of each output. This will let you browse models and
-data separately, address them by `name` in `dvc get`, and eventually, see them
-in DVC Studio.
+To leverage concepts of Model and Data Registries in a more explicit way, you
+can denote the `type` of each output. This will let you browse models and data
+separately, address them by `name` in `dvc get`, and eventually, see them in DVC
+Studio.
 
 Let's start with marking an artifact as data or model.
 
@@ -24,14 +24,14 @@ stages:
       - data.xml
     outs:
       - mymodel.pkl:
-          type: model
+          type: model # like this
 ```
 
 This will make them appear in DVC Model Registry and in be shown as models in
 `dvc ls`:
 
 ```dvc
-$ dvc ls --registry
+$ dvc ls --registry  # add `--type model` to see models only
  Path           Name                   Type     Labels                       Description
  mymodel.pkl                           model
  data.xml       stackoverflow-dataset  data     data-registry,get-started    imported code
@@ -50,22 +50,24 @@ $ dvc get $REPO stackoverflow-dataset -o data.xml
 ```
 
 Now, you usually need a specific model version rather than one from the `main`
-branch. You can keep track of the model's lineage by registering Semantic
-versions and promoting your models (or other artifacts) to stages such as `dev`
-or `production` with GTO. GTO operates by creating Git tags such as
-`mymodel@v1.2.3` or `mymodel#prod`. Knowing the right Git tag, you can get the
-model locally:
+branch. You can keep track of the model's lineage by
+[registering Semantic versions and promoting your models](/doc/gto/get-started)
+(or other artifacts) to stages such as `dev` or `production` with GTO. GTO
+operates by creating Git tags such as `mymodel@v1.2.3` or `mymodel#prod`.
+Knowing the right Git tag, you can get the model locally:
 
 ```dvc
 $ dvc get $REPO mymodel.pkl --rev mymodel@v1.2.3
 ```
 
-Check out [GTO Get Started](/doc/gto/get-started) to learn how to get the Git
-tag of the `latest` version or version currently promoted to stages like `prod`.
+Check out
+[GTO User Guide](/doc/gto/user-guide/#getting-artifacts-in-systems-downstream)
+to learn how to get the Git tag of the `latest` version or version currently
+promoted to stages like `prod`.
 
 ## Getting models in CI/CD
 
-Git tags are great to [kick off CI/CD](doc/gto/user-guide/#acting-in-cicd)
+Git tags are great to [kick off CI/CD](/doc/gto/user-guide/#acting-in-cicd)
 pipeline in which we can consume our model. You can use
 [GTO GitHub action](https://github.com/iterative/gto-action) to interpret the
 Git tag that triggered the workflow and act based on that. If you simply need to
