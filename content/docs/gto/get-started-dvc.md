@@ -44,6 +44,8 @@ $ dvc ls --registry  # add `--type model` to see models only
  data/data.xml  another-dataset        data     data-registry,get-started    imported
 ```
 
+<img width="1536" alt="image" src="https://user-images.githubusercontent.com/6797716/223443152-84f57b79-3395-4965-97f9-edc81896a1dc.png">
+
 The same way you specify `type`, you can specify `description`, `labels` and
 `name`. Defining human-readable `name` (should be unique) is useful when you
 have complex folder structures or if you artifact can have different paths
