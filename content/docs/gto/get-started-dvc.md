@@ -38,10 +38,10 @@ $ dvc ls --registry  # add `--type model` to see models only
  data/data.xml  another-dataset        data     data-registry,get-started    imported
 ```
 
-You can use `--name` to define a human readable name for the artifact (should be
-unique). This is useful when you have complex folder structures or if you
-artifact can have different paths during the project lifecycle. You can also
-`--description` and `--labels` to add them if you need.
+The same way you specify `type`, you can specify `description`, `labels` and
+`name`. Defining human-readable `name` (should be unique) is useful when you
+have complex folder structures or if you artifact can have different paths
+during the project lifecycle.
 
 You can use `name` to address the object in `dvc get`:
 
@@ -80,4 +80,14 @@ steps:
     uses: iterative/gto-action@v1
     with:
       download: True # you can provide a specific destination path here instead of `True`
+```
+
+## Restricting which types are allowed
+
+To specify which `type`s are allowed to be used, you can add the following to
+your `.dvc/config`:
+
+```
+# .dvc/config
+types: [model, data]
 ```
