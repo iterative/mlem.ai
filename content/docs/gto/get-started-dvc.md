@@ -27,6 +27,12 @@ stages:
           type: model # like this
 ```
 
+You can also specify that while using DVCLive:
+
+```py
+live.log_artifact(artifact, "path", type="model")
+```
+
 This will make them appear in DVC Model Registry and in be shown as models in
 `dvc ls`:
 
