@@ -10,7 +10,14 @@ Let's start with marking an artifact as data or model.
 If you're using `dvc add` to track your artifact, you'll need to run:
 
 ```dvc
-$ dvc add mymodel.pkl --type model
+# note that all CLI options are optional:
+$ dvc add models/mymodel.pkl \
+    --type model \  # this makes DVC understand it's an ML model
+    --name def-detector \
+    --description "glass defect image classifier" \
+    --label "algo=cnn" \
+    --label "owner=aguschin" \
+    --label "project=prod-qual-002"
 ```
 
 If you're producing your models in DVC pipeline, you'll need to add
@@ -24,12 +31,13 @@ stages:
       - data.xml
     outs:
       - mymodel.pkl:
-          type: model # like this
+          type: model # you can specify other fields as well
 ```
 
 You can also specify that while using DVCLive:
 
 ```py
+# you can pass `name`, `description`, `labels` as well
 live.log_artifact(artifact, "path", type="model")
 ```
 
@@ -91,7 +99,11 @@ steps:
       download: True # you can provide a specific destination path here instead of `True`
 ```
 
-## Restricting which types are allowed
+Which means, if the Git tag that triggered this workflow registers a version or
+promotes it to a stage (like `mymodel@v1.2.3` or `mymodel#prod`), this will run
+`dvc get . mymodel`.
+
+## Restricting which types are allowed [extra for now]
 
 To specify which `type`s are allowed to be used, you can add the following to
 your `.dvc/config`:
