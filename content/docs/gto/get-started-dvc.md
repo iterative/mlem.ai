@@ -40,15 +40,17 @@ registry:
 If you want this to be in a separate file (say, `artifacts.yaml`), you can tell
 DVC to use it with:
 
-```
+```yaml
 # dvc.yaml
 registry: artifacts.yaml
 ```
 
 </details>
 
-If you're producing your models in DVC pipeline, you'll need to add
-`type: model` to `dvc.yaml` instead:
+If you're producing your models in DVC pipeline, you can edit `registry` section
+or `artifacts.yaml` yourself (or simply run the same `dvc add` command which
+will do that for you) and then reference the output by ID or path in `deps` or
+`outs`:
 
 ```yaml
 # dvc.yaml
@@ -58,8 +60,7 @@ stages:
     deps:
       - data.xml
     outs:
-      - mymodel.pkl:
-          type: model # you can specify other fields as well
+      - def-detector # or "models/mymodel.pkl" instead
 ```
 
 You can also specify that while using DVCLive, which will also add your model to
@@ -92,7 +93,7 @@ during the project lifecycle.
 You can use `name` to address the object in `dvc get`:
 
 ```dvc
-$ dvc get $REPO stackoverflow-dataset -o data.xml
+$ dvc get $REPO def-detector -o model.pkl
 ```
 
 Now, you usually need a specific model version rather than one from the `main`
@@ -110,6 +111,21 @@ Check out
 [GTO User Guide](/doc/gto/user-guide/#getting-artifacts-in-systems-downstream)
 to learn how to get the Git tag of the `latest` version or version currently
 promoted to stages like `prod`.
+
+<details>
+
+### Getting `latest` or what's in `prod` directly with DVC [extra for now]
+
+(This can be implemented, but for now we decided not to - let's wait and see)
+
+You can also use shortcuts in `dvc get`:
+
+```dvc
+$ dvc get $REPO def-detector@latest  # download the latest version
+$ dvc get $REPO def-detector#prod    # download what's in prod
+```
+
+</details>
 
 ## Getting models in CI/CD
 
