@@ -20,10 +20,38 @@ $ dvc add models/mymodel.pkl \
     --label "project=prod-qual-002"
 ```
 
+<details>
+
+### Beside tracking this as usually, his will add it to a top section called `registry` in your `dvc.yaml`
+
+```yaml
+# dvc.yaml
+registry:
+  def-detector: # just like with plots, this could be a path or any string ID
+    type: model
+    description: glass defect image classifier
+    labels:
+      - algo=cnn
+      - owner=aguschin
+      - project=prod-qual-002
+    path: models/mymodel.pkl # specify path if use alias to name this
+```
+
+If you want this to be in a separate file (say, `artifacts.yaml`), you can tell
+DVC to use it with:
+
+```
+# dvc.yaml
+registry: artifacts.yaml
+```
+
+</details>
+
 If you're producing your models in DVC pipeline, you'll need to add
 `type: model` to `dvc.yaml` instead:
 
 ```yaml
+# dvc.yaml
 stages:
   train:
     cmd: python train.py
@@ -34,7 +62,8 @@ stages:
           type: model # you can specify other fields as well
 ```
 
-You can also specify that while using DVCLive:
+You can also specify that while using DVCLive, which will also add your model to
+the `registry` section in `dvc.yaml`:
 
 ```py
 # you can pass `name`, `description`, `labels` as well
@@ -120,8 +149,12 @@ you'll see a commit candidate to be registered:
 
 ![](https://user-images.githubusercontent.com/6797716/223444959-d8ddd1a0-5582-405f-9ab0-807e1a0c9489.png)
 
+Please note it's usually a good idea to merge your experiment before registering
+a semantic version to avoid creating dangling commits (not reachable from any
+branch).
+
 In future you'll also be able to compare that new model version pushed (even non
-semver-registered) with the latest one on this MDP. Or have a button to go to
-the main repo view with to compare:
+semver-registered) with the latest one on this Model Details Page. Or have a
+button to go to the main repo view with "compare" enabled:
 
 ![](https://user-images.githubusercontent.com/6797716/223445799-7ae65e58-6a9e-42a8-890a-f04839349873.png)
