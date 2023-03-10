@@ -34,7 +34,7 @@ registry:
       - algo=cnn
       - owner=aguschin
       - project=prod-qual-002
-    path: models/mymodel.pkl # specify path if use alias to name this
+    path: models/mymodel.pkl # specify path if using alias to reference the artifact
 ```
 
 If you want this to be in a separate file (say, `artifacts.yaml`), you can tell
