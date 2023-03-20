@@ -126,7 +126,7 @@ to your service instead of loading model into memory. There are two options to
 achieve this in CLI: using the service address or the deploy meta.
 
 ```cli
-$ mlem apply-remote http test_x.csv --host=http://example-mlem-get-started-app.herokuapp.com --port=80 --json
+$ mlem apply-remote http -d test_x.csv --host=http://example-mlem-get-started-app.herokuapp.com --port=80 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 
 $ mlem deployment apply app test_x.csv --json
