@@ -105,7 +105,7 @@ can also try to do some requests:
 
 ```py
 from mlem.api import load
-from mlem.runtime.client.base import HTTPClient
+from mlem.runtime.client import HTTPClient
 
 client = HTTPClient(host="http://example-mlem-get-started-app.herokuapp.com", port=80)
 res = client.predict(load("test_x.csv"))
@@ -117,8 +117,8 @@ Also, you can create a client using deployment meta object:
 from mlem.api import load
 
 service = load("app")
-client = service.state.get_client()
-res = client.predict(load("test_x.csv"))
+client = service.get_client()
+res = client.predict("test_x.csv")
 ```
 
 There is also the remote counterpart of `apply` command. It will send requests
