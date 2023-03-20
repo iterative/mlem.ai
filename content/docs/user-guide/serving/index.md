@@ -58,7 +58,7 @@ Or from Python using the `mlem.api`:
 
 ```py
 from mlem.api import load
-from mlem.runtime.client.base import HTTPClient
+from mlem.runtime.client import HTTPClient
 
 client = HTTPClient(host="localhost", port=8080)
 res = client.predict(load("test_x.csv"))
