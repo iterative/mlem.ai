@@ -5,29 +5,14 @@ can denote the `type` of each output. This will let you browse models and data
 separately, address them by `name` in `dvc get`, and eventually, see them in DVC
 Studio.
 
-Let's start with marking an artifact as data or model.
-
-If you're using `dvc add` to track your artifact, you'll need to run:
-
-```dvc
-# note that all CLI options are optional:
-$ dvc add models/mymodel.pkl \
-    --type model \  # this makes DVC understand it's an ML model
-    --name def-detector \
-    --description "glass defect image classifier" \
-    --label "algo=cnn" \
-    --label "owner=aguschin" \
-    --label "project=prod-qual-002"
-```
-
-<details>
-
-### Beside tracking this as usually, his will add it to a top section called `registry` in your `dvc.yaml`
+Let's start with marking an artifact as data or model. To do so, you need to add
+it to a top section called `registry` in your `dvc.yaml`
 
 ```yaml
 # dvc.yaml
 registry:
   def-detector: # just like with plots, this could be a path or any string ID
+    # also, all options here are optional
     type: model
     description: glass defect image classifier
     labels:
@@ -45,37 +30,29 @@ DVC to use it with:
 registry: artifacts.yaml
 ```
 
-</details>
-
-If you're producing your models in DVC pipeline, you can edit `registry` section
-or `artifacts.yaml` yourself (or simply run the same `dvc add` command which
-will do that for you) and then reference the output by ID or path in `deps` or
-`outs`:
-
-```yaml
-# dvc.yaml
-stages:
-  train:
-    cmd: python train.py
-    deps:
-      - data.xml
-    outs:
-      - def-detector # or "models/mymodel.pkl" instead
-```
-
 You can also specify that while using DVCLive, which will also add your model to
 the `registry` section in `dvc.yaml`:
 
 ```py
 # you can pass `name`, `description`, `labels` as well
-live.log_artifact(artifact, "path", type="model")
+live.log_artifact(artifact, "mymodel", type="model")
 ```
 
-This will make them appear in DVC Model Registry:
+Which, given no `registry` section existing, will produce:
+
+```yaml
+# dvc.yaml
+registry:
+  mymodel:
+    type: model
+```
+
+When you commit and push this change, your models will appear in Studio Model
+Registry:
 
 ![](https://user-images.githubusercontent.com/6797716/223443152-84f57b79-3395-4965-97f9-edc81896a1dc.png)
 
-and make them shown as models in `dvc ls`:
+[extra for now] As a next step, they will be available in `dvc ls`:
 
 ```dvc
 $ dvc ls --registry  # add `--type model` to see models only
