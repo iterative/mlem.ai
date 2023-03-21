@@ -6,11 +6,11 @@ separately, address them by `name` in `dvc get`, and eventually, see them in DVC
 Studio.
 
 Let's start with marking an artifact as data or model. To do so, you need to add
-it to a top section called `registry` in your `dvc.yaml`
+it to a top section called `artifacts` in your `dvc.yaml`
 
 ```yaml
 # dvc.yaml
-registry:
+artifacts:
   def-detector: # just like with plots, this could be a path or any string ID
     # also, all options here are optional
     type: model
@@ -27,22 +27,22 @@ DVC to use it with:
 
 ```yaml
 # dvc.yaml
-registry: artifacts.yaml
+artifacts: artifacts.yaml
 ```
 
 You can also specify that while using DVCLive, which will also add your model to
-the `registry` section in `dvc.yaml`:
+the `artifacts` section in `dvc.yaml`:
 
 ```py
 # you can pass `name`, `description`, `labels` as well
 live.log_artifact(artifact, "mymodel", type="model")
 ```
 
-Which, given no `registry` section existing, will produce:
+Which, given no `artifacts` section existing, will produce:
 
 ```yaml
 # dvc.yaml
-registry:
+artifacts:
   mymodel:
     type: model
 ```
@@ -55,7 +55,7 @@ Registry:
 [extra for now] As a next step, they will be available in `dvc ls`:
 
 ```dvc
-$ dvc ls --registry  # add `--type model` to see models only
+$ dvc ls --artifacts  # add `--type model` to see models only
  Path           Name                   Type     Labels                       Description
  mymodel.pkl                           model
  data.xml       stackoverflow-dataset  data     data-registry,get-started    imported code
