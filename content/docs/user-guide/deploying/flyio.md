@@ -50,8 +50,8 @@ and using those declarations, check out
 
 ## Making requests
 
-The application is now live on Fly.io. You can go to the application and see the OpenAPI
-documentation. For details on it, refer to the **Serving** section. You
+The application is now live on Fly.io. You can go to the application and see the
+OpenAPI documentation. For details on it, refer to the **Serving** section. You
 can also try to do some requests:
 
 ```py
