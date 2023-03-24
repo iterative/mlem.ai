@@ -47,3 +47,27 @@ For more information on declaring environments and deployments, see
 [Deployments User Guide](/doc/user-guide/deploying/). For an example of creating
 and using those declarations, check out
 [examples for Heroku](/doc/user-guide/deploying/heroku/).
+
+## Making requests
+
+The application is now live on Fly.io. You can go to the application and see the
+OpenAPI documentation. For details on it, refer to the **Serving** section. You
+can also try to do some requests:
+
+```py
+from mlem.api import load
+from mlem.runtime.client import HTTPClient
+
+client = HTTPClient(host="https://mlem-cv.fly.dev", port=None)  # note port=None
+res = client.predict("myimage.jpg")
+```
+
+Also, you can create a client using deployment meta object:
+
+```py
+from mlem.api import load
+
+service = load("cv-app")
+client = service.get_client()
+res = client.predict("myimage.jpg")
+```

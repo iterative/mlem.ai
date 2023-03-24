@@ -105,7 +105,7 @@ can also try to do some requests:
 
 ```py
 from mlem.api import load
-from mlem.runtime.client.base import HTTPClient
+from mlem.runtime.client import HTTPClient
 
 client = HTTPClient(host="http://example-mlem-get-started-app.herokuapp.com", port=80)
 res = client.predict(load("test_x.csv"))
@@ -117,8 +117,8 @@ Also, you can create a client using deployment meta object:
 from mlem.api import load
 
 service = load("app")
-client = service.state.get_client()
-res = client.predict(load("test_x.csv"))
+client = service.get_client()
+res = client.predict("test_x.csv")
 ```
 
 There is also the remote counterpart of `apply` command. It will send requests
@@ -126,7 +126,7 @@ to your service instead of loading model into memory. There are two options to
 achieve this in CLI: using the service address or the deploy meta.
 
 ```cli
-$ mlem apply-remote http test_x.csv --host=http://example-mlem-get-started-app.herokuapp.com --port=80 --json
+$ mlem apply-remote http -d test_x.csv --host=http://example-mlem-get-started-app.herokuapp.com --port=80 --json
 [1, 0, 2, 1, 1, 0, 1, 2, 1, 1, 2, 0, 0, 0, 0, 1, 2, 1, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0]
 
 $ mlem deployment apply app test_x.csv --json
