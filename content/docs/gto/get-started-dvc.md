@@ -10,7 +10,7 @@ it to a top section called `artifacts` in your `dvc.yaml`
 
 ```yaml
 # dvc.yaml
-artifacts:
+artifacts: # artifact ID (name)
   def-detector: # just like with plots, this could be a path or any string ID
     # also, all options here are optional
     type: model
@@ -19,7 +19,7 @@ artifacts:
       - algo=cnn
       - owner=aguschin
       - project=prod-qual-002
-    path: models/mymodel.pkl # specify path if using alias to reference the artifact
+    path: models/mymodel.pkl # if not specified, DVC will use ID as path
 ```
 
 If you want this to be in a separate file (say, `artifacts.yaml`), you can tell
@@ -34,16 +34,17 @@ You can also specify that while using DVCLive, which will also add your model to
 the `artifacts` section in `dvc.yaml`:
 
 ```py
-# you can pass `name`, `description`, `labels` as well
-live.log_artifact(artifact, "mymodel", type="model")
+with Live() as live:  # needs dvcyaml=True which is set by default
+    # you can pass `name`, `description`, `labels` as well
+    live.log_artifact("model.pkl", type="model")
 ```
 
 Which, given no `artifacts` section existing, will produce:
 
 ```yaml
-# dvc.yaml
+# dvclive/dvc.yaml
 artifacts:
-  mymodel:
+  model.pkl:
     type: model
 ```
 
@@ -55,6 +56,7 @@ Registry:
 [extra for now] As a next step, they will be available in `dvc ls`:
 
 ```dvc
+# i didn't update this output to match the page
 $ dvc ls --artifacts  # add `--type model` to see models only
  Path           Name                   Type     Labels                       Description
  mymodel.pkl                           model
@@ -70,18 +72,23 @@ during the project lifecycle.
 You can use `name` to address the object in `dvc get`:
 
 ```dvc
-$ dvc get $REPO def-detector -o model.pkl
+$ dvc get $REPO dvc.yaml:def-detector -o model.pkl
+$ dvc get $REPO dvclive/dvc.yaml:model.pkl -o model.pkl
+# or simpler:
+$ dvc get $REPO :def-detector -o model.pkl
+$ dvc get $REPO dvclive:model.pkl -o model.pkl
 ```
 
 Now, you usually need a specific model version rather than one from the `main`
 branch. You can keep track of the model's lineage by
 [registering Semantic versions and promoting your models](/doc/gto/get-started)
 (or other artifacts) to stages such as `dev` or `production` with GTO. GTO
-operates by creating Git tags such as `mymodel@v1.2.3` or `mymodel#prod`.
-Knowing the right Git tag, you can get the model locally:
+operates by creating Git tags such as `def-detector@v1.2.3` or
+`dvclive__model.pkl#prod`. Knowing the right Git tag, you can get the model
+locally:
 
 ```dvc
-$ dvc get $REPO mymodel.pkl --rev mymodel@v1.2.3
+$ dvc get $REPO mymodel.pkl --rev def-detector@v1.2.3
 ```
 
 Check out
@@ -89,18 +96,16 @@ Check out
 to learn how to get the Git tag of the `latest` version or version currently
 promoted to stages like `prod`.
 
-<details>
-
-### Getting `latest` or what's in `prod` directly with DVC [extra for now]
-
-(This can be implemented, but for now we decided not to - let's wait and see)
+### Getting `latest` or what's in `prod` from Studio [extra for now]
 
 You can also use shortcuts in `dvc get`:
 
 ```dvc
-$ dvc get $REPO def-detector@latest  # download the latest version
-$ dvc get $REPO def-detector#prod    # download what's in prod
+$ dvc cloud get $REPO def-detector@latest  # download the latest version
 ```
+
+The discussion for this is happening at
+https://github.com/iterative/studio/issues/5215#issuecomment-1488920109
 
 </details>
 
