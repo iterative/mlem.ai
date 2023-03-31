@@ -53,7 +53,7 @@ Registry:
 
 ![](https://user-images.githubusercontent.com/6797716/223443152-84f57b79-3395-4965-97f9-edc81896a1dc.png)
 
-[extra for now] As a next step, they will be available in `dvc ls`:
+### As a next step, they will be available in `dvc ls`:
 
 ```dvc
 # i didn't update this output to match the page
@@ -79,6 +79,24 @@ $ dvc get $REPO :def-detector -o model.pkl
 $ dvc get $REPO dvclive:model.pkl -o model.pkl
 ```
 
+<details>
+
+### Getting `path` or `desc` or `labels` for artifact [extra for now]
+
+You can also use shortcuts in `gto describe`:
+
+```dvc
+$ gto describe -r $REPO def-detector@latest --path
+models/mymodel.pkl
+```
+
+We are most likely won't be supporting this initially, but then we can either
+implement this in GTO,
+https://github.com/iterative/gto/pull/346#issue-1647512184 `gto describe` which
+will use DVC API under the hood, or we can implement it in DvC itself.
+
+</details>
+
 Now, you usually need a specific model version rather than one from the `main`
 branch. You can keep track of the model's lineage by
 [registering Semantic versions and promoting your models](/doc/gto/get-started)
@@ -95,6 +113,8 @@ Check out
 [GTO User Guide](/doc/gto/user-guide/#getting-artifacts-in-systems-downstream)
 to learn how to get the Git tag of the `latest` version or version currently
 promoted to stages like `prod`.
+
+<details>
 
 ### Getting `latest` or what's in `prod` from Studio [extra for now]
 
