@@ -1097,7 +1097,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.1.1.tgz#c9c61d9fe5ca5ac664e1153bb0aa0eba1c6d6308"
   integrity sha512-jwx+WCqszn53YHOfvFMJJRd/B2GqkCBt+1MJSG6o5/s8+ytHMvDZXsJgUEWLk12UnLd7HYKac4BYU5i/Ron1Cw==
 
-"@dvcorg/gatsby-theme-iterative@^0.3.2":
+"@dvcorg/gatsby-theme-iterative@0.3.2", "@dvcorg/gatsby-theme-iterative@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@dvcorg/gatsby-theme-iterative/-/gatsby-theme-iterative-0.3.2.tgz#bc6bf6e25471b5161501e28f461a2604233c8204"
   integrity sha512-/jZDf5RmZ0TAOZpCyNkpZrhr/aOcvBqycAYPHmy6rabsmdyX/FdjMwYvLL2Z+5sDEnpFDZsWh4KQs8kNB7mj4A==
@@ -1166,7 +1166,7 @@
     unist-util-remove-position "^4.0.1"
     unist-util-visit "^4.1.0"
 
-"@dvcorg/websites-server@^0.0.19":
+"@dvcorg/websites-server@0.0.19":
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/@dvcorg/websites-server/-/websites-server-0.0.19.tgz#5e6e5f1f07fc3192c104e37c470695740be80ab8"
   integrity sha512-NRhs1yWYSyW+RirAWSVQ/7uTJtiWZS+oW8LPMZ/ky6K7VxKh1GcgQUKCdKfvgIw8l4fWSuid0nfExSSt3L4oAg==
