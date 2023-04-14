@@ -31,7 +31,7 @@ you can pre-configure your builder with a YAML file (either manually or with
 ```cli
 $ mlem declare builder docker docker_builder.mlem \
     --image.name mlem-model \
-    --env.daemon.host "" \
+    --daemon.host "" \
     --server fastapi
 💾 Saving builder to docker_builder.mlem
 ```
