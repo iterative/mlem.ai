@@ -60,6 +60,8 @@ from that list (e.g. `pandas.Series`).
 
 <admon type="tip">
 
-The `streamlit` UI is served on port 80 by default which requires special privileges in Linux/Unix. You can specify a custom `ui_port` in CLI or `serve` call to avoid this problem.
+The `streamlit` UI is served on port 80 by default which requires special
+privileges in Linux/Unix. You can specify a custom `ui_port` in CLI or `serve`
+call to avoid this problem.
 
 </admon>
