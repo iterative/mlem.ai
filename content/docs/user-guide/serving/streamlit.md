@@ -57,3 +57,11 @@ serve(
 Note that if your model consume a sequence of items or sequence-like object
 (such as `pandas.DataFrame`), Streamlit UI will expect to receive a single item
 from that list (e.g. `pandas.Series`).
+
+<admon type="tip">
+
+The `streamlit` UI is served on port 80 by default which requires special
+privileges in Linux/Unix. You can specify a custom `ui_port` in CLI or `serve`
+call to avoid this problem.
+
+</admon>
