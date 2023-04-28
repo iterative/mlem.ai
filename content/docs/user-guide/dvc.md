@@ -164,7 +164,7 @@ Github).
 
 HTTPS authentication is done by setting `GITHUB_USERNAME` and `GITHUB_TOKEN`
 environment variables. You need to generate a token
-[here](https://github.com/settings/tokens).
+[here](https://github.com/settings/tokens) or via command line `gh auth token`.
 
 It's important to first authenticate with SSH, and only then with HTTPS.
 Otherwise, running `gh auth login` will complain that `GITHUB_USERNAME` and
