@@ -26,8 +26,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@dvcorg/gatsby-theme-iterative": "0.3.2",
-    "@dvcorg/websites-server": "0.0.19",
+    "@dvcorg/gatsby-theme-iterative": "0.3.5",
+    "@dvcorg/websites-server": "0.1.1",
     "@octokit/request": "^6.2.2",
     "autoprefixer": "^10.4.13",
     "classnames": "^2.3.2",
@@ -82,6 +82,6 @@
     "*.{js,json,css,md}": "prettier --write"
   },
   "engines": {
-    "node": "18"
+    "node": ">=18.x <=20.x"
   }
 }
