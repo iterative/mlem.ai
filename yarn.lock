@@ -7150,25 +7150,7 @@ gatsby-plugin-react-helmet@^6.4.0:
   dependencies:
     "@babel/runtime" "^7.20.7"
 
-gatsby-plugin-sharp@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-5.4.0.tgz#a70d694b7775c437046d7c19e4a2b7b6a2189952"
-  integrity sha512-QFGMP3skMyiLBx/1JGs296ZT0aWkzP2SsEp+5MA/Yg23T8Hrb/bBmxe+cAD0PoALQl9lmEA7NPawuh0q1HaGPw==
-  dependencies:
-    "@babel/runtime" "^7.20.7"
-    async "^3.2.4"
-    bluebird "^3.7.2"
-    debug "^4.3.4"
-    filenamify "^4.3.0"
-    fs-extra "^10.1.0"
-    gatsby-core-utils "^4.4.0"
-    gatsby-plugin-utils "^4.4.0"
-    lodash "^4.17.21"
-    probe-image-size "^7.2.3"
-    semver "^7.3.8"
-    sharp "^0.31.3"
-
-gatsby-plugin-sharp@^5.8.1:
+gatsby-plugin-sharp@^5.4.0, gatsby-plugin-sharp@^5.8.1:
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-5.10.0.tgz#abd9fd8d761a12924fb5876a04609efc130899d4"
   integrity sha512-hG95JQrpByH8w7Ey25zlFsvgyi99NFmk1+0hmKjMkfh43BxNsTuvhcB2kcbcO2FaZdO9OK89pilRGbLaeA0gew==
