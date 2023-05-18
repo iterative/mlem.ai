@@ -5,7 +5,7 @@
   line-height: 20px;
   padding: 16px 4px;
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     padding: 16px;
   }
 }
