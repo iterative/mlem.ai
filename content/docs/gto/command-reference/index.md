@@ -8,4 +8,4 @@ type `gto -h`.
 - Register artifact versions with `gto register`
 - Assign stages to them with `gto assign`
 - Read the registry with `gto show` and `gto history`
-- Edit artifact metadata with `gto annotate` and read it with `gto describe`
+- Read and interpret Git tag with `gto check-ref`
