@@ -28,14 +28,7 @@
       {
         "slug": "model-registry",
         "label": "Model Registry",
-        "source": "model-registry/index.md",
-        "children": [
-          {
-            "slug": "mlem-mr",
-            "label": "Pure Mlem Model Registry",
-            "source": "mlem-mr.md"
-          }
-        ]
+        "source": "model-registry/index.md"
       }
     ]
   },
