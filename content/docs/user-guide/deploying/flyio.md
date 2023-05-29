@@ -43,6 +43,9 @@ Besides, you can pre-define deployment environment with `mlem declare env flyio`
 and deployments with `mlem declare deployment flyio app`, to use them later like
 this: `mlem deployment run --load app --model=models/rf`.
 
+If you have multiple Fly.io organizations, you need to specify the `org` slug,
+which you can get from running `flyctl orgs list`. Fly.io by default uses a `personal` organization if you don't have any.
+
 For more information on declaring environments and deployments, see
 [Deployments User Guide](/doc/user-guide/deploying/). For an example of creating
 and using those declarations, check out
