@@ -1,6 +1,6 @@
 # User Guide
 
-GTO lets you build an Artifact Registry out of your Git repository by creates
+GTO lets you build an Artifact Registry out of your Git repository by creating
 annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
 [special format](#git-tags-format).
 
