@@ -1,28 +1,10 @@
 # User Guide
 
-GTO and DVC help you build an Artifact Registry out of your Git repository. GTO
-creates annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
-with a [special format](#git-tags-format), while DVC manages an
-[`dvc.yaml`](https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts)
-file with metainformation about the artifact and stores artifact binaries.
+GTO lets you build an Artifact Registry out of your Git repository by creates
+annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
+[special format](#git-tags-format).
 
-## Annotations in dvc.yaml
-
-Using Git tags to register artifact versions and assign stages is handy, but the
-Git tag itself doesn't contain a path to the artifact files, their type (`model`
-or `dataset`), or any other useful information about them. For simple projects
-(e.g. a single artifact) we can assume the details whenever we consume the
-artifacts (e.g. [in CI/CD](#acting-in-ci-cd)). But for more advanced cases, we
-should codify them in the registry itself.
-
-To keep this metadata,
-[you can use `artifacts:` section in `dvc.yaml` file](https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts).
-To see an example, check out `dvc.yaml`
-[in the `example-gto` repo](https://github.com/iterative/example-gto).
-
-</admon>
-
-## Getting artifacts in systems downstream
+## Finding the right artifact version
 
 You may need to get a specific artifact version to a certain environment, most
 likely the latest one or the one currently assigned to the stage. Use `gto show`
@@ -44,45 +26,38 @@ $ gto show churn#prod --ref
 churn@v3.0.0
 ```
 
-To download artifact files tracked with DVC, you can use the `dvc get` or
-`dvc import` commands (or simply use `dvc pull` if you `cd` inside the repo).
-
-```cli
-$ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
-```
-
 ## Acting on new registrations and assignments
 
-A popular deployment option is to use CI/CD (triggered when Git tags are
-pushed). For general details, check out something like
-[GitHub Actions](https://github.com/features/actions),
-[GitLab CI/CD](https://docs.gitlab.com/ee/ci/) or
-[Circle CI](https://circleci.com).
-
-The other option is to
-[configure webhooks](https://docs.github.com/en/rest/webhooks) that will send
-HTTP requests to your server upon pushing Git tags to the remote.
-
-Finally, you can configure your server to query your Git provider via something
-like REST API to check if changes happened. As an example, check out
-[Github REST API](https://docs.github.com/en/rest).
-
-## Getting started with CI/CD
-
-To act upon registrations and assignments (Git tags), you can create a simple CI
-workflow. To see an example, check out
+A popular option to act on Git tags pushed in your repo is to set up CI/CD. To
+see an example, check out
 [the workflow in `example-gto` repo](https://github.com/iterative/example-gto/blob/main/.github/workflows/gto-act-on-tags.yml).
 The workflow uses [the GTO GH Action](https://github.com/iterative/gto-action)
 that fetches all Git tags (to correctly interpret the Registry), finds out the
 `version` of the artifact that was registered, the `stage` that was assigned,
 and annotations details such as `path`, `type`, `description`, etc, so you could
-use them in the next steps of the CI.
+use them in the next steps of the CI. Note that it finds these annotation
+details by
+[reading `dvc.yaml` managed by DVC](/doc/gto/user-guide/#using-dvc-to-annotate-artifacts).
 
 If you're working with GitLab or BitBucket, feel free to create an issue asking
 for a similar action, or submit yours for us to add to documentation.
 
 [env var in github actions]:
   https://docs.github.com/en/actions/learn-github-actions/environment-variables
+
+<details>
+
+### Other approaches: webhooks and polling Git forge API
+
+Besides using CI/CD, the other option is to
+[configure webhooks](https://docs.github.com/en/rest/webhooks) that will send
+HTTP requests to your server upon pushing Git tags to the remote.
+
+Besides, you can configure your server to query your Git provider via something
+like REST API to check if changes happened. As an example, check out
+[Github REST API](https://docs.github.com/en/rest).
+
+</details>
 
 ### CI/CD workflow examples
 
@@ -203,6 +178,29 @@ of MLEM model deployment in the `main` branch of the `example-gto` repo.
 
 </tab>
 </toggle>
+
+## Using DVC to annotate artifacts
+
+Using Git tags to register artifact versions and assign stages is handy, but the
+Git tag itself doesn't contain a path to the artifact files, their type (`model`
+or `dataset`), or any other useful information about them. For simple projects
+(e.g. a single artifact) we can assume the details whenever we consume the
+artifacts (e.g. [in CI/CD](#acting-in-ci-cd)). But for more advanced cases, we
+should codify them in the registry itself.
+
+To keep this metadata,
+[you can use `artifacts:` section in `dvc.yaml` file](https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts).
+To see an example, check out `dvc.yaml`
+[in the `example-gto` repo](https://github.com/iterative/example-gto).
+
+</admon>
+
+<!-- To download artifact files tracked with DVC, you can use the `dvc get` or
+`dvc import` commands (or simply use `dvc pull` if you `cd` inside the repo).
+
+```cli
+$ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
+``` -->
 
 ## Configuring GTO
 
