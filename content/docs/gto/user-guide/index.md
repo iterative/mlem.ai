@@ -26,25 +26,29 @@ $ gto show churn#prod --ref
 churn@v3.0.0
 ```
 
-GTO doesn't provide a way to deliver the artifacts, but you can use DVC 
-or any method to retrieve files from the repo. With DVC, you can use [`dvc get`]:
+GTO doesn't provide a way to deliver the artifacts, but you can use DVC or any
+method to retrieve files from the repo. With DVC, you can use [`dvc get`]:
 
 ```cli
 $ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
 ```
 
-<admon>
+<admon type="tip">
 
 You can also use DVC with GTO to:
 
-* [Store large artifacts] (models and data) and track pointers to them in your repo.
-* [Keep artifact metadata] like the path or type (`model` or `dataset`). To see an example, check out the [`example-gto` repo].
+- [Store large artifacts] (models and data) and track pointers to them in your
+  repo.
+- [Keep artifact metadata] like the path or type (`model` or `dataset`). To see
+  an example, check out the [`example-gto` repo].
 
 </admon>
 
-[dvc get]: https://dvc.org/doc/command-reference/get
-[store large artifacts]: https://dvc.org/doc/start/data-management/data-versioning
-[keep artifact metadata]: https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts
+[`dvc get`]: https://dvc.org/doc/command-reference/get
+[store large artifacts]:
+  https://dvc.org/doc/start/data-management/data-versioning
+[keep artifact metadata]:
+  https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts
 [example-gto repo]: https://github.com/iterative/example-gto/blob/main/dvc.yaml
 
 ## Acting on new registrations and assignments
@@ -199,29 +203,6 @@ of MLEM model deployment in the `main` branch of the `example-gto` repo.
 
 </tab>
 </toggle>
-
-## Using DVC to annotate artifacts
-
-Using Git tags to register artifact versions and assign stages is handy, but the
-Git tag itself doesn't contain a path to the artifact files, their type (`model`
-or `dataset`), or any other useful information about them. For simple projects
-(e.g. a single artifact) we can assume the details whenever we consume the
-artifacts (e.g. [in CI/CD](#acting-in-ci-cd)). But for more advanced cases, we
-should codify them in the registry itself.
-
-To keep this metadata,
-[you can use `artifacts:` section in `dvc.yaml` file](https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts).
-To see an example, check out `dvc.yaml`
-[in the `example-gto` repo](https://github.com/iterative/example-gto).
-
-</admon>
-
-<!-- To download artifact files tracked with DVC, you can use the `dvc get` or
-`dvc import` commands (or simply use `dvc pull` if you `cd` inside the repo).
-
-```cli
-$ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
-``` -->
 
 ## Configuring GTO
 
