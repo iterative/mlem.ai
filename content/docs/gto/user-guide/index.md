@@ -26,6 +26,27 @@ $ gto show churn#prod --ref
 churn@v3.0.0
 ```
 
+GTO doesn't provide a way to deliver the artifacts, but you can use DVC 
+or any method to retrieve files from the repo. With DVC, you can use [`dvc get`]:
+
+```cli
+$ dvc get $REPO $ARTIFACT_PATH --rev $REVISION -o $OUTPUT_PATH
+```
+
+<admon>
+
+You can also use DVC with GTO to:
+
+* [Store large artifacts] (models and data) and track pointers to them in your repo.
+* [Keep artifact metadata] like the path or type (`model` or `dataset`). To see an example, check out the [`example-gto` repo].
+
+</admon>
+
+[dvc get]: https://dvc.org/doc/command-reference/get
+[store large artifacts]: https://dvc.org/doc/start/data-management/data-versioning
+[keep artifact metadata]: https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts
+[example-gto repo]: https://github.com/iterative/example-gto/blob/main/dvc.yaml
+
 ## Acting on new registrations and assignments
 
 A popular option to act on Git tags pushed in your repo is to set up CI/CD. To
