@@ -1,8 +1,14 @@
 # User Guide
 
-GTO lets you build an Artifact Registry out of your Git repository by creating
-annotated [Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
-[special format](#git-tags-format).
+GTO lets you build an Artifact Registry or [Model Registry] out of your Git
+repository by creating annotated
+[Git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a
+[special format](#git-tags-format). To read more about building a Model
+Registry, read this [Studio User Guide].
+
+[Model Registry]: http://dvc.org/doc/use-cases/model-registry
+[Studio User Guide]:
+  https://dvc.org/doc/studio/user-guide/model-registry/what-is-a-model-registry
 
 ## Finding the right artifact version
 
@@ -49,7 +55,8 @@ You can also use DVC with GTO to:
   https://dvc.org/doc/start/data-management/data-versioning
 [keep artifact metadata]:
   https://dvc.org/doc/user-guide/project-structure/dvcyaml-files#artifacts
-[example-gto repo]: https://github.com/iterative/example-gto/blob/main/dvc.yaml
+[`example-gto` repo]:
+  https://github.com/iterative/example-gto/blob/main/dvc.yaml
 
 ## Acting on new registrations and assignments
 
