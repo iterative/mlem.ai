@@ -28,14 +28,7 @@
       {
         "slug": "model-registry",
         "label": "Model Registry",
-        "source": "model-registry/index.md",
-        "children": [
-          {
-            "slug": "mlem-mr",
-            "label": "Pure Mlem Model Registry",
-            "source": "mlem-mr.md"
-          }
-        ]
+        "source": "model-registry/index.md"
       }
     ]
   },
@@ -659,30 +652,13 @@
       {
         "slug": "user-guide",
         "label": "User Guide",
-        "source": "user-guide/index.md",
-        "children": [
-          {
-            "slug": "dvc",
-            "label": "GTO with DVC",
-            "source": "dvc.md"
-          },
-          {
-            "slug": "mlem",
-            "label": "GTO with MLEM",
-            "source": "mlem.md"
-          }
-        ]
+        "source": "user-guide/index.md"
       },
       {
         "slug": "command-reference",
         "label": "Command Reference",
         "source": "command-reference/index.md",
         "children": [
-          {
-            "slug": "annotate",
-            "source": "annotate.md",
-            "label": "annotate"
-          },
           {
             "slug": "assign",
             "source": "assign.md",
@@ -699,11 +675,6 @@
             "label": "deprecate"
           },
           {
-            "slug": "describe",
-            "source": "describe.md",
-            "label": "describe"
-          },
-          {
             "slug": "doctor",
             "source": "doctor.md",
             "label": "doctor"
@@ -717,11 +688,6 @@
             "slug": "register",
             "source": "register.md",
             "label": "register"
-          },
-          {
-            "slug": "remove",
-            "source": "remove.md",
-            "label": "remove"
           },
           {
             "slug": "show",
