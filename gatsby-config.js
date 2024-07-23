@@ -26,6 +26,7 @@ const siteMetadata = {
 
 const plugins = [
   'gatsby-plugin-eslint',
+  'gatsby-plugin-sharp',
   {
     resolve: 'gatsby-source-filesystem',
     options: {

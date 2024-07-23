@@ -90,12 +90,18 @@ exports.createResolvers = async ({ createResolvers }) => {
       staticGithubData: {
         type: 'StaticGithubData',
         async resolve() {
-          const { GITHUB_TOKEN } = process.env
-          if (GITHUB_TOKEN) {
-            const stars = await getStars({ owner: 'iterative', repo: 'mlem' })
-            return { stars }
+          const staticStar = 719
+          try {
+            const { GITHUB_TOKEN } = process.env
+            if (GITHUB_TOKEN) {
+              const stars = await getStars({ owner: 'iterative', repo: 'mlem' })
+              return { stars }
+            }
+            return { stars: staticStar }
+          } catch (error) {
+            console.error(error)
+            return { stars: staticStar }
           }
-          return { stars: 719 }
         }
       }
     }
