@@ -26,7 +26,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@dvcorg/gatsby-theme-iterative": "0.3.5",
+    "@dvcorg/gatsby-theme-iterative": "0.3.20",
     "@dvcorg/websites-server": "0.1.1",
     "@octokit/request": "6.2.4",
     "autoprefixer": "10.4.14",

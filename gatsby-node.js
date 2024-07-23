@@ -95,7 +95,7 @@ exports.createResolvers = async ({ createResolvers }) => {
             const stars = await getStars({ owner: 'iterative', repo: 'mlem' })
             return { stars }
           }
-          return { stars: 8888 }
+          return { stars: 719 }
         }
       }
     }

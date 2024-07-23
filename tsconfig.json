@@ -1,5 +1,26 @@
 {
-  "extends": "@dvcorg/gatsby-theme-iterative/tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "lib": ["dom", "ESNext"],
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "noEmit": true
+  },
   "include": [
     "node_modules/@dvcorg/gatsby-theme-iterative",
     "./src/**/*",
