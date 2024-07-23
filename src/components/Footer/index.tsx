@@ -1,5 +1,4 @@
 import { StaticImage } from 'gatsby-plugin-image'
-import React from 'react'
 import SmartLink from '../SmartLink'
 import FooterList, { IFooterListProps } from './FooterList'
 import { ReactComponent as IterativeSvg } from '../../images/icons/iterative.svg'

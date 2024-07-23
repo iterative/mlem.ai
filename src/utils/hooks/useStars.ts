@@ -10,7 +10,7 @@ export default function useStars(): number | null {
         stars
       }
     }
-  `).staticGithubData.stars
+  `)?.staticGithubData?.stars
 
   // Maintain an updatable state so we can update stars on delivery
   const [stars, setStars] = useState(null)

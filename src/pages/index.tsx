@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Home from '../components/Home'
 import { PageProps } from 'gatsby'
 import SEO from '@dvcorg/gatsby-theme-iterative/src/components/SEO'
