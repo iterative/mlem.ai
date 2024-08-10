@@ -1575,10 +1575,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.2.0.tgz#2cbcf822bf3764c9658c4d2e568bd0c0cb748016"
   integrity sha512-+OJ9konv95ClSTOJCmMZqpd5+YGsB2S+x6w3E1oaM8UuR5j8nTNHYSz8c9BEPGDOCMQYIEEGlVPj/VY64iTbGw==
 
-"@dvcorg/gatsby-theme-iterative@0.3.20":
-  version "0.3.20"
-  resolved "https://registry.yarnpkg.com/@dvcorg/gatsby-theme-iterative/-/gatsby-theme-iterative-0.3.20.tgz#8b73c9a3ca0542449729f5c277b7e4aa91d06135"
-  integrity sha512-5EXwELAmzGbcl0h8+k3K+ggz/wvHYGtR5pOdPNQW2jeVpNsARr8RjN7rd7eOVcGaZsvYnvp8Ukg8P6ohG9cafQ==
+"@dvcorg/gatsby-theme-iterative@0.3.21":
+  version "0.3.21"
+  resolved "https://registry.yarnpkg.com/@dvcorg/gatsby-theme-iterative/-/gatsby-theme-iterative-0.3.21.tgz#01e4126fbf93c4c6a63f45e8967816a71ba4d935"
+  integrity sha512-DnxqIED7fOlQ2yObl0l1EU38GZc9cDn/OXRvoJPppoBrePcxLgCdXVDBUuPMtjmjx8XlZXtLgcPRs/mYqXnA4w==
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.23.4"
     "@reach/portal" "^0.18.0"

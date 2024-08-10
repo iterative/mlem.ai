@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import cn from 'classnames'
 import { ReactComponent as StudioSVG } from '../../../../../images/icons/studio.svg'
 import { ReactComponent as DvcSVG } from '../../../../../images/icons/dvc.svg'
-import { ReactComponent as CmlSVG } from '../../../../../images/icons/cml.svg'
-import { ReactComponent as MlemSVG } from '../../../../../images/icons/mlem.svg'
 import { ReactComponent as ExternalLinkSVG } from '../../../../../images/icons/external-link.svg'
 import { ReactComponent as DownSVG } from '../../../../../images/icons/down.svg'
 import { ReactComponent as VsCodeSVG } from '../../../../../images/icons/vscode.svg'
@@ -20,15 +18,18 @@ interface IOtherToolsPopupProps {
 const otherToolsPopupData: Array<{
   title: string
   titleImg?: React.FC<React.SVGProps<SVGSVGElement>>
-  icon: React.FC<React.SVGProps<SVGSVGElement>> | React.FC
+  icon: React.FC<React.SVGProps<SVGSVGElement>> | React.FC | null
+  customIcon?: ReactNode
   description: string
   href: string
 }> = [
   {
-    title: 'Studio',
-    icon: StudioSVG,
-    description: 'Track experiments and share insights from ML projects',
-    href: 'https://studio.iterative.ai/'
+    title: 'DataChain',
+    icon: null,
+    customIcon: <span className="text-xl flex justify-end">🔗</span>,
+    description:
+      'Wrangle unstructured data in Python using AI helpers at scale',
+    href: 'https://github.com/iterative/datachain'
   },
   {
     title: 'DVC',
@@ -37,23 +38,17 @@ const otherToolsPopupData: Array<{
     href: 'https://dvc.org/'
   },
   {
+    title: 'DVC Studio',
+    icon: StudioSVG,
+    description: 'Track experiments and share insights from ML projects',
+    href: 'https://studio.iterative.ai/'
+  },
+  {
     title: 'VS Code Extension',
     titleImg: VsCodeSVG,
-    icon: () => <div></div>,
+    icon: DvcSVG,
     description: 'Local ML model development and experiment tracking',
     href: 'https://marketplace.visualstudio.com/items?itemName=Iterative.dvc'
-  },
-  {
-    title: 'CML',
-    icon: CmlSVG,
-    description: 'Open-source CI/CD for ML projects',
-    href: 'https://cml.dev/'
-  },
-  {
-    title: 'MLEM',
-    icon: MlemSVG,
-    description: 'The open-source tool to simplify your ML model deployments',
-    href: '/'
   }
 ]
 
@@ -74,7 +69,7 @@ const OtherToolsPopup: React.FC<IOtherToolsPopupProps> = ({
         onKeyUp={onSelectKey(otherToolsPopup.toggle)}
         className={navItemClassName}
       >
-        Other Tools{' '}
+        More Tools{' '}
         <DownSVG
           className={cn(otherToolsPopup.isOpen && styles.flip)}
           width={8}
@@ -88,14 +83,28 @@ const OtherToolsPopup: React.FC<IOtherToolsPopupProps> = ({
         )}
       >
         {otherToolsPopupData.map(
-          ({ title, icon: Icon, description, href, titleImg: TitleImg }, i) => (
+          (
+            {
+              title,
+              icon: Icon,
+              customIcon,
+              description,
+              href,
+              titleImg: TitleImg
+            },
+            i
+          ) => (
             <SmartLink
               key={i}
               href={href}
               className={styles.link}
               onClick={otherToolsPopup.close}
             >
-              {<Icon width={16} height={16} className={styles.link__icon} />}
+              {customIcon ? (
+                customIcon
+              ) : Icon ? (
+                <Icon width={16} height={16} className={styles.link__icon} />
+              ) : null}
               <h2 className={styles.link__title}>
                 {title}
                 {TitleImg && <TitleImg />}
