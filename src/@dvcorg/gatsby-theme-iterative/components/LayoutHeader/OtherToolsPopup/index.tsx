@@ -1,10 +1,8 @@
 import React, { ReactNode } from 'react'
 import cn from 'classnames'
 import { ReactComponent as StudioSVG } from '../../../../../images/icons/studio.svg'
-import { ReactComponent as DvcSVG } from '../../../../../images/icons/dvc.svg'
 import { ReactComponent as ExternalLinkSVG } from '../../../../../images/icons/external-link.svg'
 import { ReactComponent as DownSVG } from '../../../../../images/icons/down.svg'
-import { ReactComponent as VsCodeSVG } from '../../../../../images/icons/vscode.svg'
 
 import SmartLink from '../../../../../components/SmartLink'
 import * as styles from './index.module.css'
@@ -32,23 +30,10 @@ const otherToolsPopupData: Array<{
     href: 'https://github.com/iterative/datachain'
   },
   {
-    title: 'DVC',
-    icon: DvcSVG,
-    description: 'Open-source version control system for ML projects',
-    href: 'https://dvc.org/'
-  },
-  {
-    title: 'DVC Studio',
+    title: 'DataChain Studio',
     icon: StudioSVG,
     description: 'Track experiments and share insights from ML projects',
     href: 'https://studio.iterative.ai/'
-  },
-  {
-    title: 'VS Code Extension',
-    titleImg: VsCodeSVG,
-    icon: DvcSVG,
-    description: 'Local ML model development and experiment tracking',
-    href: 'https://marketplace.visualstudio.com/items?itemName=Iterative.dvc'
   }
 ]
 
