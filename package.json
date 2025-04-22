@@ -28,7 +28,7 @@
   "dependencies": {
     "@dvcorg/gatsby-theme-iterative": "0.3.21",
     "@dvcorg/websites-server": "0.1.1",
-    "@octokit/request": "6.2.4",
+    "@octokit/request": "8.4.1",
     "autoprefixer": "10.4.14",
     "classnames": "2.3.2",
     "gatsby": "5.10.0",
