@@ -7,7 +7,7 @@
     "develop": "gatsby develop",
     "dev": "gatsby develop",
     "start": "node ./src/server.js",
-    "heroku-postbuild": "heroku-deploy",
+    "heroku-postbuild": "bash node_modules/.bin/heroku-deploy",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write",
@@ -82,7 +82,8 @@
     "*.{js,json,css,md}": "prettier --write"
   },
   "engines": {
-    "node": ">=18.x <=20.x"
+    "node": "22.x",
+    "yarn": "4.x"
   },
   "packageManager": "yarn@4.9.1"
 }
