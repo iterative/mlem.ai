@@ -33,13 +33,8 @@ const footerListData: Array<IFooterListProps> = [
   {
     title: 'Our Products',
     links: [
-      { href: 'https://dvc.org/', text: 'DVC' },
       { href: 'https://cml.dev/', text: 'CML' },
-      { href: 'https://studio.iterative.ai/', text: 'Studio' },
-      {
-        href: 'https://marketplace.visualstudio.com/items?itemName=Iterative.dvc',
-        text: 'VS Code Extension'
-      }
+      { href: 'https://studio.iterative.ai/', text: 'Studio' }
     ]
   },
   {
