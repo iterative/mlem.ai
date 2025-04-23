@@ -87,12 +87,6 @@ const LayoutHeader: React.FC<ILayoutModifiable> = ({ modifiers }) => {
             >
               Blog
             </SmartLink>
-            <SmartLink
-              href="https://learn.iterative.ai/"
-              className={styles.nav__link}
-            >
-              Course
-            </SmartLink>
             <OtherToolsPopup navItemClassName={styles.nav__link} />
           </div>
           <ul className={styles.nav__icons}>
