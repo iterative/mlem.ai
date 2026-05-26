@@ -94,7 +94,7 @@ module.exports = {
       15: '3.5rem' // 56px
     },
     fontFamily: {
-      brandon: '"BrandonGrotesque", "Tahoma", "Arial", sans-serif',
+      brandon: '"Outfit", "Tahoma", "Arial", sans-serif',
       mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
     },
     borderRadius: {
