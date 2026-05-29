@@ -650,6 +650,11 @@
         "source": "get-started.md"
       },
       {
+        "slug": "get-started-dvc",
+        "label": "Get Started for DVC",
+        "source": "get-started-dvc.md"
+      },
+      {
         "slug": "user-guide",
         "label": "User Guide",
         "source": "user-guide/index.md"
